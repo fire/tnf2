@@ -64,5 +64,5 @@ clean:
 	find . -name "*.class" -exec rm {} \;
 
 distclean: clean
-	/bin/rm -f ../bin/nf.jar
+	/bin/rm -f ../bin/nf.jar 
 
