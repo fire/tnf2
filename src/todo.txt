@@ -6,3 +6,4 @@ Add partial failure to robots and ships for damage
   HULL - unload all, no load
   SENSOR - autofail or errors and bogus
   
+test change
