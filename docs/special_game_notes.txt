@@ -1,0 +1,44 @@
+changes
+  preview - available 1 day before turn turn
+
+days/turn = 7
+turns/week = 2
+
+base research cost = 
+	from 50K/turn to 10K (ie 1/5 cost)
+	turns from 1turn /50K to 1turn /20K (ie 2x faster)
+
+lease techs =
+  more expensive 50K - 200K
+  less available (no combat)
+  base enviormental protect?
+  those available in base facilities
+  5 research facilities for XXX at 20K each
+
+market prices
+  check alluminum ore
+  ore + 20% = mineral + 30%-(10%/part) = production
+
+
+
+quests
+  nobel prizes
+  capture the flag on IO.
+    25+ turns (or all opponents destoryed)
+    10 million prize
+    2 million entry (loans okay) = 5 robots
+      (pawn) 2 peewee - high power, full mobility, scaner, no cargo
+      (quean/bish) 1 stomp - weapons, armor, noscan,  cargo
+      (rook/knight) 2 abljack - minor weapons, noarmor, scan
+      () patch - repair, nomove, noarmor, radar, nocargo
+(basecamp) facility- weapons, security
+  flag -  prefab or mineral(alienartifact)?
+  orbital blockade - 4 patrol ships kill all targets
+  news real - 1/week - report to XXX on activity
+
+solar hopper
+  free -
+    1 million bonuse for facility operation
+    10 million bonus for research
+  1 million buy = extra ship
+

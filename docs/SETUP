@@ -1,0 +1,17 @@
+to create a tnf2 server you need to do the following
+
+make a cronjob that runs the execute turn command
+make a .forward file that routes incomming email to the orders
+
+you must have java installed, put a link to the "java" in your bin directory
+
+?set TNF2DATADIR
+?set TNF2BINDIR
+
+change $tnf2root in all ".sh" files in bin directory
+change email address in Config.gml file in data directory
+
+in game settings -
+ change settings in Config.gml file and other Data*.gml files in data directory
+
+

@@ -1,0 +1,15 @@
+GoePhysical
+mmmpBbpp
+MMmbBBbp
+END
+
+Thermal
+11211111
+11212121
+END
+
+Resource
+.c......
+.....c..
+END
+

@@ -1,0 +1,3562 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 1.0.1  (Linux)">
+	<META NAME="AUTHOR" CONTENT="Aaron Judd">
+	<META NAME="CREATED" CONTENT="20010830;10112500">
+	<META NAME="CHANGEDBY" CONTENT="Aaron Judd">
+	<META NAME="CHANGED" CONTENT="20030319;11232100">
+	<STYLE>
+	<!--
+		@page { size: 21.59cm 27.85cm; margin-left: 3.18cm; margin-top: 2.54cm; margin-bottom: 2.54cm }
+		TT.western { font-family: "Courier New", serif }
+		TT.cjk { font-family: "HG Mincho Light J" }
+		TT.ctl { font-family: "Arial Unicode MS" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US">
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT SIZE=5>	</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><FONT SIZE=5>The New
+Frontier 2</FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm">By Aaron Judd</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm">Manual version 1.0.5</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm">Last updated <SDFIELD TYPE=DATETIME SDNUM="1033;1033;MM/DD/YYYY">03/19/2003</SDFIELD></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0cm; page-break-before: always">
+<BR>
+</P>
+<DIV ID="Table of Contents1">
+	<DIV ID="Table of Contents1_Head">
+		<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><FONT FACE="helvetica, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Table
+		of Contents</B></FONT></FONT></P>
+	</DIV>
+	<P STYLE="margin-bottom: 0cm">What is TNF2?	3</P>
+	<P STYLE="margin-bottom: 0cm">How do I start?	3</P>
+	<P STYLE="margin-bottom: 0cm">What do I start with?	4</P>
+	<P STYLE="margin-bottom: 0cm">How to send orders? 	5</P>
+	<P STYLE="margin-bottom: 0cm">What types of commands are there?	6</P>
+	<P STYLE="margin-bottom: 0cm">What are the Corporate Commands?	6</P>
+	<P STYLE="margin-bottom: 0cm">What about programming?	12</P>
+	<P STYLE="margin-bottom: 0cm">What about Programming Commands?	13</P>
+	<P STYLE="margin-bottom: 0cm">What are UniVars?	17</P>
+	<P STYLE="margin-bottom: 0cm">How do I use Variables?	18</P>
+	<P STYLE="margin-bottom: 0cm">How do I control program flow?	19</P>
+	<P STYLE="margin-bottom: 0cm">What more can you tell me about Buying
+	and Selling material on the market?	20</P>
+	<P STYLE="margin-bottom: 0cm">What are locations?	20</P>
+	<P STYLE="margin-bottom: 0cm">What are Sectors?	21</P>
+	<P STYLE="margin-bottom: 0cm">What are subterranean location?	21</P>
+	<P STYLE="margin-bottom: 0cm">What are Facility Locations?	22</P>
+	<P STYLE="margin-bottom: 0cm">How can I move from one location to an
+	other?	22</P>
+	<P STYLE="margin-bottom: 0cm">What about crash landings?	22</P>
+	<P STYLE="margin-bottom: 0cm">What about hostile environmental
+	damage?	23</P>
+	<P STYLE="margin-bottom: 0cm">What about Endurance?	24</P>
+	<P STYLE="margin-bottom: 0cm">How does design work?	25</P>
+	<P STYLE="margin-bottom: 0cm">What more can you tell me about
+	Technologies?	26</P>
+	<P STYLE="margin-bottom: 0cm">What about leasing?	26</P>
+	<P STYLE="margin-bottom: 0cm">So how do I make a profit?	27</P>
+	<P STYLE="margin-bottom: 0cm">How do I use my CorprateHQ?	28</P>
+	<P STYLE="margin-bottom: 0cm">Glossary	28</P>
+	<P STYLE="margin-bottom: 0cm">Appendix A Technology Limits	30</P>
+	<P STYLE="margin-bottom: 0cm">Appendix B Sample orders corporate	31</P>
+	<P STYLE="margin-bottom: 0cm">Appendix C Sample program robots	32</P>
+	<P STYLE="margin-bottom: 0cm">Appendix D Timing	37</P>
+	<P STYLE="margin-bottom: 0cm">Appendix E Materials	38</P>
+	<P STYLE="margin-bottom: 0cm">RECENT CHANGES	40</P>
+	<P STYLE="margin-bottom: 0cm">TODO	42</P>
+</DIV>
+<P STYLE="margin-top: 0.42cm; page-break-after: avoid"><BR><BR>
+</P>
+<P STYLE="margin-top: 0.42cm; page-break-before: always; page-break-after: avoid">
+<FONT FACE="helvetica, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>What
+is TNF2?</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	TNF2 is based
+loosely on the original game TNF (The New Frontiers)
+<A HREF="http://www.geocities.com/TimesSquare/Castle/2979/">http://www.geocities.com/TimesSquare/Castle/2979/</A>
+ written and designed by Jerry Revell Jerry@starchase.demon.co.uk.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Simply put the
+game is about space colonization.  Each player runs a corporation
+that is in the business of making money. You can make money in many
+ways including collecting resources from distant planets or moons and
+selling them on earth, designing new robots and leasing your design
+to other to build, or even piracy.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	All of your
+activities are done away from earth by robots and ships.  You create
+programs that control them and tell them what to do.  You then upload
+your program and initialize it.  Your robot or ship will then run,
+sending back the logs you requested.  If all goes well you robot will
+finish its mission and return with valuable resources.  This may take
+several different programs to do and depending on the activities it
+may take a long time.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">How
+do I start?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Send signup e-mail
+message to &quot;tnf2@mics.org.uk&quot; with the message</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@LOGIN SIGNUP new</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	realname: John
+Doe</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	corpname:
+Xenofrogula</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	ticker: XFG</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	password:
+newpassword</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	location:
+01.03.S0.25.57</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@END</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The &quot;Real
+Name&quot; is the name your mom and dad gave you.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The &quot;Corpname:&quot;
+must be one word at least 6 characters long and not already in uses.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The &quot;Ticker:&quot;
+must be exactly 3 characters long.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The &quot;Password:&quot;
+must be one word at least 6 characters long. (no escape or control
+characters)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The &quot;Location:&quot;
+must be on earth, and I recommend you use on of the ones listed</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">below since
+building a corporate HQ in the ocean is bad for your health.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	This will
+register your new corporation.  You will always receive a response to
+any E-mail you send to TNF2.  This response will be to the account
+you Emailed your message from.  Your turn report will also be sent to
+this E-mail address, but you may change the E-mail address for this
+daily report by using the corporate command SETMAIL.   
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	After you sign
+up, you will begin receiving turn reports.  Your first turn report
+will be sent within minutes.  Then you will receive additional
+reports as scheduled. These reports will update your status.  The
+will contain a list of the material market prices, ongoing auctions
+list, Technology and Design market, and a list of all your assets
+including ships, robots, facilities, stockpiles, and prefabs.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	You may also send
+your first orders as soon as your registration is confirmed. 
+Remember to use both your corporate name and password on the login
+line.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Here are some
+interesting places to have your corporate HQ at.  Feel free to 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">send me some more,
+especially ones beyond the USA.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	San Francisco,
+California, USA  = 01.03.S0.20.12</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Las Angeles,
+California, USA  = 01.03.S0.22.14</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Seattle,
+Washington, USA  = 01.03.S0.11.14</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Cape Kennedy,
+Florida, USA  = 01.03.S0.25.57</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	New York, New
+York, USA  = 01.03.S0.16.63</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Hawaii, USA  =
+01.03.S0.40.03</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Cuba  =
+01.03.S0.27.56</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Panama City,
+Panama  = 01.03.S0.31.38</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Belfast, Ireland 
+= 01.03.S1.11.49</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	London, England 
+= 01.03.S1.13.50</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Rome, Italy,  =
+01.03.S1.21.61</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Israel  =
+01.03.S2.23.18</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Baghdad, Iraq  =
+01.03.S2.25.18</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Cairo, Egypt  =
+01.03.S2.26.07</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Tokyo, Japan  =
+01.03.S3.23.39</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Seoul, Korea  =
+01.03.S3.25.30</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Sidney, Australia
+ = 01.03.S3.45.43</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Please only sign
+up for ONE corporation.  I know you can fool me by using fake names
+and different Email addresses, but honestly it will create more
+problems that it is worth.  You will accidently send the wrong orders
+to the wrong corporation, or you will be tempted to cheat and give
+Technology or cash reserves to your other corporation.  Or you may
+just find yourself sharing facilities or stockpiles.  All of these
+possibilities are legal for players to do with each other, but to do
+them yourself is really not fair.  Instead try using the MAIL command
+and contact the other players.  I'm sure you can find someone who
+will be willing to help you do what you want.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	  If you really
+need to use two corporation, please ask me and get permission.  Use
+the same name so I can track who you are to help with bugs.  Don't
+just be sneaky.  I don't want to have to implement a BANNED list or
+other restrictions.  Remember you have to look at yourself in the
+mirror more than I do.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+do I start with?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	After
+you submit your signup order you will receive a beginning turn
+report.  This report will give you the informaiton you need to submit
+your first orders.  The first thing you will want to notice is the
+Financial statement.  Here you will see your companies networth and
+cash holding.  All corporations start with 2.5 million in cash.  In
+addidion, all corporations will start out with an Apollo multiuse
+spacecraft, an Ablejack multiuse robot and their corporateHQ.  The
+Ids of these items will be listed under the NFObject section.  (ie
+A32, A33, F13).  Using these Ids you can upload programs and issue
+movement commands.</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Your
+turn report will also list the current market prices of the material
+market.  Here you will be able to buy and see resources.  Remember
+these prices are subject to change.</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	You
+will also find the ITMarket report.  This section of your turn report
+lists all the technologies that are currently available for research,
+lease or public and where appliciable partner and private.  You will
+also find all the available robot, ship and facility designs listed
+here.  The will allow you to decide what purchases you wish to make
+to operate your company.</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">How
+to send orders?  </FONT>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Send an email to
+&quot;tnf2@mics.org.uk&quot; with the following in the message.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@LOGIN ORDERS
+corpname password</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">&lt;CORP ORDERS&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@END</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Also you may use
+the following login options</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">To have a copy of
+the most current report resent to you</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@LOGIN REPORT
+corpname pass</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@END</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">To have an Email
+message sent to a different corporation use:  (aka BlindMail)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@LOGIN MAIL
+corpname password</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">TO: corporate
+ticker</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">message</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@END</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">To have a copy of
+your last orders sent back to you</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@LOGIN LASTORDERS
+corpname password</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@END</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">To REGENERATE a
+new turnreport (and erase the old data).  This is useful if a bug has
+caused some significant game changes during mid turn.  CAUTION:  This
+cannot be undone so use only when your sure you need it.  Usually it
+is best to just wait until the next turn is sent out.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@LOGIN
+UPDATEREPORT corpname password</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">@END</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">You can use either
+your corporation name or your corporation ticker in all login
+commands.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">If you are sending
+orders that contain lines longer that 70 characters, you should send
+them as a text file MIME attached.  The mail processor just reads for
+a line that starts with the @login and @end.  All other lines are
+ignored.  The MIME text file attachment will add the lines to your
+email, but it will not wrap the lines at the 82-138 character limit
+that some email programs do.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">If you see a
+orders reply email that show a wrapped line, I recommend you use the
+MIME attach method.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+types of commands are there?</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">There are two
+different types of commands Corporate commands and Programing
+commands.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+are the Corporate Commands?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">These are
+operations that you will have done on earth.  They all take place at
+the same time before a turn begins.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Corporate commands
+are not case sensitive unless otherwise stated.  Blank lines are
+ignored.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">#Lines starting
+with # or ; are considered comments</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">;Another Comment</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">(WARNING: Comments
+are not allowed inside programs)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">BID &lt;id&gt;
+&lt;amount&gt;				</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Bids on an
+auctioned item.  You may not bid on your own auction.  You may only
+effect the price by setting the reserve when you originally consign
+it.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	All bid on
+auction will result in a cash deposit collected for the full amount
+at the time of the bid.   If you are subsequently outbid your deposit
+will be returned.  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	If you wish to
+outbid another current highbidder, you must raise the price by at
+lease 10% or your bid will be rejected.  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	You do not need
+to bid 10% above the reserve price, you may open the bidding at the
+exact reserve price.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DO NOT USE COMAS
+or DOLLAR SIGNS.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">BUY &lt;material&gt;
+&lt;amount&gt;		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Makes market
+purchase from Earth market.  Purchased material will be put in
+corporate HQ.  There is a maximum of 20 tons per order is allowed to
+give equal chance to every player to buy.  You can use more than one
+BUY order if you wish to purchase more than the 20 ton limit.  (ie
+500 tons = 20 tons 25 times).  A buy command over the 20 limit will
+be broken up into multiple buy commands automatically.  The
+additional buy commands will be appended to the end of your orders.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">CANCEL &lt;project
+id&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Terminates a
+research project.  This will drop it from your report and you lose
+all progress if you chose to start over.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">CONSIGN &lt;ID&gt;
+&lt;reserve&gt; &lt;turns till closing&gt;	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Places an item up
+for auction.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	(ID must be one
+of the following types &lt;P??&gt; &lt;F??&gt; &lt;A??&gt; &lt;SP??&gt;)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	(item must be
+available at corporate head quarters, except facilities)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	If at the end of
+the auction nobody has met the reserve price, the item will be
+returned to you.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	You may not bid
+on your own auctions, so be sure you set the reserve price correctly.
+ It is your only chance to effect to price of an auction.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DO NOT USE COMAS
+or DOLLAR SIGNS.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">CONTRACT
+&lt;FacilityID&gt; &lt;amount&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Places a research
+facility up for public use.  The Facility will be listed under the
+research area of the turn report.  A contract for 0 will move the
+facility back into private use.   Changes in contract prices will be
+reflected on the next turn.  Only research facilities can be
+contracted.  Contracting doesn't change the owner.  There is no limit
+to the price of a contract, but corporations have a default limit of
+200K for MAXCONTRACT and this can be made higher or lower.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">DELAY &lt;turns&gt;
+&lt;LINE&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	This command will
+place the line on the next turn report.  A delay of 2 turns will put
+a DELAY 1 in the next orders.  Programs must have every line of the
+program DELAY.  You can overwrite old DELAY commands by simply
+sending a new ORDERS login.  You can retrieve old DELAYS that are now
+in your upcomming turns orders by submitting a LASTORDERS login.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DELAY 1 BUY GOLD
+10</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DELAY 2 SELL GOLD
+10</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DELAY 4 PROGRAM
+a1</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DELAY 4   move up</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DELAY 4 end</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DELAY 4 reset a1</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DELAY 4 upload a1
+a1</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DELAY 4 reset a1</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">DESIGN ROBOT
+&lt;name&gt; &lt;cargo capacity&gt; &lt;endurance in months&gt;
+&lt;function list&gt;	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Name must be
+unique.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Cargo capacity
+may be written as multiples of mass (i.e. X2 for two times mass X3
+for three time mass)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Any functionality
+(technologies) that need to be leased will automatically be paid
+first.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Do not comma
+separate terms.  Just list them with a space between.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">DESIGN SHIP &lt;name&gt;
+&lt;cargo capacity&gt; &lt;endurance in months&gt; &lt;function
+list&gt;	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	name must be
+unique</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Cargo cap may be
+written as multiples of mass (i.e. X2 for two times mass X3 for three
+time mass)  Actually this uses 2.999 times the mass to get the
+maximum cargo possible with out any additional multipliers.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Any functionality
+(technologies) that need to be leased will automatically be paid
+first.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Do not comma
+separate terms.  Just list them with a space between.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">DESIGN FACILITY
+&lt;name&gt; &lt;function list&gt;	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	name must be
+unique</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Any functionality
+(technologies) that need to be leased will automatically be paid
+first.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Do not comma
+separate terms.  Just list them with a space between.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">DISABLE
+&lt;facilityid&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">ENABLE
+&lt;facilityid&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	This turns on and
+off facilities.  All facilities are ENABLED by default.  This mean
+they will try to consume any required supplies or resources to
+activate themselves.  If there are sufficient consumables the
+facility will become ACTIVE, otherwise the facility will be INACTIVE.
+ If the faciltiy is DISABLED it will be listed as such.  By ENABLING
+and DISABLING facilities you can choose which facilities will use
+your available supplies.  You may also wish to sell the surplus
+supplies to other adjacent facilities.  See the SETFEE for selling
+and MAXFEE for buying.  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Facilities in the
+same locaiton can share supplies that are provided.  This means a
+solar power plant can power a mine if they are both at the same
+locaiton.  By using CONNECTOR SUPPLY technology provided supplies can
+be shared with facilities in adjacent location.  Adjacent locations
+are locations north (not inculding poles), south (not inculding
+poles), east, west, up (but not to orbit) and down (but not to
+surface).</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Facilities are
+only activated at the beginning of the turn.  This means if you move
+a stockpile of petroleum into your combustion power plant during the
+turn, it will not be listed as active on your next turn report.  It
+will become ACTIVE on the following turn when the petroleum is
+available at the beginning of the turn.  The facilitity will change
+from inactive to active at the beginning of the next turn when the
+petroleum is first available.  This means that even though the
+facility is listed as inactive it will become active and usable the
+turn before you see it as active on your turn report.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The exception to
+this is research facilities.  Research facilities are only used by
+Corporate commands (see RESEARCH and CONTRCT).  For this reason only
+facilities that WERE activive the previous turn will be available for
+research the next turn.  This means that even if you DISABLE a
+research facility or fail to supply sufficent consumables, if it was
+listed an ACTIVE on your turn report it can preform research on the
+next turn.  While the following turn it will not be listed as ACTIVE
+and therefor nolonger researchable.  This allows for corporations to
+CONTRACT at your facilities without having to deal with failure due
+to facilities shutting down.  CONTRACTS require some degree of
+stability.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>GIVE &lt;ID&gt;
+&lt;CORP&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Transfers
+ownership of a Stockpile, prefab, robot, ship or facility to the
+corporation identified.  This command allows you to arrange your own
+transfer of items for internal sales (PAY and GIVE pairs)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">INIT &lt;A??&gt;			</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Resets variable
+memory and begins program.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">LEASE &lt;id&gt;
+&lt;price&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Sets the lease
+price of a technology you are a partner in.  Price of 0 means the
+tech or design will become public.  Any partner can lower the price.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Leased program
+will not displayed in the program running list.  They are marked out
+by ***LEASED CODE***.  In addition when you are running leased code,
+you will get no logs of execution time or execution code (SETLOG
+VERBOSE).  You will however get output logs of any log commands.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DO NOT USE COMAS
+or DOLLAR SIGNS.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">MAXCONTRACT &lt;amt&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Set the limit the
+you will pay for CONTRACT ANY command.  Default is 200K</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">MAXLOAN &lt;amt&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Sets the limit
+that you will borrow.  Your credit limit is the default maximum. 
+Setting MAXLOAN to 0 will default to max credit limit.  Anyother
+amount will limit you purchases to the loan thresh hold specified (ie
+MAXLOAN =100, you cannot borrow more than 100 no matter how large
+your credit limit is)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">MAXFEE &lt;type&gt;
+&lt;amt&gt;  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	This is for
+selling SUPPLIES that are produced at your facilities.  There are
+five different types (MegaWatts, Hydration, Oxygen, Food,
+HumanLabor).  You can set the maximum amount your corporation is
+willing to pay to acquire these supplies to meet the CONSUME
+requirement of your facilities.  Your facilities may purchase from
+any supplier that meets your MAXFEE limit.  You are not guarinteed to
+receive the lowest available price if there are two or more prices
+available within your limit.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	This is the
+MAXimum FEE you will pay for supplies from other players facilities.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	See SETFEE for
+you sell limits.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">NICK &lt;id&gt;
+&lt;nickname&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Gives a robot or
+facility a nick name.  This name can be used anywhere the id is used.
+ This name must be unique, and you can only nick name your robots or
+facilities.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">NOOP 				</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Do nothing.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PARTNER &lt;id&gt;
+&lt;ticker&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Gives a new
+corporation partner unlimited access to your technology.  This is
+non-revocable.  All partners have free access to use the technology. 
+All companies who research a technology will also be given partner
+access to the technology.  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PATENT &lt;program
+name&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Create a program
+in the global database (saves it) cost 1K</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	(you may only
+have 5 programs patented.)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PAY &lt;corp
+ticker&gt; &lt;amount&gt; [&lt;description&gt;]</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Sends money to
+another corporation.  You can use this to pay for anything you wish. 
+Please don't attempt to abuse this by sending all the money from a
+bogus corporation and then quitting the corporation.  If I find out
+you will be punished.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	You can use this
+to advertise to other players by paying $1 and along with your
+message. (ie 	PAY XXX 1 Selling PARTNER access to T1,T2,T3,T7,T21. 
+50K each.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	DO NOT USE COMAS
+or DOLLAR SIGNS.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PAY TAX &lt;amount&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Taxes are collect
+on earth based facilities 50K for the first 100K for the second and
+150K for the thrid.  So three facilities cost 300K total per turn. 
+Ships and Robots are the same except only 10K each.  Taxes over 200K
+are assessed a 2%-10% penelty.  The 10% penelty is for accounts above
+1000000.  Additionally there is a tax on purchasing of materials from
+the Earth market.  See below.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PAY LOAN &lt;amount&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	All purchases
+other than PAY will automatically use loans when necessary.  Your
+corporate credit limit is based on your one half your assets less any
+taxes due.  The interst rate is 2%-10% depending on the amount of
+your credit limit you are using.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PRODUCE &lt;robot
+or ship design id or name&gt;	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PURCHASE &lt;robot
+or ship design id or name&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Earth Market
+produce Ship or Robot from Design.  Any required lease will be
+automatically paid.  While this command will use materials from the
+market, orders will still succeed when the market is empty.  This is
+because the earth based suppliers have large stockpiles of resources
+ready for use.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	(will be
+delivered to Corporation HQ when done)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PRODUCE &lt;facility
+design id or name&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PURCHASE &lt;facility
+design id or name&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Earth Market
+produce Prefab from Facility Design  Any required lease will be
+automatically.  While this command will use materials from the
+market, orders will still succeed when the market is empty.  This is
+because the earth based suppliers have large stockpiles of resources
+ready for use.  Purchases take the same time to complete as normal
+production so don't expect your prefab to arrive instantly.  Also,
+when you purchase a design remember, you will not have a design
+dilievered.  Either a robot, ship or prefab will be created using the
+design.  There will be a new identification given for each of these
+types.  When you robot, ship or prefab is done it will be delivered
+to your Corporation HQ.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">QUIT				</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Closes account,
+stops email and abandons all items players who submit no orders for 1
+month or more are at risk having their corporation quit by the system
+administration, please send a message warning if you will be away for
+that long or longer.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RELEASE
+&lt;projectid&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Revokes your
+partnership.  Programs with no existing partners are erased.  Designs
+with no existing partners are erased unless there is a robot built
+with it already, then the design will stay around until that robot is
+scrapped.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RENAME &lt;old
+name&gt; &lt;new name&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		renames ship
+design, robot design, or facility designs.  Design names must be
+unique or this command does nothing.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RESEARCH
+&lt;facilityID&gt; &lt;Project id&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RESEARCH
+&lt;facilityID&gt; &lt;Tech id or name&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RESEARCH
+&lt;facilityID&gt; &lt;Design name&gt;		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RESEARCH ANY &lt;&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Begins or
+continues research.  Cost 50K + any contracting fees.  Research ANY
+will find the lowest cost facility still available.  It is often
+important to get the first contract command to get the best prices. 
+The first line of your orders is execute first so research orders on
+the first line are more likely to succeed and more likely to have low
+contract fees.  Player order is randomized before each new line is
+executed to make first come first serve fare.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Research will
+choose the facility with the lowest CONTRACT cost reguardless of
+owner.  This means it may choose your own facilities since their cost
+to you is 0.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Technologies take
+3-6 turns (150-300K)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Designs research
+is based on complexity.  For each 100K of development cost there is a
+1 turn (50K) research cost.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RESET &lt;A??&gt;			</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Stops robot. This
+stops any running program, but leaves the program inside intact. 
+Units must be reset or not running before they can be uploaded to.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SELL &lt;material&gt;
+&lt;amount&gt;		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SELL &lt;stockpile&gt;
+&lt;amount&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SELL &lt;material&gt;		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SELL &lt;stockpile&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Sells material
+stored at your corporate HQ to the Earth market.  You must have the
+material or stockpile at corporate HQ.  The 20 ton limit applies here
+too.  Selling price is 5% less than the buy price.  This covers
+shipping and handling costs.  A sell command over the 20 limit will
+be broken up into multiple sell commands automatically.  The
+additional sell commands will be appended to the end of your orders.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SETCORP &lt;level&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Change the
+display of the corprate ranking ALL, ACTIVE, OWN or NONE</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	ALL, ACTIVE and
+OWN = display</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	NONE = skip
+corporate ranking display</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SETFEE &lt;type&gt;
+&lt;amt&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	This sets the
+amount you charge other corporations to consume any surplus PROVIDED
+supplies that you have at your facilities.  There are five types of
+supplies (MegaWatts, Oxygen, Food,  Hydration, and HumanLabor). 
+SETFEE of -1 means do not sell or share.  SETFEE of 0 means share for
+free.  SETFEE of 100 means that a corporation must pay 100 for each
+unit consumed.  So 5xMegaWatts at 100 will earn 500.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	This is for
+SETing the FEE you charge other players to use the surplus supplies
+from your facilities.  See MAXFEE for setting your buy limits.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SETLOG &lt;level&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	VERBOSE default
+all robot to log every command</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	BRIEF default all
+robots to only log LOG commands</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SETMAIL &lt;email
+address&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Change the e-mail
+address to send report.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SETPASSWORD
+&lt;password&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Change your
+password.  No spaces or tabs are allowed inside password.  It should
+be at least 6 characters long and passwords are case sensitive.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SETTECH &lt;level&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Change your tech
+report level NONE,ALL, or combination of
+PUBLIC,PRIVATE,PARTNER,LEASE,RESEARCH</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	NONE list none</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	ALL lists all
+public, partnered, able to be leased, researchable and seen in logs
+or at auction.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	PUBLIC all public
+technologies</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	PRIVATE all
+private technologies (this you have no access to, but will show you
+what prerequisits you need to research them)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	PARTNER all
+technologies that you are partner to</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	LEASE all
+technologies that you can either lease or are leasing</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	RESEARCH all
+technologies that you can research will be listed</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	(eg SETTECH
+Public,PARTNER,LEASE) No spaces after commas.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">UPLOAD &lt;A??&gt;
+&lt;program name&gt; [&lt;prog&gt; . . ]</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Uploads one or
+more program and subroutines to a robot.  Each program must be listed
+after the Id.  T<FONT FACE="Times, serif">he first program you load
+will be the main program.  Execution will start here.  If you want to
+load subroutines then you must list them at the end. </FONT><TT CLASS="western"><FONT FACE="Times, serif"><BR>		(this
+is incorrect)<BR>		UPLOAD A14 mainA14<BR>		UPLOAD A14 Filch<BR>		UPLOAD
+A14 unload <BR>You need to use the following format or only the last
+program will be loaded. If that program is a subroutine, you've got
+problems<BR>		(this is correct)<BR>		UPLOAD a14 mainA14 Filch unload</FONT></TT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><TT CLASS="western"><FONT FACE="Times, serif">If
+any of the programs you load are LEASED you will automatically pay
+the lease first.  Each of the uploaded programs will essentially have
+a label that matched the name of the subroutine.  In order to enter
+the subroutine you can just issue a command &quot;GOSUB unload&quot;
+(notice the case sensitive).</FONT></TT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><TT CLASS="western"><FONT FACE="Times, serif">All
+perviously declared VARs will be removed from memory and must be
+redeclared in new VAR statements.</FONT></TT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><TT CLASS="western"><FONT FACE="Times, serif">Robots
+have limits on how much memory they can hold.  While your computer
+program seems very small, when infact it is expanded into real
+computer code it takes up much more resources.  In addition the
+realtime nature of the robots limit the ability to process commands. 
+Normal robots can only hold 20 lines of code and one subroutine
+(inclusive in the 20 lines of code).  Technologies can increase this
+limit.<BR></FONT></TT><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Times, serif"><FONT SIZE=4 STYLE="font-size: 16pt">What
+about programming?</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Programs are
+define between a PROGRAM line and an end line.  These programs can
+then be uploaded to a robot or ship.  Programs are only defined for
+the turn they are created in unless they are PATENTED (see corporate
+command PATENT).  A PROGRAM - END BLOCK has the following form.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">PROGRAM &lt;name&gt;
+&lt;description&gt;</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	&lt;robot program
+lines here&gt;</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">END</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Programs name
+must be only one word and is case sensitive.  The description may be
+any number of words.   
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Blank lines in
+your program will be ignored.  Blank lines after a label will be
+changed into a NOOP commands.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	PROGRAM space
+test</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		LABELA:</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		LOG looping</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		GOTO LABELA</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	END</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	You can add
+comments at the end of a line by using the &quot;;&quot;.  Here is an
+example.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	LOG the time is
+$_time;Show me the time</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The last line
+should either a return or an exit.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The description
+is optional and will only be used when you can register programs and
+lease them to other users.  They will see the name and description
+and lease price.  Then if they want they can UPLOAD their program and
+your SUBROUTINE and then GOSUB into your subroutine anywhere in their
+program.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">PROGRAM test</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">END</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">PROGRAM Test
+Program Name test program description</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">END</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Programs are
+stored only during the turn they are defined.  If you wish to save a
+program for more than one turn you must PATENT it.  Be sure you use
+good names and descriptions when PATENTING.  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+about Programming Commands?</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Programs is TNF2
+use a macro language to get things done.  That means you don't have
+to worry about firing thrusters for 120 ms and correcting gyro drift,
+activating arm servo 11A and 13B, or other complicated problems.  You
+just give your robot high level commands.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">ATTACK &lt;id&gt;</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">		Attempts to
+attack identified Robot, Ship or Facility.  Combined Weapon and Armor
+ratings are compared.  If the armor rating is more than twice the
+weapon rating no damage can be done.  Each attacked facility, robot
+or ship will get one counter attack.  Damage will be at least 1% and
+up to the total weapon rating minus the total armor rating. 
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	So if my robot
+has Heavy Work Arms and Laser, my combined weapon rating is 5 (2+3). 
+My opponent has Open Hull and Box Hull with a total rating of 5
+(1+4).  So my attack damage rate is at 1 minimum since 5-5=0.  If I
+attack a robot with no armor my attack damage rate is at 5. 
+Attacking get a 50% bonus to damage so in this case I my final attack
+damage rate 1, 7.5.  Counter attacking gets no bonus so it remains at
+5.  Damage applied is between 1% and the damage rate (IE 1%-7.5%)</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	Counter attack is
+not possible without endurance or operational status for facilities.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">BRIEF</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	Overide corporate
+level log command.  This will set unit to only log LOG commands and
+warnings.  This setting is global and cannot be changed by further
+use of VERBOSE.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	COLLECT
+&lt;material&gt; &lt;amount&gt;	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to
+collect material from resources</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	CONSTRUCT &lt;prefab
+id&gt;		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to
+construct facility from prefab (at location)	</P>
+<P STYLE="margin-left: 3.81cm; margin-bottom: 0cm">Robots can
+construct any prefab into a facility reguardless of lease status or
+current owner.  The corporation whos robot completes the construction
+first will be designated the owner.</P>
+<P STYLE="margin-left: 3.81cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	LOAD &lt;location&gt;
+&lt;material&gt; &lt;amount&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	LOAD &lt;location&gt;
+&lt;stockpile&gt; &lt;amount&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	LOAD &lt;material&gt;
+&lt;amount&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	LOAD &lt;stockpile&gt;
+&lt;amount&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	LOAD &lt;location&gt;
+&lt;id&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	LOAD &lt;material&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	LOAD &lt;id&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to load
+requested material, unit or prefab (up to cargo capacity) into cargo
+from available stockpiles</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Loading with
+location can only be used for facilities that are location in the
+same locatoin as the unit.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	LOG	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Logs text to
+turn report.  This is the only way message get to the turn report
+except for errors.  Log can accept multiple words</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		LOG This is the
+current time $_time</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		LOG This is the
+current location $_location</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		LOG seven plus
+four divided by 12 is (7+4)/12</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		LOG 7+13  8*12</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	MOVE &lt;location&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to move
+to adjacent location</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		(this will even
+unload self from robot or ship if correct location is used)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	MOVE &lt;id&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to move
+inside a Facility, robot or ship at the same location.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	MOVE INSIDE.&lt;ID&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to move
+inside a Robot or Ship at same location.  This does not work for
+entering a facility. (ie MOVE INSIDE.A12)  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Notice the
+period between inside and then unit id.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	MOVE &lt;reference&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to move
+to adjacent location by reference 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		(N,S,W,E,U,D,NORTH,SOUTH,EAST,WEST)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		(UP,DOWN,LAUNCH,LAND,ESCAPE,REENTRY,EXIT)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		UP function like
+LAUNCH and ESCAPE from surface</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		DOWN functions
+like LAND and REENTRY from orbit</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		UP and DOWN also
+work for levels and from surface to descend</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		EXIT will leave
+a facility, robot or ship</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		LAND, REENTRY
+and DOWN from orbit will result in your ship landing at a random
+location on the planet.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	NOOP  		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		No operation. 
+Useful on line definitions (i.e. BEGIN:NOOP)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">PRODUCE &lt;material&gt;
+&lt;amount&gt;</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	Attempts to
+produce material from available materials (at location)</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">PRODUCE &lt;design&gt;
+		</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	Attempts to
+produce a prefab or unit from design using available materials (at
+location)</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">RECHARGE</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">RECHARGE &lt;id&gt;</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	Shares power with
+robot at same location.  Power is shared only if the target robot has
+less endurance.  The new endurance level is equally divided between
+both robots.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	Attempts to
+recharge robot from power available at Ship or Facility.   Ships and
+Facilities have unlimited power sharing ability.  Robots must be
+inside the ship or facility to recharge.  Robots will be recharged to
+full endurance if successful.  Only facilities that provide power (IE
+SolarPower) are able to recharge robots.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	Robots cannot
+recharge yourself</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">REFINE &lt;material&gt;
+&lt;amount&gt;		</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	Attempts to
+refine material from available material (at location)</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">REFUEL 
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">REFUEL &lt;amount&gt;</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">REFUEL &lt;ship
+id&gt;</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">REFUEL &lt;ship
+id&gt; &lt;amount&gt;</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	Attempts to
+refuel ship by consuming 2 tons of rocket fuel per month endurance. 
+Fuel will be used up to the limit specified from available stockpiles
+inside and outside Ship. Fuel is first gathered from inside cargo and
+then outside.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">REM	This command
+does nothing.  Its just there to make notes.  
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	REPAIR
+&lt;robot,ship or facility id&gt; 	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to
+repair using any spare parts available</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	REPAIR
+&lt;robot,ship or facility id&gt; &lt;amount&gt; 	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to
+repair using specified amount of spare parts available</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		You cannot
+repair yourself</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	SALVAGE  		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to
+salvage Spare Parts. from Junk stockpile (at location) entire
+stockpile</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	SALVAGE &lt;amount&gt;	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to
+salvage Spare Parts. from Junk stockpile (at location) only amount
+specified</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">SCAN SYSYTEM</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Sends system
+scan to log file.  This reports the names and location of all
+planets, moons and minor planets in the system.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		(System scans
+can only be done from orbit in the system wishing to be scanned)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">SCAN SECTOR
+&lt;number&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Sends sector
+scan report to log file.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		(Sector scans
+can only be done from orbit)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	SCAN &lt;TYPE&gt;
+[&lt;LOCATION&gt;]	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Scan for &lt;type&gt;
+at current or specified location or relative location (i.e.
+N,S,East...).  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		(Result stored
+in $arg1)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"> 	SCANLOG
+&lt;SCANTYPE&gt; [&lt;LOCATION&gt;]	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Sends message to
+turn report and sets value of $arg1  (recommended)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		If no objects
+scanned '-' is returned</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  (Types of
+scans listed below)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  OBJECTS (i.e.
+XFG.A2.Ablejack,XFG.SP37.53.Gold,XFG.P23.Road,XFG.F21.Mine)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  ROBOTS (i.e.
+XFG.AD2.Ablejack,XXX.AD17.Ablejack)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  SHIPS (i.e.
+XFG.AD2.Apollo,XXX.AD17.Apollo)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  PREFAB (i.e.
+XFG.PF2.Road,XXX.PF17.Mine)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  STOCKPILES
+(i.e. XFG.SP2.4.Gold,XXX.SP17.3.Water)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  FACILITIES
+(i.e. XFG.F2.Mine,XXX.F22.SolarPowerPlanet)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  TARGET (i.e.
+XXX.F22.SolarPowerPlanet,XXX.A21.Apollo,XXX.A23.Ablejack)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  TEMP (i.e.
+57.3)  Temp in calculus</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  RESOURCES
+(i.e. 1.GoldOre,3.LeadOre) 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		  SURFACE (i.e.
+P) 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		one char of
+&quot;PpbBmMwW-cC&quot;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">			P=flat plains,
+p=nearly flat plains, 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">			b = lightly
+broken ground (craters, canyons), B = extremely broken ground</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">			m = minor
+mountains/hills, M = Rugged mountains, 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">			w = shallow
+liquids, W = Deep Liquids,</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">			c = colonized,
+C = heavy colonized</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">			- =
+underground, in space, or inside robot or facility</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	SEND &lt;Id&gt;
+&lt;message&gt;</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">		Attempts to send
+a message to a robot or ship identified.  The message may only be one
+UniVar.  Message can be send to any robot or ship even one of a
+different corporation.  It is even possible to have a denial of
+service attack by sending a &quot;-&quot; in a loop to a target robot
+or ship that will overwrite and block any incoming messages.  You can
+choose to add authentication to your message to avoid these (ie SEND
+A25 XXX.My_message)</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	SET
+$VarName=value     	 	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	SET $VarName
+value     	 	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Changes value of
+variable name  (note  $_VarName are read only variables)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	UNLOAD &lt;material&gt;
+&lt;amount&gt;		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to
+unload material from all internal stockpiles</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	UNLOAD &lt;material&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to
+unload all available material from internal stockpiles</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	UNLOAD &lt;id&gt;			</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Attempts to
+unload stockpile, prefab, robot, or ship by id from internal</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	VAR $VarName		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Create variable
+(arg1-5 created by default).  It is okay to repeat declarations of
+variables.  You can declare multiple variables by using commas to
+separate them.  DO NOT use spaces, only commas.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">VERBOSE</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">	Overide corporate
+level log command.  This will set unit to log every LINE, LOG
+commands and warnings.  This setting is global and cannot be changed
+by further use of BRIEF.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	WAIT &lt;hours&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	WAIT
+&lt;days&gt;.&lt;hours&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	WAIT
+&lt;months&gt;.&lt;days&gt;.&lt;hours&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Waits specified
+time</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt"><B>What
+about resources?</B></FONT></P>
+<P STYLE="margin-bottom: 0cm">	When your robot executes a SCAN
+RESOURCES a list of available resources is returned.  Here is the
+format #.NAME,#.NAME,#.NAME.  Each resource is preceded by the
+density or availablity.  This number is 1-7.  Numbers 1-5 are mineral
+deposits.  These resources can be collected in a COLLECTOR facility
+commonly known as a mine.  Resource level 6 is for resources that are
+in gas form.   Gas resources are only available on planets that have
+atmosphere.  Gas resources can be collected using CONDENSER
+technology.  Level 7 resources are liquids.  These are only aviable
+on liquid terrain, and require a DISTILATION technology to collect.</P>
+<P STYLE="margin-bottom: 0cm">	Scans list minieral resources first
+(5-1) ranked highest to lowest.  Liquid and Gas resources are listed
+at the end eventhough they have higher density numbers.</P>
+<P STYLE="margin-bottom: 0cm">	Resources can only be scanned by their
+exact location (ie 01.03.<A HREF="http://S2.12.15/">S2.12.15</A>) . 
+The only other way to scan for resources is in a SCAN SECTOR command.
+ The scan sector command will report a resource distribution of the
+sector to the log file.  This will list the general density of
+resource types at various locations but not he exact amounts.  The
+below map shows large density of I (inert minerals) at 00.01 and
+minor densities of inert materials at 01.02.  Also minor densities of
+metals &ldquo;m&rdquo; and exotics &ldquo;x&rdquo; at 02.03 and 03.01
+respectively.  Also common &ldquo;c&rdquo; minerals, radioactive &ldquo;r&rdquo;
+and heavy metals &ldquo;h&rdquo; can be found.  A complete list of
+the minerals and what general type they are is listed in the
+appendix.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Courier New, monospace">  
+0000</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Courier New, monospace">  
+0123</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Courier New, monospace">00
+.I..</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Courier New, monospace">01
+..i.</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Courier New, monospace">02
+...m</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT FACE="Courier New, monospace">03
+.x..</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+are UniVars?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Robots have only
+one type of variable called a UniVar.  These combine number and
+strings as much as possible.  UniVars are made up of the following
+characters:</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	UniVars can
+contain all chars A-Z,a-z,0-9, and ~`:;,._{}[]</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The &quot;_&quot;
+will start a new line in your log display</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The , is used to
+separate term for all scans and in cargo lists.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	(no spaces or tab
+are allowed within UniVar.  A Space will end a UniVar and separate it
+from the next UniVar &quot;)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	(parens will be
+evaluated and dropped use {} or [] for display parens)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	(DO NOT use &quot;
+(quotation marks))</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	valid UniVar =
+5.GoldOre,2.IronOre	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	valid UniVar =
+SP15,SP12</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	valid UniVar =
+XFG.A12.Apollo,XFG.A13.AbleJack</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	valid UniVar =
+LineOne_LineTwo</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	valid UniVar =
+5Thist.2372asfaa[32]{}</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Here are the
+operations possible with UniVars in order of precedence.  I recommend
+using () especially around multiply and divide and between numerical
+operations and string operations.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	()  	== highest
+priority</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a## 	== number
+characters in a (a:hello = 5)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a#b 	== index of
+a where b first found  (a:hello b:llo = 2) (returns -1 if string is
+not found)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a@@b	 == left
+substring at index b (a:hello b:2 == he,  a:hello b:-2  == lo)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a@b 	== a
+substring at index b (a:hello b:2  = llo, a:hello b:-2 = hel )  *</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a^b	== a raised
+to the power b  **</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a*b 	== a times b
+**</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a/b 	== a divided
+by b  **</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a+b 	== a plus b
+**</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a-b 	== a minus b
+**</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a&amp;&amp;b 	==
+(a!=0 &amp;&amp; b!=0)  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a||b 	== (a!=0 ||
+b!=0)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a&amp;b 	== a
+concatonated to b  (a:hello b:there = hellothere)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a!=b 	== a
+different than b</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a&lt;=b 	== a
+less than or equal b</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a&gt;=b 	== a
+greater than or equal b</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a&lt;b 	== a less
+than b</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a&gt;b	== a
+greater than b</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a!=b 	== a not
+equal b</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a==b 	== a equal
+b</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	a=b 	== a equal b</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">**These operations
+require that both argument must by numerically parseable</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">*This operations
+require the second operator to by numerically parseable</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">(1,-1,-1.5,373727372,7.3e7
+are samples of numerically parsable strings)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">How
+do I use Variables?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Variables are
+written in the format $name.  This means that $TEST is a variable and
+$123 is a variable.  Variables are not case sensitive so $NAME is the
+same as $name.  You can define as many variables as your CPU allows
+by using the VAR command.  But generally you don't need to.  There
+are 5 default variables. $ARG1-5.  These variables are created with
+every robot.  Most subroutines and functions use these variables to
+hold their answers (i.e. SCAN TEMP returns the answer is $arg1)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Most variables
+can have their value changed by using the SET operation.  All except
+READ-ONLY variables.  This makes senses because you can just set your
+location variable and have the robot be at that location.  Below are
+a list of the READ-ONLY variables.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	$_cargo	a list of
+cargo carried.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">				SP12,PF35,A21
+= list of IDs of cargo</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">				- = empty 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"> 	$_cc		cargo
+capacity remaining (number of tons that can currently load)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"> 	$_cm		cargo
+carried (number of tons in cargo bay)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	$_damage	damage
+in ??.??.??.??.?? format (comp,sensors,engine,weapon,hull)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	$_endurance	endurance
+in months</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"> 	$_jr		return
+value for gosub/return</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	$_location	In
+standard location format (i.e. 01.03.S0.22.12.F2)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	$_random	random
+number 0-1.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	$_time		time in
+YYYY.MM.DD:HH format</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	$message	message
+buffer for send command (this is not readonly at initilized to &quot;-&quot;)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">How
+do I control program flow?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Below are some 
+operations and flow control.  These operations give you the ability
+to make loops and subroutines.  You can compute complex math and make
+choices for anything you can imagine.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	EXIT</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Terminates
+program</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	IF &lt;EXPR&gt;
+THEN &lt;OPER1&gt; [ELSE &lt;OPER2&gt;] 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		if EXPR !=0 then
+do OPER1 otherwise do OPER2.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		the ELSE is
+optional THEN is required</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		(if $arg1==2
+GOTO LOOP is BAD because it is missing the THEN)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		(if $arg1==2
+THEN GOTO LOOP is GOOD)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	GOTO &lt;LINE
+NAME&gt;		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Move program to
+line starting with NAME (i.e. BEGIN:)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		(line labels
+must have a COLON, and goto statements must not have a COLON  i.e.
+GOTO LABEL: is wrong)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		All labels are
+case sensitive so LOOP and loop are different.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Programs can
+access labels in any subroutine or program that is uploaded.  So
+program A can access a label inside program B if both are uploaded to
+the robot.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	GOSUB 
+&lt;subroutine name&gt;</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Move program to
+line starting with name and enable return</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Labels for
+subroutines can be used by GOTO and GOSUB, but return only work if a
+GOSUB command was called.   If a return is found after a GOTO command
+the program will likely fail, but at least the operation is not
+specified.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Subroutines can
+either be identified by a new label or as a separate program that is
+uploaded.  See upload for details.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Programs can
+access labels in any subroutine or program that is uploaded.  So
+program A can access a label inside program B if both are uploaded to
+the robot.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	RETURN  		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Returns from
+gosub command</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+more can you tell me about Buying and Selling material on the market?</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Buying prefabs,
+robots or ships from Earth will effect the price of market items just
+as if you purchased each material required to build it yourself.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Prices for
+material change after each purchase.  To avoid radically different
+prices it is often a good idea to put BUY, SELL, PURCHASE orders in
+the first few lines of your orders</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Price will vary
+based on supply.  Essentially the greater the surplus the lower the
+price.  The the greater the shortage the higher the price.  Also not
+all the price changes will occur instantly.  You will see prices
+continue to drift even when nobody is activly buying and selling
+them.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Purchase of
+materials on Earth are subject to a TAX.  Currently all material
+purchases accrue a 75% tax into your tax accout.  While it may be
+possible to purchase raw materials on Earth for refining or
+production, this tax makes it far less profitable.  Remember the
+focus of this game is to explore space, not just make money by
+purchasing and reselling material on Earth.  Purchasing materials
+from Earth is normally used to gather a few hard to find materials
+for limited purposes.  The exceptions are SpareParts and Rocket fuel,
+which most players will need to purchase on Earth until the have an
+strong pressence in space.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+are locations?</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Location are
+points referenced in Universal Coordinate system.  Our sun is &quot;01&quot;.
+ Earth being the third planet from this sun is &quot;01.03&quot;. 
+The Moon is &quot;01.03.01&quot; being the first orbiting body around
+this planet.  Only bodies of a solar significant size are listed and
+can be referenced by this system.  This means that only planets show
+surface radios is greater than 209 km are listed.  If you know of
+more please let me know.  Please include as much detail as possible
+including orbital radius (around what body), surface radios, mass,
+temp min max, and surface images and resources (solids liquids and
+gasses).</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">							Ett1G	Ett2G	Ett3G	EttION</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Mercury 	01.01
+		size=12	9.5	6.5	4.7	11.7</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Venus 	01.02
+		size=30            10	6.8	4.8	12</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Earth 		01.03
+		size=32	0	0	0	0</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Luna		01.03.01
+	size=8		.5	.3	.2	.5</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Mars		01.04
+		size=17	12	8.5	6.2	15</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Vesta		01.04.A1	size=1		~14	~9	~7	~18</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Ceres		01.04.A2	size=2		~14	~9	~7	~18</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Hygiea	01.04.A4	size=1		~14	~9	~7	~18</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Pallas		01.04.A3	size=1		~14	~9	~7	~18</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Io 		01.05.01
+	size=9		16	12	8.5	21</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Europa 	01.05.02
+	size=7		16	12	8.5	21</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Ganymede
+	01.05.03 	size=13	16	12	8.5	21</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Callisto
+	01.05.04 	size=12	16	12	8.5	21</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Enceladus
+	01.06.01 	size=1		24	17.3	12.2	30</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Tethys 	01.06.02
+	size=2		24	17.3	12.2	30</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Dione 		01.06.03
+	size=2		24	17.3	12.2	30</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Rhea 		01.06.04
+	size=3		24	17.3	12.2	30</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Titan 		01.06.05
+	size=12	24	17.3	12.2	30</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Iapetus 	01.06.06
+	size=3		24	17.3	12.2	30</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Miranda 	01.07.01
+	size=1		36	25.6	18.2	45</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Ariel 		01.07.02
+	size=2		36	25.6	18.2	45</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Umbriel	01.07.03
+	size=2		36	25.6	18.2	45</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Titania	01.07.04
+	size=3		36	25.6	18.2	45</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Oberon 	01.07.05
+	size=3		36	25.6	18.2	45</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Triton 		01.08.01
+	size=6		45	32	22	55</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Proteus 	01.08.02
+	size=1		45	32	22	55</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Pluto
+		01.08.A1	size=5		51	36	25	63</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Charon 	01.08.A2
+	size=2		51	36	25	63</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">**Ett is Earth
+Travel Time.  Time to travel from earth to body listed.  Time will
+vary as planets move about in their orbits.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Earth's orbit can
+be reference the following ways.  (01.03.00 or 01.03 or 1.3 or 1.03)
+The moon's orbit can be referenced the following ways. (01.03.01.00
+or 01.03.01 or 1.3.1 or 01.3.01)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">These are other
+know star systems.  Normal rockets cannot reach these desitiations. 
+Only StarGates can travel this distance.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	AlphaCentariA &ndash;
+02</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Pegasus - 03</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Vega &ndash; 04</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Spica - 05</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+are Sectors?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	All planets are
+divided into four sectors (i.e. Earth sectors look like this
+01.03.S0, 01.03.S1, 01.03.S2, 01.03.S3).  While you cannot move to a
+Sector, it is useful in scanning and unless you use the reference
+location N,S,E,W in movement you must specify the correct sector for
+the location you wish to move (i.e.  WEST of 01.03.S1.0.0 is
+01.03.S0.00.63).  Each planet has a size and this number 63 is a
+result of Earths size of 32.  Each Sector has a width and height
+twice that of the size of the planet.  So for example Charon has
+locations 00.00-03.03 for each sector.  Remember sectors are only an
+abstraction for movement.  You cannot move to 01.03.S0 nor can you
+scan the sector by its full name.  Scanning sectors is done by &ldquo;SCAN
+SECTOR 0&rdquo; further described in programming commands.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+are subterranean location?</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	A planet location
+i.e. (01.03.S1.15.32) can also have subterranean location (i.e.
+01.03.S1.15.32.L2). Subterranean location are dependent on the planet
+size.  These areas are vastly deep with in the planet and require
+special technology to reach.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+are Facility Locations?</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Location also can
+be specified with a facility id.  (i.e. 01.03.S1.15.32.F212)  This
+means inside the facility location at location 01.03.S1.15.32 with id
+F212.  Faciities have a limit to the amount of cargo space they can
+hold.  Basic facilities can only hold 200 tons.  Because of the
+resources that facilities use, only four facilities can occupy the
+same location.  Location that have 3 facilities will have there
+sector scan reported as a &ldquo;c&rdquo; and 4 facilities will be
+&ldquo;C&rdquo;.  Surface scans will report &ldquo;p&rdquo;.  These
+location will remain terraformed to &ldquo;p&rdquo; even if the
+facilities are latter destoryed.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">How
+can I move from one location to an other?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Movement is
+allowed from any planet to any other planet or moon.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Movement is
+allowed from the planet to any point on its surface including
+directly inside facilities on the surface with Landing Zone
+technology</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Movement is
+allowed from any point on the surface to any point directly
+north,south,east or west.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Movement over
+polar regions allow movement to any position east and west from the
+maximum or minimum latitude.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Movement up and
+down is allowed only within the same surface location (North, South,
+East, West are NOT allowed underground)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Movement into
+orbit can only be done from surface or surface facility with Landing
+Zone technology 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Planet location
+are based on their actual distance and orbital velocity.  Sot the
+time to travel between planets will vary.  This is important when
+considering the time it will take to travel these great distances. 
+Ships with standard Rocket1G technology take approximately 28 days to
+travel to Pluto and approximately 7 days to travel to Mars.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+about crash landings?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Crash landing on
+a facility will result in the robot or ship being destroyed as well
+as the facility at the impact point, an expensive yet very effect
+weapon.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Landing is a
+dangerous process.  Depending on the type of surface you land on your
+chances for a safe landing change.  A bad landing will cause damage.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	F?? -100% With
+Landing Zone technology</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Ww - 95% Safest
+non facility landing</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	P - 90% (good)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	p - 85% (okay)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	b - 75% (risky)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	B - 50% (stupid)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	m - 30% (this
+must be a mistake)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	M - 10% (look ma
+no brain)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Damage will be 
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">0-5% damage to
+computer</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">0-2% damage to
+sensors</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">0-25% damage to
+engines</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">0-15% damage to
+weapons</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">0-20% damage to
+hull</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Crash landings
+cause up to 13% damage overall per crash.  
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+about hostile environmental damage?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Watch out for
+hostile environments (liquid, heat, cold, radiation, weather,
+atmosphere, tectonics, pressure).  Facilities robots and ships take
+damage each day if not protected from hostile environments.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Ships are
+designed to with stand the cold of deep space without damage up to
+absolute zero (-273C).  They are also designed to operate in a
+complete vacuum and be protected from the damage of micrometeorites.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Robots are
+designed for operations safely in the vacuum of deep space too, but
+they are not designed for the cold.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Robots and ships
+are not damaged by the pressure below the surface since they don't
+need to support the roof, getting below the ground require special
+technology.  They can also move easily over any terrain that has
+roads or tunnels.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Facilities don't
+have any automatic protection and need to have technology included to
+protection for everything in the environment they are going to be
+deployed in.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Each week
+facilities, robots and ships are subject to the environmental check.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Weather 10%
+chance of damage for each point (1=10%, 2= 20%, etc)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Liquid 50% chance
+of damage.  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Atmosphere 10%
+chance of damage for each point above 4 (5=10%, 6=20%, etc)  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Vacuum 10% chance
+of damage (robots and ships immune) 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Cold 10% change
+of damage for each 20 degrees below -60 C (-80C= 10%, -100C = 20%,
+etc.) (ships immune) 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Very cold 10%
+chance of damage for each 10 degrees below - 200 C (-210C=10%,
+-220C=20%, etc.)(ships immune)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Hot 10% chance of
+damage for each 10 degrees above 100 C (100C=10%, 110C=20%,etc.) 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Extremely hot 10%
+chance of damage for each 20 degrees above 180 C
+(200C=10%,220C=20%,etc.)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Tectonics 10%
+chance of damage for each point (1=10%, 2=20%, etc.)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Major tectonics
+10% chance of damage for each point above 2 (3=10%,4=20%, etc.)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Radiation 10%
+chance of damage for each point (1=10%, 2=20%, etc.)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Heavy Radiation
+10% chance of damage for each point above 3 (4=10%, 5=20%, etc.)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Pressure 100%
+chance of damage (facilities only)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Extreme Pressure
+100% chance of 2 damage (facilities only)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Damage
+distribution</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">				Comp	Sen	Eng	Weap	Hull	Facilitiy</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Weather			rs	rs		rs	x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Liquid			rs	rs	rs	rs		x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Atmosphere			rs		rs	rs	x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Cold					r	r	r	x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Extream
+Cold				r	r	r	x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Heat				rs	rs		rs	x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Extream
+Heat			rs	rs		rs	x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Tectonics		rs	rs	rs		rs	x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Tectonics
+Major	rs	rs	rs		rs	x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Radiation		rs	rs				x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Heavy
+Radiation	rs	rs				x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Vacuum							x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Pressure							x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Extream
+Pressure						x</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+about Endurance?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Endurance is your
+robot's power and your ships fuel.  Each type of ship uses power
+differently.  Robots use power every day.  They run on batteries that
+need to be recharged over time.  Robots can be recharged by other
+robots or ships and recharge themselves.  Robot endurance is in
+months of operation.  Robots that wish to recharge other robots do so
+by sharing their power.  You can only share your power if you have
+more than the robot you wish to share with.  If my robot has 9 months
+endurance and I recharge a robot with 1 month of endurance, both
+robots end up with 5 months endurance ((9+1)/2 = 5).</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Ships power is
+based on generating it from fuel.  Ships endurance is only changed
+when they move, since electrical power uses such a very small amount
+of fuel.  Ship endurance is calculated in months, but each month
+equals the amount of fuel to lift off or reenter earths gravity. 
+Smaller Planets and moons use less power based on their gravity.  (IE
+the moon's gravity is .16 G so it uses .16 month fuel to reentry or
+lift off).  Ships are not designed for effectient movement on planet
+surfaces so they use one 2 days fuel (.06) to move from surface
+location to surface location.  Moving in and out of facilities
+doesn't use fuel.  Ships are even worse at subterranean movement
+which cost 4 days fuel (.12).  Ships and robots can refuel ships and
+ships can refuel themselves.  Refueling is done by consuming rocket
+fuel stockpiles.  Stockpiles are consumed first from inside the Ship
+doing the refuel and then from stockpiles at the same location.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	When you fuel
+runs out your Ship or Robot will HALT.  That mean it will not execute
+any more program lines until it is recharged or refueled.  Once it is
+powered up it will immediately continue with the program if it is
+still running.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">  
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">How
+does design work?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Designing
+facilities robots and ships a very important part of the game.  You
+choose a list of functionality's you wish for your robot, ship or
+facility.  Some technologies are only allows on certain type of
+design (i.e. Heavy Work Arms are only for robots, production is only
+for facilities)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Each
+functionality has a base cost that is related to the material cost
+need to produce it.  These base costs for different for each type of
+use.  Some technologies can be used in Facilities, other Robots or
+Ships, and still other can be used in more than one type like Robots
+and Facilities.  This type is listed on technologies you either are
+partner to or can lease.  F for facility R for robot and S for ship. 
+When more than one is listed you need to consider the multiplier.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Type	Multiplier if
+used in</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Robot
+	Ship	Facility</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">R	1	-	-</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">S	-	1	-</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">F	-	-	1</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RF	1	-	4</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SF	-	1	2</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RSF	1	2	4</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Simple designs
+are cheaper to research.  Robot have a base functionality of 5, Ships
+have base functionality of 4, and facilities have a base
+functionality of 3. For each functionality above the base the
+research cost increases 10% and reduces by 10% for each functionality
+below the base.  So two functions cost 110% the price of the two
+functions separately and three functions cost 121% the cost of the
+three separately.  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Each design will
+include a base design type.  For robots it is BasicRobot.  For ships
+it is BasicShip and for Facilities it is BasicFacility.  This basic
+technology does count against you functional limit and cost
+multiplier.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	For Ships and
+Robots small cargo spaces are cheaper to research.  Each time the
+cargo space is bigger than the mass of the robot or 2 times larger
+than the mass of the ship the cost increases 10%.  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Endurance is
+expensive, but means different things to robots and ship.  Robots use
+ endurance continuously, while ship only use endurance when they are
+moving.  Each robot as a free base endurance of 9 and ships have a
+free base endurance of 5.  Each step above these limits cost 20% on
+the entire project cost.  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Smaller units are
+simpler and cheaper to design.  The base robot weight is 25 while the
+base ship weight is 50.  If your robot is below this limit each 10
+tons will save you 20% on the cost.  Ships will save 10% for each 25
+tons below there limit.  The opposite is true for designs over the
+limits, they cost and additional 10% for each step of 10 or 25.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Finally each
+design will have variation.  This represents the quality of luck of
+the research.  Two different designs may vary as much as 150% in
+cost, but never more.  Occasionally it is worthwhile to design and
+begin research on two identical designs (with different names of
+course) and watch to see which one is cheaper.  The saving can be
+high on large and expensive project, while for smaller cheap project
+the initial 100K outlay will out weigh the savings.  Perhaps after
+actual construction of dozens of the design the savings can be
+realized in less parts used.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	You must lease a
+technology each time you use it in a new design.  So if you design
+two robots each using Wheel technology you will pay the lease both
+times.  The lease is automatically paid when you issue the RESEARCH
+command for any technology you don't have partner access to.    Be
+careful that all the technologies you listed for your design are
+available to you, if the last one is not available (PARTER or
+LEASEABLE) you will have already paid your leases on the previous
+technologies and will not be able to complete the design so it will
+be lost.  Quite an expensive mistake.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+more can you tell me about Technologies?</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Many technologies
+require prerequisite technologies before you can research them. 
+Partner access in the required technology is required in order to
+research these.  There for you will not be able to research
+technologies that you do not hold partner access to.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Technologies
+listed as &quot;Privately held&quot; means that there nobody is
+leasing it.  It doesn't mean than any player necessarily has PARTNER
+access to it yet, only that if they do they are not leasing it.  Once
+you become a PARTNER to a technology you will see the number of
+PARTNERS there are who share the LEASES with you.  Any Partner can
+lower the lease price, but nobody can raise it.  Once the lease price
+is set to 0 the technology becomes public and everyone has full
+partner access.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	When new partners
+gain access to a technology that is already leased, the lease price
+increases so that each partner will still receive the same allotment
+of LEASE profits as before.  (IE 3 partners lease Wheel at 150K.  2
+new players research Wheels.  The new price is 250K (50K each).  This
+price may be lowered latter by any PARTNER using the LEASE command.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Technologies that
+have in there description NOT OPERATION do not currently work, or are
+not currently necessary.  These may come on line latter, but don't
+count on it.  Some technologies  are private.  This is for two
+possible reasons.  One is you just don't have the prerequesits to
+research it, or two like OFFICE it is a game control technology that
+is not available to players.  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">What
+about leasing?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	All leases are
+paid automatically.  If you design a robot, ship or facility using a
+technology that is LEASEABLE and you are not a PARTNER to, you will
+automatically pay the lease price to the PARTNERS of that technology.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	If you order a
+robot, ship or prefab in your corporate orders that is LEASEABLE and
+you don't have PARTNER access to, you will pay the lease price for
+the design in addition to the cost to produce the item.  When your
+robots produce a design that is LEASEABLE and you don't have PARTNER
+access to, you will also pay the lease.  You pay this lease each time
+you produce one robot, ship or prefab.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Using a design is
+not subject to technology leases.  If you designed a robot using
+leased technologies, you can produce 100 robots without any further
+leases of those technologies.  If you LEASE out that technology to
+another player, they will only pay your LEASE price for the design,
+but no LEASE will be paid to the technology holder.  The technology
+holder receives his LEASE price only once for each design made using
+it.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">So
+how do I make a profit?</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	The primary goal
+of the game is to create a positive cash flow.  Make money for your
+corporation.  You can do this any way you wish.  Some ideas to get
+you started are listed below.  You can try any or all of them, or
+invent a new ideas of how to make a profit.  Most importantly of all
+have fun.  Currently the only way to pay other players is to exchange
+stockpiles.  The process is simple.  You 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Create new cash</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">1 Collect
+materials from planets and sell on earth.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">2 Refine materials
+into more valuable resources and sell on earth.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">3 Produce advance
+materials to increase value and sell on earth.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">4 Steal unguarded
+stockpiles or prefabs.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">5 Play the market
+by buying and selling material for profit.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">6 Salvage junk
+into Spare Parts.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">7 Destroy robots
+or ships or facilities for salvage.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">8. Recycle waste
+products</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Earn cash from
+other players</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">1 Research
+technologies and lease them to other players to use when designing
+robots.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">2 Design and
+research robot, ships or facilities and lease design to other players
+to build.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">3 Build or produce
+ships, robot or prefabs and auction or sell to other players.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">4 Map planets and
+sell data to other players</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">5 Transport
+materials, robots or ships for other players.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">6 Build facilities
+on remote planets and auction to other players.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">7 Repair robots,
+ships or facilities for other players.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">8 Refuel or
+recharge robots or ships for other players.</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">9. Sell supplies
+to operate facilities</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">10. Contract out
+research facilities</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">11 Quests ?</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">How
+do I use my CorprateHQ?</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Your corporate
+Head Quarters is a facility.  It has a few normal operations you need
+to be aware of.  It has Landing Zone, Security technology,
+HumanResearch, and PowerUtility.  It also has complete immunity to
+damage and attack.  Stockpiles, Robots and Ships must be at this
+location to be consigned to an auction.  Stockpiles here can also be
+sold on the market.  Material, robots, ships or prefabs will be
+delivered here.  Your corprateHQ doesn't have a limit to the amount
+of material that can be held within it.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Because your
+CorprateHQ has Landing Zone technology you should land directly into
+it.  So if you CorprateHQ is F23 and location at 1.3.s0.01.01, you
+would MOVE 01.03.S0.01.01.F23 from orbit to land inside the facility.
+ You can move from your Corporate HQ directly into orbit (IE MOVE UP
+or MOVE 1.3) and you can move from your <SPAN LANG="de-DE">Corprate
+HQ</SPAN> to the surface outside (IE MOVE EXIT or MOVE 1.3.s0.01.01).</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Because your
+CorprateHQ has security technology, you don't have to worry about
+other players raiding your stockpiles held inside.  The only way
+another player can enter your CorprateHQ is if you bring him in in
+the cargo bay of your own robot or ship.  Once inside the robot/ship
+cannot leave on its own either.  It must be carried out in the cargo
+bay of one of your units.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Because your
+CorporateHQ has PowerUtililty, it can recharge robots same as normal
+power facilities.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Corporate HQ are
+special facilities and cannot be given away or auctioned off.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">Glossary</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Technology</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Technologies are
+the foundation of all ability.  You use technology to design ability
+into robots or ships.  Then these  designs are realized as design
+technology into robot or ships.  You need all the precursor
+technologies to research a new technology.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Functionality</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Hey if you want
+to do it you must have the ability.  Functionality is the realization
+of a technology. These are found in Facility design and active design
+(robots and ships).  They tell you what the complete item is capable
+of.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Prefabs</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	These are partial
+facilities.  They don't work yet and are designed to be move and then
+constructed. Prefabs become the property of any corporation who's
+robot or ship loads it.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Facilities</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	These working
+structures provide ability to robots and are use by robots to do
+tasks.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Robots and Ships
+(AKA Actives, Units)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	These are also
+called Actives or Units.  They are programmable and can do tasks. 
+They can log results and return that info to your corporate report.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Materials</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	These include RAW
+or Natural materials that you can COLLECT from planet surfaces, and
+also include REFINED materials that are more useful materials having
+their impurities removed, and also include produced materials that
+require multiple refined or raw materials to build.  These produced
+materials are the most valuable and are used to build robots and
+prefabs.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Refining</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Consumes raw
+materials and produces equal number of refined material</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Producing</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Consumes raw or
+refined materials and produces equals mass of refined material.  Some
+production requires more than one raw or refined material, in that
+case you must produce in amounts so that the mass used will equals
+the mass created.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Constructing</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Building a
+facility from a prefab.  The facility is given a unique ID after
+completion. Once prefab is constructed its owner is registered by the
+completing robot.  This registry is permanent and can only be changed
+by auctioning the facility off or other official means of transfer. 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Salvaging</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	If its broken,
+don't fix it just salvage it.  You collect valuable Spare Parts. from
+junked facilities and units.  But you can only salvage them once they
+are completely destroyed.  I'm sure you can find a way to speed them
+along.  Robot can salvage on their own with the proper technology.  A
+facility can give any robot the ability to salvage faster even with
+out its own ability.  By combining the two your robot can salvage at
+incredible speed.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Repairing</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	When you see your
+things wearing down, you can have the repaired.  You can repair
+robots, ships or facilities.  Facilities report each turn on there
+status, while robot and ships must be programmed to log their damage.
+(i.e. LOG $_damage).  Repairs use Spare Parts. based on the mass of
+the object being repaired.  A 100 ton facility that is 20% damaged
+will require 20 tons of spare parts to repair full.  Repairing with
+10 tons will result in a (10/20=50%) 50% reduction in damage (to 10%
+or less).  Robot can repair on their own with the proper technology. 
+A facility can give any robot the ability to repair faster even with
+out its own ability.  By combining the two your robot can salvage at
+incredible speed.  Robots cannot repair themselves.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">Appendix
+A Technology Limits</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm">	CONSTRUCT requires Heavy Work Arms</P>
+<P STYLE="margin-bottom: 0cm">	COLLECT requires a Collector Facility
+and Heavy Work Arms</P>
+<P STYLE="margin-bottom: 0cm">	LOAD requires Light Work Arms or Heavy
+Work Arms or Crane</P>
+<P STYLE="margin-bottom: 0cm">		(mobile robots can load themselves by
+using MOVE to enter ships or robots)</P>
+<P STYLE="margin-bottom: 0cm">		(i.e. MOVE INSIDE.A12 or MOVE A12)</P>
+<P STYLE="margin-bottom: 0cm">	REFINE requires a Refinery Facility
+and Heavy Work Arms</P>
+<P STYLE="margin-bottom: 0cm">	PRODUCE requires a Production Facility
+and Heavy Work Arms</P>
+<P STYLE="margin-bottom: 0cm">	SALVAGE requires a Salvage Facility or
+Salvage ability and Heavy Work Arms</P>
+<P STYLE="margin-bottom: 0cm">	SCAN requires various technologies</P>
+<P STYLE="margin-bottom: 0cm">	REPAIR requires a Repair Facility or
+Repair ability and Heavy Work Arms</P>
+<P STYLE="margin-bottom: 0cm">	UNLOAD requires Light Work Arms or
+Heavy Work Arms or Crane 
+</P>
+<P STYLE="margin-bottom: 0cm">		</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">MOVEMENT
+Technology requirements</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		unload/load self</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		exit/enter
+facilities	SurfaceTypes		escape/reentry</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><SPAN LANG="en-US">EVA
+Jets</SPAN>		y*/y*			 		n/y****</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Wheels			y/y		WwPp			n/n</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Tracks			y/y		WwPpb		n/n</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Hexapod		y/y		WwPpbB		n/n</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Bipod			y/y		WwPpbBm		n/n</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Wings			n/n		WwPpbBmM**	n/n*+*+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">HoverFit		n/n		WwPpbB**		n/n	</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PropulsionJets	y/y		WwPbbBmM		n/n</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">BoringDrill		n/n		***			n/n</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Rocket1g		n/n					y/y</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Rocket2g		n/n					y/y</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Rocket3g		n/n					y/y</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">IonDrive		n/n					n/y****</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Parachute		n/n					n/y*++*++,**+**+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Airbag			n/n					n/y*++*++</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">StarGate	*intrasolarsystem
+movement</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">* only works in
+orbit</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">** only work if
+planet has atmosphere 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">*** subsurface
+movement only</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">**** reentry will
+result in crash</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">**+**+ reentry
+without atmosphere will crash</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">*++*++ allows
+reentry at &frac12; endurance</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">*+*+ allows
+reentry at &frac14; endurance</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">(escape and
+reentry are possible to facility only if facility has Landing Zone
+technology)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">(load and unload
+self include entering and exiting robots, ships and facilities.  Only
+EVAJets allow you to load/enter orbital facilities)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">Appendix
+B Sample orders corporate</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>- - -
+ Signup sample - - -</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>@LOGIN
+SIGNUP new</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	realname:
+John Doe</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	corpname:
+Mandorxic</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	ticker:
+mdx</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	password:
+newpassword</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	location:
+01.03.S0.25.57</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>@END</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>- - -
+produced robot, ship and prefab - - -</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>@LOGIN
+ORDERS Mandorxic newpassword</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	NOOP</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	NOOP</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	PRODUCE
+AD1</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	PRODUCE
+AD2</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	PRODUCE
+FD2</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>@END</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>- - -
+program ship to move to Mars - - -</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>@LOGIN
+ORDERS Mandorxic newpassword</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	PROGRAM
+TestProgramName Move ship to mars</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>		MOVE
+01.03</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>		MOVE
+01.04</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>		MOVE
+01.04.S0.5.5</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>		EXIT</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	END</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	RESET
+A25</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	UPLOAD
+A25 TestProgramName</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	INIT
+A25</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3> 		purchase AD1</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>		purchase FD2</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>		consign SP123 40000 5</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>		bid SP22 50000 </FONT>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>@END</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>- - -
+combine several commands - - -</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>	@LOGIN orders Xenofrogula
+nopass</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>		PROGRAM TestProgram</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>			VAR $a</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>			SET $a=$_location</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>			LOG $a</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>			MOVE 01.03</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>			EXIT</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>		END</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>	</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>		RESET A1</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>		UPLOAD A1 TestProgram</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>		INIT A1</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>		</FONT></P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=3>	@end</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">Appendix
+C Sample program robots</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">---SAMPLE
+LOCATION PARSING PROGRAM---</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+scanToLoad This program parses the first scanned material name</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	set
+$arg1=1.GoldOre,1.GemStones; similiar data as scan resources</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	set
+$arg2=$arg1@($arg1#.+1);cuts off &ldquo;1.&rdquo;</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	if
+$arg2#,&gt;=0 then set $arg2=$arg2@@($arg2#,);cuts off &ldquo;,1.GemStones&rdquo;</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	load
+$arg2</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	exit</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">end</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">reset
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">upload
+A1 test115</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">init
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">------END------</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">---SAMPLE
+WANDERING MOVE PROGRAM -----</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+test113 description</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	move
+A1;board ship</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	remove:move
+1.3.1.<A HREF="http://s0.1.2/">s0.1.2</A>;try to exit ship at
+destination</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	if
+$_location#S0&lt;1 then goto remove;try move again if not there yet</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">end</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">reset
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">upload
+A1 test113</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">init
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">------END------</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">---SAMPLE
+SCAN RESOURCE PARSING AND WALKING PROGRAM---</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+test115 description</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.03</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ set $arg2=1;</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">begin:
+NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ set $arg2=$arg2+1;</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log arg2 has value $arg2</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.03.s0.01.&amp;$arg2</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG RESOURCES</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCAN RESOURCES</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ if $arg1#.&gt;0 THEN GOTO COLL</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ if $arg2&gt;63 then goto STOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log MOVING ON</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ goto begin</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">COLL:NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log BEGIN COLLECTING $arg1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ set $arg1= $arg1 @ 2</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">DO:NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ COLLECT $arg1 1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ set $arg1=0</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ goto begin</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">CUT:NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ set $arg1=$arg1#(($arg1#,)-$arg1##)</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ goto DO</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">STOP:NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">EXIT</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+if $arg1#,&gt;0 then goto CUT</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">end</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">reset
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">upload
+A1 test115</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">init
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">------END------</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">---SAMPLE
+MOVE INSIDE AND EXIT PROGRAM---</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+test114 description</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ move 01.03.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">a:log
+time=$_time at $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ move 01.03.s1.01.01</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log time=$_time at $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log now enter</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ move INSIDE.A2</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log time=$_time at $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log now exit</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ move 01.03.s1.01.01</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log time=$_time at $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ goto a</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">end</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">reset
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">upload
+A1 test114</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">init
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">------END------</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">---SAMPLE
+LOADING AND UNLOADING PROGRAM---</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+test115 description</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ move 01.03.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">a:log
+time=$_time at $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ move 01.03.s1.03.05.F2</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log loading 10 gold</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ load gold 10</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log cargo = $_cargo</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log unloading 10 gold</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ unload gold 10</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log cargo is $_cargo</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log loading stockpile 15</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ load SP15</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log cargo is $_cargo</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log unloading stockpile 15</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ unload SP15</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log cargo is $_cargo</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ goto a</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">end</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">reset
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">upload
+A1 test115</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">init
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">------END------</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">---SAMPLE
+SCAN WHILE MOVING PROGRAM---</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+test115 description</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.03</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ VAR beg</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ set beg= $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ VAR last</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">begin:
+NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ set $last=$_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log start location is $_beg</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE WEST</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log current location is $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ if $_location==$last then GOTO BLOCKED </FONT></FONT>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ if $_location==$beg then GOTO stop </FONT></FONT>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG RESOURCES</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCAN RESOURCES</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log MOVING ON</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ goto begin</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">BLOCKED:NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log blocked at location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ EXIT</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">STOP:NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log circumnavigated world</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ EXIT</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">end</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">reset
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">upload
+A1 test115</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">init
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">------END------</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">---SAMPLE
+MOVE AROUND PLANETS ADVANCE PROGRAM---</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+test115 description</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.03.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log location is $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.04.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log location is $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.04.s1.01.01</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log location is $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.04.s1.01.01.l1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log location is $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.04.s1.01.01</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log location is $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.04.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log location is $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.03.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log location is $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.03.s1.03.05</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log location is $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ MOVE 01.03.s1.03.05.f1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log location is $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ EXIT</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">end</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">reset
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">upload
+A1 test115</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">init
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">------END------</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">---SAMPLE
+MOVE AROUND SOLAR PROGRAM---</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+A12 description</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">a:move
+01.03.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log time is $_time at $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ move 01.04.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log time is $_time at $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ move 01.01.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log time is $_time at $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ move 01.05.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log time is $_time at $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ move 01.07.00</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log time is $_time at $_location</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ goto a</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">end</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">reset
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">upload
+A1 A12</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">init
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">------END------</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">---SAMPLE
+ALL SCAN PROGRAM---</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+test115 description</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG SURFACE</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG RESOURCES</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG ROBOTS</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG SHIPS</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG OBJECTS</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG FACILITIES</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG PREFABS</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG TARGETS</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCANLOG TEMP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ SCAN TEMP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log The temp is $arg1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ EXIT</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">end</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">reset
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">upload
+A1 test115</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">init
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">------END------</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">---SAMPLE
+SUBROUTINE PROGRAM---</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+test115 description</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ goto b</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">subB:
+NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log WORKING SUBB1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log WORKING SUBB2</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log WORKING SUBB3</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ return</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">subA:
+NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log WORKING SUBA1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log WORKING SUBA2</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log WORKING SUBA3</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ return</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log BAD LINE1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log BAD LINE2</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">b:NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log WORKING MAIN1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log WORKING MAIN2</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log CALL SUB</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ gosub subA</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log RETURNED FROM SUB</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ gosub subB</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log RETURNED FROM SUB</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ gosub subA</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log RETURNED FROM SUB</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log WORKING MAIN3</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log WORKING MAIN4</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">c:
+NOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ log END</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">
+ exit</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">end</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">reset
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">upload
+A1 test115</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">init
+A1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">------END------</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">-
+- -  Sample subroutine - - -</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">PROGRAM
+simptest test stuff</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	BEGIN:noop</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	variable
+$a</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	set
+$a=1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	LOOPA:noop</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	log
+WORKING IN LOOP $a TIMES</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	set
+$a=$a+1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	if
+$a&lt;5 then goto LOOPA</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	log
+DONE LOOP</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	GOSUB
+SUBA</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	EXIT</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">SUBA:noop</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	LOG
+inside subroutine $a</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	if
+$a&lt;0 then set $a=$a*-1</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	LOG
+abs of variable a is $a</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">	RETURN</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT FACE="courier, monospace"><FONT SIZE=2 STYLE="font-size: 9pt">END</FONT></FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">Appendix
+D Timing</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">ATTACK =1 hour</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">COLLECT  1hour + 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	7=8tons/day
+(gasses)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	6=6tons/day
+(liquids)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	5=3 tons/day, 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	4=2 ton2/day, 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	3=1 ton/1 days, 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	2= 4 ton2/week/ 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	1=1 ton/week</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	0=never</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">CONSTRUCT  1hour +
+20 tons/day</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">GOTO =  10 minutes</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">GOSUB = 10 minutes</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">IF THEN ELSE: 10
+minutes (plus choice)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">LOAD  
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	with light work
+arms 1hour + 1 hour/ton</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	with heavy work
+arms 1hour + 30 minutes/ton</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	with crane 1hour
++ 10 minutes/ton</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">LOG = 30 minutes</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">MOVE 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"> 	load/unload self
+= 1 hour</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	surface to
+surface=</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Wings = 6 hours</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Connector
+Transport &amp; Wheel = 1/3 day</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Connector
+Transport = 1 Day (any terrain)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		CcP or p =1 day 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		W or w = 2 days</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		B or B = 2 days</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		M or m = 4 days</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	to or from
+subterranean = 2 day</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">		Connector tunnel
+= 1 day</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	reentry = 6 hours</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	escape = 1 day</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	interplanetary =
+see locations</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	intrasolar = 40
+years +</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">NOOP = 10 minutes</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PRODUCTION  1hour
++ 4 tons/day</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RECHARGE: 1hour +1
+hour</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">REFUEL: 1hour +1
+hour</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">REFINE  1hour +5
+tons/day</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">REM = 10 minutes</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">REPAIR: 1hour +</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	3 tons/day robot
+only, 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	15 tons/day
+facility only, 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	30 tons/day robot
+and facility</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RETURN = 10
+minutes</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SALVAGE  1hour +</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	3 tons/day, 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	15 tons/day
+facility only, 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	30 tons/day robot
+and facility</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SCAN   1 hour</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SCAN SECTOR  (12
+HOURS*SIZE of planet)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SEND 1 hour</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SET = 10 minutes</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">VAR = 10 minutes</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">WAIT  (varies)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">Appendix
+E Materials</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Sector scans
+report mineral types as follows:</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">I/i = Inert</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">C/c = Common
+compounds</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">M/m = Base metals</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">H/h = Heavy
+minerals</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">E/e = Rare earths</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">X/x = Exotic</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><B>Raw
+Material	Display Symbol</B></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Acids 			C</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">AluminumOre 	M</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">AlienLifeForm 	X</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">AminoAcids 		X</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Chloride 		C</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">CopperOre 		M</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Darkmatter 		X</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Floride 		C</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fossils 		X</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">GemStones 		X</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">GoldOre 		H</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Hydrocarbons 	I 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">IronOre 		M</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">LanthanumOre 	E</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">LeadOre 		H 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PlatniumOre 		M</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">MagnesiumOre 	C</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Silicates 		I 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SilverOre 		M</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">TitaniumOre 		M</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">UraniumOre 		H</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Water 			I 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">YtterbiumOre 	E</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><B>Refined
+Material	Refined from</B></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Aluminum
+		AluminumOre 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Carbon
+		Hydrocarbons 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Chlorine
+		Chloride 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Copper 		CopperOre
+
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Florine 		Floride 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Gold 			GoldOre 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Iron 			IronOre 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Lanthanum
+		LanthanumOre</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Lead 			LeadOre 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Magnesium
+		MagnesiumOre</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Nitrates 		Acids 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Petroleum
+		Hydrocarbons 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Phosphates 		Acids
+
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Platinum
+		PlatniumOre 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Silver
+			SilverOre 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Silicon
+		Silicates 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Titanium
+		TitaniumOre 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Uranium
+		UraniumOre 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Ytterbium
+		YtterbiumOre</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><B>Produced
+Material	Produced from</B></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">AlienRelics
+		DarkMatter 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">ComputerParts
+	Silicon</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Duralloy
+		Magnesium, Aluminum</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">ElectronicParts
+	Plastic, Carbon, Copper, PreciousMetals, Silicon 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">EngineParts
+		RareEarths, Lubricants, HibreadMetals</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fabric
+			Lubricants, Carbon 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">FerroConcrete
+	Iron, Silicates</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fertilizer
+		Phosphates, Nitrates 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">GemStones		Carbon,
+Aluminum</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Halogen
+		Chlorine, Florine 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">HibreadMetals
+	Steel, Aluminum, Titanium, Copper, Iron, PreciousMetals 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Lubricants
+		Hydrocarbons 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">MechanicalParts
+	Lubricants, Iron, Copper</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Munitions 		Nitro 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Nitro
+			Phosphates, Nitrates 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PicocomputerParts
+	Silicon</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Plastic
+			Lubricants 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Plutonium
+		Uranium 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">PreciousMetals
+	Gold,Silver, Platinum</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RareEarths
+		Lanthanum, Ytterbium</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">RocketFuel
+		Petroleum 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Rubber
+		Lubricants 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">SensorParts
+		Halogen, PreciousMetals, Copper, Iron 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Steel
+			Carbon,Iron</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Spare Parts.
+		ElectronicParts, MechanicalParts, EngineParts, SensorParts,
+ComputerParts</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">RECENT
+CHANGES</FONT></P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">0.8.1</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Documented SELL
+&lt;MATERIAL&gt; for all available</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fixed bug in case
+sensitive Auction</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fixed bug in EXIT
+no exiting</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Documented 1
+corporation per player</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fixed Reply-To and
+Sender for sendmail</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fixed Looping
+email error and system crash on bad emails</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Optimized mail
+receipts for bad logins by not loading universe unless valid login
+found</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">0.8.2</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Vastly improved
+Orders checking</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Added Design cost
+mult estimation</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Added Program
+syntax checking</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fixed patent
+system crash with no args</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fixed research
+system crash with no args</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">documented SETCORP
+for ranking display</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fixed bug with &quot;.&quot;
+in user of email address</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fixed error to
+block nested IF</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">0.8.3</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fixed bug in LOAD
+and UNLOAD with material Ids</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Documented wings
+movement time</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Fixed move
+documentation slightly</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">0.9.0</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">Added $_id
+variable for unit id</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">documented max
+150% additional cost for designs</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">rebuild material
+graphic dependancy chart to match manual (fixed iron overlap)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">added material
+dependancy graph to manual</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">added technology
+dependancy graph to manual</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">changed repair
+consumption of spareparts to 1 ton per 4 tons damage</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">change junk base
+price to 4K</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">added crane
+technology</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">changed loading
+and unloading 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	light arms =
+1tons/hour+hour setup</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	havy arms =
+2tons/hour +hour setup</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	crane =
+6tons/hour +hour setup</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">documented var
+declaration are cleared upon new upload</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">documented
+multiple var declaration on one line</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">documented that
+multiple execution var declaration have no effect (only cost time)</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">documented that
+separate uploaded programs can access labels of each other.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">added
+HybreadMetals to Engine parts</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">reduced cost of
+robot and ship design by 50%</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">changed research
+cost to 50K 
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>add
+GIVE &lt;CORP&gt; &lt;ID&gt; for group sales</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>protected
+Corporate HQ from GIVE and CONSIGN</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>documented
+that Corporate HQ cannot be GIVEN or CONSIGNED</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>0.9.1</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>Manual
+fixed</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>Salvage
+now autodetects junk stockpiles</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>Order
+checker correctly identifies SECTOR options for SCAN</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>Profit
+and Loss fixed in Corporate Ranking</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>0.9.2</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Updated
+SETTECH documentation</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Fixed
+RECYCLE and INCENERATE to special production</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Fixed
+rated R for vacuume protection</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Fixed
+PAY ALL and Corporate name ALL and XXX excluded</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>1.0</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Only
+4 facilities per location</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Facility
+have limited space (200 tons)</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	DELAY
+command to allow you to submit orders in advance</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Taxes
+for earth based operation (facilities and robots)</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Loans
+and interest and tax penelties</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Remote
+load (robot can load from facilities while outside)</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Design
+improvements 10% not 20% cost for multiplers in design</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Program
+limits based on CPU of robot or ship</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Facility
+based research. You must have a reserach facility to do research.</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Contracts.
+ Allow you to let others pay to use your research facilities.</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Unit
+by Unit logging.  Verbos or Brief will override CORPORATE loging</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Multiple
+Solarsystems (currently 5) and Stargate technology for one way</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>travel</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Minor
+planets</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Many
+other minor changes and technologies</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>1.0.1</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Provides
+and Consumes added for facilities to be activated</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	DISABLE
+and ENABLE command added to corporate orders</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	MAXCONTRACT
+added to corporate orders</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	MAXLOAN
+&lt;amt&gt; added to corporate orders</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	MAXFEE
+added to corporate orders</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	SETFEE
+added to corporate orders</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Technologies
+with consumables are only available at ACTIVE Facilities(ie have all
+available consumables)</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Technologies now
+list their PREREQUISITS.</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Technologies
+dependancy chart removed from manual</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm">	Market Materials
+not list PRODUCE and REFINE precursors</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Facilities
+report DISABLED, INACTIVE or ACTIVE in turn report</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Technologies
+report PROVOIDE and CONSUME</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	FacilityDesigns
+report NET provides and consume (ie +1 power -2 power = -1 power
+consume)</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Change
+material collection time  5=3/day, 4=2/day, 3=1/day, 2=4/wk, 1=1/wk</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Added
+default SolarPowerPlant</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Fixed
+SETTECH to support PUBLIC,PRIVATE,PARTNER,LEASE,RESEARCH,ALL or NONE.</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	AlienLifeForm
+are produceable from fossils and aminoAcids</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>1.0.2</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Hydration
+is a supplied item not water.  Water is a material not a suppy</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	documented
+DISABLE and ENABLE</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	What
+do I start with added.</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><FONT SIZE=3>	Corporations
+all start with Apollo and Ablejack.  Cash lowered to 1.5 million.</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-bottom: 0cm"><FONT SIZE=4 STYLE="font-size: 16pt">TODO</FONT></P>
+<P STYLE="margin-left: 1.27cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><FONT SIZE=3>Add
+working amount for Load,Unload,Collect,refine,produced, repair,
+salvage</FONT></P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><FONT SIZE=3>Add 1
+ton per cargo multiplier of duralloy &gt;0</FONT></P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><FONT SIZE=3>Add 1
+ton of (Acids and aluminum? batteries?) for endurance multiplier &gt;0</FONT></P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><FONT SIZE=3>add
+technologies and functions</FONT></P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><FONT SIZE=3>	Boi-weapon
+- from alienlifeform</FONT></P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><FONT SIZE=3>	</FONT></P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><FONT SIZE=3>FIRST
+RELEASE</FONT></P>
+<P STYLE="margin-left: 3.81cm; margin-bottom: 0cm">reset,upload,init
+cost when not on earth (maybe not?)</P>
+<P STYLE="margin-left: 3.81cm; margin-bottom: 0cm">	</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm">Quests- hide and
+seek robots,  escape maze,  bus/shuttle service,  capture</P>
+<P STYLE="margin-left: 2.54cm; margin-bottom: 0cm"><BR>
+</P>
+<DIV TYPE=FOOTER>
+	<P ALIGN=CENTER STYLE="margin-bottom: 0cm"><SDFIELD TYPE=PAGE SUBTYPE=RANDOM FORMAT=PAGE>43</SDFIELD>
+	of <SDFIELD TYPE=DOCSTAT SUBTYPE=PAGE FORMAT=PAGE>43</SDFIELD></P>
+</DIV>
+</BODY>
+</HTML>

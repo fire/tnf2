@@ -1,0 +1,8 @@
+Add liquid and gass scan technology - 
+
+Add partial failure to robots and ships for damage
+  CPU - no upload, init, reset
+  DRIVE - no move
+  HULL - unload all, no load
+  SENSOR - autofail or errors and bogus
+  

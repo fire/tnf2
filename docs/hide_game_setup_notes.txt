@@ -1,0 +1,143 @@
+NOTES
+
+SETUP OPTIONS
+	XXX owns all basic techs - lease for 25K
+	XXX owns all advanced tech lv 1 -  lease for 100K (sell for 300K)
+	XXX own all tech
+  	  leases at lv 0 = 25K, 1=50K, 2=100K, 3=200K
+	buy @ 2x (50K-400K)
+	must lease all designs created
+HIDE AND SEEK QUEST
+
+robot on planet hiding
+  move randomly
+  on surface
+    with various mobility/propulsion jets
+  carring 1M in material
+  prize 2 return to HQ and get to keep it +reward
+(advanced has subterainn & 2 mill)
+  program hide
+    again:set $arg1=$_Random*5
+    if $arg1<1 then move NORTH
+    if $arg1>=1 && $arg1<2 then move SOUTH
+    if $arg1>=2 && $arg1<3 then move EAST
+    if $arg1>=3 && $arg1<4 then move WEST
+    if $arg1>=4 && $arg1<5 then move EXIT
+    goto again
+  end
+  program hide2
+    again:set $arg1=$_Random*7
+    if $arg1<1 then move NORTH
+    if $arg1>=1 && $arg1<2 then move SOUTH
+    if $arg1>=2 && $arg1<3 then move EAST
+    if $arg1>=3 && $arg1<4 then move WEST
+    if $arg1>=4 && $arg1<5 then move UP
+    if $arg1>=5 && $arg1<6 then move DOWN
+    if $arg1>=6 && $arg1<7 then move EXIT
+    goto again
+  end
+
+
+DEFENSE RESEARCH QUEST
+
+defense sites
+  facility and 4 robots and 1 repair
+     fac = sec, pow, defense, armor
+     rob= radar, weapon, armor
+  rob - scan for target and attack
+  site has 5 mill
+  program rep
+    more:scan target
+    if $arg1#.<0 then goto repair
+    if $arg1#,>0 then set $arg1=$arg1@@($arg1#,)
+    set $arg1=$arg1@(($arg1#.)+1)
+    set $arg1=$arg1@@($arg1#.)
+    attack $arg1
+    if $_endurance<1 then gosub rec
+    goto more
+    rec:move F12
+    recharge
+    move exit
+    return
+    repair:repair A1
+    repair A2
+    repair A3
+    repair A4
+    repair F12
+    goto more
+  end
+  program defend
+    more:scan target
+    if $arg1#.<0 then goto more
+    if $arg1#,>0 then set $arg1=$arg1@@($arg1#,)
+    set $arg1=$arg1@(($arg1#.)+1)
+    set $arg1=$arg1@@($arg1#.)
+    attack $arg1
+    if $_endurance<1 then gosub rec
+    goto more
+    rec:move F12
+    recharge
+    move exit
+    return
+  end
+
+
+THE ALIENS ARE COMMING QUEST
+
+solar 2 aliens
+  patrol home system
+  invade other systems
+  8 ships - patroll
+  alien base in solar 3 with stargate
+  bombers come from solar 3
+  invasion = ship & 4 robots
+  create 1 patrol / 10 turns
+  create 1 bomber / 5 turns
+  use stargate to arrive at system
+  run standard scan for targets
+    attack with weapon - robot & ships
+  call in bomber for facilities
+
+var $pat
+set $pat=01.01,01.02,01.03,01.03.01,01.04
+
+patrol:
+  gosub rot
+  move $pat@@($pat#,)
+  gosub killall
+
+next:set $arg1=$pat@@($pat#,)
+  set $arg2=$pat@($pat#,+1)
+  set $pat=$arg2&,&$arg1
+return
+
+rot:if $_Random<.25 then return
+  set $arg1=$pat@@($pat#,)
+  set $arg2=$pat@($pat#,+1)
+  set $pat=$arg2&,&$arg1
+return
+
+killall:scan target
+    if $arg1#.<0 then return
+    if $arg1#,>0 then set $arg1=$arg1@@($arg1#,)
+    set $arg1=$arg1@(($arg1#.)+1)
+    set $arg1=$arg1@@($arg1#.)
+    attack $arg1
+return
+
+repairall:set $arg2=0
+    start:if $arg2==0 then scan robot
+    if $arg2==1 then scan ship
+    if $arg2==2 then scan facil
+    if $arg2>2 then return
+    if $arg1#.<0 then return
+    more:if $arg1#,>0 then set $arg3=$arg1@@($arg1#,) else set $arg3=$arg1
+    if $arg1#,>0 then set $arg1=$arg1@($arg1#,+1) else set $arg1=-
+    set $arg3=$arg3@(($arg3#.)+1)
+    set $arg3=$arg3@@($arg3#.)
+    repair $arg1
+    if $arg1#,<0 then set $arg2=$arg2+1
+    if $arg1#,<0 then goto start
+    goto more
+return
+
