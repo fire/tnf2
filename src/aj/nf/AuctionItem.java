@@ -1,7 +1,6 @@
 
 package aj.nf;
 
-import java.io.*;
 import java.util.Vector;
 
 public class AuctionItem {

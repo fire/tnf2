@@ -1,9 +1,14 @@
 package aj.nf;
 
 
-import java.util.*;
-
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.StreamTokenizer;
+import java.io.StringReader;
+import java.util.Vector;
 
 
 /**
@@ -762,7 +767,7 @@ public class GmlPair
   public static GmlPair parse (StreamTokenizer ST) throws IOException
   {
 
-    if (ST.ttype == ST.TT_EOF)
+    if (ST.ttype == StreamTokenizer.TT_EOF)
       {
 	throw new IOException ("GML parse error: Empty parse string");
       }
@@ -774,7 +779,7 @@ public class GmlPair
 
     ST.nextToken ();
 
-    if (ST.ttype == ST.TT_EOF)
+    if (ST.ttype == StreamTokenizer.TT_EOF)
       {
 
 	throw new IOException ("GML parse error: Name only, value missing");
@@ -788,7 +793,7 @@ public class GmlPair
 
 	ST.nextToken ();
 
-	if (ST.ttype == ST.TT_EOF)
+	if (ST.ttype == StreamTokenizer.TT_EOF)
 	  {
 
 	    throw new
@@ -796,7 +801,7 @@ public class GmlPair
 
 	  }
 
-	while (ST.ttype != ']' && ST.ttype != ST.TT_EOF)
+	while (ST.ttype != ']' && ST.ttype != StreamTokenizer.TT_EOF)
 	  {
 
 	    GmlPair g = GmlPair.parse (ST);
@@ -825,7 +830,7 @@ public class GmlPair
 
       }
 
-    else if (ST.ttype == ST.TT_NUMBER)
+    else if (ST.ttype == StreamTokenizer.TT_NUMBER)
       {
 
 	double v = ST.nval;
@@ -836,7 +841,7 @@ public class GmlPair
 
       }
 
-    else if (ST.ttype == ST.TT_WORD || ST.ttype == '\"')
+    else if (ST.ttype == StreamTokenizer.TT_WORD || ST.ttype == '\"')
       {
 
 	String v = ST.sval;

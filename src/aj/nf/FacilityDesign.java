@@ -1,7 +1,6 @@
 package aj.nf;
 
-import java.util.*;
-import java.io.*;
+import java.util.Vector;
 /**
  *
  *@author     judda 
@@ -262,8 +261,8 @@ public class FacilityDesign implements ITThing {
 					cnt1 = Integer.parseInt(t.substring(0, t.indexOf("x")));
 					t = t.substring(t.indexOf("x") + 1);
 				}
-				if (Universe.getMarket().getMarketName(t)!=null) {
-					t=Universe.getMarket().getMarketName(t);
+				if (Market.getMarketName(t)!=null) {
+					t=Market.getMarketName(t);
 				}
 				s += cnt1 + "x" + t;
 				if(a + 1 < v.size()) {
@@ -280,8 +279,8 @@ public class FacilityDesign implements ITThing {
 					cnt1 = Integer.parseInt(t.substring(0, t.indexOf("x")));
 					t = t.substring(t.indexOf("x") + 1);
 				}
-				if (Universe.getMarket().getMarketName(t)!=null) {
-					t=Universe.getMarket().getMarketName(t);
+				if (Market.getMarketName(t)!=null) {
+					t=Market.getMarketName(t);
 				}
 				s += cnt1 + "x" + t;
 				if(a + 1 < v.size()) {

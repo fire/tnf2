@@ -465,7 +465,7 @@ public class Location {
 
 	public static void main(String s[]) {
 		Universe u=new Universe();
-		u.load();
+		Universe.load();
 		Location L1,L2;
 
 System.out.println("good moves");//good cases

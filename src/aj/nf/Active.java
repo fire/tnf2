@@ -1,7 +1,10 @@
 package aj.nf;
 
-import java.util.*;
-import java.io.*;
+import java.util.Date;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Random;
+import java.util.Vector;
 
 /**
  *
@@ -1263,12 +1266,12 @@ if (Main.DEBUG) System.out.println("MYDEBUG: program truncated.  Too long");
 			int totalMass = 1;
 			NFObject nfo = Universe.getNFObjectById(n[1]);
 			//find NFOID
-			if(nfo == null && Universe.getMarket().getMarketName(n[1]) == null) {
+			if(nfo == null && Market.getMarketName(n[1]) == null) {
 				if (Main.DEBUG) log ("DEBUG: error material name in LOAD");
 				return ERRORTIME;
 			}
 			if(nfo == null ) {
-				n[1]=Universe.getMarket().getMarketName(n[1]);
+				n[1]=Market.getMarketName(n[1]);
 				totalMass=cc;
 				if (Main.DEBUG) log ("DEBUG: material load found");
 				if (Main.DEBUG) log ("DEBUG: cargo capacity = "+totalMass);
@@ -1338,8 +1341,8 @@ if (Main.DEBUG) System.out.println("MYDEBUG: program truncated.  Too long");
 			int totalMass = 0;
 			NFObject nfo = Universe.getNFObjectById(n[1]);
 			//find NFOID
-			if(nfo == null && Universe.getMarket().getMarketName(n[1]) != null) {
-				n[1]=Universe.getMarket().getMarketName(n[1]);
+			if(nfo == null && Market.getMarketName(n[1]) != null) {
+				n[1]=Market.getMarketName(n[1]);
 				totalMass = Universe.availableMaterial(Location.parse("INSIDE." + getId()), n[1]);
 				try {
 					if (n.length==3) 
@@ -1743,7 +1746,7 @@ if (Main.DEBUG) System.out.println("MYDEBUG: program truncated.  Too long");
 			}
 			else if(n.length == 3) {
 				try {	
-					String mat = Universe.getMarket().getMarketName(n[1]);
+					String mat = Market.getMarketName(n[1]);
 					int amt=(int)Stuff.parseDouble(n[2]);
 					MarketItem mi = Universe.getMarket().getItemByName(mat);
 					if (mi==null) return ERRORTIME;
@@ -2852,7 +2855,7 @@ if (Main.DEBUG) System.out.println("MYDEBUG: entrance blocked.  Facility full wi
 			if(nfo == null) {
 				//find material in stockpile
 				try {
-					String mat = Universe.getMarket().getMarketName(n[0]);
+					String mat = Market.getMarketName(n[0]);
 					if(mat == null) {
 						log("In line: " + workingCommand + " WARNING: unknown material " + n[0]);
 						return;
@@ -2918,7 +2921,7 @@ if (Main.DEBUG) System.out.println("MYDEBUG: entrance blocked.  Facility full wi
 			if(nfo == null) {
 				//find material in stockpile
 				try {
-					String mat = Universe.getMarket().getMarketName(n[0]);
+					String mat = Market.getMarketName(n[0]);
 					if(mat == null) {
 						log("In line: " + workingCommand + " WARNING: unknown material " + n[0]);
 						return;
@@ -2980,7 +2983,7 @@ if (Main.DEBUG) System.out.println("MYDEBUG: entrance blocked.  Facility full wi
 			}
 			if(matden> 0) {
 				try {
-					String mat = Universe.getMarket().getMarketName(n[0]);
+					String mat = Market.getMarketName(n[0]);
 					if(mat == null) {
 						log("In line: " + workingCommand + " WARNING: unknown material " + n[0]);
 						return;
@@ -3804,7 +3807,7 @@ if (Main.DEBUG) System.out.println("MYDEBUG: recycle max ="+industwast+"  incene
 				}
 				prodReq=prodReq.substring(prodReq.indexOf("x")+1);
 			}
-			prodReq=Universe.getMarket().getMarketName(prodReq);
+			prodReq=Market.getMarketName(prodReq);
 			if (prodReq==null) continue;
 			int collected = 0;
 			if (l1!=null) collected=Universe.takeMaterial(corpTick, l1, prodReq, unitcost*mult);
@@ -3832,7 +3835,7 @@ if (Main.DEBUG) System.out.println("MYDEBUG: recycle max ="+industwast+"  incene
 				}
 				prodReq=prodReq.substring(prodReq.indexOf("x")+1);
 			}
-			prodReq=Universe.getMarket().getMarketName(prodReq);
+			prodReq=Market.getMarketName(prodReq);
 			if (prodReq==null) return 0;
 			int ava =0;
 			if (l1!=null) ava= Universe.availableMaterial(l1, prodReq);

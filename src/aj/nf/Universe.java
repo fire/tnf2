@@ -1,7 +1,13 @@
 package aj.nf;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Hashtable;
+import java.util.Vector;
 /**
  *
  *@author     judda 
@@ -235,7 +241,7 @@ public class Universe {
 	//desnity 0=none, 4=plenty
 	public static int getMaterialDensity(Location l, String na) {
 		//change loc to outside of facility
-		na = market.getMarketName(na);
+		na = Market.getMarketName(na);
 		if(na == null) {
 			//System.out.println("MyError: bad name in density check");
 			return 0;
@@ -1064,7 +1070,7 @@ public class Universe {
 	//checks for available stockpiles at location
 	//returns amount available
 	public static int availableMaterial(Location l, String name) {
-		name= market.getMarketName(name);
+		name= Market.getMarketName(name);
 		int tot = 0;
 		for(int a = 0; a < allThings.size(); a++) {
 			if( !(allThings.elementAt(a)instanceof StockPile)) {
@@ -1081,7 +1087,7 @@ public class Universe {
 	//removes material from stockpiles.
 	//returns amount available taken (of availble or max asked for)
 	public static int takeMaterial(String tick, Location l, String name, int max) {
-		name= market.getMarketName(name);
+		name= Market.getMarketName(name);
 		int tot = 0;
 		Vector opts = new Vector();
 		//list all owned tick
@@ -1466,7 +1472,7 @@ public class Universe {
 			}
 			if (Main.DEBUG) System.out.println("need to consume "+amt+" of "+what );
 			if (what.startsWith("M")) {
-				String na = market.getMarketName(what);
+				String na = Market.getMarketName(what);
 				if(na != null) {
 				if (Main.DEBUG) System.out.println("Material full available");
 					int amt2=availableMaterial(f.getInsideLoc(), na);
@@ -1525,7 +1531,7 @@ public class Universe {
 					}
 				}
 				if (what.startsWith("M")) {
-					String na = market.getMarketName(what);
+					String na = Market.getMarketName(what);
 					if(na != null) {
 						if (Main.DEBUG) System.out.println("Material full consume");
 						takeMaterial(f.getCorpTick(), f.getInsideLoc(), na,  amt) ;

@@ -1,7 +1,10 @@
 package aj.nf;
 
-import java.util.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Vector;
 /**
  *
  *@author     judda 
@@ -36,7 +39,7 @@ public class GenPlanet {
 	public GenPlanet() {}
 	public void loadUniverse() {
 		Universe u = new Universe();
-		u.load();
+		Universe.load();
 	}
 
 	public void generateAll(String s[]) {

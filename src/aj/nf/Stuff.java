@@ -1,6 +1,7 @@
 package aj.nf;
 
-import java.util.*;
+import java.util.StringTokenizer;
+import java.util.Vector;
 
 /**
  *  Some tools that are general and may be used later. 

@@ -1,7 +1,13 @@
 package aj.nf;
 
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.util.Date;
+import java.util.Vector;
 
 /**
  *
@@ -82,18 +88,18 @@ public class Main {
 
 	public void executeTurn() {
 		if (DEBUG) System.out.println("executing turn "+new Date());
-		universe.load();
+		Universe.load();
 		logTiming("LOAD universe done");
-		universe.executeCorpCommands();
+		Universe.executeCorpCommands();
 		logTiming("executing corpcommands done");
-		universe.executeProgramables();
+		Universe.executeProgramables();
 		logTiming("executing programables done");
-		universe.save();
+		Universe.save();
 		logTiming("SAVE universe done");
 		logTiming("clear orders done");
-		universe.makeTurnReports();
+		Universe.makeTurnReports();
 		logTiming("build turn reports done");
-		universe.sendTurnReports();
+		Universe.sendTurnReports();
 		logTiming("sending turn reports done");
 		logTiming("all done finished");
 		logTiming(null);
@@ -163,12 +169,12 @@ public class Main {
 			send(reply, replyTo, "mail Error.");
 			return;
 		}
-		universe.load();
+		Universe.load();
 
-		Corp corp = universe.loginCorp(cname,cpass);
+		Corp corp = Universe.loginCorp(cname,cpass);
 		if (type.startsWith("SIGN") && cname.equalsIgnoreCase("NEW")) {
 			System.out.println("Signup found");
-			String ans = universe.newCorp(replyTo, t);
+			String ans = Universe.newCorp(replyTo, t);
 			if (ans.toUpperCase().indexOf("COMPLETE")>=0) {
 				reply.addElement(ans);
 				send(reply, replyTo, "Signup receipt");

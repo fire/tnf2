@@ -1,7 +1,6 @@
 package aj.nf;
 
-import java.util.*;
-import java.io.*;
+import java.util.Vector;
 /**
  *
  *@author     judda 
@@ -69,7 +68,7 @@ public class Facility implements NFObject {
 				}
 				//create M producables
 				if (what.startsWith("M")) {
-					String na = Universe.getMarket().getMarketName(what);
+					String na = Market.getMarketName(what);
 					if(na != null) {
 						//create stockpiple
 						NFObject nfo = new StockPile(getCorpTick(), na, amt, getInsideLoc());

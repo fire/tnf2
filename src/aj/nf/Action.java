@@ -1,5 +1,6 @@
 package aj.nf;
-import java.util.*;
+import java.util.Hashtable;
+import java.util.Vector;
 
 /**
  *@author     judda 

@@ -1,6 +1,5 @@
 package aj.nf;
 
-import java.awt.*;
 
 /**
  *  A double Point -last modify 1/7/98 
