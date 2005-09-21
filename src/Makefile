@@ -4,9 +4,6 @@ WWWDIR	=aj/nf
 CLSDIR	=.
 DOCDIR	=.
 
-##java 1.1 version (1.1.3 - 1.1.7+)
-#CPATH	=.:/usr/lib/jdk1.1/lib/classes.zip
-#java 1.2 version
 CPATH	=.
 
 JCCPATH	=-classpath $(CPATH)
