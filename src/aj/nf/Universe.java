@@ -144,7 +144,7 @@ public class Universe {
 			}
 		}
 		redesign();
-		//signup XXX
+		//signup XFG
 		Facility f = new Facility("XXX", "FD1", Location.parse("01.03.S0.0.0"));
 		Location ll = Location.parse(f.getLocation() + "." + f.getId());
 		Corp c = new Corp("Abandoned", "XXX", ll, "flandar@yahoo.com", "23DFasdfopqabn","SYSOP Access Only");

@@ -2288,7 +2288,7 @@ finishCommand="";finishTime=-1;
 			}
 			//SCAN STOCKPILES
 			else if(n[0].toUpperCase().startsWith("STO")) {
-				//XFG.SP1,XXX.SP123,BPS.SP352
+				//XFG.SP1,XFG.SP123,BPS.SP352
 				Location loc = this.loc;
 				if(n.length == 2)loc = Location.parse(n[1]);
 				if(loc == null || !loc.valid())loc = this.loc.reference(n[1]);
