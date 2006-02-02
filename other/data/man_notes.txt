@@ -1,0 +1,27 @@
+moves
+
+  #1 front mid kick
+    1 8 2 8
+  #1 front high kick
+    1 8 3 8
+
+  #2 front mid kick
+    1 9 4 9
+  #2 front high kick
+    1 9 5 9
+
+  #1 front high jump kick
+    1 9 8 3 8
+  #2 front high jump kick
+    1 8 9 5 9
+
+2 = #1 mid kick
+3 = #1 high kick
+4 = #2 mid kick
+5 = #2 high kick
+6 = forward punch high
+7 = reverse punch high
+8 = chamber #1 kick
+9 = chamber #2 kick
+10 = forward punch middle
+11 = reverse punch middle

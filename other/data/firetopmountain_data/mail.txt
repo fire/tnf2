@@ -1,0 +1,12 @@
+
+
+create new open challenge game
+
+TO:fm@gamerz.net
+FROM:flandar@yahoo.com
+SUBJECT:FM ORDERS
+USER flandar password
+NEWGAME Peltor OPEN, LIMIT 2, COMMENT Any takers?
+END
+
+

@@ -1,0 +1,17 @@
+run length encode with BNF
+
+superguiedit -
+  load
+  save
+  edit
+  cut/paste
+  search/replace
+  drag/drop
+  set tab width
+  hex and ascii display
+  keywork coloring
+  Alt+key shortcuts
+  undo and redo
+
+text adventure game
+

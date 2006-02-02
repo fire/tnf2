@@ -1,0 +1,17 @@
+Assert the following:
+
+ [ FORALL x,y,z | ( American(x) AND Weapon(y) AND Nation(z) AND
+ Hostile(z) AND Sells(x,z,y) ) -> Criminal(x) ].
+ [ EXISTS x | Owns(Nono,x) AND Missile(x) ].
+ [ FORALL x | ( Owns(Nono,x) AND Missile(x) ) -> Sells(West,Nono,x) ].
+ [ FORALL x | Missile(x) -> Weapon(x) ].
+ [ FORALL x | Enemy(x,America) -> Hostile(x) ].
+ American(West).
+ Nation(Nono).
+ Enemy(Nono,America).
+ Nation(America).
+
+
+Prove:
+
+ Criminal(West).

@@ -1,0 +1,44 @@
+multi-part mimi-encoded
+<html>
+<body>
+character
+	stat
+	skill
+	financ money tax loans
+	items
+	crew
+		name prof level status
+	fuel
+cargo
+	amt`type
+position
+	system <image>
+restrictions
+	system <restrict>
+	race <restrict>
+	global <restrict>
+messages
+	from <player> <message>
+actions and results
+	BUY
+	SELL
+	LAUNCH
+	MOVE <arrive image>
+	LAND
+</body>
+</html>
+
+animations
+	<planet> (space view) (done)
+	<hyperspace> (star field) (done)
+	<landing bay> door open/close shipmove with background
+	<spaceport> door open/close shipmove with stars & planetview?
+images
+	<market> 
+	<casino>
+	<bar>
+	<jail>
+	<court>
+	<loan shark>
+	<school>
+

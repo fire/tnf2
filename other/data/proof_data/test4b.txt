@@ -1,0 +1,10 @@
+assert ?Nation(Iraq).
+assert ?Nation(America).
+assert ?Enemy(Iraq,America).
+assert ?American(LeeHarvyOswald).
+assert [ FORALL x,y,z | ( ?American(x) AND ?Weapon(y) AND ?Nation(z) AND ?Hostile(z) AND ?Sells(x,z,y) ) -> ?Criminal(x) ].
+assert [ FORALL x | ( ?Owns(Iraq,x) AND ?Missile(x) ) => ?Sells(LeeHarvyOswald,Iraq,x) ].
+assert [ FORALL x | ?Missile(x) => ?Weapon(x) ].
+assert [ FORALL x | ?Enemy(x,America) <=> ?Hostile(x) ].
+assert [ EXISTS x | ?Owns(Iraq,x) AND ?Missile(x) ].
+query  [ exists x | ?Criminal(x)]?

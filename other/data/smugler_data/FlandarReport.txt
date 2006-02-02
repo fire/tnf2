@@ -1,0 +1,125 @@
+Smuggler report for Flandar
+Password: password
+Email: flandar@yahoo.com
+Location: 77x82xS
+Money: $328,003.17
+Taxes: $28,034.12
+Victor Points: 0
+Cargo: 32`Native Foodstuffs
+Items: OverRay Glasses
+Skills: 
+
+NOTE: @smuggler aaron pass
+
+EXECUTING ORDER: LAUNCH
+You tie down everything and settel back into your chair ready
+for launch.  A quick roar of the engines and the sky melts away
+into the blackness of space.  You are in orbit around  again
+.
+
+Your ship is boarded and search for illegal cargo.  After an
+extensive search they find nothing and leave.
+
+EXECUTING ORDER: MOVE Nunki
+You lock in the coordinates and your ship tears off into space.
+You see  disappear in the distance behind you. Then you see Nunki
+appear ahead and you settle into orbit
+
+*Your ship makes a strange sputter sound.  You check your instruments
+to find that your $SYSTEM is damaged.
+
+EXECUTING ORDER: LAND
+Your ship steaks though the sky of  as you approach the docking
+facility.  You get landing permision and manover your craft into
+docking bay 819.
+
+As you walked through a crowed area, you felt as though you were
+being watch.  Then you were shoved from behind.  You turn around
+to see who had pushed you to see nothing.  Then you notice your
+Disguise Kit was stolen.
+
+EXECUTING ORDER: Buy Native foodstuffs 12
+You enter the market place looking for Native Foodstuffs. You
+find a merchant willing to sell you 12 at the cost of $780.86
+each, you agree and have it loaded on your ship.  The total cost
+paid was $9,370.43.
+
+battles not done
+
+EXECUTING ORDER: Buy Native foodstuffs 4
+You enter the market place looking for Native Foodstuffs. You
+find a merchant willing to sell you 4 at the cost of $742.85
+each, you agree and have it loaded on your ship.  The total cost
+paid was $2,971.42.
+
+A tax is assess in the amount of $240.94 for a total tax due
+of $28,034.12.
+
+EXECUTING ORDER: LAUNCH
+A quick click of the buckle and punch of the red button and your
+ship screams into the sky.  Moments later you silently glide
+into orbit above .
+
+*Suddenly a ship swops in on you, and a battle ensues.  Lasars
+fire and ships race about in a silent ballet of life and death.
+In the end your ship escapes the better off.
+*With your opponent dissabled you take a moment to unload $NUM
+$CARGO from his ship and escape.
+*Suddenly a ship swops in on you, and a battle ensues.  Lasars
+fire and ships race about in a silent ballet of life and death.
+Finally you surrender to save your ship from destruction.
+*A terriable grinding sound is heard as your helpless ship is
+torn open and $NUM $CARGO is taken from your hull.  At least
+your still alive.
+*Your $SYSTEM has burn damage from the battle.
+*The battle was just too much for your ship.  It slowly breaks
+apart and you sadly enter the escape pod to abandon ship.  You
+drift in space for days until you finally reach the planet $PLANET
+where you buy a replacement ship for $COST.
+*The damage to your ship is too sever.  You shutter to hear the
+sound of metal shattering and air escaping.  In a moment its
+all over.  Better luck next time.
+
+EXECUTING ORDER: MOVE Sol
+Using your finely tuned button pushing skills, you activate your
+engines and your ship once again streaks through space.  In moments
+you can nolonger see . Silently your ship approaches Sol.  Once
+in orbit, space hobos immediately approach to wash your windows.
+You activate your electromagnitic shock defense and they quickly
+back away.
+
+*Your ship makes a strange girgle sound.  You check your instruments
+to find that your $SYSTEM is damaged.
+
+EXECUTING ORDER: LAND
+Your ship steaks though the sky of  as you approach the docking
+facility.  You get landing permision and manover your craft into
+docking bay 647.
+
+You see an oppertunity to grab something good.  You victem is
+totally engrossed in his shopping so you quietly grab his Prybar
+and sneak away.
+
+EXECUTING ORDER: Sell Native foodstuffs 12
+You enter the market place looking to sell Native Foodstuffs.
+When you find a merchant willing to buy your 12 Native Foodstuffs
+at the cost of $952.36 each, you agree and have it off loaded
+your ship.  The total earnings paid you was $11,428.38.
+
+As you are about a goverment tax agent corners you and with the
+help of his computer, you discover some obscure tax code that
+requires you to pay $11.46.  You pay it quickly in cash and you
+make yourself scares to avoid further taxes.
+
+EXECUTING ORDER: sell Native foodstuffs 4
+You enter the market place looking to sell Native Foodstuffs.
+When you find a merchant willing to buy your 4 Native Foodstuffs
+at the cost of $971.76 each, you agree and have it off loaded
+your ship.  The total earnings paid you was $3,887.50.
+
+As you walked through a crowed area, you felt as though you were
+being watch.  Then you were shoved from behind.  You turn around
+to see who had pushed you to see nothing.  Then you notice your
+Prybar was stolen.
+
+NOTE: @end

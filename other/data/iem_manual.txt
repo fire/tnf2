@@ -1,0 +1,31 @@
+REM orders to not delete
+	MSFT55aH bid .002
+
+REM stop AUTOBIDASK
+REM nolonger need double ask/bid
+	MSFT55aH NEVERAUTOASK
+	MSFT55aL NEVERAUTOBID
+
+REM limit orders to place (asset) (bid/ask) (price) (quant) (timein hours)
+REM after placed, note in "do not delete"
+	MSFT55aH bid .001 1 24
+	MSFT55aL ask .994 1 24
+
+REM tool settings
+	bundlemargin 600
+	selfmargin 200
+	surethingmargin 2
+	maxinventory 1
+	mininventory 1
+	autobid true
+	autoask true
+	margincancel true
+	extracancel true
+	exitprogram false
+
+
+report
+  MSFT55Ha .001   .002 (easy/middle/myvalue/auto)
+  MSFT55La .997   .999
+          <.998> <1.001>
+

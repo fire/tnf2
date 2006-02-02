@@ -1,0 +1,100 @@
+star [ loc 67x84  type Desert law 8  government Terran  agr 7.88 ind min tec
+services [ repair=tec>2 loanshart=law<3 gambling=law<7 training=ind>4 fuel=all ]]
+
+#1 -
+  raw output all actions
+  movefrom to
+  buy x
+  event combat win/lose skill weapon armor
+  event pickup
+
+#2 -
+  translate short to long BNF
+
+#3 -
+  translate to web page with applets, images, tables, etc
+
+#4 email program
+
+allactions
+  preactioninterrupt
+    wrapup
+  do
+    failcheck
+      wrapup
+    postactioninterrupt
+      wrapup
+
+
+command list
+	BUY - begin,do,end | begin,int,do,int,end,int,wrap
+	SELL
+	LAUNCH
+	LAND
+	MOVE
+
+classificiation of commands
+	basic operation1
+            MOVE - JU - *Jump: *
+		interruptcheck - pass/fail continue
+			wrapup
+		do - pass/fail - fuel, tax, land authority,
+			special - combat, find item, system error - pass/fail -vp
+		interruptcheck - pass/fail continue
+			wrapup
+		
+		
+            LAUNCH
+            LAND
+            BUY - PC - *Purchase Cargo: *
+            SELL - SC - *Sell Cargo: *
+            FU - *Fuel Up: *
+            TX - *Tax Xfer: *
+            LS - *Loan Shark: *
+            GA - *Gamble: *
+            BH - *Bar Hop: *
+	basic operation2
+            SN - *Snoop: *
+            DC - *Dump Cargo: *
+            TI - *Trade Item: *
+            MS - *Modify Ship: *
+            ES - *Evacuate Ship: *
+            RS - *Repair Ship: *
+            HO - *Hospitalize:*
+	basic operation3
+            IS - *Improve Skill: *
+            XI - *Xenographic Implant:
+            DS - *Deep Space Scan: *
+            EX - *Explore: *
+            BG - *Bigelow's Guide:*
+
+
+system configuration
+            NI - *New Info: *
+            	EA: Email Address    SN: Ship Name
+            CF *Change Flags: *
+                + _Bribe:_ When dealing with imperial authorities, some
+                + _Cheat:_ If you gamble a lot in casinos, then this
+                + _Fight:_ Brawling, melee and gunfights are all ways of
+                + _Imbibe:_ Do you drink? If so, how much. Are you the
+                + _Pilfer:_ You just finished beating up some guy and
+                + _Swindle:_ When you , it is generally accepted that
+                + _Yellow:_ Sometimes you can get into tight situations.
+            TA - *Tactics: *
+            JG - *Join Guild: *
+multi player
+            AS - Attack Ship
+            CO - *Communicate: *
+            FS - *Find Ship: *
+            QT - *QP Transfer: *
+crew
+            HC - *Hire Crew: *
+            RC - *Rescue Crewman: *
+quests
+            OS - *Overlord Service: *
+            VM - *Vandalize Mission: *
+not needed
+            IN - *Invest: * (gamble works good enough here)
+            UI - *Use Item: *
+            MO - *Morph:*
+            RE - *Regenerate: *

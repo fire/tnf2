@@ -1,0 +1,50 @@
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+  Welcome.    This is the Main Firetop Mountain Server.
+                    (http://www.gamerz.net/~fm)
+
+  Please report any problems to FM-Janitors@gamerz.net
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Turn: 6  Seq: 12 Ver: P9.34 I9.8 L9.22 U9.6 Q9.1 SP9.1 N9.8 ST9.0)
+
+Your Left Hand is stuck!
+
+
+The Battle Continues...
+
+You say "Here we go"
+
+Your Left Hand is paralyzed!
+
+You wriggle the fingers of the left hand.
+You wave the right...
+
+Dayron claps with the left hand.
+Dayron claps with the right...
+
+Dayron casts Disease at you.
+
+You break out in spots.
+
+You look sicker...
+
+
+
+Standard Duel Status for Peltor (game 3723, turn 7):
+
+ Dayron (Cmt) HP: 13 State: thinking
+  
+  Left:  BSFWPPC
+  Right: BDSFFFC
+
+ Peltor (Flandar) HP: 14 State: thinking (orders)
+  Sick(5) 
+
+  Left:  BPSF>CF
+  Right: B>>>CCW
+
+ A magical tombstone shaped like a monster is standing in a corner.
+ There is one name engraved into it:
+
+     BlueGoblin

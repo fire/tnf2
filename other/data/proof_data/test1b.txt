@@ -1,0 +1,3 @@
+assert [ FORALL x | ?Politician(x) -> ?Lies(x) ].
+assert ?Politician(Clinton).
+query ?Lies(Clinton)?

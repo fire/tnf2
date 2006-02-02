@@ -1,0 +1,6 @@
+assert ?thief(John) || ?thief(Mike)) || ?thief(Fred).
+assert [forall x y : (?aliby(x) <=> ~ ?thief(x))].
+assert ?aliby(Mike).
+assert ?aliby(Fred).
+query ~?thief(Mike)?
+query ?thief(John)?

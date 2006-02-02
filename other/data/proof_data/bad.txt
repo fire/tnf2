@@ -1,0 +1,11 @@
+assert [ forall x,y : ?man1(x,y)].
+assert [ forall x y : ?man2(x,y)].
+assert [ forall x : [ exists y : ?man3(x,y) ] ].
+assert [ exists x : [ forall y : ?man4(x,y) ] ].
+assert [ exists x : [ forall y : ?man5(x,y) && [exists z: ?car5(z)=>?man6(x) ] ] ] .
+assert ?man7(Tom).
+assert ~?man7(Tom).
+assert ~ [ forall x: ?car9(x)].
+assert ((?man10(Tom) && ?car10(Porsh)) =>( ?woman10(Beth) || ?sink10(Tub) ) )=> ?house10(Home).
+assert ?x(x) or ?y(y) and ?z(z) or ?a(a).
+assert ((?man(x) and ?woman(y)) or ?car(t).

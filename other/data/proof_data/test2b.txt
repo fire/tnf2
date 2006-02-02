@@ -1,0 +1,6 @@
+assert [ FORALL x,y | (?C(x,y) AND ?D(x)) -> ?E(x,y) ].
+assert [ FORALL a,b | ?A(a,b) -> ?C(a,b) ].
+assert [ FORALL z | ?B(z) -> ?D(z) ].
+assert ?A(M,N).
+assert ?B(M).
+query ?E(M,N)?

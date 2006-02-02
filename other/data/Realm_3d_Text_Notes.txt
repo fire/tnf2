@@ -1,0 +1,187 @@
+USER
+ -call server at host/port
+ -accept call from server at port
+
+SERVER
+  -accept calls from users at port
+  -call users at host/port list
+
+   timing (2/sec or all done)
+user data
+  name
+  dir
+  x,y
+
+  move#
+  lastmovetime
+
+  ammo
+  damage (0-100%)
+  kills
+  birth time
+  team name
+  invisible
+  invincible
+  
+
+bullits
+  x,y,dir,speed (ie moves /sec)
+
+traps
+  x,y, effect
+
+
+client command
+-----------------
+login [name "tom"]
+move 2   //direction
+move 5   //fire
+move 0   //rebirth
+
+server commands
+-----------------
+map [row [num 1 val "XXXXXX"] row [num 2 val "X       X"] row [ num 3 val "XXXXXXXXX" ] ]
+users [ user [name "tom" x 5 y 5 d ">" s 1] user [name mike x 3 y 3 d "<" s 0 ] ]
+fail login
+
+
+
+add INVISIBILITY - char =' '  
+add INSENSIBILITY - status = 
+add INVULNERABILITY = status =
+add BULLIT PICKUP
+add SHIELD PICKUP
+add HITPOINTS = status 5, each =-1
+add MEDKIT
+add PHASEDOOR
+add LOGIN DATABASE and KILLCOUNT
+add AREA OF EFFECT SHOTS
+add REFELECTOR SHIELD
+add 3D MAP
+add TEAMS   team = name
+add FLAGS   flags = V (cannot see him) S (cannot sense him) H# (hitpoints) S# (shield) 
+add TALKING
+add MAP updates
+add ROBOTS random no shoot
+ROBOT random shooter
+ROBOT tracker move to kill (using visible) (using sensing)
+ROBOT backstabber approach from behind only (using V
+
+
+add double movement - dx,dy
+add double view - 
+add 3dviewer -
+
+\                            /
+ |\                        /|
+ |  \                    /  |  
+ |    \                /    |  
+ |     |\            /|     |   
+ |     |  \        /  |     |
+ |     |   |\    /|   |     | 
+ |     |   | |\/| |   |     |
+ |     |   | |||| |   |     |
+ |     |   | |||| |   |     |
+ |     |   | |/\| |   |     |
+ |     |   |/    \|   |     |
+ |     |  /        \  |     |
+ |     |/            \|     |
+ |    /                \    |
+ |  /                    \  |
+ |/                        \|
+/                            \
+
+
+\                            _
+ |                         /|             
+ |                       /  |               
+ | ____                /    |               
+ |     |\             |     |                
+ |     |  \        ___|     |             
+ |     |   |_    /|   |     |              
+ |     |   | |\ | |   |     |   X         
+ |     |   | || | |   |     |     X       
+ |     |   | || | |   |     |   X         
+ |     |   |_|/ | |   |     |     X       
+ |     |   |     \|___|     |   X^        
+ |     |  /           |     |             
+ | ____|/             |     |             
+ |                     \    |             
+ |                       \  |             
+ |                         \|_
+/                             
+
+                              
+                             
+                               
+_______                       __  X  
+       |\                   /|    X       
+       |  \        ______ /  |      X  
+       |   |_    /|      |   |    X  X 
+       |   | |\ | |      |   |         
+       |   | |||| |      |   |     ^   
+       |   | |||| |      |   |         
+       |   |_|/ | |      |   |         
+       |   |     \|______|   |         
+       |  /               \  |         
+_______|/                   \|__         
+                             
+wall
+height = (16,10,6,4,2)
+1     1=height 2
+2     2=height 4
+3     3=height 6
+4     4=height 10
+5     5=height 16
+ ^ 
+
+ _____________________
+|\   |               /|
+| \  |              / |
+|  \ |             /  |
+|   \____________ /___|
+|   |\        |  /|   |  
+|   | \       | / |   |  
+|   |__\_______/  |   |   
+|   |  |\     /|  |   |
+|   |  | \___/_|  |   | 
+|   |  | |\ /| |  |   |
+|   |  | || || |  |   |
+|   |  | || || |  |   |
+|   |  |_|/_\| |  |   |
+|   |  | /  |\ |  |   |
+|   |  |/_____\|__|   |
+|   |  /|      \  |   |
+|   | / |       \ |   |
+|___|/___________\|   |
+|   /            |\   |
+|  /             | \  |
+| /              |  \ |
+|/___________________\|
+
+
+ _____________________
+|\                   /|
+| \                 / |
+|  \               /  |
+|   \_____________/   |
+|   |\  |     |       |  
+|   | \ |     |       |  
+|   |__\|_____|       |   
+|   |  |\      |      |
+|   |  | \    _|      | 
+|   |  |  \_/| |      |
+|   |  |  | || |      |
+|   |  |  |_|| |      |
+|   |  |  / \|_|      |
+|   |  | /     |      |
+|   |__|/      |      |
+|   |          \      |
+|   |           \     |
+|   |____________\    |
+|    |           |    |
+|    |           |    |
+|    |           |    |
+|    |           |    |
+|____|___________|____|
+*/

@@ -1,0 +1,13 @@
+rating overall = kills/game
+kills/killed= kills/death
+
+user kills/killed
+
+ranking - 
+highest kill/killed overall
+highest kill/killed user
+highest totalgames
+highest totalkills
+most divirsity  $knownusers
+most often resurected $totaldeaths
+

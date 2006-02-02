@@ -1,0 +1,46 @@
+myspells - sort alphebetically
+theyspells - sort by speed
+
+Desiese - 7 - DFPSWc - cWWS 
+
+color (gest) for free spells
+relatiosn show (spell info) for all next spells
+---
+send
+auto turn number
+auto check for PP
+auto CHOOSE
+auto TARGET
+auto PARALIZE
+auto DIRECT?
+
+
+--------------------------------
+|GM TU                         |
+|                              |
+|mage rh spell_N_T_R           |
+|     lh                       |
+|                              |
+|                              |
+--------------------------------
+
+spell
+  name
+  steps to complete
+  gesture
+  head start relations
+  include relations
+
+
+
+CurrentGest [   ]
+
+spells [name] [steps] [gesture] [headstart] [include]
+
+
+generate random sequences -
+2hds vs 2hds
+
+prune tree 6 levels deep -
+  choice - 6 hands
+

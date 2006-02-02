@@ -1,0 +1,179 @@
+---- -----
+a   /
+---/
+
+----H---
+a   H
+--------
+
+---------- first map
+|        |
+|--  /-H-|
+|a  /  H |
+----------
+
+---------- second map
+| D      |
+|-- -H---|
+|    H   |
+|    --H-|
+|      H |
+|--  /-H-|
+|a  /  H |
+----------
+
+
+------------ thrid map
+|          |
+|-- - |H---|
+|   | |H   |
+|D  | |---H|
+|---|     H|
+|      /--H|
+|a    /   H|
+------------
+
+
+     ________
+- = (________)
+          _
+         / )
+        / /
+       / /
+/ =   / /
+     / /
+    (_/
+
+
+      _________
+H=   (_   _   _)
+       | |_| |
+       |  _  |
+       | |_| | 
+       |  _  |
+      _| |_| |_
+     (_________)       
+
+
+          __
+D=       /  \
+        /    \
+       |      |
+       |    0 |
+       |      |
+       |______|
+
+
+
+blocks 
+  platform
+  climbable/passable
+  door/passable
+enemy
+  move y/n
+  attack y/n
+  ai 1-5
+  display
+
+#1 display blocks
+  image for background image
+  image for background bocks
+  draw
+   draw background
+   draw block images
+   draw movables
+   draw glitter/weapons
+#2 move/control position
+ obsticals
+ gravity
+ fall
+ jump
+ climb
+#3 badguys
+  health 0-100
+  speed 0-100
+  weapon 0-100
+  walk? jump? fly? climb? 
+  ai - 1 random walk
+  ai - 2 patrol
+  ai - 3 straight chase
+  ai - 4 climb,fall chase short
+#4 generate level
+  populate block type
+  enimy type
+  boss = size lv 2+, 
+  trap - falling block / block passage
+#5 items - treasure, heal, power
+#6 load/save
+#7 autoskill level
+  trak damage done vs damage received
+    if too big then (slow, less dam, more healups)
+    if too low then (faster, mor dam, less healups, ai 5 flee)
+#8 multi player -
+  network connect
+
+characture generate
+     head       -inc hat,glasses, smile, teeth
+hand body hand  -skeleton, armor, robot, fish,    gloves, sword, up/down   
+     feet       -shoes, skates, skies, fins, tenticals,
+     size - lv 1,2,3,4
+
+   color - white, yellow, red, green, blu, purp, orang, brown, cyan, magenta,
+black
+
+
+
+a=lv 1
+
+aa
+aa=lv 2
+
+aaa
+aaa
+aaa= lv 3
+
+
+aaaa
+aaaa
+aaaa
+aaaa= lv4
+
+attack
+
+ strike range 1 (half strike range okay)
+as
+as
+
+aass
+aass
+
+strike range 2
+
+ass
+
+aassss
+aassss
+
+
+
+display
+  stand
+  walk
+  jump
+  climb
+  swim
+  duck
+
+movement
+  -> walk
+  <- 
+   ^ |
+   | V
+
+  
+  spac attack facing
+   > <  duck jump/climb
+
+
+use power
+  

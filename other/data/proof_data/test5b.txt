@@ -1,0 +1,4 @@
+assert [forall x : ?Man(x)<=>~?Woman(x)].
+assert ?Man(Tom) .
+query ~?Woman(Tom)?
+query ?Woman(Tom)?

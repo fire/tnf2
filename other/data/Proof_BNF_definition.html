@@ -1,0 +1,237 @@
+<HTML>
+<HEAD>
+</HEAD>
+<BODY>
+<H1>FOPC Language and Resolution Example</H1>
+ <P>
+
+<H2>Syntax (Modified BNF)</H2>
+ <P>
+
+Syntax of FOPC that your parser must parse:
+ <P>
+
+<PRE>
+&lt;input&gt;		::		&lt;assertion&gt;
+			|	&lt;query&gt;
+
+&lt;assertion&gt;	::		'assert' &lt;sentence&gt; '.'
+&lt;query&gt;		::		'query' &lt;sentence&gt; '?'
+
+&lt;sentence&gt;	::              &lt;operand&gt;
+                        |       &lt;sentence&gt; &lt;connective&gt; &lt;operand&gt;
+
+&lt;operand&gt; 	::		&lt;atomSent&gt; 
+			|	'[' &lt;quantifier&gt; &lt;varlist&gt; '|' &lt;sentence&gt; ']'
+			|	'~' &lt;operand&gt;
+			|	'(' &lt;sentence&gt; ')'
+
+&lt;atomSent&gt;	::		&lt;predicate&gt; '(' &lt;termlist&gt; ')'
+
+&lt;termlist&gt;	::		&lt;term&gt;
+			|	&lt;term&gt; ',' &lt;termlist&gt;
+
+&lt;term&gt;		::		&lt;function&gt; '()'
+			|	&lt;function&gt; '(' &lt;termlist&gt; ')'
+			|	&lt;constant&gt;
+			|	&lt;variable&gt;	
+
+&lt;connective&gt;	::		'-&gt;'
+      	       	     	|       'IMP'
+			|       '&&'
+			|	'AND'
+      	       	     	|       '||'
+			| 	'OR'
+			| 	'&lt;-&gt;'
+      	       	     	|       'IFF'
+
+&lt;quantifier&gt;	::		'FORALL'
+      	       	     	|       '@&gt;'
+			|	'EXISTS'
+			|       '#&gt;'
+
+&lt;constant&gt;	::		[A-Z][A-Za-Z0-9]*
+
+&lt;varlist&gt;	::		&lt;variable&gt;
+			|	&lt;variable&gt; ',' &lt;varlist&gt;
+
+&lt;variable&gt;	::		[a-z][A-Za-Z0-9]*
+
+&lt;predicate&gt;	::		[A-Z][A-Za-z]*
+
+&lt;function&gt;	::		'#'[A-Za-z0-9]+
+</PRE>
+
+<br> <p>
+<H2>Clarification</H2> <P>
+The production rule <br> 
+ &lt;sentence&gt; :: &lt;sentence&gt; &lt;connective&gt; &lt;operand&gt;  
+is the syntax for the yacc parser (left associative). 
+
+<p> <br>
+<H2>Additional Semantic Constraints</H2>
+ <P>
+
+In addition to enforcing the syntax specified in the previous section,
+your parse must also ensure that:
+
+<UL>
+
+   <LI> Operator precedence is disambiguated.  The interpretation of a
+sentence in the absence of explicit grouping through matching
+parenthesis is a simple LR parse where each operator is given the same
+precedence.  Be sure and use parenthesis if you want to group predicates 
+together.<br>
+<blockquote>
+<tt>A(x) && B(x) -&gt C(x)</tt><br><br>
+is not the same as<br><br>
+<tt>(A(x) && B(x)) -&gt C(x)</tt><br>
+</blockquote>
+
+   <LI> No free variables are allowed in a sentence.  In other words,
+if variables appear as terms, these same variables must have been
+explicitly introduced in a quantifier's varlist.
+
+</UL>
+
+<HR>
+<P>
+
+<H2>Examples</H2>
+
+The following is an example of system interaction:
+ <P>
+
+<TT>
+&gt; assert [ FORALL m | Man(m) -&gt; Mortal(m) ]. <BR>
+Yes. <BR>
+&gt; assert Man(SOCRATES). <BR>
+Yes. <BR>
+&gt; query [ EXISTS m | Mortal(m) ]? <BR>
+Yes. m = SOCRATES. <BR>
+ <P>
+</TT>
+Internal reasoning process (sentences converted to Conjunctive Normal Form):
+ <P>
+<TABLE BORDER=2>
+<TR><TD>1.</TD><TD>~?Man(m1) OR ?Mortal(m1)</TD><TD>Given</TD></TR>
+<TR><TD>2.</TD><TD>?Man(SOCRATES)</TD><TD>Given</TD></TR>
+<TR><TD>3.</TD><TD>~?Mortal(m3)</TD><TD>Given (negated conclusion)</TD></TR>
+<TR><TD>4.</TD><TD>~?Man(m3)</TD><TD>Resolution: 1-3{m1/m3}</TD></TR>
+<TR><TD>5.</TD><TD>[]</TD><TD>Resolution: 4-2{m3/SOCRATES}</TD></TR>
+</TABLE>
+ <P>
+
+<H2>Resolution and Unification</H2>
+ <P>
+
+Steps in the process include:
+ <P>
+<PRE>
+CLAUSE => a wff in conjunctive normal form
+
+to convert to conjunctive normal form:
+
+[FORALL x: P(x) ==> 
+    [FORALL y: ~P(y) OR P(f(x,y))] AND [~FORALL y: Q(x,y) ==> P(y)]]
+
+1) eliminate iff and implications  (iff -> implication -> ~,OR)
+
+[FORALL x: ~P(x) OR 
+    [FORALL y: ~P(y) OR P(f(x,y))] AND [~FORALL y: ~Q(x,y) OR P(y)]]
+
+2) reduce scope of negation symbols (move in)
+
+[FORALL x: ~P(x) OR 
+    [FORALL y: ~P(y) OR P(f(x,y))] AND [EXISTS y: Q(x,y) AND ~P(y)]]
+
+3) standardize variables (rename so unique)
+
+[FORALL x: ~P(x) OR 
+    [FORALL y: ~P(y) OR P(f(x,y))] AND [EXISTS z: Q(x,z) AND ~P(z)]]
+
+4) remove existential quantifies (skolemize)
+
+[FORALL x: ~P(x) OR 
+    [FORALL y: ~P(y) OR P(f(x,y))] AND [Q(x,g(x)) AND ~P(g(x))]]
+
+5) move universal symbols to the front
+
+FORALL x: FORALL y:[~P(x) OR 
+    [~P(y) OR P(f(x,y))] AND [Q(x,g(x)) AND ~P(g(x))]]
+
+6) convert to conjuntive normal form (A OR (B AND C)) -> (A OR B) AND (A OR C)
+
+FORALL x: FORALL y:
+[~P(x) OR ~P(x) OR P(f(x,y))] AND 
+[~P(x) OR Q(x,g(x))] AND 
+[~P(x) OR ~P(g(x))]
+
+7) drop universal symbols
+
+[~P(x) OR ~P(x) OR P(f(x,y))] AND 
+[~P(x) OR Q(x,g(x))] AND 
+[~P(x) OR ~P(g(x))]
+
+8) eliminate AND symbols (set of wwf clauses)
+
+[~P(x) OR ~P(x) OR P(f(x,y))],
+[~P(x) OR Q(x,g(x))],
+[~P(x) OR ~P(g(x))]
+
+
+9) rename variables apart (between sentences)
+
+[~P(x1) OR ~P(x1) OR P(f(x1,y1))],
+[~P(x1) OR Q(x1,g(x1))],
+[~P(x1) OR ~P(g(x1))]
+
+
+
+
+
+to Unify(E1,E2):
+
+~student(x1) OR ~class(g(x1)) OR takes(x1,g(x1))
+ student(f)
+------------
+{f/x1} == substitute "f" for the term "x1"
+
+
+~class(g(f)) OR takes(f,g(f))
+
+unify(student(x1),student(f))
+
+1.   if either E1 or E2 is an atom 
+     (a function symbol, a constant symbol, or a variable),
+     then interchange the arguments E1 and E2 so that E1 
+     is an atom.
+2.   begin
+3.      if E1 and E2 are identical, return {}
+4.      if E1 is a variable, do:
+5.         begin
+6.            if E1 occurs in E2, return FAIL
+7.            else return {E2/E1}
+8.         end
+9.      if E2 is a variable, return {E1/E2}
+10.     if E1 if a function AND E2 is a function
+11.        if fname(E1)==fname(E2) return unify(args(E1),args(E2))
+12.     return FAIL
+13.  end
+14.  E1 = [F1|T1]
+15.  E2 = [F2|T2]
+16.  Z1 = UNIFY(F1,F2)
+17.  IF Z1 == FAIL, return FAIL
+18.  G1 = SUBST(Z1,T1)
+19.  G2 = SUBST(Z1,T2)
+20.  Z2 = UNIFY(G1,G2)
+21.  IF Z2 = FAIL, return FAIL
+22.  return Z1 + Z2
+</PRE>
+
+ <P>
+<HR>
+<ADDRESS> Last updated 09 Jul 1998 12:30:11 MDT </ADDRESS>
+<ADDRESS> Alan Whitehurst(<A HREF="mailto:whitehur@cs.byu.edu">whitehur@cs.byu.edu</A>)</ADDRESS>
+</BODY>
+</HTML>

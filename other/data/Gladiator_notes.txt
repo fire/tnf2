@@ -1,0 +1,41 @@
+glad
+arena
+training camp
+
+player
+  buy/sell glads
+  buy equipt
+  pay hospital
+  arranges combats
+  buy arena time
+  maintain training camp
+
+glad
+  natural skills/aptitudes
+  combat style/preference/bonuses
+
+arena /calendar
+
+training camp / school
+
+auction house 
+
+credentials 
+  combat history/performance
+
+
+slave - 100gp
+equipt - 200gp
+school lv1 - 100gp
+
+income sources
+  sell glads to NPC
+  lease glads as mercs
+  proceeds from arena battles 20% for combatants, 80% house
+  
+income transition
+  gambling
+  buy see from other
+
+arena
+  owners -> 50% profit

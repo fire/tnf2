@@ -1,0 +1,10 @@
+Assert the following:
+ [ EXISTS x | Dog(x) AND Owns(Jack,x) ].
+ [ FORALL x | ( [ EXISTS y | Dog(y) AND Owns(x,y) ] ) -> AnimalLover(x) ].
+ [ FORALL x | AnimalLover(x) -> [ FORALL y | Animal(y) -> ~Kills(x,y) ] ].
+ Kills(Jack,Tuna) OR Kills(Curiosity,Tuna).
+ Cat(Tuna).
+ [ FORALL x | Cat(x) -> Animal(x) ].
+
+Prove:
+ Kills(Curiosity,Tuna).

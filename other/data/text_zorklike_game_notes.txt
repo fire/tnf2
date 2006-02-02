@@ -1,0 +1,43 @@
+//char can do use - open closeddoor => opendoor
+//		  - drop itemname =>new furnish
+//		  - tie rop
+//		  - attack monster
+//		  - push button
+//		  - move switch
+
+//char can use item uses.
+//  unlock door, 
+//use
+//	consume self|target
+//	create item
+//	destroy = consume target
+//	vanish = consume self
+//	replace = consume target create nem
+//	build = consume 1 and 2 create 3
+
+//test
+//	ask question and check answer, if correct do use else fail
+
+//displayseed = draw room 
+//
+
+//barrier item = item in room must be removed
+//barrier test = test must be answered
+//barrier reptest = test must be answered each time
+//barrier multitest = multiple tests must be answered
+//barrier [repeat 0 test single]
+
+
+X--X--X
+|\    |
+| X---X
+|     |
+X---X-X
+
+
+/items = door, key, locked door, button, picture, table, chair
+/rug, toothpaste, harp, sword, mirror, candel, match, mouse,
+/cheese, anval, bow , arrow, rope, bridge, wood, trophy, ring
+/blindfold, canteen, rock, loaded pistol, empty pistol, gold coin,
+/card key, umbrella, parachute, elevator, computer, skelitonkey,
+/scuba-gear, sun glasses, red light bulb, green light bulb, 

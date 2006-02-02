@@ -1,0 +1,8 @@
+Assert the following:
+  [ FORALL x,y | (C(x,y) AND D(x)) -> E(x,y) ].  
+  [ FORALL a,b | A(a,b) -> C(a,b) ].  
+  [ FORALL z | B(z) -> D(z) ].  
+  A(M,N).  
+  B(M).   
+
+Prove:  E(M,N). 

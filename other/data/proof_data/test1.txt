@@ -1,0 +1,4 @@
+Assert the following: 
+[ FORALL x | Politician(x) -> Lies(x) ].
+Politician(Clinton).
+Prove: Lies(Clinton).

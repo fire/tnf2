@@ -1,0 +1,2315 @@
+          Name       Xpos Ypos dir cdir spd cspd scn dam
+    ---------------- ---- ---- --- ---- --- ---- --- ---
+Time=   0.00000 
+  A bots/pbv8        2570 7720 168    0   0    0 168   0                  
+  B bots/pbv8        3860 9740 144    0   0    0 144   0                  
+  A    0.00 loc_x() returns 2570
+  B    0.00 loc_x() returns 3860
+  A    0.01 loc_y() returns 7720
+  B    0.01 loc_y() returns 9740
+  A    0.01 speed() returns 0
+  B    0.01 speed() returns 0
+  A    0.01 time() returns 1
+  B    0.01 time() returns 1
+  A    0.01 time() returns 1
+  B    0.01 time() returns 1
+  A    0.01 drive(357,-75) returns 1
+  B    0.01 drive(104,-75) returns 1
+  A    0.52 loc_x() returns 2570
+  B    0.52 loc_x() returns 3860
+  A    0.52 loc_y() returns 7720
+  B    0.52 loc_y() returns 9740
+  A    0.52 speed() returns -9
+  B    0.52 speed() returns -9
+  A    0.52 time() returns 51
+  B    0.52 time() returns 51
+  A    0.52 scan(-48,10) returns 0
+  B    0.52 scan(-76,10) returns 0
+Time=   1.01960 
+  A bots/pbv8        2565 7720 357  357 -75  -19 312   0                  
+  B bots/pbv8        3855 9739 104   15 -75  -19 284   0                  
+  A    1.02 time() returns 102
+  B    1.02 time() returns 102
+  A    1.02 loc_x() returns 2565
+  B    1.02 loc_x() returns 3855
+  A    1.02 loc_y() returns 7720
+  B    1.02 loc_y() returns 9739
+  A    1.02 speed() returns -19
+  B    1.02 speed() returns -19
+  A    1.02 time() returns 102
+  B    1.02 time() returns 102
+  A    1.03 scan(-68,10) returns 0
+  B    1.03 scan(-96,10) returns 0
+  A    1.53 time() returns 152
+  B    1.53 time() returns 152
+  A    1.53 loc_x() returns 2555
+  B    1.53 loc_x() returns 3845
+  A    1.53 loc_y() returns 7721
+  B    1.53 loc_y() returns 9737
+  A    1.53 speed() returns -29
+  B    1.53 speed() returns -29
+  A    1.53 time() returns 152
+  B    1.53 time() returns 152
+  A    1.53 scan(-28,10) returns 0
+  B    1.53 scan(-56,10) returns 0
+Time=   2.03100 
+  A bots/pbv8        2539 7721 357  357 -75  -39 332   0                  
+  B bots/pbv8        3831 9731 104   30 -75  -39 304   0                  
+  A    2.03 time() returns 203
+  B    2.03 time() returns 203
+  A    2.03 loc_x() returns 2539
+  B    2.03 loc_x() returns 3831
+  A    2.03 loc_y() returns 7721
+  B    2.03 loc_y() returns 9731
+  A    2.03 speed() returns -39
+  B    2.03 speed() returns -39
+  A    2.04 time() returns 203
+  B    2.04 time() returns 203
+  A    2.04 scan(-87,10) returns 0
+  B    2.04 scan(-116,10) returns 2388
+  A    2.54 time() returns 253
+  B    2.54 time() returns 253
+  A    2.54 loc_x() returns 2519
+  A    2.54 loc_y() returns 7722
+  B    2.54 loc_x() returns 3813
+  A    2.54 speed() returns -50
+  B    2.54 loc_y() returns 9720
+  A    2.54 time() returns 254
+  B    2.54 speed() returns -49
+  A    2.54 scan( -7,10) returns 0
+  B    2.54 time() returns 254
+  B    2.54 cannon(244,2370) returns 1
+Time=   3.04260 
+  A bots/pbv8        2493 7724 357  357 -75  -60 353   0                  
+  B bots/pbv8        3793 9705 104   46 -75  -49 244   0  2.37            
+  A    3.04 time() returns 304
+  A    3.04 loc_x() returns 2493
+  A    3.04 loc_y() returns 7724
+  B    3.04 loc_x() returns 3793
+  A    3.05 speed() returns -60
+  B    3.05 loc_y() returns 9704
+  A    3.05 time() returns 304
+  B    3.05 speed() returns -49
+  A    3.05 scan(-107,10) returns 0
+  B    3.05 time() returns 304
+  B    3.05 cannon(244,2347) returns 1
+  A    3.55 time() returns 354
+  A    3.55 loc_x() returns 2463
+  A    3.55 loc_y() returns 7725
+  A    3.55 speed() returns -70
+  B    3.55 loc_x() returns 3776
+  A    3.55 time() returns 355
+  B    3.55 loc_y() returns 9686
+  A    3.55 scan( 13,10) returns 0
+  B    3.55 speed() returns -49
+  B    3.55 time() returns 355
+  B    3.55 scan(244, 5) returns 0
+Time=   4.05220 
+  A bots/pbv8        2427 7727 357  357 -75  -74  13   0                  
+  B bots/pbv8        3761 9666 104   61 -75  -49 244   0  1.36  1.84      
+  A    4.05 time() returns 405
+  A    4.05 loc_x() returns 2427
+  A    4.05 loc_y() returns 7727
+  A    4.06 speed() returns -74
+  B    4.06 time() returns 405
+  A    4.06 time() returns 405
+  B    4.06 loc_x() returns 3761
+  A    4.06 scan(-126,10) returns 0
+  B    4.06 loc_y() returns 9666
+  B    4.06 speed() returns -49
+  B    4.06 time() returns 405
+  B    4.06 cannon(244,2299) returns 1
+  A    4.56 time() returns 455
+  A    4.56 loc_x() returns 2389
+  A    4.56 loc_y() returns 7729
+  A    4.56 speed() returns -74
+  A    4.56 time() returns 456
+  B    4.56 loc_x() returns 3748
+  A    4.56 scan( 34,10) returns 0
+  B    4.56 loc_y() returns 9644
+  B    4.56 speed() returns -49
+  B    4.56 time() returns 456
+  B    4.57 scan(239, 6) returns 2347
+  B Explosion at 2780,7605
+Time=   5.06340 
+  A bots/pbv8        2351 7731 357  357 -75  -74  34   0                  
+  B bots/pbv8        3740 9620 104   76 -75  -49 239   0        0.48  1.45
+  A    5.06 time() returns 506
+  A    5.07 loc_x() returns 2351
+  A    5.07 loc_y() returns 7731
+  A    5.07 speed() returns -74
+  A    5.07 time() returns 506
+  B    5.07 time() returns 506
+  A    5.07 scan(-145,10) returns 0
+  B    5.07 loc_x() returns 3740
+  B    5.07 loc_y() returns 9620
+  B    5.07 speed() returns -49
+  B    5.07 time() returns 507
+  B    5.08 cannon(234,2406) returns 1
+  B Explosion at 2747,7598
+  A    5.57 time() returns 556
+  A    5.57 loc_x() returns 2313
+  A    5.57 loc_y() returns 7732
+  A    5.57 speed() returns -74
+  A    5.57 time() returns 557
+  A    5.57 scan( 55,10) returns 2343
+  B    5.58 loc_x() returns 3734
+  B    5.58 loc_y() returns 9595
+  B    5.58 speed() returns -49
+  B    5.58 time() returns 558
+  B    5.58 cannon(232,2399) returns 1
+Time=   6.07280 
+  A bots/pbv8        2276 7734 357  357 -75  -74  55   0                  
+  B bots/pbv8        3732 9571 104   91 -75  -49 239   0  1.90  2.40  0.78
+  A    6.07 time() returns 607
+  A    6.08 loc_x() returns 2276
+  A    6.08 loc_y() returns 7734
+  A    6.08 speed() returns -74
+  A    6.08 time() returns 607
+  A    6.08 cannon( 54,2362) returns 1
+  B    6.08 loc_x() returns 3732
+  B    6.09 loc_y() returns 9570
+  B    6.09 speed() returns -49
+  B    6.09 time() returns 608
+  B    6.09 scan(238, 3) returns 0
+  B Explosion at 2756,7579
+  A    6.58 loc_x() returns 2238
+  A    6.58 loc_y() returns 7736
+  A    6.58 speed() returns -74
+  A    6.58 time() returns 658
+  A    6.58 cannon( 53,2382) returns 1
+  B    6.59 time() returns 658
+  B    6.59 loc_x() returns 3733
+  B    6.59 loc_y() returns 9545
+  B    6.59 speed() returns -49
+  B    6.59 time() returns 659
+  B    6.59 scan(235, 4) returns 2346
+Time=   7.08380 
+  A bots/pbv8        2200 7738 357  357 -75  -74  55   0  1.85  2.37      
+  B bots/pbv8        3737 9521 104  104 -75  -49 235   0  0.89  1.39      
+  A    7.08 loc_x() returns 2200
+  A    7.09 loc_y() returns 7738
+  A    7.09 speed() returns -74
+  A    7.09 time() returns 708
+  A    7.09 scan( 52, 5) returns 2353
+  B    7.10 time() returns 709
+  B    7.10 loc_x() returns 3737
+  B    7.10 loc_y() returns 9520
+  B    7.10 speed() returns -49
+  B    7.10 time() returns 709
+  B    7.10 cannon(230,2468) returns 1
+  B Explosion at 2333,7696
+  A    7.59 time() returns 758
+  A    7.59 loc_x() returns 2162
+  A    7.59 loc_y() returns 7740
+  A    7.59 speed() returns -74
+  A    7.59 time() returns 759
+  A    7.60 cannon( 49,2279) returns 1
+  B    7.60 loc_x() returns 3744
+  B    7.60 loc_y() returns 9494
+  B    7.61 speed() returns -59
+  B    7.61 time() returns 760
+  B    7.61 cannon(229,2478) returns 1
+  B Explosion at 2261,7725
+Time=   8.09580 
+  A bots/pbv8        2124 7742 357  357 -75  -74  52   4  0.46  0.98  1.89
+  B bots/pbv8        3751 9464 104  104 -75  -69 235   0  2.10        1.59
+  A    8.10 loc_x() returns 2124
+  A    8.10 loc_y() returns 7742
+  A    8.10 speed() returns -74
+  A    8.10 time() returns 809
+  A    8.10 time() returns 810
+  A    8.10 drive(275,100) returns 1
+  B    8.11 loc_x() returns 3751
+  B    8.11 loc_y() returns 9463
+  B    8.11 speed() returns -70
+  B    8.11 time() returns 811
+  B    8.11 time() returns 811
+  B    8.11 drive(  8,100) returns 1
+  A Explosion at 3671,9634
+  A    8.60 loc_x() returns 2087
+  A    8.60 loc_y() returns 7743
+  A    8.61 speed() returns -64
+  A    8.61 time() returns 860
+  A    8.61 scan( 49, 3) returns 0
+  B    8.62 loc_x() returns 3760
+  B    8.62 loc_y() returns 9430
+  B    8.62 speed() returns -60
+  B    8.62 time() returns 861
+  B    8.62 scan(232, 2) returns 0
+  A Explosion at 3669,9603
+Time=   9.11050 
+  A bots/pbv8        2056 7745 275  357 100  -54  49   4              0.91
+  B bots/pbv8        3766 9402   8  104 100  -50 232   2  1.12        0.60
+  A    9.11 time() returns 911
+  A    9.11 loc_x() returns 2056
+  A    9.11 loc_y() returns 7745
+  A    9.11 speed() returns -54
+  A    9.11 time() returns 911
+  A    9.12 cannon( 46,2295) returns 1
+  B    9.12 time() returns 912
+  B    9.12 loc_x() returns 3767
+  B    9.12 loc_y() returns 9401
+  B    9.12 speed() returns -49
+  B    9.12 time() returns 912
+  B    9.13 cannon(225,2508) returns 1
+  B Explosion at 2134,7628
+  A    9.62 loc_x() returns 2028
+  A    9.62 loc_y() returns 7747
+  A    9.62 speed() returns -48
+  A    9.62 time() returns 962
+  A    9.62 scan( 51, 4) returns 0
+  B    9.63 loc_x() returns 3772
+  B    9.63 loc_y() returns 9376
+  B    9.63 speed() returns -48
+  B    9.63 time() returns 963
+  B    9.63 scan(229, 3) returns 0
+  A Explosion at 3656,9478
+Time=  10.08720 
+  A bots/pbv8        2007 7751 275  343 100  -39  51   6  1.54            
+  B bots/pbv8        3774 9355   8   90 100  -39 229   4  0.21  1.76      
+  B Explosion at 2089,7595
+  A   10.12 time() returns 1012
+  A   10.12 loc_x() returns 2006
+  A   10.12 loc_y() returns 7751
+  A   10.12 speed() returns -38
+  A   10.13 time() returns 1012
+  A   10.13 cannon( 45,2293) returns 1
+  B   10.13 time() returns 1013
+  B   10.13 loc_x() returns 3774
+  B   10.14 loc_y() returns 9353
+  B   10.14 speed() returns -38
+  B   10.14 time() returns 1013
+  B   10.14 cannon(223,2537) returns 1
+  A   10.63 loc_x() returns 1987
+  A   10.63 loc_y() returns 7758
+  A   10.63 speed() returns -28
+  A   10.63 time() returns 1063
+  A   10.63 scan( 43, 5) returns 2381
+  B   10.64 loc_x() returns 3774
+  B   10.64 loc_y() returns 9334
+  B   10.64 speed() returns -28
+  B   10.64 time() returns 1064
+  B   10.65 scan(233, 4) returns 0
+Time=  11.13310 
+  A bots/pbv8        1974 7764 275  327 100  -18  43   8  0.77  1.78      
+  B bots/pbv8        3772 9320   8   74 100  -18 233   4  2.03  0.99      
+  A   11.13 time() returns 1113
+  A   11.14 loc_x() returns 1974
+  A   11.14 loc_y() returns 7764
+  A   11.14 speed() returns -18
+  A   11.14 time() returns 1113
+  A   11.14 cannon( 38,2323) returns 1
+  B   11.15 time() returns 1114
+  B   11.15 loc_x() returns 3771
+  B   11.15 loc_y() returns 9320
+  B   11.15 speed() returns -17
+  B   11.15 time() returns 1115
+  B   11.16 scan(222, 5) returns 2376
+  A Explosion at 3656,9389
+  B Explosion at 1987,7619
+  A   11.64 loc_x() returns 1967
+  A   11.64 loc_y() returns 7768
+  A   11.64 speed() returns -8
+  A   11.64 time() returns 1164
+  A   11.65 cannon( 37,2316) returns 1
+  B   11.66 time() returns 1165
+  B   11.66 loc_x() returns 3769
+  B   11.66 loc_y() returns 9312
+  B   11.66 speed() returns -7
+  B   11.66 time() returns 1166
+  B   11.66 cannon(217,2495) returns 1
+Time=  12.14640 
+  A bots/pbv8        1964 7771 275  312 100    2  43  10  2.30  0.76  1.80
+  B bots/pbv8        3767 9309   8   59 100    2 222   6  1.01  2.50      
+  A   12.15 loc_x() returns 1964
+  A   12.15 loc_y() returns 7771
+  A   12.15 speed() returns 2
+  A   12.15 time() returns 1214
+  A   12.15 scan( 42, 2) returns 2369
+  B   12.17 loc_x() returns 3767
+  B   12.17 loc_y() returns 9309
+  B   12.17 speed() returns 2
+  B   12.17 time() returns 1216
+  B   12.17 cannon(216,2514) returns 1
+  A Explosion at 3639,9374
+  A   12.65 time() returns 1265
+  A   12.65 loc_x() returns 1966
+  A   12.65 loc_y() returns 7769
+  A   12.66 speed() returns 12
+  A   12.66 time() returns 1265
+  A   12.66 cannon( 41,2330) returns 1
+  B   12.67 loc_x() returns 3769
+  B   12.67 loc_y() returns 9311
+  B   12.67 speed() returns 12
+  B   12.67 time() returns 1267
+  B   12.68 scan(221, 2) returns 2371
+  B Explosion at 1905,7638
+Time=  13.15860 
+  A bots/pbv8        1969 7764 275  297 100   22  42  12  1.28  2.31  0.79
+  B bots/pbv8        3772 9315   8   43 100   22 221   8        1.48  2.01
+  A   13.16 loc_x() returns 1969
+  A   13.16 loc_y() returns 7764
+  A   13.16 speed() returns 22
+  A   13.16 time() returns 1316
+  A   13.16 scan( 42, 2) returns 2378
+  B   13.18 time() returns 1317
+  B   13.18 loc_x() returns 3773
+  B   13.18 loc_y() returns 9316
+  B   13.18 speed() returns 22
+  B   13.18 time() returns 1318
+  B   13.19 cannon(219,2385) returns 1
+  A Explosion at 3802,9186
+  A   13.66 time() returns 1366
+  A   13.67 loc_x() returns 1974
+  A   13.67 loc_y() returns 7753
+  A   13.67 speed() returns 32
+  A   13.67 time() returns 1366
+  A   13.67 cannon( 41,2403) returns 1
+  B   13.69 loc_x() returns 3782
+  B   13.69 loc_y() returns 9324
+  B   13.69 speed() returns 32
+  B   13.69 time() returns 1368
+  B   13.69 scan(221, 2) returns 2395
+  A Explosion at 3816,9162
+Time=  14.15960 
+  A bots/pbv8        1979 7737 275  282 100   42  42  12        1.03  2.11
+  B bots/pbv8        3796 9333   8   28 100   42 221  12  1.61  0.20  0.72
+  B Explosion at 1774,7808
+  A   14.17 loc_x() returns 1979
+  A   14.17 loc_y() returns 7736
+  A   14.17 speed() returns 42
+  A   14.17 time() returns 1417
+  A   14.18 cannon( 41,2416) returns 1
+  B   14.19 time() returns 1419
+  B   14.19 loc_x() returns 3797
+  B   14.19 loc_y() returns 9334
+  B   14.19 speed() returns 42
+  B   14.20 time() returns 1419
+  B   14.20 cannon(220,2430) returns 1
+  A   14.68 loc_x() returns 1983
+  A   14.68 loc_y() returns 7715
+  A   14.68 speed() returns 50
+  A   14.68 time() returns 1468
+  A   14.68 scan( 43, 1) returns 2450
+  B Explosion at 1734,7830
+  B   14.70 loc_x() returns 3817
+  B   14.70 loc_y() returns 9344
+  B   14.70 speed() returns 50
+  B   14.70 time() returns 1470
+  B   14.71 cannon(220,2456) returns 1
+  A Explosion at 3718,9292
+Time=  15.18240 
+  A bots/pbv8        1986 7688 275  275 100   60  43  14  1.61        1.09
+  B bots/pbv8        3839 9351   8   13 100   50 221  14  0.58  1.64  2.17
+  A   15.18 time() returns 1518
+  A   15.18 loc_x() returns 1986
+  A   15.19 loc_y() returns 7688
+  A   15.19 speed() returns 60
+  A   15.19 time() returns 1518
+  A   15.19 cannon( 43,2558) returns 1
+  B   15.21 loc_x() returns 3841
+  B   15.21 loc_y() returns 9351
+  B   15.21 speed() returns 50
+  B   15.21 time() returns 1520
+  B   15.21 scan(220, 3) returns 2491
+  B Explosion at 1915,7813
+  A   15.69 loc_x() returns 1989
+  A   15.69 loc_y() returns 7657
+  A   15.69 speed() returns 70
+  A   15.69 time() returns 1569
+  A   15.69 scan( 44, 1) returns 0
+  B   15.71 time() returns 1571
+  B   15.72 loc_x() returns 3866
+  B   15.72 loc_y() returns 9356
+  B   15.72 speed() returns 53
+  B   15.72 time() returns 1571
+  B   15.72 cannon(218,2583) returns 1
+Time=  16.07450 
+  A bots/pbv8        1991 7630 275  275 100   78  44  16  0.87  2.03  0.35
+  B bots/pbv8        3884 9359   8    8 100   60 220  14  2.58  0.91  1.44
+  A Explosion at 3786,9327
+  A   16.20 time() returns 1619
+  A   16.20 loc_x() returns 1992
+  A   16.20 loc_y() returns 7620
+  A   16.20 speed() returns 80
+  A   16.20 time() returns 1619
+  A   16.20 cannon( 44,2634) returns 1
+  B   16.22 loc_x() returns 3893
+  B   16.22 loc_y() returns 9360
+  B   16.22 speed() returns 63
+  B   16.23 time() returns 1622
+  B   16.23 scan(219, 3) returns 0
+  A Explosion at 3816,9314
+  B Explosion at 1919,7790
+  A   16.70 loc_x() returns 1996
+  A   16.70 loc_y() returns 7579
+  A   16.70 speed() returns 91
+  A   16.70 time() returns 1670
+  A   16.71 scan( 44, 2) returns 2628
+  B   16.73 time() returns 1672
+  B   16.73 loc_x() returns 3926
+  B   16.73 loc_y() returns 9365
+  B   16.73 speed() returns 73
+  B   16.73 time() returns 1673
+  B   16.73 scan(216, 4) returns 0
+Time=  17.16160 
+  A bots/pbv8        1999 7537 275  275 100  100  44  17        1.01  2.10
+  B bots/pbv8        3957 9369   8    8 100   82 216  18  1.57        0.43
+  B Explosion at 1955,7758
+  A   17.21 time() returns 1720
+  A   17.21 loc_x() returns 2000
+  A   17.21 loc_y() returns 7532
+  A   17.21 speed() returns 100
+  A   17.21 time() returns 1721
+  A   17.21 cannon( 42,2804) returns 1
+  B   17.23 time() returns 1723
+  B   17.24 loc_x() returns 3963
+  B   17.24 loc_y() returns 9370
+  B   17.24 speed() returns 83
+  B   17.24 time() returns 1723
+  B   17.24 cannon(217,2706) returns 1
+  A   17.72 loc_x() returns 2004
+  A   17.72 loc_y() returns 7482
+  A   17.72 speed() returns 100
+  A   17.72 time() returns 1771
+  A   17.72 scan( 45, 1) returns 0
+  B   17.74 loc_x() returns 4006
+  B   17.74 loc_y() returns 9375
+  B   17.74 speed() returns 93
+  B   17.74 time() returns 1774
+  B   17.75 scan(222, 5) returns 2756
+  A Explosion at 3858,9461
+Time=  18.21950 
+  A bots/pbv8        2009 7432 275  275 100  100  45  18  2.27        1.09
+  B bots/pbv8        4050 9381   8    8 100  100 222  20  0.56  2.20      
+  A   18.22 time() returns 1822
+  A   18.22 loc_x() returns 2009
+  A   18.22 loc_y() returns 7431
+  A   18.22 speed() returns 100
+  A   18.22 time() returns 1822
+  A   18.23 cannon( 43,2919) returns 1
+  B   18.25 time() returns 1824
+  B   18.25 loc_x() returns 4053
+  B   18.25 loc_y() returns 9382
+  B   18.25 speed() returns 100
+  B   18.25 time() returns 1825
+  B   18.25 cannon(225,2948) returns 1
+  B Explosion at 1817,7761
+  A   18.73 loc_x() returns 2014
+  A   18.73 loc_y() returns 7381
+  A   18.73 speed() returns 100
+  A   18.73 time() returns 1872
+  A   18.73 scan( 46, 2) returns 2895
+  B   18.76 loc_x() returns 4103
+  B   18.76 loc_y() returns 9388
+  B   18.76 speed() returns 100
+  B   18.76 time() returns 1875
+  B   18.76 cannon(225,3015) returns 1
+  A Explosion at 3918,9432
+Time=  19.23080 
+  A bots/pbv8        2018 7331 275  275 100  100  46  19  1.18  2.31      
+  B bots/pbv8        4150 9395   8    8 100  100 222  22  2.94  1.11  2.37
+  A   19.23 time() returns 1923
+  A   19.23 loc_x() returns 2018
+  A   19.23 loc_y() returns 7331
+  A   19.23 speed() returns 100
+  A   19.24 time() returns 1923
+  A   19.24 cannon( 44,3165) returns 1
+  B   19.26 loc_x() returns 4153
+  B   19.26 loc_y() returns 9395
+  B   19.26 speed() returns 100
+  B   19.26 time() returns 1926
+  B   19.27 scan(220, 3) returns 0
+  A   19.74 loc_x() returns 2023
+  A   19.74 loc_y() returns 7280
+  A   19.74 speed() returns 100
+  A   19.74 time() returns 1974
+  A   19.74 scan( 47, 1) returns 0
+  B   19.77 time() returns 1976
+  B   19.77 loc_x() returns 4203
+  B   19.77 loc_y() returns 9402
+  B   19.77 speed() returns 100
+  B   19.77 time() returns 1977
+  B   19.77 scan(222, 4) returns 3043
+  B Explosion at 1775,7733
+Time=  20.01870 
+  A bots/pbv8        2025 7253 275  275 100  100  47  19  0.07  1.20  2.46
+  B bots/pbv8        4228 9405   8    8 100  100 222  22  1.83        1.26
+  A Explosion at 4075,9415
+  A   20.24 time() returns 2024
+  A   20.24 loc_x() returns 2027
+  A   20.25 loc_y() returns 7230
+  A   20.25 speed() returns 100
+  A   20.25 time() returns 2024
+  A   20.25 cannon( 45,3310) returns 1
+  B   20.27 time() returns 2027
+  B   20.28 loc_x() returns 4254
+  B   20.28 loc_y() returns 9409
+  B   20.28 speed() returns 100
+  B   20.28 time() returns 2027
+  B   20.28 cannon(224,3291) returns 1
+  A   20.75 loc_x() returns 2032
+  A   20.75 loc_y() returns 7180
+  A   20.75 speed() returns 100
+  A   20.75 time() returns 2075
+  A   20.75 scan( 47, 2) returns 3184
+  B   20.78 loc_x() returns 4304
+  B   20.78 loc_y() returns 9416
+  B   20.78 speed() returns 100
+  B   20.78 time() returns 2078
+  B   20.79 time() returns 2078
+  B   20.79 drive(265,-75) returns 1
+Time=  21.14530 
+  A bots/pbv8        2035 7140 275  275 100  100  47  19  2.77  0.36  1.62
+  B bots/pbv8        4340 9420 265    8 -75   93 222  24  0.99  2.79  0.42
+  A Explosion at 4143,9467
+  B Explosion at 1976,7294
+  A   21.26 time() returns 2125
+  A   21.26 loc_x() returns 2036
+  A   21.26 loc_y() returns 7129
+  A   21.26 speed() returns 100
+  A   21.26 time() returns 2125
+  A   21.26 time() returns 2126
+  A   21.26 drive(  2,-75) returns 1
+  B   21.29 loc_x() returns 4353
+  B   21.29 loc_y() returns 9422
+  B   21.29 speed() returns 90
+  B   21.29 time() returns 2129
+  B   21.29 scan(220, 2) returns 0
+  A   21.76 loc_x() returns 2041
+  A   21.76 loc_y() returns 7079
+  A   21.76 speed() returns 90
+  A   21.76 time() returns 2176
+  A   21.77 cannon( 45,3527) returns 1
+  B Explosion at 1972,7216
+  B   21.79 time() returns 2179
+  B   21.80 loc_x() returns 4398
+  B   21.80 loc_y() returns 9428
+  B   21.80 speed() returns 80
+  B   21.80 time() returns 2179
+  B   21.80 cannon(224,3508) returns 1
+Time=  22.26720 
+  A bots/pbv8        2045 7034   2  275 -75   80  47  23  1.76  3.49  0.60
+  B bots/pbv8        4435 9433 265    8 -75   70 220  25  3.51  1.77      
+  A   22.27 loc_x() returns 2045
+  A   22.27 loc_y() returns 7034
+  A   22.27 speed() returns 80
+  A   22.27 time() returns 2227
+  A   22.27 scan( 48, 1) returns 0
+  B   22.31 loc_x() returns 4438
+  B   22.31 loc_y() returns 9434
+  B   22.31 speed() returns 70
+  B   22.31 time() returns 2230
+  B   22.31 scan(221, 3) returns 0
+  A Explosion at 4273,9531
+  A   22.77 time() returns 2277
+  A   22.77 loc_x() returns 2048
+  A   22.77 loc_y() returns 6995
+  A   22.78 speed() returns 70
+  A   22.78 time() returns 2277
+  A   22.78 cannon( 45,3656) returns 1
+  B   22.81 time() returns 2281
+  B   22.81 loc_x() returns 4471
+  B   22.81 loc_y() returns 9438
+  B   22.81 speed() returns 59
+  B   22.81 time() returns 2281
+  B   22.82 cannon(224,3633) returns 1
+Time=  23.27890 
+  A bots/pbv8        2052 6960   2  275 -75   60  48  23  0.74  2.48  3.62
+  B bots/pbv8        4499 9442 265    8 -75   50 221  27  2.50  0.76  3.63
+  A   23.28 loc_x() returns 2052
+  A   23.28 loc_y() returns 6960
+  A   23.28 speed() returns 60
+  A   23.28 time() returns 2328
+  A   23.28 scan( 48, 2) returns 0
+  B   23.32 loc_x() returns 4499
+  B   23.32 loc_y() returns 9440
+  B   23.32 speed() returns 49
+  B   23.32 time() returns 2332
+  B   23.32 scan(216, 4) returns 0
+  A Explosion at 4358,9521
+  B Explosion at 1931,7114
+  A   23.78 time() returns 2378
+  A   23.79 loc_x() returns 2054
+  A   23.79 loc_y() returns 6932
+  A   23.79 speed() returns 50
+  A   23.79 time() returns 2379
+  A   23.79 scan( 52, 3) returns 0
+  B   23.82 time() returns 2382
+  B   23.82 loc_x() returns 4497
+  B   23.82 loc_y() returns 9417
+  B   23.83 speed() returns 39
+  B   23.83 time() returns 2382
+  B   23.83 cannon(225,3698) returns 1
+Time=  24.29310 
+  A bots/pbv8        2055 6907   2  264 -75   40  52  24        1.47  2.61
+  B bots/pbv8        4495 9399 265  265 -75   30 216  29  1.48  3.70  2.62
+  A   24.29 time() returns 2429
+  A   24.29 loc_x() returns 2055
+  A   24.30 loc_y() returns 6907
+  A   24.30 speed() returns 40
+  A   24.30 time() returns 2429
+  A   24.30 cannon( 45,3824) returns 1
+  B   24.33 loc_x() returns 4495
+  B   24.33 loc_y() returns 9397
+  B   24.33 speed() returns 29
+  B   24.33 time() returns 2433
+  B   24.33 scan(226, 5) returns 3486
+  A   24.80 loc_x() returns 2053
+  A   24.80 loc_y() returns 6887
+  A   24.80 speed() returns 30
+  A   24.80 time() returns 2480
+  A   24.80 scan( 44, 4) returns 3491
+  B   24.84 time() returns 2483
+  B   24.84 loc_x() returns 4494
+  B   24.84 loc_y() returns 9383
+  B   24.84 speed() returns 19
+  B   24.84 time() returns 2483
+  B   24.84 scan(225, 2) returns 3491
+Time=  25.29420 
+  A bots/pbv8        2049 6873   2  249 -75   20  44  24  3.28  0.45  1.59
+  B bots/pbv8        4493 9375 265  265 -75   10 225  29  0.47  2.69  1.61
+  A Explosion at 4569,9571
+  A   25.31 time() returns 2530
+  A   25.31 loc_x() returns 2049
+  A   25.31 loc_y() returns 6873
+  A   25.31 speed() returns 20
+  A   25.31 time() returns 2530
+  A   25.31 cannon( 39,3604) returns 1
+  B Explosion at 1896,6980
+  B   25.34 time() returns 2534
+  B   25.34 loc_x() returns 4493
+  B   25.34 loc_y() returns 9374
+  B   25.35 speed() returns 9
+  B   25.35 time() returns 2534
+  B   25.35 cannon(220,3588) returns 1
+  A   25.81 loc_x() returns 2046
+  A   25.81 loc_y() returns 6864
+  A   25.81 speed() returns 9
+  A   25.82 time() returns 2581
+  A   25.82 scan( 44, 2) returns 3501
+  B   25.85 loc_x() returns 4493
+  B   25.85 loc_y() returns 9370
+  B   25.85 speed() returns 0
+  B   25.85 time() returns 2585
+  B   25.85 scan(224, 1) returns 0
+Time=  26.32070 
+  A bots/pbv8        2043 6861   2  234 -75    0  44  26  2.27  3.06  0.58
+  B bots/pbv8        4493 9371 265  265 -75  -10 224  30  3.08  1.67  0.59
+  A   26.32 time() returns 2632
+  A   26.32 loc_x() returns 2043
+  A   26.32 loc_y() returns 6861
+  A   26.32 speed() returns 0
+  A   26.33 time() returns 2632
+  A   26.33 scan( 43, 1) returns 0
+  B   26.36 time() returns 2635
+  B   26.36 loc_x() returns 4493
+  B   26.36 loc_y() returns 9371
+  B   26.36 speed() returns -11
+  B   26.36 time() returns 2635
+  B   26.36 scan(225, 2) returns 3506
+  A Explosion at 4654,9580
+  B Explosion at 1858,6911
+  A   26.83 time() returns 2682
+  A   26.83 loc_x() returns 2044
+  A   26.83 loc_y() returns 6862
+  A   26.83 speed() returns -10
+  A   26.83 time() returns 2683
+  A   26.83 scan( 42, 2) returns 0
+  B   26.86 time() returns 2686
+  B   26.86 loc_x() returns 4493
+  B   26.86 loc_y() returns 9378
+  B   26.87 speed() returns -21
+  B   26.87 time() returns 2686
+  B   26.87 cannon(225,3578) returns 1
+Time=  27.33270 
+  A bots/pbv8        2048 6866   2  219 -75  -20  42  28  1.26  2.05      
+  B bots/pbv8        4494 9388 265  265 -75  -30 225  31  2.07  0.66  3.58
+  A   27.33 time() returns 2733
+  A   27.33 loc_x() returns 2048
+  A   27.34 loc_y() returns 6866
+  A   27.34 speed() returns -20
+  A   27.34 time() returns 2733
+  A   27.34 cannon( 42,3439) returns 1
+  B   27.37 loc_x() returns 4494
+  B   27.37 loc_y() returns 9389
+  B   27.37 speed() returns -31
+  B   27.37 time() returns 2737
+  B   27.37 scan(225, 1) returns 0
+  B Explosion at 1897,6814
+  A   27.84 loc_x() returns 2058
+  A   27.84 loc_y() returns 6873
+  A   27.84 speed() returns -30
+  A   27.84 time() returns 2784
+  A   27.84 scan( 46, 3) returns 3514
+  B   27.87 time() returns 2787
+  B   27.88 loc_x() returns 4496
+  B   27.88 loc_y() returns 9407
+  B   27.88 speed() returns -41
+  B   27.88 time() returns 2787
+  B   27.88 cannon(225,3617) returns 1
+Time=  28.12390 
+  A bots/pbv8        2066 6878   2  207 -75  -36  46  30  0.24  1.03  2.90
+  B bots/pbv8        4497 9417 265  265 -75  -46 225  31  1.06  3.62  2.57
+  A Explosion at 4740,9618
+  A   28.35 time() returns 2834
+  A   28.35 loc_x() returns 2073
+  A   28.35 loc_y() returns 6881
+  A   28.35 speed() returns -40
+  A   28.35 time() returns 2834
+  A   28.35 cannon( 49,3563) returns 1
+  B   28.38 loc_x() returns 4498
+  B   28.38 loc_y() returns 9429
+  B   28.38 speed() returns -51
+  B   28.38 time() returns 2838
+  B   28.39 scan(226, 2) returns 3515
+  A   28.85 loc_x() returns 2093
+  A   28.85 loc_y() returns 6890
+  A   28.85 speed() returns -49
+  A   28.86 time() returns 2885
+  A   28.86 scan( 46, 2) returns 3516
+  B   28.89 time() returns 2888
+  B   28.89 loc_x() returns 4500
+  B   28.89 loc_y() returns 9456
+  B   28.89 speed() returns -61
+  B   28.89 time() returns 2889
+  B   28.89 scan(226, 1) returns 0
+  A Explosion at 4853,9143
+  B Explosion at 1741,7071
+Time=  29.35680 
+  A bots/pbv8        2117 6896   2  188 -75  -49  46  31  2.98        1.84
+  B bots/pbv8        4503 9485 265  265 -75  -70 226  32        2.56  1.51
+  A   29.36 time() returns 2935
+  A   29.36 loc_x() returns 2117
+  A   29.36 loc_y() returns 6896
+  A   29.36 speed() returns -49
+  A   29.36 time() returns 2936
+  A   29.36 cannon( 45,3648) returns 1
+  B   29.39 time() returns 2939
+  B   29.40 loc_x() returns 4503
+  B   29.40 loc_y() returns 9488
+  B   29.40 speed() returns -71
+  B   29.40 time() returns 2939
+  B   29.40 cannon(227,3483) returns 1
+  A   29.87 loc_x() returns 2142
+  A   29.87 loc_y() returns 6900
+  A   29.87 speed() returns -49
+  A   29.87 time() returns 2986
+  A   29.87 scan( 46, 2) returns 3530
+  B   29.90 loc_x() returns 4507
+  B   29.90 loc_y() returns 9525
+  B   29.90 speed() returns -74
+  B   29.90 time() returns 2990
+  B   29.91 scan(227, 2) returns 3531
+Time=  30.36900 
+  A bots/pbv8        2167 6900   2  173 -75  -49  46  31  2.01  3.11  0.87
+  B bots/pbv8        4510 9559 265  265 -75  -74 227  32  2.98  1.59  0.54
+  A   30.37 time() returns 3036
+  A   30.37 loc_x() returns 2168
+  A   30.37 loc_y() returns 6900
+  A   30.37 speed() returns -49
+  A   30.37 time() returns 3037
+  A   30.38 scan( 46, 2) returns 0
+  B   30.41 time() returns 3040
+  B   30.41 loc_x() returns 4510
+  B   30.41 loc_y() returns 9562
+  B   30.41 speed() returns -74
+  B   30.41 time() returns 3041
+  B   30.41 scan(227, 1) returns 0
+  B Explosion at 1955,6852
+  A Explosion at 4612,9162
+  A   30.88 time() returns 3087
+  A   30.88 loc_x() returns 2193
+  A   30.88 loc_y() returns 6896
+  A   30.88 speed() returns -49
+  A   30.88 time() returns 3087
+  A   30.88 cannon( 44,3747) returns 1
+  B   30.91 time() returns 3091
+  B   30.92 loc_x() returns 4514
+  B   30.92 loc_y() returns 9600
+  B   30.92 speed() returns -74
+  B   30.92 time() returns 3091
+  B   30.92 cannon(227,3415) returns 1
+Time=  31.38270 
+  A bots/pbv8        2217 6889   2  158 -75  -49  46  32  0.99  2.09  3.71
+  B bots/pbv8        4517 9635 265  265 -75  -74 227  32  1.96  0.58  3.42
+  A   31.38 loc_x() returns 2217
+  A   31.38 loc_y() returns 6889
+  A   31.39 speed() returns -49
+  A   31.39 time() returns 3138
+  A   31.39 scan( 49, 3) returns 3581
+  B   31.42 loc_x() returns 4517
+  B   31.42 loc_y() returns 9638
+  B   31.42 speed() returns -74
+  B   31.42 time() returns 3142
+  B   31.43 scan(229, 2) returns 3582
+  B Explosion at 1928,6868
+  A   31.89 time() returns 3188
+  A   31.89 loc_x() returns 2240
+  A   31.89 loc_y() returns 6879
+  A   31.89 speed() returns -49
+  A   31.89 time() returns 3189
+  A   31.89 scan( 49, 2) returns 3606
+  A Explosion at 4394,9558
+  B   31.93 time() returns 3192
+  B   31.93 loc_x() returns 4521
+  B   31.93 loc_y() returns 9676
+  B   31.93 speed() returns -74
+  B   31.93 time() returns 3193
+  B   31.93 cannon(231,3514) returns 1
+Time=  32.39360 
+  A bots/pbv8        2262 6866   2  143 -75  -49  49  33        1.08  2.70
+  B bots/pbv8        4524 9711 265  265 -75  -74 229  34  0.95  3.51  2.40
+  A   32.39 time() returns 3239
+  A   32.40 loc_x() returns 2262
+  A   32.40 loc_y() returns 6866
+  A   32.40 speed() returns -49
+  A   32.40 time() returns 3239
+  A   32.40 cannon( 46,3858) returns 1
+  B   32.44 loc_x() returns 4525
+  B   32.44 loc_y() returns 9714
+  B   32.44 speed() returns -74
+  B   32.44 time() returns 3243
+  B   32.44 scan(229, 1) returns 0
+  B Explosion at 2153,6925
+  A   32.90 loc_x() returns 2282
+  A   32.90 loc_y() returns 6851
+  A   32.90 speed() returns -49
+  A   32.90 time() returns 3290
+  A   32.91 scan( 49, 2) returns 0
+  B   32.94 time() returns 3294
+  B   32.94 loc_x() returns 4528
+  B   32.94 loc_y() returns 9752
+  B   32.94 speed() returns -74
+  B   32.94 time() returns 3294
+  B   32.95 cannon(233,3555) returns 1
+Time=  33.01240 
+  A bots/pbv8        2286 6847   2  134 -75  -49  49  35  3.31  0.07  1.68
+  B bots/pbv8        4529 9757 265  265 -75  -74 229  34  3.56  2.50  1.39
+  A Explosion at 4720,9497
+  A   33.41 time() returns 3340
+  A   33.41 loc_x() returns 2300
+  A   33.41 loc_y() returns 6833
+  A   33.41 speed() returns -49
+  A   33.41 time() returns 3340
+  A   33.41 cannon( 46,3923) returns 1
+  B   33.45 loc_x() returns 4532
+  B   33.45 loc_y() returns 9789
+  B   33.45 speed() returns -74
+  B   33.45 time() returns 3345
+  B   33.45 scan(231, 2) returns 0
+  A   33.91 loc_x() returns 2315
+  A   33.91 loc_y() returns 6812
+  A   33.92 speed() returns -49
+  A   33.92 time() returns 3391
+  A   33.92 scan( 52, 3) returns 3741
+  B   33.95 time() returns 3395
+  B   33.95 loc_x() returns 4535
+  B   33.95 loc_y() returns 9827
+  B   33.96 speed() returns -74
+  B   33.96 time() returns 3395
+  B   33.96 time() returns 3395
+  B   33.96 drive(-84,100) returns 1
+Time=  34.33580 
+  A bots/pbv8        2325 6794   2  114 -75  -49  52  35  2.30  3.38  0.67
+  B bots/pbv8        4538 9856 276  265 100  -66 231  35  2.54  1.49  0.38
+  B Explosion at 2180,7105
+  A   34.42 time() returns 3441
+  A   34.42 loc_x() returns 2327
+  A   34.42 loc_y() returns 6790
+  A   34.42 speed() returns -49
+  A   34.42 time() returns 3442
+  A   34.42 time() returns 3442
+  A   34.42 drive(277,100) returns 1
+  B   34.46 loc_x() returns 4539
+  B   34.46 loc_y() returns 9864
+  B   34.46 speed() returns -64
+  B   34.46 time() returns 3446
+  B   34.47 scan(228, 3) returns 0
+  A Explosion at 4907,9489
+  A   34.93 loc_x() returns 2337
+  A   34.93 loc_y() returns 6768
+  A   34.93 speed() returns -39
+  A   34.93 time() returns 3492
+  A   34.93 cannon( 53,3851) returns 1
+  B   34.97 time() returns 3496
+  B   34.97 loc_x() returns 4541
+  B   34.97 loc_y() returns 9895
+  B   34.97 speed() returns -54
+  B   34.97 time() returns 3496
+  B   34.97 cannon(235,3633) returns 1
+Time=  35.43050 
+  A bots/pbv8        2347 6751 277  127 100  -29  52  36  1.29  2.36  3.81
+  B bots/pbv8        4544 9921 276  272 100  -49 228  35  1.53  0.48  3.63
+  A   35.43 loc_x() returns 2347
+  A   35.43 loc_y() returns 6751
+  A   35.43 speed() returns -29
+  A   35.43 time() returns 3543
+  A   35.44 scan( 52, 1) returns 0
+  B Explosion at 2290,6957
+  B   35.47 loc_x() returns 4544
+  B   35.47 loc_y() returns 9923
+  B   35.48 speed() returns -48
+  B   35.48 time() returns 3547
+  B   35.48 scan(237, 4) returns 3857
+  A   35.94 time() returns 3593
+  A   35.94 loc_x() returns 2356
+  A   35.94 loc_y() returns 6740
+  A   35.94 speed() returns -19
+  A   35.94 time() returns 3593
+  A   35.94 scan( 54, 2) returns 3880
+  B   35.98 time() returns 3597
+  B   35.98 loc_x() returns 4543
+  B   35.98 loc_y() returns 9947
+  B   35.98 speed() returns -38
+  B   35.98 time() returns 3598
+  B   35.99 cannon(242,3942) returns 1
+Time=  36.25910 
+  A bots/pbv8        2360 6736 277  140 100  -12  54  37  0.27  1.35  2.80
+  B bots/pbv8        4541 9958 276  276 100  -32 237  35  0.52  3.94  2.62
+  A Explosion at 4956,9659
+  A   36.44 time() returns 3644
+  A   36.44 loc_x() returns 2362
+  A   36.44 loc_y() returns 6734
+  A   36.44 speed() returns -9
+  A   36.45 time() returns 3644
+  A   36.45 cannon( 53,3880) returns 1
+  B   36.49 loc_x() returns 4541
+  B   36.49 loc_y() returns 9965
+  B   36.49 speed() returns -28
+  B   36.49 time() returns 3648
+  B   36.49 scan(237, 2) returns 3896
+  B Explosion at 2399,6935
+  A   36.95 loc_x() returns 2365
+  A   36.95 loc_y() returns 6731
+  A   36.95 speed() returns 1
+  A   36.95 time() returns 3695
+  A   36.95 scan( 54, 1) returns 0
+  B   36.99 time() returns 3699
+  B   36.99 loc_x() returns 4539
+  B   36.99 loc_y() returns 9979
+  B   37.00 speed() returns -18
+  B   37.00 time() returns 3699
+  B   37.00 cannon(235,3933) returns 1
+Time=  37.33580 
+  A bots/pbv8        2365 6732 277  156 100    8  54  38  3.33  0.34  1.78
+  B bots/pbv8        4538 9986 276  276 100  -11 237  35  3.93  2.93  1.61
+  A Explosion at 5002,9644
+  A   37.45 time() returns 3745
+  A   37.45 loc_x() returns 2364
+  A   37.46 loc_y() returns 6732
+  A   37.46 speed() returns 11
+  A   37.46 time() returns 3745
+  A   37.46 cannon( 53,3886) returns 1
+  B   37.50 loc_x() returns 4538
+  B   37.50 loc_y() returns 9987
+  B   37.50 speed() returns -8
+  B   37.50 time() returns 3750
+  B   37.50 scan(237, 1) returns 3914
+  A   37.96 loc_x() returns 2359
+  A   37.96 loc_y() returns 6734
+  A   37.96 speed() returns 21
+  A   37.96 time() returns 3796
+  A   37.96 scan( 55, 2) returns 3918
+Time=  38.00500 
+  A bots/pbv8        2358 6734 277  166 100   22  55  38  2.36  3.38  0.82
+  B bots/pbv8        4538 9991 276  276 100    1 237  35  2.97  1.96  0.64
+  B   38.01 time() returns 3800
+  B   38.01 loc_x() returns 4538
+  B   38.01 loc_y() returns 9991
+  B   38.01 speed() returns 2
+  B   38.01 time() returns 3801
+  B   38.01 scan(237, 1) returns 3918
+  A   38.47 time() returns 3846
+  A   38.47 loc_x() returns 2348
+  A   38.47 loc_y() returns 6737
+  A   38.47 speed() returns 31
+  A   38.47 time() returns 3846
+  A   38.47 scan( 54, 1) returns 0
+  B   38.51 time() returns 3851
+  B   38.52 loc_x() returns 4538
+  B   38.52 loc_y() returns 9990
+  B   38.52 speed() returns 12
+  B   38.52 time() returns 3851
+  B   38.52 scan(236, 1) returns 3921
+  B Explosion at 2441,6934
+  A Explosion at 4652,9853
+  A   38.97 time() returns 3897
+  A   38.97 loc_x() returns 2331
+  A   38.97 loc_y() returns 6738
+  A   38.97 speed() returns 41
+  A   38.97 time() returns 3897
+  A   38.98 cannon( 54,3812) returns 1
+Time=  39.01930 
+  A bots/pbv8        2329 6738 277  181 100   42  54  39  1.35  2.37  3.81
+  B bots/pbv8        4539 9982 276  276 100   22 236  37  1.95  0.95      
+  B   39.03 time() returns 3902
+  B   39.03 loc_x() returns 4539
+  B   39.03 loc_y() returns 9982
+  B   39.03 speed() returns 22
+  B   39.03 time() returns 3903
+  B   39.03 cannon(231,3955) returns 1
+  A   39.48 loc_x() returns 2309
+  A   39.48 loc_y() returns 6738
+  A   39.48 speed() returns 50
+  A   39.48 time() returns 3948
+  A   39.48 scan( 55, 2) returns 3928
+  B   39.53 loc_x() returns 4540
+  B   39.54 loc_y() returns 9971
+  B   39.54 speed() returns 32
+  B   39.54 time() returns 3953
+  B   39.54 scan(235, 1) returns 3929
+  B Explosion at 2684,6475
+  A   39.98 time() returns 3998
+  A   39.99 loc_x() returns 2284
+  A   39.99 loc_y() returns 6733
+  A   39.99 speed() returns 50
+  A   39.99 time() returns 3998
+  A   39.99 scan( 54, 1) returns 3933
+Time=  40.03890 
+  A bots/pbv8        2282 6733 277  197 100   50  54  39  0.34  1.36  2.80
+  B bots/pbv8        4542 9954 276  276 100   42 235  37  0.94        3.00
+  B   40.04 time() returns 4003
+  B   40.05 loc_x() returns 4542
+  B   40.05 loc_y() returns 9953
+  B   40.05 speed() returns 42
+  B   40.05 time() returns 4004
+  B   40.05 cannon(231,4025) returns 1
+  A Explosion at 4696,9828
+  A   40.49 time() returns 4048
+  A   40.49 loc_x() returns 2260
+  A   40.49 loc_y() returns 6725
+  A   40.49 speed() returns 50
+  A   40.49 time() returns 4049
+  A   40.50 cannon( 48,3878) returns 1
+  B   40.55 loc_x() returns 4545
+  B   40.55 loc_y() returns 9930
+  B   40.55 speed() returns 52
+  B   40.56 time() returns 4055
+  B   40.56 scan(234, 2) returns 3938
+  B Explosion at 2281,6765
+  A   41.00 loc_x() returns 2237
+  A   41.00 loc_y() returns 6715
+  A   41.00 speed() returns 50
+Time=  41.00010 
+  A bots/pbv8        2237 6715 277  211 100   50  54  43  3.38  0.35  1.79
+  B bots/pbv8        4547 9907 276  276 100   61 234  39        3.08  1.99
+  A   41.00 time() returns 4100
+  A   41.00 scan( 53, 1) returns 3938
+  B   41.06 time() returns 4105
+  B   41.06 loc_x() returns 4548
+  B   41.06 loc_y() returns 9903
+  B   41.07 speed() returns 63
+  B   41.07 time() returns 4106
+  B   41.07 cannon(231,4093) returns 1
+  A Explosion at 4704,9838
+  A   41.50 time() returns 4150
+  A   41.50 loc_x() returns 2216
+  A   41.51 loc_y() returns 6701
+  A   41.51 speed() returns 50
+  A   41.51 time() returns 4150
+  A   41.51 cannon( 50,3806) returns 1
+  B   41.57 loc_x() returns 4551
+  B   41.57 loc_y() returns 9869
+  B   41.57 speed() returns 73
+  B   41.57 time() returns 4157
+  B   41.58 scan(233, 2) returns 3938
+Time=  42.00970 
+  A bots/pbv8        2197 6685 277  226 100   50  53  43  2.80  3.74  1.21
+  B bots/pbv8        4555 9838 276  276 100   82 233  41  3.59  2.50  1.41
+  A   42.01 loc_x() returns 2197
+  A   42.01 loc_y() returns 6685
+  A   42.01 speed() returns 50
+  A   42.01 time() returns 4201
+  A   42.01 scan( 52, 1) returns 3936
+  B   42.08 time() returns 4207
+  B   42.08 loc_x() returns 4555
+  B   42.08 loc_y() returns 9832
+  B   42.08 speed() returns 83
+  B   42.08 time() returns 4208
+  B   42.08 scan(232, 2) returns 3935
+  A   42.52 time() returns 4251
+  A   42.52 loc_x() returns 2179
+  A   42.52 loc_y() returns 6666
+  A   42.52 speed() returns 50
+  A   42.52 time() returns 4251
+  A   42.52 scan( 51, 1) returns 0
+  B   42.58 time() returns 4258
+  B   42.58 loc_x() returns 4560
+  B   42.59 loc_y() returns 9790
+  B   42.59 speed() returns 93
+  B   42.59 time() returns 4258
+  B   42.59 scan(231, 2) returns 0
+  A Explosion at 4578,9839
+  B Explosion at 2052,6902
+Time=  43.02060 
+  A bots/pbv8        2166 6645 277  241 100   50  51  44  1.39  2.33      
+  B bots/pbv8        4564 9748 276  276 100  100 231  45  2.17  1.09      
+  A   43.02 time() returns 4302
+  A   43.02 loc_x() returns 2165
+  A   43.02 loc_y() returns 6645
+  A   43.02 speed() returns 50
+  A   43.02 time() returns 4302
+  A   43.03 cannon( 47,3754) returns 1
+  B   43.09 time() returns 4309
+  B   43.09 loc_x() returns 4565
+  B   43.09 loc_y() returns 9741
+  B   43.09 speed() returns 100
+  B   43.09 time() returns 4309
+  B   43.10 cannon(226,4066) returns 1
+  A   43.53 loc_x() returns 2154
+  A   43.53 loc_y() returns 6623
+  A   43.53 speed() returns 50
+  A   43.53 time() returns 4353
+  A   43.53 scan( 53, 2) returns 3909
+  B   43.60 loc_x() returns 4571
+  B   43.60 loc_y() returns 9691
+  B   43.60 speed() returns 100
+  B   43.60 time() returns 4360
+  B   43.60 scan(232, 3) returns 3908
+Time=  44.03260 
+  A bots/pbv8        2145 6599 277  257 100   50  53  44  0.77  1.71  3.18
+  B bots/pbv8        4575 9648 276  276 100  100 232  45  1.56  0.47  3.56
+  A   44.03 time() returns 4403
+  A   44.04 loc_x() returns 2145
+  A   44.04 loc_y() returns 6599
+  A   44.04 speed() returns 50
+  A   44.04 time() returns 4403
+  A   44.04 scan( 53, 1) returns 0
+  B Explosion at 2027,6837
+  B   44.10 time() returns 4410
+  B   44.11 loc_x() returns 4576
+  B   44.11 loc_y() returns 9640
+  B   44.11 speed() returns 100
+  B   44.11 time() returns 4410
+  B   44.11 cannon(235,4082) returns 1
+  A Explosion at 4853,9615
+  A   44.54 time() returns 4453
+  A   44.54 loc_x() returns 2140
+  A   44.54 loc_y() returns 6574
+  A   44.54 speed() returns 50
+  A   44.54 time() returns 4454
+  A   44.54 scan( 54, 2) returns 0
+  B   44.61 loc_x() returns 4582
+  B   44.61 loc_y() returns 9590
+  B   44.61 speed() returns 100
+  B   44.62 time() returns 4461
+  B   44.62 scan(230, 2) returns 3883
+Time=  45.04410 
+  A bots/pbv8        2138 6549 277  272 100   50  54  45        0.70  2.16
+  B bots/pbv8        4586 9547 276  276 100  100 230  46  0.55  3.58  2.55
+  A   45.05 time() returns 4504
+  A   45.05 loc_x() returns 2138
+  A   45.05 loc_y() returns 6549
+  A   45.05 speed() returns 50
+  A   45.05 time() returns 4504
+  A   45.05 cannon( 56,3641) returns 1
+  B   45.12 time() returns 4511
+  B   45.12 loc_x() returns 4587
+  B   45.12 loc_y() returns 9540
+  B   45.12 speed() returns 100
+  B   45.12 time() returns 4512
+  B   45.12 scan(229, 2) returns 0
+  B Explosion at 1970,6706
+  A Explosion at 4684,9618
+  A   45.55 loc_x() returns 2140
+  A   45.55 loc_y() returns 6524
+  A   45.55 speed() returns 50
+  A   45.55 time() returns 4555
+  A   45.56 scan( 51, 3) returns 3852
+  B   45.62 time() returns 4562
+  B   45.63 loc_x() returns 4593
+  B   45.63 loc_y() returns 9489
+  B   45.63 speed() returns 100
+  B   45.63 time() returns 4562
+  B   45.63 cannon(224,4051) returns 1
+Time=  46.05560 
+  A bots/pbv8        2143 6498 277  277 100   60  51  46  3.06        1.15
+  B bots/pbv8        4597 9447 276  276 100  100 229  48  4.05  2.56  1.53
+  A   46.06 time() returns 4605
+  A   46.06 loc_x() returns 2143
+  A   46.06 loc_y() returns 6498
+  A   46.06 speed() returns 60
+  A   46.06 time() returns 4606
+  A   46.06 time() returns 4606
+  A   46.06 drive(  6,-75) returns 1
+  B   46.13 loc_x() returns 4598
+  B   46.14 loc_y() returns 9438
+  B   46.14 speed() returns 100
+  B   46.14 time() returns 4614
+  B   46.14 scan(230, 3) returns 3833
+  A   46.56 loc_x() returns 2146
+  A   46.56 loc_y() returns 6468
+  A   46.56 speed() returns 50
+  A   46.57 time() returns 4656
+  A   46.57 cannon( 47,3679) returns 1
+  B   46.64 time() returns 4664
+  B   46.64 loc_x() returns 4604
+  B   46.65 loc_y() returns 9388
+  B   46.65 speed() returns 100
+  B   46.65 time() returns 4664
+  B   46.65 scan(229, 2) returns 3818
+  A Explosion at 4724,9373
+Time=  47.06830 
+  A bots/pbv8        2148 6444   6  269 -75   41  51  46  1.91  3.47      
+  B bots/pbv8        4609 9346 276  276 100  100 229  50  2.90  1.41  0.38
+  A   47.07 loc_x() returns 2148
+  A   47.07 loc_y() returns 6444
+  A   47.07 speed() returns 41
+  A   47.07 time() returns 4707
+  A   47.07 scan( 51, 1) returns 3803
+  B   47.15 time() returns 4715
+  B   47.15 loc_x() returns 4609
+  B   47.15 loc_y() returns 9338
+  B   47.15 speed() returns 100
+  B   47.16 time() returns 4715
+  B   47.16 time() returns 4716
+  B   47.16 drive(273,-75) returns 1
+  B Explosion at 1713,6775
+  A   47.57 time() returns 4757
+  A   47.58 loc_x() returns 2148
+  A   47.58 loc_y() returns 6424
+  A   47.58 speed() returns 31
+  A   47.58 time() returns 4757
+  A   47.58 cannon( 48,3533) returns 1
+  B   47.66 loc_x() returns 4615
+  B   47.66 loc_y() returns 9288
+  B   47.66 speed() returns 90
+  B   47.66 time() returns 4766
+  B   47.67 cannon(223,3952) returns 1
+Time=  48.08100 
+  A bots/pbv8        2145 6409   6  254 -75   21  51  46  1.02  2.58  3.45
+  B bots/pbv8        4619 9250 273  276 -75   82 229  50  2.01  0.53  3.95
+  A   48.08 loc_x() returns 2145
+  A   48.08 loc_y() returns 6409
+  A   48.08 speed() returns 21
+  A   48.08 time() returns 4808
+  A   48.09 scan( 51, 1) returns 0
+  B   48.17 loc_x() returns 4620
+  B   48.17 loc_y() returns 9243
+  B   48.17 speed() returns 80
+  B   48.17 time() returns 4817
+  B   48.17 scan(227, 2) returns 0
+  B Explosion at 2222,6288
+  A   48.59 time() returns 4858
+  A   48.59 loc_x() returns 2142
+  A   48.59 loc_y() returns 6400
+  A   48.59 speed() returns 11
+  A   48.59 time() returns 4858
+  A   48.59 scan( 50, 2) returns 3748
+  B   48.67 time() returns 4867
+  B   48.68 loc_x() returns 4624
+  B   48.68 loc_y() returns 9204
+  B   48.68 speed() returns 70
+  B   48.68 time() returns 4867
+  B   48.68 cannon(222,3945) returns 1
+  A Explosion at 4157,9558
+Time=  49.09110 
+  A bots/pbv8        2140 6395   6  239 -75    1  50  48        1.56  2.42
+  B bots/pbv8        4627 9175 273  276 -75   61 227  50  0.99  3.93  2.93
+  A   49.09 time() returns 4909
+  A   49.09 loc_x() returns 2140
+  A   49.09 loc_y() returns 6395
+  A   49.10 speed() returns 1
+  A   49.10 time() returns 4909
+  A   49.10 cannon( 46,3530) returns 1
+  B   49.18 loc_x() returns 4628
+  B   49.18 loc_y() returns 9170
+  B   49.18 speed() returns 60
+  B   49.18 time() returns 4918
+  B   49.19 scan(228, 3) returns 3725
+  A   49.60 loc_x() returns 2140
+  A   49.60 loc_y() returns 6396
+  A   49.60 speed() returns -8
+  A   49.60 time() returns 4960
+  A   49.60 scan( 50, 1) returns 0
+  B Explosion at 1685,6673
+  B   49.69 time() returns 4968
+  B   49.69 loc_x() returns 4631
+  B   49.69 loc_y() returns 9140
+  B   49.69 speed() returns 50
+  B   49.69 time() returns 4969
+  B   49.69 cannon(230,3798) returns 1
+Time=  50.10320 
+  A bots/pbv8        2144 6400   6  224 -75  -18  50  48  2.93  0.55  1.42
+  B bots/pbv8        4633 9120 273  273 -75   42 228  50  3.80  2.93  1.93
+  A   50.10 time() returns 5010
+  A   50.11 loc_x() returns 2144
+  A   50.11 loc_y() returns 6400
+  A   50.11 speed() returns -18
+  A   50.11 time() returns 5010
+  A   50.11 scan( 49, 2) returns 3685
+  B   50.20 loc_x() returns 4633
+  B   50.20 loc_y() returns 9116
+  B   50.20 speed() returns 40
+  B   50.20 time() returns 5019
+  B   50.20 scan(227, 2) returns 3681
+  A Explosion at 4640,9181
+  A   50.61 time() returns 5060
+  A   50.61 loc_x() returns 2152
+  A   50.61 loc_y() returns 6407
+  A   50.61 speed() returns -28
+  A   50.61 time() returns 5061
+  A   50.62 cannon( 46,3509) returns 1
+  B   50.70 time() returns 5070
+  B   50.70 loc_x() returns 4634
+  B   50.70 loc_y() returns 9097
+  B   50.70 speed() returns 30
+  B   50.70 time() returns 5070
+  B   50.71 scan(226, 1) returns 0
+Time=  51.11400 
+  A bots/pbv8        2165 6416   6  209 -75  -38  49  48  1.92  3.42  0.41
+  B bots/pbv8        4635 9085 273  273 -75   21 226  54  2.79  1.92  0.91
+  A Explosion at 4514,9041
+  A   51.12 loc_x() returns 2165
+  A   51.12 loc_y() returns 6416
+  A   51.12 speed() returns -39
+  A   51.12 time() returns 5111
+  A   51.12 cannon( 45,3477) returns 1
+  B   51.21 time() returns 5120
+  B   51.21 loc_x() returns 4635
+  B   51.21 loc_y() returns 9083
+  B   51.21 speed() returns 19
+  B   51.22 time() returns 5121
+  B   51.22 scan(227, 2) returns 3630
+  B Explosion at 1765,6599
+  A   51.62 loc_x() returns 2184
+  A   51.62 loc_y() returns 6426
+  A   51.62 speed() returns -49
+  A   51.63 time() returns 5162
+  A   51.63 scan( 49, 2) returns 3608
+  B   51.72 time() returns 5171
+  B   51.72 loc_x() returns 4635
+  B   51.72 loc_y() returns 9074
+  B   51.72 speed() returns 9
+  B   51.72 time() returns 5172
+  B   51.73 cannon(228,3510) returns 1
+Time=  52.12670 
+  A bots/pbv8        2207 6434   6  193 -75  -49  49  48  0.90  2.40  2.87
+  B bots/pbv8        4635 9070 273  273 -75    1 227  56  1.77  0.90  3.51
+  A   52.13 time() returns 5212
+  A   52.13 loc_x() returns 2207
+  A   52.13 loc_y() returns 6434
+  A   52.13 speed() returns -49
+  A   52.13 time() returns 5213
+  A   52.13 scan( 49, 2) returns 3583
+  B   52.23 loc_x() returns 4635
+  B   52.23 loc_y() returns 9070
+  B   52.23 speed() returns 0
+  B   52.23 time() returns 5222
+  B   52.23 scan(226, 1) returns 0
+  B Explosion at 1685,6540
+  A Explosion at 4592,8934
+  A   52.63 time() returns 5263
+  A   52.64 loc_x() returns 2232
+  A   52.64 loc_y() returns 6439
+  A   52.64 speed() returns -49
+  A   52.64 time() returns 5263
+  A   52.64 cannon( 47,3533) returns 1
+  B   52.73 time() returns 5273
+  B   52.73 loc_x() returns 4635
+  B   52.73 loc_y() returns 9072
+  B   52.74 speed() returns -10
+  B   52.74 time() returns 5273
+  B   52.74 cannon(228,3481) returns 1
+Time=  53.14160 
+  A bots/pbv8        2257 6441   6  178 -75  -49  49  48  3.44  1.39  1.86
+  B bots/pbv8        4635 9076 273  273 -75  -18 226  58  0.75  3.48  2.50
+  A   53.14 loc_x() returns 2257
+  A   53.14 loc_y() returns 6441
+  A   53.14 speed() returns -49
+  A   53.14 time() returns 5314
+  A   53.15 scan( 49, 2) returns 3547
+  B   53.24 loc_x() returns 4635
+  B   53.24 loc_y() returns 9078
+  B   53.24 speed() returns -20
+  B   53.24 time() returns 5324
+  B   53.24 scan(227, 2) returns 3546
+  B Explosion at 2208,6232
+  A   53.65 time() returns 5364
+  A   53.65 loc_x() returns 2283
+  A   53.65 loc_y() returns 6439
+  A   53.65 speed() returns -49
+  A   53.65 time() returns 5365
+  A   53.65 scan( 49, 2) returns 3541
+  B   53.75 time() returns 5374
+  B   53.75 loc_x() returns 4634
+  B   53.75 loc_y() returns 9090
+  B   53.75 speed() returns -30
+  B   53.75 time() returns 5374
+  B   53.75 cannon(227,3397) returns 1
+Time=  54.12520 
+  A bots/pbv8        2306 6435   6  163 -75  -49  49  49  2.42  0.37  0.85
+  B bots/pbv8        4634 9102 273  273 -75  -38 227  58  3.40  2.47  1.48
+  A Explosion at 4600,8939
+  A   54.15 time() returns 5415
+  A   54.16 loc_x() returns 2307
+  A   54.16 loc_y() returns 6435
+  A   54.16 speed() returns -49
+  A   54.16 time() returns 5415
+  A   54.16 cannon( 46,3608) returns 1
+  B   54.25 loc_x() returns 4633
+  B   54.25 loc_y() returns 9107
+  B   54.26 speed() returns -40
+  B   54.26 time() returns 5425
+  B   54.26 scan(227, 1) returns 0
+  A Explosion at 4623,8873
+  A   54.66 loc_x() returns 2331
+  A   54.66 loc_y() returns 6426
+  A   54.66 speed() returns -49
+  A   54.66 time() returns 5466
+  A   54.67 cannon( 46,3609) returns 1
+  B   54.76 time() returns 5475
+  B   54.76 loc_x() returns 4632
+  B   54.76 loc_y() returns 9130
+  B   54.76 speed() returns -51
+  B   54.77 time() returns 5476
+  B   54.77 scan(228, 2) returns 0
+Time=  55.16660 
+  A bots/pbv8        2354 6415   6  148 -75  -49  49  49  1.41  3.00  3.51
+  B bots/pbv8        4631 9150 273  273 -75  -59 228  61  2.38  1.45  0.47
+  A   55.17 loc_x() returns 2354
+  A   55.17 loc_y() returns 6415
+  A   55.17 speed() returns -49
+  A   55.17 time() returns 5516
+  A   55.17 scan( 50, 2) returns 3558
+  B Explosion at 2287,6465
+  B   55.27 time() returns 5526
+  B   55.27 loc_x() returns 4631
+  B   55.27 loc_y() returns 9157
+  B   55.27 speed() returns -61
+  B   55.27 time() returns 5527
+  B   55.27 scan(225, 3) returns 0
+  A   55.67 time() returns 5567
+  A   55.67 loc_x() returns 2375
+  A   55.67 loc_y() returns 6401
+  A   55.68 speed() returns -49
+  A   55.68 time() returns 5567
+  A   55.68 scan( 50, 2) returns 3578
+  B   55.77 time() returns 5577
+  B   55.77 loc_x() returns 4629
+  B   55.78 loc_y() returns 9189
+  B   55.78 speed() returns -71
+  B   55.78 time() returns 5577
+  B   55.78 cannon(228,3388) returns 1
+Time=  56.17460 
+  A bots/pbv8        2394 6385   6  133 -75  -49  50  53  0.39  1.99  2.49
+  B bots/pbv8        4628 9217 273  273 -75  -74 225  61  1.37  0.44  3.39
+  A Explosion at 4658,9023
+  A   56.18 time() returns 5617
+  A   56.18 loc_x() returns 2394
+  A   56.18 loc_y() returns 6385
+  A   56.18 speed() returns -49
+  A   56.18 time() returns 5618
+  A   56.19 cannon( 47,3756) returns 1
+  B Explosion at 2308,6485
+  B   56.28 loc_x() returns 4627
+  B   56.29 loc_y() returns 9226
+  B   56.29 speed() returns -74
+  B   56.29 time() returns 5628
+  B   56.29 scan(234, 4) returns 3614
+  A   56.69 loc_x() returns 2411
+  A   56.69 loc_y() returns 6366
+  A   56.69 speed() returns -49
+  A   56.69 time() returns 5668
+  A   56.69 scan( 50, 2) returns 0
+  B   56.79 time() returns 5678
+  B   56.79 loc_x() returns 4626
+  B   56.79 loc_y() returns 9264
+  B   56.79 speed() returns -74
+  B   56.79 time() returns 5679
+  B   56.80 cannon(239,3641) returns 1
+Time=  57.14950 
+  A bots/pbv8        2424 6346   6  118 -75  -49  50  55  3.14  0.97  1.48
+  B bots/pbv8        4624 9290 273  273 -75  -74 234  63  0.35  3.64  2.37
+  B Explosion at 2318,6600
+  A   57.19 time() returns 5719
+  A   57.19 loc_x() returns 2425
+  A   57.19 loc_y() returns 6344
+  A   57.19 speed() returns -49
+  A   57.19 time() returns 5719
+  A   57.20 time() returns 5719
+  A   57.20 drive(276,100) returns 1
+  B   57.30 loc_x() returns 4624
+  B   57.30 loc_y() returns 9302
+  B   57.30 speed() returns -74
+  B   57.30 time() returns 5730
+  B   57.30 cannon(240,3674) returns 1
+  A   57.70 loc_x() returns 2436
+  A   57.70 loc_y() returns 6323
+  A   57.70 speed() returns -39
+  A   57.70 time() returns 5769
+  A   57.70 scan( 49, 3) returns 0
+  A Explosion at 4800,9005
+  B   57.80 loc_x() returns 4622
+  B   57.81 loc_y() returns 9340
+  B   57.81 speed() returns -74
+  B   57.81 time() returns 5780
+  B   57.81 scan(235, 2) returns 3725
+Time=  58.20090 
+  A bots/pbv8        2448 6308 276  132 100  -29  49  56  2.13        0.46
+  B bots/pbv8        4620 9369 273  273 -75  -74 235  64  3.17  2.63  1.36
+  A   58.20 time() returns 5820
+  A   58.20 loc_x() returns 2448
+  A   58.20 loc_y() returns 6307
+  A   58.20 speed() returns -29
+  A   58.20 time() returns 5820
+  A   58.21 cannon( 47,3873) returns 1
+  A Explosion at 4814,9015
+  B   58.31 time() returns 5831
+  B   58.31 loc_x() returns 4620
+  B   58.31 loc_y() returns 9378
+  B   58.32 speed() returns -74
+  B   58.32 time() returns 5831
+  B   58.32 scan(235, 1) returns 3760
+  A   58.71 loc_x() returns 2458
+  A   58.71 loc_y() returns 6297
+  A   58.71 speed() returns -19
+  A   58.71 time() returns 5871
+  A   58.71 scan( 55, 4) returns 3786
+  B   58.82 time() returns 5881
+  B   58.82 loc_x() returns 4618
+  B   58.82 loc_y() returns 9416
+  B   58.82 speed() returns -74
+  B   58.82 time() returns 5882
+  B   58.83 scan(235, 1) returns 3793
+Time=  59.17130 
+  A bots/pbv8        2464 6292 276  147 100  -10  55  56  1.12  3.26      
+  B bots/pbv8        4617 9442 273  273 -75  -74 235  64  2.15  1.61  0.35
+  B Explosion at 2339,6686
+  A   59.21 time() returns 5921
+  A   59.22 loc_x() returns 2464
+  A   59.22 loc_y() returns 6292
+  A   59.22 speed() returns -9
+  A   59.22 time() returns 5921
+  A   59.22 cannon( 58,4023) returns 1
+  B   59.33 time() returns 5932
+  B   59.33 loc_x() returns 4616
+  B   59.33 loc_y() returns 9454
+  B   59.33 speed() returns -74
+  B   59.33 time() returns 5933
+  B   59.33 cannon(232,3853) returns 1
+  A   59.72 loc_x() returns 2468
+  A   59.72 loc_y() returns 6290
+  A   59.72 speed() returns 1
+  A   59.72 time() returns 5972
+  A   59.72 scan( 55, 2) returns 3847
+  B   59.83 loc_x() returns 4614
+  B   59.84 loc_y() returns 9492
+  B   59.84 speed() returns -74
+  B   59.84 time() returns 5983
+  B   59.84 scan(235, 1) returns 0
+  A Explosion at 4978,9129
+Time=  60.22460 
+  A bots/pbv8        2466 6291 276  163 100   11  55  56        2.14  3.30
+  B bots/pbv8        4613 9521 273  273 -75  -74 235  64  1.04  0.50  3.25
+  A   60.23 time() returns 6022
+  A   60.23 loc_x() returns 2466
+  A   60.23 loc_y() returns 6291
+  A   60.23 speed() returns 11
+  A   60.23 time() returns 6022
+  A   60.23 cannon( 54,4109) returns 1
+  B   60.34 time() returns 6034
+  B   60.34 loc_x() returns 4612
+  B   60.34 loc_y() returns 9530
+  B   60.34 speed() returns -74
+  B   60.34 time() returns 6034
+  B   60.35 time() returns 6034
+  B   60.35 drive( 11,100) returns 1
+  B Explosion at 2741,6173
+  A   60.73 loc_x() returns 2459
+  A   60.73 loc_y() returns 6292
+  A   60.74 speed() returns 21
+  A   60.74 time() returns 6073
+  A   60.74 scan( 54, 1) returns 0
+  B   60.85 loc_x() returns 4610
+  B   60.85 loc_y() returns 9566
+  B   60.85 speed() returns -64
+  B   60.85 time() returns 6084
+  B   60.85 scan(237, 2) returns 3917
+  B Explosion at 2799,6137
+Time=  61.23760 
+  A bots/pbv8        2448 6294 276  178 100   31  54  58  3.36  1.10  2.27
+  B bots/pbv8        4609 9591  11  273 100  -56 237  64              2.21
+  A   61.24 time() returns 6123
+  A   61.24 loc_x() returns 2447
+  A   61.24 loc_y() returns 6294
+  A   61.24 speed() returns 31
+  A   61.24 time() returns 6124
+  A   61.24 scan( 55, 2) returns 3942
+  B   61.35 time() returns 6135
+  B   61.35 loc_x() returns 4609
+  B   61.35 loc_y() returns 9597
+  B   61.36 speed() returns -54
+  B   61.36 time() returns 6135
+  B   61.36 cannon(238,3956) returns 1
+  A   61.74 time() returns 6174
+  A   61.75 loc_x() returns 2431
+  A   61.75 loc_y() returns 6294
+  A   61.75 speed() returns 41
+  A   61.75 time() returns 6174
+  A   61.75 scan( 54, 1) returns 0
+  B   61.86 loc_x() returns 4608
+  B   61.86 loc_y() returns 9624
+  B   61.86 speed() returns -47
+  B   61.86 time() returns 6186
+  B   61.87 cannon(239,3980) returns 1
+Time=  62.08090 
+  A bots/pbv8        2417 6292 276  191 100   48  54  58  2.47  0.21  1.38
+  B bots/pbv8        4609 9635  11  262 100  -42 237  64  3.45  3.98  1.32
+  A Explosion at 5096,9148
+  A   62.25 time() returns 6225
+  A   62.25 loc_x() returns 2409
+  A   62.25 loc_y() returns 6291
+  A   62.25 speed() returns 50
+  A   62.25 time() returns 6225
+  A   62.26 cannon( 55,4251) returns 1
+  B   62.37 loc_x() returns 4611
+  B   62.37 loc_y() returns 9647
+  B   62.37 speed() returns -36
+  B   62.37 time() returns 6237
+  B   62.37 scan(237, 1) returns 4017
+  A   62.76 loc_x() returns 2384
+  A   62.76 loc_y() returns 6284
+  A   62.76 speed() returns 50
+  A   62.76 time() returns 6275
+  A   62.76 scan( 55, 2) returns 4045
+  B   62.87 time() returns 6287
+  B   62.87 loc_x() returns 4615
+  B   62.88 loc_y() returns 9664
+  B   62.88 speed() returns -26
+  B   62.88 time() returns 6287
+  B   62.88 scan(237, 1) returns 4054
+Time=  63.18720 
+  A bots/pbv8        2364 6276 276  207 100   50  55  58  1.46  3.63  0.36
+  B bots/pbv8        4618 9672  11  245 100  -20 237  64  2.44  2.97  0.31
+  B Explosion at 2267,6398
+  A Explosion at 4594,9704
+  A   63.26 time() returns 6326
+  A   63.26 loc_x() returns 2361
+  A   63.26 loc_y() returns 6275
+  A   63.26 speed() returns 50
+  A   63.27 time() returns 6326
+  A   63.27 cannon( 56,4242) returns 1
+  B   63.38 time() returns 6337
+  B   63.38 loc_x() returns 4619
+  B   63.38 loc_y() returns 9676
+  B   63.38 speed() returns -16
+  B   63.38 time() returns 6338
+  B   63.39 cannon(236,4254) returns 1
+  A   63.77 loc_x() returns 2339
+  A   63.77 loc_y() returns 6262
+  A   63.77 speed() returns 50
+  A   63.77 time() returns 6377
+  A   63.77 scan( 54, 1) returns 0
+  B   63.89 loc_x() returns 4623
+  B   63.89 loc_y() returns 9683
+  B   63.89 speed() returns -6
+  B   63.89 time() returns 6389
+  B   63.89 scan(237, 1) returns 4118
+Time=  64.27320 
+  A bots/pbv8        2319 6247 276  223 100   50  54  60  0.45  2.61  3.62
+  B bots/pbv8        4625 9685  11  229 100    1 237  72  1.42  1.95  3.75
+  A   64.27 time() returns 6427
+  A   64.27 loc_x() returns 2319
+  A   64.28 loc_y() returns 6247
+  A   64.28 speed() returns 50
+  A   64.28 time() returns 6427
+  A   64.28 scan( 55, 2) returns 4139
+  A Explosion at 4886,9616
+  B   64.39 time() returns 6439
+  B   64.40 loc_x() returns 4625
+  B   64.40 loc_y() returns 9685
+  B   64.40 speed() returns 3
+  B   64.40 time() returns 6439
+  B   64.40 scan(236, 1) returns 4145
+  A   64.78 time() returns 6477
+  A   64.78 loc_x() returns 2301
+  A   64.78 loc_y() returns 6229
+  A   64.78 speed() returns 50
+  A   64.78 time() returns 6478
+  A   64.79 cannon( 56,4245) returns 1
+  B   64.90 time() returns 6490
+  B   64.90 loc_x() returns 4623
+  B   64.90 loc_y() returns 9683
+  B   64.91 speed() returns 13
+  B   64.91 time() returns 6490
+  B   64.91 scan(236, 1) returns 4167
+Time=  65.28640 
+  A bots/pbv8        2286 6209 276  239 100   50  55  60  4.12  1.60  2.60
+  B bots/pbv8        4619 9680  11  214 100   21 236  73  0.41  0.94  2.73
+  A   65.29 loc_x() returns 2286
+  A   65.29 loc_y() returns 6209
+  A   65.29 speed() returns 50
+  A   65.29 time() returns 6528
+  A   65.29 scan( 54, 1) returns 0
+  B Explosion at 2522,6250
+  B   65.41 time() returns 6540
+  B   65.41 loc_x() returns 4617
+  B   65.41 loc_y() returns 9678
+  B   65.41 speed() returns 23
+  B   65.41 time() returns 6541
+  B   65.42 cannon(235,4389) returns 1
+  A   65.79 time() returns 6579
+  A   65.79 loc_x() returns 2273
+  A   65.79 loc_y() returns 6187
+  A   65.79 speed() returns 50
+  A   65.80 time() returns 6579
+  A   65.80 scan( 55, 2) returns 4195
+  B Explosion at 2561,6191
+  B   65.92 loc_x() returns 4605
+  B   65.92 loc_y() returns 9672
+  B   65.92 speed() returns 34
+  B   65.92 time() returns 6591
+  B   65.92 cannon(235,4403) returns 1
+Time=  66.29660 
+  A bots/pbv8        2264 6163 276  254 100   50  55  62  3.11  0.58  1.59
+  B bots/pbv8        4594 9666  11  199 100   41 236  73  3.88  4.40  1.72
+  A   66.30 time() returns 6629
+  A   66.30 loc_x() returns 2264
+  A   66.30 loc_y() returns 6163
+  A   66.30 speed() returns 50
+  A   66.30 time() returns 6630
+  A   66.30 scan( 55, 1) returns 4207
+  B   66.42 loc_x() returns 4589
+  B   66.42 loc_y() returns 9665
+  B   66.43 speed() returns 44
+  B   66.43 time() returns 6642
+  B   66.43 scan(236, 1) returns 4208
+  A Explosion at 4826,9771
+  A   66.80 time() returns 6680
+  A   66.81 loc_x() returns 2257
+  A   66.81 loc_y() returns 6139
+  A   66.81 speed() returns 50
+  A   66.81 time() returns 6680
+  A   66.81 cannon( 54,4114) returns 1
+  B   66.93 time() returns 6692
+  B   66.93 loc_x() returns 4566
+  B   66.93 loc_y() returns 9659
+  B   66.94 speed() returns 50
+  B   66.94 time() returns 6693
+  B   66.94 scan(236, 1) returns 0
+Time=  67.31030 
+  A bots/pbv8        2254 6114 276  269 100   50  55  62  2.09  3.99  0.57
+  B bots/pbv8        4548 9656  11  184 100   50 236  74  2.87  3.39  0.70
+  A   67.31 loc_x() returns 2254
+  A   67.31 loc_y() returns 6114
+  A   67.31 speed() returns 50
+  A   67.31 time() returns 6731
+  A   67.31 scan( 55, 1) returns 0
+  B   67.44 time() returns 6743
+  B   67.44 loc_x() returns 4541
+  B   67.44 loc_y() returns 9655
+  B   67.44 speed() returns 50
+  B   67.44 time() returns 6744
+  B   67.44 scan(237, 2) returns 4220
+  A Explosion at 4721,9797
+  B Explosion at 2248,6142
+  A   67.82 time() returns 6781
+  A   67.82 loc_x() returns 2255
+  A   67.82 loc_y() returns 6088
+  A   67.82 speed() returns 50
+  A   67.82 time() returns 6781
+  A   67.82 cannon( 54,4131) returns 1
+  B   67.94 time() returns 6794
+  B   67.95 loc_x() returns 4516
+  B   67.95 loc_y() returns 9656
+  B   67.95 speed() returns 50
+  B   67.95 time() returns 6794
+  B   67.95 cannon(239,4431) returns 1
+Time=  68.32180 
+  A bots/pbv8        2258 6062 276  276 100   60  55  70  1.08  2.97  4.00
+  B bots/pbv8        4497 9658  11  168 100   50 237  75  1.85  2.37  4.43
+  A   68.32 loc_x() returns 2258
+  A   68.32 loc_y() returns 6062
+  A   68.32 speed() returns 60
+  A   68.33 time() returns 6832
+  A   68.33 scan( 56, 2) returns 4235
+  B   68.45 loc_x() returns 4491
+  B   68.45 loc_y() returns 9659
+  B   68.45 speed() returns 50
+  B   68.46 time() returns 6845
+  B   68.46 scan(237, 1) returns 0
+  A   68.83 time() returns 6882
+  A   68.83 loc_x() returns 2261
+  A   68.83 loc_y() returns 6031
+  A   68.83 speed() returns 70
+  A   68.83 time() returns 6883
+  A   68.83 time() returns 6883
+  A   68.83 drive(281,-75) returns 1
+  B   68.96 time() returns 6895
+  B   68.96 loc_x() returns 4466
+  B   68.96 loc_y() returns 9666
+  B   68.96 speed() returns 50
+  B   68.96 time() returns 6896
+  B   68.96 scan(238, 2) returns 4258
+Time=  69.03140 
+  A bots/pbv8        2263 6017 281  276 -75   66  56  70  0.07  1.96  2.99
+  B bots/pbv8        4463 9667  11  158 100   50 238  75  0.84  1.36  3.42
+  A Explosion at 4681,9730
+  A   69.33 loc_x() returns 2265
+  A   69.34 loc_y() returns 5997
+  A   69.34 speed() returns 60
+  A   69.34 time() returns 6933
+  A   69.34 cannon( 57,4131) returns 1
+  B   69.46 time() returns 6946
+  B   69.47 loc_x() returns 4443
+  B   69.47 loc_y() returns 9676
+  B   69.47 speed() returns 50
+  B   69.47 time() returns 6946
+  B   69.47 scan(238, 1) returns 0
+  B Explosion at 2102,6094
+  A   69.84 loc_x() returns 2268
+  A   69.84 loc_y() returns 5968
+  A   69.84 speed() returns 50
+  A   69.84 time() returns 6984
+  A   69.84 scan( 56, 1) returns 0
+  B   69.97 time() returns 6997
+  B   69.97 loc_x() returns 4421
+  B   69.97 loc_y() returns 9689
+  B   69.97 speed() returns 50
+  B   69.97 time() returns 6997
+  B   69.98 cannon(238,4492) returns 1
+Time=  70.32570 
+  A bots/pbv8        2271 5944 281  281 -75   43  56  71  3.49  0.95  1.97
+  B bots/pbv8        4407 9699  11  138 100   50 238  76  4.49  0.35  2.41
+  B Explosion at 2090,6056
+  A   70.35 time() returns 7034
+  A   70.35 loc_x() returns 2271
+  A   70.35 loc_y() returns 5943
+  A   70.35 speed() returns 42
+  A   70.35 time() returns 7034
+  A   70.35 scan( 58, 2) returns 4320
+  B   70.48 loc_x() returns 4401
+  B   70.48 loc_y() returns 9704
+  B   70.48 speed() returns 50
+  B   70.48 time() returns 7048
+  B   70.48 scan(240, 2) returns 4326
+  A   70.85 time() returns 7085
+  A   70.85 loc_x() returns 2275
+  A   70.85 loc_y() returns 5923
+  A   70.85 speed() returns 32
+  A   70.85 time() returns 7085
+  A   70.86 scan( 58, 1) returns 0
+  A Explosion at 4678,9464
+  B   70.98 time() returns 7098
+  B   70.99 loc_x() returns 4384
+  B   70.99 loc_y() returns 9722
+  B   70.99 speed() returns 50
+  B   70.99 time() returns 7098
+  B   70.99 cannon(243,4566) returns 1
+Time=  71.35640 
+  A bots/pbv8        2278 5908 281  281 -75   22  58  72  2.48        0.96
+  B bots/pbv8        4372 9737  11  123 100   50 240  77  3.48  4.57  1.39
+  A   71.36 time() returns 7135
+  A   71.36 loc_x() returns 2278
+  A   71.36 loc_y() returns 5908
+  A   71.36 speed() returns 22
+  A   71.36 time() returns 7136
+  A   71.36 scan( 59, 2) returns 4363
+  B   71.49 loc_x() returns 4368
+  B   71.49 loc_y() returns 9743
+  B   71.49 speed() returns 50
+  B   71.49 time() returns 7149
+  B   71.50 scan(240, 1) returns 0
+  A   71.86 time() returns 7186
+  A   71.86 loc_x() returns 2280
+  A   71.86 loc_y() returns 5898
+  A   71.87 speed() returns 12
+  A   71.87 time() returns 7186
+  A   71.87 cannon( 62,4457) returns 1
+  A Explosion at 4707,9434
+  B   72.00 time() returns 7199
+  B   72.00 loc_x() returns 4356
+  B   72.00 loc_y() returns 9765
+  B   72.00 speed() returns 50
+Time=  72.00340 
+  A bots/pbv8        2280 5896 281  281 -75    9  59  72  1.47  4.33      
+  B bots/pbv8        4356 9765  11  113 100   50 240  77  2.47  3.56  0.38
+  B   72.00 time() returns 7200
+  B   72.01 scan(241, 2) returns 4389
+  A   72.37 loc_x() returns 2281
+  A   72.37 loc_y() returns 5893
+  A   72.37 speed() returns 2
+  A   72.37 time() returns 7237
+  A   72.38 cannon( 62,4460) returns 1
+  B Explosion at 2243,5862
+  B   72.51 time() returns 7250
+  B   72.51 loc_x() returns 4347
+  B   72.51 loc_y() returns 9788
+  B   72.51 speed() returns 50
+  B   72.51 time() returns 7251
+  B   72.51 cannon(241,4508) returns 1
+  A   72.88 loc_x() returns 2281
+  A   72.88 loc_y() returns 5893
+  A   72.88 speed() returns -7
+  A   72.88 time() returns 7287
+  A   72.88 scan( 59, 1) returns 0
+Time=  73.01360 
+  A bots/pbv8        2281 5894 281  281 -75  -10  59  80  0.59  3.45  3.96
+  B bots/pbv8        4341 9813  11   98 100   50 241  77  1.59  2.68  4.14
+  B   73.01 loc_x() returns 4341
+  B   73.02 loc_y() returns 9813
+  B   73.02 speed() returns 50
+  B   73.02 time() returns 7301
+  B   73.02 scan(241, 1) returns 0
+  A   73.38 time() returns 7338
+  A   73.38 loc_x() returns 2280
+  A   73.38 loc_y() returns 5898
+  A   73.38 speed() returns -17
+  A   73.38 time() returns 7338
+  A   73.39 scan( 60, 2) returns 4438
+  A Explosion at 4499,9480
+  B   73.52 time() returns 7352
+  B   73.52 loc_x() returns 4338
+  B   73.52 loc_y() returns 9838
+  B   73.53 speed() returns 50
+  B   73.53 time() returns 7352
+  B   73.53 time() returns 7352
+  B   73.53 drive( 98,-75) returns 1
+  A   73.89 time() returns 7388
+  A   73.89 loc_x() returns 2278
+  A   73.89 loc_y() returns 5908
+  A   73.89 speed() returns -27
+  A   73.89 time() returns 7388
+  A   73.89 cannon( 61,4493) returns 1
+Time=  74.02940 
+  A bots/pbv8        2277 5912 281  281 -75  -30  60  80  4.49  2.43  2.94
+  B bots/pbv8        4337 9862  98   98 -75   40 241  78  0.58  1.66  3.13
+  B   74.03 loc_x() returns 4337
+  B   74.03 loc_y() returns 9862
+  B   74.03 speed() returns 40
+  B   74.03 time() returns 7403
+  B   74.03 scan(242, 2) returns 4454
+  A   74.39 loc_x() returns 2275
+  A   74.39 loc_y() returns 5923
+  A   74.39 speed() returns -37
+  A   74.40 time() returns 7439
+  A   74.40 scan( 59, 1) returns 0
+  B Explosion at 2044,5880
+  B   74.54 time() returns 7453
+  B   74.54 loc_x() returns 4334
+  B   74.54 loc_y() returns 9881
+  B   74.54 speed() returns 30
+  B   74.54 time() returns 7454
+  B   74.54 cannon(242,4445) returns 1
+  A   74.90 time() returns 7489
+  A   74.90 loc_x() returns 2271
+  A   74.90 loc_y() returns 5944
+  A   74.90 speed() returns -48
+  A   74.90 time() returns 7490
+  A   74.90 scan( 60, 2) returns 4453
+Time=  75.04360 
+  A bots/pbv8        2270 5951 281  281 -75  -50  60  81  3.48  1.42  1.93
+  B bots/pbv8        4333 9895  98   98 -75   20 242  78  4.09  0.65  2.12
+  B   75.04 loc_x() returns 4333
+  B   75.05 loc_y() returns 9895
+  B   75.05 speed() returns 20
+  B   75.05 time() returns 7504
+  B   75.05 scan(242, 1) returns 4450
+  A   75.40 time() returns 7540
+  A   75.40 loc_x() returns 2266
+  A   75.41 loc_y() returns 5969
+  A   75.41 speed() returns -58
+  A   75.41 time() returns 7540
+  A   75.41 scan( 59, 1) returns 0
+  B   75.55 time() returns 7555
+  B   75.55 loc_x() returns 4331
+  B   75.55 loc_y() returns 9904
+  B   75.56 speed() returns 9
+  B   75.56 time() returns 7555
+  B Explosion at 2290,5649
+  B   75.56 cannon(240,4308) returns 1
+  A   75.91 time() returns 7590
+  A   75.91 loc_x() returns 2260
+  A   75.91 loc_y() returns 5999
+  A   75.91 speed() returns -68
+  A   75.91 time() returns 7591
+  A   75.91 scan( 60, 2) returns 4421
+Time=  76.06420 
+  A bots/pbv8        2258 6010 281  281 -75  -71  60  82  2.47  0.41  0.92
+  B bots/pbv8        4331 9908  98   98 -75    0 242  78  3.07  3.96  1.11
+  B   76.07 loc_x() returns 4331
+  B   76.07 loc_y() returns 9907
+  B   76.07 speed() returns 0
+  B   76.07 time() returns 7606
+  B   76.07 scan(242, 1) returns 4413
+  A Explosion at 4367,9832
+  A   76.42 time() returns 7641
+  A   76.42 loc_x() returns 2253
+  A   76.42 loc_y() returns 6035
+  A   76.42 speed() returns -74
+  A   76.42 time() returns 7641
+  A   76.42 cannon( 61,4348) returns 1
+  B   76.57 time() returns 7657
+  B   76.57 loc_x() returns 4331
+  B   76.57 loc_y() returns 9906
+  B   76.57 speed() returns -10
+  B   76.57 time() returns 7657
+  B   76.58 scan(241, 1) returns 0
+  A Explosion at 4373,9829
+  A   76.92 loc_x() returns 2246
+  A   76.92 loc_y() returns 6072
+  A   76.92 speed() returns -74
+  A   76.93 time() returns 7692
+  A   76.93 cannon( 61,4312) returns 1
+Time=  77.02150 
+  A bots/pbv8        2245 6079 281  281 -75  -74  60  82  1.46  3.84  4.31
+  B bots/pbv8        4332 9900  98   98 -75  -19 241  86  2.06  2.94  0.09
+  B Explosion at 2169,5846
+  B   77.08 time() returns 7707
+  B   77.08 loc_x() returns 4332
+  B   77.08 loc_y() returns 9898
+  B   77.08 speed() returns -20
+  B   77.08 time() returns 7708
+  B   77.08 scan(242, 2) returns 4348
+  A   77.43 loc_x() returns 2239
+  A   77.43 loc_y() returns 6109
+  A   77.43 speed() returns -74
+  A   77.43 time() returns 7743
+  A   77.43 scan( 59, 2) returns 4322
+  B   77.58 time() returns 7758
+  B   77.58 loc_x() returns 4334
+  B   77.59 loc_y() returns 9887
+  B   77.59 speed() returns -30
+  B   77.59 time() returns 7758
+  B   77.59 cannon(242,4073) returns 1
+  A   77.93 time() returns 7793
+  A   77.94 loc_x() returns 2232
+  A   77.94 loc_y() returns 6147
+  A   77.94 speed() returns -74
+  A   77.94 time() returns 7793
+  A   77.94 scan( 58, 2) returns 0
+Time=  78.09040 
+  A bots/pbv8        2229 6158 281  281 -75  -74  58  83  0.45  2.83  3.30
+  B bots/pbv8        4336 9870  98   98 -75  -40 242  86  1.05  1.93  3.72
+  B   78.09 loc_x() returns 4336
+  B   78.09 loc_y() returns 9870
+  B   78.09 speed() returns -40
+  B   78.09 time() returns 7809
+  B   78.10 scan(241, 1) returns 4266
+  A Explosion at 4456,9836
+  A   78.44 time() returns 7844
+  A   78.44 loc_x() returns 2224
+  A   78.44 loc_y() returns 6184
+  A   78.44 speed() returns -74
+  A   78.44 time() returns 7844
+  A   78.45 cannon( 58,4212) returns 1
+  B   78.60 time() returns 7859
+  B   78.60 loc_x() returns 4339
+  B   78.60 loc_y() returns 9848
+  B   78.60 speed() returns -50
+  B   78.60 time() returns 7860
+  B   78.60 scan(240, 1) returns 4219
+  A   78.95 loc_x() returns 2217
+  A   78.95 loc_y() returns 6221
+  A   78.95 speed() returns -74
+  A   78.95 time() returns 7894
+  A   78.95 scan( 59, 3) returns 4186
+  B Explosion at 2254,5967
+Time=  79.10260 
+  A bots/pbv8        2215 6232 281  281 -75  -74  59  84  3.67  1.78  2.25
+  B bots/pbv8        4343 9821  98   98 -75  -60 240  88        0.88  2.67
+  B   79.10 time() returns 7910
+  B   79.11 loc_x() returns 4343
+  B   79.11 loc_y() returns 9821
+  B   79.11 speed() returns -61
+  B   79.11 time() returns 7910
+  B   79.11 cannon(235,4058) returns 1
+  A   79.45 time() returns 7945
+  A   79.45 loc_x() returns 2210
+  A   79.45 loc_y() returns 6258
+  A   79.45 speed() returns -74
+  A   79.46 time() returns 7945
+  A   79.46 scan( 58, 2) returns 4133
+  B   79.61 loc_x() returns 4347
+  B   79.61 loc_y() returns 9789
+  B   79.61 speed() returns -71
+  B   79.61 time() returns 7961
+  B   79.62 scan(239, 1) returns 4117
+  B Explosion at 2179,6172
+  A   79.96 time() returns 7995
+  A   79.96 loc_x() returns 2203
+  A   79.96 loc_y() returns 6296
+  A   79.96 speed() returns -74
+  A   79.96 time() returns 7996
+  A   79.96 scan( 57, 2) returns 4077
+Time=  80.11630 
+  A bots/pbv8        2200 6307 281  281 -75  -74  57  86  2.70  0.81  1.28
+  B bots/pbv8        4352 9752  98   98 -75  -74 239  88  3.21        1.70
+  B   80.12 time() returns 8011
+  B   80.12 loc_x() returns 4352
+  B   80.12 loc_y() returns 9752
+  B   80.12 speed() returns -74
+  B   80.12 time() returns 8012
+  B   80.12 cannon(236,3844) returns 1
+  A   80.46 time() returns 8046
+  A   80.47 loc_x() returns 2195
+  A   80.47 loc_y() returns 6333
+  A   80.47 speed() returns -74
+  A   80.47 time() returns 8046
+  A   80.47 time() returns 8046
+  A   80.47 drive( 11,100) returns 1
+  B   80.63 loc_x() returns 4357
+  B   80.63 loc_y() returns 9714
+  B   80.63 speed() returns -74
+  B   80.63 time() returns 8062
+  B   80.63 scan(238, 1) returns 4004
+  A Explosion at 4353,9834
+  A   80.97 loc_x() returns 2188
+  A   80.98 loc_y() returns 6369
+  A   80.98 speed() returns -64
+  A   80.98 time() returns 8097
+  A   80.98 cannon( 51,3847) returns 1
+Time=  81.12950 
+  A bots/pbv8        2187 6378  11  281 100  -61  57  86  1.68  3.85  0.26
+  B bots/pbv8        4362 9677  98   98 -75  -74 238  90  2.19  2.99  0.68
+  B   81.13 time() returns 8113
+  B   81.13 loc_x() returns 4362
+  B   81.13 loc_y() returns 9677
+  B   81.13 speed() returns -74
+  B   81.13 time() returns 8113
+  B   81.14 scan(237, 1) returns 3950
+  A Explosion at 4336,9845
+  A   81.48 loc_x() returns 2182
+  A   81.48 loc_y() returns 6399
+  A   81.48 speed() returns -54
+  A   81.48 time() returns 8148
+  A   81.48 scan( 55, 2) returns 3915
+  B   81.64 time() returns 8163
+  B   81.64 loc_x() returns 4368
+  B   81.64 loc_y() returns 9639
+  B   81.64 speed() returns -74
+  B   81.64 time() returns 8164
+  B   81.64 scan(236, 1) returns 3900
+  B Explosion at 2415,6275
+  A   81.99 time() returns 8198
+  A   81.99 loc_x() returns 2177
+  A   81.99 loc_y() returns 6425
+  A   81.99 speed() returns -49
+  A   81.99 time() returns 8199
+  A   82.00 cannon( 51,3648) returns 1
+Time=  82.14270 
+  A bots/pbv8        2177 6433  11  274 100  -46  55  87  0.66  2.83  3.65
+  B bots/pbv8        4373 9602  98   98 -75  -74 236  92  1.17  1.97      
+  B   82.15 time() returns 8214
+  B   82.15 loc_x() returns 4373
+  B   82.15 loc_y() returns 9601
+  B   82.15 speed() returns -74
+  B   82.15 time() returns 8214
+  B   82.15 cannon(231,3737) returns 1
+  A   82.50 loc_x() returns 2176
+  A   82.50 loc_y() returns 6449
+  A   82.50 speed() returns -39
+  A   82.50 time() returns 8250
+  A   82.50 scan( 54, 1) returns 3821
+  B   82.65 loc_x() returns 4378
+  B   82.65 loc_y() returns 9563
+  B   82.66 speed() returns -74
+  B   82.66 time() returns 8265
+  B   82.66 scan(235, 1) returns 3808
+  A Explosion at 4488,9727
+Time=  83.00150 
+  A bots/pbv8        2177 6468  11  261 100  -29  54  87        2.17  2.99
+  B bots/pbv8        4381 9538  98   98 -75  -74 235  94  0.51  1.31  3.23
+  A   83.00 time() returns 8300
+  A   83.00 loc_x() returns 2177
+  A   83.01 loc_y() returns 6468
+  A   83.01 speed() returns -29
+  A   83.01 time() returns 8300
+  A   83.01 cannon( 51,3572) returns 1
+  B   83.16 time() returns 8315
+  B   83.16 loc_x() returns 4383
+  B   83.16 loc_y() returns 9526
+  B   83.16 speed() returns -74
+  B   83.16 time() returns 8316
+  B   83.17 cannon(233,3637) returns 0
+  B Explosion at 1990,6515
+  A   83.51 loc_x() returns 2179
+  A   83.51 loc_y() returns 6482
+  A   83.51 speed() returns -18
+  A   83.51 time() returns 8351
+  A   83.51 scan( 53, 1) returns 3738
+  B   83.67 loc_x() returns 4388
+  B   83.67 loc_y() returns 9488
+  B   83.67 speed() returns -74
+  B   83.67 time() returns 8366
+  B   83.67 cannon(232,3595) returns 1
+  B Explosion at 2204,6598
+Time=  84.01420 
+  A bots/pbv8        2182 6490  11  246 100   -8  53  91  2.61  0.86  1.68
+  B bots/pbv8        4392 9462  98   98 -75  -74 235  94  3.30        1.92
+  A   84.02 time() returns 8401
+  A   84.02 loc_x() returns 2182
+  A   84.02 loc_y() returns 6490
+  A   84.02 speed() returns -8
+  A   84.02 time() returns 8401
+  A   84.02 scan( 52, 1) returns 3703
+  B   84.17 loc_x() returns 4393
+  B   84.17 loc_y() returns 9451
+  B   84.18 speed() returns -74
+  B   84.18 time() returns 8417
+  B   84.18 time() returns 8418
+  B   84.18 drive(  8,100) returns 1
+  A   84.52 time() returns 8452
+  A   84.52 loc_x() returns 2183
+  A   84.52 loc_y() returns 6493
+  A   84.52 speed() returns 1
+  A   84.52 time() returns 8452
+  A   84.53 scan( 51, 1) returns 0
+  B   84.68 loc_x() returns 4398
+  B   84.68 loc_y() returns 9414
+  B   84.68 speed() returns -64
+  B   84.69 time() returns 8468
+  B   84.69 scan(233, 1) returns 3665
+  A Explosion at 4633,9349
+Time=  85.02650 
+  A bots/pbv8        2182 6491  11  231 100   11  51  91  1.75        0.82
+  B bots/pbv8        4401 9392   8   98 100  -57 233  95  2.44        1.06
+  A   85.03 time() returns 8502
+  A   85.03 loc_x() returns 2182
+  A   85.03 loc_y() returns 6491
+  A   85.03 speed() returns 11
+  A   85.03 time() returns 8503
+  A   85.03 scan( 53, 2) returns 3651
+  B   85.19 time() returns 8518
+  B   85.19 loc_x() returns 4403
+  B   85.19 loc_y() returns 9383
+  B   85.19 speed() returns -54
+  B   85.19 time() returns 8519
+  B   85.20 cannon(231,3577) returns 1
+  A   85.53 time() returns 8553
+  A   85.53 loc_x() returns 2178
+  A   85.54 loc_y() returns 6486
+  A   85.54 speed() returns 21
+  A   85.54 time() returns 8553
+  A   85.54 cannon( 57,3472) returns 1
+  A Explosion at 4485,9240
+  B   85.70 loc_x() returns 4405
+  B   85.70 loc_y() returns 9356
+  B   85.70 speed() returns -46
+  B   85.70 time() returns 8569
+  B   85.71 scan(232, 1) returns 3635
+  B Explosion at 2039,6664
+Time=  86.03990 
+  A bots/pbv8        2168 6478  11  215 100   31  53  92  0.69  3.12      
+  B bots/pbv8        4405 9341   8   85 100  -39 232  97  1.38  2.88      
+  A   86.04 loc_x() returns 2168
+  A   86.04 loc_y() returns 6478
+  A   86.04 speed() returns 31
+  A   86.04 time() returns 8604
+  A   86.05 cannon( 57,3463) returns 1
+  B   86.21 time() returns 8620
+  B   86.21 loc_x() returns 4405
+  B   86.21 loc_y() returns 9334
+  B   86.21 speed() returns -35
+  B   86.21 time() returns 8621
+  B   86.21 cannon(230,3667) returns 1
+  A   86.55 loc_x() returns 2154
+  A   86.55 loc_y() returns 6469
+  A   86.55 speed() returns 41
+  A   86.55 time() returns 8654
+  A   86.55 scan( 52, 1) returns 3631
+  A Explosion at 4417,9244
+bots/pbv8        1/0/0

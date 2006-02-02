@@ -1,0 +1,12 @@
+@smuggler aaron pass
+LAUNCH
+MOVE Nunki
+LAND
+Buy Native foodstuffs 12
+Buy Native foodstuffs 4
+LAUNCH
+MOVE Sol
+LAND
+Sell Native foodstuffs 12
+sell Native foodstuffs 4
+@end

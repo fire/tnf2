@@ -1,0 +1,7 @@
+assert [ EXISTS x | ?Dog(x) AND ?Owns(Jack,x) ].
+assert [ FORALL x | ( [ EXISTS y | ?Dog(y) AND ?Owns(x,y) ] ) -> ?AnimalLover(x) ].
+assert [ FORALL x | ?AnimalLover(x) -> [ FORALL y | ?Animal(y) -> ~?Kills(x,y) ] ].
+assert ?Kills(Jack,Tuna) OR ?Kills(Curiosity,Tuna).
+assert ?Cat(Tuna).
+assert [ FORALL x | ?Cat(x) -> ?Animal(x) ].
+query ?Kills(Curiosity,Tuna)? 

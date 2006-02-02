@@ -1,0 +1,190 @@
+iem gui tool
+  read data files - don't connect
+  buy/sell
+    select which contract/group (get optimal price)
+  inventment 
+    report total risk vs inventory
+  auto bid/ask
+    suggest bid/ask with slider bar from curr bid/ask to active bid/ask
+  appletize for remote administration
+  portfolio description
+    each bundle/risk
+  cancel bid/ask
+    cancel by each / all
+
+
+download get all bids/asks
+cancel bid/ask
+place limit bid/ask
+
+orders_txt gui tool
+
+
+
+name
+  ask price limit
+  min held (stop asking)
+  bid price limit
+  max held (stop bidding)
+
+if bundleBid<900 then bid (only on those with inventory)
+if bundleAsk>1100 then ask (only on those abive minheld)
+
+n	apl	mh	bpl	mh
+msft55aL 60	1	40	3
+
+
+bundle notes
+  maxbid=999-allotherbids
+  minask=1000-allotherask
+4 contracts bid/ask limit = 250
+4 contarct onelimit=40 others=20
+
+
+all bids/asks expire in 1 hour then are regenerated to lowest required?
+
+main
+
+  download
+    allmarket
+      market
+        contract
+          *bids
+          *ask 
+    *settings
+  check
+    buy bundles <1 
+	(if current asker cancel ask)
+    sell bundles >1
+	(if not current bidder cancel bid)
+    first bid
+    first ask
+    *sell extra bundles 
+	if (bundledHeld>lowest maxheld) sell
+    *buy extra bundles (held<minheld) ?
+        if (bundleHeld<highest minheld) buy
+    *outbid all <900? (until maxheld reached)
+	if (contractHeld<maxHeld && currBid<maxBid) bid +1, for 1 hour
+    *outask all >1100? (until minheld reached || cash reserve reached)
+	if (contractHeld>minHeld && currAsk>minAsk) bid +1, for 1 hour
+  
+
+minAsk=bundleallAsk-contractAsk
+	bid	ask
+ms50L = 10 	75
+ms50H = 35 	65
+
+middle = bid+ask/2
+  ms50L middle = 20+75/2 = 42.5
+  ms50H middle = 35+65/2 = 50.0
+
+fixedMaxBid=1000/numcontracts (ie 50, 33, 25)
+maxBid=min(fixedMaxBid,middle,lowest+1)
+
+buffer = 10% (only bid with 10% profit margin)
+	bid	ask
+ms50L = 20(21,45) 	75(74,55)
+ms50H = 30(31,45) 	65(64,55)
+
+static var
+  maxheld=3
+  minheld=0
+
+if held =maxheld (I've bid and bought lots cheaply)
+  ask sell limit to 0%
+if held =minheld (I've sold lots for tons of cash)
+  bid buy upto 0%
+
+
+held=1 ask=90% bid=95%
+held=2 ask=92.5% bid=92.5%
+held=3 ask=92.5% bid=92.5%
+hell=4 ask=95% bid=90%
+
+
+bid limits
+  #1 all bids <1 - 20%-5%
+  #2 if high holdings 20% < 1
+  #3 if low holdings 5%<1
+  #4 never bid more than 1000/contract (50,33,25,etc)
+  #5 never bid at ask price
+  #6 increase bid on largest range first 
+       bid on  20-70 to 201 before bid on 45-60 of 451
+  #7 don't bid if I am alread high bidder
+  #8 don't bid if total bids >20% or 5%
+  #9 don't bid if any contract price >80% or 95%
+    
+at 90% rule
+70 (don't bid)   80 (don't ask)
+5 (6,10)	 20 (19,?)
+5 (6,10)	 30 (29,?)
+
+
+L --B------mim----A----
+H ---B-----mim--A------
+bid okay because
+  lower than midd and ask bid >5%?
+
+A --B------mim----A----
+B ---B-----mim---A-----
+C ----B----mim-----A---
+
+A ----------i--BiA-----
+B --B-Ai----i----------
+C B-A-i-----i----------
+
+
+mid = 1000/num (50,33,25)
+mid = totalask/num 1200/3 =40 average cost?
+mid = 
+
+minAsk= otherbid+1
+at 90% rule
+bidL 70  ask 80
+   H  5      20
+  
+minAsk L= 95 (quick sell) 
+minAsk H= 80 (quick sell) 
+
+     bid        ask
+a    15       70
+b    10       55
+c    22       67
+
+minask a (68 quick)
+minask b (63 quick)
+minask c (75 quick)
+
+maxbid a= (no quick) 
+maxbid b= (no quick) 
+maxbid c= (no quick) 
+
+
+quickAskPrice (sum all other bid)
+quickBidPrice (sum all other ask)
+longAskPrice (1001-allother ask)
+longBidPrice (999-allother bid)
+bestAskPrice (currask-1)
+bestBidPrice (currbid+1)
+quessAskPrice (1050/num contracts)
+quessBidPrice (950/num contracts)
+maxAksPrice (currBid+1)
+maxBidPrice (currAsk-1)
+
+
+
+inventory paid
+  all actions=buy
+  buy msftH .245
+  sell smftL .772= buy msftH .228
+  buy Sun4L .113
+  sell Sun6H .334 = buy Sun4L .666/3
+
+  all actions=sell
+  buy msftH .245 = sell smftL .755
+  sell smftL .772
+  buy Sun4L .113 = sell 
+  sell Sun6H .334 = buy Sun4L .666/3
+
+total
+  total paid = sum of all by

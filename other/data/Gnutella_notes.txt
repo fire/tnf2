@@ -1,0 +1,67 @@
+recover -
+  if you slip off track, look for TTL,HOP,size = for PONG=14, PING=0, QUERY=>4?
+
+
+LONG ping -
+  record latest ping distance in numhops-
+  prefer connects at MAX numhops away
+
+gui 1 search
+  my query hits
+    name loc speed
+
+gui 1.5
+  downloading status
+  cancel
+  split (sha, crc, md5 match)
+
+gui 2 share
+  file list - siz - # qery matches - # download - locs downloaded - sha, crc, md5
+  uploads -
+    status - duration - speed - size requested
+
+gui 3 connect
+  active connects -
+  bandwidth used in protocols
+  total shared k, files and hosts
+  add host
+  ping for new hosts
+
+gui 4 monitor
+  all pushes
+  all hits
+  all query
+  all known hosts & status
+
+gui 5 settings
+  otherpong - don't use own pong data, use pong data received from other host(done)
+  limit incomming ttls and hops to my max allowed (done)
+  autohost (done)
+  known filtered ports
+  drop queries containing keywords, ip, port
+  lieshare (k and files)
+  liespeed (kbs)
+  noponging
+  noforwarding
+  use ttl
+  minhosts active
+  minhosts called
+  minhosts connecting
+  default server port
+  default http port
+  firewall ip
+  behind firewall never request push
+  max bandwidth -download, protocol
+  extra QueryHit - advertize, bogus matches
+  send Pong kill - bad speed, num k, file
+  send QueryHit kill - bad payload data (wrong number
+  send Push kill ? - bad payload data (wrong number
+
+parasite -
+  lieshare -
+  noforward -
+  
+ghost -
+  rewrite hits to me?
+  man in the middle?
+

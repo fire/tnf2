@@ -1,0 +1,7 @@
+B BBB B
+B X   B
+B C C B
+B X X B
+B C CXB
+B     B
+BBBBBBB

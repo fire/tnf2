@@ -1,0 +1,9 @@
+JU Nunki F
+PC AGR 10
+PC Herbs 5
+PC 15 7
+TI +17 -13
+TI laser paper_bag
+IN PAR 2500
+MS 73
+MS drive lv 5

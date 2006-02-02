@@ -1,0 +1,71 @@
+#1 Risk 2
+
+SMART UPDATE -
+DConv = 1/45 secs
+CompRet = 1/ 2 minutes
+
+  Risk full history (check)
+  Risk library of old bundles (cannot find old ID and markets)
+
+#2 Average price paid
+  Use history to determin total price paid
+
+#3 data history
+   log file for each bundle/contract?
+   track only deltas  Ask Bid Last
+   track activities  DiscountActivity, InventoryActivity
+   track #bundles in play
+   history graph
+
+#4 Quick resell
+   detect bargin buy
+     inventory > (last or target)
+     history last> current value
+   resell
+     reduce inventory  sell or (group buy)
+
+#5  ~ price
+  XML file for
+    desired inventory
+    value to bid upto
+    cut off date
+
+
+#6  Nickle/Middle/INITIAL
+   EXTREAM = 1st weeek = 10% of current
+   FAR = long term = .005 .995 1000
+
+
+
+tool
+  window 1
+    assets - paid - curr - (highest quick bid/ask) - (highest long bid/ask)
+  window 3
+    iem tracker - price history
+      each asset - low,high,last, vol
+      each bundle - last for all assets
+  window 4 
+    trader -
+      limit 
+         buy sell maxpricerequired
+      market
+        buy sell
+  database -
+    transaction - 
+      asset - buy/sell - profit - date
+
+
+
+
+common errors
+  want to bid .01 but bid .1 - 
+    strategy - on ask<.05  ask (.4-.04=.36)
+    strategy - ask .009 (on the nines with large quantity)
+  want to ask at .95 but bid at .95
+    strategy - large quantities
+	- discount sell?
+	- anomily detection - sell bulk!
+  want to ask at .995 but as at .95
+    strategy -
+	
+
