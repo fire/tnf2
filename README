@@ -1,0 +1,26 @@
+java aj.io.LineFix -i <infile> -o <outfile>  #convert line endings to system specfic
+java aj.io.Encode -i <infile> -o <outfile> -b16  #encode file as base 16 ascii text
+java aj.io.Big #create large random files
+java aj.io.Crypt #encrypt files with xor key
+java aj.io.Expand #change each char of file into block of X characters in new file
+java aj.io.Pile #simple tar like program
+java aj.io.Span #cut file into pieces (ie 1.4megs)
+java aj.io.XORFile #xor two files for encryption
+java aj.awt.Graph #allows display and edit of GML graphs
+java aj.awt.Neb #creates Nebulas and ink bolts
+java aj.awt.mand.MandAp #creates mandelbrot images
+java aj.awt.maze.DigMaze #builds maze into text file
+java aj.awt.maze.Maze #builds maze based on settings
+java aj.awt.my3d.My3DCanvas #displays simple 3d gml files
+java aj.awt.my3d.con #converts standard 3dfile format into gml format
+java aj.checkers.NNetPlayer #runs checkers player
+java aj.combat.Player #run combat player
+java aj.galaxy.GalaxyChart #run galaxychart
+java aj.games.Connect #play box in game
+java aj.games.Rose #play rose keys
+java aj.games.Anogram #anogram maker (use all characters once)
+java aj.misc.Bench #benchmark test
+java aj.misc.Bnf #bnf file parser and generator
+java aj.misc.GmlPair #gml verifier
+java aj.misc.Sleeper #psudo cron job program
+java aj.misc.Viewer #image view porgram
