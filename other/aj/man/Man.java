@@ -126,6 +126,7 @@ public class Man {
 		mr=new Man(p1);
 		return mr;
 	}
+	
 	public static Man between(int pos1,int pos2,double d) {
 		Pos p1=null;
 		Pos p2=null;

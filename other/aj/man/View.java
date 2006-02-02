@@ -8,8 +8,8 @@ import java.awt.Graphics;
 import aj.awt.SimpleWindowManager;
 
 public class View extends Canvas implements Runnable {
-	static int SLEEPTIME=400;
-	static int STEPCOUNT=8;
+	static int SLEEPTIME=10;
+	static int STEPCOUNT=4;
 	static boolean DEBUG=true;
 
 	static int pos[]={1,2};
