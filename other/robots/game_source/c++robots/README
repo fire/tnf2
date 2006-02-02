@@ -1,0 +1,27 @@
+// Combat.C  -- C++Robots arena simulator
+//
+// Copyright (C) 1997  Richard Rognlie <rrognlie@gamerz.net>
+//                     All Rights Reserved
+//  
+
+To use this...
+
+1.  build the combat engine and the sample robots
+    % make 
+
+2.  run the combat engine with two or more robots
+
+Trace mode allows you to trace the code as executed by the robots.
+
+    % combat trace ./tracker ./cylon
+
+Watch mode allows you to watch the battle as it occurs.  It requires
+a terminal that supports VT100 type escape sequences.  A Warning to 
+Sun users...  Use shelltool, not cmdtool.
+
+    % combat watch ./tracker ./target
+
+Match play allows you to specify a number of battles to fight, and 
+the results *only* are displayed.
+
+    % combat 5 cylon ./target ./tracker

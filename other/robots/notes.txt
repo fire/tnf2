@@ -1,0 +1,155 @@
+test scan
+  robot A - LOG\nlog where I am, where I'm going
+  robot B - SCAN
+            LOG\nlog predicted target location, direction and speed
+            CANNON
+            LOG\nlog predicted explosion x,y and time
+
+calculate -
+  scan accuracy -
+    predicted x,y,dir,speed  vs real
+  cannon accuracy
+    explosion x,y,time vs target x,y,time
+
+TODO
+	genetic algorythm
+	
+	command line configurable(done)
+	batch file start (done)
+	
+	choose starting configuration
+	mutate configuration
+	chose best performing configuration
+	mutate best
+
+
+	score - #wins - #ties
+
+
+	configurable
+		move
+			charge
+			retreat
+			circle
+			tangent
+			forward/reverse
+			forward/reverse tangent
+			maxspeed
+			minspeed
+			max turn
+			min distance
+			max distance
+			min tangent
+			max tangent
+		scan
+			% optimal width
+			# miss to lose
+			# hits to try miss
+			max time between scans
+		shoot
+			max shoot speed
+			rapid fire
+		tracking
+			valid ping
+				max arc width
+				max age
+			# pings
+			max time
+			
+
+(robot name AI.  Genetic? GMO? ArtificalIntelligence?)
+ComputerGenerated
+TommyBeater
+
+
+ROBOTS MADE
+pb
+pbv - 
+fast - max sys commands to compare robot CPU times
+timer - check system call times in log
+finder - optimum tracking and accuracy
+super - combie finder and hider
+hider - experiment in avoidance and aliveness
+
+
+move nearest to wall okay
+delay cannon until slower speed
+
+
+scan -
+  cylon - slight shift 1 degree or less clockwise or counter clockwise each hit
+  scan X,wid - hit  DRIFTIN
+  scan x-1,wid -miss  DRIFTIN
+
+  scan - overlap %50 on miss
+
+  scan - auto drift 1 degree
+
+  consider max distance in range from last seen -
+	don't scan wider than it is possible to move to?
+
+  scanning at 1 wid 10 and 2 wid 8 result is same distance - what is the range
+	of distance.
+
+  adjust scan angle when expanding scan width to close gap on oppisite side on next scan
+
+  Distance is absolute!  Track speed by that.  only tangent motion will hide speed.
+
+cannon -
+	consider +/- speed for distance and arrival time
+	delay cannon if slowing and will be slow enough in 50 cycles
+  
+move - 
+	full 100 box 100 for edge
+	1/2 speed box 100 form edge
+	to distance of 7000 and stop
+	charge 100
+	charge 50
+	charge full with damage<50 retreate with damage >50
+	charge 1/2 with damage<50 retreate with damage >50
+	forwared/reverse full simple line
+	forwared/reverse 1/2 simple line
+
+	move away - force him to approach me (easier to target)
+	
+
+misc -
+ 	measure oo cost
+	measure fsin cost
+	measure memory cost
+	test fastest shooting possible
+	test fastest scanning possible
+
+
+
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16
+1 2 3 4 5 6 7 8
+1 2 3 4
+1 2
+1
+
+
+
+new test 9/15/2005
+  
+ideal scan
+  determin perfect scan -
+  build walker robot.  
+     moves #1 stopped, straight, toward, away, tangent, auto reverse
+     no gun, no scan
+   	 make log "actual loc, dir and speed"
+  build ultimate scanner
+  	make log "target loc, dir and speed"
+    no gun
+  then compare actual and scanned and determin best scan algo
+  
+      
+refine scan -
+  scan A = 5 deg +/- 2 deg
+  scan B=  4 deg +/- 1 deg
+  resolve A = limit A to possible scan based on actual max speed and direction
+    new scan A= 4.5 degrees +/- 1.5 deg
+
+calc cannot drift from speed.  Large drift = less shots
+  

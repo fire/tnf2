@@ -1,0 +1,3795 @@
+          Name       Xpos Ypos dir cdir spd cspd scn dam
+    ---------------- ---- ---- --- ---- --- ---- --- ---
+Time=   0.00000 
+  A t2.exe           2180 4190 307    0   0    0 307   0                  
+  B pbv8.exe         6970 4560 345    0   0    0 345   0                  
+  A    0.00 drive(  0,100) returns 1
+  B    0.00 loc_x() returns 6970
+  B    0.50 loc_y() returns 4560
+  A    0.50 loc_x() returns 2180
+  B    0.50 speed() returns 0
+  A    0.50 loc_y() returns 4190
+  B    0.50 time() returns 50
+  A    0.50 speed() returns 10
+  A    0.50 heading() returns 299
+  B    0.60 time() returns 60
+  A    0.60 time() returns 60
+  B    0.60 drive(123,-75) returns 1
+  A    0.60 log: LOG tar pos 5000,5000 speed 0 heading 0
+
+  A    0.60 log: LOG tar range 2934 tar bearing 16
+
+  A    0.60 scan( 16,10) returns 0
+  A    0.60 log: LOG shot range 2934 tar bearing 16
+LOG do scan called
+LOG scan type !found
+
+Time=   1.10020 
+  A t2.exe           2183 4184   0  290 100   22  16   0                  
+  B pbv8.exe         6970 4560 123  337 -75   -9 345   0                  
+  A    1.10 loc_x() returns 2183
+  A    1.10 log: LOG scan 16 by 10 found 0
+
+  B    1.10 loc_x() returns 6970
+  A    1.10 loc_y() returns 4184
+  B    1.20 loc_y() returns 4560
+  A    1.20 speed() returns 24
+  B    1.20 speed() returns -11
+  A    1.20 heading() returns 289
+  B    1.20 time() returns 120
+  A    1.20 time() returns 120
+  B    1.20 scan(168,10) returns 0
+  A    1.20 log: LOG tar pos 5000,5000 speed 0 heading 0
+
+  A    1.20 log: LOG tar range 2932 tar bearing 16
+
+  A    1.20 scan(  6,10) returns 4798
+  A    1.20 log: LOG shot range 2932 tar bearing 16
+LOG do scan called
+LOG scan type !found
+
+  A    1.70 log: LOG scan 6 by 10 found 4798
+LOG record tar found 6954,4685 
+
+  B    1.70 time() returns 170
+  A    1.70 loc_x() returns 2188
+  A    1.70 log: LOG ping 2183,4184 bearing 6 range 4798 width 10 tarloc 6954,4685 speed 0 head 90
+
+  A    1.70 loc_y() returns 4170
+  B    1.70 loc_x() returns 6964
+  A    1.80 speed() returns 36
+  B    1.80 loc_y() returns 4564
+  A    1.80 heading() returns 280
+  B    1.80 speed() returns -23
+  A    1.90 time() returns 190
+  B    1.90 time() returns 190
+  A    1.90 log: LOG tar pos 6954,4685 speed 0 heading 0
+
+  A    1.90 log: LOG tar range 4793 tar bearing 6
+
+  B    1.90 scan(148,10) returns 0
+  A    1.90 cannon(  6,4793) returns 1
+  A    1.90 log: LOG shot range 4793 tar bearing 6
+cannon called bearing 6 range 4793
+
+Time=   2.40040 
+  A t2.exe           2192 4145   0  271 100   48   6   0  4.79            
+  B pbv8.exe         6949 4573 123  318 -75  -35 148   0                  
+  A    2.40 loc_x() returns 2192
+  B    2.40 time() returns 240
+  A    2.40 loc_y() returns 4145
+  B    2.40 loc_x() returns 6949
+  A    2.50 speed() returns 50
+  B    2.50 loc_y() returns 4575
+  A    2.50 heading() returns 269
+  B    2.50 speed() returns -37
+  A    2.50 time() returns 250
+  B    2.50 time() returns 250
+  A    2.50 log: LOG tar pos 6954,4685 speed 0 heading 0
+
+  A    2.50 log: LOG tar range 4792 tar bearing 6
+
+  B    2.50 scan(188,10) returns 4773
+  A    2.50 scan(  6, 6) returns 4773
+  A    2.50 log: LOG shot range 4792 tar bearing 6
+LOG do scan called
+LOG scan type tracking
+
+Time=   3.00050 
+  A t2.exe           2192 4115   0  262 100   50   6   0  4.19            
+  B pbv8.exe         6933 4588 123  309 -75  -47 188   0                  
+  A    3.00 log: LOG scan 6 by 6 found 4773
+LOG record tar found 6938,4643 
+
+  B    3.00 time() returns 300
+  A    3.00 loc_x() returns 2192
+  A    3.00 log: LOG ping 2192,4145 bearing 6 range 4773 width 6 tarloc 6938,4643 speed 33 head 249
+
+  A    3.00 loc_y() returns 4115
+  A    3.00 speed() returns 50
+  B    3.00 loc_x() returns 6933
+  A    3.00 heading() returns 262
+  B    3.00 loc_y() returns 4588
+  A    3.00 time() returns 300
+  B    3.00 speed() returns -47
+  A    3.00 log: LOG tar pos 6938,4643 speed 0 heading 0
+
+  A    3.00 log: LOG tar range 4775 tar bearing 6
+
+  B    3.00 time() returns 300
+  A    3.00 scan(  6, 4) returns 4763
+  A    3.00 log: LOG shot range 4775 tar bearing 6
+LOG do scan called
+LOG scan type tracking
+
+  B    3.50 cannon(188,4759) returns 1
+  A    3.50 log: LOG scan 6 by 4 found 4763
+LOG record tar found 6928,4612 
+
+  A    3.50 loc_x() returns 2188
+  A    3.50 log: LOG ping 2192,4115 bearing 6 range 4763 width 4 tarloc 6928,4612 speed 64 head 252
+
+  A    3.50 loc_y() returns 4090
+Time=   4.00070 
+  A t2.exe           2182 4066   0  247 100   50   6   0  3.19            
+  B pbv8.exe         6904 4628 123  294 -75  -49 188   0  4.76            
+  A    4.00 speed() returns 50
+  B    4.00 loc_x() returns 6904
+  A    4.10 heading() returns 245
+  B    4.10 loc_y() returns 4633
+  A    4.10 time() returns 410
+  B    4.10 speed() returns -49
+  A    4.20 log: LOG tar pos 6928,4612 speed 0 heading 0
+
+  A    4.20 log: LOG tar range 4768 tar bearing 6
+
+  B    4.20 time() returns 420
+  A    4.20 scan(  7, 2) returns 4757
+  A    4.20 log: LOG shot range 4768 tar bearing 6
+LOG do scan called
+LOG scan type tracking
+
+  B    4.70 scan(188, 5) returns 4765
+  A    4.70 log: LOG scan 7 by 2 found 4757
+LOG record tar found 6909,4669 
+
+  A    4.70 loc_x() returns 2167
+  A    4.70 log: LOG ping 2188,4090 bearing 7 range 4757 width 2 tarloc 6909,4669 speed 54 head 109
+
+  A    4.70 loc_y() returns 4034
+Time=   5.20090 
+  A t2.exe           2153 4014   0  229 100   50   7   0  1.99            
+  B pbv8.exe         6886 4685 123  276 -75  -49 188   0  3.56            
+  A    5.20 speed() returns 50
+  B    5.20 time() returns 520
+  A    5.30 heading() returns 227
+  A    5.30 time() returns 530
+  B    5.30 loc_x() returns 6885
+  A    5.30 log: LOG tar pos 6909,4669 speed 0 heading 0
+
+  A    5.30 log: LOG tar range 4784 tar bearing 7
+
+  B    5.30 loc_y() returns 4690
+  A    5.30 scan(  7, 1) returns 4783
+  A    5.30 log: LOG shot range 4784 tar bearing 7
+LOG do scan called
+LOG scan type tracking
+
+  B    5.30 speed() returns -49
+  B    5.80 time() returns 580
+  A    5.80 log: LOG scan 7 by 1 found 4783
+LOG record tar found 6914,4616 
+
+  A    5.80 loc_x() returns 2133
+  A    5.80 log: LOG ping 2167,4034 bearing 7 range 4783 width 1 tarloc 6914,4616 speed 44 head -84
+
+  A    5.80 loc_y() returns 3991
+  A    5.80 speed() returns 50
+  A    5.90 heading() returns 218
+  B    5.90 cannon(185,4864) returns 1
+  A    5.90 time() returns 590
+Time=   6.40110 
+  A t2.exe           2109 3973   0  211 100   50   7   0  0.79            
+  B pbv8.exe         6885 4745 123  258 -75  -49 188   0  2.36  4.86      
+  A    6.40 log: LOG tar pos 6914,4616 speed 0 heading 0
+
+  A    6.40 log: LOG tar range 4821 tar bearing 7
+
+  B    6.40 loc_x() returns 6885
+  A    6.40 scan(  7, 1) returns 0
+  A    6.40 log: LOG shot range 4821 tar bearing 7
+LOG do scan called
+LOG scan type tracking
+
+  B    6.40 loc_y() returns 4745
+  A Explosion at 6940,4666
+  B    6.69 speed() returns -49
+  B    6.90 time() returns 690
+  A    6.90 loc_x() returns 2088
+  A    6.90 log: LOG scan 7 by 1 found 0
+
+  A    6.90 loc_y() returns 3960
+  A    6.90 speed() returns 50
+  B    6.90 scan(189, 2) returns 4870
+  A    6.90 heading() returns 203
+Time=   7.40130 
+  A t2.exe           2065 3950   0  196 100   50   7   0                  
+  B pbv8.exe         6900 4793 123  243 -75  -49 189   2  1.36  3.86      
+  A    7.40 time() returns 740
+  B    7.40 time() returns 740
+  A    7.40 log: LOG tar pos 6914,4616 speed 0 heading 0
+
+  A    7.40 log: LOG tar range 4870 tar bearing 7
+
+  A    7.40 cannon(  7,4870) returns 1
+  A    7.40 log: LOG shot range 4870 tar bearing 7
+cannon called bearing 7 range 4870
+
+  B    7.40 loc_x() returns 6900
+  B    7.90 loc_y() returns 4815
+  A    7.90 loc_x() returns 2041
+  B    7.90 speed() returns -49
+  A    7.90 loc_y() returns 3944
+  B    7.90 time() returns 790
+  A    7.90 speed() returns 50
+  A    7.90 heading() returns 188
+Time=   8.00140 
+  A t2.exe           2036 3943   0  187 100   50   7   0  4.37            
+  B pbv8.exe         6914 4819 123  234 -75  -49 189   2  0.36  2.86      
+  A    8.00 time() returns 800
+  A    8.00 log: LOG tar pos 6914,4616 speed 0 heading 0
+
+  A    8.00 log: LOG tar range 4919 tar bearing 7
+
+  B    8.00 cannon(188,5133) returns 1
+  A    8.00 scan(  6, 3) returns 0
+  A    8.00 log: LOG shot range 4919 tar bearing 7
+LOG do scan called
+LOG scan type reacquiring 1
+
+  B Explosion at 2189,3939
+  A    8.50 loc_x() returns 2011
+  A    8.50 log: LOG scan 6 by 3 found 0
+
+  B    8.50 loc_x() returns 6929
+  A    8.50 loc_y() returns 3941
+  B    8.50 loc_y() returns 4839
+  A    8.50 speed() returns 50
+  B    8.50 speed() returns -49
+  A    8.50 heading() returns 179
+  B    8.50 time() returns 850
+  A    8.50 time() returns 850
+  A    8.50 log: LOG tar pos 6914,4616 speed 0 heading 0
+
+  A    8.50 log: LOG tar range 4949 tar bearing 7
+
+  B    8.50 time() returns 850
+  A    8.50 cannon(  7,4949) returns 1
+  A    8.50 log: LOG shot range 4949 tar bearing 7
+cannon called bearing 7 range 4949
+
+  B    8.50 drive(234,100) returns 1
+Time=   9.00160 
+  A t2.exe           1986 3941   0  172 100   50   6   2  3.77  4.95      
+  B pbv8.exe         6946 4857 234  234 100  -39 189   2        2.26  4.63
+  A    9.00 loc_x() returns 1986
+  B    9.00 loc_x() returns 6946
+  A    9.00 loc_y() returns 3941
+  B    9.00 loc_y() returns 4857
+  A    9.00 speed() returns 50
+  B    9.10 speed() returns -37
+  A    9.10 heading() returns 170
+  B    9.10 time() returns 910
+  A    9.10 time() returns 910
+  A    9.20 log: LOG tar pos 6914,4616 speed 0 heading 0
+
+  A    9.20 log: LOG tar range 4974 tar bearing 7
+
+  B    9.20 scan(190, 1) returns 5059
+  A    9.20 cannon(  7,4974) returns 1
+  A    9.20 log: LOG shot range 4974 tar bearing 7
+cannon called bearing 7 range 4974
+
+  A    9.70 loc_x() returns 1951
+  B    9.70 time() returns 970
+  A    9.70 loc_y() returns 3947
+  A    9.70 speed() returns 50
+  B    9.70 loc_x() returns 6962
+  A    9.70 heading() returns 161
+  B    9.70 loc_y() returns 4878
+  A    9.70 time() returns 970
+  B    9.70 speed() returns -25
+  A    9.70 log: LOG tar pos 6914,4616 speed 0 heading 0
+
+  A    9.70 log: LOG tar range 5007 tar bearing 7
+
+  B    9.70 time() returns 970
+  A    9.70 scan(  4, 5) returns 0
+  A    9.70 log: LOG shot range 5007 tar bearing 7
+LOG do scan called
+LOG scan type reacquiring 2
+
+Time=  10.20180 
+  A t2.exe           1928 3955   0  154 100   50   4   2  2.57  3.75  4.47
+  B pbv8.exe         6969 4888 234  234 100  -15 190   2        1.06  3.43
+  A   10.20 loc_x() returns 1928
+  A   10.20 log: LOG scan 4 by 5 found 0
+
+  A   10.20 loc_y() returns 3955
+  A   10.20 speed() returns 50
+  B   10.20 cannon(189,5365) returns 1
+  A   10.20 heading() returns 154
+  A   10.70 time() returns 1070
+  B   10.70 loc_x() returns 6974
+  A   10.70 log: LOG tar pos 6914,4616 speed 0 heading 0
+
+  A   10.70 log: LOG tar range 5029 tar bearing 7
+
+  B   10.70 loc_y() returns 4895
+  A   10.70 scan( 12, 7) returns 5152
+  A   10.70 log: LOG shot range 5029 tar bearing 7
+LOG do scan called
+LOG scan type reacquiring 3
+
+  B Explosion at 2038,4288
+  B   10.76 speed() returns -4
+Time=  11.20200 
+  A t2.exe           1885 3980   0  139 100   50  12   3  1.51  2.69  3.41
+  B pbv8.exe         6975 4897 234  234 100    4 190   2  4.80        2.37
+  B   11.20 time() returns 1120
+  A   11.20 log: LOG scan 12 by 7 found 5152
+LOG record tar found 6967,5026 
+
+  A   11.20 loc_x() returns 1885
+  A   11.20 log: LOG ping 1928,3955 bearing 12 range 5152 width 7 tarloc 6967,5026 speed 76 head 82
+
+  A   11.20 loc_y() returns 3980
+  B   11.20 scan(190, 1) returns 5171
+  A   11.20 speed() returns 50
+  A   11.70 heading() returns 131
+  B   11.70 time() returns 1170
+  A   11.70 time() returns 1170
+  A   11.70 log: LOG tar pos 6967,5026 speed 0 heading 0
+
+  A   11.70 log: LOG tar range 5188 tar bearing 11
+
+  B   11.70 loc_x() returns 6974
+  A   11.80 scan( 11, 4) returns 5188
+  A   11.80 log: LOG shot range 5188 tar bearing 11
+LOG do scan called
+LOG scan type tracking
+
+  B   11.80 loc_y() returns 4894
+Time=  12.27140 
+  A t2.exe           1847 4018   0  123 100   50  11   3  0.47  1.65  2.37
+  B pbv8.exe         6969 4888 234  234 100   25 190   2  3.76        1.33
+  A Explosion at 6906,4565
+  B   12.27 speed() returns 25
+  B   12.30 time() returns 1230
+  A   12.30 log: LOG scan 11 by 4 found 5188
+LOG record tar found 6977,4969 
+
+  A   12.30 loc_x() returns 1846
+  A   12.30 log: LOG ping 1885,3980 bearing 11 range 5188 width 4 tarloc 6977,4969 speed 57 head -80
+
+  A   12.30 loc_y() returns 4020
+  A   12.30 speed() returns 50
+  A   12.40 heading() returns 121
+  B   12.40 cannon(188,5404) returns 1
+  A   12.40 time() returns 1240
+  A   12.90 log: LOG tar pos 6977,4969 speed 0 heading 0
+
+  A   12.90 log: LOG tar range 5218 tar bearing 10
+
+  B   12.90 loc_x() returns 6959
+  A   12.90 cannon( 10,5218) returns 1
+  A   12.90 log: LOG shot range 5218 tar bearing 10
+cannon called bearing 10 range 5218
+
+  B   12.90 loc_y() returns 4874
+Time=  13.13450 
+  A t2.exe           1826 4056   0  110 100   50  11   3  5.22  0.55  1.27
+  B pbv8.exe         6954 4867 234  234 100   43 190   3  2.66  4.90  0.23
+  B Explosion at 1813,4104
+  B   13.13 speed() returns 43
+  B   13.40 time() returns 1340
+  A   13.40 loc_x() returns 1822
+  A   13.40 loc_y() returns 4069
+  B   13.40 scan(189, 1) returns 5185
+  A   13.40 speed() returns 50
+  A Explosion at 6928,4566
+  A   13.45 heading() returns 105
+  A   13.90 time() returns 1390
+  B   13.90 time() returns 1390
+  A   13.90 log: LOG tar pos 6977,4969 speed 0 heading 0
+
+  A   13.90 log: LOG tar range 5232 tar bearing 9
+
+  A   13.90 scan(  9, 2) returns 5170
+  A   13.90 log: LOG shot range 5232 tar bearing 9
+LOG do scan called
+LOG scan type tracking
+
+Time=  14.00250 
+  A t2.exe           1814 4098   0   97 100   50   9   7  4.22        0.27
+  B pbv8.exe         6929 4833 234  234 100   60 189   4  1.66  3.90      
+  B   14.00 loc_x() returns 6929
+  A Explosion at 6909,4552
+  B   14.18 loc_y() returns 4825
+  B   14.40 speed() returns 68
+  A   14.40 log: LOG scan 9 by 2 found 5170
+LOG record tar found 6928,4877 
+
+  A   14.40 loc_x() returns 1812
+  A   14.40 log: LOG ping 1822,4069 bearing 9 range 5170 width 2 tarloc 6928,4877 speed 47 head 241
+
+  B   14.40 time() returns 1440
+  A   14.40 loc_y() returns 4118
+  A   14.40 speed() returns 50
+  A   14.50 heading() returns 89
+  A   14.50 time() returns 1450
+  B   14.60 cannon(186,5248) returns 1
+  A   14.60 log: LOG tar pos 6928,4877 speed 0 heading 0
+
+  A   14.60 log: LOG tar range 5171 tar bearing 8
+
+  A   14.70 cannon(  8,5171) returns 1
+  A   14.70 log: LOG shot range 5171 tar bearing 8
+cannon called bearing 8 range 5171
+
+Time=  15.10270 
+  A t2.exe           1814 4152   0   80 100   50   9   7  3.42  5.17      
+  B pbv8.exe         6885 4772 234  234 100   82 189   5  0.86  3.10  5.15
+  B   15.10 loc_x() returns 6885
+  B   15.20 loc_y() returns 4765
+  A   15.20 loc_x() returns 1815
+  B   15.20 speed() returns 84
+  A   15.20 loc_y() returns 4157
+  B   15.20 time() returns 1520
+  A   15.20 speed() returns 50
+  A   15.20 heading() returns 79
+  B   15.20 scan(187, 1) returns 5101
+  A   15.20 time() returns 1520
+  B Explosion at 1672,4048
+  A   15.57 log: LOG tar pos 6928,4877 speed 0 heading 0
+
+  A   15.57 log: LOG tar range 5163 tar bearing 8
+
+  A   15.57 cannon(  8,5163) returns 1
+  A   15.57 log: LOG shot range 5163 tar bearing 8
+cannon called bearing 8 range 5163
+
+  B   15.70 time() returns 1570
+Time=  16.06690 
+  A t2.exe           1826 4199   0   66 100   50   9   9  2.42  4.17  5.03
+  B pbv8.exe         6834 4703 234  234 100  100 187   5        2.10  4.15
+  A   16.07 loc_x() returns 1826
+  B   16.07 loc_x() returns 6834
+  A   16.07 loc_y() returns 4199
+  B   16.07 loc_y() returns 4703
+  A   16.07 speed() returns 50
+  B   16.07 speed() returns 100
+  A   16.07 heading() returns 66
+  B   16.07 time() returns 1606
+  A   16.07 time() returns 1606
+  A   16.07 log: LOG tar pos 6928,4877 speed 0 heading 0
+
+  A   16.07 log: LOG tar range 5146 tar bearing 7
+
+  A   16.07 scan(  8, 1) returns 0
+  A   16.07 log: LOG shot range 5146 tar bearing 7
+LOG do scan called
+LOG scan type tracking
+
+  B   16.57 cannon(183,5069) returns 1
+  A   16.57 loc_x() returns 1836
+  A   16.57 log: LOG scan 8 by 1 found 0
+
+  A   16.57 loc_y() returns 4222
+Time=  17.06710 
+  A t2.exe           1849 4243   0   51 100   50   8   9  1.55  3.31  4.16
+  B pbv8.exe         6776 4622 234  234 100  100 187   5  5.07  1.24  3.28
+  A   17.07 speed() returns 50
+  B   17.07 loc_x() returns 6776
+  A   17.07 heading() returns 51
+  B   17.07 loc_y() returns 4622
+  A   17.07 time() returns 1706
+  B   17.07 speed() returns 100
+  A   17.07 log: LOG tar pos 6928,4877 speed 0 heading 0
+
+  A   17.07 log: LOG tar range 5133 tar bearing 7
+
+  B   17.07 time() returns 1706
+  A   17.07 scan(  6, 3) returns 4940
+  A   17.07 log: LOG shot range 5133 tar bearing 7
+LOG do scan called
+LOG scan type reacquiring 1
+
+  B   17.57 scan(185, 1) returns 4891
+  A   17.57 log: LOG scan 6 by 3 found 4940
+LOG record tar found 6748,4738 
+
+  A   17.57 loc_x() returns 1865
+  A   17.57 log: LOG ping 1836,4222 bearing 6 range 4940 width 3 tarloc 6748,4738 speed 71 head 217
+
+  A   17.57 loc_y() returns 4263
+  B Explosion at 1617,4139
+  A   17.81 speed() returns 50
+Time=  18.06730 
+  A t2.exe           1884 4279   0   36 100   50   6  10  0.31  2.07  2.92
+  B pbv8.exe         6717 4541 234  234 100  100 185   5  3.83        2.04
+  A   18.07 heading() returns 36
+  B   18.07 time() returns 1806
+  A   18.07 time() returns 1806
+  A   18.07 log: LOG tar pos 6748,4738 speed 0 heading 0
+
+  A   18.07 log: LOG tar range 4906 tar bearing 5
+
+  B   18.07 loc_x() returns 6717
+  A   18.07 cannon(  5,4906) returns 0
+  A   18.07 log: LOG shot range 4906 tar bearing 5
+cannon called bearing 5 range 4906
+
+  B   18.07 loc_y() returns 4541
+  A Explosion at 6955,4965
+  B   18.12 speed() returns 100
+  B   18.57 time() returns 1856
+  A   18.57 loc_x() returns 1904
+  A   18.57 loc_y() returns 4294
+  A   18.57 speed() returns 50
+  A   18.57 heading() returns 28
+  B   18.57 cannon(182,4546) returns 1
+  A   18.57 time() returns 1856
+Time=  19.06750 
+  A t2.exe           1926 4306   0   21 100   50   6  10        1.31  2.16
+  B pbv8.exe         6658 4460 234  234 100  100 185   5  3.07  4.55  1.28
+  A   19.07 log: LOG tar pos 6748,4738 speed 0 heading 0
+
+  A   19.17 log: LOG tar range 4864 tar bearing 5
+
+  B   19.17 loc_x() returns 6652
+  A   19.17 scan(  5, 2) returns 0
+  A   19.17 log: LOG shot range 4864 tar bearing 5
+LOG do scan called
+LOG scan type tracking
+
+  B   19.27 loc_y() returns 4444
+  B   19.67 speed() returns 100
+  A   19.67 loc_x() returns 1954
+  A   19.67 log: LOG scan 5 by 2 found 0
+
+  A   19.67 loc_y() returns 4315
+  B   19.67 time() returns 1966
+  A   19.67 speed() returns 50
+  A   19.67 heading() returns 12
+  B   19.67 scan(183, 1) returns 4668
+  A   19.67 time() returns 1966
+  B Explosion at 1701,4220
+  A   19.85 log: LOG tar pos 6748,4738 speed 0 heading 0
+
+  A   19.85 log: LOG tar range 4812 tar bearing 5
+
+  A   19.85 scan(  4, 4) returns 4648
+  A   19.85 log: LOG shot range 4812 tar bearing 5
+LOG do scan called
+LOG scan type reacquiring 1
+
+  A Explosion at 6941,4826
+Time=  20.16770 
+  A t2.exe           1979 4320   0    4 100   50   4  11              0.86
+  B pbv8.exe         6593 4371 234  234 100  100 183   5  1.76  3.24      
+  B   20.17 time() returns 2016
+  A   20.35 log: LOG scan 4 by 4 found 4648
+LOG record tar found 6590,4639 
+
+  A   20.35 loc_x() returns 1988
+  A   20.35 log: LOG ping 1954,4315 bearing 4 range 4648 width 4 tarloc 6590,4639 speed 71 head 212
+
+  B   20.35 loc_x() returns 6583
+  A   20.35 loc_y() returns 4320
+  B   20.35 loc_y() returns 4356
+  A   20.35 speed() returns 50
+  B   20.35 speed() returns 100
+  A   20.35 heading() returns 2
+  B   20.35 time() returns 2035
+  A   20.35 time() returns 2035
+  A   20.35 log: LOG tar pos 6590,4639 speed 0 heading 0
+
+  A   20.35 log: LOG tar range 4613 tar bearing 3
+
+  B   20.35 time() returns 2035
+  A   20.45 cannon(  3,4613) returns 1
+  A   20.45 log: LOG shot range 4613 tar bearing 3
+cannon called bearing 3 range 4613
+
+  B   20.45 drive(316,-75) returns 1
+  A Explosion at 6916,4879
+  A   20.95 loc_x() returns 2019
+  B   20.95 loc_x() returns 6548
+  A   20.95 loc_y() returns 4321
+  B   20.95 loc_y() returns 4309
+  A   20.95 speed() returns 60
+  B   20.95 speed() returns 90
+  A   20.95 heading() returns 0
+  B   20.95 time() returns 2095
+  A   20.95 time() returns 2095
+  A   20.95 log: LOG tar pos 6590,4639 speed 0 heading 0
+
+  A   20.95 log: LOG tar range 4582 tar bearing 3
+
+  A   20.95 cannon(  3,4582) returns 1
+  A   20.95 log: LOG shot range 4582 tar bearing 3
+cannon called bearing 3 range 4582
+
+Time=  21.45100 
+  A t2.exe           2049 4321   0    0 100   70   4  11  4.11  4.58      
+  B pbv8.exe         6522 4272 316  234 -75   80 183   5  0.69  2.16      
+  B   21.45 cannon(181,4366) returns 1
+  A   21.45 loc_x() returns 2049
+  B Explosion at 1788,4378
+  A   21.64 loc_y() returns 4321
+  A   21.95 speed() returns 80
+  B   21.95 loc_x() returns 6499
+  A   21.95 heading() returns 0
+  B   21.95 loc_y() returns 4241
+  A   21.95 time() returns 2195
+  B   21.95 speed() returns 70
+  A   21.95 log: LOG tar pos 6590,4639 speed 0 heading 0
+
+  A   21.95 log: LOG tar range 4552 tar bearing 4
+
+  B   21.95 time() returns 2195
+  A   21.95 scan(  4, 2) returns 0
+  A   21.95 log: LOG shot range 4552 tar bearing 4
+LOG do scan called
+LOG scan type tracking
+
+Time=  22.45120 
+  A t2.exe           2125 4321   0    0 100   90   4  12  3.11  3.58      
+  B pbv8.exe         6478 4213 316  234 -75   60 183   5        1.16  3.87
+  B   22.45 scan(180, 1) returns 4353
+  A   22.45 loc_x() returns 2125
+  A   22.45 log: LOG scan 4 by 2 found 0
+
+  A   22.45 loc_y() returns 4321
+  A   22.95 speed() returns 100
+  B   22.95 time() returns 2295
+  A   22.95 heading() returns 0
+  A   22.95 time() returns 2295
+  B   22.95 loc_x() returns 6460
+  A   22.95 log: LOG tar pos 6590,4639 speed 0 heading 0
+
+  A   22.95 log: LOG tar range 4476 tar bearing 4
+
+  B   22.95 loc_y() returns 4188
+  A   22.95 drive(  0,100) returns 1
+  A   22.95 log: LOG shot range 4476 tar bearing 4
+
+  B   22.95 speed() returns 50
+Time=  23.11340 
+  A t2.exe           2187 4321   0    0 100  100   4  12  2.11  2.58      
+  B pbv8.exe         6457 4181 316  244 -75   47 180   5        0.16  2.87
+  B Explosion at 2143,4376
+  B   23.11 time() returns 2311
+  A   23.45 loc_x() returns 2221
+  A   23.45 loc_y() returns 4321
+  A   23.45 speed() returns 100
+  B   23.45 cannon(178,3949) returns 1
+  A   23.45 heading() returns 0
+  A   23.95 time() returns 2395
+  B   23.95 loc_x() returns 6442
+  A   23.95 log: LOG tar pos 6590,4639 speed 0 heading 0
+
+  A   23.95 log: LOG tar range 4380 tar bearing 4
+
+  B   23.95 loc_y() returns 4148
+  A   23.95 scan(  3, 4) returns 4174
+  A   23.95 log: LOG shot range 4380 tar bearing 4
+LOG do scan called
+LOG scan type reacquiring 1
+
+Time=  24.05150 
+  A t2.exe           2281 4322   0    0 100  100   3  16  1.11  1.58      
+  B pbv8.exe         6442 4146 316  258 -75   28 180   5  3.45        1.87
+  B   24.05 speed() returns 28
+  B   24.45 time() returns 2445
+  A   24.45 log: LOG scan 3 by 4 found 4174
+LOG record tar found 6389,4539 
+
+  A   24.45 loc_x() returns 2321
+  A   24.45 log: LOG ping 2221,4321 bearing 3 range 4174 width 4 tarloc 6389,4539 speed 52 head 206
+
+  A   24.45 loc_y() returns 4322
+  B   24.45 scan(179, 1) returns 0
+  A   24.45 speed() returns 100
+  A   24.95 heading() returns 0
+  B   24.95 time() returns 2495
+  A   24.95 time() returns 2495
+  B   24.95 loc_x() returns 6438
+  A   24.95 log: LOG tar pos 6389,4539 speed 0 heading 0
+
+  A   24.95 log: LOG tar range 4073 tar bearing 3
+
+  B   24.95 loc_y() returns 4125
+Time=  25.05170 
+  A t2.exe           2381 4322   0    0 100  100   3  16  0.11  0.58      
+  B pbv8.exe         6438 4124 316  273 -75    8 179   5  2.45        0.87
+  A   25.05 cannon(  3,4073) returns 1
+  A   25.05 log: LOG shot range 4073 tar bearing 3
+cannon called bearing 3 range 4073
+
+  B   25.05 speed() returns 8
+  A Explosion at 6602,4559
+  B   25.06 time() returns 2506
+  A Explosion at 6566,4561
+  B   25.55 scan(180, 2) returns 0
+  A   25.55 loc_x() returns 2431
+  B Explosion at 2147,4181
+  A   25.82 loc_y() returns 4322
+Time=  26.05190 
+  A t2.exe           2481 4323   0    0 100  100   3  17              3.31
+  B pbv8.exe         6438 4122 316  288 -75  -11 180   5  1.58            
+  A   26.05 speed() returns 100
+  B   26.05 time() returns 2605
+  A   26.05 heading() returns 0
+  B   26.05 loc_x() returns 6438
+  A   26.05 time() returns 2605
+  B   26.05 loc_y() returns 4122
+  A   26.05 log: LOG tar pos 6389,4539 speed 0 heading 0
+
+  A   26.05 log: LOG tar range 3963 tar bearing 3
+
+  B   26.05 speed() returns -11
+  A   26.15 scan(  3, 2) returns 0
+  A   26.15 log: LOG shot range 3963 tar bearing 3
+LOG do scan called
+LOG scan type tracking
+
+  B   26.15 time() returns 2615
+  A   26.65 loc_x() returns 2541
+  A   26.65 log: LOG scan 3 by 2 found 0
+
+  A   26.65 loc_y() returns 4323
+  B   26.65 scan(177, 3) returns 3898
+  A   26.65 speed() returns 100
+Time=  27.15210 
+  A t2.exe           2591 4323   0    0 100  100   3  17              2.47
+  B pbv8.exe         6430 4141 316  304 -75  -33 177   5  0.75            
+  A   27.15 heading() returns 0
+  B   27.15 time() returns 2715
+  A   27.25 time() returns 2725
+  A   27.25 log: LOG tar pos 6389,4539 speed 0 heading 0
+
+  A   27.25 log: LOG tar range 3854 tar bearing 3
+
+  B   27.25 loc_x() returns 6428
+  A   27.25 cannon(  3,3854) returns 1
+  A   27.25 log: LOG shot range 3854 tar bearing 3
+cannon called bearing 3 range 3854
+
+  B   27.25 loc_y() returns 4143
+  B Explosion at 2519,4284
+  B   27.40 speed() returns -38
+  B   27.75 time() returns 2775
+  A   27.75 loc_x() returns 2651
+  A   27.75 loc_y() returns 4323
+  A   27.75 speed() returns 100
+  A   27.75 heading() returns 0
+  B   27.75 cannon(176,3496) returns 1
+  A   27.75 time() returns 2775
+Time=  28.25230 
+  A t2.exe           2701 4323   0    0 100  100   3  19  3.35        1.37
+  B pbv8.exe         6401 4175 316  316 -75  -49 177   5  3.50            
+  A   28.25 log: LOG tar pos 6389,4539 speed 0 heading 0
+
+  A   28.25 log: LOG tar range 3744 tar bearing 3
+
+  B   28.25 loc_x() returns 6401
+  A   28.25 scan(  2, 4) returns 3701
+  A   28.25 log: LOG shot range 3744 tar bearing 3
+LOG do scan called
+LOG scan type reacquiring 1
+
+  B   28.25 loc_y() returns 4175
+  B   28.75 speed() returns -59
+  A   28.75 log: LOG scan 2 by 4 found 3701
+LOG record tar found 6349,4452 
+
+  A   28.75 loc_x() returns 2751
+  A   28.75 log: LOG ping 2651,4323 bearing 2 range 3701 width 4 tarloc 6349,4452 speed 25 head 245
+
+  B   28.75 time() returns 2875
+  A   28.75 loc_y() returns 4324
+  A   28.75 speed() returns 100
+  B   28.75 scan(178, 1) returns 3633
+  A   28.75 heading() returns 0
+Time=  29.12470 
+  A t2.exe           2788 4324   0    0 100  100   2  19  2.35        0.37
+  B pbv8.exe         6366 4208 316  316 -75  -66 178   5  2.50            
+  A Explosion at 6466,4517
+  A   29.12 time() returns 2912
+  A   29.25 log: LOG tar pos 6349,4452 speed 0 heading 0
+
+  A   29.25 log: LOG tar range 3600 tar bearing 2
+
+  B   29.25 time() returns 2925
+  A   29.35 cannon(  2,3600) returns 1
+  A   29.35 log: LOG shot range 3600 tar bearing 2
+cannon called bearing 2 range 3600
+
+  B   29.85 loc_x() returns 6329
+  A   29.85 loc_x() returns 2861
+  B   29.85 loc_y() returns 4243
+  A   29.85 loc_y() returns 4324
+  B   29.85 speed() returns -74
+  A   29.85 speed() returns 100
+  B   29.85 time() returns 2985
+  A   29.85 heading() returns 0
+  A   29.85 time() returns 2985
+  A   29.85 log: LOG tar pos 6349,4452 speed 0 heading 0
+
+  A   29.85 log: LOG tar range 3490 tar bearing 2
+
+  A   29.85 scan(  2, 2) returns 3468
+  A   29.85 log: LOG shot range 3490 tar bearing 2
+LOG do scan called
+LOG scan type tracking
+
+  B   29.85 cannon(180,3215) returns 1
+Time=  30.35270 
+  A t2.exe           2911 4324   0    0 100  100   2  19  1.25  3.10      
+  B pbv8.exe         6302 4269 316  316 -75  -74 178   6  1.40  3.21      
+  A   30.35 log: LOG scan 2 by 2 found 3468
+LOG record tar found 6326,4445 
+
+  A   30.35 loc_x() returns 2911
+  A   30.35 log: LOG ping 2861,4324 bearing 2 range 3468 width 2 tarloc 6326,4445 speed 11 head 196
+
+  B   30.35 loc_x() returns 6302
+  A   30.35 loc_y() returns 4324
+  B   30.35 loc_y() returns 4269
+  A   30.35 speed() returns 100
+  B   30.35 speed() returns -74
+  A   30.35 heading() returns 0
+  B   30.35 time() returns 3035
+  A   30.35 time() returns 3035
+  A   30.35 log: LOG tar pos 6326,4445 speed 0 heading 0
+
+  A   30.35 log: LOG tar range 3417 tar bearing 2
+
+  B   30.35 scan(180, 1) returns 3390
+  A   30.35 cannon(  2,3417) returns 1
+  A   30.35 log: LOG shot range 3417 tar bearing 2
+cannon called bearing 2 range 3417
+
+  A   30.85 loc_x() returns 2961
+  B   30.85 time() returns 3085
+  A   30.85 loc_y() returns 4325
+  A   30.85 speed() returns 100
+  B   30.85 loc_x() returns 6274
+  A   30.85 heading() returns 0
+  B   30.85 loc_y() returns 4295
+  A   30.95 time() returns 3095
+  B   30.95 speed() returns -74
+  A   30.95 log: LOG tar pos 6326,4445 speed 0 heading 0
+
+  A   30.95 log: LOG tar range 3367 tar bearing 2
+
+  B   30.95 time() returns 3095
+  A   30.95 scan(  2, 1) returns 0
+  A   30.95 log: LOG shot range 3367 tar bearing 2
+LOG do scan called
+LOG scan type tracking
+
+Time=  31.10620 
+  A t2.exe           2986 4325   0    0 100  100   2  19  0.15  2.00  2.82
+  B pbv8.exe         6261 4308 316  316 -75  -74 180   6  0.30  2.11      
+  A Explosion at 6420,4475
+  B Explosion at 2950,4414
+  B   31.45 cannon(181,3075) returns 1
+  A   31.45 loc_x() returns 3021
+  A   31.45 log: LOG scan 2 by 1 found 0
+
+  A   31.45 loc_y() returns 4325
+  A   31.95 speed() returns 100
+  B   31.95 loc_x() returns 6214
+  A   31.95 heading() returns 0
+  B   31.95 loc_y() returns 4352
+  A   31.95 time() returns 3195
+  B   31.95 speed() returns -74
+  A   31.95 log: LOG tar pos 6326,4445 speed 0 heading 0
+
+  A   31.95 log: LOG tar range 3307 tar bearing 2
+
+  B   31.95 time() returns 3195
+  A   31.95 cannon(  2,3307) returns 1
+  A   31.95 log: LOG shot range 3307 tar bearing 2
+cannon called bearing 2 range 3307
+
+Time=  32.45310 
+  A t2.exe           3121 4325   0    0 100  100   2  21  3.31  1.00  1.82
+  B pbv8.exe         6187 4378 316  316 -75  -74 180   7  2.57  1.11      
+  B   32.45 scan(181, 1) returns 3066
+  A   32.45 loc_x() returns 3121
+  A Explosion at 6368,4420
+  A   32.95 loc_y() returns 4325
+  A   32.95 speed() returns 100
+  B   32.95 time() returns 3295
+  A   32.95 heading() returns 0
+  A   32.95 time() returns 3295
+  B   32.95 loc_x() returns 6160
+  A   32.95 log: LOG tar pos 6326,4445 speed 0 heading 0
+
+  A   32.95 log: LOG tar range 3207 tar bearing 2
+
+  B   32.95 loc_y() returns 4403
+  A   32.95 scan(  1, 3) returns 2989
+  A   32.95 log: LOG shot range 3207 tar bearing 2
+LOG do scan called
+LOG scan type reacquiring 1
+
+Time=  33.05320 
+  A t2.exe           3181 4325   0    0 100  100   1  21  2.31        0.82
+  B pbv8.exe         6155 4409 316  316 -75  -74 181   8  1.57  0.11      
+  B   33.05 speed() returns -74
+  B Explosion at 3121,4224
+  B   33.07 time() returns 3306
+  A   33.45 log: LOG scan 1 by 3 found 2989
+LOG record tar found 6109,4377 
+
+  A   33.45 loc_x() returns 3221
+  A   33.45 log: LOG ping 3121,4325 bearing 1 range 2989 width 3 tarloc 6109,4377 speed 73 head 197
+
+  A   33.45 loc_y() returns 4326
+  A   33.45 speed() returns 100
+  B   33.55 cannon(181,2711) returns 1
+  A   33.55 heading() returns 0
+  A Explosion at 6326,4410
+  A   33.77 time() returns 3376
+Time=  34.05340 
+  A t2.exe           3281 4326   0    0 100  100   1  23  1.49            
+  B pbv8.exe         6100 4460 316  316 -75  -74 181   9  0.76  2.49      
+  A   34.05 log: LOG tar pos 6109,4377 speed 0 heading 0
+
+  A   34.15 log: LOG tar range 2888 tar bearing 1
+
+  B   34.15 loc_x() returns 6095
+  A   34.15 cannon(  1,2888) returns 1
+  A   34.15 log: LOG shot range 2888 tar bearing 1
+cannon called bearing 1 range 2888
+
+  B   34.15 loc_y() returns 4465
+  B Explosion at 3200,4253
+  B   34.53 speed() returns -74
+  B   34.65 time() returns 3465
+  A   34.65 loc_x() returns 3341
+  A   34.65 loc_y() returns 4326
+  B   34.65 time() returns 3465
+  A   34.65 speed() returns 100
+  B   34.65 drive(318,100) returns 1
+  A   34.65 heading() returns 0
+Time=  35.15360 
+  A t2.exe           3391 4326   0    0 100  100   1  25  0.61  2.39      
+  B pbv8.exe         6040 4517 318  316 100  -64 181   9        1.61      
+  A   35.15 time() returns 3515
+  B   35.15 loc_x() returns 6040
+  A   35.15 log: LOG tar pos 6109,4377 speed 0 heading 0
+
+  A   35.15 log: LOG tar range 2768 tar bearing 1
+
+  B   35.15 loc_y() returns 4517
+  A   35.25 scan(  1, 2) returns 0
+  A   35.25 log: LOG shot range 2768 tar bearing 1
+LOG do scan called
+LOG scan type tracking
+
+  B   35.25 speed() returns -62
+  A Explosion at 6422,4475
+  B   35.26 time() returns 3525
+  A   35.75 loc_x() returns 3451
+  A   35.75 log: LOG scan 1 by 2 found 0
+
+  A   35.75 loc_y() returns 4327
+  B   35.75 scan(184, 1) returns 0
+  A   35.75 speed() returns 100
+Time=  36.25380 
+  A t2.exe           3501 4327   0    0 100  100   1  25        1.29      
+  B pbv8.exe         5994 4561 318  318 100  -49 184  10        0.51      
+  A   36.25 heading() returns 0
+  B   36.25 time() returns 3625
+  B Explosion at 3438,4422
+  A   36.26 time() returns 3626
+  B   36.26 loc_x() returns 5993
+  A   36.26 log: LOG tar pos 6109,4377 speed 0 heading 0
+
+  A   36.26 log: LOG tar range 2658 tar bearing 1
+
+  B   36.26 loc_y() returns 4562
+  A   36.26 cannon(  1,2658) returns 1
+  A   36.26 log: LOG shot range 2658 tar bearing 1
+cannon called bearing 1 range 2658
+
+  B   36.26 speed() returns -49
+  B   36.76 time() returns 3676
+  A   36.76 loc_x() returns 3552
+  A   36.76 loc_y() returns 4327
+  B   36.76 scan(184, 2) returns 0
+  A   36.76 speed() returns 100
+Time=  37.04140 
+  A t2.exe           3579 4327   0    0 100  100   1  27  2.16  0.28      
+  B pbv8.exe         5966 4585 318  318 100  -33 184  10                  
+  A Explosion at 6179,4423
+  A   37.04 heading() returns 0
+  A   37.26 time() returns 3726
+  B   37.26 time() returns 3726
+  A   37.26 log: LOG tar pos 6109,4377 speed 0 heading 0
+
+  A   37.26 log: LOG tar range 2557 tar bearing 1
+
+  B   37.26 loc_x() returns 5961
+  A   37.26 scan(  0, 4) returns 0
+  A   37.26 log: LOG shot range 2557 tar bearing 1
+LOG do scan called
+LOG scan type reacquiring 1
+
+  B   37.26 loc_y() returns 4591
+  B   37.76 speed() returns -19
+  A   37.76 loc_x() returns 3652
+  A   37.76 log: LOG scan 0 by 4 found 0
+
+  A   37.76 loc_y() returns 4327
+  B   37.76 time() returns 3776
+  A   37.76 speed() returns 100
+  A   37.76 heading() returns 0
+  B   37.86 scan(187, 3) returns 2302
+  A   37.86 time() returns 3786
+Time=  38.36470 
+  A t2.exe           3712 4328   0    0 100  100   0  27  1.06            
+  B pbv8.exe         5941 4608 318  318 100   -7 187  11                  
+  A   38.36 log: LOG tar pos 6109,4377 speed 0 heading 0
+
+  A   38.36 log: LOG tar range 2457 tar bearing 1
+
+  B   38.36 time() returns 3836
+  A   38.36 cannon(  1,2457) returns 1
+  A   38.36 log: LOG shot range 2457 tar bearing 1
+cannon called bearing 1 range 2457
+
+  B   38.86 loc_x() returns 5938
+  A   38.86 loc_x() returns 3762
+  B   38.86 loc_y() returns 4610
+  A   38.86 loc_y() returns 4328
+  B   38.86 speed() returns 2
+  A   38.86 speed() returns 100
+  B   38.86 time() returns 3886
+  A   38.86 heading() returns 0
+  A   38.86 time() returns 3886
+  A   38.86 log: LOG tar pos 6109,4377 speed 0 heading 0
+
+  A   38.86 log: LOG tar range 2347 tar bearing 1
+
+  A   38.86 scan( -3, 6) returns 0
+  A   38.86 log: LOG shot range 2347 tar bearing 1
+LOG do scan called
+LOG scan type reacquiring 2
+
+  B   38.86 cannon(188,2035) returns 1
+  A Explosion at 6167,4390
+Time=  39.36490 
+  A t2.exe           3812 4328   0    0 100  100 357  27        1.90      
+  B pbv8.exe         5940 4609 318  318 100   12 187  12  1.98            
+  A   39.36 loc_x() returns 3812
+  A   39.36 log: LOG scan -3 by 6 found 0
+
+  A   39.36 loc_y() returns 4328
+  B   39.36 loc_x() returns 5940
+  A   39.36 speed() returns 100
+  B   39.46 loc_y() returns 4608
+  A   39.46 heading() returns 0
+  B   39.46 speed() returns 14
+  A   39.46 time() returns 3946
+  B   39.56 time() returns 3956
+  A   39.56 log: LOG tar pos 6109,4377 speed 0 heading 0
+
+  A   39.56 log: LOG tar range 2297 tar bearing 1
+
+  A   39.56 cannon(  1,2297) returns 1
+  A   39.56 log: LOG shot range 2297 tar bearing 1
+cannon called bearing 1 range 2297
+
+  B   39.56 scan(187, 2) returns 2127
+Time=  40.06500 
+  A t2.exe           3882 4328   0    0 100  100 357  27  2.30  1.26      
+  B pbv8.exe         5948 4602 318  318 100   26 187  12  1.33            
+  A   40.07 loc_x() returns 3882
+  B   40.07 time() returns 4006
+  A   40.07 loc_y() returns 4328
+  A   40.17 speed() returns 100
+  B   40.17 loc_x() returns 5950
+  A   40.17 heading() returns 0
+  B   40.27 loc_y() returns 4598
+  A   40.27 time() returns 4026
+  B   40.27 speed() returns 30
+  A   40.27 log: LOG tar pos 6109,4377 speed 0 heading 0
+
+  A   40.27 log: LOG tar range 2227 tar bearing 1
+
+  B   40.27 time() returns 4026
+  A   40.27 cannon(  1,2227) returns 1
+  A   40.27 log: LOG shot range 2227 tar bearing 1
+cannon called bearing 1 range 2227
+
+  A   40.77 loc_x() returns 3952
+  A   40.77 loc_y() returns 4329
+  B   40.77 cannon(185,1928) returns 1
+  A   40.77 speed() returns 100
+  A Explosion at 6145,4415
+  A   40.82 heading() returns 0
+  B Explosion at 3922,4327
+  A   40.90 time() returns 4089
+Time=  41.26520 
+  A t2.exe           4002 4329   0    0 100  100 357  35  0.96        1.59
+  B pbv8.exe         5980 4574 318  318 100   50 187  13        1.79      
+  A   41.27 log: LOG tar pos 6109,4377 speed 0 heading 0
+
+  A   41.27 log: LOG tar range 2157 tar bearing 1
+
+  B   41.27 loc_x() returns 5980
+  A   41.27 scan(  7, 8) returns 1992
+  A   41.27 log: LOG shot range 2157 tar bearing 1
+LOG do scan called
+LOG scan type reacquiring 3
+
+  B   41.27 loc_y() returns 4574
+  B   41.77 speed() returns 60
+  A   41.77 log: LOG scan 7 by 8 found 1992
+LOG record tar found 5929,4571 
+
+  A   41.77 loc_x() returns 4052
+  A   41.77 log: LOG ping 3952,4329 bearing 7 range 1992 width 8 tarloc 5929,4571 speed 33 head 133
+
+  B   41.77 time() returns 4176
+  A   41.77 loc_y() returns 4329
+  A   41.77 speed() returns 100
+  B   41.77 scan(185, 2) returns 0
+  A   41.77 heading() returns 0
+  A Explosion at 6107,4396
+  A   41.86 time() returns 4186
+Time=  42.26540 
+  A t2.exe           4102 4329   0    0 100  100   7  35              0.63
+  B pbv8.exe         6021 4537 318  318 100   70 185  15        0.83      
+  A   42.27 log: LOG tar pos 5929,4571 speed 0 heading 0
+
+  A   42.27 log: LOG tar range 1892 tar bearing 7
+
+  B   42.27 time() returns 4226
+  A   42.27 cannon(  7,1892) returns 1
+  A   42.27 log: LOG shot range 1892 tar bearing 7
+cannon called bearing 7 range 1892
+
+  B   42.27 loc_x() returns 6021
+  A Explosion at 6153,4411
+  B   42.49 loc_y() returns 4526
+  B Explosion at 4046,4406
+  B   42.69 speed() returns 79
+  B   42.77 time() returns 4276
+  A   42.77 loc_x() returns 4152
+  A   42.77 loc_y() returns 4329
+  B   42.77 scan(186, 3) returns 1905
+  A   42.77 speed() returns 100
+Time=  43.26560 
+  A t2.exe           4202 4330   0    0 100  100   7  37  1.39            
+  B pbv8.exe         6079 4486 318  318 100   90 186  17                  
+  A   43.27 heading() returns 0
+  B   43.27 time() returns 4326
+  A   43.37 time() returns 4336
+  A   43.37 log: LOG tar pos 5929,4571 speed 0 heading 0
+
+  A   43.37 log: LOG tar range 1793 tar bearing 7
+
+  B   43.37 loc_x() returns 6086
+  A   43.37 scan(  7, 5) returns 1878
+  A   43.37 log: LOG shot range 1793 tar bearing 7
+LOG do scan called
+LOG scan type tracking
+
+  B   43.37 loc_y() returns 4480
+  B   43.87 speed() returns 100
+  A   43.87 log: LOG scan 7 by 5 found 1878
+LOG record tar found 6016,4557 
+
+  A   43.87 loc_x() returns 4262
+  A   43.87 log: LOG ping 4152,4329 bearing 7 range 1878 width 5 tarloc 6016,4557 speed 35 head -9
+
+  B   43.87 time() returns 4386
+  A   43.87 loc_y() returns 4330
+  A   43.87 speed() returns 100
+  A   43.97 heading() returns 0
+  A   43.97 time() returns 4396
+Time=  44.06570 
+  A t2.exe           4282 4330   0    0 100  100   7  37  0.19            
+  B pbv8.exe         6135 4436 318  318 100  100 186  17                  
+  B   44.07 cannon(185,1745) returns 1
+  A   44.07 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A Explosion at 5948,4545
+  A   44.16 log: LOG tar range 1768 tar bearing 7
+
+  A   44.16 cannon(  7,1768) returns 1
+  A   44.16 log: LOG shot range 1768 tar bearing 7
+cannon called bearing 7 range 1768
+
+  B   44.57 loc_x() returns 6173
+  B   44.66 loc_y() returns 4397
+  A   44.66 loc_x() returns 4341
+  B   44.66 speed() returns 100
+  A   44.66 loc_y() returns 4330
+  B   44.66 time() returns 4465
+  A   44.66 speed() returns 100
+  A   44.66 heading() returns 0
+  B   44.66 scan(181, 2) returns 1839
+  A   44.66 time() returns 4465
+Time=  45.15760 
+  A t2.exe           4391 4330   0    0 100  100   7  37  1.27            
+  B pbv8.exe         6217 4364 318  318 100  100 181  18  1.15            
+  A   45.16 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   45.16 log: LOG tar range 1690 tar bearing 7
+
+  B   45.16 time() returns 4515
+  A   45.16 cannon(  7,1690) returns 1
+  A   45.16 log: LOG shot range 1690 tar bearing 7
+cannon called bearing 7 range 1690
+
+  B   45.66 loc_x() returns 6254
+  A   45.66 loc_x() returns 4441
+  B   45.66 loc_y() returns 4331
+  A   45.66 loc_y() returns 4331
+  B   45.66 speed() returns 100
+  A   45.66 speed() returns 100
+  B   45.66 time() returns 4565
+  A   45.66 heading() returns 0
+  A   45.66 time() returns 4565
+  A   45.66 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   45.66 log: LOG tar range 1591 tar bearing 8
+
+  A   45.66 scan(  8, 3) returns 0
+  A   45.66 log: LOG shot range 1591 tar bearing 8
+LOG do scan called
+LOG scan type tracking
+
+  B   45.66 cannon(178,1711) returns 1
+  B Explosion at 4394,4308
+  A Explosion at 6029,4590
+Time=  46.15780 
+  A t2.exe           4491 4331   0    0 100  100   8  41        0.92      
+  B pbv8.exe         6292 4297 318  318 100  100 181  19        1.44      
+  A   46.16 loc_x() returns 4491
+  A   46.16 log: LOG scan 8 by 3 found 0
+
+  A   46.16 loc_y() returns 4331
+  B   46.16 loc_x() returns 6292
+  A   46.16 speed() returns 100
+  B   46.16 loc_y() returns 4297
+  A   46.16 heading() returns 0
+  B   46.16 speed() returns 100
+  A   46.16 time() returns 4615
+  B   46.26 time() returns 4625
+  A   46.26 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   46.26 log: LOG tar range 1541 tar bearing 8
+
+  A   46.26 cannon(  8,1541) returns 1
+  A   46.26 log: LOG shot range 1541 tar bearing 8
+cannon called bearing 8 range 1541
+
+  B   46.26 scan(179, 2) returns 1798
+  A   46.76 loc_x() returns 4551
+  A Explosion at 6057,4573
+  B   46.85 time() returns 4684
+  A   46.85 loc_y() returns 4331
+  A   46.85 speed() returns 100
+  B   46.85 loc_x() returns 6344
+  A   46.85 heading() returns 0
+  B   46.85 loc_y() returns 4252
+  A   46.85 time() returns 4684
+  B   46.85 speed() returns 100
+  A   46.85 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   46.85 log: LOG tar range 1482 tar bearing 8
+
+  B   46.85 time() returns 4684
+  A   46.85 cannon(  8,1482) returns 1
+  A   46.85 log: LOG shot range 1482 tar bearing 8
+cannon called bearing 8 range 1482
+
+Time=  47.34780 
+  A t2.exe           4610 4331   0    0 100  100   8  41  0.95  1.48      
+  B pbv8.exe         6381 4219 318  318 100  100 179  19        0.52      
+  A   47.35 loc_x() returns 4610
+  A   47.35 loc_y() returns 4331
+  B   47.35 cannon(179,1675) returns 1
+  A   47.35 speed() returns 100
+  B Explosion at 4518,4404
+  A   47.37 heading() returns 0
+  A Explosion at 6005,4515
+  A   47.80 time() returns 4779
+  A   47.85 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   47.85 log: LOG tar range 1424 tar bearing 9
+
+  B   47.85 loc_x() returns 6419
+  A   47.95 scan(  8, 5) returns 0
+  A   47.95 log: LOG shot range 1424 tar bearing 9
+LOG do scan called
+LOG scan type reacquiring 1
+
+  B   47.95 loc_y() returns 4179
+Time=  48.32970 
+  A t2.exe           4708 4332   0    0 100  100   8  43        0.38      
+  B pbv8.exe         6455 4153 318  318 100  100 179  19  1.07            
+  A Explosion at 6029,4528
+  B   48.33 speed() returns 100
+  B   48.45 time() returns 4844
+  A   48.45 loc_x() returns 4720
+  A   48.45 log: LOG scan 8 by 5 found 0
+
+  A   48.45 loc_y() returns 4332
+  A   48.45 speed() returns 100
+  B   48.45 time() returns 4844
+  A   48.45 heading() returns 0
+  B   48.45 drive(131,-75) returns 1
+  A   48.45 time() returns 4844
+  A   48.95 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   48.95 log: LOG tar range 1315 tar bearing 9
+
+  B   48.95 loc_x() returns 6501
+Time=  49.02290 
+  A t2.exe           4778 4332   0    0 100  100   8  43                  
+  B pbv8.exe         6506 4108 131  318 -75   89 179  19  0.07            
+  B Explosion at 4712,4274
+  A   49.02 cannon(  9,1315) returns 1
+  A   49.02 log: LOG shot range 1315 tar bearing 9
+cannon called bearing 9 range 1315
+
+  B   49.02 loc_y() returns 4108
+  B   49.52 speed() returns 79
+  A   49.52 loc_x() returns 4828
+  B   49.52 time() returns 4952
+  A   49.52 loc_y() returns 4332
+  A   49.52 speed() returns 100
+  B   49.52 scan(174, 2) returns 1729
+  A   49.52 heading() returns 0
+Time=  50.02310 
+  A t2.exe           4878 4332   0    0 100  100   8  47  0.81            
+  B pbv8.exe         6568 4053 131  318 -75   68 174  19                  
+  A   50.02 time() returns 5002
+  B   50.02 time() returns 5002
+  A   50.12 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   50.12 log: LOG tar range 1209 tar bearing 10
+
+  A   50.12 scan(  5, 7) returns 0
+  A   50.12 log: LOG shot range 1209 tar bearing 10
+LOG do scan called
+LOG scan type reacquiring 2
+
+  B   50.12 loc_x() returns 6574
+  A Explosion at 6120,4525
+  B   50.34 loc_y() returns 4039
+  B   50.62 speed() returns 56
+  A   50.62 loc_x() returns 4938
+  A   50.62 log: LOG scan 5 by 7 found 0
+
+  A   50.62 loc_y() returns 4333
+  B   50.62 time() returns 5062
+  A   50.62 speed() returns 100
+  A   50.62 heading() returns 0
+  A   50.72 time() returns 5072
+  A   50.72 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   50.72 log: LOG tar range 1101 tar bearing 11
+
+  B   50.72 cannon(173,1595) returns 1
+  A   50.72 cannon( 11,1101) returns 1
+  A   50.72 log: LOG shot range 1101 tar bearing 11
+cannon called bearing 11 range 1101
+
+Time=  51.22330 
+  A t2.exe           4998 4333   0    0 100  100   5  47  1.10            
+  B pbv8.exe         6622 4005 131  311 -75   50 174  19  1.59            
+  A   51.22 loc_x() returns 4998
+  B   51.22 loc_x() returns 6622
+  A   51.22 loc_y() returns 4333
+  B   51.22 loc_y() returns 4005
+  A   51.22 speed() returns 100
+  B   51.22 speed() returns 50
+  A   51.22 heading() returns 0
+  B   51.32 time() returns 5132
+  A   51.32 time() returns 5132
+  A   51.32 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   51.32 log: LOG tar range 1042 tar bearing 12
+
+  B   51.32 scan(172, 2) returns 0
+  A   51.32 cannon( 12,1042) returns 1
+  A   51.32 log: LOG shot range 1042 tar bearing 12
+cannon called bearing 12 range 1042
+
+  A   51.82 loc_x() returns 5058
+  B   51.82 time() returns 5182
+  A   51.82 loc_y() returns 4333
+  B   51.82 loc_x() returns 6641
+  A Explosion at 6045,4531
+  A   51.82 speed() returns 100
+  B   51.82 loc_y() returns 3983
+  A   51.82 heading() returns 0
+  B   51.82 speed() returns 38
+  A   51.92 time() returns 5192
+  B   51.92 time() returns 5192
+  A   51.92 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   51.92 log: LOG tar range 983 tar bearing 13
+
+  A   51.92 scan( 20, 9) returns 0
+  A   51.92 log: LOG shot range 983 tar bearing 13
+LOG do scan called
+LOG scan type reacquiring 3
+
+  B   51.92 scan(173, 3) returns 0
+Time=  52.31830 
+  A t2.exe           5107 4333   0    0 100  100  20  47        0.44      
+  B pbv8.exe         6650 3967 131  295 -75   28 173  19  0.39            
+  B Explosion at 5015,4196
+  A Explosion at 6016,4593
+  A   52.42 loc_x() returns 5118
+  A   52.42 log: LOG scan 20 by 9 found 0
+
+  A   52.42 loc_y() returns 4333
+  B   52.42 time() returns 5242
+  A   52.42 speed() returns 100
+  B   52.42 loc_x() returns 6651
+  A   52.42 heading() returns 0
+  B   52.52 loc_y() returns 3962
+  A   52.52 time() returns 5252
+  B   52.52 speed() returns 24
+  A   52.52 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   52.52 log: LOG tar range 925 tar bearing 14
+
+  B   52.52 time() returns 5252
+  A   52.52 cannon( 14,925) returns 1
+  A   52.52 log: LOG shot range 925 tar bearing 14
+cannon called bearing 14 range 925
+
+Time=  53.02450 
+  A t2.exe           5178 4334   0    0 100  100  20  49  0.93            
+  B pbv8.exe         6657 3951 131  284 -75   14 173  19                  
+  B   53.02 scan(168, 4) returns 1526
+  A   53.02 loc_x() returns 5178
+  A Explosion at 5996,4530
+  A   53.45 loc_y() returns 4334
+  A   53.52 speed() returns 100
+  B   53.52 time() returns 5352
+  A   53.52 heading() returns 0
+  A   53.52 time() returns 5352
+  B   53.52 loc_x() returns 6658
+  A   53.52 log: LOG tar pos 6016,4557 speed 0 heading 0
+
+  A   53.52 log: LOG tar range 867 tar bearing 14
+
+  B   53.52 loc_y() returns 3945
+  A   53.52 scan( -4,10) returns 1481
+  A   53.52 log: LOG shot range 867 tar bearing 14
+LOG do scan called
+LOG scan type reacquiring 4
+
+  B   53.52 speed() returns 4
+Time=  54.02470 
+  A t2.exe           5278 4334   0    0 100  100 356  49                  
+  B pbv8.exe         6658 3943 131  269 -75   -5 168  19                  
+  B   54.02 time() returns 5402
+  A   54.02 log: LOG scan -4 by 10 found 1481
+LOG record tar found 6655,4230 
+
+  A   54.02 loc_x() returns 5278
+  A   54.02 log: LOG ping 5178,4334 bearing -4 range 1481 width 10 tarloc 6655,4230 speed 70 head -27
+
+  A   54.02 loc_y() returns 4334
+  A   54.12 speed() returns 100
+  A   54.12 heading() returns 0
+  B   54.12 cannon(166,1321) returns 1
+  A   54.22 time() returns 5422
+  A   54.62 log: LOG tar pos 6655,4230 speed 0 heading 0
+
+  A   54.62 log: LOG tar range 1380 tar bearing -4
+
+  B   54.62 loc_x() returns 6659
+  A   54.72 cannon( -4,1380) returns 1
+  A   54.72 log: LOG shot range 1380 tar bearing -4
+cannon called bearing -4 range 1380
+
+  B   54.72 loc_y() returns 3950
+Time=  55.22490 
+  A t2.exe           5398 4335   0    0 100  100 356  49  1.38            
+  B pbv8.exe         6661 3960 131  251 -75  -29 168  19  0.72            
+  B   55.22 speed() returns -29
+  A   55.22 loc_x() returns 5398
+  B   55.32 time() returns 5532
+  A   55.32 loc_y() returns 4335
+  A   55.32 speed() returns 100
+  B   55.42 scan(168, 3) returns 0
+  A   55.42 heading() returns 0
+  B Explosion at 5374,4259
+  A   55.45 time() returns 5544
+  A   55.93 log: LOG tar pos 6655,4230 speed 0 heading 0
+
+  A   55.93 log: LOG tar range 1261 tar bearing -4
+
+  B   55.93 time() returns 5592
+Time=  56.02500 
+  A t2.exe           5478 4335   0    0 100  100 356  53  0.18            
+  B pbv8.exe         6672 3986 131  239 -75  -45 168  19                  
+  A   56.03 scan( -4, 6) returns 0
+  A   56.03 log: LOG shot range 1261 tar bearing -4
+LOG do scan called
+LOG scan type tracking
+
+  B   56.03 loc_x() returns 6672
+  A Explosion at 6709,4270
+  B   56.10 loc_y() returns 3989
+  B   56.53 speed() returns -49
+  A   56.53 loc_x() returns 5528
+  A   56.53 log: LOG scan -4 by 6 found 0
+
+  A   56.53 loc_y() returns 4335
+  B   56.53 time() returns 5652
+  A   56.53 speed() returns 100
+  A   56.53 heading() returns 0
+  B   56.53 scan(167, 4) returns 1201
+  A   56.53 time() returns 5652
+Time=  57.02520 
+  A t2.exe           5578 4335   0    0 100  100 356  53                  
+  B pbv8.exe         6700 4025 131  224 -75  -49 167  20                  
+  A   57.03 log: LOG tar pos 6655,4230 speed 0 heading 0
+
+  A   57.03 log: LOG tar range 1131 tar bearing -5
+
+  B   57.03 time() returns 5702
+  A   57.03 cannon( -5,1131) returns 1
+  A   57.03 log: LOG shot range 1131 tar bearing -5
+cannon called bearing -5 range 1131
+
+  B   57.53 loc_x() returns 6718
+  A   57.53 loc_x() returns 5628
+  B   57.53 loc_y() returns 4043
+  A   57.53 loc_y() returns 4336
+  B   57.53 speed() returns -49
+  A   57.53 speed() returns 100
+  B   57.53 time() returns 5752
+  A   57.53 heading() returns 0
+  A   57.53 time() returns 5752
+  A   57.53 log: LOG tar pos 6655,4230 speed 0 heading 0
+
+  A   57.53 log: LOG tar range 1032 tar bearing -5
+
+  A   57.53 scan( -4, 8) returns 0
+  A   57.53 log: LOG shot range 1032 tar bearing -5
+LOG do scan called
+LOG scan type reacquiring 1
+
+  B   57.53 cannon(169,1074) returns 1
+Time=  58.02540 
+  A t2.exe           5678 4336   0    0 100  100 356  53  0.63            
+  B pbv8.exe         6738 4057 131  209 -75  -49 167  20  1.07            
+  A   58.03 loc_x() returns 5678
+  A   58.03 log: LOG scan -4 by 8 found 0
+
+  A   58.03 loc_y() returns 4336
+  B   58.03 loc_x() returns 6738
+  A   58.03 speed() returns 100
+  B   58.03 loc_y() returns 4057
+  A   58.03 heading() returns 0
+  B   58.03 speed() returns -49
+  A   58.03 time() returns 5802
+  B   58.03 time() returns 5802
+  A   58.03 log: LOG tar pos 6655,4230 speed 0 heading 0
+
+  A   58.03 log: LOG tar range 982 tar bearing -6
+
+  A   58.03 cannon( -6,982) returns 1
+  A   58.03 log: LOG shot range 982 tar bearing -6
+cannon called bearing -6 range 982
+
+  A Explosion at 6683,4259
+  B   58.53 cannon(170,1055) returns 1
+  A   58.53 loc_x() returns 5728
+  B Explosion at 5648,4241
+  A   58.60 loc_y() returns 4336
+Time=  59.00750 
+  A t2.exe           5776 4336   0    0 100  100 356  55        0.41      
+  B pbv8.exe         6783 4077 131  194 -75  -49 167  21        0.98      
+  A Explosion at 6683,4229
+  A   59.01 speed() returns 100
+  A   59.03 heading() returns 0
+  B   59.03 loc_x() returns 6784
+  A   59.03 time() returns 5902
+  B   59.03 loc_y() returns 4078
+  A   59.03 log: LOG tar pos 6655,4230 speed 0 heading 0
+
+  A   59.03 log: LOG tar range 933 tar bearing -6
+
+  B   59.03 speed() returns -49
+  A   59.13 cannon( -6,933) returns 1
+  A   59.13 log: LOG shot range 933 tar bearing -6
+cannon called bearing -6 range 933
+
+  B   59.13 time() returns 5912
+  B Explosion at 5728,4254
+  B   59.63 scan(172, 4) returns 0
+  A   59.63 loc_x() returns 5838
+Time=  60.05870 
+  A t2.exe           5881 4337   0    0 100  100 356  57  0.43            
+  B pbv8.exe         6835 4086 131  178 -75  -49 172  23                  
+  A Explosion at 6729,4268
+  A   60.06 loc_y() returns 4337
+  A   60.13 speed() returns 100
+  B   60.13 time() returns 6012
+  A   60.13 heading() returns 0
+  B   60.13 loc_x() returns 6838
+  A   60.13 time() returns 6012
+  B   60.13 loc_y() returns 4086
+  A   60.13 log: LOG tar pos 6655,4230 speed 0 heading 0
+
+  A   60.13 log: LOG tar range 823 tar bearing -7
+
+  B   60.13 speed() returns -49
+  A   60.13 scan(  1,10) returns 0
+  A   60.13 log: LOG shot range 823 tar bearing -7
+LOG do scan called
+LOG scan type reacquiring 2
+
+  B   60.13 time() returns 6012
+  A   60.63 loc_x() returns 5938
+  A   60.63 log: LOG scan 1 by 10 found 0
+
+  A   60.63 loc_y() returns 4337
+  A   60.63 speed() returns 100
+  A   60.63 heading() returns 0
+  B   60.63 cannon(172,996) returns 1
+  A   60.63 time() returns 6062
+Time=  61.12600 
+  A t2.exe           5988 4337   0    0 100  100   1  57                  
+  B pbv8.exe         6888 4080 131  162 -75  -49 172  24  1.00            
+  A   61.13 log: LOG tar pos 6655,4230 speed 0 heading 0
+
+  A   61.13 log: LOG tar range 724 tar bearing -8
+
+  B   61.13 loc_x() returns 6888
+  A   61.13 cannon( -8,724) returns 1
+  A   61.13 log: LOG shot range 724 tar bearing -8
+cannon called bearing -8 range 724
+
+  B   61.13 loc_y() returns 4080
+  B Explosion at 5853,4207
+  B   61.62 speed() returns -49
+  B   61.63 time() returns 6162
+  A   61.63 loc_x() returns 6038
+  A   61.63 loc_y() returns 4337
+  B   61.63 time() returns 6162
+  A   61.63 speed() returns 100
+  B   61.63 drive( 38,100) returns 1
+  A   61.63 heading() returns 0
+  A Explosion at 6654,4228
+  A   61.85 time() returns 6185
+Time=  62.12620 
+  A t2.exe           6088 4337   0    0 100  100   1  58                  
+  B pbv8.exe         6933 4062  38  147 100  -39 172  25                  
+  A   62.13 log: LOG tar pos 6655,4230 speed 0 heading 0
+
+  A   62.13 log: LOG tar range 626 tar bearing -9
+
+  B   62.13 loc_x() returns 6933
+  A   62.13 scan(-19,10) returns 887
+  A   62.13 log: LOG shot range 626 tar bearing -9
+LOG do scan called
+LOG scan type reacquiring 3
+
+  B   62.13 loc_y() returns 4062
+  B   62.63 speed() returns -29
+  A   62.63 log: LOG scan -19 by 10 found 887
+LOG record tar found 6876,4048 
+
+  A   62.63 loc_x() returns 6138
+  A   62.63 log: LOG ping 6038,4337 bearing -19 range 887 width 10 tarloc 6876,4048 speed 34 head -39
+
+  B   62.63 time() returns 6262
+  A   62.63 loc_y() returns 4338
+  A   62.63 speed() returns 100
+  B   62.63 scan(169, 5) returns 0
+  A   62.63 heading() returns 0
+Time=  63.12640 
+  A t2.exe           6188 4338   0    0 100  100 341  58                  
+  B pbv8.exe         6961 4042  38  132 100  -19 169  25                  
+  A   63.13 time() returns 6312
+  B   63.13 time() returns 6312
+  A   63.13 log: LOG tar pos 6876,4048 speed 0 heading 0
+
+  A   63.13 log: LOG tar range 792 tar bearing -21
+
+  B   63.13 loc_x() returns 6961
+  A   63.13 cannon(-21,792) returns 1
+  A   63.13 log: LOG shot range 792 tar bearing -21
+cannon called bearing -21 range 792
+
+  B   63.13 loc_y() returns 4042
+  B   63.63 speed() returns -9
+  A   63.63 loc_x() returns 6238
+  B   63.63 time() returns 6362
+  A   63.63 loc_y() returns 4338
+  A   63.63 speed() returns 100
+  B   63.63 scan(177, 6) returns 0
+  A   63.63 heading() returns 0
+  A Explosion at 6962,4066
+  A   63.92 time() returns 6391
+Time=  64.12660 
+  A t2.exe           6288 4338   0    0 100  100 341  58                  
+  B pbv8.exe         6970 4031  38  117 100    0 177  33                  
+  A   64.13 log: LOG tar pos 6876,4048 speed 0 heading 0
+
+  A   64.13 log: LOG tar range 700 tar bearing -24
+
+  B   64.13 time() returns 6412
+  A   64.13 scan(-24, 6) returns 747
+  A   64.13 log: LOG shot range 700 tar bearing -24
+LOG do scan called
+LOG scan type tracking
+
+  B   64.13 loc_x() returns 6970
+  B   64.63 loc_y() returns 4031
+  A   64.63 log: LOG scan -24 by 6 found 747
+LOG record tar found 6920,4034 
+
+  A   64.63 loc_x() returns 6338
+  A   64.63 log: LOG ping 6238,4338 bearing -24 range 747 width 6 tarloc 6920,4034 speed 22 head -17
+
+  B   64.63 speed() returns 10
+  A   64.63 loc_y() returns 4339
+  B   64.63 time() returns 6462
+  A   64.63 speed() returns 100
+  A   64.63 heading() returns 0
+  B   64.63 scan(160, 7) returns 701
+  A   64.63 time() returns 6462
+Time=  65.12680 
+  A t2.exe           6388 4339   0    0 100  100 336  58                  
+  B pbv8.exe         6968 4036  38  102 100   20 160  33                  
+  A   65.13 log: LOG tar pos 6920,4034 speed 0 heading 0
+
+  A   65.13 log: LOG tar range 657 tar bearing -27
+
+  B   65.13 time() returns 6512
+  A   65.13 cannon(-27,657) returns 1
+  A   65.13 log: LOG shot range 657 tar bearing -27
+cannon called bearing -27 range 657
+
+  B   65.63 loc_x() returns 6966
+  A   65.63 loc_x() returns 6438
+  B   65.63 loc_y() returns 4046
+  A   65.63 loc_y() returns 4339
+  B   65.63 speed() returns 30
+  A   65.63 speed() returns 100
+  B   65.63 time() returns 6562
+  A   65.63 heading() returns 0
+  A   65.63 time() returns 6562
+  A   65.63 log: LOG tar pos 6920,4034 speed 0 heading 0
+
+  A   65.63 log: LOG tar range 570 tar bearing -32
+
+  A   65.63 scan(-32, 4) returns 602
+  A   65.63 log: LOG shot range 570 tar bearing -32
+LOG do scan called
+LOG scan type tracking
+
+  B   65.63 cannon(158,579) returns 1
+  A Explosion at 6955,3991
+Time=  66.12700 
+  A t2.exe           6488 4339   0    0 100  100 328  58                  
+  B pbv8.exe         6965 4062  38   87 100   40 160  37  0.42            
+  A   66.13 log: LOG scan -32 by 4 found 602
+LOG record tar found 6948,4019 
+
+  A   66.13 loc_x() returns 6488
+  A   66.13 log: LOG ping 6438,4339 bearing -32 range 602 width 4 tarloc 6948,4019 speed 18 head -28
+
+  B   66.13 loc_x() returns 6965
+  A   66.13 loc_y() returns 4339
+  B Explosion at 6417,4263
+  B   66.21 loc_y() returns 4065
+  A   66.21 speed() returns 100
+  B   66.21 speed() returns 42
+  A   66.21 heading() returns 0
+  B   66.21 time() returns 6620
+  A   66.21 time() returns 6620
+  A   66.21 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   66.21 log: LOG tar range 560 tar bearing -34
+
+  B   66.21 scan(163, 7) returns 0
+  A   66.21 cannon(-34,560) returns 1
+  A   66.21 log: LOG shot range 560 tar bearing -34
+cannon called bearing -34 range 560
+
+  A Explosion at 6933,3996
+  A   66.77 loc_x() returns 6552
+  B   66.77 time() returns 6676
+  A   66.77 loc_y() returns 4339
+  B   66.77 loc_x() returns 6967
+  A   66.77 speed() returns 100
+  B   66.77 loc_y() returns 4088
+  A   66.77 heading() returns 0
+  B   66.77 speed() returns 50
+  A   66.77 time() returns 6676
+  B   66.77 time() returns 6676
+  A   66.77 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   66.77 log: LOG tar range 509 tar bearing -38
+
+  A   66.77 cannon(-38,509) returns 1
+  A   66.77 log: LOG shot range 509 tar bearing -38
+cannon called bearing -38 range 509
+
+Time=  67.26610 
+  A t2.exe           6602 4340   0    0 100  100 328  60  0.51            
+  B pbv8.exe         6972 4113  38   70 100   50 163  41                  
+  A   67.27 loc_x() returns 6602
+  B   67.27 cannon(159,492) returns 1
+  A   67.27 loc_y() returns 4340
+  A Explosion at 6999,4069
+  A   67.28 speed() returns 100
+  B Explosion at 6515,4300
+  A   67.76 heading() returns 0
+  A   67.77 time() returns 6776
+  B   67.77 loc_x() returns 6981
+  A   67.77 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   67.77 log: LOG tar range 471 tar bearing -42
+
+  B   67.77 loc_y() returns 4136
+  A   67.77 scan(-43, 2) returns 0
+  A   67.77 log: LOG shot range 471 tar bearing -42
+LOG do scan called
+LOG scan type tracking
+
+  B   67.77 speed() returns 50
+Time=  68.26630 
+  A t2.exe           6702 4340   0    0 100  100 317  62                  
+  B pbv8.exe         6992 4159  38   55 100   50 163  45                  
+  B   68.27 time() returns 6826
+  A   68.27 loc_x() returns 6702
+  A   68.27 log: LOG scan -43 by 2 found 0
+
+  A   68.27 loc_y() returns 4340
+  A   68.27 speed() returns 100
+  B   68.27 scan(162, 8) returns 0
+  A   68.37 heading() returns 0
+  A   68.77 time() returns 6876
+  B   68.77 time() returns 6876
+  A   68.77 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   68.77 log: LOG tar range 404 tar bearing -52
+
+  B   68.77 loc_x() returns 7007
+  A   68.77 cannon(-52,404) returns 1
+  A   68.77 log: LOG shot range 404 tar bearing -52
+cannon called bearing -52 range 404
+
+  B   68.77 loc_y() returns 4179
+Time=  69.17050 
+  A t2.exe           6792 4340   0    0 100  100 317  62  0.40            
+  B pbv8.exe         7020 4194  38   42 100   50 162  45                  
+  A Explosion at 7040,3973
+  B   69.17 speed() returns 50
+  B   69.27 time() returns 6926
+  A   69.27 loc_x() returns 6802
+  A   69.27 loc_y() returns 4340
+  B   69.27 scan(181, 9) returns 0
+  A   69.27 speed() returns 100
+  A   69.77 heading() returns 0
+  B   69.77 time() returns 6976
+  A   69.77 time() returns 6976
+  B   69.77 loc_x() returns 7043
+  A   69.77 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   69.77 log: LOG tar range 352 tar bearing -65
+
+  B   69.77 loc_y() returns 4213
+  A   69.87 scan(-64, 4) returns 0
+  A   69.87 log: LOG shot range 352 tar bearing -65
+LOG do scan called
+LOG scan type reacquiring 1
+
+  B   69.87 speed() returns 52
+Time=  70.36670 
+  A t2.exe           6912 4341   0    0 100  100 296  62                  
+  B pbv8.exe         7067 4233  38   38 100   62 181  46                  
+  B   70.37 time() returns 7036
+  A   70.37 loc_x() returns 6912
+  A   70.37 log: LOG scan -64 by 4 found 0
+
+  A   70.37 loc_y() returns 4341
+  A   70.37 speed() returns 100
+  B   70.37 scan(158,10) returns 0
+  A   70.37 heading() returns 0
+  A   70.87 time() returns 7086
+  B   70.87 time() returns 7086
+  A   70.87 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   70.97 log: LOG tar range 324 tar bearing -83
+
+  B   70.97 loc_x() returns 7097
+  A   70.97 cannon(-83,324) returns 1
+  A   70.97 log: LOG shot range 324 tar bearing -83
+cannon called bearing -83 range 324
+
+  B   70.97 loc_y() returns 4256
+Time=  71.29090 
+  A t2.exe           7004 4341   0    0 100  100 296  62  0.32            
+  B pbv8.exe         7116 4271  38   38 100   80 158  46                  
+  A Explosion at 6995,4045
+  B   71.29 speed() returns 80
+  B   71.47 time() returns 7146
+  A   71.47 loc_x() returns 7022
+  A   71.47 loc_y() returns 4341
+  B   71.47 scan(199,10) returns 0
+  A   71.47 speed() returns 100
+  A   71.97 heading() returns 0
+  B   71.97 time() returns 7196
+  A   71.97 time() returns 7196
+  B   71.97 loc_x() returns 7160
+  A   71.97 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   71.97 log: LOG tar range 330 tar bearing 257
+
+  B   71.97 loc_y() returns 4306
+  A   71.97 scan(261, 6) returns 0
+  A   71.97 log: LOG shot range 330 tar bearing 257
+LOG do scan called
+LOG scan type reacquiring 2
+
+  B   71.97 speed() returns 94
+Time=  72.46710 
+  A t2.exe           7122 4342   0    0 100  100 261  63                  
+  B pbv8.exe         7197 4335  38   38 100  100 199  47                  
+  B   72.47 time() returns 7246
+  A   72.47 loc_x() returns 7122
+  A   72.47 log: LOG scan 261 by 6 found 0
+
+  A   72.47 loc_y() returns 4342
+  A   72.47 speed() returns 100
+  B   72.47 scan(152,10) returns 0
+  A   72.57 heading() returns 0
+  A   72.97 time() returns 7296
+  B   72.97 time() returns 7296
+  A   72.97 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+Time=  73.06720 
+  A t2.exe           7182 4342   0    0 100  100 261  63                  
+  B pbv8.exe         7244 4372  38   38 100  100 152  47                  
+  A   73.07 log: LOG tar range 366 tar bearing 241
+
+  B   73.07 loc_x() returns 7244
+  A   73.07 cannon(241,366) returns 1
+  A   73.07 log: LOG shot range 366 tar bearing 241
+cannon called bearing 241 range 366
+
+  B   73.07 loc_y() returns 4372
+  A Explosion at 7023,3996
+  B   73.43 speed() returns 100
+  B   73.57 time() returns 7356
+  A   73.57 loc_x() returns 7232
+  A   73.57 loc_y() returns 4342
+  B   73.57 time() returns 7356
+  A   73.57 speed() returns 100
+  B   73.57 drive(231,-75) returns 1
+  A   73.57 heading() returns 0
+Time=  74.06740 
+  A t2.exe           7282 4342   0    0 100  100 261  64                  
+  B pbv8.exe         7323 4434 231   38 -75   90 152  47                  
+  A   74.07 time() returns 7406
+  B   74.07 loc_x() returns 7323
+  A   74.17 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   74.17 log: LOG tar range 430 tar bearing 228
+
+  B   74.17 loc_y() returns 4440
+  A   74.17 scan(222, 8) returns 0
+  A   74.17 log: LOG shot range 430 tar bearing 228
+LOG do scan called
+LOG scan type reacquiring 3
+
+  B   74.17 speed() returns 88
+  B   74.67 time() returns 7466
+  A   74.67 loc_x() returns 7342
+  A   74.67 log: LOG scan 222 by 8 found 0
+
+  A   74.67 loc_y() returns 4343
+  A   74.67 speed() returns 100
+  B   74.67 scan(219,10) returns 0
+  A   74.67 heading() returns 0
+Time=  75.16760 
+  A t2.exe           7392 4343   0    0 100  100 222  64                  
+  B pbv8.exe         7395 4492 231   38 -75   68 219  47                  
+  A   75.17 time() returns 7516
+  B   75.17 time() returns 7516
+  A   75.27 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   75.27 log: LOG tar range 510 tar bearing 219
+
+  B   75.27 loc_x() returns 7400
+  A   75.27 cannon(219,510) returns 1
+  A   75.27 log: LOG shot range 510 tar bearing 219
+cannon called bearing 219 range 510
+
+  B   75.27 loc_y() returns 4496
+  B   75.77 speed() returns 56
+  A   75.77 loc_x() returns 7452
+  B   75.77 time() returns 7576
+  A   75.77 loc_y() returns 4343
+  A   75.77 speed() returns 100
+  B   75.77 scan(151,10) returns 0
+  A   75.77 heading() returns 0
+  A Explosion at 6984,3982
+  A   75.78 time() returns 7577
+Time=  76.26780 
+  A t2.exe           7502 4343   0    0 100  100 222  64                  
+  B pbv8.exe         7448 4534 231  231 -75   50 151  47                  
+  A   76.27 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   76.27 log: LOG tar range 599 tar bearing 212
+
+  B   76.27 time() returns 7626
+  A   76.27 scan(228,10) returns 0
+  A   76.27 log: LOG shot range 599 tar bearing 212
+LOG do scan called
+LOG scan type reacquiring 4
+
+  B   76.27 loc_x() returns 7448
+  B   76.77 loc_y() returns 4514
+  A   76.77 loc_x() returns 7552
+  A   76.77 log: LOG scan 228 by 10 found 0
+
+  A   76.77 loc_y() returns 4344
+  B   76.77 speed() returns 40
+  A   76.77 speed() returns 100
+  B   76.77 time() returns 7676
+  A   76.77 heading() returns 0
+  A   76.77 time() returns 7676
+  B   76.77 scan(232,10) returns 0
+  A   76.77 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   76.77 log: LOG tar range 685 tar bearing 208
+
+  A   76.77 cannon(208,685) returns 1
+  A   76.77 log: LOG shot range 685 tar bearing 208
+cannon called bearing 208 range 685
+
+Time=  77.26800 
+  A t2.exe           7602 4344   0    0 100  100 228  64  0.69            
+  B pbv8.exe         7420 4498 231  231 -75   30 232  47                  
+  A   77.27 loc_x() returns 7602
+  B   77.27 time() returns 7726
+  A   77.27 loc_y() returns 4344
+  B   77.27 loc_x() returns 7420
+  A   77.27 speed() returns 100
+  B   77.27 loc_y() returns 4498
+  A   77.27 heading() returns 0
+  B   77.27 speed() returns 30
+  A   77.27 time() returns 7726
+  B   77.27 time() returns 7726
+  A   77.27 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   77.27 log: LOG tar range 730 tar bearing 206
+
+  A   77.27 cannon(206,730) returns 1
+  A   77.27 log: LOG shot range 730 tar bearing 206
+cannon called bearing 206 range 730
+
+  A Explosion at 6959,4005
+  B   77.77 cannon(236,258) returns 1
+  A   77.77 loc_x() returns 7652
+  A Explosion at 6933,4072
+  A   78.00 loc_y() returns 4344
+Time=  78.02620 
+  A t2.exe           7678 4344   0    0 100  100 228  64                  
+  B pbv8.exe         7408 4484 231  231 -75   15 232  47  0.03            
+  B Explosion at 7273,4278
+  A   78.03 speed() returns 100
+  A   78.27 heading() returns 0
+  B   78.27 loc_x() returns 7406
+  A   78.27 time() returns 7826
+  B   78.27 loc_y() returns 4481
+  A   78.27 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   78.27 log: LOG tar range 775 tar bearing 204
+
+  B   78.27 speed() returns 10
+  A   78.27 scan(184,10) returns 0
+  A   78.27 log: LOG shot range 775 tar bearing 204
+LOG do scan called
+LOG scan type reacquiring 5
+
+  B   78.27 time() returns 7826
+  A   78.77 loc_x() returns 7752
+  A   78.77 log: LOG scan 184 by 10 found 0
+
+  A   78.77 loc_y() returns 4344
+  B   78.77 scan(140,10) returns 0
+  A   78.77 speed() returns 100
+Time=  79.26840 
+  A t2.exe           7802 4345   0    0 100  100 184  64                  
+  B pbv8.exe         7403 4477 231  231 -75   -9 140  48                  
+  A   79.27 heading() returns 0
+  B   79.27 time() returns 7926
+  A   79.37 time() returns 7936
+  B   79.37 loc_x() returns 7403
+  A   79.37 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   79.37 log: LOG tar range 867 tar bearing 202
+
+  B   79.37 loc_y() returns 4478
+  A   79.37 drive(  0,100) returns 1
+  A   79.37 log: LOG shot range 867 tar bearing 202
+
+  B   79.37 speed() returns -11
+  B   79.87 time() returns 7986
+  A   79.87 loc_x() returns 7862
+  A   79.87 loc_y() returns 4345
+  B   79.87 scan(240,10) returns 0
+  A   79.87 speed() returns 100
+Time=  80.36860 
+  A t2.exe           7912 4345   0    0 100  100 184  64                  
+  B pbv8.exe         7414 4491 231  231 -75  -31 240  48                  
+  A   80.37 heading() returns 0
+  B   80.37 time() returns 8036
+  A   80.47 time() returns 8046
+  B   80.47 loc_x() returns 7416
+  A   80.47 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   80.47 log: LOG tar range 970 tar bearing 199
+
+  B   80.47 loc_y() returns 4494
+  A   80.47 scan(229,10) returns 0
+  A   80.47 log: LOG shot range 970 tar bearing 199
+LOG do scan called
+LOG scan type reacquiring 6
+
+  B   80.47 speed() returns -33
+  B   80.97 time() returns 8096
+  A   80.97 loc_x() returns 7972
+  A   80.97 log: LOG scan 229 by 10 found 0
+
+  A   80.97 loc_y() returns 4345
+  A   80.97 speed() returns 100
+  B   80.97 scan(131,10) returns 0
+  A   80.97 heading() returns 0
+Time=  81.46880 
+  A t2.exe           8022 4346   0    0 100  100 229  64                  
+  B pbv8.exe         7440 4524 231  231 -75  -53 131  48                  
+  A   81.47 time() returns 8146
+  B   81.47 time() returns 8146
+  A   81.57 log: LOG tar pos 6948,4019 speed 0 heading 0
+
+  A   81.57 log: LOG tar range 1074 tar bearing 197
+
+  B   81.57 loc_x() returns 7444
+  A   81.57 scan(167,10) returns 615
+  A   81.57 log: LOG shot range 1074 tar bearing 197
+LOG do scan called
+LOG scan type reacquiring 7
+
+  B   81.57 loc_y() returns 4528
+Time=  82.06890 
+  A t2.exe           8082 4346   0    0 100  100 167  64                  
+  B pbv8.exe         7461 4550 231  231 -75  -65 131  48                  
+  B   82.07 speed() returns -65
+  A   82.07 log: LOG scan 167 by 10 found 615
+LOG record tar found 7372,4483 
+
+  A   82.07 loc_x() returns 8082
+  A   82.07 log: LOG ping 7972,4345 bearing 167 range 615 width 10 tarloc 7372,4483 speed 39 head 47
+
+  B   82.07 time() returns 8206
+  A   82.07 loc_y() returns 4346
+  A   82.07 speed() returns 100
+  B   82.07 scan(252,10) returns 0
+  A   82.07 heading() returns 0
+  A   82.57 time() returns 8256
+  B   82.57 time() returns 8256
+  A   82.57 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   82.57 log: LOG tar range 723 tar bearing 170
+
+  B   82.57 loc_x() returns 7482
+  A   82.57 cannon(170,723) returns 1
+  A   82.57 log: LOG shot range 723 tar bearing 170
+cannon called bearing 170 range 723
+
+  B   82.57 loc_y() returns 4576
+Time=  83.06910 
+  A t2.exe           8182 4346   0    0 100  100 167  64  0.72            
+  B pbv8.exe         7505 4605 231  231 -75  -74 252  48                  
+  B   83.07 speed() returns -74
+  A   83.07 loc_x() returns 8182
+  B   83.17 time() returns 8316
+  A   83.17 loc_y() returns 4346
+  A   83.17 speed() returns 100
+  B   83.27 scan(124,10) returns 0
+  A   83.27 heading() returns 0
+  A Explosion at 7407,4504
+  A   83.29 time() returns 8329
+  A   83.77 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   83.77 log: LOG tar range 821 tar bearing 171
+
+  B   83.77 time() returns 8376
+  A   83.87 scan(171, 6) returns 0
+  A   83.87 log: LOG shot range 821 tar bearing 171
+LOG do scan called
+LOG scan type tracking
+
+  B   83.87 loc_x() returns 7543
+Time=  84.36930 
+  A t2.exe           8312 4347   0    0 100  100 171  64                  
+  B pbv8.exe         7566 4681 231  231 -75  -74 124  50                  
+  B   84.37 loc_y() returns 4681
+  A   84.37 loc_x() returns 8312
+  A   84.37 log: LOG scan 171 by 6 found 0
+
+  A   84.37 loc_y() returns 4347
+  B   84.37 speed() returns -74
+  A   84.37 speed() returns 100
+  B   84.37 time() returns 8436
+  A   84.47 heading() returns 0
+  A   84.47 time() returns 8446
+  B   84.47 scan(268,10) returns 0
+  A   84.47 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   84.47 log: LOG tar range 949 tar bearing 172
+
+  A   84.47 cannon(172,949) returns 1
+  A   84.47 log: LOG shot range 949 tar bearing 172
+cannon called bearing 172 range 949
+
+  A   84.97 loc_x() returns 8372
+  B   84.97 time() returns 8496
+  A   84.97 loc_y() returns 4347
+  B   84.97 loc_x() returns 7594
+  A   84.97 speed() returns 100
+  B   84.97 loc_y() returns 4716
+  A   84.97 heading() returns 0
+  B   84.97 speed() returns -74
+  A   84.97 time() returns 8496
+  B   84.97 time() returns 8496
+  A   84.97 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   84.97 log: LOG tar range 1009 tar bearing 173
+
+  A   84.97 scan(174, 8) returns 0
+  A   84.97 log: LOG shot range 1009 tar bearing 173
+LOG do scan called
+LOG scan type reacquiring 1
+
+Time=  85.41830 
+  A t2.exe           8417 4347   0    0 100  100 174  64  0.45            
+  B pbv8.exe         7615 4743 231  231 -75  -74 268  50                  
+  A Explosion at 7346,4433
+  B   85.47 cannon(-56,508) returns 1
+  A   85.47 loc_x() returns 8422
+  A   85.47 log: LOG scan 174 by 8 found 0
+
+  A   85.47 loc_y() returns 4347
+  A   85.97 speed() returns 100
+  B   85.97 loc_x() returns 7641
+  A   85.97 heading() returns 0
+  B   85.97 loc_y() returns 4775
+  A   85.97 time() returns 8596
+  B   85.97 speed() returns -74
+  A   85.97 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   85.97 log: LOG tar range 1058 tar bearing 173
+
+  B   85.97 time() returns 8596
+  A   85.97 cannon(173,1058) returns 1
+  A   85.97 log: LOG shot range 1058 tar bearing 173
+cannon called bearing 173 range 1058
+
+  B Explosion at 7905,4360
+Time=  86.46970 
+  A t2.exe           8522 4348   0    0 100  100 174  64  1.05            
+  B pbv8.exe         7664 4804 231  231 -75  -74 268  50                  
+  B   86.47 scan(120,10) returns 0
+  A   86.47 loc_x() returns 8522
+  A   86.97 loc_y() returns 4348
+  B   86.97 time() returns 8696
+  A   86.97 speed() returns 100
+  B   86.97 loc_x() returns 7688
+  A   86.97 heading() returns 0
+  B   86.97 loc_y() returns 4834
+  A   86.97 time() returns 8696
+  B   86.97 speed() returns -74
+  A   86.97 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   86.97 log: LOG tar range 1157 tar bearing 174
+
+  B   86.97 time() returns 8696
+  A   86.97 scan(182,10) returns 0
+  A   86.97 log: LOG shot range 1157 tar bearing 174
+LOG do scan called
+LOG scan type reacquiring 2
+
+Time=  87.02770 
+  A t2.exe           8578 4348   0    0 100  100 182  64  0.06            
+  B pbv8.exe         7691 4837 231  231 -75  -74 120  50                  
+  A Explosion at 7434,4511
+  B   87.03 time() returns 8702
+  B   87.47 drive(337,100) returns 1
+  A   87.47 loc_x() returns 8622
+  A   87.47 log: LOG scan 182 by 10 found 0
+
+  A   87.47 loc_y() returns 4348
+  A   87.97 speed() returns 100
+  B   87.97 loc_x() returns 7735
+  A   87.97 heading() returns 0
+  B   87.97 loc_y() returns 4892
+  A   87.97 time() returns 8797
+  B   87.97 speed() returns -64
+  A   87.97 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   87.97 log: LOG tar range 1257 tar bearing 174
+
+  B   87.97 time() returns 8797
+  A   87.97 cannon(174,1257) returns 1
+  A   87.97 log: LOG shot range 1257 tar bearing 174
+cannon called bearing 174 range 1257
+
+Time=  88.47010 
+  A t2.exe           8722 4348   0    0 100  100 182  64  1.26            
+  B pbv8.exe         7755 4918 337  231 100  -54 120  50                  
+  B   88.47 scan(283,10) returns 0
+  A   88.47 loc_x() returns 8722
+  A   88.97 loc_y() returns 4349
+  B   88.97 time() returns 8897
+  A   88.97 speed() returns 100
+  B   88.97 loc_x() returns 7772
+  A   88.97 heading() returns 0
+  B   88.97 loc_y() returns 4939
+  A   88.97 time() returns 8897
+  B   88.97 speed() returns -49
+  A   88.97 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   88.97 log: LOG tar range 1356 tar bearing 175
+
+  B   88.97 time() returns 8897
+  A   88.97 scan(165,10) returns 0
+  A   88.97 log: LOG shot range 1356 tar bearing 175
+LOG do scan called
+LOG scan type reacquiring 3
+
+Time=  89.22700 
+  A t2.exe           8798 4349   0    0 100  100 165  64  0.26            
+  B pbv8.exe         7779 4950 337  243 100  -44 283  50                  
+  A Explosion at 7461,4495
+  A   89.47 loc_x() returns 8822
+  A   89.47 log: LOG scan 165 by 10 found 0
+
+  A   89.47 loc_y() returns 4349
+  B   89.47 cannon(-56,769) returns 1
+  A   89.47 speed() returns 100
+  A   89.97 heading() returns 0
+  B   89.97 loc_x() returns 7792
+  A   89.97 time() returns 8997
+  B   89.97 loc_y() returns 4978
+  A   89.97 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   89.97 log: LOG tar range 1456 tar bearing 175
+
+  B   89.97 speed() returns -29
+  A   89.97 cannon(175,1456) returns 1
+  A   89.97 log: LOG shot range 1456 tar bearing 175
+cannon called bearing 175 range 1456
+
+  B   89.97 time() returns 8997
+Time=  90.23940 
+  A t2.exe           8899 4349   0    0 100  100 165  64  1.46            
+  B pbv8.exe         7794 4986 337  258 100  -24 283  50  0.27            
+  B Explosion at 8201,4318
+  B   90.47 scan(115,10) returns 0
+  A   90.47 loc_x() returns 8922
+  A   90.97 loc_y() returns 4349
+  B   90.97 time() returns 9097
+  A   90.97 speed() returns 100
+  B   90.97 loc_x() returns 7797
+  A   90.97 heading() returns 0
+  B   90.97 loc_y() returns 5001
+  A   90.97 time() returns 9097
+  B   90.97 speed() returns -9
+  A   90.97 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   90.97 log: LOG tar range 1555 tar bearing 176
+
+  B   90.97 time() returns 9097
+Time=  91.07060 
+  A t2.exe           8982 4350   0    0 100  100 165  64  0.46            
+  B pbv8.exe         7797 5002 337  270 100   -7 115  50                  
+  A   91.07 scan(196,10) returns 0
+  A   91.07 log: LOG shot range 1555 tar bearing 176
+LOG do scan called
+LOG scan type reacquiring 4
+
+  A Explosion at 7425,4445
+  A   91.57 loc_x() returns 9032
+  A   91.57 log: LOG scan 196 by 10 found 0
+
+  A   91.57 loc_y() returns 4350
+  B   91.57 cannon(-51,896) returns 1
+  A   91.57 speed() returns 100
+Time=  92.07080 
+  A t2.exe           9082 4350   0    0 100  100 196  64                  
+  B pbv8.exe         7797 5004 337  285 100   12 115  50  0.90            
+  A   92.07 heading() returns 0
+  B   92.07 loc_x() returns 7797
+  A   92.17 time() returns 9217
+  B   92.17 loc_y() returns 5003
+  A   92.17 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   92.17 log: LOG tar range 1665 tar bearing 176
+
+  B   92.17 speed() returns 14
+  A   92.17 cannon(176,1665) returns 1
+  A   92.17 log: LOG shot range 1665 tar bearing 176
+cannon called bearing 176 range 1665
+
+  B   92.17 time() returns 9217
+  B Explosion at 8358,4309
+  B   92.67 scan(296,10) returns 0
+  A   92.67 loc_x() returns 9142
+Time=  93.17100 
+  A t2.exe           9192 4350   0    0 100  100 196  64  1.16            
+  B pbv8.exe         7805 4984 337  302 100   34 296  50                  
+  A   93.17 loc_y() returns 4350
+  B   93.17 time() returns 9317
+  A   93.27 speed() returns 100
+  B   93.27 loc_x() returns 7807
+  A   93.27 heading() returns 0
+  B   93.27 loc_y() returns 4981
+  A   93.37 time() returns 9337
+  B   93.37 speed() returns 38
+  A   93.37 log: LOG tar pos 7372,4483 speed 0 heading 0
+
+  A   93.37 log: LOG tar range 1774 tar bearing 176
+
+  B   93.37 time() returns 9337
+  A   93.37 scan(156,10) returns 1537
+  A   93.37 log: LOG shot range 1774 tar bearing 176
+LOG do scan called
+LOG scan type reacquiring 5
+
+  A Explosion at 7415,4462
+  B   93.84 scan(105,10) returns 0
+  A   93.87 log: LOG scan 156 by 10 found 1537
+LOG record tar found 7737,4975 
+
+  A   93.87 loc_x() returns 9262
+  A   93.87 log: LOG ping 9142,4350 bearing 156 range 1537 width 10 tarloc 7737,4975 speed 51 head 53
+
+  A   93.87 loc_y() returns 4351
+Time=  94.33600 
+  A t2.exe           9309 4351   0    0 100  100 156  64                  
+  B pbv8.exe         7835 4946 337  319 100   50 105  50                  
+  A   94.34 speed() returns 100
+  B   94.34 time() returns 9433
+  A   94.44 heading() returns 0
+  B   94.44 loc_x() returns 7839
+  A   94.44 time() returns 9443
+  B   94.44 loc_y() returns 4943
+  A   94.54 log: LOG tar pos 7737,4975 speed 0 heading 0
+
+  A   94.54 log: LOG tar range 1647 tar bearing 158
+
+  B   94.54 speed() returns 50
+  A   94.54 cannon(158,1647) returns 1
+  A   94.54 log: LOG shot range 1647 tar bearing 158
+cannon called bearing 158 range 1647
+
+  B   94.54 time() returns 9453
+Time=  95.03610 
+  A t2.exe           9379 4351   0    0 100  100 156  64  1.65            
+  B pbv8.exe         7862 4925 337  330 100   50 105  50                  
+  A   95.04 loc_x() returns 9379
+  B   95.14 scan(303,10) returns 0
+  A   95.14 loc_y() returns 4351
+  A   95.64 speed() returns 100
+  B   95.64 time() returns 9563
+  A   95.64 heading() returns 0
+  B   95.64 loc_x() returns 7889
+  A   95.64 time() returns 9563
+  B   95.64 loc_y() returns 4910
+  A   95.64 log: LOG tar pos 7737,4975 speed 0 heading 0
+
+  A   95.64 log: LOG tar range 1756 tar bearing 160
+
+  B   95.64 speed() returns 50
+  A   95.64 scan(160, 6) returns 1647
+  A   95.64 log: LOG shot range 1756 tar bearing 160
+LOG do scan called
+LOG scan type tracking
+
+  B   95.74 time() returns 9573
+Time=  96.13630 
+  A t2.exe           9489 4352   0    0 100  100 160  64  0.45            
+  B pbv8.exe         7912 4900 337  337 100   60 303  50                  
+  A   96.14 log: LOG scan 160 by 6 found 1647
+LOG record tar found 7831,4914 
+
+  A   96.14 loc_x() returns 9489
+  A   96.14 log: LOG ping 9379,4351 bearing 160 range 1647 width 6 tarloc 7831,4914 speed 49 head -32
+
+  B   96.14 scan( 92,10) returns 0
+  A   96.14 loc_y() returns 4352
+  A Explosion at 7794,5012
+  A   96.18 speed() returns 100
+  A   96.64 heading() returns 0
+  B   96.64 time() returns 9663
+  A   96.64 time() returns 9663
+  B   96.64 loc_x() returns 7941
+  A   96.64 log: LOG tar pos 7831,4914 speed 0 heading 0
+
+  A   96.64 log: LOG tar range 1750 tar bearing 162
+
+  B   96.64 loc_y() returns 4888
+  A   96.64 cannon(162,1750) returns 1
+  A   96.64 log: LOG shot range 1750 tar bearing 162
+cannon called bearing 162 range 1750
+
+  B   96.64 speed() returns 70
+Time=  97.13650 
+  A t2.exe           9589 4352   0    0 100  100 160  64  1.75            
+  B pbv8.exe         7973 4875 337  337 100   80  92  52                  
+  B   97.14 time() returns 9713
+  A   97.14 loc_x() returns 9589
+  A   97.14 loc_y() returns 4352
+  B   97.14 scan(310,10) returns 0
+  A   97.14 speed() returns 100
+  A   97.64 heading() returns 0
+  B   97.64 time() returns 9763
+  A   97.64 time() returns 9763
+  B   97.64 loc_x() returns 8010
+  A   97.64 log: LOG tar pos 7831,4914 speed 0 heading 0
+
+  A   97.64 log: LOG tar range 1845 tar bearing 163
+
+  B   97.64 loc_y() returns 4859
+  A   97.64 scan(163, 4) returns 1706
+  A   97.64 log: LOG shot range 1845 tar bearing 163
+LOG do scan called
+LOG scan type tracking
+
+  B   97.64 speed() returns 90
+Time=  98.13670 
+  A t2.exe           9689 4352   0    0 100  100 163  64  0.75            
+  B pbv8.exe         8051 4842 337  337 100  100 310  52                  
+  B   98.14 time() returns 9813
+  A   98.14 log: LOG scan 163 by 4 found 1706
+LOG record tar found 7957,4850 
+
+  A   98.14 loc_x() returns 9689
+  A   98.14 log: LOG ping 9589,4352 bearing 163 range 1706 width 4 tarloc 7957,4850 speed 70 head -26
+
+  A   98.14 loc_y() returns 4352
+  B   98.14 scan( 79,10) returns 0
+  A   98.24 speed() returns 100
+  A Explosion at 7853,4911
+  A   98.39 heading() returns 0
+  A   98.64 time() returns 9863
+  B   98.64 time() returns 9863
+  A   98.64 log: LOG tar pos 7957,4850 speed 0 heading 0
+
+  A   98.64 log: LOG tar range 1802 tar bearing 164
+
+  B   98.64 loc_x() returns 8097
+  A   98.64 cannon(164,1802) returns 1
+  A   98.64 log: LOG shot range 1802 tar bearing 164
+cannon called bearing 164 range 1802
+
+  B   98.64 loc_y() returns 4823
+Time=  99.13690 
+  A t2.exe           9789 4353   0    0 100  100 163  64  1.80            
+  B pbv8.exe         8144 4804 337  337 100  100  79  53                  
+  B   99.14 speed() returns 100
+  A   99.14 loc_x() returns 9789
+  B   99.24 time() returns 9923
+  A   99.24 loc_y() returns 4353
+  A   99.24 speed() returns 100
+  B   99.34 scan(317,10) returns 0
+  A   99.34 heading() returns 0
+  A   99.84 time() returns 9983
+  B   99.84 time() returns 9983
+  A   99.84 log: LOG tar pos 7957,4850 speed 0 heading 0
+
+  A   99.84 log: LOG tar range 1898 tar bearing 165
+
+  B   99.84 loc_x() returns 8208
+  A   99.84 scan(164, 2) returns 1703
+  A   99.84 log: LOG shot range 1898 tar bearing 165
+LOG do scan called
+LOG scan type tracking
+
+  B   99.84 loc_y() returns 4777
+Time= 100.33710 
+  A t2.exe           9909 4353   0    0 100  100 164  64  0.60            
+  B pbv8.exe         8254 4757 337  337 100  100 317  53                  
+  B  100.34 speed() returns 100
+  A  100.34 log: LOG scan 164 by 2 found 1703
+LOG record tar found 8151,4822 
+
+  A  100.34 loc_x() returns 9909
+  A  100.34 log: LOG ping 9789,4353 bearing 164 range 1703 width 2 tarloc 8151,4822 speed 89 head -8
+
+  B  100.34 time() returns 10033
+  A  100.34 loc_y() returns 4353
+  A  100.34 speed() returns 100
+  B  100.34 time() returns 10033
+  A  100.34 heading() returns 0
+  B  100.34 drive(239,-75) returns 1
+  A  100.34 time() returns 10033
+  A Explosion at 7958,4855
+  A  100.44 log: LOG tar pos 8151,4822 speed 0 heading 0
+
+  A  100.44 log: LOG tar range 1819 tar bearing 166
+
+  A  100.44 cannon(166,1819) returns 1
+  A  100.44 log: LOG shot range 1819 tar bearing 166
+cannon called bearing 166 range 1819
+
+  B  100.84 loc_x() returns 8300
+  B  100.94 loc_y() returns 4735
+  A  100.94 loc_x() returns 9969
+  B  100.94 speed() returns 88
+  A  100.94 loc_y() returns 4354
+  B  100.94 time() returns 10093
+  A  100.94 speed() returns 100
+  A  100.94 heading() returns 0
+  B  100.94 scan( 63,10) returns 0
+  A  100.94 time() returns 10093
+Time= 101.43900 
+  A t2.exe           9990 4354   0    0   0    0 164  68  1.32            
+  B pbv8.exe         8349 4718 239  337 -75   78  63  54                  
+  A  101.44 log: LOG tar pos 8151,4822 speed 0 heading 0
+
+  A  101.44 log: LOG tar range 1877 tar bearing 166
+
+  B  101.44 time() returns 10143
+  A  101.44 cannon(166,1877) returns 1
+  A  101.44 log: LOG shot range 1877 tar bearing 166
+cannon called bearing 166 range 1877
+
+  B  101.44 loc_x() returns 8349
+  B  101.94 loc_y() returns 4703
+  A  101.94 loc_x() returns 9990
+  B  101.94 speed() returns 68
+  A  101.94 loc_y() returns 4354
+  B  101.94 time() returns 10193
+  A  101.94 speed() returns 0
+  A  101.94 heading() returns 0
+  B  101.94 scan(321,10) returns 0
+  A  101.94 time() returns 10193
+Time= 102.25780 
+  A t2.exe           9990 4354   0    0   0    0 164  68  0.32  1.38      
+  B pbv8.exe         8405 4695 239  337 -75   62 321  54                  
+  A Explosion at 8199,4768
+  A  102.26 log: LOG tar pos 8151,4822 speed 0 heading 0
+
+  A  102.26 log: LOG tar range 1897 tar bearing 166
+
+  A  102.26 scan(166, 1) returns 0
+  A  102.26 log: LOG shot range 1897 tar bearing 166
+LOG do scan called
+LOG scan type tracking
+
+  B  102.44 time() returns 10243
+  B  102.76 loc_x() returns 8432
+  A  102.76 loc_x() returns 9990
+  A  102.76 log: LOG scan 166 by 1 found 0
+
+  A  102.76 loc_y() returns 4354
+  B  102.76 loc_y() returns 4683
+  A  102.76 speed() returns 0
+  B  102.76 speed() returns 52
+  A  102.76 heading() returns 0
+  B  102.86 time() returns 10285
+  A  102.86 time() returns 10285
+  A  102.86 log: LOG tar pos 8151,4822 speed 0 heading 0
+
+  A  102.86 log: LOG tar range 1897 tar bearing 166
+
+  B  102.86 scan( 51,10) returns 0
+  A  102.86 cannon(166,1897) returns 1
+  A  102.86 log: LOG shot range 1897 tar bearing 166
+cannon called bearing 166 range 1897
+
+Time= 103.31610 
+  A t2.exe           9990 4354   0    0   0    0 166  68  1.90  0.46      
+  B pbv8.exe         8458 4672 239  329 -75   41  51  55                  
+  A Explosion at 8169,4807
+  A  103.36 loc_x() returns 9990
+  B  103.36 time() returns 10335
+  A  103.36 loc_y() returns 4354
+  B  103.36 loc_x() returns 8459
+  A  103.36 speed() returns 0
+  B  103.36 loc_y() returns 4671
+  A  103.36 heading() returns 0
+  B  103.36 speed() returns 40
+  A  103.36 time() returns 10335
+  B  103.36 time() returns 10335
+  A  103.36 log: LOG tar pos 8151,4822 speed 0 heading 0
+
+  A  103.36 log: LOG tar range 1897 tar bearing 166
+
+  A  103.36 cannon(166,1897) returns 1
+  A  103.36 log: LOG shot range 1897 tar bearing 166
+cannon called bearing 166 range 1897
+
+  A  103.86 loc_x() returns 9990
+  B  103.86 cannon(-23,894) returns 1
+  A  103.86 loc_y() returns 4354
+Time= 104.35820 
+  A t2.exe           9990 4354   0    0   0    0 166  68  0.90  1.40      
+  B pbv8.exe         8488 4651 239  313 -75   20  51  56  0.89            
+  A  104.36 speed() returns 0
+  B  104.36 loc_x() returns 8488
+  A  104.46 heading() returns 0
+  B  104.46 loc_y() returns 4649
+  A  104.46 time() returns 10445
+  B  104.46 speed() returns 18
+  A  104.46 log: LOG tar pos 8151,4822 speed 0 heading 0
+
+  A  104.46 log: LOG tar range 1897 tar bearing 166
+
+  B  104.46 time() returns 10445
+  A  104.46 scan(167, 3) returns 1528
+  A  104.46 log: LOG shot range 1897 tar bearing 166
+LOG do scan called
+LOG scan type reacquiring 1
+
+  B Explosion at 9303,4306
+  B  104.75 scan(329,10) returns 0
+  A Explosion at 8150,4811
+  A  104.96 log: LOG scan 167 by 3 found 1528
+LOG record tar found 8501,4697 
+
+  A  104.96 loc_x() returns 9990
+  A  104.96 log: LOG ping 9990,4354 bearing 167 range 1528 width 3 tarloc 8501,4697 speed 80 head -19
+
+  A  104.96 loc_y() returns 4354
+Time= 105.25230 
+  A t2.exe           9990 4354   0    0   0    0 167  68        0.30      
+  B pbv8.exe         8496 4642 239  300 -75    2 329  57                  
+  A  105.25 speed() returns 0
+  B  105.25 time() returns 10525
+  A Explosion at 8150,4811
+  A  105.26 heading() returns 0
+  B  105.26 loc_x() returns 8496
+  A  105.26 time() returns 10525
+  B  105.26 loc_y() returns 4642
+  A  105.26 log: LOG tar pos 8501,4697 speed 0 heading 0
+
+  A  105.26 log: LOG tar range 1527 tar bearing 168
+
+  B  105.26 speed() returns 2
+  A  105.26 cannon(168,1527) returns 1
+  A  105.26 log: LOG shot range 1527 tar bearing 168
+cannon called bearing 168 range 1527
+
+  B  105.26 time() returns 10525
+  A  105.76 loc_x() returns 9990
+  A  105.76 loc_y() returns 4354
+  A  105.76 speed() returns 0
+  B  105.76 cannon(-19,988) returns 1
+  A  105.76 heading() returns 0
+Time= 106.25530 
+  A t2.exe           9990 4354   0    0   0    0 167  68  1.03            
+  B pbv8.exe         8495 4644 239  285 -75  -17 329  58  0.99            
+  A  106.26 time() returns 10625
+  B  106.26 loc_x() returns 8495
+  A  106.26 log: LOG tar pos 8501,4697 speed 0 heading 0
+
+  A  106.26 log: LOG tar range 1527 tar bearing 168
+
+  B  106.26 loc_y() returns 4644
+  A  106.26 scan(168, 2) returns 1522
+  A  106.26 log: LOG shot range 1527 tar bearing 168
+LOG do scan called
+LOG scan type tracking
+
+  B  106.26 speed() returns -17
+  B Explosion at 9432,4321
+  B  106.74 time() returns 10674
+  A  106.76 log: LOG scan 168 by 2 found 1522
+LOG record tar found 8501,4670 
+
+  A  106.76 loc_x() returns 9990
+  A  106.76 log: LOG ping 9990,4354 bearing 168 range 1522 width 2 tarloc 8501,4670 speed 15 head 270
+
+  B  106.76 scan( 39,10) returns 0
+  A  106.76 loc_y() returns 4354
+  A Explosion at 8497,4670
+  A  106.78 speed() returns 0
+Time= 107.25550 
+  A t2.exe           9990 4354   0    0   0    0 168  68                  
+  B pbv8.exe         8491 4667 239  270 -75  -37  39  66                  
+  A  107.26 heading() returns 0
+  B  107.26 time() returns 10725
+  A  107.26 time() returns 10725
+  B  107.26 loc_x() returns 8491
+  A  107.26 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  107.26 log: LOG tar range 1522 tar bearing 169
+
+  B  107.26 loc_y() returns 4667
+  A  107.26 cannon(169,1522) returns 1
+  A  107.26 log: LOG shot range 1522 tar bearing 169
+cannon called bearing 169 range 1522
+
+  B  107.26 speed() returns -37
+  B  107.76 time() returns 10775
+  A  107.76 loc_x() returns 9990
+  A  107.76 loc_y() returns 4354
+  B  107.76 scan(340,10) returns 1535
+  A  107.76 speed() returns 0
+Time= 108.25570 
+  A t2.exe           9990 4354   0    0   0    0 168  68  1.02            
+  B pbv8.exe         8494 4710 239  255 -75  -49 340  66                  
+  A  108.26 heading() returns 0
+  B  108.26 time() returns 10825
+  A  108.36 time() returns 10835
+  A  108.36 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  108.36 log: LOG tar range 1522 tar bearing 169
+
+  B  108.36 loc_x() returns 8495
+  A  108.36 scan(169, 1) returns 0
+  A  108.36 log: LOG shot range 1522 tar bearing 169
+LOG do scan called
+LOG scan type tracking
+
+  B  108.36 loc_y() returns 4715
+  A Explosion at 8496,4643
+  B  108.78 speed() returns -49
+  B  108.86 time() returns 10885
+  A  108.86 loc_x() returns 9990
+  A  108.86 log: LOG scan 169 by 1 found 0
+
+  A  108.86 loc_y() returns 4354
+  A  108.86 speed() returns 0
+  A  108.86 heading() returns 0
+  A  108.86 time() returns 10885
+  B  108.86 cannon(-23,1474) returns 1
+  A  108.86 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  108.86 log: LOG tar range 1522 tar bearing 169
+
+  A  108.86 cannon(169,1522) returns 1
+  A  108.86 log: LOG shot range 1522 tar bearing 169
+cannon called bearing 169 range 1522
+
+Time= 109.35590 
+  A t2.exe           9990 4354   0    0   0    0 169  68  1.52            
+  B pbv8.exe         8513 4761 239  239 -75  -49 340  70  1.47            
+  A  109.36 loc_x() returns 9990
+  B  109.36 loc_x() returns 8513
+  A  109.36 loc_y() returns 4354
+  B  109.36 loc_y() returns 4761
+  A  109.36 speed() returns 0
+  B  109.36 speed() returns -49
+  A  109.36 heading() returns 0
+  B  109.36 time() returns 10935
+  A  109.36 time() returns 10935
+  A  109.36 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  109.36 log: LOG tar range 1522 tar bearing 169
+
+  B  109.36 scan(-23, 5) returns 0
+  A  109.36 cannon(169,1522) returns 1
+  A  109.36 log: LOG shot range 1522 tar bearing 169
+cannon called bearing 169 range 1522
+
+  A  109.96 loc_x() returns 9990
+  B  109.96 time() returns 10995
+  A  109.96 loc_y() returns 4354
+  B  109.96 loc_x() returns 8529
+  A  109.96 speed() returns 0
+  B  109.96 loc_y() returns 4788
+  A  109.96 heading() returns 0
+  B  109.96 speed() returns -61
+  A  109.96 time() returns 10995
+  B  109.96 time() returns 10995
+  A  109.96 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  109.96 log: LOG tar range 1522 tar bearing 169
+
+  A  109.96 scan(170, 3) returns 0
+  A  109.96 log: LOG shot range 1522 tar bearing 169
+LOG do scan called
+LOG scan type reacquiring 1
+
+Time= 110.32990 
+  A t2.exe           9990 4354   0    0   0    0 170  68  0.42  0.92      
+  B pbv8.exe         8541 4808 239  239 -75  -68 337  70  0.37            
+  B Explosion at 9834,4168
+  A Explosion at 8496,4643
+  B  110.38 cannon(-26,1475) returns 1
+  A  110.46 loc_x() returns 9990
+  A  110.46 log: LOG scan 170 by 3 found 0
+
+  A  110.46 loc_y() returns 4354
+  A Explosion at 8496,4643
+  A  110.88 speed() returns 0
+  B  110.88 loc_x() returns 8561
+  A  110.88 heading() returns 0
+  B  110.88 loc_y() returns 4841
+  A  110.88 time() returns 11087
+  B  110.88 speed() returns -74
+  A  110.88 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  110.88 log: LOG tar range 1522 tar bearing 169
+
+  B  110.88 time() returns 11087
+  A  110.88 cannon(169,1522) returns 1
+  A  110.88 log: LOG shot range 1522 tar bearing 169
+cannon called bearing 169 range 1522
+
+Time= 111.37810 
+  A t2.exe           9990 4354   0    0   0    0 170  69  1.52            
+  B pbv8.exe         8581 4874 239  239 -75  -74 337  73  0.97            
+  B  111.38 scan(-22, 6) returns 1501
+  A  111.38 loc_x() returns 9990
+  B Explosion at 9862,4191
+  A  111.85 loc_y() returns 4354
+  A  111.88 speed() returns 0
+  B  111.88 time() returns 11187
+  A  111.88 heading() returns 0
+  A  111.88 time() returns 11187
+  B  111.88 loc_x() returns 8600
+  A  111.88 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  111.88 log: LOG tar range 1522 tar bearing 169
+
+  B  111.88 loc_y() returns 4906
+  A  111.88 scan(172, 5) returns 0
+  A  111.88 log: LOG shot range 1522 tar bearing 169
+LOG do scan called
+LOG scan type reacquiring 2
+
+  B  111.98 speed() returns -74
+Time= 112.37830 
+  A t2.exe           9990 4354   0    0   0    0 172  70  0.42            
+  B pbv8.exe         8619 4938 239  239 -75  -74 338  73                  
+  B  112.38 time() returns 11237
+  A  112.38 loc_x() returns 9990
+  A  112.38 log: LOG scan 172 by 5 found 0
+
+  A  112.38 loc_y() returns 4354
+  A  112.38 speed() returns 0
+  A  112.38 heading() returns 0
+  A  112.38 time() returns 11237
+  B  112.38 cannon(-21,1345) returns 1
+  A  112.38 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  112.38 log: LOG tar range 1522 tar bearing 169
+
+  A  112.38 cannon(169,1522) returns 1
+  A  112.38 log: LOG shot range 1522 tar bearing 169
+cannon called bearing 169 range 1522
+
+  A Explosion at 8496,4643
+  A  112.88 loc_x() returns 9990
+  B  112.88 loc_x() returns 8639
+  A  112.88 loc_y() returns 4354
+  B  112.88 loc_y() returns 4970
+  A  112.88 speed() returns 0
+  B  112.88 speed() returns -74
+  A  112.88 heading() returns 0
+  B  112.88 time() returns 11287
+  A  112.88 time() returns 11287
+  A  112.88 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  112.88 log: LOG tar range 1522 tar bearing 169
+
+  A  112.88 cannon(169,1522) returns 1
+  A  112.88 log: LOG shot range 1522 tar bearing 169
+cannon called bearing 169 range 1522
+
+Time= 113.37850 
+  A t2.exe           9990 4354   0    0   0    0 172  70  1.42  0.92      
+  B pbv8.exe         8658 5002 239  239 -75  -74 338  74  0.74            
+  B  113.38 cannon(-24,1326) returns 1
+  A  113.38 loc_x() returns 9990
+  B Explosion at 9900,4429
+  A  113.72 loc_y() returns 4354
+  A  113.88 speed() returns 0
+  B  113.88 loc_x() returns 8678
+  A  113.88 heading() returns 0
+  B  113.88 loc_y() returns 5034
+  A  113.88 time() returns 11387
+  B  113.88 speed() returns -74
+  A  113.88 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  113.88 log: LOG tar range 1522 tar bearing 169
+
+  B  113.88 time() returns 11387
+  A  113.88 scan(164, 7) returns 0
+  A  113.88 log: LOG shot range 1522 tar bearing 169
+LOG do scan called
+LOG scan type reacquiring 3
+
+  A Explosion at 8496,4643
+Time= 114.37870 
+  A t2.exe           9990 4354   0    0   0    0 164  72  0.50            
+  B pbv8.exe         8697 5066 239  239 -75  -74 338  74        0.80      
+  B  114.38 time() returns 11437
+  A  114.38 loc_x() returns 9990
+  A  114.38 log: LOG scan 164 by 7 found 0
+
+  A  114.38 loc_y() returns 4354
+  B  114.38 drive(105,100) returns 1
+  A  114.38 speed() returns 0
+  A Explosion at 8496,4643
+  A  114.40 heading() returns 0
+  B Explosion at 9847,4457
+  A  114.70 time() returns 11470
+  A  114.88 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  114.88 log: LOG tar range 1522 tar bearing 169
+
+  B  114.88 loc_x() returns 8716
+  A  114.98 cannon(169,1522) returns 1
+  A  114.98 log: LOG shot range 1522 tar bearing 169
+cannon called bearing 169 range 1522
+
+  B  114.98 loc_y() returns 5103
+Time= 115.47890 
+  A t2.exe           9990 4354   0    0   0    0 164  74  1.52            
+  B pbv8.exe         8735 5130 105  239 100  -52 338  74                  
+  B  115.48 speed() returns -52
+  A  115.48 loc_x() returns 9990
+  B  115.58 time() returns 11557
+  A  115.58 loc_y() returns 4354
+  A  115.58 speed() returns 0
+  B  115.58 scan(-33, 3) returns 1474
+  A  115.58 heading() returns 0
+Time= 116.07900 
+  A t2.exe           9990 4354   0    0   0    0 164  74  0.92            
+  B pbv8.exe         8751 5156 105  231 100  -49 327  74                  
+  A  116.08 time() returns 11607
+  B  116.08 time() returns 11607
+  A  116.18 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  116.18 log: LOG tar range 1522 tar bearing 169
+
+  A  116.18 scan(183, 9) returns 0
+  A  116.18 log: LOG shot range 1522 tar bearing 169
+LOG do scan called
+LOG scan type reacquiring 4
+
+  B  116.18 loc_x() returns 8754
+  A Explosion at 8496,4643
+  B  116.50 loc_y() returns 5172
+  B  116.68 speed() returns -37
+  A  116.68 loc_x() returns 9990
+  A  116.68 log: LOG scan 183 by 9 found 0
+
+  A  116.68 loc_y() returns 4354
+  B  116.68 time() returns 11667
+  A  116.68 speed() returns 0
+  A  116.68 heading() returns 0
+  A  116.68 time() returns 11667
+  A  116.68 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  116.68 log: LOG tar range 1522 tar bearing 169
+
+  B  116.68 cannon(-38,1393) returns 1
+  A  116.68 cannon(169,1522) returns 1
+  A  116.68 log: LOG shot range 1522 tar bearing 169
+cannon called bearing 169 range 1522
+
+Time= 117.17920 
+  A t2.exe           9990 4354   0    0   0    0 183  74  1.52            
+  B pbv8.exe         8784 5190 105  215 100  -27 327  74  1.39            
+  A  117.18 loc_x() returns 9990
+  B  117.18 loc_x() returns 8784
+  A  117.18 loc_y() returns 4354
+  B  117.18 loc_y() returns 5190
+  A  117.18 speed() returns 0
+  B  117.18 speed() returns -27
+  A  117.18 heading() returns 0
+  B  117.18 time() returns 11717
+  A  117.18 time() returns 11717
+  A  117.18 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  117.18 log: LOG tar range 1522 tar bearing 169
+
+  B  117.18 scan(-37, 3) returns 1467
+  A  117.18 cannon(169,1522) returns 1
+  A  117.18 log: LOG shot range 1522 tar bearing 169
+cannon called bearing 169 range 1522
+
+  A  117.68 loc_x() returns 9990
+  B  117.68 time() returns 11767
+  A  117.68 loc_y() returns 4354
+  A  117.68 speed() returns 0
+  B  117.68 loc_x() returns 8795
+  A  117.68 heading() returns 0
+  B  117.68 loc_y() returns 5198
+  A  117.68 time() returns 11767
+  B  117.68 speed() returns -17
+  A  117.68 log: LOG tar pos 8501,4670 speed 0 heading 0
+
+  A  117.68 log: LOG tar range 1522 tar bearing 169
+
+  B  117.68 time() returns 11767
+  A  117.68 scan(151,10) returns 1462
+  A  117.68 log: LOG shot range 1522 tar bearing 169
+LOG do scan called
+LOG scan type reacquiring 5
+
+Time= 118.07220 
+  A t2.exe           9990 4354   0    0   0    0 151  74  0.52  1.02      
+  B pbv8.exe         8801 5201 105  201 100   -9 323  74  0.39            
+  B Explosion at 9864,4310
+  A  118.18 log: LOG scan 151 by 10 found 1462
+LOG record tar found 8711,5062 
+
+  A  118.18 loc_x() returns 9990
+  A  118.18 log: LOG ping 9990,4354 bearing 151 range 1462 width 10 tarloc 8711,5062 speed 38 head 61
+
+  B  118.18 cannon(-39,1375) returns 1
+  A  118.18 loc_y() returns 4354
+  A Explosion at 8496,4643
+  A  118.20 speed() returns 0
+  A  118.68 heading() returns 0
+  B  118.68 loc_x() returns 8806
+  A  118.68 time() returns 11867
+  B  118.68 loc_y() returns 5203
+  A  118.68 log: LOG tar pos 8711,5062 speed 0 heading 0
+
+  A  118.68 log: LOG tar range 1461 tar bearing 152
+
+  B  118.68 speed() returns 2
+  A  118.68 cannon(152,1461) returns 1
+  A  118.68 log: LOG shot range 1461 tar bearing 152
+cannon called bearing 152 range 1461
+
+  B  118.68 time() returns 11867
+  A Explosion at 8496,4643
+Time= 119.17960 
+  A t2.exe           9990 4354   0    0   0    0 151  76  1.44            
+  B pbv8.exe         8805 5203 105  185 100   12 323  74  0.85            
+  A  119.18 loc_x() returns 9990
+  A  119.28 loc_y() returns 4354
+  B  119.28 cannon(-40,1367) returns 1
+  A  119.28 speed() returns 0
+  B Explosion at 9868,4333
+  A  119.55 heading() returns 0
+  A  119.78 time() returns 11977
+  B  119.78 loc_x() returns 8795
+  A  119.78 log: LOG tar pos 8711,5062 speed 0 heading 0
+
+  A  119.78 log: LOG tar range 1461 tar bearing 152
+
+  B  119.78 loc_y() returns 5202
+  A  119.78 scan(152, 6) returns 0
+  A  119.78 log: LOG shot range 1461 tar bearing 152
+LOG do scan called
+LOG scan type tracking
+
+  B  119.88 speed() returns 26
+Time= 120.14060 
+  A t2.exe           9990 4354   0    0   0    0 152  78  0.26            
+  B pbv8.exe         8786 5203 105  170 100   31 323  74        0.77      
+  A Explosion at 8701,5038
+  B  120.14 time() returns 12014
+  A  120.28 loc_x() returns 9990
+  A  120.28 log: LOG scan 152 by 6 found 0
+
+  A  120.28 loc_y() returns 4354
+  B  120.28 scan(-37, 4) returns 1477
+  A  120.28 speed() returns 0
+  B Explosion at 9845,4323
+  A  120.65 heading() returns 0
+  A  120.78 time() returns 12077
+  B  120.78 time() returns 12077
+  A  120.78 log: LOG tar pos 8711,5062 speed 0 heading 0
+
+  A  120.78 log: LOG tar range 1461 tar bearing 152
+
+  A  120.78 cannon(152,1461) returns 1
+  A  120.78 log: LOG shot range 1461 tar bearing 152
+cannon called bearing 152 range 1461
+
+  B  120.78 loc_x() returns 8764
+Time= 121.28000 
+  A t2.exe           9990 4354   0    0   0    0 152  80  1.46            
+  B pbv8.exe         8744 5215 105  153 100   50 323  76                  
+  B  121.28 loc_y() returns 5215
+  A  121.28 loc_x() returns 9990
+  B  121.28 speed() returns 50
+  A  121.28 loc_y() returns 4354
+  B  121.28 time() returns 12128
+  A  121.28 speed() returns 0
+  A  121.28 heading() returns 0
+  A  121.28 time() returns 12128
+  A  121.38 log: LOG tar pos 8711,5062 speed 0 heading 0
+
+  A  121.38 log: LOG tar range 1461 tar bearing 152
+
+  B  121.38 cannon(-39,1408) returns 1
+  A  121.38 scan(153, 8) returns 1518
+  A  121.38 log: LOG shot range 1461 tar bearing 152
+LOG do scan called
+LOG scan type reacquiring 1
+
+  A  121.88 log: LOG scan 153 by 8 found 1518
+LOG record tar found 8637,5043 
+
+  B  121.88 loc_x() returns 8717
+  A  121.88 loc_x() returns 9990
+  A  121.88 log: LOG ping 9990,4354 bearing 153 range 1518 width 8 tarloc 8637,5043 speed 21 head 194
+
+  A  121.98 loc_y() returns 4354
+  B  121.98 loc_y() returns 5232
+  A  121.98 speed() returns 0
+  B  121.98 speed() returns 50
+  A  121.98 heading() returns 0
+  B  121.98 time() returns 12198
+  A  121.98 time() returns 12198
+  A  121.98 log: LOG tar pos 8637,5043 speed 0 heading 0
+
+  A  121.98 log: LOG tar range 1518 tar bearing 154
+
+  B  121.98 scan(-36, 4) returns 1548
+  A  121.98 cannon(154,1518) returns 1
+  A  121.98 log: LOG shot range 1518 tar bearing 154
+cannon called bearing 154 range 1518
+
+Time= 122.24100 
+  A t2.exe           9990 4354   0    0   0    0 153  80  0.26  1.52      
+  B pbv8.exe         8703 5240 105  139 100   50 324  76  0.81            
+  A Explosion at 8701,5038
+  A  122.48 loc_x() returns 9990
+  B  122.48 time() returns 12248
+  A  122.48 loc_y() returns 4354
+  A  122.48 speed() returns 0
+  B  122.48 loc_x() returns 8694
+  A  122.48 heading() returns 0
+  B  122.48 loc_y() returns 5248
+  A  122.48 time() returns 12248
+  B  122.48 speed() returns 50
+  A  122.48 log: LOG tar pos 8637,5043 speed 0 heading 0
+
+  A  122.48 log: LOG tar range 1518 tar bearing 154
+
+  B  122.48 time() returns 12248
+  A  122.48 cannon(154,1518) returns 1
+  A  122.48 log: LOG shot range 1518 tar bearing 154
+cannon called bearing 154 range 1518
+
+  B Explosion at 9855,4326
+  A  122.98 loc_x() returns 9990
+  B  122.98 cannon(-38,1475) returns 1
+  A  122.98 loc_y() returns 4354
+Time= 123.48040 
+  A t2.exe           9990 4354   0    0   0    0 153  82  1.02  0.52      
+  B pbv8.exe         8661 5286 105  120 100   50 324  77  1.48            
+  A  123.48 speed() returns 0
+  B  123.48 loc_x() returns 8661
+  A  123.48 heading() returns 0
+  B  123.48 loc_y() returns 5286
+  A  123.48 time() returns 12348
+  B  123.48 speed() returns 50
+  A  123.48 log: LOG tar pos 8637,5043 speed 0 heading 0
+
+  A  123.48 log: LOG tar range 1518 tar bearing 154
+
+  B  123.48 time() returns 12348
+  A Explosion at 8626,5018
+  A  123.50 scan(154, 5) returns 0
+  A  123.50 log: LOG shot range 1518 tar bearing 154
+LOG do scan called
+LOG scan type tracking
+
+  A Explosion at 8626,5018
+  A  124.00 loc_x() returns 9990
+  A  124.00 log: LOG scan 154 by 5 found 0
+
+  A  124.00 loc_y() returns 4354
+  A  124.00 speed() returns 0
+  B  124.00 cannon(-38,1521) returns 1
+  A  124.00 heading() returns 0
+Time= 124.45540 
+  A t2.exe           9990 4354   0    0   0    0 154  82                  
+  B pbv8.exe         8639 5329 105  106 100   50 324  79  0.46  1.52      
+  B Explosion at 9862,4375
+  A  124.46 time() returns 12445
+  A  124.50 log: LOG tar pos 8637,5043 speed 0 heading 0
+
+  A  124.50 log: LOG tar range 1518 tar bearing 154
+
+  B  124.50 loc_x() returns 8639
+  A  124.50 cannon(154,1518) returns 1
+  A  124.50 log: LOG shot range 1518 tar bearing 154
+cannon called bearing 154 range 1518
+
+  B  124.50 loc_y() returns 5331
+  B  125.00 speed() returns 60
+  A  125.00 loc_x() returns 9990
+  B  125.00 time() returns 12499
+  A  125.00 loc_y() returns 4354
+  A  125.00 speed() returns 0
+  B  125.00 scan(-37, 4) returns 1686
+  A  125.00 heading() returns 0
+Time= 125.49850 
+  A t2.exe           9990 4354   0    0   0    0 154  84  1.02            
+  B pbv8.exe         8624 5384 105  105 100   70 323  79        0.52      
+  A  125.50 time() returns 12549
+  B  125.50 time() returns 12549
+  B Explosion at 9868,4368
+  A  125.52 log: LOG tar pos 8637,5043 speed 0 heading 0
+
+  A  125.52 log: LOG tar range 1518 tar bearing 154
+
+  A  125.52 scan(155, 7) returns 0
+  A  125.52 log: LOG shot range 1518 tar bearing 154
+LOG do scan called
+LOG scan type reacquiring 1
+
+  B  125.52 loc_x() returns 8624
+Time= 126.01640 
+  A t2.exe           9990 4354   0    0   0    0 155  86  0.50            
+  B pbv8.exe         8615 5420 105  105 100   80 323  79                  
+  A Explosion at 8626,5018
+  B  126.02 loc_y() returns 5420
+  B  126.02 speed() returns 80
+  A  126.02 loc_x() returns 9990
+  A  126.02 log: LOG scan 155 by 7 found 0
+
+  A  126.02 loc_y() returns 4354
+  B  126.02 time() returns 12601
+  A  126.02 speed() returns 0
+  A  126.02 heading() returns 0
+  A  126.02 time() returns 12601
+  A  126.02 log: LOG tar pos 8637,5043 speed 0 heading 0
+
+  A  126.02 log: LOG tar range 1518 tar bearing 154
+
+  B  126.02 cannon(-42,1653) returns 1
+  A  126.02 cannon(154,1518) returns 1
+  A  126.02 log: LOG shot range 1518 tar bearing 154
+cannon called bearing 154 range 1518
+
+  A  126.62 loc_x() returns 9990
+  B  126.62 loc_x() returns 8602
+  A  126.62 loc_y() returns 4354
+  B  126.62 loc_y() returns 5467
+  A  126.62 speed() returns 0
+  B  126.62 speed() returns 92
+  A  126.62 heading() returns 0
+  B  126.62 time() returns 12661
+  A  126.62 time() returns 12661
+  A  126.62 log: LOG tar pos 8637,5043 speed 0 heading 0
+
+  A  126.62 log: LOG tar range 1518 tar bearing 154
+
+  B  126.62 scan(-39, 5) returns 1778
+  A  126.62 cannon(154,1518) returns 1
+  A  126.62 log: LOG shot range 1518 tar bearing 154
+cannon called bearing 154 range 1518
+
+Time= 127.11950 
+  A t2.exe           9990 4354   0    0   0    0 155  86  0.92  1.52      
+  B pbv8.exe         8590 5512 105  105 100  100 321  79  1.05            
+  A  127.12 loc_x() returns 9990
+  B  127.12 time() returns 12711
+  A  127.12 loc_y() returns 4354
+  A  127.12 speed() returns 0
+  B  127.12 loc_x() returns 8590
+  A  127.12 heading() returns 0
+  B  127.12 loc_y() returns 5512
+  A  127.12 time() returns 12711
+  B  127.12 speed() returns 100
+  A  127.12 log: LOG tar pos 8637,5043 speed 0 heading 0
+
+  A  127.12 log: LOG tar range 1518 tar bearing 154
+
+  B  127.12 time() returns 12711
+  A  127.12 scan(161, 9) returns 0
+  A  127.12 log: LOG shot range 1518 tar bearing 154
+LOG do scan called
+LOG scan type reacquiring 2
+
+  A Explosion at 8626,5018
+  B  127.54 time() returns 12753
+  B  127.62 drive(  6,-75) returns 1
+  A  127.62 loc_x() returns 9990
+  A  127.62 log: LOG scan 161 by 9 found 0
+
+  A  127.62 loc_y() returns 4354
+  B Explosion at 9877,4326
+  A  127.67 speed() returns 0
+Time= 128.11970 
+  A t2.exe           9990 4354   0    0   0    0 161  88        0.47      
+  B pbv8.exe         8564 5608   6  105 -75   90 321  79                  
+  A  128.12 heading() returns 0
+  B  128.12 loc_x() returns 8564
+  A Explosion at 8626,5018
+  A  128.14 time() returns 12813
+  B  128.14 loc_y() returns 5610
+  A  128.14 log: LOG tar pos 8637,5043 speed 0 heading 0
+
+  A  128.14 log: LOG tar range 1518 tar bearing 154
+
+  B  128.14 speed() returns 90
+  A  128.14 cannon(154,1518) returns 1
+  A  128.14 log: LOG shot range 1518 tar bearing 154
+cannon called bearing 154 range 1518
+
+  B  128.14 time() returns 12813
+  A  128.64 loc_x() returns 9990
+  B  128.64 scan(-41, 4) returns 1937
+  A  128.64 loc_y() returns 4354
+Time= 129.13770 
+  A t2.exe           9990 4354   0    0   0    0 161  88  1.02            
+  B pbv8.exe         8542 5691   6  105 -75   70 319  79                  
+  A  129.14 speed() returns 0
+  B  129.14 time() returns 12913
+  A  129.14 heading() returns 0
+  A  129.14 time() returns 12913
+  B  129.14 loc_x() returns 8542
+  A  129.14 log: LOG tar pos 8637,5043 speed 0 heading 0
+
+  A  129.14 log: LOG tar range 1518 tar bearing 154
+
+  B  129.14 loc_y() returns 5691
+  A  129.14 scan(145,10) returns 1970
+  A  129.14 log: LOG shot range 1518 tar bearing 154
+LOG do scan called
+LOG scan type reacquiring 3
+
+  B  129.14 speed() returns 70
+  B  129.64 time() returns 12963
+  A  129.64 log: LOG scan 145 by 10 found 1970
+LOG record tar found 8376,5483 
+
+  A  129.64 loc_x() returns 9990
+  A  129.64 log: LOG ping 9990,4354 bearing 145 range 1970 width 10 tarloc 8376,5483 speed 65 head 121
+
+  A  129.64 loc_y() returns 4354
+  A  129.64 speed() returns 0
+  A Explosion at 8626,5018
+  A  129.66 heading() returns 0
+  B  129.66 cannon(-46,1896) returns 1
+  A  129.66 time() returns 12965
+Time= 130.15570 
+  A t2.exe           9990 4354   0    0   0    0 145  88                  
+  B pbv8.exe         8525 5755   6   98 -75   50 319  79  1.90            
+  A  130.16 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  130.16 log: LOG tar range 1969 tar bearing 146
+
+  B  130.16 loc_x() returns 8525
+  A  130.16 cannon(146,1969) returns 1
+  A  130.16 log: LOG shot range 1969 tar bearing 146
+cannon called bearing 146 range 1969
+
+  B  130.16 loc_y() returns 5755
+  B  130.66 speed() returns 40
+  A  130.66 loc_x() returns 9990
+  B  130.66 time() returns 13065
+  A  130.66 loc_y() returns 4354
+  A  130.66 speed() returns 0
+  B  130.66 scan(-43, 3) returns 2045
+  A  130.66 heading() returns 0
+Time= 131.15590 
+  A t2.exe           9990 4354   0    0   0    0 145  88  1.47            
+  B pbv8.exe         8521 5800   6   83 -75   30 317  79  0.90            
+  A  131.16 time() returns 13115
+  B  131.16 time() returns 13115
+  A  131.26 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  131.26 log: LOG tar range 1969 tar bearing 146
+
+  A  131.26 scan(146, 6) returns 0
+  A  131.26 log: LOG shot range 1969 tar bearing 146
+LOG do scan called
+LOG scan type tracking
+
+  B  131.26 loc_x() returns 8522
+  B Explosion at 9857,4352
+  B  131.55 loc_y() returns 5811
+  B  131.76 speed() returns 18
+  A  131.76 loc_x() returns 9990
+  A  131.76 log: LOG scan 146 by 6 found 0
+
+  A  131.76 loc_y() returns 4354
+  B  131.76 time() returns 13175
+  A  131.76 speed() returns 0
+  A  131.76 heading() returns 0
+  A  131.76 time() returns 13175
+  A  131.76 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  131.76 log: LOG tar range 1969 tar bearing 146
+
+  B  131.76 cannon(-47,1947) returns 1
+  A  131.76 cannon(146,1969) returns 1
+  A  131.76 log: LOG shot range 1969 tar bearing 146
+cannon called bearing 146 range 1969
+
+Time= 132.12480 
+  A t2.exe           9990 4354   0    0   0    0 146  90  0.37  1.97      
+  B pbv8.exe         8526 5821   6   68 -75   11 317  79  1.95            
+  A Explosion at 8358,5454
+  A  132.26 loc_x() returns 9990
+  B  132.26 loc_x() returns 8527
+  A  132.26 loc_y() returns 4354
+  B  132.26 loc_y() returns 5823
+  A  132.26 speed() returns 0
+  B  132.26 speed() returns 8
+  A  132.26 heading() returns 0
+  B  132.26 time() returns 13225
+  A  132.26 time() returns 13225
+  A  132.26 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  132.26 log: LOG tar range 1969 tar bearing 146
+
+  B  132.26 scan(-44, 2) returns 2072
+  A  132.26 cannon(146,1969) returns 1
+  A  132.26 log: LOG shot range 1969 tar bearing 146
+cannon called bearing 146 range 1969
+
+  A  132.76 loc_x() returns 9990
+  B  132.76 time() returns 13275
+  A  132.76 loc_y() returns 4354
+  A  132.86 speed() returns 0
+  B  132.86 loc_x() returns 8528
+  A  132.86 heading() returns 0
+  B  132.96 loc_y() returns 5826
+  A  132.96 time() returns 13295
+  B  132.96 speed() returns -5
+  A  132.96 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  132.96 log: LOG tar range 1969 tar bearing 146
+
+  B  132.96 time() returns 13295
+  A  132.96 scan(147, 8) returns 0
+  A  132.96 log: LOG shot range 1969 tar bearing 146
+LOG do scan called
+LOG scan type reacquiring 1
+
+Time= 133.45630 
+  A t2.exe           9990 4354   0    0   0    0 147  90  1.27  0.77      
+  B pbv8.exe         8526 5823   6   48 -75  -15 316  79  0.75            
+  A  133.46 loc_x() returns 9990
+  A  133.46 log: LOG scan 147 by 8 found 0
+
+  A  133.46 loc_y() returns 4354
+  A  133.46 speed() returns 0
+  B  133.46 cannon(-46,1928) returns 1
+  A  133.46 heading() returns 0
+  B Explosion at 9854,4387
+  A  133.70 time() returns 13370
+  A Explosion at 8358,5454
+  A  133.73 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  133.73 log: LOG tar range 1969 tar bearing 146
+
+  A  133.73 cannon(146,1969) returns 1
+  A  133.73 log: LOG shot range 1969 tar bearing 146
+cannon called bearing 146 range 1969
+
+  B  133.96 loc_x() returns 8520
+Time= 134.22510 
+  A t2.exe           9990 4354   0    0   0    0 147  92  0.27  1.74      
+  B pbv8.exe         8514 5812   6   37 -75  -30 316  79        1.43      
+  A Explosion at 8358,5454
+  B  134.23 loc_y() returns 5812
+  A  134.23 loc_x() returns 9990
+  B  134.23 speed() returns -30
+  A  134.23 loc_y() returns 4354
+  B  134.23 time() returns 13422
+  A  134.23 speed() returns 0
+  A  134.23 heading() returns 0
+  B  134.23 scan(-43, 2) returns 2073
+  A  134.23 time() returns 13422
+  A  134.73 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  134.73 log: LOG tar range 1969 tar bearing 146
+
+  B  134.73 time() returns 13472
+  A  134.83 cannon(146,1969) returns 1
+  A  134.83 log: LOG shot range 1969 tar bearing 146
+cannon called bearing 146 range 1969
+
+Time= 135.32530 
+  A t2.exe           9990 4354   0    0   0    0 147  92  1.97  0.87      
+  B pbv8.exe         8479 5791   6   20 -75  -49 317  80        0.56      
+  B  135.33 loc_x() returns 8479
+  A  135.33 loc_x() returns 9990
+  B Explosion at 9866,4442
+  B  135.38 loc_y() returns 5790
+  A  135.38 loc_y() returns 4354
+  B  135.38 speed() returns -49
+  A  135.38 speed() returns 0
+  B  135.38 time() returns 13538
+  A  135.38 heading() returns 0
+  A  135.38 time() returns 13538
+  A  135.38 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  135.38 log: LOG tar range 1969 tar bearing 146
+
+  A  135.38 scan(154,10) returns 0
+  A  135.38 log: LOG shot range 1969 tar bearing 146
+LOG do scan called
+LOG scan type reacquiring 2
+
+  B  135.38 cannon(-44,1937) returns 1
+  A Explosion at 8358,5454
+  A  135.88 loc_x() returns 9990
+  A  135.88 log: LOG scan 154 by 10 found 0
+
+  A  135.88 loc_y() returns 4354
+  B  135.88 loc_x() returns 8452
+  A  135.88 speed() returns 0
+  B  135.88 loc_y() returns 5782
+  A  135.88 heading() returns 0
+  B  135.88 speed() returns -49
+  A  135.88 time() returns 13588
+  B  135.88 time() returns 13588
+  A  135.88 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  135.88 log: LOG tar range 1969 tar bearing 146
+
+  A  135.88 cannon(146,1969) returns 1
+  A  135.88 log: LOG shot range 1969 tar bearing 146
+cannon called bearing 146 range 1969
+
+  B  135.88 scan(-41, 1) returns 2097
+Time= 136.38460 
+  A t2.exe           9990 4354   0    0   0    0 154  94  0.91  1.97      
+  B pbv8.exe         8428 5777   6    6 -75  -49 319  81  1.44            
+  A  136.38 loc_x() returns 9990
+  B  136.38 time() returns 13638
+  A  136.38 loc_y() returns 4354
+  A  136.48 speed() returns 0
+  B  136.48 loc_x() returns 8423
+  A  136.48 heading() returns 0
+  B  136.58 loc_y() returns 5776
+  A  136.58 time() returns 13658
+  B  136.58 speed() returns -53
+  A  136.58 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  136.58 log: LOG tar range 1969 tar bearing 146
+
+  B  136.58 time() returns 13658
+  A  136.58 cannon(146,1969) returns 1
+  A  136.58 log: LOG shot range 1969 tar bearing 146
+cannon called bearing 146 range 1969
+
+  A Explosion at 8358,5454
+Time= 137.08470 
+  A t2.exe           9990 4354   0    0   0    0 154  94        1.06  1.76
+  B pbv8.exe         8389 5773   6    6 -75  -63 319  82  0.53            
+  A  137.08 loc_x() returns 9990
+  B  137.08 cannon(-43,1969) returns 1
+  A  137.08 loc_y() returns 4354
+  B Explosion at 9849,4440
+  A  137.32 speed() returns 0
+  A  137.58 heading() returns 0
+  B  137.58 loc_x() returns 8356
+  A  137.58 time() returns 13758
+  B  137.58 loc_y() returns 5770
+  A  137.58 log: LOG tar pos 8376,5483 speed 0 heading 0
+
+  A  137.58 log: LOG tar range 1969 tar bearing 146
+
+  B  137.58 speed() returns -73
+  A  137.58 scan(136,10) returns 2161
+  A  137.58 log: LOG shot range 1969 tar bearing 146
+LOG do scan called
+LOG scan type reacquiring 3
+
+  B  137.58 time() returns 13758
+  A Explosion at 8358,5454
+Time= 138.08490 
+  A t2.exe           9990 4354   0    0   0    0 136  96              0.70
+  B pbv8.exe         8319 5767   6    6 -75  -74 319  83        1.20      
+  B  138.08 scan(-39, 1) returns 2186
+  A  138.08 log: LOG scan 136 by 10 found 2161
+LOG record tar found 8435,5855 
+
+  A  138.08 loc_x() returns 9990
+  A  138.08 log: LOG ping 9990,4354 bearing 136 range 2161 width 10 tarloc 8435,5855 speed 44 head 80
+
+  A  138.08 loc_y() returns 4354
+  A Explosion at 8358,5454
+  A  138.55 speed() returns 0
+  A  138.59 heading() returns 0
+  B  138.59 time() returns 13858
+  A  138.59 time() returns 13858
+  A  138.59 log: LOG tar pos 8435,5855 speed 0 heading 0
+
+  A  138.59 log: LOG tar range 2161 tar bearing 137
+
+  B  138.59 loc_x() returns 8282
+  A  138.69 cannon(137,2161) returns 1
+  A  138.69 log: LOG shot range 2161 tar bearing 137
+cannon called bearing 137 range 2161
+
+  B  138.69 loc_y() returns 5762
+Time= 139.05380 
+  A t2.exe           9990 4354   0    0   0    0 136  96  2.16            
+  B pbv8.exe         8247 5759   6    6 -75  -74 321  84        0.37      
+  B Explosion at 9856,4400
+  B  139.05 speed() returns -74
+  B  139.19 time() returns 13918
+  A  139.19 loc_x() returns 9990
+  A  139.19 loc_y() returns 4354
+  A  139.19 speed() returns 0
+  A  139.19 heading() returns 0
+  B  139.19 cannon(-41,2098) returns 1
+  A  139.19 time() returns 13918
+  A  139.69 log: LOG tar pos 8435,5855 speed 0 heading 0
+
+  A  139.69 log: LOG tar range 2161 tar bearing 137
+
+  B  139.69 loc_x() returns 8200
+  A  139.79 scan(137, 6) returns 2277
+  A  139.79 log: LOG shot range 2161 tar bearing 137
+LOG do scan called
+LOG scan type tracking
+
+  B  139.79 loc_y() returns 5754
+Time= 140.28530 
+  A t2.exe           9990 4354   0    0   0    0 137  98  1.06            
+  B pbv8.exe         8155 5750   6    6 -75  -74 321  84  1.50            
+  B  140.29 speed() returns -74
+  A  140.29 log: LOG scan 137 by 6 found 2277
+LOG record tar found 8324,5906 
+
+  A  140.29 loc_x() returns 9990
+  A  140.29 log: LOG ping 9990,4354 bearing 137 range 2277 width 6 tarloc 8324,5906 speed 76 head 156
+
+  B  140.29 time() returns 14028
+  A  140.29 loc_y() returns 4354
+  A  140.29 speed() returns 0
+  B  140.29 scan(-36, 1) returns 2304
+  A  140.29 heading() returns 0
+  A  140.79 time() returns 14078
+  B  140.79 time() returns 14078
+  A  140.79 log: LOG tar pos 8324,5906 speed 0 heading 0
+
+  A  140.79 log: LOG tar range 2276 tar bearing 138
+
+  A  140.79 scan(138, 4) returns 0
+  A  140.79 log: LOG shot range 2276 tar bearing 138
+LOG do scan called
+LOG scan type tracking
+
+  A Explosion at 8410,5826
+  B  140.85 loc_x() returns 8113
+Time= 141.28310 
+  A t2.exe           9990 4354   0    0   0    0 138  98                  
+  B pbv8.exe         8081 5743   6    6 -75  -74 324  85  0.44            
+  B Explosion at 9837,4373
+t2.exe           0/1/0
+pbv8.exe         1/0/0

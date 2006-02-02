@@ -1,0 +1,27 @@
+testit.sh $1 pbv7>time$1
+testit.sh $1 pbv7>>time$1
+testit.sh $1 pbv7>>time$1
+testit.sh $1 pbv7>>time$1
+testit.sh $1 pbv7>>time$1
+testit.sh $1 tommy>>time$1
+testit.sh $1 tommy>>time$1
+testit.sh $1 tommy>>time$1
+testit.sh $1 tommy>>time$1
+testit.sh $1 tommy>>time$1
+testit.sh $1 wilma>>time$1
+testit.sh $1 wilma>>time$1
+testit.sh $1 wilma>>time$1
+testit.sh $1 wilma>>time$1
+testit.sh $1 wilma>>time$1
+testit.sh $1 wobble2>>time$1
+testit.sh $1 wobble2>>time$1
+testit.sh $1 wobble2>>time$1
+testit.sh $1 wobble2>>time$1
+testit.sh $1 wobble2>>time$1
+testit.sh $1 bigtarget84>>time$1
+testit.sh $1 bigtarget84>>time$1
+testit.sh $1 bigtarget84>>time$1
+testit.sh $1 bigtarget84>>time$1
+testit.sh $1 bigtarget84>>time$1
+grep "Time" time$1|sort -u -nk2>rtime$1.log
+rm -f time$1

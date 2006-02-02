@@ -1,0 +1,23 @@
+combat $1 wilma $2 >all$2
+combat $1 bigtarget8 $2 >>all$2
+combat $1 bigtarget84 $2 >>all$2
+combat $1 bigtarget6 $2 >>all$2
+combat $1 minim $2 >>all$2
+combat $1 shogun $2 >>all$2
+combat $1 wobble $2  >>all$2
+combat $1 tracker $2 >>all$2
+combat $1 tommy $2 >>all$2
+combat $1 pbv6b $2 >>all$2
+combat $1 pbv6a $2 >>all$2
+combat $1 pbv6 $2 >>all$2
+combat $1 pbv5b $2 >>all$2
+combat $1 pbv5a $2 >>all$2
+combat $1 pbv5 $2 >>all$2
+combat $1 pbv4a $2 >>all$2
+combat $1 pbv4 $2 >>all$2
+combat $1 pbv3a $2 >>all$2
+combat $1 pbv3 $2 >>all$2
+combat $1 pbv2 $2 >>all$2
+combat $1 pbv1 $2 >>all$2
+combat $1 target $2 >>all$2
+grep $2 all$2>all$2.log

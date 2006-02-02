@@ -1,0 +1,3145 @@
+          Name       Xpos Ypos dir cdir spd cspd scn dam
+    ---------------- ---- ---- --- ---- --- ---- --- ---
+Time=   0.00000 
+  A target1.exe      2180 4190 307    0   0    0 307   0                  
+  B target2.exe      6970 4560 345    0   0    0 345   0                  
+  A    0.00 time() returns 0
+  B    0.00 loc_x() returns 6970
+  A    0.00 scan(  0, 0) returns 0
+  B    0.00 loc_x() returns 6970
+  B    0.50 speed() returns 0
+  A    0.50 time() returns 50
+  B    0.50 drive(  0,100) returns 1
+  A    0.50 scan(  0, 0) returns 0
+Time=   1.00020 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6970 4560   0  337 100   10 345   0                  
+  B    1.00 time() returns 100
+  A    1.00 time() returns 100
+  B    1.00 scan(  0, 0) returns 0
+  A    1.00 scan(  0, 0) returns 0
+  B    1.50 loc_x() returns 6975
+  A    1.50 time() returns 150
+  B    1.50 loc_x() returns 6975
+  A    1.50 scan(  0, 0) returns 0
+  B    1.50 speed() returns 20
+Time=   2.00040 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6983 4553   0  322 100   30   0   0                  
+  B    2.00 time() returns 200
+  A    2.00 time() returns 200
+  B    2.00 scan(  0, 0) returns 0
+  A    2.00 scan(  0, 0) returns 0
+  B    2.50 loc_x() returns 6995
+  A    2.50 time() returns 250
+  B    2.50 loc_x() returns 6995
+  A    2.50 scan(  0, 0) returns 0
+  B    2.50 speed() returns 40
+Time=   3.00060 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7009 4530   0  307 100   50   0   0                  
+  B    3.00 time() returns 300
+  A    3.00 time() returns 300
+  B    3.00 scan(  0, 0) returns 0
+  A    3.00 scan(  0, 0) returns 0
+  B    3.50 loc_x() returns 7025
+  A    3.50 time() returns 350
+  B    3.50 loc_x() returns 7025
+  A    3.50 scan(  0, 0) returns 0
+  B    3.50 speed() returns 50
+Time=   4.00080 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7037 4488   0  292 100   50   0   0                  
+  B    4.00 time() returns 400
+  A    4.00 time() returns 400
+  B    4.10 scan(  0, 0) returns 0
+  A    4.10 scan(  0, 0) returns 0
+  B    4.60 loc_x() returns 7048
+  A    4.60 time() returns 460
+  B    4.70 loc_x() returns 7049
+  A    4.70 scan(  0, 0) returns 0
+  B    4.70 speed() returns 50
+Time=   5.20100 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7054 4431   0  274 100   50   0   0                  
+  B    5.20 time() returns 520
+  A    5.20 time() returns 520
+  B    5.20 scan(  0, 0) returns 0
+  A    5.20 scan(  0, 0) returns 0
+  B    5.70 loc_x() returns 7056
+  A    5.70 time() returns 570
+  B    5.70 loc_x() returns 7056
+  A    5.70 scan(  0, 0) returns 0
+  B    5.70 speed() returns 50
+Time=   6.20120 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7055 4381   0  259 100   50   0   0                  
+  B    6.20 time() returns 620
+  A    6.20 time() returns 620
+  B    6.30 scan(  0, 0) returns 0
+  A    6.30 scan(  0, 0) returns 0
+  B    6.80 loc_x() returns 7049
+  A    6.80 time() returns 680
+  B    6.90 loc_x() returns 7047
+  A    6.90 scan(  0, 0) returns 0
+  B    6.90 speed() returns 50
+Time=   7.40140 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7038 4324   0  241 100   50   0   0                  
+  B    7.40 time() returns 740
+  A    7.40 time() returns 740
+  B    7.40 scan(  0, 0) returns 0
+  A    7.40 scan(  0, 0) returns 0
+  B    7.90 loc_x() returns 7026
+  A    7.90 time() returns 790
+  B    7.90 loc_x() returns 7026
+  A    7.90 scan(  0, 0) returns 0
+  B    7.90 speed() returns 50
+Time=   8.40160 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7012 4281   0  226 100   50   0   0                  
+  B    8.40 time() returns 840
+  A    8.40 time() returns 840
+  B    8.40 scan(  0, 0) returns 0
+  A    8.40 scan(  0, 0) returns 0
+  B    8.90 loc_x() returns 6994
+  A    8.90 time() returns 890
+  B    8.90 loc_x() returns 6994
+  A    8.90 scan(  0, 0) returns 0
+  B    8.90 speed() returns 50
+Time=   9.40180 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6975 4248   0  211 100   50   0   0                  
+  B    9.40 time() returns 940
+  A    9.40 time() returns 940
+  B    9.40 scan(  0, 0) returns 0
+  A    9.40 scan(  0, 0) returns 0
+  B    9.90 loc_x() returns 6954
+  A    9.90 time() returns 990
+  B    9.90 loc_x() returns 6954
+  A    9.90 scan(  0, 0) returns 0
+  B    9.90 speed() returns 50
+Time=  10.40200 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6931 4224   0  196 100   50   0   0                  
+  B   10.40 time() returns 1040
+  A   10.40 time() returns 1040
+  B   10.40 scan(  0, 0) returns 0
+  A   10.40 scan(  0, 0) returns 4750
+  B   10.90 loc_x() returns 6907
+  A   10.90 time() returns 1090
+  B   10.90 loc_x() returns 6907
+  A   10.90 scan(  0, 0) returns 4726
+  B   10.90 speed() returns 50
+Time=  11.40220 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6882 4213   0  181 100   50   0   0                  
+  B   11.40 time() returns 1140
+  A   11.40 time() returns 1140
+  B   11.40 scan(  0, 0) returns 0
+  A   11.40 scan(  0, 0) returns 4702
+Time=  12.00230 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6852 4213   0  172 100   50   0   0                  
+  B   12.00 loc_x() returns 6852
+  A   12.00 time() returns 1200
+  B   12.00 loc_x() returns 6852
+  A   12.10 scan(  0, 0) returns 4667
+  B   12.10 speed() returns 50
+  B   12.60 time() returns 1260
+  A   12.60 time() returns 1260
+  B   12.60 scan(  0, 0) returns 0
+  A   12.60 scan(  0, 0) returns 4642
+Time=  13.10250 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6798 4225   0  156 100   50   0   0                  
+  B   13.10 loc_x() returns 6798
+  A   13.10 time() returns 1310
+  B   13.10 loc_x() returns 6798
+  A   13.10 scan(  0, 0) returns 4618
+  B   13.10 speed() returns 50
+  B   13.60 time() returns 1360
+  A   13.60 time() returns 1360
+  B   13.60 scan(  0, 0) returns 0
+  A   13.60 scan(  0, 0) returns 0
+Time=  14.10270 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6754 4248   0  141 100   50   0   0                  
+  B   14.10 loc_x() returns 6754
+  A   14.10 time() returns 1410
+  B   14.20 loc_x() returns 6750
+  A   14.20 scan(  0, 0) returns 0
+  B   14.20 speed() returns 50
+  B   14.70 time() returns 1470
+  A   14.70 time() returns 1470
+  B   14.70 scan(  0, 0) returns 0
+  A   14.70 scan(  0, 0) returns 0
+Time=  15.20290 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6715 4286   0  124 100   50   0   0                  
+  B   15.20 loc_x() returns 6715
+  A   15.20 time() returns 1520
+  B   15.30 loc_x() returns 6712
+  A   15.30 scan(  0, 0) returns 0
+  B   15.30 speed() returns 50
+  B   15.80 time() returns 1580
+  A   15.80 time() returns 1580
+  B   15.80 scan(  0, 0) returns 0
+  A   15.80 scan(  0, 0) returns 0
+Time=  16.30310 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6687 4334   0  108 100   50   0   0                  
+  B   16.30 loc_x() returns 6687
+  A   16.30 time() returns 1630
+  B   16.40 loc_x() returns 6686
+  A   16.40 scan(  0, 0) returns 0
+  B   16.40 speed() returns 50
+  B   16.90 time() returns 1690
+  A   16.90 time() returns 1690
+  B   16.90 scan(  0, 0) returns 0
+  A   16.90 scan(  0, 0) returns 0
+Time=  17.40330 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6675 4387   0   91 100   50   0   0                  
+  B   17.40 loc_x() returns 6675
+  A   17.40 time() returns 1740
+  B   17.40 loc_x() returns 6675
+  A   17.40 scan(  0, 0) returns 0
+  B   17.40 speed() returns 50
+  B   17.90 time() returns 1790
+  A   17.90 time() returns 1790
+  B   17.90 scan(  0, 0) returns 0
+Time=  18.00340 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6675 4417   0   82 100   50   0   0                  
+  A   18.00 scan(  0, 0) returns 0
+  B   18.40 loc_x() returns 6677
+  B   18.50 loc_x() returns 6679
+  A   18.50 time() returns 1850
+  B   18.50 speed() returns 50
+  A   18.50 scan(  0, 0) returns 0
+  B   18.50 time() returns 1850
+Time=  19.00360 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6685 4466   0   67 100   50   0   0                  
+  B   19.00 scan(  0, 0) returns 0
+  A   19.00 time() returns 1900
+  A   19.50 scan(  0, 0) returns 0
+  B   19.50 loc_x() returns 6695
+Time=  20.00380 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6707 4511   0   52 100   50   0   0                  
+  B   20.00 loc_x() returns 6707
+  A   20.00 time() returns 2000
+  B   20.10 speed() returns 50
+  A   20.10 scan(  0, 0) returns 0
+  B   20.10 time() returns 2010
+  B   20.60 scan(  0, 0) returns 0
+  A   20.60 time() returns 2060
+Time=  21.10400 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6744 4552   0   36 100   50   0   0                  
+  A   21.10 scan(  0, 0) returns 0
+  B   21.10 loc_x() returns 6744
+  B   21.60 loc_x() returns 6764
+  A   21.60 time() returns 2160
+  B   21.60 speed() returns 50
+  A   21.60 scan(  0, 0) returns 0
+  B   21.60 time() returns 2160
+Time=  22.10420 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6786 4578   0   21 100   50   0   0                  
+  B   22.10 scan(  0, 0) returns 0
+  A   22.10 time() returns 2210
+  A   22.60 scan(  0, 0) returns 0
+  B   22.60 loc_x() returns 6810
+Time=  23.10440 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6834 4593   0    6 100   50   0   0                  
+  B   23.10 loc_x() returns 6834
+  A   23.10 time() returns 2310
+  B   23.10 speed() returns 50
+  A   23.10 scan(  0, 0) returns 0
+  B   23.10 time() returns 2310
+  B   23.60 scan(  0, 0) returns 0
+  A   23.60 time() returns 2360
+Time=  24.10460 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6884 4595   0  360 100   60   0   0                  
+  A   24.10 scan(  0, 0) returns 0
+  B   24.10 loc_x() returns 6884
+  B   24.60 loc_x() returns 6914
+  A   24.60 time() returns 2460
+  B   24.60 speed() returns 70
+  A   24.60 scan(  0, 0) returns 0
+  B   24.60 time() returns 2460
+Time=  25.10480 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6949 4595   0  360 100   80   0   0                  
+  B   25.10 scan(  0, 0) returns 0
+  A   25.10 time() returns 2510
+  A   25.60 scan(  0, 0) returns 0
+  B   25.60 loc_x() returns 6989
+Time=  26.10500 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7034 4595   0  360 100  100   0   0                  
+  B   26.10 loc_x() returns 7034
+  A   26.10 time() returns 2610
+  B   26.20 speed() returns 100
+  A   26.20 scan(  0, 0) returns 0
+  B   26.20 time() returns 2620
+  B   26.71 scan(  0, 0) returns 0
+  A   26.71 time() returns 2670
+Time=  27.20520 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7144 4595   0  360 100  100   0   0                  
+  A   27.21 scan(  0, 0) returns 0
+  B   27.21 loc_x() returns 7144
+  B   27.71 loc_x() returns 7194
+  A   27.71 time() returns 2770
+  B   27.71 speed() returns 100
+  A   27.71 scan(  0, 0) returns 0
+  B   27.71 time() returns 2770
+Time=  28.20540 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7244 4595   0  360 100  100   0   0                  
+  B   28.21 scan(  0, 0) returns 0
+  A   28.21 time() returns 2820
+  A   28.71 scan(  0, 0) returns 0
+  B   28.71 loc_x() returns 7294
+Time=  29.20560 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7344 4595   0  360 100  100   0   0                  
+  B   29.21 loc_x() returns 7344
+  A   29.21 time() returns 2920
+  B   29.31 speed() returns 100
+  A   29.31 scan(  0, 0) returns 0
+  B   29.31 time() returns 2930
+  B   29.81 scan(  0, 0) returns 0
+  A   29.81 time() returns 2980
+Time=  30.30580 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7454 4595   0  360 100  100   0   0                  
+  A   30.31 scan(  0, 0) returns 0
+  B   30.31 loc_x() returns 7454
+  B   30.81 loc_x() returns 7504
+  A   30.81 time() returns 3080
+  B   30.81 speed() returns 100
+  A   30.81 scan(  0, 0) returns 0
+  B   30.81 time() returns 3080
+Time=  31.30600 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7554 4595   0  360 100  100   0   0                  
+  B   31.31 scan(  0, 0) returns 0
+  A   31.31 time() returns 3130
+  A   31.81 scan(  0, 0) returns 0
+  B   31.81 loc_x() returns 7604
+Time=  32.30620 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7654 4595   0  360 100  100   0   0                  
+  B   32.31 loc_x() returns 7654
+  A   32.31 time() returns 3230
+  B   32.31 speed() returns 100
+  A   32.31 scan(  0, 0) returns 0
+  B   32.31 time() returns 3230
+  B   32.81 scan(  0, 0) returns 0
+  A   32.81 time() returns 3280
+Time=  33.30640 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7754 4594   0  360 100  100   0   0                  
+  A   33.31 scan(  0, 0) returns 0
+  B   33.31 loc_x() returns 7754
+  B   33.81 loc_x() returns 7804
+  A   33.81 time() returns 3380
+  B   33.81 speed() returns 100
+  A   33.81 scan(  0, 0) returns 0
+  B   33.81 time() returns 3380
+Time=  34.30660 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7854 4594   0  360 100  100   0   0                  
+  B   34.31 scan(  0, 0) returns 0
+  A   34.31 time() returns 3430
+  A   34.81 scan(  0, 0) returns 0
+  B   34.81 loc_x() returns 7904
+Time=  35.30680 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7954 4594   0  360 100  100   0   0                  
+  B   35.31 loc_x() returns 7954
+  A   35.31 time() returns 3530
+  B   35.31 speed() returns 100
+  A   35.31 scan(  0, 0) returns 0
+  B   35.31 time() returns 3530
+  B   35.81 scan(  0, 0) returns 0
+  A   35.81 time() returns 3580
+Time=  36.30700 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8054 4594   0  360 100  100   0   0                  
+  A   36.31 scan(  0, 0) returns 0
+  B   36.31 loc_x() returns 8054
+  B   36.81 loc_x() returns 8104
+  A   36.81 time() returns 3680
+  B   36.81 speed() returns 100
+  A   36.81 scan(  0, 0) returns 0
+  B   36.81 time() returns 3680
+Time=  37.30720 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8154 4594   0  360 100  100   0   0                  
+  B   37.31 scan(  0, 0) returns 0
+  A   37.31 time() returns 3730
+  A   37.81 scan(  0, 0) returns 0
+  B   37.81 loc_x() returns 8204
+Time=  38.30740 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8254 4594   0  360 100  100   0   0                  
+  B   38.31 loc_x() returns 8254
+  A   38.31 time() returns 3830
+  B   38.41 speed() returns 100
+  A   38.41 scan(  0, 0) returns 0
+  B   38.41 time() returns 3840
+  B   38.91 scan(  0, 0) returns 0
+  A   38.91 time() returns 3890
+Time=  39.40760 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8364 4594   0  360 100  100   0   0                  
+  A   39.41 scan(  0, 0) returns 0
+  B   39.41 loc_x() returns 8364
+  B   39.91 loc_x() returns 8414
+  A   39.91 time() returns 3990
+  B   39.91 speed() returns 100
+  A   39.91 scan(  0, 0) returns 0
+  B   39.91 time() returns 3990
+Time=  40.40780 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8464 4594   0  360 100  100   0   0                  
+  B   40.41 scan(  0, 0) returns 0
+  A   40.41 time() returns 4040
+  A   40.91 scan(  0, 0) returns 0
+  B   40.91 loc_x() returns 8514
+Time=  41.40800 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8564 4594   0  360 100  100   0   0                  
+  B   41.41 loc_x() returns 8564
+  A   41.41 time() returns 4140
+  B   41.41 speed() returns 100
+  A   41.41 scan(  0, 0) returns 0
+  B   41.41 time() returns 4140
+  B   41.91 scan(  0, 0) returns 0
+  A   41.91 time() returns 4190
+Time=  42.40820 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8664 4593   0  360 100  100   0   0                  
+  A   42.41 scan(  0, 0) returns 0
+  B   42.41 loc_x() returns 8664
+  B   42.91 loc_x() returns 8714
+  A   42.91 time() returns 4290
+  B   42.91 speed() returns 100
+  A   42.91 scan(  0, 0) returns 0
+  B   42.91 time() returns 4290
+Time=  43.40840 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8764 4593   0  360 100  100   0   0                  
+  B   43.41 scan(  0, 0) returns 0
+  A   43.41 time() returns 4340
+  A   43.91 scan(  0, 0) returns 0
+  B   43.91 loc_x() returns 8814
+Time=  44.40860 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8864 4593   0  360 100  100   0   0                  
+  B   44.41 loc_x() returns 8864
+  A   44.41 time() returns 4440
+  B   44.41 speed() returns 100
+  A   44.41 scan(  0, 0) returns 0
+  B   44.41 time() returns 4440
+  B   44.91 scan(  0, 0) returns 0
+  A   44.91 time() returns 4490
+Time=  45.40880 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8964 4593   0  360 100  100   0   0                  
+  A   45.41 scan(  0, 0) returns 0
+  B   45.41 loc_x() returns 8964
+  B   45.91 loc_x() returns 9014
+  A   45.91 time() returns 4590
+  B   45.91 speed() returns 100
+  A   45.91 scan(  0, 0) returns 0
+  B   45.91 time() returns 4590
+Time=  46.40900 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9064 4593   0  360 100  100   0   0                  
+  B   46.41 scan(  0, 0) returns 0
+  A   46.41 time() returns 4640
+  A   46.91 scan(  0, 0) returns 0
+  B   46.91 loc_x() returns 9114
+Time=  47.40920 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9164 4593   0  360 100  100   0   0                  
+  B   47.41 loc_x() returns 9164
+  A   47.41 time() returns 4740
+  B   47.41 speed() returns 100
+  A   47.41 scan(  0, 0) returns 0
+  B   47.41 time() returns 4740
+  B   47.91 scan(  0, 0) returns 0
+  A   47.91 time() returns 4790
+Time=  48.40940 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9264 4593   0  360 100  100   0   0                  
+  A   48.41 scan(  0, 0) returns 0
+  B   48.41 loc_x() returns 9264
+  B   48.91 loc_x() returns 9314
+  A   48.91 time() returns 4890
+  B   48.91 speed() returns 100
+  A   48.91 scan(  0, 0) returns 0
+  B   48.91 time() returns 4890
+Time=  49.40960 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9365 4593   0  360 100  100   0   0                  
+  B   49.41 scan(  0, 0) returns 0
+  A   49.41 time() returns 4940
+  A   49.91 scan(  0, 0) returns 0
+  B   49.91 loc_x() returns 9415
+Time=  50.40980 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9465 4592   0  360 100  100   0   0                  
+  B   50.41 loc_x() returns 9465
+  A   50.41 time() returns 5040
+  B   50.41 speed() returns 100
+  A   50.41 scan(  0, 0) returns 0
+  B   50.41 time() returns 5040
+  B   50.91 scan(  0, 0) returns 0
+  A   50.91 time() returns 5090
+Time=  51.41000 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9565 4592   0  360 100  100   0   0                  
+  A   51.41 scan(  0, 0) returns 0
+  B   51.41 loc_x() returns 9565
+  B   51.91 speed() returns 100
+  A   51.91 time() returns 5191
+  B   51.91 drive(180,100) returns 1
+  A   51.91 scan(  0, 0) returns 0
+Time=  52.41020 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9665 4592 180  360 100   90   0   0                  
+  B   52.41 time() returns 5241
+  A   52.41 time() returns 5241
+  B   52.41 scan(  0, 0) returns 0
+  A   52.41 scan(  0, 0) returns 0
+  B   52.91 loc_x() returns 9710
+  A   52.91 time() returns 5291
+  B   52.91 speed() returns 80
+  A   52.91 scan(  0, 0) returns 0
+  B   52.91 loc_x() returns 9710
+Time=  53.41040 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9750 4592 180  360 100   70   0   0                  
+  B   53.41 speed() returns 70
+  A   53.41 time() returns 5341
+  B   53.41 time() returns 5341
+  A   53.41 scan(  0, 0) returns 0
+  B   53.41 scan(  0, 0) returns 0
+  A   53.91 time() returns 5391
+  B   53.91 loc_x() returns 9785
+  A   53.91 scan(  0, 0) returns 0
+  B   53.91 speed() returns 60
+Time=  54.41060 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9815 4592 180  352 100   50   0   0                  
+  B   54.41 loc_x() returns 9815
+  A   54.41 time() returns 5441
+  B   54.41 speed() returns 50
+  A   54.41 scan(  0, 0) returns 0
+  B   54.41 time() returns 5441
+  B   54.91 scan(  0, 0) returns 0
+  A   54.91 time() returns 5491
+Time=  55.41080 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9864 4582 180  337 100   50   0   0                  
+  A   55.41 scan(  0, 0) returns 0
+  B   55.41 loc_x() returns 9864
+  B   55.91 speed() returns 50
+  A   55.91 time() returns 5591
+  B   55.91 loc_x() returns 9887
+  A   55.91 scan(  0, 0) returns 0
+  B   55.91 speed() returns 50
+Time=  56.41100 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9908 4560 180  322 100   50   0   0                  
+  B   56.41 time() returns 5641
+  A   56.41 time() returns 5641
+  B   56.41 scan(  0, 0) returns 0
+  A   56.41 scan(  0, 0) returns 0
+  B   56.91 loc_x() returns 9928
+  A   56.91 time() returns 5691
+  B   56.91 speed() returns 50
+  A   56.91 scan(  0, 0) returns 0
+  B   56.91 loc_x() returns 9928
+Time=  57.41120 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9946 4527 180  307 100   50   0   0                  
+  B   57.41 speed() returns 50
+  A   57.41 time() returns 5741
+  B   57.41 time() returns 5741
+  A   57.41 scan(  0, 0) returns 0
+  B   57.41 scan(  0, 0) returns 0
+  A   57.91 time() returns 5791
+  B   57.91 loc_x() returns 9961
+  A   57.91 scan(  0, 0) returns 0
+  B   57.91 speed() returns 50
+Time=  58.41140 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9973 4486 180  292 100   50   0   0                  
+  B   58.41 loc_x() returns 9973
+  A   58.41 time() returns 5841
+  B   58.51 speed() returns 50
+  A   58.51 scan(  0, 0) returns 0
+  B   58.51 time() returns 5851
+Time=  59.01150 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9984 4458 180  283 100   50   0   0                  
+  B   59.01 scan(  0, 0) returns 0
+  A   59.01 time() returns 5901
+  A   59.51 scan(  0, 0) returns 0
+  B   59.51 loc_x() returns 9990
+Time=  60.01170 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9993 4409 180  268 100   50   0   0                  
+  B   60.01 speed() returns 50
+  A   60.01 time() returns 6001
+  B   60.01 loc_x() returns 9993
+  A   60.01 scan(  0, 0) returns 0
+  B   60.01 speed() returns 50
+  B   60.51 time() returns 6051
+  A   60.51 time() returns 6051
+  B   60.51 scan(  0, 0) returns 0
+  A   60.51 scan(  0, 0) returns 0
+Time=  61.01190 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9988 4359 180  253 100   50   0   0                  
+  B   61.01 loc_x() returns 9988
+  A   61.01 time() returns 6101
+  B   61.11 speed() returns 50
+  A   61.11 scan(  0, 0) returns 0
+  B   61.11 loc_x() returns 9987
+  B   61.61 speed() returns 50
+  A   61.61 time() returns 6161
+  B   61.61 time() returns 6161
+  A   61.61 scan(  0, 0) returns 0
+  B   61.61 scan(  0, 0) returns 0
+Time=  62.11210 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9968 4308 180  237 100   50   0   0                  
+  A   62.11 time() returns 6211
+  B   62.11 loc_x() returns 9968
+  A   62.11 scan(  0, 0) returns 0
+  B   62.11 speed() returns 50
+  B   62.61 loc_x() returns 9954
+  A   62.61 time() returns 6261
+  B   62.61 speed() returns 50
+  A   62.61 scan(  0, 0) returns 0
+  B   62.61 time() returns 6261
+Time=  63.11230 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9938 4268 180  222 100   50   0   0                  
+  B   63.11 scan(  0, 0) returns 0
+  A   63.11 time() returns 6311
+  A   63.61 scan(  0, 0) returns 7739
+  B   63.61 loc_x() returns 9919
+Time=  64.11250 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9899 4237 180  207 100   50   0   0                  
+  B   64.11 speed() returns 50
+  A   64.11 time() returns 6411
+  B   64.11 loc_x() returns 9899
+  A   64.11 scan(  0, 0) returns 7718
+  B   64.11 speed() returns 50
+  B   64.61 time() returns 6461
+  A   64.61 time() returns 6461
+  B   64.61 scan(  0, 0) returns 0
+  A   64.61 scan(  0, 0) returns 7696
+Time=  65.11270 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9853 4217 180  192 100   50   0   0                  
+  B   65.11 loc_x() returns 9853
+  A   65.11 time() returns 6511
+  B   65.11 speed() returns 50
+  A   65.11 scan(  0, 0) returns 7672
+  B   65.11 loc_x() returns 9853
+  B   65.61 speed() returns 50
+  A   65.61 time() returns 6561
+  B   65.61 time() returns 6561
+  A   65.61 scan(  0, 0) returns 7648
+  B   65.61 scan(  0, 0) returns 0
+Time=  66.11290 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9804 4210 180  180 100   50   0   0                  
+  A   66.11 time() returns 6611
+  B   66.21 loc_x() returns 9799
+  A   66.21 scan(  0, 0) returns 7618
+  B   66.21 speed() returns 52
+  B   66.71 loc_x() returns 9773
+  A   66.71 time() returns 6671
+  B   66.71 speed() returns 62
+  A   66.71 scan(  0, 0) returns 7592
+  B   66.71 time() returns 6671
+Time=  67.21310 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9742 4210 180  180 100   72   0   0                  
+  B   67.21 scan(  0, 0) returns 0
+  A   67.21 time() returns 6721
+  A   67.71 scan(  0, 0) returns 7525
+  B   67.71 loc_x() returns 9706
+Time=  68.21330 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9665 4209 180  180 100   92   0   0                  
+  B   68.21 speed() returns 92
+  A   68.21 time() returns 6821
+  B   68.21 loc_x() returns 9665
+  A   68.21 scan(  0, 0) returns 7484
+  B   68.21 speed() returns 92
+  B   68.71 time() returns 6871
+  A   68.71 time() returns 6871
+  B   68.71 scan(  0, 0) returns 0
+  A   68.71 scan(  0, 0) returns 7438
+Time=  69.21350 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9568 4209 180  180 100  100   0   0                  
+  B   69.21 loc_x() returns 9568
+  A   69.21 time() returns 6921
+  B   69.31 speed() returns 100
+  A   69.31 scan(  0, 0) returns 7378
+  B   69.31 drive(180,100) returns 1
+  A   69.81 time() returns 6981
+  B   69.91 time() returns 6991
+  A   69.91 scan(  0, 0) returns 7318
+  B   69.91 scan(  0, 0) returns 0
+Time=  70.41370 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9448 4208 180  180 100  100   0   0                  
+  A   70.41 time() returns 7041
+  B   70.41 loc_x() returns 9448
+  A   70.41 scan(  0, 0) returns 7268
+  B   70.51 loc_x() returns 9438
+  B   70.91 speed() returns 100
+  A   70.91 time() returns 7091
+  B   70.91 time() returns 7091
+  A   70.91 scan(  0, 0) returns 7218
+  B   70.91 scan(  0, 0) returns 0
+Time=  71.41390 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9348 4207 180  180 100  100   0   0                  
+  A   71.41 time() returns 7141
+  B   71.41 loc_x() returns 9348
+  A   71.41 scan(  0, 0) returns 7168
+  B   71.41 loc_x() returns 9348
+  B   71.91 speed() returns 100
+  A   71.91 time() returns 7191
+  B   71.91 time() returns 7191
+  A   71.91 scan(  0, 0) returns 7118
+  B   71.91 scan(  0, 0) returns 0
+Time=  72.41410 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9248 4206 180  180 100  100   0   0                  
+  A   72.41 time() returns 7241
+  B   72.51 loc_x() returns 9238
+  A   72.51 scan(  0, 0) returns 7058
+  B   72.51 loc_x() returns 9238
+Time=  73.01420 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9188 4206 180  180 100  100   0   0                  
+  B   73.01 speed() returns 100
+  A   73.01 time() returns 7301
+  B   73.11 time() returns 7311
+  A   73.11 scan(  0, 0) returns 6998
+  B   73.11 scan(  0, 0) returns 0
+  A   73.61 time() returns 7361
+  B   73.71 loc_x() returns 9118
+  A   73.71 scan(  0, 0) returns 6938
+  B   73.71 loc_x() returns 9118
+Time=  74.21440 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9068 4205 180  180 100  100   0   0                  
+  B   74.21 speed() returns 100
+  A   74.21 time() returns 7421
+  B   74.21 time() returns 7421
+  A   74.21 scan(  0, 0) returns 6888
+  B   74.21 scan(  0, 0) returns 0
+  A   74.71 time() returns 7471
+  B   74.81 loc_x() returns 9008
+  A   74.81 scan(  0, 0) returns 6828
+  B   74.81 loc_x() returns 9008
+Time=  75.31460 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8958 4204 180  180 100  100   0   0                  
+  B   75.31 speed() returns 100
+  A   75.31 time() returns 7531
+  B   75.41 time() returns 7541
+  A   75.41 scan(  0, 0) returns 6768
+  B   75.41 scan(  0, 0) returns 0
+  A   75.91 time() returns 7591
+Time=  76.01470 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8888 4204 180  180 100  100   0   0                  
+  B   76.01 loc_x() returns 8888
+  A   76.01 scan(  0, 0) returns 6708
+  B   76.01 loc_x() returns 8888
+  B   76.51 speed() returns 100
+  A   76.51 time() returns 7651
+  B   76.51 time() returns 7651
+  A   76.51 scan(  0, 0) returns 6658
+  B   76.51 scan(  0, 0) returns 0
+Time=  77.01490 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8788 4203 180  180 100  100   0   0                  
+  A   77.01 time() returns 7701
+  B   77.01 loc_x() returns 8788
+  A   77.01 scan(  0, 0) returns 6608
+  B   77.01 loc_x() returns 8788
+  B   77.52 speed() returns 100
+  A   77.52 time() returns 7751
+  B   77.52 time() returns 7751
+  A   77.52 scan(  0, 0) returns 6558
+  B   77.52 scan(  0, 0) returns 0
+Time=  78.01510 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8688 4202 180  180 100  100   0   0                  
+  A   78.02 time() returns 7801
+  B   78.02 loc_x() returns 8688
+  A   78.02 scan(  0, 0) returns 6508
+  B   78.02 loc_x() returns 8688
+  B   78.52 speed() returns 100
+  A   78.52 time() returns 7851
+  B   78.52 time() returns 7851
+  A   78.52 scan(  0, 0) returns 6458
+  B   78.52 scan(  0, 0) returns 0
+Time=  79.01530 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8588 4202 180  180 100  100   0   0                  
+  A   79.02 time() returns 7901
+  B   79.12 loc_x() returns 8578
+  A   79.12 scan(  0, 0) returns 6398
+  B   79.12 loc_x() returns 8578
+  B   79.62 speed() returns 100
+  A   79.62 time() returns 7961
+  B   79.62 time() returns 7961
+  A   79.62 scan(  0, 0) returns 6348
+  B   79.62 scan(  0, 0) returns 0
+Time=  80.11550 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8478 4201 180  180 100  100   0   0                  
+  A   80.12 time() returns 8011
+  B   80.22 loc_x() returns 8468
+  A   80.22 scan(  0, 0) returns 6288
+  B   80.22 loc_x() returns 8468
+  B   80.72 speed() returns 100
+  A   80.72 time() returns 8071
+  B   80.72 time() returns 8071
+  A   80.72 scan(  0, 0) returns 6238
+  B   80.72 scan(  0, 0) returns 0
+Time=  81.21570 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8368 4200 180  180 100  100   0   0                  
+  A   81.22 time() returns 8121
+  B   81.32 loc_x() returns 8358
+  A   81.32 scan(  0, 0) returns 6178
+  B   81.32 loc_x() returns 8358
+  B   81.82 speed() returns 100
+  A   81.82 time() returns 8181
+  B   81.82 time() returns 8181
+  A   81.82 scan(  0, 0) returns 6128
+  B   81.82 scan(  0, 0) returns 0
+Time=  82.31590 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8258 4199 180  180 100  100   0   0                  
+  A   82.42 time() returns 8241
+  B   82.42 loc_x() returns 8248
+  A   82.42 scan(  0, 0) returns 6068
+  B   82.42 loc_x() returns 8248
+  B   82.92 speed() returns 100
+  A   82.92 time() returns 8291
+  B   82.92 time() returns 8291
+  A   82.92 scan(  0, 0) returns 6018
+  B   82.92 scan(  0, 0) returns 0
+Time=  83.41610 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8148 4199 180  180 100  100   0   0                  
+  A   83.42 time() returns 8341
+  B   83.42 loc_x() returns 8148
+  A   83.42 scan(  0, 0) returns 5968
+  B   83.42 loc_x() returns 8148
+  B   83.92 speed() returns 100
+  A   83.92 time() returns 8391
+  B   83.92 time() returns 8391
+  A   83.92 scan(  0, 0) returns 5918
+  B   83.92 scan(  0, 0) returns 0
+Time=  84.41630 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8048 4198 180  180 100  100   0   0                  
+  A   84.42 time() returns 8441
+  B   84.52 loc_x() returns 8038
+  A   84.52 scan(  0, 0) returns 5858
+  B   84.52 loc_x() returns 8038
+Time=  85.01640 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7988 4198 180  180 100  100   0   0                  
+  B   85.02 speed() returns 100
+  A   85.02 time() returns 8501
+  B   85.12 time() returns 8511
+  A   85.12 scan(  0, 0) returns 5798
+  B   85.12 scan(  0, 0) returns 0
+  A   85.72 time() returns 8571
+  B   85.72 loc_x() returns 7918
+  A   85.72 scan(  0, 0) returns 5738
+  B   85.72 loc_x() returns 7918
+Time=  86.21660 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7868 4197 180  180 100  100   0   0                  
+  B   86.22 speed() returns 100
+  A   86.22 time() returns 8621
+  B   86.22 time() returns 8621
+  A   86.22 scan(  0, 0) returns 5688
+  B   86.22 scan(  0, 0) returns 0
+  A   86.72 time() returns 8671
+  B   86.72 loc_x() returns 7818
+  A   86.72 scan(  0, 0) returns 5638
+  B   86.72 loc_x() returns 7818
+Time=  87.21680 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7768 4196 180  180 100  100   0   0                  
+  B   87.22 speed() returns 100
+  A   87.22 time() returns 8721
+  B   87.22 time() returns 8721
+  A   87.22 scan(  0, 0) returns 5588
+  B   87.22 scan(  0, 0) returns 0
+  A   87.72 time() returns 8771
+  B   87.82 loc_x() returns 7708
+  A   87.82 scan(  0, 0) returns 5528
+  B   87.82 loc_x() returns 7708
+Time=  88.31700 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7658 4195 180  180 100  100   0   0                  
+  B   88.32 speed() returns 100
+  A   88.32 time() returns 8831
+  B   88.32 time() returns 8831
+  A   88.32 scan(  0, 0) returns 5478
+  B   88.32 scan(  0, 0) returns 0
+  A   88.82 time() returns 8881
+  B   88.92 loc_x() returns 7598
+  A   88.92 scan(  0, 0) returns 5418
+  B   88.92 loc_x() returns 7598
+Time=  89.41720 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7548 4194 180  180 100  100   0   0                  
+  B   89.42 speed() returns 100
+  A   89.42 time() returns 8941
+  B   89.42 time() returns 8941
+  A   89.42 scan(  0, 0) returns 5368
+  B   89.42 scan(  0, 0) returns 0
+  A   89.92 time() returns 8991
+  B   89.92 loc_x() returns 7498
+  A   89.92 scan(  0, 0) returns 5318
+  B   89.92 loc_x() returns 7498
+Time=  90.41740 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7448 4194 180  180 100  100   0   0                  
+  B   90.42 speed() returns 100
+  A   90.42 time() returns 9041
+  B   90.42 time() returns 9041
+  A   90.42 scan(  0, 0) returns 5268
+  B   90.42 scan(  0, 0) returns 0
+  A   90.92 time() returns 9091
+  B   90.92 loc_x() returns 7398
+  A   90.92 scan(  0, 0) returns 5218
+  B   90.92 loc_x() returns 7398
+Time=  91.41760 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7348 4193 180  180 100  100   0   0                  
+  B   91.42 speed() returns 100
+  A   91.42 time() returns 9141
+  B   91.52 time() returns 9151
+  A   91.52 scan(  0, 0) returns 5158
+  B   91.52 scan(  0, 0) returns 0
+Time=  92.01770 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7288 4193 180  180 100  100   0   0                  
+  A   92.02 time() returns 9201
+  B   92.02 loc_x() returns 7288
+  A   92.02 scan(  0, 0) returns 5108
+  B   92.02 loc_x() returns 7288
+  B   92.52 speed() returns 100
+  A   92.52 time() returns 9251
+  B   92.52 time() returns 9251
+  A   92.52 scan(  0, 0) returns 5058
+  B   92.52 scan(  0, 0) returns 0
+Time=  93.01790 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7188 4192 180  180 100  100   0   0                  
+  A   93.02 time() returns 9301
+  B   93.12 loc_x() returns 7178
+  A   93.12 scan(  0, 0) returns 4998
+  B   93.12 loc_x() returns 7178
+  B   93.62 speed() returns 100
+  A   93.62 time() returns 9361
+  B   93.62 time() returns 9361
+  A   93.62 scan(  0, 0) returns 4948
+  B   93.62 scan(  0, 0) returns 0
+Time=  94.11810 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7078 4191 180  180 100  100   0   0                  
+  A   94.12 time() returns 9411
+  B   94.22 loc_x() returns 7068
+  A   94.22 scan(  0, 0) returns 4888
+  B   94.22 loc_x() returns 7068
+  B   94.72 speed() returns 100
+  A   94.72 time() returns 9471
+  B   94.72 time() returns 9471
+  A   94.72 scan(  0, 0) returns 4838
+  B   94.72 scan(  0, 0) returns 0
+Time=  95.21830 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6968 4190 180  180 100  100   0   0                  
+  A   95.22 time() returns 9521
+  B   95.32 loc_x() returns 6958
+  A   95.32 scan(  0, 0) returns 4778
+  B   95.32 loc_x() returns 6958
+  B   95.82 speed() returns 100
+  A   95.82 time() returns 9581
+  B   95.82 time() returns 9581
+  A   95.82 scan(  0, 0) returns 4728
+  B   95.82 scan(  0, 0) returns 0
+Time=  96.31850 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6858 4190 180  180 100  100   0   0                  
+  A   96.32 time() returns 9631
+  B   96.42 loc_x() returns 6848
+  A   96.42 scan(  0, 0) returns 4668
+  B   96.42 loc_x() returns 6848
+  B   96.92 speed() returns 100
+  A   96.92 time() returns 9691
+  B   96.92 time() returns 9691
+  A   96.92 scan(  0, 0) returns 4618
+  B   96.92 scan(  0, 0) returns 0
+Time=  97.41870 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6748 4189 180  180 100  100   0   0                  
+  A   97.42 time() returns 9741
+  B   97.52 loc_x() returns 6738
+  A   97.52 scan(  0, 0) returns 4558
+  B   97.52 loc_x() returns 6738
+Time=  98.01880 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6688 4188 180  180 100  100   0   0                  
+  B   98.02 speed() returns 100
+  A   98.02 time() returns 9801
+  B   98.12 time() returns 9811
+  A   98.12 scan(  0, 0) returns 4498
+  B   98.12 scan(  0, 0) returns 0
+  A   98.62 time() returns 9861
+  B   98.62 loc_x() returns 6628
+  A   98.62 scan(  0, 0) returns 4448
+  B   98.62 loc_x() returns 6628
+Time=  99.11900 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6578 4188 180  180 100  100   0   0                  
+  B   99.12 speed() returns 100
+  A   99.12 time() returns 9911
+  B   99.22 time() returns 9921
+  A   99.22 scan(  0, 0) returns 4388
+  B   99.22 scan(  0, 0) returns 0
+  A   99.72 time() returns 9971
+  B   99.72 loc_x() returns 6518
+  A   99.72 scan(  0, 0) returns 4338
+  B   99.72 loc_x() returns 6518
+Time= 100.21920 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6468 4187 180  180 100  100   0   0                  
+  B  100.22 speed() returns 100
+  A  100.22 time() returns 10021
+  B  100.32 time() returns 10031
+  A  100.32 scan(  0, 0) returns 4278
+  B  100.32 scan(  0, 0) returns 0
+  A  100.82 time() returns 10081
+  B  100.92 loc_x() returns 6398
+  A  100.92 scan(  0, 0) returns 4217
+  B  100.92 loc_x() returns 6398
+Time= 101.41940 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6348 4186 180  180 100  100   0   0                  
+  B  101.42 speed() returns 100
+  A  101.42 time() returns 10141
+  B  101.42 time() returns 10141
+  A  101.42 scan(  0, 0) returns 4167
+  B  101.42 scan(  0, 0) returns 0
+  A  101.92 time() returns 10191
+Time= 102.01950 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6288 4186 180  180 100  100   0   0                  
+  B  102.02 loc_x() returns 6288
+  A  102.02 scan(  0, 0) returns 4107
+  B  102.02 loc_x() returns 6288
+  B  102.52 speed() returns 100
+  A  102.52 time() returns 10251
+  B  102.52 time() returns 10251
+  A  102.52 scan(  0, 0) returns 4057
+  B  102.52 scan(  0, 0) returns 0
+Time= 103.01970 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6188 4185 180  180 100  100   0   0                  
+  A  103.02 time() returns 10301
+  B  103.02 loc_x() returns 6188
+  A  103.02 scan(  0, 0) returns 4007
+  B  103.02 loc_x() returns 6188
+  B  103.52 speed() returns 100
+  A  103.52 time() returns 10351
+  B  103.52 time() returns 10351
+  A  103.52 scan(  0, 0) returns 3957
+  B  103.52 scan(  0, 0) returns 0
+Time= 104.01990 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6088 4184 180  180 100  100   0   0                  
+  A  104.12 time() returns 10411
+  B  104.12 loc_x() returns 6078
+  A  104.12 scan(  0, 0) returns 3897
+  B  104.12 loc_x() returns 6078
+  B  104.62 speed() returns 100
+  A  104.62 time() returns 10462
+  B  104.62 time() returns 10462
+  A  104.62 scan(  0, 0) returns 3847
+  B  104.62 scan(  0, 0) returns 0
+Time= 105.12010 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5978 4183 180  180 100  100   0   0                  
+  A  105.12 time() returns 10512
+  B  105.12 loc_x() returns 5978
+  A  105.12 scan(  0, 0) returns 3797
+  B  105.12 loc_x() returns 5978
+  B  105.62 speed() returns 100
+  A  105.62 time() returns 10562
+  B  105.62 time() returns 10562
+  A  105.62 scan(  0, 0) returns 3747
+  B  105.62 scan(  0, 0) returns 0
+Time= 106.12030 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5878 4183 180  180 100  100   0   0                  
+  A  106.12 time() returns 10612
+  B  106.12 loc_x() returns 5878
+  A  106.12 scan(  0, 0) returns 3697
+  B  106.12 loc_x() returns 5878
+  B  106.62 speed() returns 100
+  A  106.62 time() returns 10662
+  B  106.62 time() returns 10662
+  A  106.62 scan(  0, 0) returns 3647
+  B  106.62 scan(  0, 0) returns 0
+Time= 107.12050 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5778 4182 180  180 100  100   0   0                  
+  A  107.12 time() returns 10712
+  B  107.22 loc_x() returns 5768
+  A  107.22 scan(  0, 0) returns 3587
+  B  107.22 loc_x() returns 5768
+  B  107.72 speed() returns 100
+  A  107.72 time() returns 10772
+  B  107.72 time() returns 10772
+  A  107.72 scan(  0, 0) returns 3537
+  B  107.72 scan(  0, 0) returns 0
+Time= 108.22070 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5668 4181 180  180 100  100   0   0                  
+  A  108.22 time() returns 10822
+  B  108.22 loc_x() returns 5668
+  A  108.22 scan(  0, 0) returns 3487
+  B  108.22 loc_x() returns 5668
+  B  108.72 speed() returns 100
+  A  108.72 time() returns 10872
+  B  108.72 time() returns 10872
+  A  108.72 scan(  0, 0) returns 3437
+  B  108.72 scan(  0, 0) returns 0
+Time= 109.22090 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5568 4181 180  180 100  100   0   0                  
+  A  109.22 time() returns 10922
+  B  109.32 loc_x() returns 5558
+  A  109.32 scan(  0, 0) returns 3377
+  B  109.32 loc_x() returns 5558
+  B  109.82 speed() returns 100
+  A  109.82 time() returns 10982
+  B  109.82 time() returns 10982
+  A  109.82 scan(  0, 0) returns 3327
+  B  109.82 scan(  0, 0) returns 0
+Time= 110.32110 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5458 4180 180  180 100  100   0   0                  
+  A  110.32 time() returns 11032
+  B  110.32 loc_x() returns 5458
+  A  110.32 scan(  0, 0) returns 3277
+  B  110.32 loc_x() returns 5458
+  B  110.82 speed() returns 100
+  A  110.82 time() returns 11082
+  B  110.82 time() returns 11082
+  A  110.82 scan(  0, 0) returns 3227
+  B  110.82 scan(  0, 0) returns 0
+Time= 111.32130 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5358 4179 180  180 100  100   0   0                  
+  A  111.32 time() returns 11132
+  B  111.42 loc_x() returns 5348
+  A  111.42 scan(  0, 0) returns 3167
+  B  111.42 loc_x() returns 5348
+  B  111.92 speed() returns 100
+  A  111.92 time() returns 11192
+  B  111.92 time() returns 11192
+  A  111.92 scan(  0, 0) returns 3117
+  B  111.92 scan(  0, 0) returns 0
+Time= 112.42150 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5248 4178 180  180 100  100   0   0                  
+  A  112.42 time() returns 11242
+  B  112.52 loc_x() returns 5238
+  A  112.52 scan(  0, 0) returns 3057
+  B  112.52 loc_x() returns 5238
+Time= 113.02160 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5188 4178 180  180 100  100   0   0                  
+  B  113.02 speed() returns 100
+  A  113.02 time() returns 11302
+  B  113.02 time() returns 11302
+  A  113.02 scan(  0, 0) returns 3007
+  B  113.02 scan(  0, 0) returns 0
+  A  113.52 time() returns 11352
+  B  113.62 loc_x() returns 5128
+  A  113.62 scan(  0, 0) returns 2947
+  B  113.62 loc_x() returns 5128
+Time= 114.12180 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5078 4177 180  180 100  100   0   0                  
+  B  114.12 speed() returns 100
+  A  114.12 time() returns 11412
+  B  114.22 time() returns 11422
+  A  114.22 scan(  0, 0) returns 2887
+  B  114.22 scan(  0, 0) returns 0
+  A  114.72 time() returns 11472
+  B  114.72 loc_x() returns 5018
+  A  114.72 scan(  0, 0) returns 2837
+  B  114.72 loc_x() returns 5018
+Time= 115.22200 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4968 4176 180  180 100  100   0   0                  
+  B  115.22 speed() returns 100
+  A  115.22 time() returns 11522
+  B  115.22 time() returns 11522
+  A  115.22 scan(  0, 0) returns 2787
+  B  115.22 scan(  0, 0) returns 0
+  A  115.72 time() returns 11572
+  B  115.82 loc_x() returns 4908
+  A  115.82 scan(  0, 0) returns 2727
+  B  115.82 loc_x() returns 4908
+Time= 116.32220 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4858 4176 180  180 100  100   0   0                  
+  B  116.32 speed() returns 100
+  A  116.32 time() returns 11632
+  B  116.42 time() returns 11642
+  A  116.42 scan(  0, 0) returns 2667
+  B  116.42 scan(  0, 0) returns 0
+  A  116.92 time() returns 11692
+  B  116.92 loc_x() returns 4798
+  A  116.92 scan(  0, 0) returns 2617
+  B  116.92 loc_x() returns 4798
+Time= 117.42240 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4748 4175 180  180 100  100   0   0                  
+  B  117.42 speed() returns 100
+  A  117.42 time() returns 11742
+  B  117.52 time() returns 11752
+  A  117.52 scan(  0, 0) returns 2557
+  B  117.52 scan(  0, 0) returns 0
+Time= 118.02250 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4688 4174 180  180 100  100   0   0                  
+  A  118.02 time() returns 11802
+  B  118.02 loc_x() returns 4688
+  A  118.02 scan(  0, 0) returns 2507
+  B  118.02 loc_x() returns 4688
+  B  118.52 speed() returns 100
+  A  118.52 time() returns 11852
+  B  118.52 time() returns 11852
+  A  118.52 scan(  0, 0) returns 2457
+  B  118.52 scan(  0, 0) returns 0
+Time= 119.02270 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4588 4174 180  180 100  100   0   0                  
+  A  119.02 time() returns 11902
+  B  119.02 loc_x() returns 4588
+  A  119.02 scan(  0, 0) returns 2407
+  B  119.02 loc_x() returns 4588
+  B  119.52 speed() returns 100
+  A  119.52 time() returns 11952
+  B  119.52 time() returns 11952
+  A  119.52 scan(  0, 0) returns 2357
+  B  119.52 scan(  0, 0) returns 0
+Time= 120.02290 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4488 4173 180  180 100  100   0   0                  
+  A  120.02 time() returns 12002
+  B  120.12 loc_x() returns 4478
+  A  120.12 scan(  0, 0) returns 2297
+  B  120.12 loc_x() returns 4478
+  B  120.62 speed() returns 100
+  A  120.62 time() returns 12062
+  B  120.62 time() returns 12062
+  A  120.62 scan(  0, 0) returns 2247
+  B  120.62 scan(  0, 0) returns 0
+Time= 121.12310 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4378 4172 180  180 100  100   0   0                  
+  A  121.22 time() returns 12122
+  B  121.22 loc_x() returns 4368
+  A  121.22 scan(  0, 0) returns 2187
+  B  121.22 loc_x() returns 4368
+  B  121.72 speed() returns 100
+  A  121.72 time() returns 12172
+  B  121.72 time() returns 12172
+  A  121.72 scan(  0, 0) returns 2137
+  B  121.72 scan(  0, 0) returns 0
+Time= 122.22330 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4268 4172 180  180 100  100   0   0                  
+  A  122.22 time() returns 12222
+  B  122.22 loc_x() returns 4268
+  A  122.22 scan(  0, 0) returns 2087
+  B  122.22 loc_x() returns 4268
+  B  122.72 speed() returns 100
+  A  122.72 time() returns 12272
+  B  122.72 time() returns 12272
+  A  122.72 scan(  0, 0) returns 2037
+  B  122.72 scan(  0, 0) returns 0
+Time= 123.22350 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4168 4171 180  180 100  100   0   0                  
+  A  123.22 time() returns 12322
+  B  123.32 loc_x() returns 4158
+  A  123.32 scan(  0, 0) returns 1977
+  B  123.32 loc_x() returns 4158
+  B  123.82 speed() returns 100
+  A  123.82 time() returns 12382
+  B  123.82 time() returns 12382
+  A  123.82 scan(  0, 0) returns 1927
+  B  123.82 scan(  0, 0) returns 0
+Time= 124.32370 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4058 4170 180  180 100  100   0   0                  
+  A  124.32 time() returns 12432
+  B  124.82 loc_x() returns 4008
+  A  124.82 scan(  0, 0) returns 1827
+  B  124.82 loc_x() returns 4008
+Time= 125.32380 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3958 4169 180  180 100  100   0   0                  
+  B  125.32 speed() returns 100
+  A  125.32 time() returns 12532
+  B  125.42 time() returns 12542
+  A  125.42 scan(  0, 0) returns 1767
+  B  125.42 scan(  0, 0) returns 0
+  A  125.92 time() returns 12592
+  B  125.92 loc_x() returns 3898
+  A  125.92 scan(  0, 0) returns 1717
+  B  125.92 loc_x() returns 3898
+Time= 126.42400 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3848 4169 180  180 100  100   0   0                  
+  B  126.42 speed() returns 100
+  A  126.42 time() returns 12642
+  B  126.42 time() returns 12642
+  A  126.42 scan(  0, 0) returns 1667
+  B  126.42 scan(  0, 0) returns 0
+  A  126.92 time() returns 12692
+  B  126.92 loc_x() returns 3798
+  A  126.92 scan(  0, 0) returns 1617
+  B  126.92 loc_x() returns 3798
+Time= 127.42420 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3748 4168 180  180 100  100   0   0                  
+  B  127.42 speed() returns 100
+  A  127.42 time() returns 12742
+  B  127.42 time() returns 12742
+  A  127.42 scan(  0, 0) returns 1567
+  B  127.42 scan(  0, 0) returns 0
+  A  127.92 time() returns 12792
+  B  127.92 loc_x() returns 3698
+  A  127.92 scan(  0, 0) returns 1517
+  B  127.92 loc_x() returns 3698
+Time= 128.42440 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3648 4167 180  180 100  100   0   0                  
+  B  128.42 speed() returns 100
+  A  128.42 time() returns 12842
+  B  128.42 time() returns 12842
+  A  128.42 scan(  0, 0) returns 1467
+  B  128.42 scan(  0, 0) returns 0
+  A  128.92 time() returns 12892
+Time= 129.02450 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3588 4167 180  180 100  100   0   0                  
+  B  129.02 loc_x() returns 3588
+  A  129.02 scan(  0, 0) returns 1407
+  B  129.02 loc_x() returns 3588
+  B  129.52 speed() returns 100
+  A  129.52 time() returns 12952
+  B  129.52 time() returns 12952
+  A  129.52 scan(  0, 0) returns 1357
+  B  129.52 scan(  0, 0) returns 0
+Time= 130.02470 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3488 4166 180  180 100  100   0   0                  
+  A  130.02 time() returns 13002
+  B  130.02 loc_x() returns 3488
+  A  130.02 scan(  0, 0) returns 1307
+  B  130.02 loc_x() returns 3488
+  B  130.52 speed() returns 100
+  A  130.52 time() returns 13052
+  B  130.52 time() returns 13052
+  A  130.52 scan(  0, 0) returns 1257
+  B  130.52 scan(  0, 0) returns 0
+Time= 131.02490 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3388 4165 180  180 100  100   0   0                  
+  A  131.02 time() returns 13102
+  B  131.12 loc_x() returns 3378
+  A  131.12 scan(  0, 0) returns 1197
+  B  131.12 loc_x() returns 3378
+  B  131.63 speed() returns 100
+  A  131.63 time() returns 13162
+  B  131.63 time() returns 13162
+  A  131.63 scan(  0, 0) returns 1147
+  B  131.63 scan(  0, 0) returns 0
+Time= 132.12510 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3277 4165 180  180 100  100   0   0                  
+  A  132.13 time() returns 13212
+  B  132.23 loc_x() returns 3267
+  A  132.23 scan(  0, 0) returns 1087
+  B  132.23 loc_x() returns 3267
+  B  132.73 speed() returns 100
+  A  132.73 time() returns 13272
+  B  132.73 time() returns 13272
+  A  132.73 scan(  0, 0) returns 1037
+  B  132.73 scan(  0, 0) returns 0
+Time= 133.22530 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3167 4164 180  180 100  100   0   0                  
+  A  133.23 time() returns 13322
+  B  133.33 loc_x() returns 3157
+  A  133.33 scan(  0, 0) returns 0
+  B  133.33 loc_x() returns 3157
+  B  133.83 speed() returns 100
+  A  133.83 time() returns 13382
+  B  133.83 time() returns 13382
+  A  133.83 scan(  0, 0) returns 0
+  B  133.83 scan(  0, 0) returns 0
+Time= 134.32550 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3057 4163 180  180 100  100   0   0                  
+  A  134.33 time() returns 13432
+  B  134.33 loc_x() returns 3057
+  A  134.33 scan(  0, 0) returns 0
+  B  134.33 loc_x() returns 3057
+  B  134.83 speed() returns 100
+  A  134.83 time() returns 13482
+  B  134.83 time() returns 13482
+  A  134.83 scan(  0, 0) returns 0
+  B  134.83 scan(  0, 0) returns 0
+Time= 135.32570 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2957 4162 180  180 100  100   0   0                  
+  A  135.33 time() returns 13532
+  B  135.43 loc_x() returns 2947
+  A  135.43 scan(  0, 0) returns 0
+  B  135.43 loc_x() returns 2947
+  B  135.93 speed() returns 100
+  A  135.93 time() returns 13592
+  B  135.93 time() returns 13592
+  A  135.93 scan(  0, 0) returns 0
+  B  135.93 scan(  0, 0) returns 0
+Time= 136.42590 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2847 4162 180  180 100  100   0   0                  
+  A  136.43 time() returns 13642
+  B  136.53 loc_x() returns 2837
+  A  136.53 scan(  0, 0) returns 0
+  B  136.53 loc_x() returns 2837
+Time= 137.02600 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2787 4161 180  180 100  100   0   0                  
+  B  137.03 speed() returns 100
+  A  137.03 time() returns 13702
+  B  137.03 time() returns 13702
+  A  137.03 scan(  0, 0) returns 0
+  B  137.03 scan(  0, 0) returns 0
+  A  137.53 time() returns 13752
+  B  137.63 loc_x() returns 2727
+  A  137.63 scan(  0, 0) returns 0
+  B  137.63 loc_x() returns 2727
+Time= 138.12620 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2677 4160 180  180 100  100   0   0                  
+  B  138.13 speed() returns 100
+  A  138.13 time() returns 13812
+  B  138.13 time() returns 13812
+  A  138.13 scan(  0, 0) returns 0
+  B  138.13 scan(  0, 0) returns 0
+  A  138.73 time() returns 13872
+  B  138.73 loc_x() returns 2617
+  A  138.73 scan(  0, 0) returns 0
+  B  138.73 loc_x() returns 2617
+Time= 139.22640 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2567 4160 180  180 100  100   0   0                  
+  B  139.23 speed() returns 100
+  A  139.23 time() returns 13922
+  B  139.23 time() returns 13922
+  A  139.23 scan(  0, 0) returns 0
+  B  139.23 scan(  0, 0) returns 0
+  A  139.73 time() returns 13972
+  B  139.73 loc_x() returns 2517
+  A  139.73 scan(  0, 0) returns 0
+  B  139.73 loc_x() returns 2517
+Time= 140.22660 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2467 4159 180  180 100  100   0   0                  
+  B  140.23 speed() returns 100
+  A  140.23 time() returns 14022
+  B  140.23 time() returns 14022
+  A  140.23 scan(  0, 0) returns 0
+  B  140.23 scan(  0, 0) returns 0
+  A  140.73 time() returns 14072
+  B  140.83 loc_x() returns 2407
+  A  140.83 scan(  0, 0) returns 0
+  B  140.83 loc_x() returns 2407
+Time= 141.32680 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2357 4158 180  180 100  100   0   0                  
+  B  141.33 speed() returns 100
+  A  141.33 time() returns 14132
+  B  141.43 time() returns 14142
+  A  141.43 scan(  0, 0) returns 0
+  B  141.43 scan(  0, 0) returns 0
+  A  141.93 time() returns 14192
+Time= 142.02690 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2287 4158 180  180 100  100   0   0                  
+  B  142.03 loc_x() returns 2287
+  A  142.03 scan(  0, 0) returns 0
+  B  142.03 loc_x() returns 2287
+  B  142.53 speed() returns 100
+  A  142.53 time() returns 14252
+  B  142.53 time() returns 14252
+  A  142.63 scan(  0, 0) returns 0
+  B  142.63 scan(  0, 0) returns 0
+Time= 143.12710 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2177 4157 180  180 100  100   0   0                  
+  A  143.13 time() returns 14312
+  B  143.13 loc_x() returns 2177
+  A  143.13 scan(  0, 0) returns 0
+  B  143.13 loc_x() returns 2177
+  B  143.63 speed() returns 100
+  A  143.63 time() returns 14362
+  B  143.63 time() returns 14362
+  A  143.63 scan(  0, 0) returns 0
+  B  143.63 scan(  0, 0) returns 0
+Time= 144.12730 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2077 4156 180  180 100  100   0   0                  
+  A  144.13 time() returns 14412
+  B  144.13 loc_x() returns 2077
+  A  144.13 scan(  0, 0) returns 0
+  B  144.13 loc_x() returns 2077
+  B  144.63 speed() returns 100
+  A  144.63 time() returns 14462
+  B  144.63 time() returns 14462
+  A  144.63 scan(  0, 0) returns 0
+  B  144.63 scan(  0, 0) returns 0
+Time= 145.12750 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1977 4155 180  180 100  100   0   0                  
+  A  145.13 time() returns 14512
+  B  145.23 loc_x() returns 1967
+  A  145.23 scan(  0, 0) returns 0
+  B  145.23 loc_x() returns 1967
+  B  145.73 speed() returns 100
+  A  145.73 time() returns 14572
+  B  145.73 time() returns 14572
+  A  145.73 scan(  0, 0) returns 0
+  B  145.73 scan(  0, 0) returns 0
+Time= 146.22770 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1867 4155 180  180 100  100   0   0                  
+  A  146.23 time() returns 14622
+  B  146.23 loc_x() returns 1867
+  A  146.23 scan(  0, 0) returns 0
+  B  146.23 loc_x() returns 1867
+  B  146.73 speed() returns 100
+  A  146.73 time() returns 14672
+  B  146.73 time() returns 14672
+  A  146.73 scan(  0, 0) returns 0
+  B  146.73 scan(  0, 0) returns 0
+Time= 147.22790 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1767 4154 180  180 100  100   0   0                  
+  A  147.33 time() returns 14732
+  B  147.33 loc_x() returns 1757
+  A  147.33 scan(  0, 0) returns 0
+  B  147.33 loc_x() returns 1757
+  B  147.83 speed() returns 100
+  A  147.83 time() returns 14782
+  B  147.83 time() returns 14782
+  A  147.83 scan(  0, 0) returns 0
+  B  147.83 scan(  0, 0) returns 0
+Time= 148.32810 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1657 4153 180  180 100  100   0   0                  
+  A  148.33 time() returns 14832
+  B  148.33 loc_x() returns 1657
+  A  148.33 scan(  0, 0) returns 0
+  B  148.33 loc_x() returns 1657
+  B  148.83 speed() returns 100
+  A  148.83 time() returns 14882
+  B  148.83 time() returns 14882
+  A  148.83 scan(  0, 0) returns 0
+  B  148.83 scan(  0, 0) returns 0
+Time= 149.32830 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1557 4153 180  180 100  100   0   0                  
+  A  149.33 time() returns 14932
+  B  149.43 loc_x() returns 1547
+  A  149.43 scan(  0, 0) returns 0
+  B  149.43 loc_x() returns 1547
+  B  149.93 speed() returns 100
+  A  149.93 time() returns 14992
+  B  149.93 time() returns 14992
+  A  149.93 scan(  0, 0) returns 0
+  B  149.93 scan(  0, 0) returns 0
+Time= 150.42850 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1447 4152 180  180 100  100   0   0                  
+  A  150.43 time() returns 15042
+  B  150.43 loc_x() returns 1447
+  A  150.43 scan(  0, 0) returns 0
+  B  150.43 loc_x() returns 1447
+  B  150.93 speed() returns 100
+  A  150.93 time() returns 15092
+  B  150.93 time() returns 15092
+  A  150.93 scan(  0, 0) returns 0
+  B  150.93 scan(  0, 0) returns 0
+Time= 151.42870 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1347 4151 180  180 100  100   0   0                  
+  A  151.43 time() returns 15142
+  B  151.43 loc_x() returns 1347
+  A  151.43 scan(  0, 0) returns 0
+  B  151.43 loc_x() returns 1347
+  B  151.93 speed() returns 100
+  A  151.93 time() returns 15192
+  B  151.93 time() returns 15192
+  A  151.93 scan(  0, 0) returns 0
+  B  151.93 scan(  0, 0) returns 0
+Time= 152.42890 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1247 4150 180  180 100  100   0   0                  
+  A  152.43 time() returns 15242
+  B  152.53 loc_x() returns 1237
+  A  152.53 scan(  0, 0) returns 0
+  B  152.53 loc_x() returns 1237
+Time= 153.02900 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1187 4150 180  180 100  100   0   0                  
+  B  153.03 speed() returns 100
+  A  153.03 time() returns 15302
+  B  153.13 time() returns 15312
+  A  153.13 scan(  0, 0) returns 0
+  B  153.13 scan(  0, 0) returns 0
+  A  153.63 time() returns 15362
+  B  153.63 loc_x() returns 1127
+  A  153.63 scan(  0, 0) returns 0
+  B  153.63 loc_x() returns 1127
+Time= 154.12920 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1077 4149 180  180 100  100   0   0                  
+  B  154.13 speed() returns 100
+  A  154.13 time() returns 15412
+  B  154.13 time() returns 15412
+  A  154.13 scan(  0, 0) returns 0
+  B  154.13 scan(  0, 0) returns 0
+  A  154.63 time() returns 15462
+  B  154.73 loc_x() returns 1017
+  A  154.73 scan(  0, 0) returns 0
+  B  154.73 loc_x() returns 1017
+Time= 155.22940 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       967 4148 180  180 100  100   0   0                  
+  B  155.23 speed() returns 100
+  A  155.23 time() returns 15522
+  B  155.23 time() returns 15522
+  A  155.23 scan(  0, 0) returns 0
+  B  155.23 scan(  0, 0) returns 0
+  A  155.73 time() returns 15572
+  B  155.73 loc_x() returns 917
+  A  155.73 scan(  0, 0) returns 0
+  B  155.73 loc_x() returns 917
+Time= 156.22960 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       867 4148 180  180 100  100   0   0                  
+  B  156.23 speed() returns 100
+  A  156.23 time() returns 15622
+  B  156.33 time() returns 15632
+  A  156.33 scan(  0, 0) returns 0
+  B  156.33 scan(  0, 0) returns 0
+  A  156.83 time() returns 15682
+  B  156.83 loc_x() returns 807
+  A  156.83 scan(  0, 0) returns 0
+  B  156.83 loc_x() returns 807
+Time= 157.32980 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       757 4147 180  180 100  100   0   0                  
+  B  157.33 speed() returns 100
+  A  157.33 time() returns 15732
+  B  157.43 time() returns 15742
+  A  157.43 scan(  0, 0) returns 0
+  B  157.43 scan(  0, 0) returns 0
+  A  157.93 time() returns 15792
+  B  157.93 loc_x() returns 697
+  A  157.93 scan(  0, 0) returns 0
+  B  157.93 loc_x() returns 697
+Time= 158.43000 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       647 4146 180  180 100  100   0   0                  
+  B  158.43 speed() returns 100
+  A  158.43 time() returns 15843
+  B  158.43 time() returns 15843
+  A  158.43 scan(  0, 0) returns 0
+  B  158.43 scan(  0, 0) returns 0
+  A  158.93 time() returns 15893
+Time= 159.03010 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       587 4146 180  180 100  100   0   0                  
+  B  159.03 loc_x() returns 587
+  A  159.03 scan(  0, 0) returns 0
+  B  159.03 loc_x() returns 587
+  B  159.53 speed() returns 100
+  A  159.53 time() returns 15953
+  B  159.53 time() returns 15953
+  A  159.53 scan(  0, 0) returns 0
+  B  159.53 scan(  0, 0) returns 0
+Time= 160.03030 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       487 4145 180  180 100  100   0   0                  
+  A  160.03 time() returns 16003
+  B  160.03 loc_x() returns 487
+  A  160.03 scan(  0, 0) returns 0
+  B  160.03 loc_x() returns 487
+  B  160.53 speed() returns 100
+  A  160.53 time() returns 16053
+  B  160.53 drive(  0,100) returns 1
+  A  160.53 scan(  0, 0) returns 0
+Time= 161.03050 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       387 4144   0  180 100   90   0   0                  
+  B  161.03 time() returns 16103
+  A  161.03 time() returns 16103
+  B  161.13 scan(  0, 0) returns 0
+  A  161.13 scan(  0, 0) returns 0
+  B  161.63 loc_x() returns 334
+  A  161.63 time() returns 16163
+  B  161.73 loc_x() returns 326
+  A  161.73 scan(  0, 0) returns 0
+  B  161.73 speed() returns 76
+Time= 162.23070 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       288 4144   0  180 100   66   0   0                  
+  B  162.23 speed() returns 66
+  A  162.23 time() returns 16223
+  B  162.23 time() returns 16223
+  A  162.23 scan(  0, 0) returns 0
+  B  162.23 scan(  0, 0) returns 0
+  A  162.73 time() returns 16273
+  B  162.83 loc_x() returns 250
+  A  162.83 scan(  0, 0) returns 0
+  B  162.83 loc_x() returns 250
+Time= 163.33090 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       223 4143   0  173 100   50   0   0                  
+  B  163.33 speed() returns 50
+  A  163.33 time() returns 16333
+  B  163.33 speed() returns 50
+  A  163.33 scan(  0, 0) returns 0
+  B  163.33 time() returns 16333
+  B  163.83 scan(  0, 0) returns 0
+  A  163.83 time() returns 16383
+Time= 164.33110 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       174 4153   0  158 100   50   0   0                  
+  A  164.33 scan(  0, 0) returns 0
+  B  164.33 loc_x() returns 174
+  B  164.83 loc_x() returns 150
+  A  164.83 time() returns 16483
+  B  164.83 speed() returns 50
+  A  164.83 scan(  0, 0) returns 0
+  B  164.83 speed() returns 50
+Time= 165.33130 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       129 4174   0  143 100   50   0   0                  
+  B  165.33 time() returns 16533
+  A  165.33 time() returns 16533
+  B  165.33 scan(  0, 0) returns 2051
+  A  165.33 scan(  0, 0) returns 0
+  B  165.83 loc_x() returns 109
+  A  165.83 time() returns 16583
+  B  165.83 loc_x() returns 109
+  A  165.83 scan(  0, 0) returns 0
+  B  165.83 speed() returns 50
+Time= 166.33150 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe        91 4207   0  128 100   50   0   0                  
+  B  166.33 speed() returns 50
+  A  166.33 time() returns 16633
+  B  166.33 time() returns 16633
+  A  166.33 scan(  0, 0) returns 0
+  B  166.33 scan(  0, 0) returns 2089
+  A  166.83 time() returns 16683
+  B  166.83 loc_x() returns 76
+  A  166.83 scan(  0, 0) returns 0
+  B  166.83 loc_x() returns 76
+Time= 167.33170 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe        63 4248   0  113 100   50   0   0                  
+  B  167.33 speed() returns 50
+  A  167.33 time() returns 16733
+  B  167.33 speed() returns 50
+  A  167.33 scan(  0, 0) returns 0
+  B  167.33 time() returns 16733
+  B  167.83 scan(  0, 0) returns 0
+  A  167.83 time() returns 16783
+Time= 168.33190 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe        47 4295   0   98 100   50   0   0                  
+  A  168.33 scan(  0, 0) returns 0
+  B  168.33 loc_x() returns 47
+  B  168.83 loc_x() returns 43
+  A  168.83 time() returns 16883
+  B  168.83 speed() returns 50
+  A  168.83 scan(  0, 0) returns 0
+  B  168.83 speed() returns 50
+Time= 169.33210 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe        43 4345   0   83 100   50   0   0                  
+  B  169.33 time() returns 16933
+  A  169.33 time() returns 16933
+  B  169.33 scan(  0, 0) returns 0
+  A  169.33 scan(  0, 0) returns 0
+  B  169.83 loc_x() returns 46
+  A  169.83 time() returns 16983
+  B  169.83 loc_x() returns 46
+  A  169.83 scan(  0, 0) returns 0
+  B  169.83 speed() returns 50
+Time= 170.33230 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe        52 4394   0   68 100   50   0   0                  
+  B  170.33 speed() returns 50
+  A  170.33 time() returns 17033
+  B  170.33 time() returns 17033
+  A  170.33 scan(  0, 0) returns 0
+  B  170.33 scan(  0, 0) returns 0
+  A  170.83 time() returns 17083
+  B  170.83 loc_x() returns 62
+  A  170.83 scan(  0, 0) returns 0
+  B  170.83 loc_x() returns 62
+Time= 171.33250 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe        74 4439   0   53 100   50   0   0                  
+  B  171.33 speed() returns 50
+  A  171.33 time() returns 17133
+  B  171.33 speed() returns 50
+  A  171.33 scan(  0, 0) returns 0
+  B  171.33 time() returns 17133
+  B  171.83 scan(  0, 0) returns 0
+  A  171.83 time() returns 17183
+Time= 172.33270 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       107 4477   0   38 100   50   0   0                  
+  A  172.33 scan(  0, 0) returns 0
+  B  172.33 loc_x() returns 107
+  B  172.83 loc_x() returns 127
+  A  172.83 time() returns 17283
+  B  172.83 speed() returns 50
+  A  172.83 scan(  0, 0) returns 0
+  B  172.83 speed() returns 50
+Time= 173.33290 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       148 4505   0   23 100   50   0   0                  
+  B  173.33 time() returns 17333
+  A  173.33 time() returns 17333
+  B  173.33 scan(  0, 0) returns 0
+  A  173.33 scan(  0, 0) returns 0
+  B  173.83 loc_x() returns 171
+  A  173.83 time() returns 17383
+  B  173.93 loc_x() returns 176
+  A  173.93 scan(  0, 0) returns 0
+  B  173.93 speed() returns 50
+Time= 174.43310 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       200 4522   0    6 100   50   0   0                  
+  B  174.43 speed() returns 50
+  A  174.43 time() returns 17443
+  B  174.43 time() returns 17443
+  A  174.43 scan(  0, 0) returns 0
+  B  174.43 scan(  0, 0) returns 0
+  A  174.93 time() returns 17493
+Time= 175.03320 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       230 4525   0    0 100   52   0   0                  
+  B  175.03 loc_x() returns 230
+  A  175.03 scan(  0, 0) returns 0
+  B  175.03 loc_x() returns 230
+  B  175.53 speed() returns 62
+  A  175.53 time() returns 17553
+  B  175.53 speed() returns 62
+  A  175.53 scan(  0, 0) returns 0
+  B  175.53 time() returns 17553
+Time= 176.03340 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       287 4525   0    0 100   72   0   0                  
+  B  176.03 scan(  0, 0) returns 0
+  A  176.03 time() returns 17603
+  A  176.53 scan(  0, 0) returns 0
+  B  176.53 loc_x() returns 323
+Time= 177.03360 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       364 4526   0    0 100   92   0   0                  
+  B  177.03 loc_x() returns 364
+  A  177.03 time() returns 17703
+  B  177.13 speed() returns 94
+  A  177.13 scan(  0, 0) returns 0
+  B  177.13 speed() returns 94
+  B  177.63 time() returns 17763
+  A  177.63 time() returns 17763
+  B  177.63 scan(  0, 0) returns 0
+  A  177.63 scan(  0, 0) returns 0
+Time= 178.13380 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       470 4526   0    0 100  100   0   0                  
+  B  178.13 loc_x() returns 470
+  A  178.13 time() returns 17813
+  B  178.23 loc_x() returns 480
+  A  178.23 scan(  0, 0) returns 0
+  B  178.23 speed() returns 100
+  B  178.73 drive(  0,100) returns 1
+  A  178.73 time() returns 17873
+Time= 179.23400 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       580 4527   0    0 100  100   0   0                  
+  A  179.23 scan(  0, 0) returns 0
+  B  179.23 time() returns 17923
+  B  179.73 scan(  0, 0) returns 0
+  A  179.73 time() returns 17973
+Time= 180.23420 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       680 4528   0    0 100  100   0   0                  
+  A  180.23 scan(  0, 0) returns 0
+  B  180.23 loc_x() returns 680
+  B  180.73 loc_x() returns 730
+  A  180.73 time() returns 18073
+  B  180.73 speed() returns 100
+  A  180.73 scan(  0, 0) returns 0
+  B  180.73 time() returns 18073
+Time= 181.23440 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       780 4528   0    0 100  100   0   0                  
+  B  181.23 scan(  0, 0) returns 0
+  A  181.23 time() returns 18123
+  A  181.73 scan(  0, 0) returns 0
+  B  181.73 loc_x() returns 830
+Time= 182.23460 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       880 4529   0    0 100  100   0   0                  
+  B  182.23 loc_x() returns 880
+  A  182.23 time() returns 18223
+  B  182.33 speed() returns 100
+  A  182.33 scan(  0, 0) returns 0
+  B  182.33 time() returns 18233
+  B  182.83 scan(  0, 0) returns 0
+  A  182.83 time() returns 18283
+Time= 183.33480 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe       990 4530   0    0 100  100   0   0                  
+  A  183.33 scan(  0, 0) returns 0
+  B  183.33 loc_x() returns 990
+  B  183.83 loc_x() returns 1040
+  A  183.83 time() returns 18383
+  B  183.83 speed() returns 100
+  A  183.83 scan(  0, 0) returns 0
+  B  183.83 time() returns 18383
+Time= 184.33500 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1090 4530   0    0 100  100   0   0                  
+  B  184.34 scan(  0, 0) returns 0
+  A  184.34 time() returns 18433
+  A  184.84 scan(  0, 0) returns 0
+  B  184.84 loc_x() returns 1140
+Time= 185.33520 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1191 4531   0    0 100  100   0   0                  
+  B  185.34 loc_x() returns 1191
+  A  185.34 time() returns 18533
+  B  185.34 speed() returns 100
+  A  185.34 scan(  0, 0) returns 0
+  B  185.34 time() returns 18533
+  B  185.84 scan(  0, 0) returns 0
+  A  185.84 time() returns 18583
+Time= 186.33540 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1291 4531   0    0 100  100   0   0                  
+  A  186.34 scan(  0, 0) returns 0
+  B  186.34 loc_x() returns 1291
+  B  186.84 loc_x() returns 1341
+  A  186.84 time() returns 18683
+  B  186.84 speed() returns 100
+  A  186.84 scan(  0, 0) returns 0
+  B  186.84 time() returns 18683
+Time= 187.33560 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1391 4532   0    0 100  100   0   0                  
+  B  187.34 scan(  0, 0) returns 0
+  A  187.34 time() returns 18733
+  A  187.84 scan(  0, 0) returns 0
+  B  187.84 loc_x() returns 1441
+Time= 188.33580 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1491 4533   0    0 100  100   0   0                  
+  B  188.34 loc_x() returns 1491
+  A  188.34 time() returns 18833
+  B  188.44 speed() returns 100
+  A  188.44 scan(  0, 0) returns 0
+  B  188.44 time() returns 18843
+  B  188.94 scan(  0, 0) returns 0
+  A  188.94 time() returns 18893
+Time= 189.43600 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1601 4533   0    0 100  100   0   0                  
+  A  189.44 scan(  0, 0) returns 0
+  B  189.44 loc_x() returns 1601
+  B  189.94 loc_x() returns 1651
+  A  189.94 time() returns 18993
+  B  189.94 speed() returns 100
+  A  189.94 scan(  0, 0) returns 0
+  B  189.94 time() returns 18993
+Time= 190.43620 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1701 4534   0    0 100  100   0   0                  
+  B  190.44 scan(  0, 0) returns 0
+  A  190.44 time() returns 19043
+  A  190.94 scan(  0, 0) returns 0
+  B  190.94 loc_x() returns 1751
+Time= 191.43640 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1801 4535   0    0 100  100   0   0                  
+  B  191.44 loc_x() returns 1801
+  A  191.44 time() returns 19143
+  B  191.54 speed() returns 100
+  A  191.54 scan(  0, 0) returns 0
+  B  191.54 time() returns 19153
+Time= 192.03650 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1861 4535   0    0 100  100   0   0                  
+  B  192.04 scan(  0, 0) returns 0
+  A  192.04 time() returns 19203
+  A  192.54 scan(  0, 0) returns 0
+  B  192.54 loc_x() returns 1911
+Time= 193.03670 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      1961 4536   0    0 100  100   0   0                  
+  B  193.04 loc_x() returns 1961
+  A  193.04 time() returns 19303
+  B  193.14 speed() returns 100
+  A  193.14 scan(  0, 0) returns 0
+  B  193.14 time() returns 19313
+  B  193.64 scan(  0, 0) returns 0
+  A  193.64 time() returns 19363
+Time= 194.13690 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2071 4536   0    0 100  100   0   0                  
+  A  194.14 scan(  0, 0) returns 0
+  B  194.14 loc_x() returns 2071
+  B  194.64 loc_x() returns 2121
+  A  194.64 time() returns 19463
+  B  194.64 speed() returns 100
+  A  194.64 scan(  0, 0) returns 0
+  B  194.64 time() returns 19463
+Time= 195.13710 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2171 4537   0    0 100  100   0   0                  
+  B  195.14 scan(  0, 0) returns 0
+  A  195.14 time() returns 19513
+  A  195.64 scan(  0, 0) returns 0
+  B  195.64 loc_x() returns 2221
+Time= 196.13730 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2271 4538   0    0 100  100   0   0                  
+  B  196.14 loc_x() returns 2271
+  A  196.14 time() returns 19613
+  B  196.24 speed() returns 100
+  A  196.24 scan(  0, 0) returns 0
+  B  196.24 time() returns 19623
+  B  196.74 scan(  0, 0) returns 0
+  A  196.74 time() returns 19673
+Time= 197.23750 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2381 4538   0    0 100  100   0   0                  
+  A  197.24 scan(  0, 0) returns 0
+  B  197.24 loc_x() returns 2381
+  B  197.74 loc_x() returns 2431
+  A  197.74 time() returns 19773
+  B  197.74 speed() returns 100
+  A  197.74 scan(  0, 0) returns 0
+  B  197.74 time() returns 19773
+Time= 198.23770 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2481 4539   0    0 100  100   0   0                  
+  B  198.24 scan(  0, 0) returns 0
+  A  198.24 time() returns 19823
+  A  198.74 scan(  0, 0) returns 0
+  B  198.74 loc_x() returns 2531
+Time= 199.23790 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2581 4540   0    0 100  100   0   0                  
+  B  199.24 loc_x() returns 2581
+  A  199.24 time() returns 19923
+  B  199.34 speed() returns 100
+  A  199.34 scan(  0, 0) returns 0
+  B  199.34 time() returns 19933
+  B  199.84 scan(  0, 0) returns 0
+  A  199.84 time() returns 19983
+Time= 200.33810 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2691 4540   0    0 100  100   0   0                  
+  A  200.34 scan(  0, 0) returns 0
+  B  200.34 loc_x() returns 2691
+  B  200.84 loc_x() returns 2741
+  A  200.84 time() returns 20083
+  B  200.84 speed() returns 100
+  A  200.84 scan(  0, 0) returns 0
+  B  200.84 time() returns 20083
+Time= 201.33830 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2791 4541   0    0 100  100   0   0                  
+  B  201.34 scan(  0, 0) returns 0
+  A  201.34 time() returns 20133
+  A  201.84 scan(  0, 0) returns 0
+  B  201.84 loc_x() returns 2841
+Time= 202.33850 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2891 4542   0    0 100  100   0   0                  
+  B  202.34 loc_x() returns 2891
+  A  202.34 time() returns 20233
+  B  202.34 speed() returns 100
+  A  202.34 scan(  0, 0) returns 0
+  B  202.34 time() returns 20233
+  B  202.84 scan(  0, 0) returns 0
+  A  202.84 time() returns 20283
+Time= 203.33870 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      2991 4542   0    0 100  100   0   0                  
+  A  203.34 scan(  0, 0) returns 0
+  B  203.34 loc_x() returns 2991
+  B  203.84 loc_x() returns 3041
+  A  203.84 time() returns 20383
+  B  203.84 speed() returns 100
+  A  203.84 scan(  0, 0) returns 0
+  B  203.84 time() returns 20383
+Time= 204.33890 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3091 4543   0    0 100  100   0   0                  
+  B  204.34 scan(  0, 0) returns 0
+  A  204.34 time() returns 20433
+  A  204.84 scan(  0, 0) returns 0
+  B  204.84 loc_x() returns 3141
+Time= 205.33910 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3191 4544   0    0 100  100   0   0                  
+  B  205.34 loc_x() returns 3191
+  A  205.34 time() returns 20533
+  B  205.34 speed() returns 100
+  A  205.34 scan(  0, 0) returns 0
+  B  205.34 time() returns 20533
+  B  205.84 scan(  0, 0) returns 0
+  A  205.84 time() returns 20583
+Time= 206.33930 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3291 4544   0    0 100  100   0   0                  
+  A  206.34 scan(  0, 0) returns 0
+  B  206.34 loc_x() returns 3291
+  B  206.84 loc_x() returns 3341
+  A  206.84 time() returns 20683
+  B  206.84 speed() returns 100
+  A  206.84 scan(  0, 0) returns 0
+  B  206.84 time() returns 20683
+Time= 207.33950 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3391 4545   0    0 100  100   0   0                  
+  B  207.34 scan(  0, 0) returns 0
+  A  207.34 time() returns 20733
+  A  207.84 scan(  0, 0) returns 0
+  B  207.84 loc_x() returns 3441
+Time= 208.33970 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3491 4546   0    0 100  100   0   0                  
+  B  208.34 loc_x() returns 3491
+  A  208.34 time() returns 20833
+  B  208.34 speed() returns 100
+  A  208.34 scan(  0, 0) returns 0
+  B  208.34 time() returns 20833
+  B  208.84 scan(  0, 0) returns 0
+  A  208.84 time() returns 20883
+Time= 209.33990 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3591 4546   0    0 100  100   0   0                  
+  A  209.34 scan(  0, 0) returns 0
+  B  209.34 loc_x() returns 3591
+  B  209.84 loc_x() returns 3641
+  A  209.84 time() returns 20984
+  B  209.84 speed() returns 100
+  A  209.84 scan(  0, 0) returns 0
+  B  209.84 time() returns 20984
+Time= 210.34010 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3691 4547   0    0 100  100   0   0                  
+  B  210.34 scan(  0, 0) returns 0
+  A  210.34 time() returns 21034
+  A  210.84 scan(  0, 0) returns 0
+  B  210.84 loc_x() returns 3741
+Time= 211.34030 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3791 4547   0    0 100  100   0   0                  
+  B  211.34 loc_x() returns 3791
+  A  211.34 time() returns 21134
+  B  211.44 speed() returns 100
+  A  211.44 scan(  0, 0) returns 0
+  B  211.44 time() returns 21144
+  B  211.94 scan(  0, 0) returns 0
+  A  211.94 time() returns 21194
+Time= 212.44050 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      3901 4548   0    0 100  100   0   0                  
+  A  212.44 scan(  0, 0) returns 0
+  B  212.44 loc_x() returns 3901
+  B  212.94 loc_x() returns 3951
+  A  212.94 time() returns 21294
+  B  212.94 speed() returns 100
+  A  212.94 scan(  0, 0) returns 0
+  B  212.94 time() returns 21294
+Time= 213.44070 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4001 4549   0    0 100  100   0   0                  
+  B  213.44 scan(  0, 0) returns 0
+  A  213.44 time() returns 21344
+  A  213.94 scan(  0, 0) returns 0
+  B  213.94 loc_x() returns 4051
+Time= 214.44090 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4101 4549   0    0 100  100   0   0                  
+  B  214.44 loc_x() returns 4101
+  A  214.44 time() returns 21444
+  B  214.44 speed() returns 100
+  A  214.44 scan(  0, 0) returns 0
+  B  214.44 time() returns 21444
+  B  214.94 scan(  0, 0) returns 0
+  A  214.94 time() returns 21494
+Time= 215.44110 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4201 4550   0    0 100  100   0   0                  
+  A  215.44 scan(  0, 0) returns 0
+  B  215.44 loc_x() returns 4201
+  B  215.94 loc_x() returns 4251
+  A  215.94 time() returns 21594
+  B  215.94 speed() returns 100
+  A  215.94 scan(  0, 0) returns 0
+  B  215.94 time() returns 21594
+Time= 216.44130 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4301 4551   0    0 100  100   0   0                  
+  B  216.44 scan(  0, 0) returns 0
+  A  216.44 time() returns 21644
+  A  216.94 scan(  0, 0) returns 0
+  B  216.94 loc_x() returns 4351
+Time= 217.44150 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4401 4551   0    0 100  100   0   0                  
+  B  217.44 loc_x() returns 4401
+  A  217.44 time() returns 21744
+  B  217.44 speed() returns 100
+  A  217.44 scan(  0, 0) returns 0
+  B  217.44 time() returns 21744
+  B  217.94 scan(  0, 0) returns 0
+  A  217.94 time() returns 21794
+Time= 218.44170 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4501 4552   0    0 100  100   0   0                  
+  A  218.44 scan(  0, 0) returns 0
+  B  218.44 loc_x() returns 4501
+  B  218.94 loc_x() returns 4551
+  A  218.94 time() returns 21894
+  B  218.94 speed() returns 100
+  A  218.94 scan(  0, 0) returns 0
+  B  218.94 time() returns 21894
+Time= 219.44190 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4601 4553   0    0 100  100   0   0                  
+  B  219.44 scan(  0, 0) returns 0
+  A  219.44 time() returns 21944
+  A  219.94 scan(  0, 0) returns 0
+  B  219.94 loc_x() returns 4651
+Time= 220.44210 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4701 4553   0    0 100  100   0   0                  
+  B  220.44 loc_x() returns 4701
+  A  220.44 time() returns 22044
+  B  220.44 speed() returns 100
+  A  220.44 scan(  0, 0) returns 0
+  B  220.44 time() returns 22044
+  B  220.94 scan(  0, 0) returns 0
+  A  220.94 time() returns 22094
+Time= 221.44230 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4801 4554   0    0 100  100   0   0                  
+  A  221.44 scan(  0, 0) returns 0
+  B  221.44 loc_x() returns 4801
+  B  221.94 loc_x() returns 4851
+  A  221.94 time() returns 22194
+  B  221.94 speed() returns 100
+  A  221.94 scan(  0, 0) returns 0
+  B  221.94 time() returns 22194
+Time= 222.44250 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      4901 4555   0    0 100  100   0   0                  
+  B  222.44 scan(  0, 0) returns 0
+  A  222.44 time() returns 22244
+  A  222.94 scan(  0, 0) returns 0
+  B  222.94 loc_x() returns 4951
+Time= 223.44270 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5001 4555   0    0 100  100   0   0                  
+  B  223.44 loc_x() returns 5001
+  A  223.44 time() returns 22344
+  B  223.44 speed() returns 100
+  A  223.44 scan(  0, 0) returns 0
+  B  223.44 time() returns 22344
+  B  223.94 scan(  0, 0) returns 0
+  A  223.94 time() returns 22394
+Time= 224.44290 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5101 4556   0    0 100  100   0   0                  
+  A  224.44 scan(  0, 0) returns 0
+  B  224.44 loc_x() returns 5101
+  B  224.94 loc_x() returns 5151
+  A  224.94 time() returns 22494
+  B  224.94 speed() returns 100
+  A  224.94 scan(  0, 0) returns 0
+  B  224.94 time() returns 22494
+Time= 225.44310 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5201 4557   0    0 100  100   0   0                  
+  B  225.44 scan(  0, 0) returns 0
+  A  225.44 time() returns 22544
+  A  225.94 scan(  0, 0) returns 0
+  B  225.94 loc_x() returns 5251
+Time= 226.44330 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5301 4557   0    0 100  100   0   0                  
+  B  226.44 loc_x() returns 5301
+  A  226.44 time() returns 22644
+  B  226.44 speed() returns 100
+  A  226.44 scan(  0, 0) returns 0
+  B  226.44 time() returns 22644
+  B  226.94 scan(  0, 0) returns 0
+  A  226.94 time() returns 22694
+Time= 227.44350 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5401 4558   0    0 100  100   0   0                  
+  A  227.44 scan(  0, 0) returns 0
+  B  227.44 loc_x() returns 5401
+  B  227.94 loc_x() returns 5451
+  A  227.94 time() returns 22794
+  B  227.94 speed() returns 100
+  A  227.94 scan(  0, 0) returns 0
+  B  227.94 time() returns 22794
+Time= 228.44370 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5501 4558   0    0 100  100   0   0                  
+  B  228.44 scan(  0, 0) returns 0
+  A  228.44 time() returns 22844
+  A  228.94 scan(  0, 0) returns 0
+  B  228.94 loc_x() returns 5551
+Time= 229.44390 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5601 4559   0    0 100  100   0   0                  
+  B  229.44 loc_x() returns 5601
+  A  229.44 time() returns 22944
+  B  229.44 speed() returns 100
+  A  229.44 scan(  0, 0) returns 0
+  B  229.44 time() returns 22944
+  B  229.94 scan(  0, 0) returns 0
+  A  229.94 time() returns 22994
+Time= 230.44410 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5701 4560   0    0 100  100   0   0                  
+  A  230.44 scan(  0, 0) returns 0
+  B  230.44 loc_x() returns 5701
+  B  230.94 loc_x() returns 5751
+  A  230.94 time() returns 23094
+  B  230.94 speed() returns 100
+  A  230.94 scan(  0, 0) returns 0
+  B  230.94 time() returns 23094
+Time= 231.44430 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5801 4560   0    0 100  100   0   0                  
+  B  231.44 scan(  0, 0) returns 0
+  A  231.44 time() returns 23144
+  A  231.94 scan(  0, 0) returns 0
+  B  231.94 loc_x() returns 5851
+Time= 232.44450 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5901 4561   0    0 100  100   0   0                  
+  B  232.44 loc_x() returns 5901
+  A  232.44 time() returns 23244
+  B  232.54 speed() returns 100
+  A  232.54 scan(  0, 0) returns 0
+  B  232.54 time() returns 23254
+Time= 233.04460 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      5961 4561   0    0 100  100   0   0                  
+  B  233.04 scan(  0, 0) returns 0
+  A  233.04 time() returns 23304
+  A  233.54 scan(  0, 0) returns 0
+  B  233.54 loc_x() returns 6011
+Time= 234.04480 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6061 4562   0    0 100  100   0   0                  
+  B  234.04 loc_x() returns 6061
+  A  234.04 time() returns 23404
+  B  234.04 speed() returns 100
+  A  234.04 scan(  0, 0) returns 0
+  B  234.04 time() returns 23404
+  B  234.54 scan(  0, 0) returns 0
+  A  234.54 time() returns 23454
+Time= 235.04500 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6161 4563   0    0 100  100   0   0                  
+  A  235.05 scan(  0, 0) returns 0
+  B  235.05 loc_x() returns 6161
+  B  235.55 loc_x() returns 6211
+  A  235.55 time() returns 23554
+  B  235.55 speed() returns 100
+  A  235.55 scan(  0, 0) returns 0
+  B  235.55 time() returns 23554
+Time= 236.04520 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6261 4563   0    0 100  100   0   0                  
+  B  236.05 scan(  0, 0) returns 0
+  A  236.05 time() returns 23604
+  A  236.55 scan(  0, 0) returns 0
+  B  236.55 loc_x() returns 6311
+Time= 237.04540 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6361 4564   0    0 100  100   0   0                  
+  B  237.05 loc_x() returns 6361
+  A  237.05 time() returns 23704
+  B  237.05 speed() returns 100
+  A  237.05 scan(  0, 0) returns 0
+  B  237.05 time() returns 23704
+  B  237.55 scan(  0, 0) returns 0
+  A  237.55 time() returns 23754
+Time= 238.04560 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6461 4565   0    0 100  100   0   0                  
+  A  238.05 scan(  0, 0) returns 0
+  B  238.05 loc_x() returns 6461
+  B  238.55 loc_x() returns 6511
+  A  238.55 time() returns 23854
+  B  238.55 speed() returns 100
+  A  238.55 scan(  0, 0) returns 0
+  B  238.55 time() returns 23854
+Time= 239.04580 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6561 4565   0    0 100  100   0   0                  
+  B  239.05 scan(  0, 0) returns 0
+  A  239.05 time() returns 23904
+  A  239.55 scan(  0, 0) returns 0
+  B  239.55 loc_x() returns 6611
+Time= 240.04600 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6661 4566   0    0 100  100   0   0                  
+  B  240.05 loc_x() returns 6661
+  A  240.05 time() returns 24004
+  B  240.05 speed() returns 100
+  A  240.05 scan(  0, 0) returns 0
+  B  240.05 time() returns 24004
+  B  240.55 scan(  0, 0) returns 0
+  A  240.55 time() returns 24054
+Time= 241.04620 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6761 4566   0    0 100  100   0   0                  
+  A  241.05 scan(  0, 0) returns 0
+  B  241.05 loc_x() returns 6761
+  B  241.55 loc_x() returns 6811
+  A  241.55 time() returns 24154
+  B  241.55 speed() returns 100
+  A  241.55 scan(  0, 0) returns 0
+  B  241.55 time() returns 24154
+Time= 242.04640 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6862 4567   0    0 100  100   0   0                  
+  B  242.05 scan(  0, 0) returns 0
+  A  242.05 time() returns 24204
+  A  242.55 scan(  0, 0) returns 0
+  B  242.55 loc_x() returns 6912
+Time= 243.04660 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      6962 4568   0    0 100  100   0   0                  
+  B  243.05 loc_x() returns 6962
+  A  243.05 time() returns 24304
+  B  243.15 speed() returns 100
+  A  243.15 scan(  0, 0) returns 0
+  B  243.15 time() returns 24314
+  B  243.65 scan(  0, 0) returns 0
+  A  243.65 time() returns 24364
+Time= 244.14680 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7072 4568   0    0 100  100   0   0                  
+  A  244.15 scan(  0, 0) returns 0
+  B  244.15 loc_x() returns 7072
+  B  244.65 loc_x() returns 7122
+  A  244.65 time() returns 24464
+  B  244.65 speed() returns 100
+  A  244.65 scan(  0, 0) returns 0
+  B  244.65 time() returns 24464
+Time= 245.14700 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7172 4569   0    0 100  100   0   0                  
+  B  245.15 scan(  0, 0) returns 0
+  A  245.15 time() returns 24514
+  A  245.65 scan(  0, 0) returns 0
+  B  245.65 loc_x() returns 7222
+Time= 246.14720 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7272 4570   0    0 100  100   0   0                  
+  B  246.15 loc_x() returns 7272
+  A  246.15 time() returns 24614
+  B  246.25 speed() returns 100
+  A  246.25 scan(  0, 0) returns 0
+  B  246.25 time() returns 24624
+  B  246.75 scan(  0, 0) returns 0
+  A  246.75 time() returns 24674
+Time= 247.24740 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7382 4570   0    0 100  100   0   0                  
+  A  247.25 scan(  0, 0) returns 0
+  B  247.25 loc_x() returns 7382
+  B  247.75 loc_x() returns 7432
+  A  247.75 time() returns 24774
+  B  247.75 speed() returns 100
+  A  247.75 scan(  0, 0) returns 0
+  B  247.75 time() returns 24774
+Time= 248.24760 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7482 4571   0    0 100  100   0   0                  
+  B  248.25 scan(  0, 0) returns 0
+  A  248.25 time() returns 24824
+  A  248.75 scan(  0, 0) returns 0
+  B  248.75 loc_x() returns 7532
+Time= 249.24780 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7582 4572   0    0 100  100   0   0                  
+  B  249.25 loc_x() returns 7582
+  A  249.25 time() returns 24924
+  B  249.35 speed() returns 100
+  A  249.35 scan(  0, 0) returns 0
+  B  249.35 time() returns 24934
+  B  249.85 scan(  0, 0) returns 0
+  A  249.85 time() returns 24984
+Time= 250.34800 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7692 4572   0    0 100  100   0   0                  
+  A  250.35 scan(  0, 0) returns 0
+  B  250.35 loc_x() returns 7692
+  B  250.85 loc_x() returns 7742
+  A  250.85 time() returns 25084
+  B  250.85 speed() returns 100
+  A  250.85 scan(  0, 0) returns 0
+  B  250.85 time() returns 25084
+Time= 251.34820 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7792 4573   0    0 100  100   0   0                  
+  B  251.35 scan(  0, 0) returns 0
+  A  251.35 time() returns 25134
+  A  251.85 scan(  0, 0) returns 0
+  B  251.85 loc_x() returns 7842
+Time= 252.34840 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7892 4574   0    0 100  100   0   0                  
+  B  252.35 loc_x() returns 7892
+  A  252.35 time() returns 25234
+  B  252.35 speed() returns 100
+  A  252.35 scan(  0, 0) returns 0
+  B  252.35 time() returns 25234
+  B  252.85 scan(  0, 0) returns 0
+  A  252.85 time() returns 25284
+Time= 253.34860 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      7992 4574   0    0 100  100   0   0                  
+  A  253.35 scan(  0, 0) returns 0
+  B  253.35 loc_x() returns 7992
+  B  253.85 loc_x() returns 8042
+  A  253.85 time() returns 25384
+  B  253.85 speed() returns 100
+  A  253.85 scan(  0, 0) returns 0
+  B  253.85 time() returns 25384
+Time= 254.34880 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8092 4575   0    0 100  100   0   0                  
+  B  254.35 scan(  0, 0) returns 0
+  A  254.35 time() returns 25434
+  A  254.85 scan(  0, 0) returns 0
+  B  254.85 loc_x() returns 8142
+Time= 255.34900 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8192 4576   0    0 100  100   0   0                  
+  B  255.35 loc_x() returns 8192
+  A  255.35 time() returns 25534
+  B  255.45 speed() returns 100
+  A  255.45 scan(  0, 0) returns 0
+  B  255.45 time() returns 25544
+  B  255.95 scan(  0, 0) returns 0
+  A  255.95 time() returns 25594
+Time= 256.44920 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8302 4576   0    0 100  100   0   0                  
+  A  256.45 scan(  0, 0) returns 0
+  B  256.45 loc_x() returns 8302
+  B  256.95 loc_x() returns 8352
+  A  256.95 time() returns 25694
+  B  256.95 speed() returns 100
+Time= 257.04930 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8362 4577   0    0 100  100   0   0                  
+  A  257.05 scan(  0, 0) returns 0
+  B  257.05 time() returns 25704
+  B  257.55 scan(  0, 0) returns 0
+  A  257.55 time() returns 25754
+Time= 258.04950 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8462 4577   0    0 100  100   0   0                  
+  A  258.05 scan(  0, 0) returns 0
+  B  258.05 loc_x() returns 8462
+  B  258.55 loc_x() returns 8512
+  A  258.55 time() returns 25854
+  B  258.55 speed() returns 100
+  A  258.55 scan(  0, 0) returns 0
+  B  258.55 time() returns 25854
+Time= 259.04970 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8562 4578   0    0 100  100   0   0                  
+  B  259.05 scan(  0, 0) returns 0
+  A  259.05 time() returns 25904
+  A  259.55 scan(  0, 0) returns 0
+  B  259.55 loc_x() returns 8612
+Time= 260.04990 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8662 4579   0    0 100  100   0   0                  
+  B  260.05 loc_x() returns 8662
+  A  260.05 time() returns 26004
+  B  260.05 speed() returns 100
+  A  260.05 scan(  0, 0) returns 0
+  B  260.05 time() returns 26004
+  B  260.55 scan(  0, 0) returns 0
+  A  260.55 time() returns 26055
+Time= 261.05010 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8762 4579   0    0 100  100   0   0                  
+  A  261.05 scan(  0, 0) returns 0
+  B  261.05 loc_x() returns 8762
+  B  261.55 loc_x() returns 8812
+  A  261.55 time() returns 26155
+  B  261.55 speed() returns 100
+  A  261.55 scan(  0, 0) returns 0
+  B  261.55 time() returns 26155
+Time= 262.05030 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8862 4580   0    0 100  100   0   0                  
+  B  262.05 scan(  0, 0) returns 0
+  A  262.05 time() returns 26205
+  A  262.55 scan(  0, 0) returns 0
+  B  262.55 loc_x() returns 8912
+Time= 263.05050 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8962 4581   0    0 100  100   0   0                  
+  B  263.05 loc_x() returns 8962
+  A  263.05 time() returns 26305
+  B  263.15 speed() returns 100
+  A  263.15 scan(  0, 0) returns 0
+  B  263.15 time() returns 26315
+  B  263.65 scan(  0, 0) returns 0
+  A  263.65 time() returns 26365
+Time= 264.15070 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9072 4581   0    0 100  100   0   0                  
+  A  264.15 scan(  0, 0) returns 0
+  B  264.15 loc_x() returns 9072
+  B  264.65 loc_x() returns 9122
+  A  264.65 time() returns 26465
+  B  264.65 speed() returns 100
+  A  264.65 scan(  0, 0) returns 0
+  B  264.65 time() returns 26465
+Time= 265.15090 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9172 4582   0    0 100  100   0   0                  
+  B  265.15 scan(  0, 0) returns 0
+  A  265.15 time() returns 26515
+  A  265.65 scan(  0, 0) returns 0
+  B  265.65 loc_x() returns 9222
+Time= 266.15110 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9272 4583   0    0 100  100   0   0                  
+  B  266.15 loc_x() returns 9272
+  A  266.15 time() returns 26615
+  B  266.25 speed() returns 100
+  A  266.25 scan(  0, 0) returns 0
+  B  266.25 time() returns 26625
+  B  266.75 scan(  0, 0) returns 0
+  A  266.75 time() returns 26675
+Time= 267.25130 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9382 4583   0    0 100  100   0   0                  
+  A  267.25 scan(  0, 0) returns 0
+  B  267.25 loc_x() returns 9382
+  B  267.75 loc_x() returns 9432
+  A  267.75 time() returns 26775
+  B  267.75 speed() returns 100
+  A  267.75 scan(  0, 0) returns 0
+  B  267.75 time() returns 26775
+Time= 268.25150 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9482 4584   0    0 100  100   0   0                  
+  B  268.25 scan(  0, 0) returns 0
+  A  268.25 time() returns 26825
+  A  268.75 scan(  0, 0) returns 0
+  B  268.75 loc_x() returns 9532
+Time= 269.25170 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9582 4585   0    0 100  100   0   0                  
+  B  269.25 speed() returns 100
+  A  269.25 time() returns 26925
+  B  269.35 drive(180,100) returns 1
+  A  269.35 scan(  0, 0) returns 0
+  B  269.85 time() returns 26985
+  A  269.85 time() returns 26985
+  B  269.95 scan(  0, 0) returns 0
+  A  269.95 scan(  0, 0) returns 0
+Time= 270.45190 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9695 4585 180    0 100   78   0   0                  
+  B  270.45 loc_x() returns 9695
+  A  270.45 time() returns 27045
+  B  270.45 speed() returns 78
+  A  270.45 scan(  0, 0) returns 0
+  B  270.45 loc_x() returns 9695
+  B  270.95 speed() returns 68
+  A  270.95 time() returns 27095
+  B  270.95 time() returns 27095
+  A  270.95 scan(  0, 0) returns 0
+  B  270.95 scan(  0, 0) returns 0
+Time= 271.45210 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9768 4586 180    0 100   58   0   0                  
+  A  271.55 time() returns 27155
+  B  271.55 loc_x() returns 9774
+  A  271.55 scan(  0, 0) returns 0
+  B  271.55 speed() returns 56
+Time= 272.05220 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9802 4586 180    8 100   50   0   0                  
+  B  272.05 loc_x() returns 9802
+  A  272.05 time() returns 27205
+  B  272.05 speed() returns 50
+  A  272.05 scan(  0, 0) returns 0
+  B  272.05 time() returns 27205
+  B  272.55 scan(  0, 0) returns 0
+  A  272.55 time() returns 27255
+Time= 273.05240 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9851 4596 180   23 100   50   0   0                  
+  A  273.05 scan(  0, 0) returns 0
+  B  273.05 loc_x() returns 9851
+  B  273.55 speed() returns 50
+  A  273.55 time() returns 27355
+  B  273.55 loc_x() returns 9874
+  A  273.55 scan(  0, 0) returns 0
+  B  273.55 speed() returns 50
+Time= 274.05260 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9895 4618 180   38 100   50   0   0                  
+  B  274.05 time() returns 27405
+  A  274.05 time() returns 27405
+  B  274.15 scan(  0, 0) returns 0
+  A  274.15 scan(  0, 0) returns 0
+  B  274.65 loc_x() returns 9919
+  A  274.65 time() returns 27465
+  B  274.65 speed() returns 50
+  A  274.65 scan(  0, 0) returns 0
+  B  274.65 loc_x() returns 9919
+Time= 275.15280 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9936 4656 180   54 100   50   0   0                  
+  B  275.15 speed() returns 50
+  A  275.15 time() returns 27515
+  B  275.15 time() returns 27515
+  A  275.15 scan(  0, 0) returns 0
+  B  275.15 scan(  0, 0) returns 0
+  A  275.65 time() returns 27565
+  B  275.75 loc_x() returns 9953
+  A  275.75 scan(  0, 0) returns 0
+  B  275.75 speed() returns 50
+Time= 276.25300 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9964 4703 180   71 100   50   0   0                  
+  B  276.25 loc_x() returns 9964
+  A  276.25 time() returns 27625
+  B  276.35 speed() returns 50
+  A  276.35 scan(  0, 0) returns 0
+  B  276.35 time() returns 27635
+  B  276.85 scan(  0, 0) returns 0
+  A  276.85 time() returns 27685
+Time= 277.35320 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9977 4756 180   87 100   50   0   0                  
+  A  277.35 scan(  0, 0) returns 0
+  B  277.35 loc_x() returns 9977
+  B  277.85 speed() returns 50
+  A  277.85 time() returns 27785
+  B  277.85 loc_x() returns 9979
+  A  277.85 scan(  0, 0) returns 0
+  B  277.85 speed() returns 50
+Time= 278.35340 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9976 4806 180  102 100   50   0   0                  
+  B  278.35 time() returns 27835
+  A  278.35 time() returns 27835
+  B  278.45 scan(  0, 0) returns 0
+  A  278.45 scan(  0, 0) returns 0
+  B  278.95 loc_x() returns 9969
+  A  278.95 time() returns 27895
+Time= 279.05350 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9968 4839 180  113 100   50   0   0                  
+  B  279.05 speed() returns 50
+  A  279.05 scan(  0, 0) returns 0
+  B  279.05 loc_x() returns 9968
+  B  279.55 speed() returns 50
+  A  279.55 time() returns 27955
+  B  279.55 time() returns 27955
+  A  279.55 scan(  0, 0) returns 0
+  B  279.55 scan(  0, 0) returns 0
+Time= 280.05370 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9945 4884 180  128 100   50   0   0                  
+  A  280.05 time() returns 28005
+  B  280.15 loc_x() returns 9942
+  A  280.15 scan(  0, 0) returns 0
+  B  280.15 speed() returns 50
+  B  280.65 loc_x() returns 9926
+  A  280.65 time() returns 28065
+  B  280.65 speed() returns 50
+  A  280.65 scan(  0, 0) returns 0
+  B  280.65 time() returns 28065
+Time= 281.15390 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9908 4924 180  144 100   50   0   0                  
+  B  281.15 scan(  0, 0) returns 0
+  A  281.15 time() returns 28115
+  A  281.65 scan(  0, 0) returns 0
+  B  281.65 loc_x() returns 9888
+Time= 282.15410 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9866 4951 180  159 100   50   0   0                  
+  B  282.15 speed() returns 50
+  A  282.15 time() returns 28215
+  B  282.15 loc_x() returns 9866
+  A  282.15 scan(  0, 0) returns 0
+  B  282.15 speed() returns 50
+  B  282.65 time() returns 28265
+  A  282.65 time() returns 28265
+  B  282.65 scan(  0, 0) returns 0
+  A  282.65 scan(  0, 0) returns 0
+Time= 283.15430 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9818 4965 180  174 100   50   0   0                  
+  B  283.15 loc_x() returns 9818
+  A  283.15 time() returns 28315
+  B  283.15 speed() returns 50
+  A  283.15 scan(  0, 0) returns 0
+  B  283.15 loc_x() returns 9818
+  B  283.65 speed() returns 50
+  A  283.65 time() returns 28365
+  B  283.65 time() returns 28365
+  A  283.65 scan(  0, 0) returns 0
+  B  283.65 scan(  0, 0) returns 0
+Time= 284.15450 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9768 4968 180  180 100   60   0   0                  
+  A  284.25 time() returns 28425
+  B  284.25 loc_x() returns 9762
+  A  284.25 scan(  0, 0) returns 0
+  B  284.25 speed() returns 62
+  B  284.75 loc_x() returns 9731
+  A  284.75 time() returns 28475
+  B  284.75 speed() returns 72
+  A  284.75 scan(  0, 0) returns 0
+  B  284.75 time() returns 28475
+Time= 285.25470 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9695 4967 180  180 100   82   0   0                  
+  B  285.25 scan(  0, 0) returns 0
+  A  285.25 time() returns 28525
+  A  285.75 scan(  0, 0) returns 0
+  B  285.75 loc_x() returns 9654
+Time= 286.25490 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9608 4966 180  180 100  100   0   0                  
+  B  286.25 speed() returns 100
+  A  286.25 time() returns 28625
+  B  286.35 drive(180,100) returns 1
+  A  286.35 scan(  0, 0) returns 0
+  B  286.85 time() returns 28685
+  A  286.85 time() returns 28685
+  B  286.85 scan(  0, 0) returns 0
+  A  286.85 scan(  0, 0) returns 0
+Time= 287.35510 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9498 4966 180  180 100  100   0   0                  
+  B  287.46 loc_x() returns 9488
+  A  287.46 time() returns 28745
+  B  287.46 loc_x() returns 9488
+  A  287.46 scan(  0, 0) returns 0
+  B  287.56 speed() returns 100
+  B  287.96 time() returns 28795
+  A  287.96 time() returns 28795
+  B  287.96 scan(  0, 0) returns 0
+  A  287.96 scan(  0, 0) returns 0
+Time= 288.45530 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9388 4965 180  180 100  100   0   0                  
+  B  288.46 loc_x() returns 9388
+  A  288.46 time() returns 28845
+  B  288.46 loc_x() returns 9388
+  A  288.46 scan(  0, 0) returns 0
+  B  288.46 speed() returns 100
+  B  288.96 time() returns 28895
+  A  288.96 time() returns 28895
+  B  288.96 scan(  0, 0) returns 0
+  A  288.96 scan(  0, 0) returns 0
+Time= 289.45550 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9288 4964 180  180 100  100   0   0                  
+  B  289.46 loc_x() returns 9288
+  A  289.46 time() returns 28945
+  B  289.46 loc_x() returns 9288
+  A  289.46 scan(  0, 0) returns 0
+  B  289.46 speed() returns 100
+  B  289.96 time() returns 28995
+  A  289.96 time() returns 28995
+  B  289.96 scan(  0, 0) returns 0
+  A  289.96 scan(  0, 0) returns 0
+Time= 290.45570 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9188 4963 180  180 100  100   0   0                  
+  B  290.46 loc_x() returns 9188
+  A  290.46 time() returns 29045
+  B  290.56 loc_x() returns 9178
+  A  290.56 scan(  0, 0) returns 0
+  B  290.56 speed() returns 100
+Time= 291.05580 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9128 4963 180  180 100  100   0   0                  
+  B  291.06 time() returns 29105
+  A  291.06 time() returns 29105
+  B  291.16 scan(  0, 0) returns 0
+  A  291.16 scan(  0, 0) returns 0
+  B  291.66 loc_x() returns 9068
+  A  291.66 time() returns 29165
+  B  291.66 loc_x() returns 9068
+  A  291.66 scan(  0, 0) returns 0
+  B  291.66 speed() returns 100
+Time= 292.15600 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      9018 4962 180  180 100  100   0   0                  
+  B  292.16 time() returns 29215
+  A  292.16 time() returns 29215
+  B  292.26 scan(  0, 0) returns 0
+  A  292.26 scan(  0, 0) returns 0
+  B  292.76 loc_x() returns 8958
+  A  292.76 time() returns 29275
+  B  292.76 loc_x() returns 8958
+  A  292.76 scan(  0, 0) returns 0
+  B  292.76 speed() returns 100
+Time= 293.25620 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8908 4962 180  180 100  100   0   0                  
+  B  293.26 time() returns 29325
+  A  293.26 time() returns 29325
+  B  293.36 scan(  0, 0) returns 0
+  A  293.36 scan(  0, 0) returns 0
+  B  293.86 loc_x() returns 8848
+  A  293.86 time() returns 29385
+  B  293.86 loc_x() returns 8848
+  A  293.86 scan(  0, 0) returns 0
+  B  293.86 speed() returns 100
+Time= 294.35640 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8798 4961 180  180 100  100   0   0                  
+  B  294.36 time() returns 29435
+  A  294.36 time() returns 29435
+  B  294.46 scan(  0, 0) returns 0
+  A  294.46 scan(  0, 0) returns 0
+  B  294.96 loc_x() returns 8738
+  A  294.96 time() returns 29495
+  B  294.96 loc_x() returns 8738
+  A  294.96 scan(  0, 0) returns 0
+  B  294.96 speed() returns 100
+Time= 295.45660 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8688 4960 180  180 100  100   0   0                  
+  B  295.46 time() returns 29545
+  A  295.46 time() returns 29545
+  B  295.56 scan(  0, 0) returns 0
+  A  295.56 scan(  0, 0) returns 0
+Time= 296.05670 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8628 4960 180  180 100  100   0   0                  
+  B  296.06 loc_x() returns 8628
+  A  296.06 time() returns 29605
+  B  296.06 loc_x() returns 8628
+  A  296.06 scan(  0, 0) returns 0
+  B  296.06 speed() returns 100
+  B  296.56 time() returns 29655
+  A  296.56 time() returns 29655
+  B  296.56 scan(  0, 0) returns 0
+  A  296.56 scan(  0, 0) returns 0
+Time= 297.05690 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8528 4959 180  180 100  100   0   0                  
+  B  297.06 loc_x() returns 8528
+  A  297.06 time() returns 29705
+  B  297.16 loc_x() returns 8518
+  A  297.16 scan(  0, 0) returns 0
+  B  297.16 speed() returns 100
+  B  297.66 time() returns 29765
+  A  297.66 time() returns 29765
+  B  297.66 scan(  0, 0) returns 0
+  A  297.66 scan(  0, 0) returns 0
+Time= 298.15710 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8418 4958 180  180 100  100   0   0                  
+  B  298.16 loc_x() returns 8418
+  A  298.16 time() returns 29815
+  B  298.26 loc_x() returns 8408
+  A  298.26 scan(  0, 0) returns 0
+  B  298.26 speed() returns 100
+  B  298.76 time() returns 29875
+  A  298.76 time() returns 29875
+  B  298.76 scan(  0, 0) returns 0
+  A  298.76 scan(  0, 0) returns 0
+Time= 299.25730 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8308 4957 180  180 100  100   0   0                  
+  B  299.26 loc_x() returns 8308
+  A  299.26 time() returns 29925
+  B  299.36 loc_x() returns 8298
+  A  299.36 scan(  0, 0) returns 0
+  B  299.36 speed() returns 100
+  B  299.86 time() returns 29985
+  A  299.86 time() returns 29985
+  B  299.86 scan(  0, 0) returns 0
+  A  299.86 scan(  0, 0) returns 0
+Time= 300.35750 
+  A target1.exe      2180 4190 307  307   0    0   0   0                  
+  B target2.exe      8198 4957 180  180 100  100   0   0                  
+  B  300.36 loc_x() returns 8198
+  A  300.36 time() returns 30035
+  B  300.36 loc_x() returns 8198
+  A  300.36 cannon(  0, 0) returns 1
+  B  300.36 speed() returns 100
+  A Explosion at 2180,4190
+  B  300.61 time() returns 30060
+  B  300.86 cannon(  0, 0) returns 1
+  A  300.86 cannon(  0, 0) returns 1
+Time= 301.10770 
+  A target1.exe      2180 4190 307  307   0    0   0   8  0.25            
+  B target2.exe      8123 4956 180  180 100  100   0   0  0.25            
+  A Explosion at 2180,4190
+  B Explosion at 8155,4968
+  B  301.36 cannon(  0, 0) returns 1
+  A  301.36 cannon(  0, 0) returns 1
+  A Explosion at 2180,4190
+  B Explosion at 8140,4980
+  B  301.86 cannon(  0, 0) returns 1
+  A  301.96 cannon(  0, 0) returns 1
+Time= 302.10780 
+  A target1.exe      2180 4190 307  307   0    0   0  24  0.25            
+  B target2.exe      8023 4955 180  180 100  100   0  12  0.15            
+  B Explosion at 8060,4909
+  A Explosion at 2180,4190
+  B  302.36 cannon(  0, 0) returns 1
+  A  302.46 cannon(  0, 0) returns 1
+  B Explosion at 8005,4984
+  A Explosion at 2180,4190
+  B  302.86 cannon(  0, 0) returns 1
+  A  302.96 cannon(  0, 0) returns 1
+Time= 303.10800 
+  A target1.exe      2180 4190 307  307   0    0   0  40  0.25            
+  B target2.exe      7923 4955 180  180 100  100   0  24  0.15            
+  B Explosion at 7947,5002
+  A Explosion at 2180,4190
+  B  303.36 cannon(  0, 0) returns 1
+  A  303.46 cannon(  0, 0) returns 1
+  B Explosion at 7902,5000
+  A Explosion at 2180,4190
+  B  303.86 cannon(  0, 0) returns 1
+  A  303.96 cannon(  0, 0) returns 1
+Time= 304.10820 
+  A target1.exe      2180 4190 307  307   0    0   0  56  0.25            
+  B target2.exe      7823 4954 180  180 100  100   0  32  0.15            
+  B Explosion at 7822,4954
+  A Explosion at 2180,4190
+  B  304.36 cannon(  0, 0) returns 1
+  A  304.56 cannon(  0, 0) returns 1
+  B Explosion at 7756,4909
+  A Explosion at 2180,4190
+  B  304.86 cannon(  0, 0) returns 1
+Time= 305.05840 
+  A target1.exe      2180 4190 307  307   0    0   0  72                  
+  B target2.exe      7728 4953 180  180 100  100   0  48  0.25            
+  A  305.06 cannon(  0, 0) returns 1
+  B Explosion at 7703,4998
+  A Explosion at 2180,4190
+  B  305.36 cannon(  0, 0) returns 1
+  A  305.56 cannon(  0, 0) returns 1
+  B Explosion at 7673,4954
+  A Explosion at 2180,4190
+  B  305.86 cannon(  0, 0) returns 1
+Time= 306.05860 
+  A target1.exe      2180 4190 307  307   0    0   0  88                  
+  B target2.exe      7628 4953 180  180 100  100   0  64  0.25            
+  A  306.06 cannon(  0, 0) returns 1
+  B Explosion at 7666,4914
+  A Explosion at 2180,4190
+  B  306.36 cannon(  0, 0) returns 1
+  A  306.56 cannon(  0, 0) returns 1
+  B Explosion at 7642,4965
+  A Explosion at 2180,4190
+target1.exe      0/1/0
+target2.exe      1/0/0
