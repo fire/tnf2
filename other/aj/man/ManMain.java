@@ -30,26 +30,7 @@ public class ManMain extends JPanel {
 	}
 
 }
-
 /*
- * kick high
- * kick low
- * punch high
- * punch low
- * block high
- * block low
- * trip (fall feet)
- * dive (fall head back)
- * walk
- * climb
- * duck 
- * jump up
- * jump accross
- * 
- *    o  
- *   /|\
- *   / \
-
  *  * world -
  *   floor
  *   latter
