@@ -149,6 +149,7 @@ public class Proxy {
 	public void start()  {
 		if (!isValid()) {
 			System.out.println("Invalid Settings");
+			System.exit(0);
 		}
 		ServerSocket ss=null;
 		try {
