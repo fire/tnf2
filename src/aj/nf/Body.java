@@ -695,11 +695,10 @@ public class Body {
 		n = g.getOneByName("orbits");
 		if(n != null)or = n.getString();
 		double at = 0, we = 0, mintemp = - 273, maxtemp = - 273;
-		double tet = 0, rad = 0, grav, light;
+		double tet = 0, rad = 0;
 		Vector solids = new Vector();
 		Vector liquids = new Vector();
 		Vector gasses = new Vector();
-		int size;
 		n = g.getOneByName("atmos");
 		if(n != null)at = n.getDouble();
 		n = g.getOneByName("weather");
@@ -845,6 +844,5 @@ public class Body {
 		String s[]=new String[1];
 		s[0]=name;
 		g.generateAll(s);
-		Location llll=Location.parse("02");
 	}
 }

@@ -320,7 +320,6 @@ public class Corp {
 		if (delayOrders.length()>0) {
 			try {
 				String ordersFile=Main.DIRORDERS+"Orders_"+tick+".txt";
-				File f=new File(ordersFile);
 				PrintWriter pw = new PrintWriter(new FileWriter(ordersFile));
 				pw.println(delayOrders);
 				pw.flush();
@@ -660,7 +659,6 @@ public class Corp {
 				desc = name.substring(name.indexOf(" ") + 1).trim();
 				name = name.substring(0, name.indexOf(" ")).trim();
 			}
-			int count = 1;
 			String line = "\"" + name + "\" [ type program desc \"" + desc + "\" lines \"";
 			line += "\" ]";
 			try {
@@ -811,7 +809,6 @@ public class Corp {
 				GmlPair g = (GmlPair) defs.elementAt(a);
 				if (g.getName().equalsIgnoreCase(toks[1])) {
 					found=true;
-					String name="",lines="",desc="";
 					GmlPair ggg=g.getOneByName("type");
 					if (ggg==null || !ggg.getString().equalsIgnoreCase("program")) {
 						return "INVALID ORDER>Improper program in patent:"+c;
@@ -908,9 +905,9 @@ public class Corp {
 			if (!((Facility)t).hasAbility("T69")) {
 				return "INVALID ORDER>Facility must have research Technology:"+c;
 			}
-			double price=-1;
+			
 			try {
-				price=Math.max(0,Stuff.parseDouble(toks[2]));	
+				Math.max(0,Stuff.parseDouble(toks[2]));	
 			} catch (NumberFormatException nfe) {
 				return "INVALID ORDER>Bad PRICE in CONTRACT:"+c;
 			}	
@@ -1196,7 +1193,7 @@ fd.getProducedValue();
 				return "INVALID ORDER>No such market item:"+c;
 			}
 			try {
-				int amt = Integer.parseInt(toks[2]);
+				Integer.parseInt(toks[2]);
 			}
 			catch (NumberFormatException NFE) {
 				return "INVALID ORDER>Bad number:"+c;
@@ -1212,11 +1209,10 @@ fd.getProducedValue();
 					return "INVALID ORDER>Cannot sell stockpile not at HQ:"+c;
 				}
 				if (nfo instanceof StockPile) {
-					StockPile sp=(StockPile)nfo;
-					int amt=nfo.getMass();
+					nfo.getMass();
 					if (toks.length==3) {
 						try {
-							int newamt=Math.max(0,Integer.parseInt(toks[2]));
+							Math.max(0,Integer.parseInt(toks[2]));
 						} catch (NumberFormatException nfe) {
 							return "INVALID ORDER>Bad number:"+c;
 						}
@@ -1256,8 +1252,8 @@ fd.getProducedValue();
 			}
 			try {
 				String id = toks[1];
-				double res = Stuff.parseDouble(toks[2]);
-				int cls = Integer.parseInt(toks[3]);
+				Stuff.parseDouble(toks[2]);
+				Integer.parseInt(toks[3]);
 				NFObject nfo=Universe.getNFObjectById(id);
 				if (nfo==null) {
 					return "INVALID ORDER>Wrong number of args:"+c;
@@ -1279,7 +1275,7 @@ fd.getProducedValue();
 			}
 			try {
 				String id = toks[1];
-				double amt = Stuff.parseDouble(toks[2]);
+				Stuff.parseDouble(toks[2]);
 				NFObject nfo=Universe.getNFObjectById(id);
 				if (nfo==null) {
 					return "INVALID ORDER>Wrong number of args:"+c;
@@ -1303,7 +1299,6 @@ fd.getProducedValue();
 				doBuy(toks);
 			}
 			else if (toks.length == 2) {
-				Location l = home;
 				ITThing itt = Universe.getITThingByName(toks[1]);
 				if (itt == null) {
 					return "INVALID ORDER>No such design:"+c;
@@ -2442,9 +2437,8 @@ fd.getProducedValue();
 					report += "ERROR: in PRODUCE bad location :" + c + "\n";
 					return true;
 				}
-				Location l = nfo.getLocation();
-				long prodTime = Universe.DAY;
-				ITThing itt = Universe.getITThingByName(toks[1]);
+				nfo.getLocation();
+				Universe.getITThingByName(toks[1]);
 			}
 		}
 		else if (toks[0].equals("QUIT")) {

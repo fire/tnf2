@@ -1133,7 +1133,6 @@ if (Main.DEBUG) System.out.println("MYDEBUG: program truncated.  Too long");
 	}
 
 	public long timeCommand(String s) {
-		String S = s;
 		if(s.indexOf(":") >= 0) {
 			s = s.substring(s.lastIndexOf(":") + 1).trim();
 		}
@@ -1435,7 +1434,6 @@ if (Main.DEBUG) System.out.println("MYDEBUG: program truncated.  Too long");
 				if (Universe.locationContainsTechnology(l,"T58")) return DAY;//road
 				if (Universe.locationContainsTechnology(l,"T59")) return DAY;//tunnel
 
-				int techlevel = 0;
 				if (hasTech("T8") && l.isOrbit()) return HOUR;
 				if (sur.equalsIgnoreCase("P")) return DAY;
 				if (sur.equalsIgnoreCase("W")) return 2*DAY;
@@ -1477,9 +1475,6 @@ if (Main.DEBUG) System.out.println("MYDEBUG: program truncated.  Too long");
 				if (hasTech("T13")) acc=1.21;
 				if (hasTech("T14")) acc=2.42;
 				if (hasTech("T15")) acc=.4;
-				double maxvel = 300000000 * .01;
-				double maxt = maxvel / acc * 2;
-				double accdis = .5 * acc * maxt * maxt;
 				Body locp = Universe.getBodyByLocation(loc);
 				Body lp = Universe.getBodyByLocation(l);
 				if(locp != null || lp != null) {
@@ -1757,7 +1752,6 @@ if (Main.DEBUG) System.out.println("MYDEBUG: program truncated.  Too long");
 						if( !Universe.locationHasTechnology(loc, "T49") && !Universe.locationHasTechnology(loc, "T50")) {
 							return ERRORTIME;
 						}
-						int unitsize=1;
 						int amt2=0;
 						if( !Universe.locationHasTechnology(loc, "T49") ) {
 							amt2+=availableMaterialList(Location.parse("INSIDE."+getId()),loc,"M70");
@@ -2551,9 +2545,7 @@ finishCommand="";finishTime=-1;
 			int moveType = loc.getMoveType(l);
 			if(moveType == Location.LOAD || moveType == Location.UNLOAD) {
 				int techlevel = 0;
-				boolean atm = false;
-				Body b = Universe.getBodyByLocation(l);
-				if(b != null)atm = b.hasAtmosphere();
+
 				if(hasTech("T8") && (loc.isOrbit() || l.isOrbit()))techlevel = 1;
 				if(hasTech("T1") && !loc.isOrbit())techlevel = 1;
 				if(hasTech("T2") && !loc.isOrbit())techlevel = 1;
@@ -2591,7 +2583,7 @@ finishCommand="";finishTime=-1;
 				}
 				if(l.isInside()) {
 					NFObject nfo = Universe.getNFObjectById(l.getInsideWhat());
-					NFObject nfo2 = Universe.getNFObjectById(loc.getInsideWhat());
+
 					if(nfo == null) {
 						log("In line: " + workingCommand + " WARNING: Bad move cannot find target inside location");
 						System.out.println("MyError line: " + workingCommand + " WARNING: Bad move cannot find source inside location");
@@ -3223,9 +3215,6 @@ if (Main.DEBUG) System.out.println("MYDEBUG: entrance blocked.  Facility full wi
 			String eq = workingCommand.substring("PRODUCE".length()).trim();
 			eq = UniVar.getValue(subVars(eq) + "") + "";
 			String n[] = Stuff.getTokens(eq, " \"\t");
-			Vector req = new Vector();
-
-			int amt = 1;
 			//check for arm
 			if( !hasTech("T36")) {
 				log("In line: " + workingCommand + " WARNING: Cannot produce no HeavyWorkArm technolgy available");
@@ -3320,7 +3309,6 @@ if (Main.DEBUG) System.out.println("MYDEBUG: recycle or incenerate requested");
 						log("WARNING: No recycler or inceneerator technology at location.");
 						return;
 					}
-					int unitsize=1;
 					int amt2=0;
 					int industwast=availableMaterialList(Location.parse("INSIDE."+getId()),loc,"M70");
 					int toxwast=availableMaterialList(Location.parse("INSIDE."+getId()),loc,"M68");
