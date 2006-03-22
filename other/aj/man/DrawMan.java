@@ -10,6 +10,11 @@ import java.awt.event.KeyListener;
 import aj.awt.SimpleWindowManager;
 
 public class DrawMan extends Canvas implements KeyListener{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static void main(String s[]) { 
 		Frame f=new Frame();
 		f.add("Center",new DrawMan());

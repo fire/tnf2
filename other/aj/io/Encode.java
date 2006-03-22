@@ -85,7 +85,6 @@ public class Encode {
 			}
 			else if (s[a].startsWith ("B")) {
 				s[a] = s[a].substring (1);
-				int useBase = 2;
 				String bs = null;
 				if (s[a].length() > 0)bs = s[a];
 				else if (s[a].length() < 0 && s.length > a + 1) {

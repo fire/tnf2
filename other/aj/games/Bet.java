@@ -19,7 +19,6 @@ public class Bet {
 	
 			boolean loseDouble=false;
 			boolean loseAddRate=true;
-			boolean loseHalfDouble=false;
 			boolean loseAddOne=false;
 			boolean loseTwoStart=false;
 			boolean winReset=true;

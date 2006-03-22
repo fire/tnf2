@@ -26,26 +26,22 @@ public class Bench {
 		System.exit(0);//must close the applet stuff
 	}
 	static  String testRR() {
-		double d=Math.random()+1,e=Math.random()+1;
 		long cc=0;
 		long t=OPTIME+System.currentTimeMillis();
 		while (t>System.currentTimeMillis()) {
 			for (int a=0;a<OPTIME*100;a++) {
 				cc++;
-				d=Math.random()*Math.random();//e*e;
 			}
 		}
 		return show("2xRANDOM ",cc);
 	}
 	static  String testSD() {
-		double d=Math.random(),e=Math.random();
 		long cc=0;
 		long t=OPTIME+System.currentTimeMillis();
 
 		while (t>System.currentTimeMillis()) {
 			for (int a=0;a<OPTIME*100;a++) {
 				cc++;
-				d=e*e;
 			}
 		}
 		return show("SAME DOUB",cc);
@@ -63,7 +59,6 @@ public class Bench {
 		return show("diff DOUB",cc);
 	}
 	static  String testSY() {
-		double d=Math.random(),e=Math.random();
 		long cc=0;
 		long t=OPTIME+System.currentTimeMillis();
 		while (t>System.currentTimeMillis()) {

@@ -32,6 +32,10 @@ import aj.misc.Stuff;
  */
 
 public class Arena extends JPanel implements ActionListener , Runnable, ChangeListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static int MAXAGE=3;
 	static int MAXROBOTAGE=1;
 	static int MAXCANNONAGE=7;
@@ -183,7 +187,6 @@ public class Arena extends JPanel implements ActionListener , Runnable, ChangeLi
 
 
 	public void run() {
-		long t=System.currentTimeMillis();
 		while (true) {
 			try {
 				Thread.sleep(SLEEPTIME);

@@ -25,6 +25,10 @@ import aj.awt.SimpleWindowManager;
  */
 public class ButtonBar extends Frame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Vector blist = new Vector();
 	Vector exelist = new Vector();
 
@@ -105,7 +109,7 @@ public class ButtonBar extends Frame implements ActionListener {
 		try {
 			BufferedReader BR = new BufferedReader(new FileReader(s));
 			while (BR.ready()) {
-				String S = BR.readLine();
+				BR.readLine();
 			}
 		}
 		catch (Exception E) {
@@ -129,7 +133,7 @@ public class ButtonBar extends Frame implements ActionListener {
 				System.out.println("Exe called for " + exelist.elementAt(a));
 				Runtime t = Runtime.getRuntime();
 				try {
-					Process p = t.exec(tar);
+					t.exec(tar);
 					//          p.waitFor();
 					//          p.destroy();
 				}

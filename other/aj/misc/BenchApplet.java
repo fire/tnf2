@@ -7,6 +7,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class BenchApplet extends Applet implements ActionListener {	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	TextArea ta=new TextArea(10,65);
 
 	public void init() {
@@ -18,7 +22,6 @@ public class BenchApplet extends Applet implements ActionListener {
 			System.out.println("FORMAT: java aj.misc.Bench [<SEC>]");
 			System.exit(0);
 		}
-		String urls = getParameter("time");
 		Button b=new Button("Calc it");
 		b.addActionListener(this);
 		add("Center",ta);
@@ -26,7 +29,7 @@ public class BenchApplet extends Applet implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent ae) {
-		Bench b=new Bench();
+		new Bench();
 		Bench.total=0;
 		String t=Bench.testRR()+"\n"+Bench.testSD()+"\n"+Bench.testDD()+"\n"+Bench.testSY()+"\n"+Bench.showResult()+"\n"+Bench.matrix();
 		ta.setText("DO it\n"+t);

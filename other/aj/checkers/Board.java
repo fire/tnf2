@@ -103,7 +103,6 @@ public class Board {
 		}
 		moves = new Vector();
 		int a;
-		int e;
 		boolean nextMoveRed = (nextMove == RED);
 		//look for jumps
 		for (a = 1; a < 33; a++) {
@@ -171,12 +170,6 @@ public class Board {
 			return (getNextMove() == RED ? -99999 : 99999);
 		}
 		score = 0;
-		int pawnval = 100;
-		int kingval = 180;
-		int rowval = 2;
-		int walval = 1;
-		int jumpval = 100;
-		int kinblock = 2;
 		int a;
 		for (a = 1; a < 33; a++) {
 			boolean red;
@@ -326,9 +319,6 @@ public class Board {
 				s = "";
 			}
 			int frow = (f - 1) / 4;
-			int fcol = f - frow * 4 - 1;
-			int erow = (e - 1) / 4;
-			int ecol = e - erow * 4 - 1;
 			char c = b.getMap(f);
 			b.setMap(f, EMPTY);
 			b.setMap(e, c);
@@ -732,7 +722,6 @@ public class Board {
 		Board b = Board.randBoard();
 		Vector v = b.getMoves();
 		System.out.println(b.toString());
-		int a;
 		System.out.println("");
 		if (v.size() == 0) {
 			System.out.println("GAME OVER!");

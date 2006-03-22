@@ -126,7 +126,6 @@ public class Battle {
 	 */
 	public void begin() {
 		int a;
-		int b;
 		for (a = 0; a < glads.size(); a++) {
 			Gladator att = (Gladator) glads.elementAt(a);
 			att.reset();
@@ -152,7 +151,6 @@ public class Battle {
 	 *@param  att  Description of Parameter 
 	 */
 	public void doAttack(Gladator att) {
-		int a;
 		while (att.getNumberOfAttacks() > 0 && att.getStatus() == Gladator.ACTIVE) {
 			//ckeck kill option for attack
 			//check pickup option for attack

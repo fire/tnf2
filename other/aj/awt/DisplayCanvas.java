@@ -16,6 +16,10 @@ import java.util.Vector;
  *@created    April 12, 2000 
  */
 public class DisplayCanvas extends Canvas implements MouseListener, MouseMotionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Color back=Color.lightGray;
 	Image I;
 	boolean redrawFlag = false;

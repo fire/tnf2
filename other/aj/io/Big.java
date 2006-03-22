@@ -23,7 +23,6 @@ public class Big {
 	public void make (OutputStream O, int z) {
 		byte b[] = {
 		};
-		int count = 0;
 		int a = 0;
 		int max = 100000;
 		try {

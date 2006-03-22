@@ -45,6 +45,10 @@ import javax.swing.JTextField;
  */
 
 public class Gems extends JPanel { 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static int GOODSOUND=0;
 	public static int WINSOUND=1;
 	public static int INTROSOUND=2;
@@ -72,7 +76,6 @@ public class Gems extends JPanel {
 	private boolean soundOn=false;//true;
 	private Image back;
 	private Vector backIconImages=null;//new Vector();
-	private AudioClip winsound=null;
 	private String soundFile[]={
 			"buyitem.wav",
 			"applaus2.wav",
@@ -137,8 +140,7 @@ public class Gems extends JPanel {
 			final JDialog jd=new JDialog(jf,"High Scores");
 
 			jd.getContentPane().setLayout(new BorderLayout());
-			Vector v=Score.getKnownUsers();
-//			JPanel jp=new JPanel(new FlowLayout());
+			//			JPanel jp=new JPanel(new FlowLayout());
 			JTable jt=new JTable(Score.getAllData(getGameType()),Score.getColNames());
 			JTable pjt=new JTable(Score.getUserData(getGameType(),this.currentPlayer),Score.getColNames());
 			
@@ -692,7 +694,6 @@ public class Gems extends JPanel {
 	
 
 	public Vector getCellGroupsAtPoint(Point pos) {
-		int res=0;
 		Vector all=new Vector();
 		if (c[pos.x][pos.y].empty) return all;
 		all.addElement(pos);

@@ -7,6 +7,10 @@ import java.util.Vector;
 import javax.swing.JPanel;
 
 public class Display extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int viewSize=6;
 	Player player=new Player();
 

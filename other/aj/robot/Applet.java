@@ -4,6 +4,11 @@ import javax.swing.JApplet;
 import javax.swing.JPanel;
 
 public class Applet extends JApplet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public void init() {
 		Arena arena=new Arena();
 		//arena.readFile(sss[0]);

@@ -22,8 +22,6 @@ public class Board {
 
 
 	boolean scoredone = false;
-	private int score = 0;
-
 	public int getScore(int a) {
 		if (a==BLACK) return getScore();
 		else return -1*getScore();

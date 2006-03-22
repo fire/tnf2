@@ -15,6 +15,10 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 public class Block extends JComponent implements MapItem{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	ImageIcon i=null;
 
 	public Block() {

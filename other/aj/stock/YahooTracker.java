@@ -26,6 +26,10 @@ import javax.swing.JTextField;
 import aj.misc.Stuff;
 
 class YahooTracker extends JPanel implements ActionListener{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Vector skipDate=new Vector();
 	String stopDate="21-Feb";
 	String stopDate2="21-Feb";
@@ -88,7 +92,6 @@ class YahooTracker extends JPanel implements ActionListener{
 		calendar.setTime(d);
 		Date res;
 
- 		int mon=calendar.get(Calendar.MONTH)+1;
  		int dom=calendar.get(Calendar.DAY_OF_MONTH);
  		int dow=calendar.get(Calendar.DAY_OF_WEEK);
 
@@ -102,12 +105,10 @@ class YahooTracker extends JPanel implements ActionListener{
 			res=d;
 		}
 		calendar.setTime(res);
- 		mon=calendar.get(Calendar.MONTH)+1;
  		dom=calendar.get(Calendar.DAY_OF_MONTH);
  		dow=calendar.get(Calendar.DAY_OF_WEEK);
 		while (dow!=6 || dom<15 || dom>21) {
 			calendar.setTime(res);
- 			mon=calendar.get(Calendar.MONTH)+1;
  			dom=calendar.get(Calendar.DAY_OF_MONTH);
  			dow=calendar.get(Calendar.DAY_OF_WEEK);
 			if (dom<15 ) {
@@ -125,7 +126,6 @@ class YahooTracker extends JPanel implements ActionListener{
 		calendar.setTime(d);
 		Date res;
 
- 		int mon=calendar.get(Calendar.MONTH)+1;
  		int dom=calendar.get(Calendar.DAY_OF_MONTH);
  		int dow=calendar.get(Calendar.DAY_OF_WEEK);
 
@@ -139,12 +139,10 @@ class YahooTracker extends JPanel implements ActionListener{
 			res=d;
 		}
 		calendar.setTime(res);
- 		mon=calendar.get(Calendar.MONTH)+1;
  		dom=calendar.get(Calendar.DAY_OF_MONTH);
  		dow=calendar.get(Calendar.DAY_OF_WEEK);
 		while (dow!=6 || dom<15 || dom>21) {
 			calendar.setTime(res);
- 			mon=calendar.get(Calendar.MONTH)+1;
  			dom=calendar.get(Calendar.DAY_OF_MONTH);
  			dow=calendar.get(Calendar.DAY_OF_WEEK);
 			if (dom<15 ) {
@@ -168,8 +166,7 @@ class YahooTracker extends JPanel implements ActionListener{
 	public String getDateString(Calendar calendar) {
 		int mon=calendar.get(Calendar.MONTH)+1;
  		int dom=calendar.get(Calendar.DAY_OF_MONTH);
- 		int dow=calendar.get(Calendar.DAY_OF_WEEK);
-		int y=calendar.get(Calendar.YEAR);
+ 		int y=calendar.get(Calendar.YEAR);
  		contTail="_0"+(y-2000);
 		String res=dom+"";
 		if (mon==1) {res+="-Jan";contTail+="b";}
@@ -422,7 +419,6 @@ class YahooTracker extends JPanel implements ActionListener{
 	}
 	
 	public int greatestValueIndex() {
-		int res=0;
 		String relsym=(String)dataList.getSelectedItem();
 		if (relsym==null) relsym="";
 		double maxY=getValue(relsym,0);
@@ -595,7 +591,6 @@ class YahooTracker extends JPanel implements ActionListener{
 
 	public void readHistorical(String sym) {
 		String loadUrl="http://finance.yahoo.com/q/hp?s="+sym;
-		boolean done=false;
 		if (log) System.out.println(";connecting "+sym);
 		if (log) System.out.println(";downloading "+sym);
 		String all=readUrl(loadUrl);
@@ -762,7 +757,6 @@ class YahooTracker extends JPanel implements ActionListener{
 		double relVal=getRawValue(relStr,index);
 		double currRelVal=relVal/relValStart;
 		double startVal=getRawValue(sym,maxindex);
-		double indexVal=t.val;
 		double indexRelVal=(t.val/startVal-currRelVal)*100;
 		double indexPerVal=(t.val/startVal)*100;
 		//		return yd.getVal(original,single,percent,relitive,startVal,currRelVal);

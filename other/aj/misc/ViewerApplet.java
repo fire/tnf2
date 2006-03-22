@@ -11,6 +11,11 @@ import java.awt.BorderLayout;
  */
 public class ViewerApplet extends Applet {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
 	 *  Description of the Method 
 	 */
 	public void init() {

@@ -39,6 +39,11 @@ import java.awt.Point;
 
 public class Body extends Canvas {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	static int headSize = 14;
 	
 	static int hipSize = 14;

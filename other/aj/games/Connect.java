@@ -25,6 +25,10 @@ import aj.awt.SimpleWindowManager;
  *@created    August 29, 2000 
  */
 public class Connect extends Canvas implements MouseListener, MouseMotionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Vector allLines;
 	private Vector allSquares;
 	private Vector[] moves;

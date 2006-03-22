@@ -28,6 +28,10 @@ import java.util.Date;
  *@created    August 29, 2000 
  */
 public class DebtClock extends Applet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static boolean APPLET = false;
 
 
@@ -68,6 +72,10 @@ public class DebtClock extends Applet {
 class Counter extends Canvas implements Runnable {
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Date starttime =new Date (974848592358L);//TUE Nov 21, 2000 1 day off
 	long start = (long) ((double) 5699552.93871719 * 1000000);
 	long rate = (long) ((double) 686066526);

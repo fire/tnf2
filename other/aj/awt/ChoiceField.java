@@ -17,6 +17,10 @@ import java.util.Vector;
  *@created    April 12, 2000 
  */
 public class ChoiceField extends TextField implements TextListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String list[];
 	String base[] = {
 		"empty!!!"
