@@ -42,8 +42,7 @@ public class ChoiceField extends TextField implements TextListener {
 	 */
 	public ChoiceField (Vector s) {
 		list = new String[s.size()];
-		int a;
-		for (a = 0; a < s.size(); a++) {
+		for (int a = 0; a < s.size(); a++) {
 			list[a] = (String)s.elementAt (a);
 		}
 		if (list.length == 0) {
@@ -59,8 +58,7 @@ public class ChoiceField extends TextField implements TextListener {
 	 */
 	public void set (Vector s) {
 		String l[] = new String[s.size()];
-		int a;
-		for (a = 0; a < s.size(); a++) {
+		for (int a=0; a < s.size(); a++) {
 			l[a] = (String)s.elementAt (a);
 		}
 		if (l.length == 0) {
@@ -106,17 +104,15 @@ public class ChoiceField extends TextField implements TextListener {
 		if (s.length() == 0) {
 			return list[0];
 		}
-		int a;
-		int b;
-		for (a = 0; a < list.length; a++) {
+		for (int a=0; a < list.length; a++) {
 			if (list[a].toUpperCase().equals (s)) {
 				return list[a];
 			}
 		}
 		String best = null;
-		a = s.length();
+		int a = s.length();
 		while (best == null) {
-			for (b = 0; b < list.length; b++) {
+			for (int b = 0; b < list.length; b++) {
 				if (list[b].toUpperCase().startsWith (s.substring (0, a))) {
 					best = list[b];
 				}
@@ -135,8 +131,7 @@ public class ChoiceField extends TextField implements TextListener {
 	 */
 	public void performAction (ActionEvent ae) {
 		Vector v = (Vector)aeList.clone();
-		int a;
-		for (a = 0; a < v.size(); a++) {
+		for (int a=0; a < v.size(); a++) {
 			ActionListener AL = (ActionListener)aeList.elementAt (a);
 			AL.actionPerformed (ae);
 		}
@@ -179,7 +174,7 @@ public class ChoiceField extends TextField implements TextListener {
 		else {
 			int a;
 			l = new String[list.length + 1];
-			for (a = 0; a < list.length; a++) {
+			for (a=0; a < list.length; a++) {
 				l[a] = list[a];
 			}
 			l[a] = s;
@@ -196,8 +191,7 @@ public class ChoiceField extends TextField implements TextListener {
 			"aaron", "aboard", "about", "above", "across", "along", "amid", "after", "arrow", "asexual", "another", "antidote", "all", "alot", "any", "about", "again", "abcde", "atlast"
 		};
 		Vector v = new Vector();
-		int a;
-		for (a = 0; a < list.length; a++) {
+		for (int a=0; a < list.length; a++) {
 			v.addElement (list[a]);
 		}
 		Frame f = new Frame();

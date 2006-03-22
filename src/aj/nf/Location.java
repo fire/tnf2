@@ -19,8 +19,6 @@ public class Location {
 	private int col = -1;// 0 - size*2-1
 	private int level = -1;//0 - size-1
 	private String fac = "";
-	private String minor="";
-	
 	public static int SURFACE = 0, SUBTER = 1, ESCAPE=2, INTERPLANET = 3, INTERSOLAR = 4, LOAD=5, REENTRY=6, UNLOAD=7;
 
 
@@ -368,11 +366,6 @@ public class Location {
 	public int getMoveType(Location dest) {
 		if (!adjacentTo(this,dest)) return -1;
 
-		Location l=this;
-
-		//if (getSolar()!=dest.getSolar() && !isInside() && !dest.isInside()) {return INTERSOLAR;}
-
-
 		if (isOrbit() && dest.isOrbit() ) {return INTERPLANET;}
 
 		if (isSurface() && dest.isOrbit() ){return ESCAPE;}
@@ -464,7 +457,7 @@ public class Location {
 
 
 	public static void main(String s[]) {
-		Universe u=new Universe();
+		new Universe();
 		Universe.load();
 		Location L1,L2;
 

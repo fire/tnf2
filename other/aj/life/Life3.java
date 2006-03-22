@@ -29,6 +29,11 @@ public class Life3 extends Applet implements ActionListener, MouseListener, Mous
 //rules
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static void main(String s[]) {
 		for (int a=0;a<s.length;a++) {
 			//if (s[a].toUpperCase().indexOf("SIZE")>=0
@@ -114,6 +119,11 @@ public class Life3 extends Applet implements ActionListener, MouseListener, Mous
 
 
 class Life3Display extends Canvas implements Runnable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	Life3Map lm;
 
@@ -259,7 +269,6 @@ class Life3Display extends Canvas implements Runnable {
 		//System.out.println("paint called "+lm.maxx+" "+lm.minx+" "+lm.maxy+" "+lm.miny);
 		for (int a=lm.minx;a<=lm.maxx;a++) {
 			for (int b=lm.miny;b<lm.maxy;b++) {
-				int c=count(a,b);
 				LifeCell lc=lm.get(a,b);
 				if (lc==null) continue;
 				G.setColor(lc.color);

@@ -45,9 +45,8 @@ public class Board {
 	 */
 	public Board(Board b) {
 		map = new char[8][4];
-		int a;
 		int c;
-		for (a = 0; a < 8; a++) {
+		for (int a = 0; a < 8; a++) {
 			for (c = 0; c < 4; c++) {
 				map[a][c] = b.map[a][c];
 			}
@@ -102,10 +101,9 @@ public class Board {
 			return moves;
 		}
 		moves = new Vector();
-		int a;
 		boolean nextMoveRed = (nextMove == RED);
 		//look for jumps
-		for (a = 1; a < 33; a++) {
+		for (int a=1; a < 33; a++) {
 			char c = getMap(a);
 			if (c == EMPTY) {
 				continue;
@@ -123,7 +121,7 @@ public class Board {
 			return moves;
 		}
 		//look for moves
-		for (a = 1; a < 33; a++) {
+		for (int a=1; a < 33; a++) {
 			char c = getMap(a);
 			if (c == EMPTY) {
 				continue;
@@ -170,8 +168,7 @@ public class Board {
 			return (getNextMove() == RED ? -99999 : 99999);
 		}
 		score = 0;
-		int a;
-		for (a = 1; a < 33; a++) {
+		for (int a = 1; a < 33; a++) {
 			boolean red;
 			boolean pawn;
 			if (getMap(a) == REDPAWN) {
@@ -231,7 +228,7 @@ public class Board {
 		}
 		Vector v = getMoves();
 		int hop = 0;
-		for (a = 0; a < v.size(); a++) {
+		for (int a=0; a < v.size(); a++) {
 			String mv = (String) v.elementAt(a);
 			hop += numHops(mv);
 		}
@@ -630,8 +627,7 @@ public class Board {
 	 */
 	public String toString() {
 		String s = "" + BLOCK;
-		int a;
-		for (a = 1; a < 33; a++) {
+		for (int a=1; a < 33; a++) {
 			s += "" + getMap(a);
 			if (a % 4 != 0) {
 				s += "" + BLOCK;
@@ -654,8 +650,7 @@ public class Board {
 	 *  Description of the Method 
 	 */
 	private void applyCrowns() {
-		int a;
-		for (a = 1; a < 5; a++) {
+		for (int a=1; a < 5; a++) {
 			char c = getMap(a);
 			if (c == WHITEPAWN) {
 				setMap(a, WHITEKING);
@@ -693,11 +688,10 @@ public class Board {
 	 */
 	public static Board randBoard() {
 		Board b = Board.newBoard();
-		int a;
-		for (a = 1; a < 33; a++) {
+		for (int a = 1; a < 33; a++) {
 			b.setMap(a, EMPTY);
 		}
-		for (a = 0; a < 24; a++) {
+		for (int a=0; a < 24; a++) {
 			int pos = (int) (Math.random() * 32) + 1;
 			char c;
 			if (a < 12) {

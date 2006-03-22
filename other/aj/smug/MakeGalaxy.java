@@ -16,7 +16,11 @@ import aj.awt.SimpleWindowManager;
 import aj.misc.Stuff;
 
 public class MakeGalaxy extends Canvas implements MouseListener,ActionListener {
-  static int GALSIZ=150,NUMPLANETS=300,GALHEI=50;
+  /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+static int GALSIZ=150,NUMPLANETS=300,GALHEI=50;
   static int dis=4;
 
   public static double myatan(int x,int y) {
@@ -29,7 +33,7 @@ public class MakeGalaxy extends Canvas implements MouseListener,ActionListener {
   }
 
   public static void main(String s[]) {
-    int a,b,c;
+    int a;
     int x[]=new int[NUMPLANETS];
     int y[]=new int[NUMPLANETS];
     int z[]=new int[NUMPLANETS];

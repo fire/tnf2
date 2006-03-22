@@ -57,7 +57,7 @@ public class Sleeper {
 		System.out.println("Exe called for " + tar);
 		Runtime t = Runtime.getRuntime();
 		try {
-			Process p = t.exec(Stuff.getTokens(tar, " \t"));
+			t.exec(Stuff.getTokens(tar, " \t"));
 			//      BufferedReader br=new BufferedReader(new InputStreamReader (p.getInputStream()));
 			//      while (br.readLine()!=null);
 		}

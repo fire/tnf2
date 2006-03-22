@@ -133,7 +133,6 @@ public class Sentence {
 	 *  Constructor for the Sentence object 
 	 */
 	private Sentence() {
-		int type = Token.ERROR;
 	}
 
 
@@ -240,8 +239,7 @@ public class Sentence {
 		}
 		else if (type == Token.QUALIFIEDSENT) {
 			t += "[" + Qualifier + " ";
-			int a;
-			for (a = 0; a < VarList.size(); a++) {
+			for (int a = 0; a < VarList.size(); a++) {
 				t += VarList.elementAt(a).toString();
 				if (a + 1 < VarList.size()) {
 					t += ", ";
@@ -308,7 +306,6 @@ public class Sentence {
 	 */
 	public static Sentence Parse(Tokens T) {
 		boolean notted = false;
-		int type = Token.ERROR;
 		if (T.currType() == Token.NOT) {
 			notted = true;
 			T.eat();
@@ -333,15 +330,13 @@ public class Sentence {
 	 *@param  argv  Description of Parameter 
 	 */
 	public static void main(String argv[]) {
-		Tokens t;
 		String test[] = {"?pred(hi,You)", "?pred(hi,You)-->?Guys(Me,him)", 
 				"((?pred(hi,You))-->a=b)", "~?Pred(hi,You)", "((B=t)-->~(T=t))", 
 				"[FORALL x,y: ?man(x)-->~?Woman(y)]", 
 				"(?p(X) and ?p(Y)) or ?p(Z)"};
 
-		int a;
 		System.out.println("Testing Sentence");
-		for (a = 0; a < test.length; a++) {
+		for (int a=0; a < test.length; a++) {
 			System.out.println("entered <" + test[a] + ">");
 			Sentence s = Sentence.Parse(test[a]);
 			System.out.println("result <" + s + ">");

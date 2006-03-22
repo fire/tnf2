@@ -8,6 +8,10 @@ import java.awt.Graphics;
 import aj.awt.SimpleWindowManager;
 
 public class View extends Canvas implements Runnable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static int SLEEPTIME=10;
 	static int STEPCOUNT=4;
 	static boolean DEBUG=true;

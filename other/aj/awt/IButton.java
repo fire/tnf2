@@ -26,6 +26,10 @@ import java.util.Vector;
  *@created    April 12, 2000 
  */
 public class IButton extends Component implements MouseListener, MouseMotionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Image i = null;
 	int height = 0, width = 0;
 	int iheight = 0, iwidth = 0;
@@ -344,8 +348,8 @@ public class IButton extends Component implements MouseListener, MouseMotionList
 	public void click (String s) {
 		Vector l = (Vector)list.clone();
 		ActionEvent AE = new ActionEvent (this, ActionEvent.ACTION_PERFORMED, s);
-		int a;
-		for (a = 0; a < l.size(); a++) {
+		
+		for (int a = 0; a < l.size(); a++) {
 			ActionListener AL = (ActionListener)l.elementAt (a);
 			AL.actionPerformed (AE);
 		}

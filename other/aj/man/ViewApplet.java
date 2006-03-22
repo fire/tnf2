@@ -14,6 +14,10 @@ import aj.awt.SimpleWindowManager;
 
 public class ViewApplet extends Applet implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	View V;
 	Vector allMoves=new Vector();
 

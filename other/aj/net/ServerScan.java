@@ -54,8 +54,7 @@ public class ServerScan {
 		}
 		String all[] = Stuff.getTokens(result, ", \t");
 		result = "";
-		int a;
-		for (a = 0; a < all.length - 1; a++) {
+		for (int a = 0; a < all.length - 1; a++) {
 			try {
 				int f = Integer.parseInt(all[a]);
 				int n = Integer.parseInt(all[a + 1]);

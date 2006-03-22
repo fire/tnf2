@@ -360,7 +360,7 @@ public class Plan {
 	 */
 	public static void main(String s[]) {
 		String m = DEFAULT;
-		Plan p = Plan.parse(m);
+		Plan.parse(m);
 	}
 
 }

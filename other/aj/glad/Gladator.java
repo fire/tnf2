@@ -142,8 +142,7 @@ public class Gladator {
 	 *@param  v  The new Opponent value 
 	 */
 	public void setOpponent(Vector v) {
-		int a;
-		for (a = 0; a < v.size(); a++) {
+		for (int a = 0; a < v.size(); a++) {
 			Gladator g = (Gladator) v.elementAt(a);
 			if (g.getStatus() != ACTIVE) {
 				v.removeElement(g);
@@ -438,8 +437,7 @@ public class Gladator {
 		schoolPerformance = new Skill();
 		schoolPerformance.type = Skill.SCHOOL;
 		pass = new Skill();
-		int a;
-		for (a = 0; a < SCHOOLTEST; a++) {
+		for (int a=0; a < SCHOOLTEST; a++) {
 			pass.sword += testRoll(real.sword);
 			pass.club += testRoll(real.club);
 			pass.polarm += testRoll(real.polarm);
@@ -503,8 +501,7 @@ public class Gladator {
 	 *@return    Description of the Returned Value 
 	 */
 	public boolean pickup(Vector v) {
-		int a;
-		for (a = 0; a < v.size(); a++) {
+		for (int a=0; a < v.size(); a++) {
 			if (pickup((Item) v.elementAt(a))) {
 				return true;
 			}

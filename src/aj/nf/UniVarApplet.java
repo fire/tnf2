@@ -17,6 +17,10 @@ import java.awt.event.ActionListener;
 
 public class UniVarApplet extends Applet implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static TextField arg1=new TextField(10);
 	private static TextField arg2=new TextField(10);
 	private static TextField arg3=new TextField(10);

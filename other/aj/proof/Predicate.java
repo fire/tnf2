@@ -52,11 +52,9 @@ public class Predicate {
 	 *@param  Sublist  Description of Parameter 
 	 */
 	public void sub(Vector Sublist) {
-		int a;
-		int b;
-		for (a = 0; a < Sublist.size(); a++) {
+		for (int a = 0; a < Sublist.size(); a++) {
 			Subst S = (Subst) Sublist.elementAt(a);
-			for (b = 0; b < Termlist.size(); b++) {
+			for (int b = 0; b < Termlist.size(); b++) {
 				Term T = (Term) Termlist.elementAt(b);
 				T = S.change(T);
 				Termlist.setElementAt(T, b);

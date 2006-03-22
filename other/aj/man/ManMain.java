@@ -14,6 +14,11 @@ import java.awt.*;
  */
 public class ManMain extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static void main(String[] args) {
 		JFrame jf=new JFrame();
 		ManMain mm=new ManMain();

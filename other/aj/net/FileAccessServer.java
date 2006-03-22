@@ -170,8 +170,7 @@ public class FileAccessServer {
 				}
 				br.close();
 				PrintWriter pw = new PrintWriter(new FileWriter(f));
-				int a;
-				for (a = 0; a < v.size(); a++) {
+				for (int a = 0; a < v.size(); a++) {
 					pw.println((String) v.elementAt(a));
 				}
 				pw.close();
@@ -268,8 +267,7 @@ public class FileAccessServer {
 				}
 				br.close();
 				PrintWriter pw = new PrintWriter(new FileWriter(f));
-				int a;
-				for (a = 0; a < v.size(); a++) {
+				for (int a=0; a < v.size(); a++) {
 					pw.println((String) v.elementAt(a));
 				}
 				pw.close();

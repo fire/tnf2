@@ -31,7 +31,7 @@ public class Tool2 implements ActionListener{
 	//JDialog turnInput=new JDialog();
 
 	public static void main(String s[]) {
-		Tool2 t2=new Tool2();
+		new Tool2();
 	}
 
 	public Tool2() {

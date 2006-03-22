@@ -53,8 +53,7 @@ class state {
 	public boolean valid() {
 		int numx = 0;
 		int numo = 0;
-		int a;
-		for (a = 0; a < 9; a++) {
+		for (int a = 0; a < 9; a++) {
 			if (s[a] == 1) {
 				numx++;
 			}
@@ -77,8 +76,7 @@ class state {
 	 */
 	public state[] permutate() {
 		state per[] = new state[7];
-		int a;
-		for (a = 0; a < 7; a++) {
+		for (int a=0; a < 7; a++) {
 			int ss[] = new int[9];
 			ss[0] = s[comb[a][0] - 1];
 			ss[1] = s[comb[a][1] - 1];
@@ -112,9 +110,8 @@ class state {
 	 *@return    Description of the Returned Value 
 	 */
 	public String toString() {
-		int a = 0;
 		int num = 0;
-		for (a = 0; a < s.length; a++) {
+		for (int a=0; a < s.length; a++) {
 			num += s[a] * (int) Math.pow(3, a);
 		}
 		return "" + num;
@@ -128,10 +125,9 @@ class state {
 	 */
 	public String winner() {
 		int wins[][] = {{1, 2, 3}, {1, 4, 7}, {1, 5, 9}, {2, 5, 8}, {3, 6, 9}, {3, 5, 7}, {4, 5, 6}, {7, 8, 9}};
-		int a;
 		int xwin = 0;
 		int owin = 0;
-		for (a = 0; a < wins.length; a++) {
+		for (int a=0; a < wins.length; a++) {
 			if (s[wins[a][0] - 1] == s[wins[a][1] - 1] && 
 					s[wins[a][0] - 1] == s[wins[a][2] - 1]) {
 				if (s[wins[a][1] - 1] == 1) {
@@ -146,7 +142,7 @@ class state {
 		int numx = 0;
 
 		int numo = 0;
-		for (a = 0; a < 9; a++) {
+		for (int a=0; a < 9; a++) {
 			if (s[a] == 1) {
 				numx++;
 			}
@@ -174,12 +170,10 @@ class state {
 	 *  Description of the Method 
 	 */
 	public void view() {
-		int a;
-		int b;
 		System.out.println("");
 		System.out.println("Game #" + toString() + " " + winner());
-		for (a = 0; a < 3; a++) {
-			for (b = 0; b < 3; b++) {
+		for (int a=0; a < 3; a++) {
+			for (int b = 0; b < 3; b++) {
 				if (s[a * 3 + b] == 1) {
 					System.out.print("x");
 				}
@@ -212,8 +206,7 @@ public class tictac {
 	 *  Constructor for the tictac object 
 	 */
 	public tictac() {
-		int a;
-		for (a = 0; a < Math.pow(3, 9); a++) {
+		for (int a=0; a < Math.pow(3, 9); a++) {
 			state t = new state(a);
 			if (t.valid()) {
 				add(t);
@@ -234,9 +227,8 @@ public class tictac {
 		}
 
 		state tt[] = t.permutate();
-		int a;
 		boolean found = false;
-		for (a = 0; a < tt.length; a++) {
+		for (int a=0; a < tt.length; a++) {
 			if (all.contains(tt[a].toString())) {
 				found = true;
 			}

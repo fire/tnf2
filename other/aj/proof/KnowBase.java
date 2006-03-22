@@ -70,12 +70,10 @@ public class KnowBase {
 		if (v1.size() != v2.size()) {
 			return false;
 		}
-		int a;
-		int b;
-		for (a = 0; a < v1.size(); a++) {
+		for (int a = 0; a < v1.size(); a++) {
 			Predicate P1 = (Predicate) v1.elementAt(a);
 			boolean found = false;
-			for (b = 0; b < v2.size(); b++) {
+			for (int b = 0; b < v2.size(); b++) {
 				Predicate P2 = (Predicate) v2.elementAt(b);
 				if (P1.equals(P2)) {
 					found = true;
@@ -142,9 +140,7 @@ public class KnowBase {
 		}
 		Term t1;
 		Term t2;
-		int a;
-		int b;
-		for (a = 0; a < T1.size(); a++) {
+		for (int a=0; a < T1.size(); a++) {
 			t1 = (Term) T1.elementAt(a);
 			t2 = (Term) T2.elementAt(a);
 			if (t1.equals(t2)) {
@@ -212,7 +208,7 @@ public class KnowBase {
 			}
 			if (Ans.size() > 0) {
 				Subst SSS = (Subst) Ans.elementAt(Ans.size() - 1);
-				for (b = a + 1; b < T1.size(); b++) {
+				for (int b = a + 1; b < T1.size(); b++) {
 					Term L = (Term) T1.elementAt(b);
 					L = new Term(SSS.change(L));
 					T1.setElementAt(L, b);
@@ -237,12 +233,10 @@ public class KnowBase {
 	public boolean CanResolve(Vector V, Vector T) {
 		Predicate P1;
 		Predicate P2;
-		int a;
-		int b;
 		boolean OK = false;
-		for (a = 0; a < V.size() && !OK; a++) {
+		for (int a=0; a < V.size() && !OK; a++) {
 			P1 = (Predicate) V.elementAt(a);
-			for (b = 0; b < T.size() && !OK; b++) {
+			for (int b = 0; b < T.size() && !OK; b++) {
 				P2 = (Predicate) T.elementAt(b);
 				if (P2.resolveswith(P1)) {
 					OK = true;
@@ -269,10 +263,9 @@ public class KnowBase {
 	 *@param  Sublist  Description of Parameter 
 	 */
 	public void makeResultSub(Vector Sublist) {
-		int a;
 		results = "";
 		subs = "";
-		for (a = ENDSIZE; a < Known.size(); a++) {
+		for (int a=ENDSIZE; a < Known.size(); a++) {
 			Vector V = (Vector) Known.elementAt(a);
 			results += "STEP" + (a - ENDSIZE + 1) + ": " + showWWF(V) + "\n";
 		}
@@ -289,8 +282,7 @@ public class KnowBase {
 	 */
 	public Vector Dosubs(Vector V, Vector Sublist) {
 		//System.out.println("DOING SUBS FOR WWF=>"+showWWF(V));
-		int a;
-		for (a = 0; a < V.size(); a++) {
+		for (int a=0; a < V.size(); a++) {
 			Predicate P = (Predicate) V.elementAt(a);
 			P.sub(Sublist);
 			V.setElementAt(P, a);
@@ -312,13 +304,11 @@ public class KnowBase {
 		Predicate P2;
 		Vector subit = UnifyWWFSUBS(V, T);
 		Vector Ans = new Vector();
-		int a;
-		int b;
 		int Vpos = -1;
 		int Tpos = -1;
-		for (a = 0; a < V.size() && Vpos == -1; a++) {
+		for (int a=0; a < V.size() && Vpos == -1; a++) {
 			P1 = (Predicate) V.elementAt(a);
-			for (b = 0; b < T.size() && Tpos == -1; b++) {
+			for (int b = 0; b < T.size() && Tpos == -1; b++) {
 				P2 = (Predicate) T.elementAt(b);
 				if (P2.resolveswith(P1)) {
 					Vector test = Unify(P1.Termlist, P2.Termlist);
@@ -336,12 +326,12 @@ public class KnowBase {
 				}
 			}
 		}
-		for (a = 0; a < V.size(); a++) {
+		for (int a=0; a < V.size(); a++) {
 			if (a != Vpos) {
 				Ans.addElement(new Predicate((Predicate) V.elementAt(a)));
 			}
 		}
-		for (a = 0; a < T.size(); a++) {
+		for (int a=0; a < T.size(); a++) {
 			if (a != Tpos) {
 				Ans.addElement(new Predicate((Predicate) T.elementAt(a)));
 			}
@@ -362,11 +352,9 @@ public class KnowBase {
 	public Vector UnifyWWFSUBS(Vector V, Vector T) {
 		Predicate P1;
 		Predicate P2;
-		int a;
-		int b;
-		for (a = 0; a < V.size(); a++) {
+		for (int a=0; a < V.size(); a++) {
 			P1 = (Predicate) V.elementAt(a);
-			for (b = 0; b < T.size(); b++) {
+			for (int b = 0; b < T.size(); b++) {
 				P2 = (Predicate) T.elementAt(b);
 				if (P2.resolveswith(P1)) {
 					Vector test = Unify(P1.Termlist, P2.Termlist);
@@ -395,10 +383,8 @@ public class KnowBase {
 	 *@return    Description of the Returned Value 
 	 */
 	public Vector cleanUp(Vector V) {
-		int a;
-		int b;
-		for (a = 0; a < V.size(); a++) {
-			for (b = a + 1; b < V.size(); b++) {
+		for (int a=0; a < V.size(); a++) {
+			for (int b = a + 1; b < V.size(); b++) {
 				Predicate P1 = (Predicate) V.elementAt(a);
 				Predicate P2 = (Predicate) V.elementAt(b);
 				if (P1.equals(P2)) {
@@ -423,11 +409,9 @@ public class KnowBase {
 	 */
 	public Vector Resolve(Vector V) {
 		//System.out.println("resolveing "+showWWF(V));
-		int a;
 		Vector Sublist = new Vector();
 		Vector Work;
-		boolean found = false;
-		for (a = 0; a < Known.size(); a++) {
+		for (int a = 0; a < Known.size(); a++) {
 			Sublist = new Vector();
 			Work = (Vector) Known.elementAt(a);
 			if (Work == V) {
@@ -480,8 +464,7 @@ public class KnowBase {
 	 *@return    Description of the Returned Value 
 	 */
 	public String Resolve() {
-		int a;
-		for (a = ENDSIZE; a < Known.size(); a++) {
+		for (int a=ENDSIZE; a < Known.size(); a++) {
 			Vector Work = (Vector) Known.elementAt(a);
 			Vector Ans = Resolve(Work);
 			if (Ans.size() == 0) {
@@ -506,9 +489,7 @@ public class KnowBase {
 	 */
 	public boolean newRule(Vector V) {
 		V = (Vector) V.clone();
-		int a;
-		int b;
-		for (a = 0; a < Known.size(); a++) {
+		for (int a=0; a < Known.size(); a++) {
 			Vector v2 = (Vector) Known.elementAt(a);
 			if (isDuplicate(V, v2)) {
 				//        System.out.println("DUPLICAT RULE FOUND SKIPING "+showWWF(V));
@@ -516,8 +497,8 @@ public class KnowBase {
 			}
 		}
 		//System.out.println("NEW RULE ASSERTED "+showWWF(V));
-		for (a = 0; a < V.size(); a++) {
-			for (b = a + 1; b < V.size(); b++) {
+		for (int a=0; a < V.size(); a++) {
+			for (int b = a + 1; b < V.size(); b++) {
 				Predicate P1 = (Predicate) V.elementAt(a);
 				Predicate P2 = (Predicate) V.elementAt(b);
 				if (P1.equals(P2)) {
@@ -604,10 +585,9 @@ public class KnowBase {
 	 *@return    Description of the Returned Value 
 	 */
 	public String showSUB(Vector V) {
-		int a;
 		System.out.println("Sub List =>");
 		String S = "";
-		for (a = 0; a < V.size(); a++) {
+		for (int a=0; a < V.size(); a++) {
 			Subst P = (Subst) V.elementAt(a);
 			S += "" + P;
 			if (a < V.size() - 1) {
@@ -625,9 +605,8 @@ public class KnowBase {
 	 *@return    Description of the Returned Value 
 	 */
 	public String showWWF(Vector V) {
-		int a;
 		String S = "";
-		for (a = 0; a < V.size(); a++) {
+		for (int a=0; a < V.size(); a++) {
 			Predicate P = (Predicate) V.elementAt(a);
 			S += "" + P;
 			if (a < V.size() - 1) {
@@ -642,10 +621,8 @@ public class KnowBase {
 	 *  Description of the Method 
 	 */
 	public void makeRules() {
-		int a;
-		int b;
 		rules = "";
-		for (a = 0; a < Known.size(); a++) {
+		for (int a=0; a < Known.size(); a++) {
 			rules += "RULE" + (a + 1) + "> " + showWWF((Vector) Known.elementAt(a)) + "\n";
 		}
 	}

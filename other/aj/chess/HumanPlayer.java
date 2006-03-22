@@ -19,6 +19,10 @@ import java.util.Vector;
 import aj.awt.SimpleWindowManager;
 
 public class HumanPlayer extends Canvas implements ActionListener, MouseMotionListener, MouseListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Board b;
 	boolean live = false;
 
@@ -116,11 +120,10 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 //System.out.println("Paint called");
 		g.setFont(new Font("TimesRoman",Font.PLAIN,18));
 		Dimension d = getSize();
-		int a;
 		int c;
 		int dw = d.width / 8;
 		int dh = d.height / 8;
-		for (a = 0; a < 8; a++) {
+		for (int a = 0; a < 8; a++) {
 			for (c = 0; c < 8; c++) {
 				if ((c % 2 + a % 2) % 2 == 0) {
 					g.setColor(Color.lightGray);
@@ -133,7 +136,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 				g.drawRect(a * dw, c * dh, dw, dh);
 			}
 		}
-		for (a = 0; a < 64 && b != null; a++) {
+		for (int a = 0; a < 64 && b != null; a++) {
 			int row = a/8;
 			int col = a%8;
 			String cc=""+b.getMap(a);
@@ -174,8 +177,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			down = false;
 			int pos = getSquare(sx, sy);
 			int pos2 = getSquare(ex, ey);
-			int a;
-			for (a = 0; a < moves.size(); a++) {
+			for (int a=0; a < moves.size(); a++) {
 				String m = (String) moves.elementAt(a);
 				if (m.startsWith(pos + ":") && m.indexOf(":" + pos2)>=1) {
 					doMove(m);
@@ -194,8 +196,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		if (!live) {
 			return;
 		}
-		int a;
-		for (a = 0; a < moves.size(); a++) {
+		for (int a=0; a < moves.size(); a++) {
 			String s = (String) moves.elementAt(a);
 			if (s.startsWith(pos+":")) {
 				down = true;
@@ -259,8 +260,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 
 	public void performAction(ActionEvent AE) {
 		Vector l = (Vector) list.clone();
-		int a;
-		for (a = 0; a < l.size(); a++) {
+		for (int a=0; a < l.size(); a++) {
 			ActionListener AL = (ActionListener) l.elementAt(a);
 			AL.actionPerformed(AE);
 		}

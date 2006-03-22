@@ -49,6 +49,11 @@ public class Life4 extends JApplet implements ActionListener, MouseListener, Mou
 
 //file - O.lif
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static void main(String s[]) {
 		//TODO add read ".lif" file type
 		for (int a=0;a<s.length;a++) {
@@ -134,6 +139,10 @@ public class Life4 extends JApplet implements ActionListener, MouseListener, Mou
 
 
 class Life4Display extends JPanel implements Runnable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static int COLONIES=1;
 	static int COLSIZE=24;
 

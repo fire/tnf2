@@ -48,7 +48,6 @@ public class Stuff {
 	public static String money(double d) {return money(d,0);}
 	public static String money(double d, int t) {
 		if (Math.abs(trunc(d,2))<.01) return "$0.0";	
-		double od = d;
 		String head = "$";
 		if (d < 0) {
 			head = "-" + head;
@@ -122,8 +121,7 @@ public class Stuff {
 		while (chars.indexOf(" ") >= 0) {
 			chars = chars.substring(0, chars.indexOf(" ")) + chars.substring(chars.indexOf(" ") + 1);
 		}
-		int a;
-		for (a = 0; a < chars.length(); a++) {
+		for (int a=0; a < chars.length(); a++) {
 			char c = chars.charAt(a);
 			String res="";
 			String sub="";

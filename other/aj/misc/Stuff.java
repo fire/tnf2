@@ -50,7 +50,6 @@ public class Stuff {
 	public static String money(double d) {return money(d,0);}
 	public static String money(double d, int t) {
 		if (Math.abs(trunc(d,2))<.01) return "$0.0";	
-		double od = d;
 		String head = "$";
 		if (d < 0) {
 			head = "-" + head;
@@ -128,8 +127,7 @@ public class Stuff {
 				while (chars.indexOf(" ") >= 0) {
 					chars = chars.substring(0, chars.indexOf(" ")) + chars.substring(chars.indexOf(" ") + 1);
 				}
-				int a;
-				for (a = 0; a < chars.length(); a++) {
+				for (int a = 0; a < chars.length(); a++) {
 					char c = chars.charAt(a);
 					String res="";
 					String sub="";
@@ -215,7 +213,7 @@ public class Stuff {
 //		System.out.println("result2 len="+test2.length()+" in "+(System.currentTimeMillis()-ti) + "secs");
 //		if (test.length()<200) System.out.println("test="+test);
 //		if (test.length()<200) System.out.println("test2="+test2);
-		String fill="XXX",bad="bad",good="good";
+		String bad="bad",good="good";
 		for (int a=0;a<500;a++) {
 			int x=(int)(Math.random()*3);
 			if (x<1) {

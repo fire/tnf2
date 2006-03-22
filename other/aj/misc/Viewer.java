@@ -32,6 +32,10 @@ import javax.swing.JTextField;
  */
 public class Viewer extends JPanel implements MouseListener, ActionListener, ItemListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Vector imageGroupsIndex=new Vector();
 	Vector imageGroupNameList=new Vector();
 	Vector imageGroupFileNameList=new Vector();
@@ -137,7 +141,6 @@ public class Viewer extends JPanel implements MouseListener, ActionListener, Ite
 						int localDelay=Integer.parseInt(delayTextField.getText())*10;
 						if (localDelay>0) {
 							Thread.sleep(localDelay);
-							double last=System.currentTimeMillis();
 							setNext();			
 						}
 						if (localDelay<=0) Thread.sleep(2000);
@@ -148,14 +151,12 @@ public class Viewer extends JPanel implements MouseListener, ActionListener, Ite
 	}
 	
 	public void setImage(int x) {
-		String name=imageFileNameList.elementAt(x).toString();
 		if (x==nextNum(dis)) {
 			p=i;
 			i=n;
 			n=new ImageIcon(imageFileNameList.elementAt(nextNum(x)).toString());
 		}
 		else if (x==prevNum(dis)) {
-			ImageIcon t=i;
 			n=i;
 			i=p;
 			p=new ImageIcon(imageFileNameList.elementAt(prevNum(x)).toString());
@@ -300,8 +301,7 @@ public class Viewer extends JPanel implements MouseListener, ActionListener, Ite
 	
 	public String[] options(String s[]) {
 		Vector v = new Vector();
-		int a;
-		for (a = 0; a < s.length; a++) {
+		for (int a = 0; a < s.length; a++) {
 			if (s[a].startsWith("-")) {
 				if (s[a].toUpperCase().indexOf("-T") == 0) {
 					s[a] = s[a].substring(2);

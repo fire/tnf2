@@ -45,8 +45,7 @@ public class StuffIt {
 			delay = Integer.parseInt(s[1]);
 		}
 		String name = null;
-		int a;
-		for (a = 2; a < s.length; a++) {
+		for (int a = 2; a < s.length; a++) {
 			if (s[a].toUpperCase().indexOf("READSOME")>=0) {
 				Stuffer.doread = true;
 			}
@@ -70,10 +69,9 @@ System.out.println("max scrape rate = "+maxScrapeReuse);
 				name = s[a];
 			}
 		}
-		int b;
-		for (a = 0; a < procs; a++) {
+		for (int a = 0; a < procs; a++) {
 			if (name == null) {
-				for (b = 0; b < slist.length; b++) {
+				for (int b = 0; b < slist.length; b++) {
 					new Thread(new Stuffer(slist[b], delay)).start();
 				}
 			}

@@ -396,11 +396,10 @@ public class Send {
 		OutputStream PR=S.getOutputStream();
 		//PrintWriter PR = new PrintWriter(S.getOutputStream(),true);
 		BufferedReader BR = new BufferedReader(new InputStreamReader(S.getInputStream()));
-		int a;
 		if (verbose) {
 			System.out.println("SMTP>>" + BR.readLine());
 		}
-		for (a = 0; a < message.size(); a++) {
+		for (int a = 0; a < message.size(); a++) {
 			String sss=(String)message.elementAt(a);
 			PR.write((sss+"\r\n").getBytes());
 			PR.flush();
@@ -447,8 +446,7 @@ public class Send {
 
 	public String[] checkOptions(String s[]) {
 		Vector v = new Vector();
-		int a;
-		for (a = 0; a < s.length; a++) {
+		for (int a=0; a < s.length; a++) {
 			if (s[a].toUpperCase().startsWith("-V")) {
 				verbose = true;
 			}
@@ -461,7 +459,7 @@ public class Send {
 			}
 		}
 		s = new String[v.size()];
-		for (a = 0; a < v.size(); a++) {
+		for (int a=0; a < v.size(); a++) {
 			s[a] = (String) v.elementAt(a);
 		}
 		return s;

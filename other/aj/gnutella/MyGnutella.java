@@ -159,10 +159,7 @@ public class MyGnutella implements Runnable {
 	}
 
 	public static void main(String s[])throws Exception {
-	//MyHost.LOSTRECONNECTTIME=6000;
-	//MyHost.RECONNECTTIME=6000;
-		int port=6346;
-		myip=InetAddress.getLocalHost().toString();
+	myip=InetAddress.getLocalHost().toString();
 		if (myip.indexOf("/")>=0) myip=myip.substring(myip.indexOf("/")+1);
 
 		//String host="127.0.0.1";

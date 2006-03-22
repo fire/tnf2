@@ -51,7 +51,6 @@ public class Function {
 	 *@param  S  Description of Parameter 
 	 */
 	public void sub(Subst S) {
-		int a;
 		int b;
 		for (b = 0; b < Termlist.size(); b++) {
 			Term T = (Term) Termlist.elementAt(b);
@@ -115,8 +114,7 @@ public class Function {
 	public String toString() {
 		String t;
 		t = "" + val + "(";
-		int a;
-		for (a = 0; a < Termlist.size(); a++) {
+		for (int a = 0; a < Termlist.size(); a++) {
 			t += Termlist.elementAt(a).toString();
 			if (a + 1 < Termlist.size()) {
 				t += ", ";

@@ -325,8 +325,8 @@ wrapup();//vp
 		String t[]=Stuff.getTokens(s,"x");
 		if (t.length!=2) return false;
 		try {
-			int x=Integer.parseInt(t[0]);
-			x=Integer.parseInt(t[1]);
+			Integer.parseInt(t[0]);
+			Integer.parseInt(t[1]);
 			return true;
 		} catch (NumberFormatException NFE){return false;}
 	}
@@ -458,7 +458,6 @@ wrapup();//vp
 //robbed requires have items
 //fight gun requires guns on planet and have gun
 //fight weap requires weap on planet and have weap
-int taxtype=0,finetype=1,stealtype=2,robbedtype=3,fighttype=4;
 			int choose=(int)(Math.random()*5);
 			double cost;
 			switch (choose) {
@@ -591,7 +590,6 @@ ilc.substring(ilc.indexOf(p.base)+p.base.length());
 		if (Math.random()>0) {
 			report("");
 			String r="";
-			int attack=0,custom=1,damage=2;
 			int choose=(int)(Math.random()*3);
 			switch (choose) {
 				case 0:
@@ -655,7 +653,6 @@ ilc.substring(ilc.indexOf(p.base)+p.base.length());
 	}
 
 	public boolean cargoCheck(String na,int num){
-		boolean found=false;
 		for (int a=0;a<cargo.size();a++) {
 			String s=(String)cargo.elementAt(a);
 			String t[]=Stuff.getTokens(s,CARGOSEP);
@@ -735,10 +732,9 @@ ilc.substring(ilc.indexOf(p.base)+p.base.length());
 	}
 	public void moveToDeepSpace(Planet p,String l) {
 		String t[]=Stuff.getTokens(l,"x");
-		int x=0,y=0;
 		try {
-			x=Integer.parseInt(t[0]);
-			y=Integer.parseInt(t[1]);
+			Integer.parseInt(t[0]);
+			Integer.parseInt(t[1]);
 		} catch (NumberFormatException NFE){}
 		String r=getText("<moveToDeepSpace>");
 		r=replace(r,"$fromplanetname",p.name);
@@ -747,10 +743,9 @@ ilc.substring(ilc.indexOf(p.base)+p.base.length());
 	}
 	public void moveFromDeepSpace(String l,Planet pp) {
 		String t[]=Stuff.getTokens(l,"x");
-		int x=0,y=0;
 		try {
-			x=Integer.parseInt(t[0]);
-			y=Integer.parseInt(t[1]);
+			Integer.parseInt(t[0]);
+			Integer.parseInt(t[1]);
 		} catch (NumberFormatException NFE){}
 		String r=getText("<moveFromDeepSpace>");
 		r=replace(r,"$toplanetname",pp.name);

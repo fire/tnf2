@@ -232,10 +232,9 @@ public class NetPlayer implements ActionListener {
 			human.setLive(true);
 		}
 		else if (brainType == SMART) {
-			int a;
 			long timeout = SmartPlayer.getTimeOut(TIMELIMIT);
 			String m = SmartPlayer.bestMove(b, 0, 0);
-			for (a = 0; !SmartPlayer.checkTimeOut(timeout); a++) {
+			for (int a = 0; !SmartPlayer.checkTimeOut(timeout); a++) {
 				m = SmartPlayer.bestMove(b, a, timeout);
 			}
 			myApply(m);
@@ -258,7 +257,7 @@ public class NetPlayer implements ActionListener {
 	public static void main(String s[]) {
 		try {
 			Socket nl = new Socket(s[0], Integer.parseInt(s[1]));
-			NetPlayer c = new NetPlayer(nl, s[2], s[3]);
+			new NetPlayer(nl, s[2], s[3]);
 		}
 		catch (Exception E) {
 			System.out.println("FORMAT: java NetPlayer <host> <port> <gamename> <smart,rand,human,watch>");

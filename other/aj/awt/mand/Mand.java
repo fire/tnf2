@@ -32,6 +32,10 @@ import com.sun.image.codec.jpeg.JPEGImageEncoder;
  *@created    April 11, 2000 
  */
 public class Mand extends Canvas implements MouseListener, MouseMotionListener, ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	BufferedImage I;
 	boolean mustRedraw;
 	int defaultSize = 200, defaultFocus = 1, defaultDepth = 500, defaultColors = 256;
@@ -282,13 +286,10 @@ System.out.println("MyError: Gml parse error: "+IOE);
 		updateThread = new Thread() {
 			Mand top = top1;
 			int iterationLimit = top.iterationLimit;
-			int localFocus = top.currentFocusLimit;
 			int width = top.width, height = top.height;
 			double currentRealMax = top.currentRealMax;
 			double currentRealMin = top.currentRealMin;
 			double currentImagMax = top.currentImagMax;
-			double currentImageMin = top.currentImagMin;
-			
 			public Color doCalc (double Nx, double Ny) {
 				double Wx = Nx;
 				double Wy = Ny;
@@ -317,27 +318,20 @@ System.out.println("MyError: Gml parse error: "+IOE);
 				double imagInc = (currentImagMax - currentImagMin) * 1.0 / height;
 				int x;
 				int y;
-				int cnt;
 				double Nx;
 				double Ny;
-				double Wx;
-				double Wy;
-				double Tx;
-				double Ty;
 				Color c = doCalc (currentRealMin, currentImagMin);
 				g.setColor (c);
 				G.setColor (c);
 				g.fillRect (1, 1, width, height);
 				G.fillRect (1, 1, width, height);
 				int localFocus;
-				int mod = 256;
 				G.clipRect (0, 0, width, height);
 				int localFocusLimit = top.currentFocusLimit / 2;
 				int donefocus = Math.max (1, localFocusLimit * 2);
 				double doneval = 1.0 / (donefocus * donefocus);
 				for (localFocus = 128; localFocus > localFocusLimit; localFocus /= 2) {
 					int localFocus2x = localFocus * 2;
-					double localFocusNeg2 = 1.0 / localFocus / localFocus;
 					double xstep = realInc * localFocus;
 					double ystep = imagInc * localFocus;
 					double lastval = 1.0 / (localFocus2x * localFocus2x);

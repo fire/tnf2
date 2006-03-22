@@ -52,8 +52,7 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		allLines = new Vector();
 		allSquares = new Vector();
 		moves = new Vector[numPlayers];
-		int a;
-		for (a = 0; a < numPlayers; a++) {
+		for (int a = 0; a < numPlayers; a++) {
 			moves[a] = new Vector();
 		}
 		addMouseListener(this);
@@ -107,17 +106,15 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 	 *@param  g  Description of Parameter 
 	 */
 	public void paint(Graphics g) {
-		int a;
-		int b;
-		for (a = 0; a < SQRS; a++) {
-			for (b = 0; b < SQRS; b++) {
+		for (int a=0; a < SQRS; a++) {
+			for (int b = 0; b < SQRS; b++) {
 				g.drawOval(a * SIZE - OVAL / 2, b * SIZE - OVAL / 2, OVAL, OVAL);
 			}
 		}
-		for (a = 0; a < numPlayers; a++) {
+		for (int a=0; a < numPlayers; a++) {
 			//System.out.println("moves for "+a+" ="+moves[a].size());
 			g.setColor(myColors[a]);
-			for (b = 0; b < moves[a].size(); b++) {
+			for (int b = 0; b < moves[a].size(); b++) {
 				MyLine o = (MyLine) moves[a].elementAt(b);
 				o.drawSelf(g, SIZE);
 			}
@@ -256,12 +253,10 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 	 *@return    Description of the Returned Value 
 	 */
 	public boolean checkFill() {
-		int a;
-		int b;
 		//    System.out.println("Square test");
 		boolean freeturn = false;
-		for (a = 0; a < SIZE; a++) {
-			for (b = 0; b < SIZE; b++) {
+		for (int a=0; a < SIZE; a++) {
+			for (int b = 0; b < SIZE; b++) {
 				Point o1 = new Point(a, b);
 				Point o2 = new Point(a, b + 1);
 				Point o3 = new Point(a + 1, b + 1);
@@ -307,8 +302,7 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 	 *@return    Description of the Returned Value 
 	 */
 	public boolean find(Vector v, MyLine l) {
-		int a;
-		for (a = 0; a < v.size(); a++) {
+		for (int a=0; a < v.size(); a++) {
 			MyLine ll = (MyLine) v.elementAt(a);
 			if (ll.equals(l) || l.equals(ll)) {
 				return true;

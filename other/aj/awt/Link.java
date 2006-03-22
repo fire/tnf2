@@ -99,15 +99,13 @@ public class Link implements DisplayItem {
 	}
 
 	public void display (Graphics g, double s) {
-		int a;
-		int b;
 		g.setColor (color);
 		if (from.size() == 0 || to.size() == 0) {
 			System.out.println ("MyError: bad link nodes not found.  from:"+from+" to:"+to);
 		}
 		//System.out.println(from.size()+" "+to.size());
-		for (a = 0; a < from.size(); a++) {
-			for (b = 0; b < to.size(); b++) {
+		for (int a = 0; a < from.size(); a++) {
+			for (int b = 0; b < to.size(); b++) {
 				Node f = (Node)from.elementAt (a);
 				Node t = (Node)to.elementAt (b);
 				if (f==t) continue;

@@ -28,8 +28,7 @@ public class ViewerApplet extends Applet {
 
 		String all[] = aj.misc.Stuff.getTokens(urls, " ,\t");
 		String base = getCodeBase().toString();
-		int a;
-		for (a = 0; a < all.length; a++) {
+		for (int a = 0; a < all.length; a++) {
 			all[a] = all[a].trim();
 			if (!all[a].toUpperCase().startsWith("HTTP://")) {
 				all[a] = base + all[a];

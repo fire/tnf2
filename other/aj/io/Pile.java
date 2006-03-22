@@ -26,21 +26,20 @@ public class Pile {
 		String files[];
 		long lengths[];
 		int size;
-		int a;
 		try {
 			FI = new FileInputStream (source);
 			size = Integer.parseInt (myReadLine (FI));
-			for (a = 0; a < size; a++) {
+			for (int a = 0; a < size; a++) {
 				makeDir (cleanString (myReadLine (FI)));
 			}
 			size = Integer.parseInt (myReadLine (FI));
 			files = new String[size];
 			lengths = new long[size];
-			for (a = 0; a < files.length; a++) {
+			for (int a = 0; a < files.length; a++) {
 				files[a] = cleanString (myReadLine (FI));
 				lengths[a] = Long.parseLong (myReadLine (FI));
 			}
-			for (a = 0; a < files.length; a++) {
+			for (int a = 0; a < files.length; a++) {
 				if ( !readRaw (FI, files[a], lengths[a])) {
 					break;
 				}
@@ -62,8 +61,6 @@ public class Pile {
 	 */
 	public Pile (String argv[]) {
 		OutputStream FO = null;
-		int a;
-		int b;
 		Vector DirList = new Vector();
 		Vector FileList = new Vector();
 		try {
@@ -73,7 +70,7 @@ public class Pile {
 			System.out.println ("MyError: Cannot write " + IOE);
 			System.exit (0);
 		}
-		for (a = 1; a < argv.length; a++) {
+		for (int a = 1; a < argv.length; a++) {
 			File F = new File (argv[a]);
 			if (F.isFile()) {
 				FileList.addElement (argv[a]);
@@ -82,29 +79,28 @@ public class Pile {
 				DirList.addElement (F);
 			}
 		}
-		for (a = 1; a < argv.length; a++) {
+		for (int a = 1; a < argv.length; a++) {
 			DirList = combine (DirList, subDirs (argv[a]));
 		}
-		for (a = 0; a < DirList.size(); a++) {
-			File F = (File)DirList.elementAt (a);
+		for (int a=0; a < DirList.size(); a++) {
 			FileList = combine (FileList, dirFiles ((File)DirList.elementAt (a)));
 		}
 		noDups (DirList);
 		noDups (FileList);
 		try {
 			FO.write ((DirList.size() + "\n").getBytes());
-			for (a = 0; a < DirList.size(); a++) {
+			for (int a=0; a < DirList.size(); a++) {
 				File F = (File)DirList.elementAt (a);
 				FO.write ((F.getPath() + "\n").getBytes());
 			}
 			FO.write ((FileList.size() + "\n").getBytes());
-			for (a = 0; a < FileList.size(); a++) {
+			for (int a=0; a < FileList.size(); a++) {
 				String n = (String)FileList.elementAt (a);
 				FO.write ((n + "\n").getBytes());
 				long fsize = (new File (n)).length();
 				FO.write ((fsize + "\n").getBytes());
 			}
-			for (a = 0; a < FileList.size(); a++) {
+			for (int a=0; a < FileList.size(); a++) {
 				dumpBytes (FO, (String)FileList.elementAt (a));
 			}
 		}
@@ -123,11 +119,10 @@ public class Pile {
 	 */
 	public Vector combine (Vector one, Vector two) {
 		Vector V = new Vector();
-		int a;
-		for (a = 0; a < one.size(); a++) {
+		for (int a=0; a < one.size(); a++) {
 			V.addElement (one.elementAt (a));
 		}
-		for (a = 0; a < two.size(); a++) {
+		for (int a=0; a < two.size(); a++) {
 			V.addElement (two.elementAt (a));
 		}
 		return V;
@@ -142,7 +137,6 @@ public class Pile {
 		Vector V = new Vector();
 		File F = new File (f);
 		String S[];
-		int a;
 		if ( !F.exists()) {
 			return new Vector();
 		}
@@ -153,7 +147,7 @@ public class Pile {
 			V.addElement (F);
 		}
 		S = F.list();
-		for (a = 0; a < S.length; a++) {
+		for (int a=0; a < S.length; a++) {
 			V = combine (V, subDirs (f + File.separator + S[a]));
 		}
 		return V;
@@ -167,7 +161,6 @@ public class Pile {
 	public Vector dirFiles (File F) {
 		Vector V = new Vector();
 		String S[];
-		int a;
 		if ( !F.exists()) {
 			return new Vector();
 		}
@@ -176,7 +169,7 @@ public class Pile {
 			return V;
 		}
 		S = F.list();
-		for (a = 0; a < S.length; a++) {
+		for (int a=0; a < S.length; a++) {
 			V = combine (V, dirFiles (new File (F.getPath() + File.separator + S[a])));
 		}
 		return V;
@@ -187,10 +180,8 @@ public class Pile {
 	 *@param  V  Description of Parameter 
 	 */
 	public void noDups (Vector V) {
-		int a;
-		int b;
-		for (a = 0; a < V.size(); a++) {
-			for (b = a + 1; b < V.size(); b++) {
+		for (int a=0; a < V.size(); a++) {
+			for (int b = a + 1; b < V.size(); b++) {
 				if (V.elementAt (a).equals (V.elementAt (b))) {
 					V.removeElementAt (b);
 					b--;

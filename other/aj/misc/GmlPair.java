@@ -28,7 +28,6 @@ public class GmlPair
 {
 
   private String special = "~`!@#$%^&*()_+-={}[]:;\"\'<,>.?/|\t\n\r\\ ";
-  private String veryspecial = "\t\n\r\\";
   private String TAB = "\t";
   private String name;
 
@@ -37,8 +36,6 @@ public class GmlPair
   private Vector list;
   private boolean terminal;
   private boolean number;
-  private boolean string;
-
   public boolean equals (GmlPair g)
   {
     return g.toString ().equalsIgnoreCase (toString ());
@@ -245,9 +242,8 @@ public class GmlPair
       {
 	return new GmlPair[0];
       }
-    int a;
     Vector v = new Vector ();
-    for (a = 0; a < list.size (); a++)
+    for (int a = 0; a < list.size (); a++)
       {
 	GmlPair g = (GmlPair) list.elementAt (a);
 	if (sname.equalsIgnoreCase (g.getName ()))
@@ -270,8 +266,7 @@ public class GmlPair
       {
 	return null;
       }
-    int a;
-    for (a = 0; a < list.size (); a++)
+    for (int a=0; a < list.size (); a++)
       {
 	GmlPair g = (GmlPair) list.elementAt (a);
 	if (name.equalsIgnoreCase (g.getName ()))
@@ -376,9 +371,8 @@ public class GmlPair
       }
     else
       {
-	int a;
 	s += "[\n";
-	for (a = 0; a < list.size (); a++)
+	for (int a=0; a < list.size (); a++)
 	  {
 	    s += ((GmlPair) list.elementAt (a)).prettyPrint (pp + TAB);
 	  }
@@ -424,9 +418,8 @@ public class GmlPair
       }
     else
       {
-	int a;
 	s += "[";
-	for (a = 0; a < list.size (); a++)
+	for (int a=0; a < list.size (); a++)
 	  {
 	    s += list.elementAt (a);
 	  }

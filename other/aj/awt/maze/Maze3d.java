@@ -14,6 +14,10 @@ import aj.awt.Point3d;
  */
 public class Maze3d extends Canvas {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	char maze[][][];
 
 
@@ -69,21 +73,18 @@ public class Maze3d extends Canvas {
 	 */
 	public static void view(char maz[][][]) {
 		System.out.println();
-		int a;
-		int b;
-		int c;
-		for (a = 0; a < maz.length; a++) {
-			for (b = 0; b < maz[a].length; b++) {
-				for (c = 0; c < maz[a][b].length; c++) {
+		for (int a=0; a < maz.length; a++) {
+			for (int b = 0; b < maz[a].length; b++) {
+				for (int c = 0; c < maz[a][b].length; c++) {
 					System.out.print(maz[a][b][c]);
 				}
 				System.out.println();
 			}
 			System.out.println();
 		}
-		for (a = 0; a < maz.length; a++) {
-			for (b = 0; b < maz[a].length; b++) {
-				for (c = 0; c < maz[a][b].length; c++) {
+		for (int a=0; a < maz.length; a++) {
+			for (int b = 0; b < maz[a].length; b++) {
+				for (int c = 0; c < maz[a][b].length; c++) {
 					if (maz[a][b][c]==' ' && a<maz.length-1 && maz[a+1][b][c]==' ')
 						System.out.println("Transform { translation "+c*2.5+" "+a*-2.5+" "+b*2.5+" children [ USE MyOpenSlab ]},");
 					else if (maz[a][b][c]==' ')
@@ -138,14 +139,11 @@ xxxx
 	public static char[][][] makeMaze(int d, int w, int h, boolean connect8) {
 		char maz[][][] = new char[d][h][w];
 		//clear maze
-		int a;
 		//clear maze
-		int b;
 		//clear maze
-		int c;
-		for (a = 0; a < h; a++) {
-			for (b = 0; b < w; b++) {
-				for (c = 0; c < d; c++) {
+		for (int a=0; a < h; a++) {
+			for (int b = 0; b < w; b++) {
+				for (int c = 0; c < d; c++) {
 					maz[c][b][a] = 'X';
 				}
 			}

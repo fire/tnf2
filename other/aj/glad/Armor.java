@@ -186,8 +186,7 @@ public class Armor extends Item {
 	 *@param  s  Description of Parameter 
 	 */
 	public static void main(String s[]) {
-		int a;
-		for (a = 0; a < allArmor.length; a++) {
+		for (int a = 0; a < allArmor.length; a++) {
 			Armor A = Armor.parse(allArmor[a]);
 			System.out.println("<" + allArmor[a] + "> <" + A.toString() + ">");
 		}

@@ -160,7 +160,7 @@ class Mage implements ListSelectionListener,ActionListener {
 		String old=getOrder(right);
 		String ref=(right?"R":"L")+"H ";
 
-		String h=null,ch=null;
+		String ch=null;
 //
 		while (o.indexOf("TARGET "+ref)>=0) {
 			ch=o.substring(o.indexOf("TARGET "+ref));

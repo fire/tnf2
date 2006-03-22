@@ -91,9 +91,8 @@ public class Poly3d {
 	 *@return    Description of the Returned Value 
 	 */
 	public static Poly3d apply(Matrix m, Poly3d p) {
-		int a;
 		Vector v = new Vector();
-		for (a = 0; a < p.point3dList.size(); a++) {
+		for (int a=0; a < p.point3dList.size(); a++) {
 			Point3d pp = (Point3d) p.point3dList.elementAt(a);
 			v.addElement(Point3d.apply(m, pp));
 		}

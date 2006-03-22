@@ -49,6 +49,10 @@ import aj.misc.Bnf;
 
 
 public class TypingFires extends JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int size=300;
 	private Vector fireWorkList=new Vector();
 	static int numFireWorks=20;

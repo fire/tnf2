@@ -161,7 +161,6 @@ public class Skill {
 	 *@param  s  Description of Parameter 
 	 */
 	public static void main(String s[]) {
-		Skill ss = Skill.parse(Skill.DEFAULT);
 	}
 
 }

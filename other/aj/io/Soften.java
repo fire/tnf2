@@ -61,7 +61,6 @@ public class Soften {
 	public static char mostFreq (String all) {
 		int count[] = new int[10];
 		for (int a = 0; a < all.length(); a++) {
-			char t = all.charAt (a);
 			for (int b = 0; b < all.length(); b++) {
 				if (all.charAt (a) == all.charAt (b))count[a]++;
 			}

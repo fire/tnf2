@@ -11,6 +11,10 @@ import java.util.Random;
 import aj.awt.SimpleWindowManager;
 
 public class PlanetView extends Canvas {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static Color backcolor=Color.black;
 	static int screensize=200;
 	static int maxSize=230;

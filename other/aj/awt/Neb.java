@@ -11,6 +11,10 @@ import java.util.Random;
 
 public class Neb extends Canvas implements MouseListener {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static Color backcolor = Color.black;
 	int screenSize = 100;
 	int step = 4;

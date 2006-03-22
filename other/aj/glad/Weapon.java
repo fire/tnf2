@@ -256,8 +256,7 @@ public class Weapon extends Item {
 			else {
 				plus = Integer.parseInt(hitdice);
 			}
-			int a;
-			for (a = 0; a < num; a++) {
+			for (int a = 0; a < num; a++) {
 				dam += Math.random() * dice + 1;
 			}
 			dam += plus;

@@ -425,7 +425,6 @@ public class IEMTool implements Runnable{
 		try {
 			RandomAccessFile ra=new RandomAccessFile(iemactivefile,"rw");
 			ra.seek(ra.length());
-			TimeZone tz=TimeZone.getTimeZone("America/Chicago");
 			Calendar calendar = new GregorianCalendar();//tz);
 			//String t[]=TimeZone.getAvailableIDs(-6*60*60*1000);
 			//for (int a=0;a<t.length;a++) {
@@ -446,7 +445,6 @@ public class IEMTool implements Runnable{
 				case 6: doww="Fr";break;
 				default: doww="Sa";break;
 			}	
-			int year=calendar.get(Calendar.YEAR);
 			int hour=calendar.get(Calendar.HOUR_OF_DAY);
 			int min=calendar.get(Calendar.MINUTE);
 			String dateString=""+(hour<10?"0":"")+hour+":"+(min<10?"0":"")+min+" "+doww+" "+mon+"/"+dom;

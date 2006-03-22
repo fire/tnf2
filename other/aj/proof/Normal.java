@@ -102,13 +102,12 @@ public class Normal {
 		}
 		else if (S.type == Token.QUALIFIEDSENT) {
 			if (S.Qualifier.equals(Qual)) {
-				int a;
 				Vector T = RemoveQual(S.Lsent, Qual);
 				Vector U = new Vector();
-				for (a = 0; a < S.VarList.size(); a++) {
+				for (int a = 0; a < S.VarList.size(); a++) {
 					U.addElement(S.VarList.elementAt(a));
 				}
-				for (a = 0; a < T.size(); a++) {
+				for (int a=0; a < T.size(); a++) {
 					U.addElement(T.elementAt(a));
 				}
 				S.type = S.Lsent.type;
@@ -152,14 +151,12 @@ public class Normal {
 	 *@return              Description of the Returned Value 
 	 */
 	public Vector SkolomizeTerms(Vector ChangeTerms, Vector OrgTerm, Vector NewTerms) {
-		int a;
-		int b;
 		int found;
-		for (a = 0; a < ChangeTerms.size(); a++) {
+		for (int a=0; a < ChangeTerms.size(); a++) {
 			//for each old term
 			Term T = (Term) ChangeTerms.elementAt(a);
 			found = -1;
-			for (b = 0; b < OrgTerm.size(); b++) {
+			for (int b = 0; b < OrgTerm.size(); b++) {
 				Term U = (Term) OrgTerm.elementAt(b);
 				if (T.val.equals(U.val) && T.varcount == U.varcount) {
 					found = b;
@@ -199,28 +196,26 @@ public class Normal {
 			S.Rsent = Skolomize(S.Rsent, Termlist, NewTermlist);
 		}
 		if (S.type == Token.QUALIFIEDSENT) {
-			int a;
-			int b;
 			Vector hold = S.VarList;
 			if (S.Qualifier.equals("FORALL")) {
 				//add
-				for (a = 0; a < hold.size(); a++) {
+				for (int a=0; a < hold.size(); a++) {
 					Termlist.addElement(hold.elementAt(a));
 					NewTermlist.addElement(hold.elementAt(a));
 				}
 				S = Skolomize(S.Lsent, Termlist, NewTermlist);
 				//remove FORALL
 				//remove
-				for (a = 0; a < hold.size(); a++) {
+				for (int a=0; a < hold.size(); a++) {
 					Termlist.removeElementAt(Termlist.size() - 1);
 					NewTermlist.removeElementAt(NewTermlist.size() - 1);
 				}
 			}
 			else {
 				//add
-				for (a = 0; a < hold.size(); a++) {
+				for (int a=0; a < hold.size(); a++) {
 					Vector funTermlist = new Vector();
-					for (b = 0; b < NewTermlist.size(); b++) {
+					for (int b = 0; b < NewTermlist.size(); b++) {
 						Term T = new Term((Term) NewTermlist.elementAt(b));
 						if (T.type != Token.FUNCTION) {
 							funTermlist.addElement(T);
@@ -235,7 +230,7 @@ public class Normal {
 				S = Skolomize(S.Lsent, Termlist, NewTermlist);
 				//remove EXISTS
 				//remove
-				for (a = 0; a < hold.size(); a++) {
+				for (int a=0; a < hold.size(); a++) {
 					Termlist.removeElementAt(Termlist.size() - 1);
 					NewTermlist.removeElementAt(NewTermlist.size() - 1);
 				}
@@ -534,7 +529,6 @@ public class Normal {
 			if (S.connector.equals("IFF")) {
 				Sentence Temp1;
 				Sentence Temp2;
-				Sentence Parpart;
 				Temp1 = new Sentence(S.Lsent, "IMP", S.Rsent);
 				Temp2 = new Sentence(S.Rsent, "IMP", S.Lsent);
 				S.Lsent = new Sentence(Token.PARENSENT, Temp1);
@@ -584,14 +578,12 @@ public class Normal {
 	 *@param  VarList  Description of Parameter 
 	 */
 	public void DeclareVars(Vector VarList) {
-		int a;
-		int b;
-		for (a = 0; a < VarList.size(); a++) {
+		for (int a=0; a < VarList.size(); a++) {
 			//for each Var declared
 			Term T = (Term) VarList.elementAt(a);
 			String Vname = T.val;
 			int found = -1;
-			for (b = 0; b < Varnames.size(); b++) {
+			for (int b = 0; b < Varnames.size(); b++) {
 				//find match name or found=-1
 				String name = (String) Varnames.elementAt(b);
 				if (name.equals(Vname)) {
@@ -624,15 +616,13 @@ public class Normal {
 	 *@param  VarList  Description of Parameter 
 	 */
 	public void UpdateVarList(Vector VarList) {
-		int a;
-		int b;
-		for (a = 0; a < VarList.size(); a++) {
+		for (int a=0; a < VarList.size(); a++) {
 			//for each Var declared
 			Term T = (Term) VarList.elementAt(a);
 			if (T.type == Token.VARIABLE) {
 				String Vname = T.val;
 				int found = -1;
-				for (b = 0; b < BoundVars.size(); b++) {
+				for (int b = 0; b < BoundVars.size(); b++) {
 					//find match name in BOUNDVAR
 					String name = (String) BoundVars.elementAt(b);
 					if (name.equals(Vname)) {
@@ -661,9 +651,8 @@ public class Normal {
 	 *@param  VarList  Description of Parameter 
 	 */
 	public void UndelcareVars(Vector VarList) {
-		int a;
 		int len = VarList.size();
-		for (a = 0; a < len; a++) {
+		for (int a=0; a < len; a++) {
 			int pos = BoundVars.size() - 1;
 			BoundVars.removeElementAt(pos);
 			BoundVarsnumber.removeElementAt(pos);

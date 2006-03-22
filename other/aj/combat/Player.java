@@ -26,6 +26,11 @@ import aj.misc.Stuff;
  *@created    April 12, 2000 
  */
 public class Player extends JPanel implements KeyListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	static int ZONESIZE = 400;
 
 	static int SHIPMAXSHOTCOUNT = 10;
@@ -161,8 +166,7 @@ public class Player extends JPanel implements KeyListener {
 	}
 
 	public void checkCollision() {
-		int a;
-		for (a = 0; a < myShots.size(); a++) {
+		for (int a = 0; a < myShots.size(); a++) {
 			Shot t2 = (Shot) myShots.elementAt(a);
 			if (t2.expired()) {
 				myShots.removeElement(t2);
@@ -170,7 +174,7 @@ public class Player extends JPanel implements KeyListener {
 			}
 		}
 
-		for (a = 0; a < items.size(); a++) {
+		for (int a = 0; a < items.size(); a++) {
 			String s = (String) items.elementAt(a);
 			Thing t = (Thing) itemsHashtable.get(s);
 			if (t == null) {
@@ -230,12 +234,11 @@ public class Player extends JPanel implements KeyListener {
 		g.drawRect(0, 0, ZONESIZE - 1, ZONESIZE - 1);
 		if (myShip==null) return;
 		myShip.display(g);
-		int a;
-		for (a = 0; a < myShots.size(); a++) {
+		for (int a=0; a < myShots.size(); a++) {
 			CombatItem t = (CombatItem) myShots.elementAt(a);
 			t.display(g);
 		}
-		for (a = 0; a < items.size(); a++) {
+		for (int a=0; a < items.size(); a++) {
 			String s = (String) items.elementAt(a);
 			CombatItem t = (CombatItem) itemsHashtable.get(s);
 			if (t == null) {
@@ -262,8 +265,7 @@ public class Player extends JPanel implements KeyListener {
 				if (myShip.alive) {
 					send("mov " + myShip);
 				}
-				int a;
-				for (a = 0; a < myShots.size(); a++) {
+				for (int a=0; a < myShots.size(); a++) {
 					Shot t2 = (Shot) myShots.elementAt(a);
 					send("mov " + t2.toString());
 				}
@@ -273,8 +275,7 @@ public class Player extends JPanel implements KeyListener {
 				if (id.equals(myShip.id)) {
 					myShip.setAlive(false);
 				}
-				int a;
-				for (a = 0; a < myShots.size(); a++) {
+				for (int a=0; a < myShots.size(); a++) {
 					Thing t2 = (Thing) myShots.elementAt(a);
 					if (t2.id.equals(id)) {
 						myShots.removeElement(t2);
@@ -282,7 +283,7 @@ public class Player extends JPanel implements KeyListener {
 					}
 				}
 
-				for (a = 0; a < items.size(); a++) {
+				for (int a=0; a < items.size(); a++) {
 					String id2 = (String) items.elementAt(a);
 					if (id2.equals(id)) {
 						items.removeElement(id2);

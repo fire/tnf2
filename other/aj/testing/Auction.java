@@ -298,9 +298,8 @@ public class Auction {
 		//sort Bidders by + MaxBid then by Bid
 		Vector s = new Vector();
 		while (bidders.size() > 0) {
-			int a;
 			Bidder b = (Bidder) bidders.elementAt(0);
-			for (a = 1; a < bidders.size(); a++) {
+			for (int a = 1; a < bidders.size(); a++) {
 				Bidder c = (Bidder) bidders.elementAt(a);
 				if (c.getMaxBid() > b.getMaxBid() || (c.getMaxBid() == b.getMaxBid() && c.getBid() > b.getBid())) {
 					b = c;
@@ -313,9 +312,8 @@ public class Auction {
 		s = new Vector();
 		//sort Sellers by - Min
 		while (sellers.size() > 0) {
-			int a;
 			Seller b = (Seller) sellers.elementAt(0);
-			for (a = 1; a < sellers.size(); a++) {
+			for (int a = 1; a < sellers.size(); a++) {
 				Seller c = (Seller) sellers.elementAt(a);
 				if (c.getOffer() > b.getOffer()) {
 					b = c;
@@ -333,10 +331,9 @@ public class Auction {
 	 *  Description of the Method 
 	 */
 	public void doAuction() {
-		int a;
 		Vector Lbidders = (Vector) bidders.clone();
 		Vector Lsellers = (Vector) sellers.clone();
-		for (a = 0; a < Lsellers.size(); a++) {
+		for (int a = 0; a < Lsellers.size(); a++) {
 			Seller high = (Seller) Lsellers.elementAt(a);
 			if (Lbidders.size() == 0) {
 				break;
@@ -370,11 +367,10 @@ public class Auction {
 	 */
 	public void report() {
 		System.out.println("Report!");
-		int a;
-		for (a = 0; a < bidders.size(); a++) {
+		for (int a=0; a < bidders.size(); a++) {
 			System.out.println(bidders.elementAt(a));
 		}
-		for (a = 0; a < sellers.size(); a++) {
+		for (int a=0; a < sellers.size(); a++) {
 			System.out.println(sellers.elementAt(a));
 		}
 	}

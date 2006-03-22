@@ -100,7 +100,6 @@ public class Spell2 {
 		for (int a=0;a<Tool2.allSpells.size();a++) {
 			Spell2 sp=(Spell2)Tool2.allSpells.elementAt(a);
 			if (sp.gest.equals("p")) continue;//skip surrender as choice
-			String t=curr+gest;
 			if (sp.getStepsFrom(curr+gest)==0 && !res.contains(sp)) {
 			//if (t.lastIndexOf(sp.gest)>curr.length() && t.endsWith(sp.gest) && !res.contains(sp)) {
 				res.addElement(sp);

@@ -25,8 +25,7 @@ public class XORFile {
 		g.read (c);
 		int max = Math.max (b.length, c.length);
 		byte d[] = new byte[max];
-		int a;
-		for (a = 0; a < max; a++) {
+		for (int a = 0; a < max; a++) {
 			d[a] = (byte) ((b[a % b.length] | ~c[a % c.length]) & ( ~b[a % b.length] | c[a % c.length]));
 		}
 		FileOutputStream h = new FileOutputStream (s[2]);

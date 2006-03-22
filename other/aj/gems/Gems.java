@@ -314,6 +314,12 @@ public class Gems extends JPanel {
 		return new Dimension(GRIDSIZE*ICONSIZE+BORDERSIZE*2,GRIDSIZE*ICONSIZE+BORDERSIZE*2);
 	}
 
+	public Gems(String unused) {
+		moveAllCellsRightIntoEmpties();
+		moveAllCellsLeftIntoEmpties();
+		moveAllCellsUpIntoEmpties();
+	}
+	
 	public Gems() {
 		loadNewBackground();
 		loadAudio();
@@ -597,7 +603,7 @@ public class Gems extends JPanel {
 		}
 	}
 
-	private void moveAlLCellsLeftIntoEmpties() {
+	private void moveAllCellsLeftIntoEmpties() {
 		for (int a=GRIDSIZE-2;a>=0;a--) {
 			for (int b=0;b<GRIDSIZE;b++) {
 				if (c[a][b].empty && !c[a+1][b].empty) 

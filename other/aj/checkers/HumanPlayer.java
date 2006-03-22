@@ -24,6 +24,10 @@ import aj.awt.SimpleWindowManager;
  *@created    April 12, 2000 
  */
 public class HumanPlayer extends Canvas implements ActionListener, MouseMotionListener, MouseListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Board b;
 	boolean live = false;
 
@@ -109,8 +113,6 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 	 */
 	public int getSquare(int x, int y) {
 		Dimension d = getSize();
-		int a;
-		int c;
 		int dw = d.width / 8;
 		int dh = d.height / 8;
 		x = x / dw;
@@ -153,12 +155,10 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 	 */
 	public void paint(Graphics g) {
 		Dimension d = getSize();
-		int a;
-		int c;
 		int dw = d.width / 8;
 		int dh = d.height / 8;
-		for (a = 0; a < 8; a++) {
-			for (c = 0; c < 8; c++) {
+		for (int a = 0; a < 8; a++) {
+			for (int c = 0; c < 8; c++) {
 				if ((c % 2 + a % 2) % 2 == 0) {
 					g.setColor(Color.black);
 				}
@@ -170,7 +170,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 				g.drawRect(a * dw, c * dh, dw, dh);
 			}
 		}
-		for (a = 1; a < 33 && b != null; a++) {
+		for (int a = 1; a < 33 && b != null; a++) {
 			boolean red;
 			boolean pawn;
 			if (b.getMap(a) == Board.REDPAWN) {
@@ -258,8 +258,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			down = false;
 			int pos = getSquare(sx, sy);
 			int pos2 = getSquare(ex, ey);
-			int a;
-			for (a = 0; a < b.getMoves().size(); a++) {
+			for (int a=0; a < b.getMoves().size(); a++) {
 				String m = (String) b.getMoves().elementAt(a);
 				if (m.startsWith(pos + "-") && m.endsWith("-" + pos2)) {
 					doMove(m);
@@ -283,8 +282,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			return;
 		}
 		Vector v = b.getMoves();
-		int a;
-		for (a = 0; a < v.size(); a++) {
+		for (int a=0; a < v.size(); a++) {
 			String s = (String) v.elementAt(a);
 			if (s.startsWith("" + pos)) {
 				down = true;
@@ -373,8 +371,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 	 */
 	public void performAction(ActionEvent AE) {
 		Vector l = (Vector) list.clone();
-		int a;
-		for (a = 0; a < l.size(); a++) {
+		for (int a=0; a < l.size(); a++) {
 			ActionListener AL = (ActionListener) l.elementAt(a);
 			AL.actionPerformed(AE);
 		}

@@ -18,7 +18,7 @@ public class FileSystem {
 		if (s.length==2) {
 			FileSystem.directoryOnly=true;
 		}
-		FileSystem fs = new FileSystem (s[0]);
+		new FileSystem (s[0]);
 		//TextArea = sorted file list
 		//Pie chart = file groups
 		//top 100%,50%,20%,10%,5%
@@ -31,9 +31,8 @@ public class FileSystem {
 	public FileSystem (String s) {
 		includeFile (new File (s));
 		System.out.println ("files found =" + allFiles.size());
-		int a, b;
 		long t = 0;
-		for (a = 0; a < allFiles.size(); a++) {
+		for (int a = 0; a < allFiles.size(); a++) {
 			String f = (String)allFiles.elementAt (a);
 			f = f.substring (f.lastIndexOf (" ") + 1);
 			try {
@@ -52,7 +51,7 @@ public class FileSystem {
 			}
 			catch (NumberFormatException NFE) {
 			}
-			for (a = 1; a < allFiles.size(); a++) {
+			for (int a = 1; a < allFiles.size(); a++) {
 				String f2 = (String)allFiles.elementAt (a);
 				int f2i = 0;
 				try {

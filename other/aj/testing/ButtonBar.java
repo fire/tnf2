@@ -42,8 +42,7 @@ public class ButtonBar extends Frame implements ActionListener {
 	 */
 	public ButtonBar(String s[]) {
 		super("ButtonBar");
-		int a;
-		for (a = 0; a < s.length; a++) {
+		for (int a = 0; a < s.length; a++) {
 			if (s[a].startsWith("-c")) {
 				readConfigFile(s[a]);
 				continue;
@@ -87,7 +86,7 @@ public class ButtonBar extends Frame implements ActionListener {
 		Panel P = new Panel(new BoxLayout(1, blist.size()));
 		P.setLayout(new FlowLayout());
 		//    P.setLayout(new BoxLayout(1,4));
-		for (a = 0; a < blist.size(); a++) {
+		for (int a = 0; a < blist.size(); a++) {
 			P.add((Component) blist.elementAt(a));
 		}
 		//      P.add("North",(Component)blist.elementAt(a));
@@ -123,8 +122,7 @@ public class ButtonBar extends Frame implements ActionListener {
 	 *@param  AE  Description of Parameter 
 	 */
 	public void actionPerformed(ActionEvent AE) {
-		int a;
-		for (a = 0; a < blist.size(); a++) {
+		for (int a = 0; a < blist.size(); a++) {
 			if (AE.getSource().equals(blist.elementAt(a))) {
 				String tar = (String) exelist.elementAt(a);
 				while (tar.indexOf("\"") >= 0) {

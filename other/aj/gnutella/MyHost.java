@@ -5,6 +5,10 @@ import java.io.Serializable;
 import aj.misc.Stuff;
 
 public class MyHost implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static int LOSTRECONNECTTIME=6000;
 	static int RECONNECTTIME=60000;
 	static int RETRYFAILTIME=30000;
@@ -63,7 +67,6 @@ public class MyHost implements Serializable{
 		this.port=port;
 		connectCount=(int)(att*rate);
 		connectFailCount=(int)(att*(1-rate));
-		long currtime=System.currentTimeMillis();
 		lastConnectTime=last;
 		lastDisconnectTime=last;
 		totalConnectAttempts=att;

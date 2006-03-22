@@ -218,7 +218,7 @@ while (td.indexOf(":")>=0) {td=td.substring(0,td.indexOf(":"))+"%3A"+td.substrin
 		else if (holdings.indexOf(" ")>=0) holdings=holdings.substring(0,holdings.indexOf(" "));
 		if (log) System.out.println("Contracts Held="+holdings);
 	
-		int num=Integer.parseInt(holdings.trim());
+		Integer.parseInt(holdings.trim());
 		//numheld=num;
 		int lastbuy=0;
 //System.out.println(all);

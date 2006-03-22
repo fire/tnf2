@@ -320,51 +320,41 @@ public class Pos {
 		int bicplen=10;
 		int forarmlen=8;
 
-		double l=len(headX,headY,neckX,neckY);
 		double m=mytan(headY-neckY,headX-neckX);
 		headX=(neckX+headlen*Math.cos(m));
 		headY=(neckY+headlen*Math.sin(m));
-		l=len(relbX,relbY,neckX,neckY);
 		m=mytan(relbY-neckY,relbX-neckX);
 		relbX=(neckX+bicplen*Math.cos(m));
 		relbY=(neckY+bicplen*Math.sin(m));
 
-		l=len(lelbX,lelbY,neckX,neckY);
 		m=mytan(lelbY-neckY,lelbX-neckX);
 		lelbX=(neckX+bicplen*Math.cos(m));
 		lelbY=(neckY+bicplen*Math.sin(m));
 
-		l=len(lhandX,lhandY,lelbX,lelbY);
 		m=mytan(lhandY-lelbY,lhandX-lelbX);
 		lhandX=(lelbX+forarmlen*Math.cos(m));
 		lhandY=(lelbY+forarmlen*Math.sin(m));
 
-		l=len(rhandX,rhandY,relbX,relbY);
 		m=mytan(rhandY-relbY,rhandX-relbX);
 		rhandX=(relbX+forarmlen*Math.cos(m));
 		rhandY=(relbY+forarmlen*Math.sin(m));
 
-		l=len(waistX,waistY,neckX,neckY);
 		m=mytan(waistY-neckY,waistX-neckX);
 		waistX=(neckX+bodlen*Math.cos(m));
 		waistY=(neckY+bodlen*Math.sin(m));
 
-		l=len(rkneeX,rkneeY,waistX,waistY);
 		m=mytan(rkneeY-waistY,rkneeX-waistX);
 		rkneeX=(waistX+hiplen*Math.cos(m));
 		rkneeY=(waistY+hiplen*Math.sin(m));
 
-		l=len(lkneeX,lkneeY,waistX,waistY);
 		m=mytan(lkneeY-waistY,lkneeX-waistX);
 		lkneeX=(waistX+hiplen*Math.cos(m));
 		lkneeY=(waistY+hiplen*Math.sin(m));
 
-		l=len(lfootX,lfootY,lkneeX,lkneeY);
 		m=mytan(lfootY-lkneeY,lfootX-lkneeX);
 		lfootX=(lkneeX+chinlen*Math.cos(m));
 		lfootY=(lkneeY+chinlen*Math.sin(m));
 
-		l=len(rfootX,rfootY,rkneeX,rkneeY);
 		m=mytan(rfootY-rkneeY,rfootX-rkneeX);
 		rfootX=(rkneeX+chinlen*Math.cos(m));
 		rfootY=(rkneeY+chinlen*Math.sin(m));
@@ -377,10 +367,6 @@ public class Pos {
 		if (res>Math.PI) res=res-Math.PI*2;
 		if (res<-Math.PI) res=res+Math.PI*2;
 		return res;
-	}
-
-	private double len(double x,double y,double x2,double y2) {
-		return Math.pow((x-x2)*(x-x2)+(y-y2)*(y-y2),.5);
 	}
 
 	public String toString() {

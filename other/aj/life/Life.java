@@ -16,6 +16,10 @@ import java.awt.Graphics;
  * */
 public class Life extends Applet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static void main(String s[]) {
 		Frame F=new Frame("Life World 1.0");
 		LifeDisplay ld=new LifeDisplay();
@@ -46,6 +50,10 @@ public class Life extends Applet {
 }
 
 class LifeDisplay extends Canvas implements Runnable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static int MAX=100;
 	static int COLONIES=100;	
 	static int COLSIZE=8;

@@ -15,6 +15,10 @@ import java.awt.event.ActionListener;
  *@created    April 12, 2000 
  */
 public class ScrollZoomDisplayCanvas extends Panel implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Button zoom, unzoom;
 	TextField exactZoom;
 	DisplayCanvas disp;

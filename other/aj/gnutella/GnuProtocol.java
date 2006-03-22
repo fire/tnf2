@@ -72,7 +72,6 @@ public class GnuProtocol implements Runnable{
 		totalOutTrafficRate=1.0*totalOutTraffic/elapstime;
 	}
 	public double getOutBandwidth() {
-		long currtime=System.currentTimeMillis();
 		long elapstime=System.currentTimeMillis()-lastOutTrafficTime;
 		return 1.0*lastOutTraffic/elapstime;
 	}
@@ -90,7 +89,6 @@ public class GnuProtocol implements Runnable{
 		totalTrafficRate=1.0*totalTraffic/elapstime;
 	}
 	public double getInBandwidth() {
-		long currtime=System.currentTimeMillis();
 		long elapstime=System.currentTimeMillis()-lastTrafficTime;
 		return 1.0*lastTraffic/elapstime;
 	}

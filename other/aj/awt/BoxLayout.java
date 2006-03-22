@@ -64,24 +64,22 @@ public class BoxLayout implements LayoutManager {
 	 *@param  C  Description of Parameter 
 	 */
 	public void layoutContainer (Container C) {
-		int a;
-		int b;
 		makeLookup (C);
 		Dimension d = C.getSize();
 		double heightuse = 0;
 		double widthuse = 0;
 		heightuse = Math.max (d.height * 1.0 / srmheight[row - 1], 0);
 		widthuse = Math.max (d.width * 1.0 / scmwidth[col - 1], 0);
-		for (a = 0; a < row; a++) {
+		for (int a = 0; a < row; a++) {
 			rmheight[a] = (int) (rmheight[a] * heightuse);
 			srmheight[a] = (int) (srmheight[a] * heightuse);
 		}
-		for (b = 0; b < col; b++) {
+		for (int b = 0; b < col; b++) {
 			cmwidth[b] = (int) (cmwidth[b] * widthuse);
 			scmwidth[b] = (int) (scmwidth[b] * widthuse);
 		}
-		for (a = 0; a < row; a++) {
-			for (b = 0; b < col; b++) {
+		for (int a = 0; a < row; a++) {
+			for (int b = 0; b < col; b++) {
 				if (clist[a][b] == null) {
 					continue;
 				}
@@ -119,9 +117,7 @@ public class BoxLayout implements LayoutManager {
 	private void makeLookup (Container C) {
 		vlist = new Vector();
 		Component[]CCC = C.getComponents();
-		int a;
-		int b;
-		for (a = 0; a < CCC.length; a++) {
+		for (int a=0; a < CCC.length; a++) {
 			vlist.addElement (CCC[a]);
 		}
 		if (colfirst) {
@@ -141,7 +137,7 @@ public class BoxLayout implements LayoutManager {
 		cmwidth = new int[col];
 		scpwidth = new int[col];
 		scmwidth = new int[col];
-		for (a = 0; a < vlist.size(); a++) {
+		for (int a=0; a < vlist.size(); a++) {
 			int r;
 			int c;
 			if (colfirst) {
@@ -154,8 +150,8 @@ public class BoxLayout implements LayoutManager {
 			}
 			clist[r][c] = (Component)vlist.elementAt (a);
 		}
-		for (a = 0; a < row; a++) {
-			for (b = 0; b < col; b++) {
+		for (int a=0; a < row; a++) {
+			for (int b = 0; b < col; b++) {
 				if (clist[a][b] != null) {
 					srpheight[a] = rpheight[a] = Math.max (rpheight[a], clist[a][b].getPreferredSize().height);
 					srmheight[a] = rmheight[a] = Math.max (rmheight[a], clist[a][b].getMinimumSize().height);
@@ -164,11 +160,11 @@ public class BoxLayout implements LayoutManager {
 				}
 			}
 		}
-		for (a = 1; a < row; a++) {
+		for (int a = 1; a < row; a++) {
 			srpheight[a] = srpheight[a - 1] + rpheight[a];
 			srmheight[a] = srmheight[a - 1] + rmheight[a];
 		}
-		for (a = 1; a < col; a++) {
+		for (int a = 1; a < col; a++) {
 			scpwidth[a] = scpwidth[a - 1] + cpwidth[a];
 			scmwidth[a] = scmwidth[a - 1] + cmwidth[a];
 		}
@@ -186,8 +182,7 @@ public class BoxLayout implements LayoutManager {
 			Frame F = new Frame();
 			BoxLayout bl = new BoxLayout (Integer.parseInt (s[0]), Integer.parseInt (s[1]));
 			Panel P = new Panel (bl);
-			int a;
-			for (a = 2; a < s.length; a++) {
+			for (int a=2; a < s.length; a++) {
 				Component c;
 				if (s[a].toLowerCase().startsWith ("button")) {
 					System.out.println ("button made");

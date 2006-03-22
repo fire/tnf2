@@ -38,7 +38,7 @@ public class GenPlanet {
 	
 	public GenPlanet() {}
 	public void loadUniverse() {
-		Universe u = new Universe();
+		new Universe();
 		Universe.load();
 	}
 

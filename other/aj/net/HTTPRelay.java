@@ -178,7 +178,6 @@ System.out.println("HEADERLOG>"+headerRead);
 	 */
 	public void processHeaderLine(String s) {
 		s = s.trim();
-		String org = s;
 		String portstring = "";
 
 		while (s.indexOf("\\") >= 0) {
@@ -285,7 +284,6 @@ System.out.println("HEADERLOG>"+headerRead);
 		String JUNK = myrand() + "" + org.hashCode();
 		//"HGSGSDH$#@";
 		String correcthttp = "http://" + localhost + (localport == 80 ? "" : ":" + localport);
-		String fix = "";
 		String cap = org.toUpperCase();
 		look = look.toUpperCase();
 		String ref = null;

@@ -26,8 +26,7 @@ public class HTMLPrinter {
 		if (s.startsWith("/")) {
 			return true;
 		}
-		int a;
-		for (a = 0; a < nott.length; a++) {
+		for (int a = 0; a < nott.length; a++) {
 			if (s.toUpperCase().equals(nott[a])) {
 				return true;
 			}

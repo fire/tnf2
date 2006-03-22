@@ -2,7 +2,6 @@ package aj.combat;
 
 import java.applet.Applet;
 import java.awt.BorderLayout;
-import java.io.IOException;
 
 
 /**
@@ -13,20 +12,22 @@ import java.io.IOException;
  */
 public class PlayerApplet extends Applet {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
+	/**
 	 *  Description of the Method 
 	 */
 	public void init() {
 		resize(Player.ZONESIZE, Player.ZONESIZE);
 		setLayout(new BorderLayout());
 		Player p;
-		String host = "neuron.spawar.navy.mil";
-		int port = 5000;
 		if (getParameter("host") != null) {
-			host = getParameter("host");
 		}
 		try {
 			if (getParameter("port") != null) {
-				port = Integer.parseInt(getParameter("port"));
 			}
 		}
 		catch (NumberFormatException NFE) {

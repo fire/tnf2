@@ -229,7 +229,6 @@ public class LoanCalc implements ActionListener {
 		double totalint=0;
 		if (log) System.out.println("loan = "+aj.misc.Stuff.money(l,2)+" int ="+aj.misc.Stuff.trunc(r,4)+" payment = "+aj.misc.Stuff.money(p,2)+" term ="+n);
 		for (int a=0;a<n;a++) {
-			double totalpay=p*a;
 			totalprin+=p-(l*r/12);
 			totalint+=l*r/12;
 			l=l+l*r/12-p;

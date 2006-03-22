@@ -68,8 +68,8 @@ public class DisplayCanvas extends Canvas implements MouseListener, MouseMotionL
 			Graphics G = I.getGraphics();
 			G.clearRect (0, 0, getSize().width, getSize().height);
 			G.setColor (getForeground());
-			int a;
-			for (a = 0; a < v.size(); a++) {
+			
+			for (int a = 0; a < v.size(); a++) {
 				DisplayItem d = (DisplayItem)v.elementAt (a);
 				d.display (G, scale);
 			}
@@ -78,8 +78,7 @@ public class DisplayCanvas extends Canvas implements MouseListener, MouseMotionL
 			Graphics G = I.getGraphics();
 			G.clearRect (0, 0, getSize().width, getSize().height);
 			G.setColor (getForeground());
-			int a;
-			for (a = 0; a < v.size(); a++) {
+			for (int a=0; a < v.size(); a++) {
 				DisplayItem d = (DisplayItem)v.elementAt (a);
 				d.display (G, scale);
 			}
@@ -118,8 +117,7 @@ public class DisplayCanvas extends Canvas implements MouseListener, MouseMotionL
 		repaint();
 	}
 	public void addAll (Vector V) {
-		int a;
-		for (a = 0; a < V.size(); a++) {
+		for (int a=0; a < V.size(); a++) {
 			if ( V.elementAt(a)!=null && !v.contains (V.elementAt (a))) {
 				v.addElement (V.elementAt (a));
 			}
@@ -133,9 +131,8 @@ public class DisplayCanvas extends Canvas implements MouseListener, MouseMotionL
 		}
 		last = start = new Point (e.getX(), e.getY());
 		down = true;
-		int a;
 		xorme = (DisplayItem)v.elementAt (0);
-		for (a = 1; a < v.size(); a++) {
+		for (int a=1; a < v.size(); a++) {
 			DisplayItem n = (DisplayItem)v.elementAt (a);
 			double dx = (n.getX (scale) - e.getX());
 			double dy = (n.getY (scale) - e.getY());

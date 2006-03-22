@@ -23,6 +23,10 @@ import aj.misc.Tree;
  *@created    June 21, 2000 
  */
 public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int CENTER = 300;
 	String mainFile;
 	
@@ -53,9 +57,9 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 			//      System.out.println("GML PARSED");
 			GmlPair n[] = g.getAllByName ("node");
 			GmlPair l[] = g.getAllByName ("link");
-			int a;
+
 			//System.out.println(n.length+"");
-			for (a = 0; a < n.length; a++) {
+			for (int a = 0; a < n.length; a++) {
 				Node node=Node.parse(n[a]);
 				if (node==null) {
 					System.out.println("MyError: bad node"+n[a]);
@@ -93,7 +97,7 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 			}
 			//System.out.println("nodes done");
 			//System.out.println(n.length+"");
-			for (a = 0; a < l.length; a++) {
+			for (int a=0; a < l.length; a++) {
 				Link lll=Link.parse(l[a],nodes);
 				if (lll==null) continue;
 				links.addElement (lll);
@@ -147,12 +151,11 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 	public void save() {
 		try {
 			Vector v = new Vector();
-			int a;
-			for (a = 0; a < nodes.size(); a++) {
+			for (int a=0; a < nodes.size(); a++) {
 				Node n = (Node)nodes.elementAt (a);
 				v.addElement (n.toGmlPair());
 			}
-			for (a = 0; a < links.size(); a++) {
+			for (int a=0; a < links.size(); a++) {
 				Link l = (Link)links.elementAt (a);
 				v.addElement (l.toGmlPair());
 			}
@@ -177,8 +180,6 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 	 *@return    Description of the Returned Value 
 	 */
 	public Link makeLink (GmlPair l) {
-		int a;
-		int b;
 		GmlPair ff[] = l.getAllByName ("fromnode");
 		GmlPair tt[] = l.getAllByName ("tonode");
 		GmlPair cc[] = l.getAllByName ("color");
@@ -218,7 +219,7 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 			Vector from = new Vector();
 			String f[] = Stuff.getTokens (ff[0].getString(), " ,\t");
 			String t[] = Stuff.getTokens (tt[0].getString(), " ,\t");
-			for (a = 0; a < f.length; a++) {
+			for (int a=0; a < f.length; a++) {
 				Node FN = Graph.getNode (f[a]);
 				if (FN != null) {
 					from.addElement (FN);
@@ -227,7 +228,7 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 					System.out.println ("MyError: no from in link" + f[a]);
 				}
 			}
-			for (a = 0; a < t.length; a++) {
+			for (int a=0; a < t.length; a++) {
 				Node TN = Graph.getNode (t[a]);
 				if (TN != null) {
 					to.addElement (TN);
@@ -248,8 +249,7 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 	 */
 	public void layoutRandom() {
 		Vector v = (Vector)nodes.clone();
-		int a;
-		for (a = 0; a < v.size(); a++) {
+		for (int a=0; a < v.size(); a++) {
 			Node n = (Node)v.elementAt (a);
 			n.x = (int) (Math.random() * CENTER);
 			n.y = (int) (Math.random() * CENTER);
@@ -259,12 +259,11 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 	 *  Description of the Method 
 	 */
 	public void layoutCircle2() {
-		int a;
 		int avg = 80;
 		Node n;
 		Dimension d = new Dimension (avg, avg);
 		double ang = Math.PI * 2 / nodes.size();
-		for (a = 0; a < nodes.size(); a++) {
+		for (int a=0; a < nodes.size(); a++) {
 			n = (Node)nodes.elementAt (a);
 			n.x = (int) (d.width * Math.cos (a * ang) + avg);
 			n.y = (int) (d.width * Math.sin (a * ang) + avg);
@@ -288,8 +287,7 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
                 Vector roots = (Vector)nodes.clone();
                 Vector l = (Vector)links.clone();
                 Vector n = (Vector)nodes.clone();
-                int a;
-                for (a = 0; a < l.size(); a++) {
+                for (int a=0; a < l.size(); a++) {
                         Link t = (Link) l.elementAt(a);
                         for (int b=0;b<t.to.size();b++) {
 				Node child =(Node) t.to.elementAt(b);
@@ -297,13 +295,13 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 			}
                 }
                 Tree T = new Tree("Base");
-                for (a = 0; a < roots.size(); a++) {
+                for (int a=0; a < roots.size(); a++) {
                         Node rt = (Node) roots.elementAt(a);
                         T.addChild(rt);
                         n.removeElement(rt);
                 }
 		while (n.size() > 0) {
-                        for (a = 0; a < l.size(); a++) {
+                        for (int a=0; a < l.size(); a++) {
                                 Link t = (Link) l.elementAt(a);
                                 Vector par = t.from;//getParentNode(t);//t.getParentNodes();
                                 Vector child = t.to;//getChildNode(t);//t.getChildNode();
@@ -331,11 +329,10 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 			n.setY(miny);//n.setCenter(cx, miny);
                 }
                 Vector v = T.getChildren();
-                int a;
                 double dx = (maxx - minx) / T.getWidth();
                 int dy = (maxy - miny) / T.getDepth();
                 miny += dy;
-                for (a = 0; a < v.size(); a++) {
+                for (int a=0; a < v.size(); a++) {
                         Tree t = (Tree) v.elementAt(a);
                         layoutTree(t, minx, miny, (int) (minx + dx * t.getWidth()), maxy);
                         minx += dx * t.getWidth();
@@ -401,23 +398,21 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 	public void layoutCircle() {
 		Vector inner = (Vector)nodes.clone();
 		Vector outer = new Vector();
-		int a;
-		int b;
 		int radious = 40;
 		int steps = 0;
 		while (inner.size() > 0 && steps < 6) {
 			steps++;
-			for (a = 0; a < inner.size(); a++) {
+			for (int a=0; a < inner.size(); a++) {
 				Node n = (Node)inner.elementAt (a);
 				Vector v = linkedNodesFrom (n);
-				for (b = 0; b < v.size(); b++) {
+				for (int b = 0; b < v.size(); b++) {
 					Node t = (Node)v.elementAt (b);
 					if (inner.contains (t) && !outer.contains (n) && t != n) {
 						outer.addElement (t);
 					}
 				}
 			}
-			for (a = 0; a < outer.size(); a++) {
+			for (int a=0; a < outer.size(); a++) {
 				inner.removeElement (outer.elementAt (a));
 			}
 			while (inner.size() > radious / 4) {
@@ -425,7 +420,7 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 				inner.removeElementAt (0);
 			}
 			double ra = Math.random() * Math.PI * 2;
-			for (a = 0; a < inner.size(); a++) {
+			for (int a=0; a < inner.size(); a++) {
 				Node n = (Node)inner.elementAt (a);
 				n.x = (int) (Math.cos (2 * Math.PI * a / inner.size() + ra) * radious) + CENTER;
 				n.y = (int) (Math.sin (2 * Math.PI * a / inner.size() + ra) * radious) + CENTER;
@@ -443,13 +438,11 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 	 */
 	private Vector linkedNodesFrom (Node n) {
 		Vector v = new Vector();
-		int a;
-		int b;
-		for (a = 0; a < links.size(); a++) {
+		for (int a=0; a < links.size(); a++) {
 			Link l = (Link)links.elementAt (a);
 			if (l.from.contains (n)) {
 				Vector t = l.to;
-				for (b = 0; b < t.size(); b++) {
+				for (int b = 0; b < t.size(); b++) {
 					if ( !v.contains (t.elementAt (b))) {
 						v.addElement (t.elementAt (b));
 					}
@@ -465,8 +458,7 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 	 *@return    The Node value 
 	 */
 	public static Node getNode (int i) {
-		int a;
-		for (a = 0; a < nodes.size(); a++) {
+		for (int a=0; a < nodes.size(); a++) {
 			Node n = (Node)nodes.elementAt (a);
 			if (n.id == i) {
 				return n;
@@ -481,8 +473,7 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 	 *@return    The Node value 
 	 */
 	public static Node getNode (String s) {
-		int a;
-		for (a = 0; a < nodes.size(); a++) {
+		for (int a=0; a < nodes.size(); a++) {
 			Node n = (Node)nodes.elementAt (a);
 			if (n.name.trim().equalsIgnoreCase (s.trim())) {
 				return n;
@@ -490,7 +481,7 @@ public class Graph extends ScrollZoomDisplayCanvas implements ActionListener {
 		}
 		try {
 			int i = (int) (Integer.parseInt (s.trim()));
-			for (a = 0; a < nodes.size(); a++) {
+			for (int a=0; a < nodes.size(); a++) {
 				Node n = (Node)nodes.elementAt (a);
 				if (n.id == i) {
 					return n;

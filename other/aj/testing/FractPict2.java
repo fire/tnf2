@@ -21,6 +21,10 @@ import javax.swing.JPanel;
 
 public class FractPict2 extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static int xsize=256,ysize=256;
 	static int minFocus=256;
 	static JButton jb=new JButton("Next");
@@ -50,7 +54,6 @@ public class FractPict2 extends JPanel {
 		Graphics G=i.getGraphics();
 		G.setColor(Color.black);
 		G.clearRect(0,0,xsize,ysize);
-		int bound=2;
 		for (int f=xsize;f>minFocus;f/=2) {
 			for (int xx=0;xx<xsize/f;xx++) {
 				if (xx%2==0) {
@@ -62,8 +65,6 @@ public class FractPict2 extends JPanel {
 //						System.out.println("skip col"+yy);
 						continue;
 					}
-					int x=xx*f;
-					int y=yy*f;
 					all[xx*f][yy*f]=blend(xx*f,yy*f,f);
 					all[xx*f][yy*f]=Color.black;
 					G.setColor(all[xx*f][yy*f]);

@@ -4,6 +4,10 @@ import java.applet.Applet;
 import java.awt.BorderLayout;
 
 public class PlanetViewApplet extends Applet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	PlanetView pv;
 	public void init() {
 		int size=-1,nummoons=-1,numsats=-1,neb=-1,seed=-1;

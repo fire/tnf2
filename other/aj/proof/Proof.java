@@ -22,6 +22,11 @@ import java.io.InputStreamReader;
  *@created    August 29, 2000 
  */
 public class Proof extends Applet implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	KnowBase KB = new KnowBase();
 
 	String menu = 
@@ -114,7 +119,6 @@ public class Proof extends Applet implements ActionListener {
 	 */
 	public void readfile(String F) {
 		String S;
-		char ch;
 		try {
 			BufferedReader dstr = new BufferedReader(new FileReader(F));
 			while (true) {

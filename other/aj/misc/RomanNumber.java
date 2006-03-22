@@ -8,6 +8,10 @@ package aj.misc;
  *@created    April 12, 2000 
  */
 public class RomanNumber extends Number {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String rep = "";
 	//MDCLXVI
 	private String fix[] = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
@@ -48,7 +52,6 @@ public class RomanNumber extends Number {
 		}
 		s = s.toUpperCase().trim();
 		x = 0;
-		int a;
 		if (s.indexOf("IIII") >= 0 || 
 				s.indexOf("VV") >= 0 || 
 				s.indexOf("XXXX") >= 0 || 
@@ -57,7 +60,7 @@ public class RomanNumber extends Number {
 				s.indexOf("DD") >= 0) {
 			throw new NumberFormatException();
 		}
-		for (a = fix.length - 1; a >= 0; a--) {
+		for (int a=fix.length - 1; a >= 0; a--) {
 			while (s.startsWith(fix[a])) {
 				s = s.substring(s.indexOf(fix[a]) + fix[a].length());
 				x = x + find[a];
@@ -147,9 +150,8 @@ public class RomanNumber extends Number {
 	 *@return    Description of the Returned Value 
 	 */
 	private String encode(int x) {
-		int a;
 		String r = "";
-		for (a = fix.length - 1; a > -1; a--) {
+		for (int a=fix.length - 1; a > -1; a--) {
 			while (x >= find[a]) {
 				x -= find[a];
 				r = r + fix[a];
@@ -165,8 +167,7 @@ public class RomanNumber extends Number {
 	 *@param  s  Description of Parameter 
 	 */
 	public static void main(String s[]) {
-		int a;
-		for (a = 0; a < s.length; a++) {
+		for (int a = 0; a < s.length; a++) {
 			try {
 				System.out.println("Test RomanNumber.encode(" + s[a] + ") = " + new RomanNumber(s[a]).toString());
 			}

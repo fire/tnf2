@@ -7,6 +7,11 @@ import java.net.Socket;
 
 public class RealmAp extends Applet {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public void init() {
 		setLayout (new BorderLayout());
 		try {

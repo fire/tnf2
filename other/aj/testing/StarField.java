@@ -8,6 +8,10 @@ import java.awt.Graphics;
 import java.util.Vector;
 
 public class StarField extends Canvas implements Runnable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static void main(String s[]) {
 		Frame f=new Frame();
 		StarField sf=new StarField();

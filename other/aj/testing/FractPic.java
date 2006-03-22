@@ -21,6 +21,10 @@ import aj.awt.SimpleWindowManager;
  *@created    August 29, 2000 
  */
 public class FractPic extends Canvas {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int SIZE = 400;
 	int FOCUSLIMIT = 1;
 
@@ -187,7 +191,6 @@ public class FractPic extends Canvas {
 		int x;
 		int y;
 		int FOCUS;
-		int size = SIZE;
 		int count = 255;
 		for (FOCUS = 128; FOCUS * FOCUS > FOCUSLIMIT; FOCUS /= 2) {
 
@@ -225,8 +228,7 @@ public class FractPic extends Canvas {
 	 *@param  r3  Description of Parameter 
 	 */
 	private void skip(int i, Random r, Random r2, Random r3) {
-		int a;
-		for (a = 0; a < i; a++) {
+		for (int a = 0; a < i; a++) {
 			r.nextGaussian();
 			r2.nextGaussian();
 			r3.nextGaussian();

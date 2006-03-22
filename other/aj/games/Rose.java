@@ -12,6 +12,10 @@ import java.awt.event.KeyListener;
  *@created    August 29, 2000 
  */
 public class Rose extends Frame implements KeyListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int count = 0;
 	
 	public void keyPressed (KeyEvent e) {
@@ -110,8 +114,7 @@ public class Rose extends Frame implements KeyListener {
 	}
 	
 	public Polygon scale (Polygon p, double s) {
-		int a;
-		for (a = 0; a < p.npoints; a++) {
+		for (int a=0; a < p.npoints; a++) {
 			p.xpoints[a] = (int) (p.xpoints[a] * s);
 			p.ypoints[a] = (int) (p.ypoints[a] * s);
 		}
@@ -119,8 +122,7 @@ public class Rose extends Frame implements KeyListener {
 	}
 	
 	public Polygon trans (Polygon p, int x, int y) {
-		int a;
-		for (a = 0; a < p.npoints; a++) {
+		for (int a = 0; a < p.npoints; a++) {
 			p.xpoints[a] += x;
 			p.ypoints[a] += y;
 		}
@@ -141,8 +143,7 @@ public class Rose extends Frame implements KeyListener {
 	
 	public void drawStar (Graphics g, int x, int y, int size) {
 		Polygon p = new Polygon();
-		int a;
-		for (a = 1; a < 6; a++) {
+		for (int a=1; a < 6; a++) {
 			int xx2 = (int) ( - Math.sin (144 * a * Math.PI / 180) * 20);
 			int yy2 = (int) ( + Math.cos (144 * a * Math.PI / 180) * 20);
 			p.addPoint (xx2, yy2);

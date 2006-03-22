@@ -19,6 +19,10 @@ import java.util.Vector;
  */
 public class OkDialog extends Dialog implements ActionListener {
 	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/**
 	 *  Description of the Field 
 	 */
 	public Vector v = new Vector();
@@ -70,12 +74,10 @@ public class OkDialog extends Dialog implements ActionListener {
 	 */
 	public void setComponents (Component list[][]) {
 		remove (listPanel);
-		int a;
-		int b;
 		listPanel = new Panel (new GridLayout (list.length, 0));
-		for (a = 0; a < list.length; a++) {
+		for (int a=0; a < list.length; a++) {
 			Panel temp = new Panel (new GridLayout (0, list[a].length));
-			for (b = 0; b < list[a].length; b++) {
+			for (int b = 0; b < list[a].length; b++) {
 				temp.add (list[a][b]);
 			}
 			listPanel.add (temp);
@@ -120,11 +122,10 @@ public class OkDialog extends Dialog implements ActionListener {
 	 *@param  AE  Description of Parameter 
 	 */
 	public void processActionEvent (ActionEvent AE) {
-		int a;
 		if (v == null) {
 			return;
 		}
-		for (a = 0; a < v.size(); a++) {
+		for (int a=0; a < v.size(); a++) {
 			ActionListener AL = (ActionListener)v.elementAt (a);
 			AL.actionPerformed (AE);
 		}

@@ -257,12 +257,10 @@ public class Universe {
 	public static String getActionReport(Corp c) {
 		String h = "\n--------Upcomming Action Report-------\n";
 		String s = "";
-		boolean found = false;
 		for(int a = 0; a < actions.size(); a++) {
 			Action aa = (Action)actions.elementAt(a);
 			if(aa.getCorpTick().equalsIgnoreCase(c.getTick())) {
 				s += aa.getReport() + "\n";
-				found = true;
 			}
 		}
 		if(s.length() > 0)s = h + s + "\n";
@@ -429,7 +427,6 @@ public class Universe {
 		StringBuffer actshi=new StringBuffer();
 		StringBuffer actrob=new StringBuffer();
 		StringBuffer prog=new StringBuffer();
-		int pass;
 		for(int a = 0; a < allITThings.size(); a++) {
 			ITThing i = (ITThing)allITThings.elementAt(a);
 			String dis = i.display(c.getTick());
@@ -1206,7 +1203,6 @@ public class Universe {
 		double ROOMTEMP = 23.0;
 		if (l.isInside()) return ROOMTEMP;
 		if(l.equalsIgnoreCase(l.getBodyLocation()))return SPACETEMP;
-		Location bl = l.getBodyLocation();
 		Body b = getBodyByLocation(l);
 		if(b != null)return b.getTemp(l);
 		//System.out.println("MyError: bad location in temp check " + l);

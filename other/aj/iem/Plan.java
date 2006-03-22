@@ -139,8 +139,6 @@ public class Plan implements ActionListener {
 		activeFields=select.getSelectedIndex()+2;
 		updateGui();
 		double v[]=new double[activeFields];
-		double bv[]=new double[activeFields];
-		double av[]=new double[activeFields];
 		double sumv=0;
 		for (int a=0;a<activeFields;a++) {
 			v[a]=Math.min(1,Math.max(0,Double.parseDouble(Stuff.superTrim(valueT[a].getText(),",$ \t\n"))));
@@ -164,7 +162,7 @@ public class Plan implements ActionListener {
 			int bq=Math.min(100,(int)(bRisk/tb));
 			bidQT[a].setText(""+Stuff.trunc(bq,3));
 			int aq=Math.min(100,(int)(aRisk/(1-ta)));
-			askQT[a].setText(""+Stuff.trunc(ta,3));
+			askQT[a].setText(""+Stuff.trunc(aq,3));
 		}
 		for (int a=0;a<activeFields;a++) {
 //			System.out.println("bid "+nam1.getText()+" ~"+Stuff.trunc(ab,3)+" ~"+aaplQBid.getText()+" 1");

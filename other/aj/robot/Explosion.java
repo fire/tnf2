@@ -37,11 +37,10 @@ public class Explosion extends ArenaItem {
 		}
 		int x = (int) (getX(arena.getScale()));
 		int y = (int) (getY(arena.getScale()));
-		int a;
 		Color c=Arena.fade(Color.red,count,getTime(),Arena.MAXEXPLOSIONAGE);
 		if (c==null) return;
 		g.setColor(c);
-		for (a = 0; a < 4; a++) {
+		for (int a = 0; a < 4; a++) {
 			int b = (int) Math.pow(2, a);
 			g.drawOval((int) ((x - b * SIZE * arena.getScale() / 2)  ), (int) ((y - b * SIZE  * arena.getScale()/ 2)  ), (int) (b * SIZE  * arena.getScale() ), (int) (b * SIZE * arena.getScale() ));
 		}

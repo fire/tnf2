@@ -220,10 +220,10 @@ public class NetPlayer implements ActionListener {
 		}
 		else if (brainType == SMART) {
 			//System.out.println("make move for comp, calculating");
-			int a;
+
 			long timeout = getTimeOut(TIMELIMIT);
 			String m = bestMove(b, 0, 0);
-			for (a = 0; !checkTimeOut(timeout); a++) {
+			for (int a = 0; !checkTimeOut(timeout); a++) {
 				m = bestMove(b, a, timeout);
 			}
 			//System.out.println("make move for comp="+m);
@@ -251,7 +251,7 @@ public class NetPlayer implements ActionListener {
 			System.exit(0);
 		}
 		try {
-			NetPlayer c = new NetPlayer(s[0],Integer.parseInt(s[1]), s[2], s[3]);
+			new NetPlayer(s[0],Integer.parseInt(s[1]), s[2], s[3]);
 		}
 		catch (Exception E) {
 			System.out.println("FORMAT: java NetPlayer <host> <port> <gamename> <smart,rand,human,watch>");
@@ -282,17 +282,15 @@ public class NetPlayer implements ActionListener {
 		}
 
 		Board nextb[] = new Board[mvs.size()];
-		int a;
-		int c;
 		int bmove = 0;
-		for (c = 0; c < mvs.size(); c++) {
+		for (int c = 0; c < mvs.size(); c++) {
 			nextb[c] = b.applyMove((String) mvs.elementAt(c));
 		}
 		if (checkTimeOut(timeout)) {
 			level = 0;
 		}
-		for (a = 1; a < level; a++) {
-			for (c = 0; c < nextb.length; c++) {
+		for (int a=1; a < level; a++) {
+			for (int c = 0; c < nextb.length; c++) {
 				if (nextb[c].gameOver()) {
 					continue;
 				}
@@ -300,7 +298,7 @@ public class NetPlayer implements ActionListener {
 				nextb[c] = nextb[c].applyMove(s);
 			}
 		}
-		for (a = 1; a < nextb.length; a++) {
+		for (int a=1; a < nextb.length; a++) {
 			int as = nextb[a].getScore(b.getNextMove());
 			int bs = nextb[bmove].getScore(b.getNextMove());
 			if (as >= bs) {

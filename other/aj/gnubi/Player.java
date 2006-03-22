@@ -18,6 +18,10 @@ import javax.swing.JComponent;
 import javax.swing.JTextField;
 
 public class Player extends JComponent implements MapItem, Movable, KeyListener  {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	int viewSize=12;
 	Point cellPos=null;
 	ImageIcon i=null;

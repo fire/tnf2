@@ -92,9 +92,8 @@ public class RelayServer {
 		else if (tok[0].equalsIgnoreCase("__CREATE")) {
 			//system_command
 			//System.out.println("create found "+line);
-			int a;
 			RelayGroup RG = new RelayGroup(line);
-			for (a = 0; a < GROUP.size(); a++) {
+			for (int a = 0; a < GROUP.size(); a++) {
 				RelayGroup rp = (RelayGroup) GROUP.elementAt(a);
 				if (rp.dup(RG)) {
 					return;
@@ -107,9 +106,8 @@ public class RelayServer {
 		else if (tok[0].equalsIgnoreCase("__DESTROY") || tok[0].equalsIgnoreCase("__DELETE")) {
 			//name pass
 			//System.out.println("destroy found "+line);
-			int a;
 			RelayGroup test = new RelayGroup(line);
-			for (a = 0; a < GROUP.size(); a++) {
+			for (int a=0; a < GROUP.size(); a++) {
 				RelayGroup rp = (RelayGroup) GROUP.elementAt(a);
 				if (rp.passDup(test)) {
 					send(S,"__DESTROYED " + rp.getName());
@@ -121,9 +119,8 @@ public class RelayServer {
 
 		else if (tok[0].equalsIgnoreCase("__LIST")) {
 			//System.out.println("list found "+line);
-			int a;
 			RelayGroup test = new RelayGroup(line);
-			for (a = 0; a < GROUP.size(); a++) {
+			for (int a=0; a < GROUP.size(); a++) {
 				RelayGroup RG = (RelayGroup) GROUP.elementAt(a);
 				if (tok.length == 1 || RG.getName().equalsIgnoreCase(test.getName().toUpperCase())) {
 					send(S,"__LIST " + RG.toString());
@@ -131,8 +128,7 @@ public class RelayServer {
 			}
 		}
 		else if (tok[0].equalsIgnoreCase("__WHERE")) {
-			int a;
-			for (a = 0; a < GROUP.size(); a++) {
+			for (int a=0; a < GROUP.size(); a++) {
 				RelayGroup RG = (RelayGroup) GROUP.elementAt(a);
 				if (RG.contains(S)) {
 					send(S,"__CONNECTED " + RG.getName() + " " + RG.getLocation(S));
@@ -143,8 +139,7 @@ public class RelayServer {
 			//name desc pass
 			//System.out.println("modify found "+line);
 			RelayGroup test = new RelayGroup(line);
-			int a;
-			for (a = 0; a < GROUP.size(); a++) {
+			for (int a=0; a < GROUP.size(); a++) {
 				RelayGroup RG = (RelayGroup) GROUP.elementAt(a);
 				if (RG.getName().equals(test.getName()) && RG.getPass().equals(test.getPass())) {
 					send(S,RG.modify(test));
@@ -154,8 +149,7 @@ public class RelayServer {
 		else if (tok[0].equalsIgnoreCase("__JOIN")) {
 			//System.out.println("join found "+line);
 			RelayGroup test = new RelayGroup(line);
-			int a;
-			for (a = 0; a < GROUP.size(); a++) {
+			for (int a=0; a < GROUP.size(); a++) {
 				RelayGroup RG = (RelayGroup) GROUP.elementAt(a);
 				if (RG.getName().equals(test.getName()) && RG.getPass().equals(test.getPass())) {
 					send(S,RG.add(S));
@@ -168,8 +162,7 @@ public class RelayServer {
 		else if (tok[0].equalsIgnoreCase("__QUIT")) {
 			//System.out.println("quit found "+line);
 			RelayGroup test = new RelayGroup(line);
-			int a;
-			for (a = 0; a < GROUP.size(); a++) {
+			for (int a=0; a < GROUP.size(); a++) {
 				RelayGroup RG = (RelayGroup) GROUP.elementAt(a);
 				if (RG.getName().equals(test.getName())) {
 					send(S,RG.remove(S));
@@ -193,8 +186,7 @@ send(S,help);
 		else {
 			//broadcast
 			//System.out.println("broadcast found "+line);
-			int a;
-			for (a = 0; a < GROUP.size(); a++) {
+			for (int a=0; a < GROUP.size(); a++) {
 				RelayGroup v = (RelayGroup) GROUP.elementAt(a);
 				if (v.contains(S)) {
 					//System.out.println("Broad casting "+line+" in "+v.getName());
@@ -211,9 +203,8 @@ send(S,help);
 	 *@param  NL  Description of Parameter 
 	 */
 	public void kill(Socket S) {
-		int a;
 		ALL.removeElement(S);
-		for (a = 0; a < GROUP.size(); a++) {
+		for (int a=0; a < GROUP.size(); a++) {
 			RelayGroup v = (RelayGroup) GROUP.elementAt(a);
 			v.remove(S);
 		}
@@ -301,8 +292,7 @@ class RelayGroup {
 	 *@return     The Location value 
 	 */
 	public int getLocation(Socket NL) {
-		int a;
-		for (a = 0; a < ALL.length; a++) {
+		for (int a=0; a < ALL.length; a++) {
 			Socket nl = ALL[a];
 			if (nl == NL) {
 				return a + 1;
@@ -342,8 +332,7 @@ class RelayGroup {
 		refill = r.refill;
 		max = r.max;
 		Socket n[] = new Socket[max];
-		int a;
-		for (a = 0; a < n.length && a < ALL.length; a++) {
+		for (int a=0; a < n.length && a < ALL.length; a++) {
 			n[a] = ALL[a];
 		}
 		ALL = n;
@@ -384,8 +373,7 @@ class RelayGroup {
 		if (NL == null) {
 			return false;
 		}
-		int a;
-		for (a = 0; a < ALL.length; a++) {
+		for (int a=0; a < ALL.length; a++) {
 			if (NL == ALL[a]) {
 				return true;
 			}
@@ -401,8 +389,7 @@ class RelayGroup {
 	 *@return     Description of the Returned Value 
 	 */
 	public String remove(Socket S) {
-		int a;
-		for (a = 0; a < ALL.length; a++) {
+		for (int a=0; a < ALL.length; a++) {
 			if (ALL[a] == S) {
 				ALL[a] = null;
 				if (size == max) {
@@ -423,8 +410,7 @@ class RelayGroup {
 	 *@return     Description of the Returned Value 
 	 */
 	public String add(Socket NL) {
-		int a;
-		for (a = 0; size < max && a < ALL.length; a++) {
+		for (int a=0; size < max && a < ALL.length; a++) {
 			if (ALL[a] == null) {
 				ALL[a] = NL;
 				size++;
@@ -467,8 +453,7 @@ class RelayGroup {
 	 *@param  NL    Description of Parameter 
 	 */
 	public void broadcast(String line, Socket S) {
-		int a;
-		for (a = 0; a < ALL.length; a++) {
+		for (int a=0; a < ALL.length; a++) {
 			Socket s = ALL[a];
 			if (s == S || s == null) {
 				continue;

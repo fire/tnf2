@@ -28,6 +28,10 @@ import aj.awt.SimpleWindowManager;
  *@created    August 29, 2000 
  */
 public class FadeCanvas2 extends Canvas implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Image Show, One, Two;
 	int mx, my;
 	int pixel_data[];
@@ -97,7 +101,6 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 		}
 
 		pixel_data = new int[mx * my];
-		int a;
 		FadeList = new Vector();
 		PixelGrabber p2;
 		p2 = new PixelGrabber(Two, 0, 0, mx, my, pixel_data, 0, mx);
@@ -108,7 +111,7 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 			System.out.println("interupted!!me");
 		}
 
-		for (a = 1; a < STEPS; a++) {
+		for (int a = 1; a < STEPS; a++) {
 			System.out.print(a * 100 / STEPS + " ");
 			Image t = Fade(One, Two, a * 100 / STEPS);
 			MT.addImage(t, a);
@@ -160,12 +163,9 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 	 *  Description of the Method 
 	 */
 	public void doBlend4() {
-		Thread T = Thread.currentThread();
-		int a;
-		int b;
 		Graphics g = getGraphics();
 		if (Show == One) {
-			for (a = 0; a < FadeList.size(); a++) {
+			for (int a = 0; a < FadeList.size(); a++) {
 				try {
 					Thread.sleep(DELAY);
 				}
@@ -184,7 +184,7 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 			g.drawImage(Show, 0, 0, mx, my, this);
 		}
 		else {
-			for (a = FadeList.size() - 1; a > -1; a--) {
+			for (int a = FadeList.size() - 1; a > -1; a--) {
 				try {
 					Thread.sleep(DELAY);
 				}
@@ -210,8 +210,6 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 	 */
 	public void doBlend1() {
 		int BLOCK = 3;
-		int a;
-		int b;
 		Vector list = new Vector(mx * my / (BLOCK * BLOCK));
 		Graphics g = getGraphics();
 		Image I;
@@ -222,13 +220,13 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 			I = Show = One;
 		}
 
-		for (a = 0; a < mx; a += BLOCK) {
-			for (b = 0; b < my; b += BLOCK) {
+		for (int a = 0; a < mx; a += BLOCK) {
+			for (int b = 0; b < my; b += BLOCK) {
 				list.addElement(new Point(a, b));
 			}
 		}
 		while (list.size() > 0) {
-			a = (int) (Math.random() * list.size());
+			int a = (int) (Math.random() * list.size());
 			Point p = (Point) list.elementAt(a);
 			list.removeElementAt(a);
 			g.drawImage(I, p.x, p.y, p.x + BLOCK, p.y + BLOCK, p.x, p.y, p.x + BLOCK, p.y + BLOCK, this);

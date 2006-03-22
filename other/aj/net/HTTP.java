@@ -94,8 +94,7 @@ public class HTTP implements Runnable {
 	 *@return    The Image value 
 	 */
 	public String getImage(String s) {
-		int a;
-		for (a = 0; a < info.length; a++) {
+		for (int a = 0; a < info.length; a++) {
 			if (s.toLowerCase().indexOf(info[a][0]) >= 0) {
 				return info[a][1];
 			}
@@ -111,9 +110,8 @@ public class HTTP implements Runnable {
 	 *@return    The Misc value 
 	 */
 	public String getMisc(String s) {
-		int a;
 		s = s.toLowerCase();
-		for (a = 0; a < info.length; a++) {
+		for (int a=0; a < info.length; a++) {
 			if (s.indexOf(info[a][0]) >= 0) {
 				return info[a][3];
 			}
@@ -129,9 +127,8 @@ public class HTTP implements Runnable {
 	 *@return    The ContentType value 
 	 */
 	public String getContentType(String s) {
-		int a;
 		s = s.toLowerCase();
-		for (a = 0; a < info.length; a++) {
+		for (int a=0; a < info.length; a++) {
 			if (s.indexOf(info[a][0]) >= 0) {
 				return info[a][2];
 			}
@@ -300,7 +297,6 @@ public class HTTP implements Runnable {
 	public void sendDirectory() {
 		File file = new File(root + fileName);
 		String dirList[] = file.list();
-		int a;
 		while (fileName.startsWith("/")) {
 			fileName = fileName.substring(1);
 		}
@@ -310,7 +306,7 @@ public class HTTP implements Runnable {
 		String body = "<html><body><h1>Directory of " + fileName + "</h1>\n<pre>";
 		body += "<a href=\"../\">Up to higher level directory</a>\n";
 		if (dirList != null) {
-			for (a = 0; a < dirList.length; a++) {
+			for (int a=0; a < dirList.length; a++) {
 				String subFile = root + fileName + dirList[a];
 				File subFileFile = new File(subFile);
 				if (subFileFile.isDirectory()) {

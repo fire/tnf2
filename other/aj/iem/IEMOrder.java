@@ -25,7 +25,7 @@ public class IEMOrder {
 	}
 	public void executeCancel(String s) {
 		if (val==0 || val==1000) return;
-		String rawdata=IEMTool.readAllSocket("GET /webex/"+link+" HTTP/1.0\r\n\r\n","","iemweb.biz.uiowa.edu",80);
+		IEMTool.readAllSocket("GET /webex/"+link+" HTTP/1.0\r\n\r\n","","iemweb.biz.uiowa.edu",80);
 	}
 	public boolean zeroRiskBid() {
 		if (isBid && val<=1) return true;

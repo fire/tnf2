@@ -577,7 +577,6 @@ class YahooTracker extends JPanel implements ActionListener{
 			all=all.substring(all.indexOf("Index Value:")+12).trim();
 			if (all.indexOf(" ")>=0) {
 				try {
-					String res=all.substring(0,all.indexOf(" "));
 					double val=Double.parseDouble(all.substring(0,all.indexOf(" ")).trim());
 					setValue(today,sym,val);
 					if (log) System.out.println(";20quote "+sym+" "+all.substring(0,all.indexOf(" ")).trim()+" rt"+" index="+realInd);

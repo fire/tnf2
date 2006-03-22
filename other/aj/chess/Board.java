@@ -465,11 +465,10 @@ public class Board {
 	public static Board randBoard() {
 		Board b = Board.newBoard();
 		b.nextToMove=(Math.random()>.5?WHITE:BLACK);
-		int a;
-		for (a = 0; a < 64; a++) {
+		for (int a = 0; a < 64; a++) {
 			b.setMap(a, EMPTY);
 		}
-		for (a = 0; a < 32; a++) {
+		for (int a = 0; a < 32; a++) {
 			int pos = (int) (Math.random() * 64) + 1;
 			char c=EMPTY;
 			if (a<8) c=BLACKPAWN;

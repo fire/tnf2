@@ -118,7 +118,6 @@ public class Span {
 		IN = openForRead (Source);
 		byte buff[];
 		int count = 0;
-		int total = 0;
 		System.out.println ("SPANNING: " + Source + " <chunk=" + chunkSize + ">");
 		try {
 			totalSize = IN.available();

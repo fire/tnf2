@@ -71,7 +71,6 @@ public class quakes {
 	public static void readBouy(String s) throws IOException {
 		URLConnection url=new URL(s).openConnection();
 		BufferedReader br=new BufferedReader(new InputStreamReader(url.getInputStream()));
-		String all="";
 		while (true) {
 			String ss=br.readLine();
 			if (ss==null) break;

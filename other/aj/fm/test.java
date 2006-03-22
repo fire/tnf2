@@ -26,11 +26,11 @@ public class test implements ActionListener{
 	//JDialog turnInput=new JDialog();
 
 	public static void main(String s[]) {
-		test t2=new test();
+		new test();
 	}
 
 	public test() {
-		Tool2 t2=new Tool2();
+		new Tool2();
 		guiSetup();
 		Tool2.F.setVisible(false);
 	}

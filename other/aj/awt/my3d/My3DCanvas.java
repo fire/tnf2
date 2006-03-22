@@ -20,6 +20,10 @@ import aj.misc.GmlPair;
  *@created    July 21, 2000 
  */
 public class My3DCanvas extends Canvas {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//direction of point light
 	MyVector lightSource = new MyVector(0.6, 0.2, 0.7);
 	//  #color of source light (where applicapal)
@@ -128,13 +132,11 @@ public class My3DCanvas extends Canvas {
 		try {
 			GmlPair g = GmlPair.parse(new File(fn));
 			GmlPair n[] = g.getAllByName("poly");
-			int a;
-			int b;
-			for (a = 0; a < n.length; a++) {
+			for (int a=0; a < n.length; a++) {
 				//System.out.println("reading poly");
 				GmlPair p[] = n[a].getAllByName("point");
 				Vector points = new Vector();
-				for (b = 0; b < p.length; b++) {
+				for (int b = 0; b < p.length; b++) {
 					//System.out.println("reading lines");
 					double x = (p[b].getAllByName("x"))[0].getDouble();
 					double y = (p[b].getAllByName("y"))[0].getDouble();

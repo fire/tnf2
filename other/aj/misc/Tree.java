@@ -31,9 +31,8 @@ public class Tree {
 	 */
 	public int getWidth() {
 		int wid = 1;
-		int a;
 		wid = Math.max(wid, children.size());
-		for (a = 0; a < children.size(); a++) {
+		for (int a = 0; a < children.size(); a++) {
 			Tree t = (Tree) children.elementAt(a);
 			if (t.getWidth() > 1) {
 				wid += t.getWidth() - 1;
@@ -50,9 +49,8 @@ public class Tree {
 	 */
 	public int getDepth() {
 		int h = 1;
-		int a;
 		int mx = 0;
-		for (a = 0; a < children.size(); a++) {
+		for (int a=0; a < children.size(); a++) {
 			Tree t = (Tree) children.elementAt(a);
 			mx = Math.max(mx, t.getDepth());
 		}
@@ -68,9 +66,8 @@ public class Tree {
 	 */
 	public int getSize() {
 		int s = 1;
-		int a;
 		int sx = 0;
-		for (a = 0; a < children.size(); a++) {
+		for (int a=0; a < children.size(); a++) {
 			Tree t = (Tree) children.elementAt(a);
 			sx = sx + t.getSize();
 		}
@@ -126,12 +123,10 @@ public class Tree {
 	 *@return    Description of the Returned Value 
 	 */
 	public boolean contains(Object o) {
-		boolean found = false;
 		if (o.equals(root)) {
 			return true;
 		}
-		int a;
-		for (a = 0; a < children.size(); a++) {
+		for (int a=0; a < children.size(); a++) {
 			Tree t = (Tree) children.elementAt(a);
 			if (t.contains(o)) {
 				return true;
@@ -154,8 +149,7 @@ public class Tree {
 			return true;
 		}
 		else {
-			int a;
-			for (a = 0; a < children.size(); a++) {
+			for (int a=0; a < children.size(); a++) {
 				Tree t = (Tree) children.elementAt(a);
 				if (t.addChildOf(o, n)) {
 					return true;
@@ -175,15 +169,14 @@ public class Tree {
 	 *@return     Description of the Returned Value 
 	 */
 	public boolean removeTree(Tree tt) {
-		int a;
-		for (a = 0; a < children.size(); a++) {
+		for (int a=0; a < children.size(); a++) {
 			Tree t = (Tree) children.elementAt(a);
 			if (t == tt) {
 				children.removeElementAt(a);
 				return true;
 			}
 		}
-		for (a = 0; a < children.size(); a++) {
+		for (int a=0; a < children.size(); a++) {
 			Tree t = (Tree) children.elementAt(a);
 			if (t.removeTree(tt)) {
 				return true;

@@ -16,6 +16,10 @@ import aj.awt.SimpleWindowManager;
  */
 public class Maze extends Canvas {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	char maze[][];
 
 
@@ -67,16 +71,14 @@ public class Maze extends Canvas {
 		g.translate(15,15);
 		int w;
 		int h;
-		int a;
-		int b;
 		w = getSize().width-25;
 		h = getSize().height-25;
 		int mh = maze.length;
 		int mw = maze[0].length;
 		double hm = h * 1.0 / mh;
 		double wm = w * 1.0 / mw;
-		for (a = 0; a < mh; a++) {
-			for (b = 0; b < mw; b++) {
+		for (int a=0; a < mh; a++) {
+			for (int b = 0; b < mw; b++) {
 				char c = maze[a][b];
 				if (c != ' ' && c != 'S' && c != 'E') {
 					//System.out.println("a="+a+"b="+b);
@@ -116,10 +118,8 @@ public class Maze extends Canvas {
 	 */
 	public static void view(char maz[][]) {
 		System.out.println();
-		int a;
-		int b;
-		for (a = 0; a < maz.length; a++) {
-			for (b = 0; b < maz[a].length; b++) {
+		for (int a=0; a < maz.length; a++) {
+			for (int b = 0; b < maz[a].length; b++) {
 				System.out.print(maz[a][b]);
 			}
 			System.out.println();
@@ -137,10 +137,8 @@ public class Maze extends Canvas {
 	 */
 	public static char[][] makeMaze(int w, int h, boolean connect8) {
 		char maz[][] = new char[h][w];
-		int a;
-		int b;
-		for (a = 0; a < h; a++) {
-			for (b = 0; b < w; b++) {
+		for (int a=0; a < h; a++) {
+			for (int b = 0; b < w; b++) {
 				if (a == 0 || b == 0 || a == h - 1 || b == w - 1) {
 					maz[a][b] = 'B';
 				}

@@ -1,7 +1,5 @@
 package aj.checkers;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -228,7 +226,7 @@ public class SmartPlayer  {
 				SmartPlayer.verbose = s[3].toUpperCase().indexOf("V") >= 0;
 				SmartPlayer.wait = s[3].toUpperCase().indexOf("W") >= 0;
 			}
-			SmartPlayer c = new SmartPlayer(nl, s[2]);
+			new SmartPlayer(nl, s[2]);
 		}
 		catch (Exception E) {
 			System.out.println("FORMAT: java SmartPlayer <host> <port> <gamename> [-vw verbose wait]");
@@ -276,17 +274,15 @@ public class SmartPlayer  {
 		}
 
 		Board nextb[] = new Board[mvs.size()];
-		int a;
-		int c;
 		int bmove = 0;
-		for (c = 0; c < mvs.size(); c++) {
+		for (int c = 0; c < mvs.size(); c++) {
 			nextb[c] = b.applyMove((String) mvs.elementAt(c));
 		}
 		if (checkTimeOut(timeout)) {
 			level = 0;
 		}
-		for (a = 1; a < level; a++) {
-			for (c = 0; c < nextb.length; c++) {
+		for (int a=1; a < level; a++) {
+			for (int c = 0; c < nextb.length; c++) {
 				if (nextb[c].gameOver()) {
 					continue;
 				}
@@ -294,7 +290,7 @@ public class SmartPlayer  {
 				nextb[c] = nextb[c].applyMove(s);
 			}
 		}
-		for (a = 1; a < nextb.length; a++) {
+		for (int a=1; a < nextb.length; a++) {
 			int as = nextb[a].getScore(b.getNextMove());
 			int bs = nextb[bmove].getScore(b.getNextMove());
 			if (as >= bs) {

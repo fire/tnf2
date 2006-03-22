@@ -165,7 +165,7 @@ public class Tokens {
 			else if (s.charAt(0) >= 'A' && s.charAt(0) <= 'Z') {
 				int a;
 				String t = "";
-				for (a = 0; a < s.length(); a++) {
+				for (a=0; a < s.length(); a++) {
 					if (!numberOrCharacter(s.charAt(a))) {
 						break;
 					}
@@ -183,7 +183,7 @@ public class Tokens {
 			else if (s.charAt(0) >= 'a' && s.charAt(0) <= 'z') {
 				int a;
 				String t;
-				for (a = 0; a < s.length(); a++) {
+				for ( a=0; a < s.length(); a++) {
 					if (!numberOrCharacter(s.charAt(a))) {
 						break;
 					}
@@ -252,8 +252,7 @@ public class Tokens {
 	 */
 	public String toString() {
 		String t = "";
-		int a;
-		for (a = 0; a < allTokens.size(); a++) {
+		for (int a=0; a < allTokens.size(); a++) {
 			t += allTokens.elementAt(a).toString() + "\n";
 		}
 		return t;

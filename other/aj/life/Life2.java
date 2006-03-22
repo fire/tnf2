@@ -31,6 +31,11 @@ public class Life2 extends Applet implements ActionListener, MouseListener, Mous
 //rules
 
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public static void main(String s[]) {
 		for (int a=0;a<s.length;a++) {
 			//if (s[a].toUpperCase().indexOf("SIZE")>=0
@@ -120,6 +125,10 @@ public class Life2 extends Applet implements ActionListener, MouseListener, Mous
 
 
 class Life2Display extends Canvas implements Runnable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static int COLONIES=13;
 	static int COLSIZE=15;
 	static int MINBORN=2;

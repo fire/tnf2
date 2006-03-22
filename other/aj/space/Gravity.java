@@ -28,6 +28,10 @@ import aj.misc.Stuff;
  *@created    December 12, 2000 
  */
 public class Gravity extends Canvas implements MouseListener, MouseMotionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	Vector allBodies = new Vector();
 	Image I = null;
 	ViewPlanet centerPlanet = null;
@@ -173,8 +177,7 @@ max accell time = 300000/a   s
 		double scale = Math.min(getSize().width, getSize().height) / viewSize;
 		G.drawString("view ("+Stuff.trunc(Math.log(viewSize)/Math.log(10),2)+")",0,getSize().height-5);
 		G.translate((int) (getSize().width / 2), (int) (getSize().height / 2));
-		int a;
-		for (a = 0; a < allBodies.size(); a++) {
+		for (int a = 0; a < allBodies.size(); a++) {
 			ViewPlanet v = (ViewPlanet) allBodies.elementAt(a);
 			v.draw(G, centerPoint.getX(), centerPoint.getY(), scale, useTime);
 		}
@@ -184,8 +187,8 @@ max accell time = 300000/a   s
 			g.setXORMode(Color.gray);
 			int minx = (int) Math.min(downP.getX() - offP.getX(), downP.getX() + offP.getX());
 			int miny = (int) Math.min(downP.getY() - offP.getY(), downP.getY() + offP.getY());
-			int maxx = (int) Math.max(downP.getX() + offP.getX(), downP.getX() + offP.getX());
-			int maxy = (int) Math.max(downP.getY() + offP.getX(), downP.getY() + offP.getY());
+//			int maxx = (int) Math.max(downP.getX() + offP.getX(), downP.getX() + offP.getX());
+//			int maxy = (int) Math.max(downP.getY() + offP.getX(), downP.getY() + offP.getY());
 			g.drawRect(minx, miny, Math.abs((int) offP.getX() * 2), Math.abs((int) offP.getY() * 2));
 		}
 	}
@@ -293,16 +296,16 @@ max accell time = 300000/a   s
 		G.setXORMode(Color.gray);
 		int minx = (int) Math.min(downP.getX() - offP.getX(), downP.getX() + offP.getX());
 		int miny = (int) Math.min(downP.getY() - offP.getY(), downP.getY() + offP.getY());
-		int maxx = (int) Math.max(downP.getX() + offP.getX(), downP.getX() + offP.getX());
-		int maxy = (int) Math.max(downP.getY() + offP.getX(), downP.getY() + offP.getY());
+//		int maxx = (int) Math.max(downP.getX() + offP.getX(), downP.getX() + offP.getX());
+//		int maxy = (int) Math.max(downP.getY() + offP.getX(), downP.getY() + offP.getY());
 		G.drawRect(minx, miny, Math.abs((int) offP.getX() * 2), Math.abs((int) offP.getY() * 2));
 		offP = new Point((int) Math.abs(me.getX() - downP.getX()), (int) Math.abs(me.getY() - downP.getY()));
 		offP =new Point((int)Math.max(offP.getX(),offP.getY()*getSize().width/getSize().height),
                             (int)Math.max(offP.getY(),offP.getX()/getSize().width*getSize().height));
 		minx = (int) Math.min(downP.getX() - offP.getX(), downP.getX() + offP.getX());
 		miny = (int) Math.min(downP.getY() - offP.getY(), downP.getY() + offP.getY());
-		maxx = (int) Math.max(downP.getX() + offP.getX(), downP.getX() + offP.getX());
-		maxy = (int) Math.max(downP.getY() + offP.getX(), downP.getY() + offP.getY());
+//		maxx = (int) Math.max(downP.getX() + offP.getX(), downP.getX() + offP.getX());
+//		maxy = (int) Math.max(downP.getY() + offP.getX(), downP.getY() + offP.getY());
 		G.drawRect(minx, miny, Math.abs((int) offP.getX() * 2), Math.abs((int) offP.getY() * 2));
 	}
 
@@ -315,8 +318,8 @@ max accell time = 300000/a   s
 		G.setXORMode(Color.gray);
 		int minx = (int) Math.min(downP.getX() - offP.getX(), downP.getX() + offP.getX());
 		int miny = (int) Math.min(downP.getY() - offP.getY(), downP.getY() + offP.getY());
-		int maxx = (int) Math.max(downP.getX() + offP.getX(), downP.getX() + offP.getX());
-		int maxy = (int) Math.max(downP.getY() + offP.getX(), downP.getY() + offP.getY());
+//		int maxx = (int) Math.max(downP.getX() + offP.getX(), downP.getX() + offP.getX());
+//		int maxy = (int) Math.max(downP.getY() + offP.getX(), downP.getY() + offP.getY());
 		G.drawRect(minx, miny, Math.abs((int) offP.getX() * 2), Math.abs((int) offP.getY() * 2));
 		offP = new Point((int) Math.abs(me.getX() - downP.getX()), (int) Math.abs(me.getY() - downP.getY()));
 		offP = new Point((int)Math.max(offP.getX(),offP.getY()*getSize().width/getSize().height),

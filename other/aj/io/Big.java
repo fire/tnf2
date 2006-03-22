@@ -23,22 +23,21 @@ public class Big {
 	public void make (OutputStream O, int z) {
 		byte b[] = {
 		};
-		int a = 0;
 		int max = 100000;
 		try {
 			b = new byte[max];
 			if (fill == '*') {
-				for (a = 0; a < max; a++) {
+				for (int a = 0; a < max; a++) {
 					b[a] = (byte) (Math.random() * 256);
 				}
 			}
 			else if (fill == '+') {
-				for (a = 0; a < max; a++) {
+				for (int a = 0; a < max; a++) {
 					b[a] = (byte) (a);
 				}
 			}
 			else {
-				for (a = 0; a < max; a++) {
+				for (int a = 0; a < max; a++) {
 					b[a] = (byte)fill;
 				}
 			}
@@ -48,17 +47,17 @@ public class Big {
 			}
 			b = new byte[z];
 			if (fill == '*') {
-				for (a = 0; a < z; a++) {
+				for (int a = 0; a < z; a++) {
 					b[a] = (byte) (Math.random() * 256);
 				}
 			}
 			else if (fill == '+') {
-				for (a = 0; a < z; a++) {
+				for (int a = 0; a < z; a++) {
 					b[a] = (byte) (a);
 				}
 			}
 			else {
-				for (a = 0; a < z; a++) {
+				for (int a = 0; a < z; a++) {
 					b[a] = (byte)fill;
 				}
 			}

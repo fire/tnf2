@@ -26,11 +26,9 @@ public class Battle {
 	public Battle(Vector v) {
 		teams = v;
 		glads = new Vector();
-		int a;
-		int b;
-		for (a = 0; a < teams.size(); a++) {
+		for (int a = 0; a < teams.size(); a++) {
 			Vector t = (Vector) teams.elementAt(a);
-			for (b = 0; b < t.size(); b++) {
+			for (int b = 0; b < t.size(); b++) {
 				Gladator g = (Gladator) t.elementAt(b);
 				g.reset();
 				glads.addElement(g);
@@ -46,17 +44,15 @@ public class Battle {
 	 *@return      The Opponents value 
 	 */
 	public Vector getOpponents(Gladator att) {
-		int a;
-		int b;
 		Vector alldef = new Vector();
 		//make list of all gladators not on my team
-		for (a = 0; a < teams.size(); a++) {
+		for (int a=0; a < teams.size(); a++) {
 			Vector team = (Vector) teams.elementAt(a);
 			if (team.contains(att)) {
 				continue;
 			}
 			else {
-				for (b = 0; b < team.size(); b++) {
+				for (int b = 0; b < team.size(); b++) {
 					Gladator g = (Gladator) team.elementAt(b);
 					alldef.addElement(g);
 				}
@@ -72,13 +68,11 @@ public class Battle {
 	 *@return    Description of the Returned Value 
 	 */
 	public boolean finished() {
-		int a;
-		int b;
 		int teamcount = 0;
-		for (a = 0; a < teams.size(); a++) {
+		for (int a=0; a < teams.size(); a++) {
 			Vector v = (Vector) teams.elementAt(a);
 			int gladcount = 0;
-			for (b = 0; b < v.size(); b++) {
+			for (int b = 0; b < v.size(); b++) {
 				Gladator g = (Gladator) glads.elementAt(a);
 				if (g.getStatus() == Gladator.ACTIVE) {
 					gladcount++;
@@ -100,15 +94,14 @@ public class Battle {
 		if (glads.size() < 1) {
 			return;
 		}
-		int a;
-		for (a = 0; a < glads.size(); a++) {
+		for (int a=0; a < glads.size(); a++) {
 			Gladator g = (Gladator) glads.elementAt(a);
 			g.rollInit();
 		}
 		Vector v = new Vector();
 		while (glads.size() > 0) {
 			Gladator g = (Gladator) glads.elementAt(0);
-			for (a = 0; a < glads.size(); a++) {
+			for (int a=0; a < glads.size(); a++) {
 				Gladator n = (Gladator) glads.elementAt(a);
 				if (g.getInit() < n.getInit()) {
 					g = n;
@@ -125,8 +118,7 @@ public class Battle {
 	 *  Description of the Method 
 	 */
 	public void begin() {
-		int a;
-		for (a = 0; a < glads.size(); a++) {
+		for (int a=0; a < glads.size(); a++) {
 			Gladator att = (Gladator) glads.elementAt(a);
 			att.reset();
 		}
@@ -134,7 +126,7 @@ public class Battle {
 			//roll and sort by inits
 			rollInit();
 			//System.out.println("Rolled Init");
-			for (a = 0; a < glads.size(); a++) {
+			for (int a=0; a < glads.size(); a++) {
 				Gladator att = (Gladator) glads.elementAt(a);
 				if (att.getStatus() == Gladator.ACTIVE) {
 					doAttack(att);
@@ -495,8 +487,7 @@ public class Battle {
 	 *  Description of the Method 
 	 */
 	public void finalReport() {
-		int a;
-		for (a = 0; a < teams.size(); a++) {
+		for (int a=0; a < teams.size(); a++) {
 			System.out.println("NEW TEAM");
 			int b;
 			Vector v = (Vector) teams.elementAt(a);

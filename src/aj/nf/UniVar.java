@@ -421,7 +421,6 @@ public class UniVar {
 			while ((e.charAt(end) == ' ' || e.charAt(end) == '\t') && end < e.length()) {
 				end++;
 			}
-			int start2=end;
 			while (end < e.length() && (
 					(e.charAt(end) >= 'a' && e.charAt(end) <= 'z') || 
 					(e.charAt(end) >= 'A' && e.charAt(end) <= 'Z') || 
