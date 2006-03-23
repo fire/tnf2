@@ -68,22 +68,19 @@ public class RelayServer {
 	}
 
 	
-	public void send(Socket S,String s) {
+	public void send(Socket S,String s) throws IOException {
 		s+="\n";
-		try {
 			S.getOutputStream().write(s.getBytes());
 			S.getOutputStream().flush();
-		} catch (IOException e) {
-			kill(S);
-		}
 	}
 
 	/**
 	 *  Description of the Method 
 	 *
 	 *@param  ae  Description of Parameter 
+	 * @throws IOException 
 	 */
-	public void actionPerformed(Socket S, String line) {
+	public void actionPerformed(Socket S, String line) throws IOException {
 		String tok[] = Stuff.getTokens(line);
 		if (tok.length == 0) {
 			return;
@@ -203,13 +200,14 @@ send(S,help);
 	 *@param  NL  Description of Parameter 
 	 */
 	public void kill(Socket S) {
-		ALL.removeElement(S);
+		
+		if (ALL.contains(S)) ALL.removeElement(S);
 		for (int a=0; a < GROUP.size(); a++) {
 			RelayGroup v = (RelayGroup) GROUP.elementAt(a);
-			v.remove(S);
+			if (v.contains(S)) v.remove(S);
 		}
 		try {
-			S.close();
+			if (!S.isClosed()) S.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -436,14 +434,10 @@ class RelayGroup {
 		refill = false;
 	}
 
-	public void send(Socket S,String line) {
-		line+="\n";
-		try {
-			S.getOutputStream().write(line.getBytes());
-			S.getOutputStream().flush();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public void send(Socket S,String line) throws IOException {
+		line=line.trim()+"\n";
+		S.getOutputStream().write(line.getBytes());
+		S.getOutputStream().flush();
 	}
 
 	/**
@@ -451,8 +445,9 @@ class RelayGroup {
 	 *
 	 *@param  line  Description of Parameter 
 	 *@param  NL    Description of Parameter 
+	 * @throws IOException 
 	 */
-	public void broadcast(String line, Socket S) {
+	public void broadcast(String line, Socket S) throws IOException {
 		for (int a=0; a < ALL.length; a++) {
 			Socket s = ALL[a];
 			if (s == S || s == null) {

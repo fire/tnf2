@@ -108,7 +108,7 @@ public class Neb extends Canvas implements MouseListener {
 		repaint();
 	}
 	
-	public void mouseEntered (MouseEvent e) {
+	public void mouseEntered (MouseEvent e) { 
 	}
 	
 	public void mouseExited (MouseEvent e) {

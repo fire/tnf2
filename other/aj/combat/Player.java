@@ -54,7 +54,7 @@ public class Player extends JPanel implements KeyListener {
 	static int MINCOMMANDDELAY=30;
 
 	OutputStream out=null;
-	int id=-1;
+	int id=(int)(Math.random()*1000);
 	boolean changed = false;
 	long lastfire;
 	Vector items = new Vector();
@@ -64,11 +64,14 @@ public class Player extends JPanel implements KeyListener {
 	static String gname = "combat";
 
 	public Player() {
+		this.addKeyListener(this);
 	}
 
 	public void doSend() {
-		send("mov " + myShip);
+		if (myShip.alive)
+			send("mov " + myShip);
 	}
+	
 	public void send(String s) {
 		if (out!=null)
 			try {
@@ -330,13 +333,13 @@ public class Player extends JPanel implements KeyListener {
 			send("new " + myShip.toString());
 			myShip.setAlive(true);
 		}
-		if (currKeys.indexOf("2")>=0 || currKeys.indexOf("K")>=0) {
+		if (currKeys.indexOf("2")>=0 || currKeys.indexOf("K")>=0 || currKeys.indexOf("W")>=0) {
 			moveUp();
 		}
 		if (currKeys.indexOf("8")>=0 || currKeys.indexOf("J")>=0 || currKeys.indexOf("S")>=0 ) {
 			moveDown();
 		}
-		if (currKeys.indexOf("5")>=0 || currKeys.indexOf(" ")>=0 || currKeys.indexOf("W")>=0) {
+		if (currKeys.indexOf("5")>=0 || currKeys.indexOf(" ")>=0 ) {
 			fire();
 		}
 		if (currKeys.indexOf("4")>=0 || currKeys.indexOf("H")>=0 || currKeys.indexOf("A")>=0 ) {
@@ -435,12 +438,12 @@ public class Player extends JPanel implements KeyListener {
 				try {
 					while(true) {
 						Thread.sleep(SENDDELAY);
-						if (changed) {
+//						if (changed) {
 							doSend();
 							changed = false;
 							Thread.yield();
 //							System.out.println("auto send");
-						}
+//						}
 					}
 				} catch (Exception e){
 					System.out.println("MyError 2");

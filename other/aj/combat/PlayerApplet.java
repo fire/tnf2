@@ -24,15 +24,19 @@ public class PlayerApplet extends Applet {
 		resize(Player.ZONESIZE, Player.ZONESIZE);
 		setLayout(new BorderLayout());
 		Player p;
+		String host="",port="";
 		if (getParameter("host") != null) {
+			host=getParameter("host");
 		}
 		try {
 			if (getParameter("port") != null) {
+				port=getParameter("port");
 			}
 		}
 		catch (NumberFormatException NFE) {
 		}
 			p = new Player();
+			p.startThreads(host,port);
 			requestFocus();
 			p.addKeyListener(p);
 			addKeyListener(p);

@@ -88,6 +88,11 @@ public class Ship extends Thing implements CombatItem {
 	 *@param  g  Description of Parameter 
 	 */
 	public void display(Graphics g) {
+		fix();
+		updatePos();
+		double my = Math.sin(dir) * size / 2;
+		double mx = Math.cos(dir) * size / 2;
+		
 		g.setColor(Color.lightGray);
 		g.drawOval((int) (x - size / 2), (int) (y - size / 2), size, size);
 		g.setColor(Color.black);
@@ -97,10 +102,8 @@ public class Ship extends Thing implements CombatItem {
 		else {
 			g.setColor(Color.black);
 		}
-		fix();
-		updatePos();
-		double my = Math.sin(dir) * size / 2;
-		double mx = Math.cos(dir) * size / 2;
+		
+		
 		g.drawLine((int) (x - mx), (int) (y - my), (int) (x + mx), (int) (y + my));
 		Arrow a = new Arrow(new Point((int) (x - mx), (int) (y - my)), 
 				new Point((int) (x + mx), (int) (y + my)), size / 4, size, true);

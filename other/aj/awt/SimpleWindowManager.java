@@ -14,7 +14,7 @@ public class SimpleWindowManager implements WindowListener {
 	boolean exitOnClosing = true;
 	
 	public SimpleWindowManager() {
-		exitOnClosing = true;
+		exitOnClosing = true; 
 	}
 	
 	public SimpleWindowManager (boolean ad) {
