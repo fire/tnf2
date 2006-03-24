@@ -176,7 +176,6 @@ public class Player extends JPanel implements KeyListener {
 				a--;
 			}
 		}
-
 		for (int a = 0; a < items.size(); a++) {
 			String s = (String) items.elementAt(a);
 			Thing t = (Thing) itemsHashtable.get(s);
@@ -189,6 +188,11 @@ public class Player extends JPanel implements KeyListener {
 				itemsHashtable.remove(t.id);
 				items.removeElement(t.id);
 				a--;
+			}
+			else if (t instanceof Explosion && ((Explosion)t).expired()) {
+				itemsHashtable.remove(t.id);
+				items.removeElement(t.id);
+				a--;				
 			}
 			else if (myShip.inside(t) && myShip.alive) {
 				myShip.setAlive(false);
@@ -208,6 +212,11 @@ public class Player extends JPanel implements KeyListener {
 						itemsHashtable.remove(t.id);
 						items.removeElement(t.id);
 						myShots.removeElement(t2);
+						if (t instanceof Ship) {
+							Explosion e=((Ship)t).explode();
+							itemsHashtable.put(e.id,e);
+							items.addElement(e.id);
+						}
 						a2--;
 						a--;
 					}
@@ -274,22 +283,32 @@ public class Player extends JPanel implements KeyListener {
 				}
 			}
 			else if (s.startsWith("dest ")) {
+				System.out.println("dest found"+s);
 				String id = s.substring(s.indexOf(" ") + 1);
 				if (id.equals(myShip.id)) {
+					System.out.println("dest myship "+s);
 					myShip.setAlive(false);
 				}
 				for (int a=0; a < myShots.size(); a++) {
 					Thing t2 = (Thing) myShots.elementAt(a);
 					if (t2.id.equals(id)) {
+						System.out.println("dest myshot "+s);
 						myShots.removeElement(t2);
 						break;
 					}
 				}
-
 				for (int a=0; a < items.size(); a++) {
 					String id2 = (String) items.elementAt(a);
 					if (id2.equals(id)) {
+						System.out.println("dest other "+s);
 						items.removeElement(id2);
+						Thing t=(Thing)itemsHashtable.get(id2);
+						if (t instanceof Ship) {
+							System.out.println("dest other ship "+s);
+							Explosion e=((Ship)t).explode();
+							items.addElement(e.id);							
+							itemsHashtable.put(e.id,e);
+						}
 						itemsHashtable.remove(id2);
 					}
 				}

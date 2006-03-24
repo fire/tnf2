@@ -39,6 +39,17 @@ public class FireWork {
 		lastmovetime=System.currentTimeMillis();
 	}
 	
+	public void setStart(int x,int y,double dx,double dy,int rad) {
+		this.maxy=this.maxx=0;
+		this.dxmax=this.maxy=0;
+		this.x=x;
+		this.y=y;
+		this.dx=dx;
+		this.dy=dy;
+		this.rad=rad;
+		c=clist[(int)(Math.random()*clist.length)];
+	}
+	
 	public void setRandomStart(int maxx,int maxy,double dxmax,double dymax,int maxRad) {
 		hasExploded=false;
 		decay=-1;
@@ -161,6 +172,7 @@ public class FireWork {
 	public boolean expired() {
 		return isExplodedPart() && outOfBounds();
 	}
+	
 	
 	private void setCenter(FireWork fw) {
 		this.maxy=fw.maxy;this.maxx=fw.maxx;

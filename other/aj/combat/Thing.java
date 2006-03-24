@@ -24,10 +24,11 @@ public class Thing {
 	public boolean inside(Thing t) {
 		double dx = (t.x - x);
 		double dy = (t.y - y);
-		double d = dx * dx + dy * dy;
-		dx = size;
-		dy = t.size;
-		return d < Math.sqrt(dx * dx + dy * dy);
+		double d = Math.sqrt(dx * dx + dy * dy);
+//		double dx = size;
+//		dy = t.size;
+//		return size+t.size < Math.sqrt(dx * dx + dy * dy);
+		return size+t.size > d;
 	}
 
 

@@ -50,6 +50,13 @@ public class Ship extends Thing implements CombatItem {
 		alive = b;
 	}
 
+	
+
+	public Explosion explode() {
+		Explosion e=new Explosion(id + "E",x,y,0,vx,vy,1000);
+		return e;
+	}
+
 
 	/**
 	 *  Description of the Method 
