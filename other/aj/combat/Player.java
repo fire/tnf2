@@ -283,16 +283,13 @@ public class Player extends JPanel implements KeyListener {
 				}
 			}
 			else if (s.startsWith("dest ")) {
-				System.out.println("dest found"+s);
 				String id = s.substring(s.indexOf(" ") + 1);
 				if (id.equals(myShip.id)) {
-					System.out.println("dest myship "+s);
 					myShip.setAlive(false);
 				}
 				for (int a=0; a < myShots.size(); a++) {
 					Thing t2 = (Thing) myShots.elementAt(a);
 					if (t2.id.equals(id)) {
-						System.out.println("dest myshot "+s);
 						myShots.removeElement(t2);
 						break;
 					}
@@ -300,11 +297,9 @@ public class Player extends JPanel implements KeyListener {
 				for (int a=0; a < items.size(); a++) {
 					String id2 = (String) items.elementAt(a);
 					if (id2.equals(id)) {
-						System.out.println("dest other "+s);
 						items.removeElement(id2);
 						Thing t=(Thing)itemsHashtable.get(id2);
 						if (t instanceof Ship) {
-							System.out.println("dest other ship "+s);
 							Explosion e=((Ship)t).explode();
 							items.addElement(e.id);							
 							itemsHashtable.put(e.id,e);
@@ -434,7 +429,6 @@ public class Player extends JPanel implements KeyListener {
 						repaint();//.repaint();
 					}
 				} catch (Exception e){
-					System.out.println("MyError 1");
 				}
 			}
 		}.start();
@@ -447,7 +441,6 @@ public class Player extends JPanel implements KeyListener {
 //						System.out.println("move="+p.currKeys);
 					}
 				} catch (Exception e){
-					System.out.println("MyError 5");
 				}
 			}
 		}.start();
@@ -465,7 +458,6 @@ public class Player extends JPanel implements KeyListener {
 //						}
 					}
 				} catch (Exception e){
-					System.out.println("MyError 2");
 				}
 			}
 		}.start();
@@ -487,7 +479,6 @@ public class Player extends JPanel implements KeyListener {
 					command(r);
 				}
 				} catch (Exception e) {
-					System.out.println("MyError 3");
 				}
 			}
 		}.start();
