@@ -18,6 +18,7 @@ public class Ship extends Thing implements CombatItem {
 	boolean alive = true;
 	static int shotCount = 0;
 
+	static String shipType="-1";
 
 	/**
 	 *  Constructor for the Ship object 
@@ -64,7 +65,7 @@ public class Ship extends Thing implements CombatItem {
 	 *@return    Description of the Returned Value 
 	 */
 	public Shot shoot() {
-		return new Shot(id + "S" + (shotCount++), x + size * Math.cos(dir), y + size * Math.sin(dir), dir, vx + Player.MAXSHOTSPEED * Math.cos(dir), vy + Player.MAXSHOTSPEED * Math.sin(dir), Player.MAXSHOTRANGE);
+		return new Shot(id + "S" + (shotCount++), x + size * Math.cos(dir), y + size * Math.sin(dir), dir, vx + Player.MAXSHOTSPEED * Math.cos(dir), vy + Player.MAXSHOTSPEED * Math.sin(dir), Shot.shotType);
 	}
 
 
@@ -100,17 +101,14 @@ public class Ship extends Thing implements CombatItem {
 		double my = Math.sin(dir) * size / 2;
 		double mx = Math.cos(dir) * size / 2;
 		
-		g.setColor(Color.lightGray);
+		g.setColor(Color.gray);
 		g.drawOval((int) (x - size / 2), (int) (y - size / 2), size, size);
-		g.setColor(Color.black);
 		if (!alive) {
 			g.setColor(Color.red);
 		}
 		else {
-			g.setColor(Color.black);
+			g.setColor(Color.white);
 		}
-		
-		
 		g.drawLine((int) (x - mx), (int) (y - my), (int) (x + mx), (int) (y + my));
 		Arrow a = new Arrow(new Point((int) (x - mx), (int) (y - my)), 
 				new Point((int) (x + mx), (int) (y + my)), size / 4, size, true);
@@ -139,6 +137,15 @@ public class Ship extends Thing implements CombatItem {
 		return new Ship(id, Math.random() * Player.ZONESIZE, 
 				Math.random() * Player.ZONESIZE, 
 				ndir, 0, 0);
+	}
+
+
+	public static CombatItem parse(String[] t) {
+		return new Ship(t[0], Double.parseDouble(t[1]), 
+				Double.parseDouble(t[2]), 
+				Double.parseDouble(t[3]), 
+				Double.parseDouble(t[4]), 
+				Double.parseDouble(t[5]));
 	}
 
 }
