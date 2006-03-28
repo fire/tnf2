@@ -54,8 +54,8 @@ public class Explosion extends Thing implements CombatItem {
 		this.vy = vy;
 		this.time = System.currentTimeMillis();
 		lifeOver = time + life;
-		mx = Math.cos(dir) * size / 2;
-		my = Math.sin(dir) * size / 2;
+//		mx = Math.cos(dir) * size / 2;
+//		my = Math.sin(dir) * size / 2;
 	}
 
 
@@ -79,6 +79,8 @@ public class Explosion extends Thing implements CombatItem {
 	public String toString() {
 		return id + " " + Stuff.trunc(x,1) + " " + Stuff.trunc(y,1) + " " + Stuff.trunc(dir,2) + " " + Stuff.trunc(vx,2) + " " + Stuff.trunc(vy,2) +" "+ (lifeOver - System.currentTimeMillis());
 	}
+
+
 
 	
 }
