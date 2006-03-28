@@ -1,17 +1,23 @@
 package aj.combat;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Hashtable;
+import java.util.Random;
 import java.util.Vector;
 
 import javax.swing.JFrame;
@@ -25,7 +31,7 @@ import aj.misc.Stuff;
  *@author     judda 
  *@created    April 12, 2000 
  */
-public class Player extends JPanel implements KeyListener {
+public class Player extends JPanel implements KeyListener,MouseListener,MouseMotionListener {
 	/**
 	 * 
 	 */
@@ -63,19 +69,36 @@ public class Player extends JPanel implements KeyListener {
 	Vector myShots = new Vector();
 	static String gname = "combat";
 
+	private boolean mouseOn=true;
+	private boolean autoCenterMode=true;
+
+
 	public Player() {
 		this.addKeyListener(this);
+		this.addMouseListener(this);
+		this.addMouseMotionListener(this);
 	}
 
-	public void doSend() {
+	public void sendSelfStatus() {
+		myShip.updatePos();
 		if (myShip.alive)
-			send("mov " + myShip);
+			sendNetworkMessage("mov " + myShip);
+		for (int a=0;a<items.size();a++) {
+			String t=(String)items.elementAt(a);
+			CombatItem c=(CombatItem)itemsHashtable.get(t);
+			if (c instanceof Asteroid) {
+				Asteroid A=(Asteroid)c;
+				A.updatePos();
+				if (Math.random()<.25) sendNetworkMessage("mov "+ A.toString());
+			}
+		}
 	}
 	
-	public void send(String s) {
+	public void sendNetworkMessage(String s) {
 		if (out!=null)
 			try {
-				out.write((s+"\n").getBytes());
+				if (!s.endsWith("\n")) s+="\n";
+				out.write((s).getBytes());
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -89,10 +112,10 @@ public class Player extends JPanel implements KeyListener {
 	}
 
 	public void join() {
-		send("rep");
+		sendNetworkMessage("rep");
 		//repost all ids
 		myShip = Ship.rand("" + id);
-		send("new " + myShip);
+		sendNetworkMessage("new " + myShip);
 	}
 
 	long lastmove=0;
@@ -162,7 +185,7 @@ public class Player extends JPanel implements KeyListener {
 		if (lastfire + MINSHOTDELAY < System.currentTimeMillis() && myShots.size()<SHIPMAXSHOTCOUNT) {
 			Shot w = myShip.shoot();
 			myShots.addElement(w);
-			send("new " + w.toString());
+			sendNetworkMessage("new " + w.toString());
 			lastfire = System.currentTimeMillis();
 		}
 		repaint();
@@ -199,16 +222,16 @@ public class Player extends JPanel implements KeyListener {
 				itemsHashtable.remove(t.id);
 				items.removeElement(t.id);
 				a--;
-				send("dest " + myShip.id);
-				send("dest " + t.id);
+				sendNetworkMessage("dest " + myShip.id);
+				sendNetworkMessage("dest " + t.id);
 			}
 			else {
 				int a2;
 				for (a2 = 0; a2 < myShots.size(); a2++) {
 					Shot t2 = (Shot) myShots.elementAt(a2);
 					if (t2.inside(t)) {
-						send("dest " + t2.id);
-						send("dest " + t.id);
+						sendNetworkMessage("dest " + t2.id);
+						sendNetworkMessage("dest " + t.id);
 						itemsHashtable.remove(t.id);
 						items.removeElement(t.id);
 						myShots.removeElement(t2);
@@ -229,6 +252,7 @@ public class Player extends JPanel implements KeyListener {
 		changed=true;
 		paint(g);
 	}
+	
 
 	Image i=null;
 	public void paint(Graphics G) {
@@ -242,8 +266,12 @@ public class Player extends JPanel implements KeyListener {
 			}
 		}
 		Graphics g = i.getGraphics();
-		g.clearRect(0, 0, ZONESIZE, ZONESIZE);
-		g.drawRect(0, 0, ZONESIZE - 1, ZONESIZE - 1);
+		g.setColor(Color.black);
+		g.fillRect(0, 0, ZONESIZE, ZONESIZE);
+		drawStars(g);
+		g.setColor(Color.white);
+		if (infoOn) displayInfo(g);
+//		g.drawRect(0, 0, ZONESIZE - 1, ZONESIZE - 1);
 		if (myShip==null) return;
 		myShip.display(g);
 		for (int a=0; a < myShots.size(); a++) {
@@ -260,26 +288,69 @@ public class Player extends JPanel implements KeyListener {
 			//System.out.println("displaying item "+t);
 			t.display(g);
 		}
-		G.drawImage(i, 0, 0,this.getWidth(),this.getHeight(), null);
+		if (autoCenterMode) {
+			double ratew=(1.0*getWidth())/ZONESIZE;
+			double rateh=(1.0*getHeight())/ZONESIZE;
+			G.translate((int)(getWidth()/2.0),(int)(getHeight()/2.0));
+			G.translate(-(int)(myShip.x*ratew),-(int)(myShip.y*rateh));
+		}
+		for (int a=-1;a<2;a++) {
+			for (int b=-1;b<2;b++) {
+				G.translate(a*getWidth(),b*getHeight());
+				G.drawImage(i, 0, 0,this.getWidth(),this.getHeight(), null);
+				G.translate(-a*getWidth(),-b*getHeight());
+			}
+		}
 		REDRAWDELAY = (int) (System.currentTimeMillis() - elap + MINREDRAWDELAY);
-//		REDRAWDELAY = 20;//(int) (System.currentTimeMillis() - elap + MINREDRAWDELAY);
-		//System.out.println(drawClock.getTick()+" redraw rate");
 	}
 
+
+	private void displayInfo(Graphics g) {
+		String info1="move      (asdw) (hjkl) (2468)";
+		String info2="fire      <space> (5)";
+		String info3="center    'c'";
+		String info5="mouseTurn 'm'";
+		String info4="help      '?' '/'";
+
+		g.drawString(info1,0,15);
+		g.drawString(info2,0,30);
+		g.drawString(info3,0,45);
+		g.drawString(info5,0,60);
+		g.drawString(info4,0,75);
+
+	}
+
+	int randomSeed=7532;//(int)(Math.random()*1000);
+	private void drawStars(Graphics g) {
+		Random r=new Random(randomSeed);
+		for (int a=0;a<50;a++) {
+			int x=Math.abs(r.nextInt()%ZONESIZE);
+			int y=Math.abs(r.nextInt()%ZONESIZE);
+			Color c[]={Color.red,Color.yellow,Color.lightGray,Color.blue,Color.green,Color.magenta,Color.cyan,Color.orange,Color.pink};
+//			Color c[]={Color.red};
+			int ci=(int)(r.nextDouble()*c.length);
+			int size=(int)(r.nextDouble()*3+1);
+			g.setColor(c[ci]);
+			g.fillRoundRect(x,y,size,size,2,2);
+//			g.fillRoundRect()
+//			g.drawString(""+a,x,y);
+			
+		}
+	}
 
 	/**
 	 *  Description of the Method 
 	 *
 	 *@param  ae  Description of Parameter 
 	 */
-	public void command(String s) {
+	public void receiveNetworkMessage(String s) {
 			if (s.startsWith("rep")) {
 				if (myShip.alive) {
-					send("mov " + myShip);
+					sendNetworkMessage("mov " + myShip);
 				}
 				for (int a=0; a < myShots.size(); a++) {
 					Shot t2 = (Shot) myShots.elementAt(a);
-					send("mov " + t2.toString());
+					sendNetworkMessage("mov " + t2.toString());
 				}
 			}
 			else if (s.startsWith("dest ")) {
@@ -325,6 +396,8 @@ public class Player extends JPanel implements KeyListener {
 
 
 	String currKeys="";
+
+	private boolean infoOn;
 	public void keyPressed(KeyEvent evt) {
 		char ch = Character.toUpperCase(evt.getKeyChar());
 		if (currKeys.indexOf(ch)<0) currKeys+=ch;
@@ -337,14 +410,56 @@ public class Player extends JPanel implements KeyListener {
 	public void keyTyped(KeyEvent evt) {
 	}
 	
-	public void command() {
+	String temp="";
+
+	public void receiveUserCommand() {
+		if (myShip==null) return;
 //		System.out.println("currKey="+currKeys);
+		double MINCHANGE=.3;
+		double ddir=targetDir-myShip.dir;
+		while (ddir>Math.PI) ddir-=Math.PI*2;
+		while (ddir<-Math.PI) ddir+=Math.PI*2;
+		if (Math.abs(ddir)>MINCHANGE && mouseOn) {
+//			double myd=myShip.dir;
+//			while (myd<-Math.PI*2) myd+=Math.PI*2;
+//			while (myd>Math.PI*2) myd-=Math.PI*2;
+//			System.out.println("dir="+targetDir+" myshipdir="+myShip.dir+" ddir="+ddir);
+			if (ddir>MINCHANGE) {
+				if (!temp.equals("counter ="+ddir)) {
+					temp="counter ="+ddir;
+//					System.out.println(temp);
+				}
+				char ch='D';
+				if (currKeys.indexOf(ch)<0) currKeys+=ch;
+			}
+			else if (ddir<-MINCHANGE) {
+				if (!temp.equals("clock ="+ddir)) {
+					temp="clock ="+ddir;
+//					System.out.println(temp);
+				}
+				char ch='A';
+				if (currKeys.indexOf(ch)<0) currKeys+=ch;
+			}
+		}
+		else if (mouseOn) {
+				if (!temp.equals("cancel ="+ddir)) {
+					temp="cancel ="+ddir;
+//					System.out.println(temp);
+				}
+				char ch='A';
+				if (currKeys.indexOf(ch)>=0) currKeys=currKeys.substring(0,currKeys.indexOf(ch))+currKeys.substring(currKeys.indexOf(ch)+1);
+				ch='D';
+				if (currKeys.indexOf(ch)>=0) currKeys=currKeys.substring(0,currKeys.indexOf(ch))+currKeys.substring(currKeys.indexOf(ch)+1);				
+			}
+
+		if (currKeys.indexOf("T")>=0) addAsteroid();
+		if (currKeys.indexOf("C")>=0) autoCenterMode=!autoCenterMode;
 		if (currKeys.indexOf("X")>=0 || currKeys.indexOf("Q")>=0) {//ch == 'X' || ch == 'Q') {
 			System.exit(1);
 		}
 		if (currKeys.indexOf("R")>=0 && !myShip.alive) {
 			myShip = Ship.rand("" + id);
-			send("new " + myShip.toString());
+			sendNetworkMessage("new " + myShip.toString());
 			myShip.setAlive(true);
 		}
 		if (currKeys.indexOf("2")>=0 || currKeys.indexOf("K")>=0 || currKeys.indexOf("W")>=0) {
@@ -362,8 +477,26 @@ public class Player extends JPanel implements KeyListener {
 		if (currKeys.indexOf("6")>=0 || currKeys.indexOf("L")>=0 || currKeys.indexOf("D")>=0 ) {
 			moveRight();
 		}
+		if (currKeys.indexOf("?")>=0 || currKeys.indexOf("/")>=0) {
+			infoOn=!infoOn;
+		}
+		if (currKeys.indexOf("M")>=0) {
+			mouseOn= !mouseOn;
+		}
+
 	}
 
+	int acount=1;
+	public void addAsteroid() {
+//			double ndir = ((int) (Math.random() * 360 / Player.SHIPMAXSHOTCOUNT));
+//			Asteroid w=new Asteroid(id+"A"+(acount++),Math.random() * Player.ZONESIZE, 
+//				Math.random() * Player.ZONESIZE, 
+//				ndir, 0, 0,Asteroid.asteroidType,"0","0");
+//		sendNetworkMessage("new " + w.toString());
+//		items.addElement(w.id);
+//		itemsHashtable.put(w.id,w);
+//		System.out.println("add asteroid "+w);
+	}
 
 	/**
 	 *  Description of the Method 
@@ -377,21 +510,16 @@ public class Player extends JPanel implements KeyListener {
 			if (t.length < 7) {
 				return null;
 			}
-			if (t[6].equals("-1")) {
-				return new Ship(t[0], Double.parseDouble(t[1]), 
-						Double.parseDouble(t[2]), 
-						Double.parseDouble(t[3]), 
-						Double.parseDouble(t[4]), 
-						Double.parseDouble(t[5]));
+			if (t[6].equals(Ship.shipType)) {
+				return Ship.parse(t);
 			}
-			else {
-				return new Shot(t[0], Double.parseDouble(t[1]), 
-						Double.parseDouble(t[2]), 
-						Double.parseDouble(t[3]), 
-						Double.parseDouble(t[4]), 
-						Double.parseDouble(t[5]), 
-						Integer.parseInt(t[6]));
+			else if (t[6].equals(Shot.shotType)){
+				return Shot.parse(t);
 			}
+			else if (t[6].equals(Asteroid.asteroidType)){
+				return Asteroid.parse(t);
+			}
+			else return null;
 		}
 		catch (NumberFormatException NFE) {
 			return null;
@@ -419,8 +547,8 @@ public class Player extends JPanel implements KeyListener {
 		}
 	}
 
-
 	public void startThreads(final String host,final String port) {
+		//repaint thread
 		new Thread(){
 			public void run() {
 				try {
@@ -432,18 +560,22 @@ public class Player extends JPanel implements KeyListener {
 				}
 			}
 		}.start();
+
+		//command input thread
 		new Thread(){
 			public void run() {
 				try {
 					while(true) {
 						Thread.sleep(MINCOMMANDDELAY);
-						command();
+						receiveUserCommand();
 //						System.out.println("move="+p.currKeys);
 					}
 				} catch (Exception e){
+					System.out.println("Error in user input");
 				}
 			}
 		}.start();
+		
 		//draw thread
 		new Thread(){
 			public void run() {
@@ -451,7 +583,7 @@ public class Player extends JPanel implements KeyListener {
 					while(true) {
 						Thread.sleep(SENDDELAY);
 //						if (changed) {
-							doSend();
+							sendSelfStatus();
 							changed = false;
 							Thread.yield();
 //							System.out.println("auto send");
@@ -476,13 +608,74 @@ public class Player extends JPanel implements KeyListener {
 					if (r.indexOf("JOINED")>=0 && id==-1) 
 						id = Integer.parseInt(r.substring(r.lastIndexOf(" ")).trim());
 //					System.out.println("received");
-					command(r);
+					receiveNetworkMessage(r);
 				}
 				} catch (Exception e) {
 				}
 			}
 		}.start();
 		join();
+	}
+
+	public void mouseClicked(MouseEvent e) {
+	}
+	public void mousePressed(MouseEvent e) {
+		char ch=' ';
+		if (e.getButton()==MouseEvent.BUTTON3) ch ='W';
+		else if (e.getButton()==MouseEvent.BUTTON1) ch=' ';
+		else return;
+		
+		if (currKeys.indexOf(ch)<0) currKeys+=ch;
+	}
+	public void mouseReleased(MouseEvent e) {
+		char ch=' ';
+		if (e.getButton()==MouseEvent.BUTTON3) ch ='W';
+		else if (e.getButton()==MouseEvent.BUTTON1) ch=' ';
+		else return;
+
+		if (currKeys.indexOf(ch)>=0) currKeys=currKeys.substring(0,currKeys.indexOf(ch))+currKeys.substring(currKeys.indexOf(ch)+1);
+	}
+			
+	public void mouseEntered(MouseEvent e) {
+	}
+	public void mouseExited(MouseEvent e) {
+	}
+
+	double targetDir=0;
+	public void mouseDragged(MouseEvent e) {
+		Point p=e.getPoint();
+		double ratew=(1.0*getWidth())/ZONESIZE;
+		double rateh=(1.0*getHeight())/ZONESIZE;
+		
+		if (autoCenterMode) {
+//			G.translate((int)(getWidth()/2.0),(int)(getHeight()/2.0));
+//			G.translate(-(int)(myShip.x*ratew),-(int)(myShip.y*rateh));
+			p=new Point(p.x-getWidth()/2,p.y-getHeight()/2);
+		}
+		else  {
+			p=new Point((int)((p.x-myShip.x)*ratew),(int)((p.y-myShip.y)*rateh));
+		}
+//		System.out.println("act point="+p.x+" "+p.y);
+		double dir=Math.atan2(1.0*p.y,1.0*p.x);
+		targetDir=dir;
+	}
+
+	public void mouseMoved(MouseEvent e) {
+		Point p=e.getPoint();
+		double ratew=(1.0*getWidth())/ZONESIZE;
+		double rateh=(1.0*getHeight())/ZONESIZE;
+		
+		if (autoCenterMode) {
+//			G.translate((int)(getWidth()/2.0),(int)(getHeight()/2.0));
+//			G.translate(-(int)(myShip.x*ratew),-(int)(myShip.y*rateh));
+			p=new Point(p.x-getWidth()/2,p.y-getHeight()/2);
+		}
+		else  {
+			p=new Point((int)((p.x-myShip.x)*ratew),(int)((p.y-myShip.y)*rateh));
+		}
+//		System.out.println("act point="+p.x+" "+p.y);
+		double dir=Math.atan2(1.0*p.y,1.0*p.x);
+		targetDir=dir;
 	}
 }
 
