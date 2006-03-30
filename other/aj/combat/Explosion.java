@@ -11,7 +11,6 @@ import aj.misc.Stuff;
 
 public class Explosion extends Thing implements CombatItem {
 
-	
 	/**
 	 *  Description of the Method 
 	 *
@@ -31,8 +30,6 @@ public class Explosion extends Thing implements CombatItem {
 	long lifeOver;
 	double mx, my;
 
-
-	//double friction=1;
 	/**
 	 *  Constructor for the Shot object 
 	 *
@@ -49,7 +46,7 @@ public class Explosion extends Thing implements CombatItem {
 		this.x = x;
 		this.y = y;
 		this.dir = d;
-		this.size = Player.SHOTSIZE;
+		this.size = 0;
 		this.vx = vx;
 		this.vy = vy;
 		this.time = System.currentTimeMillis();
@@ -68,9 +65,6 @@ public class Explosion extends Thing implements CombatItem {
 		return lifeOver < System.currentTimeMillis();
 	}
 
-
-
-
 	/**
 	 *  Description of the Method 
 	 *
@@ -80,7 +74,4 @@ public class Explosion extends Thing implements CombatItem {
 		return id + " " + Stuff.trunc(x,1) + " " + Stuff.trunc(y,1) + " " + Stuff.trunc(dir,2) + " " + Stuff.trunc(vx,2) + " " + Stuff.trunc(vy,2) +" "+ (lifeOver - System.currentTimeMillis());
 	}
 
-
-
-	
 }

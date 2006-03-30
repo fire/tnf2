@@ -21,7 +21,7 @@ public class PlayerApplet extends Applet {
 	 *  Description of the Method 
 	 */
 	public void init() {
-		resize(Player.ZONESIZE, Player.ZONESIZE);
+		resize(MapView.ZONESIZE, MapView.ZONESIZE);
 		setLayout(new BorderLayout());
 		Player p;
 		String host="",port="";
@@ -38,13 +38,7 @@ public class PlayerApplet extends Applet {
 			p = new Player();
 			p.startThreads(host,port);
 			requestFocus();
-			p.addKeyListener(p);
-			this.addKeyListener(p);
-			p.addMouseListener(p);
-			p.addMouseMotionListener(p);
-
-			addKeyListener(p);
-			add("Center", p);
+			add("Center", p.mapView);
 	}
 
 

@@ -2,9 +2,7 @@ package aj.combat;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Point;
 
-import aj.awt.Arrow;
 import aj.misc.Stuff;
 
 /**
@@ -140,9 +138,9 @@ public class Ship extends Thing implements CombatItem {
 	 *@return     Description of the Returned Value 
 	 */
 	public static Ship rand(String id) {
-		double ndir = ((int) (Math.random() * 360 / Player.SHIPMAXSHOTCOUNT));
-		return new Ship(id, Math.random() * Player.ZONESIZE, 
-				Math.random() * Player.ZONESIZE, 
+		double ndir = ((int) (Math.random() * 360));
+		return new Ship(id, Math.random() * MapView.ZONESIZE, 
+				Math.random() * MapView.ZONESIZE, 
 				ndir, 0, 0);
 	}
 

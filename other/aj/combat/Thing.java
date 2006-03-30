@@ -1,12 +1,14 @@
 package aj.combat;
 
+
 /**
  *  Description of the Class 
  *
  *@author     judda 
  *@created    April 12, 2000 
  */
-public class Thing {
+public class Thing  {
+	
 	static int UPDATESPERSECOND=30;
 	
 	double x, y, vx, vy, dir;
@@ -44,18 +46,29 @@ public class Thing {
 		time = t;
 		x = x + vx * dt;
 		y = y + vy * dt;
-		if (x > Player.ZONESIZE) {
-			x = x - Player.ZONESIZE;
+		if (x > MapView.ZONESIZE) {
+			x = x - MapView.ZONESIZE;
 		}
 		else if (x < 0) {
-			x = x + Player.ZONESIZE;
+			x = x + MapView.ZONESIZE;
 		}
-		if (y > Player.ZONESIZE) {
-			y = y - Player.ZONESIZE;
+		if (y > MapView.ZONESIZE) {
+			y = y - MapView.ZONESIZE;
 		}
 		else if (y < 0) {
-			y = y + Player.ZONESIZE;
+			y = y + MapView.ZONESIZE;
 		}
+	}
+
+	public void copyVals(Thing t) {
+		x=t.x;
+		y=t.y;
+		vx=t.vx;
+		vy=t.vy;
+		dir=t.dir;
+		size=t.size;
+		time=t.time;
+		id=t.id;
 	}
 }
 
