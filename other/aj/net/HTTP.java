@@ -359,6 +359,11 @@ public class HTTP implements Runnable {
 		try {
 			Class aClass = getClass();
 			InputStream IN = aClass.getResourceAsStream(fileName);
+			if (IN==null) {
+				mysock.close();
+				goodfile=false;
+				return;
+			}
 
 			String header = "HTTP/1.0 200 Document follows\n" + 
 					"Date: " + (new java.util.Date().toString()) + "\n" + 

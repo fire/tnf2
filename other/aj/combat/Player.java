@@ -37,17 +37,20 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 	 */
 	private static final long serialVersionUID = 1L;
 
+	static String gname = "combat1.0";
+
+	
 	static int ZONESIZE = 400;
 
-	static int SHIPMAXSHOTCOUNT = 10;
-	static int SHIPMAXTURN = 15;
-	static int MAXSHIPSPEED = 8;
+	static int SHIPMAXSHOTCOUNT = 6;
+	static int SHIPMAXTURN = 12;
+	static int MAXSHIPSPEED = 7;
 	static double SHIPMAXACCEL = .4;
 	static int SHIPSIZE = 8;
 
 	static int SHOTSIZE = 2;
 	static int MAXSHOTRANGE=1000;
-	static int MAXSHOTSPEED=10;
+	static int MAXSHOTSPEED=4;
 	static double FRICTION = .995;
 
 //command delays
@@ -55,7 +58,7 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 	static int SENDDELAY = 150;
 	static int MINREDRAWDELAY = 50;
 	static int MINSHOTDELAY = 150;
-	static int MINTURNDELAY = 30;
+	static int MINTURNDELAY = 10;
 	static int MINMOVEDELAY = 30;
 	static int MINCOMMANDDELAY=30;
 
@@ -67,11 +70,11 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 	Hashtable itemsHashtable = new Hashtable();
 	Ship myShip;
 	Vector myShots = new Vector();
-	static String gname = "combat";
 
 	private boolean mouseOn=true;
 	private boolean autoCenterMode=true;
 
+	static String REPOPULATE="rep",CREATE="new ",DESTROY="dest ",UPDATE="mov ";
 
 	public Player() {
 		this.addKeyListener(this);
@@ -82,26 +85,27 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 	public void sendSelfStatus() {
 		myShip.updatePos();
 		if (myShip.alive)
-			sendNetworkMessage("mov " + myShip);
+			sendNetworkMessage(UPDATE + myShip);
 		for (int a=0;a<items.size();a++) {
 			String t=(String)items.elementAt(a);
 			CombatItem c=(CombatItem)itemsHashtable.get(t);
 			if (c instanceof Asteroid) {
 				Asteroid A=(Asteroid)c;
 				A.updatePos();
-				if (Math.random()<.25) sendNetworkMessage("mov "+ A.toString());
+				if (Math.random()<.25) sendNetworkMessage(UPDATE+ A.toString());
 			}
 		}
 	}
 	
 	public void sendNetworkMessage(String s) {
-		if (out!=null)
+		if (!s.endsWith("\n")) s+="\n";
+		if (out!=null) {
 			try {
-				if (!s.endsWith("\n")) s+="\n";
 				out.write((s).getBytes());
 			} catch (IOException e) {
-				e.printStackTrace();
-			}
+				out=null;
+			}			
+		}
 	}
 
 	public Dimension getPreferredSize() {
@@ -112,10 +116,10 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 	}
 
 	public void join() {
-		sendNetworkMessage("rep");
+		sendNetworkMessage(REPOPULATE);
 		//repost all ids
 		myShip = Ship.rand("" + id);
-		sendNetworkMessage("new " + myShip);
+		sendNetworkMessage(CREATE + myShip);
 	}
 
 	long lastmove=0;
@@ -185,7 +189,7 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 		if (lastfire + MINSHOTDELAY < System.currentTimeMillis() && myShots.size()<SHIPMAXSHOTCOUNT) {
 			Shot w = myShip.shoot();
 			myShots.addElement(w);
-			sendNetworkMessage("new " + w.toString());
+			sendNetworkMessage(CREATE + w.toString());
 			lastfire = System.currentTimeMillis();
 		}
 		repaint();
@@ -222,16 +226,16 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 				itemsHashtable.remove(t.id);
 				items.removeElement(t.id);
 				a--;
-				sendNetworkMessage("dest " + myShip.id);
-				sendNetworkMessage("dest " + t.id);
+				sendNetworkMessage(DESTROY + myShip.id);
+				sendNetworkMessage(DESTROY + t.id);
 			}
 			else {
 				int a2;
 				for (a2 = 0; a2 < myShots.size(); a2++) {
 					Shot t2 = (Shot) myShots.elementAt(a2);
 					if (t2.inside(t)) {
-						sendNetworkMessage("dest " + t2.id);
-						sendNetworkMessage("dest " + t.id);
+						sendNetworkMessage(DESTROY + t2.id);
+						sendNetworkMessage(DESTROY + t.id);
 						itemsHashtable.remove(t.id);
 						items.removeElement(t.id);
 						myShots.removeElement(t2);
@@ -320,7 +324,7 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 
 	}
 
-	int randomSeed=7532;//(int)(Math.random()*1000);
+	int randomSeed=72532;//(int)(Math.random()*1000);
 	private void drawStars(Graphics g) {
 		Random r=new Random(randomSeed);
 		for (int a=0;a<50;a++) {
@@ -329,9 +333,10 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 			Color c[]={Color.red,Color.yellow,Color.lightGray,Color.blue,Color.green,Color.magenta,Color.cyan,Color.orange,Color.pink};
 //			Color c[]={Color.red};
 			int ci=(int)(r.nextDouble()*c.length);
-			int size=(int)(r.nextDouble()*3+1);
 			g.setColor(c[ci]);
-			g.fillRoundRect(x,y,size,size,2,2);
+			g.drawLine(x,y,x,y);
+//			int size=(int)(r.nextDouble()*3+1);
+			//			g.fillRoundRect(x,y,size,size,2,2);
 //			g.fillRoundRect()
 //			g.drawString(""+a,x,y);
 			
@@ -344,16 +349,16 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 	 *@param  ae  Description of Parameter 
 	 */
 	public void receiveNetworkMessage(String s) {
-			if (s.startsWith("rep")) {
+			if (s.startsWith(REPOPULATE)) {
 				if (myShip.alive) {
-					sendNetworkMessage("mov " + myShip);
+					sendNetworkMessage(UPDATE + myShip);
 				}
 				for (int a=0; a < myShots.size(); a++) {
 					Shot t2 = (Shot) myShots.elementAt(a);
-					sendNetworkMessage("mov " + t2.toString());
+					sendNetworkMessage(UPDATE + t2.toString());
 				}
 			}
-			else if (s.startsWith("dest ")) {
+			else if (s.startsWith(DESTROY)) {
 				String id = s.substring(s.indexOf(" ") + 1);
 				if (id.equals(myShip.id)) {
 					myShip.setAlive(false);
@@ -379,7 +384,7 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 					}
 				}
 			}
-			else if (s.startsWith("mov ") || s.startsWith("new ")) {
+			else if (s.startsWith(UPDATE) || s.startsWith(CREATE)) {
 				s = s.substring(s.indexOf(" ") + 1);
 				CombatItem c = parse(s);
 				if (c != null) {
@@ -599,9 +604,8 @@ public class Player extends JPanel implements KeyListener,MouseListener,MouseMot
 				Socket ss=new Socket(host, Integer.parseInt(port));
 				out=ss.getOutputStream();
 				BufferedReader br=new BufferedReader(new InputStreamReader(ss.getInputStream()));
-				OutputStream o=ss.getOutputStream();
-				o.write(("__CREATE name:"+gname+" max:6 refill:1\n").getBytes());
-				o.write(("__JOIN name:" + gname+"\n").getBytes());
+				out.write(("__CREATE name:"+gname+" max:15 refill:1\n").getBytes());
+				out.write(("__JOIN name:" + gname+"\n").getBytes());
 				while (true) {
 					Thread.yield();
 					String r=br.readLine();

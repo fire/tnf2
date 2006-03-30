@@ -39,6 +39,10 @@ public class PlayerApplet extends Applet {
 			p.startThreads(host,port);
 			requestFocus();
 			p.addKeyListener(p);
+			this.addKeyListener(p);
+			p.addMouseListener(p);
+			p.addMouseMotionListener(p);
+
 			addKeyListener(p);
 			add("Center", p);
 	}

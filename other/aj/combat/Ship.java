@@ -100,19 +100,26 @@ public class Ship extends Thing implements CombatItem {
 		updatePos();
 		double my = Math.sin(dir) * size / 2;
 		double mx = Math.cos(dir) * size / 2;
+		double dy= Math.sin(dir+Math.PI/2) * size / 3;
+		double dx= Math.cos(dir+Math.PI/2) * size / 3;
 		
 		g.setColor(Color.gray);
-		g.drawOval((int) (x - size / 2), (int) (y - size / 2), size, size);
+//		g.drawOval((int) (x - size / 2), (int) (y - size / 2), size, size);
 		if (!alive) {
 			g.setColor(Color.red);
 		}
 		else {
 			g.setColor(Color.white);
 		}
-		g.drawLine((int) (x - mx), (int) (y - my), (int) (x + mx), (int) (y + my));
-		Arrow a = new Arrow(new Point((int) (x - mx), (int) (y - my)), 
-				new Point((int) (x + mx), (int) (y + my)), size / 4, size, true);
-		a.display(g, 1.0);
+//		g.drawLine((int) (x - mx), (int) (y - my), (int) (x + mx), (int) (y + my));
+
+		g.drawLine((int) (x - mx-dx), (int) (y - my-dy), (int) (x + mx), (int) (y + my));
+		g.drawLine((int) (x - mx+dx), (int) (y - my+dy), (int) (x + mx), (int) (y + my));
+		g.drawLine((int) (x - mx-dx), (int) (y - my-dy), (int) (x - mx+dx), (int) (y - my+dy));
+
+		//		Arrow a = new Arrow(new Point((int) (x - mx), (int) (y - my)), 
+//				new Point((int) (x + mx), (int) (y + my)), size / 4, size, true);
+//		a.display(g, 1.0);
 	}
 
 
