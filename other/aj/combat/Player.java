@@ -30,8 +30,8 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	static String REPOPULATE="rep",CREATE="new ",DESTROY="dest ",UPDATE="mov ";
 	static String gname = "combat1.0";
-
 
 //	static int SHIPMAXSHOTCOUNT = 6;
 	static int SHIPMAXTURN = 12;
@@ -59,8 +59,6 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 
 	private boolean mouseOn=true;
 	private boolean autoCenterMode=true;
-
-	static String REPOPULATE="rep",CREATE="new ",DESTROY="dest ",UPDATE="mov ";
 
 	Vector allItems=new Vector();
 	Vector myItems=new Vector();
@@ -90,6 +88,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	}
 
 	Player p;
+
 	public Player() {
 		myShip=Ship.rand(""+(int)(Math.random()*1000));
 		addMyItem(myShip);

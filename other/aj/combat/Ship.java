@@ -17,7 +17,7 @@ public class Ship extends Thing implements CombatItem {
 	static int shotCount = 0;
 
 	static String shipType="-1";
-
+	
 	/**
 	 *  Constructor for the Ship object 
 	 *
@@ -152,6 +152,8 @@ public class Ship extends Thing implements CombatItem {
 				Double.parseDouble(t[4]), 
 				Double.parseDouble(t[5]));
 	}
+	
+	
 
 }
 
