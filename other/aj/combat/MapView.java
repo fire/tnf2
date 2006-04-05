@@ -1,25 +1,13 @@
 package aj.combat;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.Socket;
-import java.util.Hashtable;
 import java.util.Random;
 import java.util.Vector;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import aj.misc.Stuff;
 
 /**
  *  Description of the Class 
@@ -27,20 +15,20 @@ import aj.misc.Stuff;
  *@author     judda 
  *@created    April 12, 2000 
  */
-public class MapView extends JPanel {
+public class MapView extends JPanel { 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	static int ZONESIZE = 400;
-
+	static int ARENASIZE = 900;
+	
 	private Vector displayItems=new Vector();
 	
 	public void setDisplayItems(Vector v) {displayItems=v;}
 	
 	public Dimension getPreferredSize() {
-		return new Dimension(ZONESIZE, ZONESIZE);
+		return new Dimension(800, 640);
 	}
 
 	boolean infoOn;
@@ -50,25 +38,58 @@ public class MapView extends JPanel {
 		this.setBackground(Color.black);
 	}
 	
-	public void paint(Graphics g) {
-		System.out.println("dis items="+displayItems.size());
-		g.translate(getWidth()/2-(int)myShip.x,getHeight()/2-(int)myShip.y);
+	Image i=null;
+	public void paint(Graphics G) {
+		if (i==null || i.getWidth(this)!=getWidth() || i.getHeight(this)!=getHeight()) {
+			i=createImage(getWidth(),getHeight());
+		}
+		Graphics g=i.getGraphics();
 		g.setColor(Color.black);
-		g.fillRect(1, 1, ZONESIZE - 1, ZONESIZE - 1);
-		drawStars(g);
+		g.fillRect(0,0,getWidth(),getHeight());
 		if (infoOn) displayInfo(g);
-		for (int a=0; a < displayItems.size(); a++) {
-			CombatItem t = (CombatItem) displayItems.elementAt(a);
+
+		g.setColor(Color.white);
+		
+		g.translate(getWidth()/2-(int)myShip.x,getHeight()/2-(int)myShip.y);
+
+		drawStars(g);
+		g.setColor(Color.gray);
+		g.drawRect(0,0,ARENASIZE,ARENASIZE);
+		for (int c=0; c < displayItems.size(); c++) {
+			CombatItem t = (CombatItem) displayItems.elementAt(c);
+			if (t==null) System.out.println("t==null");
+			if (g==null) System.out.println("g==null");
 			t.display(g);
 		}
+
+		for (int a=-1;a<2;a++) {
+			for (int b=-1;b<2;b++) {
+				if (b==0 && a==0) continue;
+				g.translate(a*ARENASIZE,b*ARENASIZE);
+				drawStars(g);
+				for (int c=0; c < displayItems.size(); c++) {
+					CombatItem t = (CombatItem) displayItems.elementAt(c);
+					Thing tt=(Thing)t;
+					if (
+					(myShip.x<getWidth()/2 && tt.x>getWidth()/2 && a==-1) ||
+					(myShip.x>getWidth()/2 && tt.x<getWidth()/2 && a==1) 
+					|| (myShip.y>getHeight()/2 && tt.y<getHeight()/2 && b==1) 
+					|| (myShip.y<getHeight()/2 && tt.y>getHeight()/2 && b==-1) 
+					)
+					t.display(g);
+				}
+				g.translate(-a*ARENASIZE,-b*ARENASIZE);
+			}
+		}
+		G.drawImage(i,0,0,this);
 	}
 
 	int randomSeed=72532;//(int)(Math.random()*1000);
 	private void drawStars(Graphics g) {
 		Random r=new Random(randomSeed);
 		for (int a=0;a<50;a++) {
-			int x=Math.abs(r.nextInt()%ZONESIZE);
-			int y=Math.abs(r.nextInt()%ZONESIZE);
+			int x=Math.abs(r.nextInt()%ARENASIZE);
+			int y=Math.abs(r.nextInt()%ARENASIZE);
 			Color c[]={Color.red,Color.yellow,Color.lightGray,Color.blue,Color.green,Color.magenta,Color.cyan,Color.orange,Color.pink};
 //			Color c[]={Color.red};
 			int ci=(int)(r.nextDouble()*c.length);
@@ -84,11 +105,12 @@ public class MapView extends JPanel {
 				"mouseTurn 'm'\n"+
 				"help      '?' '/'";
 		int count=0;
+		g.setColor(Color.white);
 		while (help.indexOf("\n")>=0) {
 			String line=help.substring(0,help.indexOf("\n"));
-			help=help.substring(0,help.indexOf("\n")+1);
+			help=help.substring(help.indexOf("\n")+1);
 			count++;
-			g.drawString(line,0,15*count);
+			g.drawString(line,50,50+15*count);
 		}
 	}
 
