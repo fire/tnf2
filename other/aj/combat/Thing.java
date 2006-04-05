@@ -39,24 +39,24 @@ public class Thing  {
 	 */
 	public void updatePos() {
 		long t = System.currentTimeMillis();
-		double dt = (t - time) / UPDATESPERSECOND;
+		double dt = 1.0*(t - time) / UPDATESPERSECOND;
 		if (dt < 1) {
 			return;
 		}
 		time = t;
 		x = x + vx * dt;
 		y = y + vy * dt;
-		if (x > MapView.ZONESIZE) {
-			x = x - MapView.ZONESIZE;
+		if (x > MapView.ARENASIZE) {
+			x = x - MapView.ARENASIZE;
 		}
 		else if (x < 0) {
-			x = x + MapView.ZONESIZE;
+			x = x + MapView.ARENASIZE;
 		}
-		if (y > MapView.ZONESIZE) {
-			y = y - MapView.ZONESIZE;
+		if (y > MapView.ARENASIZE) {
+			y = y - MapView.ARENASIZE;
 		}
 		else if (y < 0) {
-			y = y + MapView.ZONESIZE;
+			y = y + MapView.ARENASIZE;
 		}
 	}
 
@@ -69,6 +69,11 @@ public class Thing  {
 		size=t.size;
 		time=t.time;
 		id=t.id;
+	}
+
+
+	public String getId() {
+		return id;
 	}
 }
 
