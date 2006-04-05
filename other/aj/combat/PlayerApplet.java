@@ -21,7 +21,7 @@ public class PlayerApplet extends Applet {
 	 *  Description of the Method 
 	 */
 	public void init() {
-		resize(MapView.ZONESIZE, MapView.ZONESIZE);
+		resize(MapView.ARENASIZE, MapView.ARENASIZE);
 		setLayout(new BorderLayout());
 		Player p;
 		String host="",port="";
