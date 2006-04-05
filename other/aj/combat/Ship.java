@@ -13,10 +13,10 @@ import aj.misc.Stuff;
  */
 public class Ship extends Thing implements CombatItem {
 	//2% reduce speed
-	boolean alive = true;
+	private boolean alive = true;
 	static int shotCount = 0;
-
-	static String shipType="-1";
+	static String shipType="S";
+	public boolean isAlive() {return alive;}
 	
 	/**
 	 *  Constructor for the Ship object 
@@ -47,12 +47,18 @@ public class Ship extends Thing implements CombatItem {
 	 */
 	public void setAlive(boolean b) {
 		alive = b;
+		if (alive) {
+			
+			x=Math.random() * MapView.ARENASIZE;
+			y=Math.random() * MapView.ARENASIZE;
+			vx=0;vy=0;dir=Math.random()*360;
+		}
 	}
 
 	
-
+	static int explosionCount=0;
 	public Explosion explode() {
-		Explosion e=new Explosion(id + "E",x,y,0,vx,vy,1000);
+		Explosion e=new Explosion(id + "E"+(explosionCount++),x,y,0,vx,vy);
 		return e;
 	}
 
@@ -62,11 +68,15 @@ public class Ship extends Thing implements CombatItem {
 	 *
 	 *@return    Description of the Returned Value 
 	 */
-	public Shot shoot() {
-		return new Shot(id + "S" + (shotCount++), x + size * Math.cos(dir), y + size * Math.sin(dir), dir, vx + Player.MAXSHOTSPEED * Math.cos(dir), vy + Player.MAXSHOTSPEED * Math.sin(dir), Shot.shotType);
+	public Shot shootLaser() {
+		return new Shot(id + "S" + (shotCount++), x + size * Math.cos(dir), y + size * Math.sin(dir), dir, vx + Player.ACTUALMAXSHOTSPEED * Math.cos(dir), vy + Player.ACTUALMAXSHOTSPEED * Math.sin(dir));
 	}
 
+	public Missile shootMissile() {
+		return new Missile(id + "M" + (shotCount++), x + size * Math.cos(dir), y + size * Math.sin(dir), dir, vx + Player.ACTUALMAXSHOTSPEED * Math.cos(dir), vy + Player.ACTUALMAXSHOTSPEED * Math.sin(dir));
+	}
 
+	
 	/**
 	 *  Description of the Method 
 	 */
@@ -95,7 +105,6 @@ public class Ship extends Thing implements CombatItem {
 	 */
 	public void display(Graphics g) {
 		fix();
-		updatePos();
 		double my = Math.sin(dir) * size / 2;
 		double mx = Math.cos(dir) * size / 2;
 		double dy= Math.sin(dir+Math.PI/2) * size / 3;
@@ -124,33 +133,33 @@ public class Ship extends Thing implements CombatItem {
 	/**
 	 *  Description of the Method 
 	 *
-	 *@return    Description of the Returned Value 
-	 */
-	public String toString() {
-		return id + " " + Stuff.trunc(x,1) + " " + Stuff.trunc(y,1) + " " + Stuff.trunc(dir,2) + " " + Stuff.trunc(vx,2) + " " + Stuff.trunc(vy,2) + " -1";
-	}
-
-
-	/**
-	 *  Description of the Method 
-	 *
 	 *@param  id  Description of Parameter 
 	 *@return     Description of the Returned Value 
 	 */
 	public static Ship rand(String id) {
 		double ndir = ((int) (Math.random() * 360));
-		return new Ship(id, Math.random() * MapView.ZONESIZE, 
-				Math.random() * MapView.ZONESIZE, 
+		return new Ship(id, Math.random() * MapView.ARENASIZE, 
+				Math.random() * MapView.ARENASIZE, 
 				ndir, 0, 0);
 	}
 
 
 	public static CombatItem parse(String[] t) {
-		return new Ship(t[0], Double.parseDouble(t[1]), 
-				Double.parseDouble(t[2]), 
-				Double.parseDouble(t[3]), 
-				Double.parseDouble(t[4]), 
-				Double.parseDouble(t[5]));
+		double x=Double.parseDouble(t[2]);
+		double y=Double.parseDouble(t[3]);
+		double dir=Double.parseDouble(t[4]);
+		double vx=Double.parseDouble(t[5]);
+		double vy=Double.parseDouble(t[6]);
+		return new Ship(t[1], x,y,dir,vx,vy); 
+	}
+	public String toString() {
+		return shipType+" "+
+		id + " " + 
+		Stuff.trunc(x,1) + " " + 
+		Stuff.trunc(y,1) + " " + 
+		Stuff.trunc(dir,2) + " " + 
+		Stuff.trunc(vx,3) + " " + 
+		Stuff.trunc(vy,3);
 	}
 	
 	
