@@ -11,6 +11,8 @@ import aj.misc.Stuff;
 
 public class Explosion extends Thing implements CombatItem {
 
+	static String explosionType="E";
+	
 	/**
 	 *  Description of the Method 
 	 *
@@ -19,7 +21,6 @@ public class Explosion extends Thing implements CombatItem {
 	public void display(Graphics g) {
 		int rang=(int)(1000-this.lifeOver+this.time)/10;
 		int srang=rang-2;
-		updatePos();
 		g.setColor(Color.red);
 		for (int a=0;a<20;a++) {
 			double ang=Math.PI*2/20;			
@@ -29,6 +30,7 @@ public class Explosion extends Thing implements CombatItem {
 
 	long lifeOver;
 	double mx, my;
+	private long minExplostionLife=1000;
 
 	/**
 	 *  Constructor for the Shot object 
@@ -41,7 +43,7 @@ public class Explosion extends Thing implements CombatItem {
 	 *@param  vy    Description of Parameter 
 	 *@param  life  Description of Parameter 
 	 */
-	public Explosion(String id, double x, double y, double d, double vx, double vy, long life) {
+	public Explosion(String id, double x, double y, double d, double vx, double vy) {
 		this.id = id;
 		this.x = x;
 		this.y = y;
@@ -50,11 +52,10 @@ public class Explosion extends Thing implements CombatItem {
 		this.vx = vx;
 		this.vy = vy;
 		this.time = System.currentTimeMillis();
-		lifeOver = time + life;
+		lifeOver = time + minExplostionLife;
 //		mx = Math.cos(dir) * size / 2;
 //		my = Math.sin(dir) * size / 2;
 	}
-
 
 	/**
 	 *  Description of the Method 
@@ -65,13 +66,31 @@ public class Explosion extends Thing implements CombatItem {
 		return lifeOver < System.currentTimeMillis();
 	}
 
+
+	public static CombatItem parse(String[] t) {
+		double x=Double.parseDouble(t[2]);
+		double y=Double.parseDouble(t[3]);
+		double dir=Double.parseDouble(t[4]);
+		double vx=Double.parseDouble(t[5]);
+		double vy=Double.parseDouble(t[6]);
+
+		return new Explosion(t[1],x,y,dir,vx,vy);
+		
+	}
+
 	/**
 	 *  Description of the Method 
 	 *
 	 *@return    Description of the Returned Value 
 	 */
 	public String toString() {
-		return id + " " + Stuff.trunc(x,1) + " " + Stuff.trunc(y,1) + " " + Stuff.trunc(dir,2) + " " + Stuff.trunc(vx,2) + " " + Stuff.trunc(vy,2) +" "+ (lifeOver - System.currentTimeMillis());
+		return explosionType+" "+
+		id + " " + 
+		Stuff.trunc(x,1) + " " + 
+		Stuff.trunc(y,1) + " " + 
+		Stuff.trunc(dir,3) + " " + 
+		Stuff.trunc(vx,3) + " " + 
+		Stuff.trunc(vy,3);
 	}
 
 }
