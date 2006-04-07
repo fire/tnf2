@@ -23,17 +23,6 @@ public class Ship extends Thing implements CombatItem {
 	
 	Color shipColors[]={Color.white,Color.yellow,Color.pink,Color.lightGray,Color.BLUE,Color.green,Color.cyan,Color.MAGENTA};
 	
-
-	//TODO guided missile
-	//TODO shields
-	//TODO hyperspace
-	//TODO map obsticals/walls
-	//TODO use gun points in ship
-	//TODO lights on ship
-	//TODO thurster from ship (show dust)
-	//TODO asteroids bounce
-	//TODO scoring - kill /vs kill  (tom kill mike  vs mike)
-	
 	/**
 	 *  Constructor for the Ship object 
 	 *

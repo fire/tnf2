@@ -59,13 +59,21 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	int id=(int)(Math.random()*1000);
 	long lastfire;
 
-	private boolean mouseOn=true;
-
 	Vector allItems=new Vector();
 	Vector myItems=new Vector();
 	Ship myShip;
 	
 	MapView mapView;
+	
+	//TODO guided missile
+	//TODO shields
+	//TODO hyperspace
+	//TODO map obsticals/walls
+	//TODO use gun points in ship
+	//TODO lights on ship
+	//TODO thurster from ship (show dust)
+	//TODO asteroids bounce
+	//TODO scoring - kill /vs kill  (tom kill mike  vs mike)
 
 	/**
 	 * @param args
@@ -474,42 +482,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	private void receiveUserCommand() {
 		if (myShip==null) return;
 //		System.out.println("currKey="+currKeys);
-		double MINCHANGE=.3;
-		double ddir=targetDir-myShip.dir;
-		while (ddir>Math.PI) ddir-=Math.PI*2;
-		while (ddir<-Math.PI) ddir+=Math.PI*2;
-		if (Math.abs(ddir)>MINCHANGE && mouseOn) {
-//			double myd=myShip.dir;
-//			while (myd<-Math.PI*2) myd+=Math.PI*2;
-//			while (myd>Math.PI*2) myd-=Math.PI*2;
-//			System.out.println("dir="+targetDir+" myshipdir="+myShip.dir+" ddir="+ddir);
-			if (ddir>MINCHANGE) {
-				if (!temp.equals("counter ="+ddir)) {
-					temp="counter ="+ddir;
-//					System.out.println(temp);
-				}
-				char ch='D';
-				if (currKeys.indexOf(ch)<0) currKeys+=ch;
-			}
-			else if (ddir<-MINCHANGE) {
-				if (!temp.equals("clock ="+ddir)) {
-					temp="clock ="+ddir;
-//					System.out.println(temp);
-				}
-				char ch='A';
-				if (currKeys.indexOf(ch)<0) currKeys+=ch;
-			}
-		}
-		else if (mouseOn) {
-				if (!temp.equals("cancel ="+ddir)) {
-					temp="cancel ="+ddir;
-//					System.out.println(temp);
-				}
-				char ch='A';
-				if (currKeys.indexOf(ch)>=0) currKeys=currKeys.substring(0,currKeys.indexOf(ch))+currKeys.substring(currKeys.indexOf(ch)+1);
-				ch='D';
-				if (currKeys.indexOf(ch)>=0) currKeys=currKeys.substring(0,currKeys.indexOf(ch))+currKeys.substring(currKeys.indexOf(ch)+1);				
-			}
+		myShip.dir=targetDir;
 
 		if (currKeys.indexOf("X")>=0 || currKeys.indexOf("Q")>=0) {//ch == 'X' || ch == 'Q') {
 			System.exit(1);
@@ -611,15 +584,15 @@ System.out.println("bad value "+s);
 
 	public void mouseDragged(MouseEvent e) {
 		Point p=e.getPoint();
-		p=new Point(p.x-mapView.getWidth()/2,p.y-mapView.getHeight()/2);
-		double dir=Math.atan2(1.0*p.y,1.0*p.x);
+		p=new Point(p.x,p.y-50);
+		double dir=Math.atan2(1.0*p.y-mapView.getHeight()/2.0,1.0*p.x-mapView.getWidth()/2.0);
 		targetDir=dir;
 	}
 
 	public void mouseMoved(MouseEvent e) {
 		Point p=e.getPoint();
-		p=new Point(p.x-mapView.getWidth()/2,p.y-mapView.getHeight()/2);
-		double dir=Math.atan2(1.0*p.y,1.0*p.x);
+		p=new Point(p.x,p.y-50);
+		double dir=Math.atan2(1.0*p.y-mapView.getHeight()/2.0,1.0*p.x-mapView.getWidth()/2.0);
 		targetDir=dir;
 	}
 
