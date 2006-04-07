@@ -21,7 +21,7 @@ public class MapView extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	static int ARENASIZE = 900;
+	static int ARENASIZE = 1000;
 	
 	private Vector displayItems=new Vector();
 	
@@ -53,7 +53,7 @@ public class MapView extends JPanel {
 		g.translate(getWidth()/2-(int)myShip.x,getHeight()/2-(int)myShip.y);
 
 		drawStars(g);
-		g.setColor(Color.gray);
+		g.setColor(Color.darkGray);
 		g.drawRect(0,0,ARENASIZE,ARENASIZE);
 		for (int c=0; c < displayItems.size(); c++) {
 			CombatItem t = (CombatItem) displayItems.elementAt(c);
@@ -65,17 +65,30 @@ public class MapView extends JPanel {
 		for (int a=-1;a<2;a++) {
 			for (int b=-1;b<2;b++) {
 				if (b==0 && a==0) continue;
+				if (myShip.x>MapView.ARENASIZE/4 && a==-1) {
+					continue;
+				}
+				if (myShip.x<MapView.ARENASIZE*3/4 && a==1) {
+					continue;
+				}
+				if (myShip.y>MapView.ARENASIZE/4 && b==-1) {
+					continue;
+				}
+				if (myShip.y<MapView.ARENASIZE*3/4 && b==1) {
+					continue;
+				}
+
 				g.translate(a*ARENASIZE,b*ARENASIZE);
 				drawStars(g);
 				for (int c=0; c < displayItems.size(); c++) {
 					CombatItem t = (CombatItem) displayItems.elementAt(c);
 					Thing tt=(Thing)t;
-					if (
-					(myShip.x<getWidth()/2 && tt.x>getWidth()/2 && a==-1) ||
-					(myShip.x>getWidth()/2 && tt.x<getWidth()/2 && a==1) 
-					|| (myShip.y>getHeight()/2 && tt.y<getHeight()/2 && b==1) 
-					|| (myShip.y<getHeight()/2 && tt.y>getHeight()/2 && b==-1) 
-					)
+//					if (
+//					(myShip.x<getWidth()/2 && tt.x>getWidth()/2 && a==-1) ||
+//					(myShip.x>getWidth()/2 && tt.x<getWidth()/2 && a==1) 
+//					|| (myShip.y>getHeight()/2 && tt.y<getHeight()/2 && b==1) 
+//					|| (myShip.y<getHeight()/2 && tt.y>getHeight()/2 && b==-1) 
+//					)
 					t.display(g);
 				}
 				g.translate(-a*ARENASIZE,-b*ARENASIZE);
