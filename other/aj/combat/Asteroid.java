@@ -6,23 +6,27 @@ package aj.combat;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Polygon;
 import java.util.Random;
 
 import aj.misc.Stuff;
 
 public class Asteroid extends Thing implements CombatItem {
 
-	int xp[],yp[],n;
+//	int xp[],yp[],n;
 		
-	double spinRate;
 	
-	static int SMALL=6,MEDIUM=10,LARGE=15;
+	static int SMALL=6,MEDIUM=10,LARGE=16,HUGE=24;
 	static String asteroidType="A";
+	double ang;
+	double spinRate;
+
 	int randSeed=0;
 	
 	boolean rebirthType=false;
 
 	private boolean breader=false;
+	Polygon shape,originalShape;
 	
 	Color c;
 	
@@ -38,7 +42,8 @@ public class Asteroid extends Thing implements CombatItem {
 		Random r=new Random(this.randSeed);
 		size=sizeString;
 		if (size==0) {
-			this.size = LARGE;
+			this.size = HUGE;
+			if (r.nextDouble()>.5) this.size=LARGE;
 			if (r.nextDouble()>.5) this.size=MEDIUM;
 			else if (r.nextDouble()>.5) this.size=SMALL;
 			this.time = System.currentTimeMillis();			
@@ -47,8 +52,11 @@ public class Asteroid extends Thing implements CombatItem {
 			vx=Math.cos(d)*r.nextDouble()*2;
 			vy=Math.sin(d)*r.nextDouble()*2;
 		}
+		ang=0;
+		spinRate=r.nextDouble();
 		this.vx = vx;
 		this.vy = vy;
+		getShape();
 	}
 	
 	public Asteroid breakup() {
@@ -59,42 +67,68 @@ public class Asteroid extends Thing implements CombatItem {
 		a.vy=vy+Math.random()*2-1;
 		vx+=Math.random()*2-1;
 		vy+=Math.random()*2-1;
-		if (size==LARGE) {size=a.size=MEDIUM;}
+		if (size==HUGE) {size=a.size=LARGE;}
+		else if (size==LARGE) {size=a.size=MEDIUM;}
 		else if (size==MEDIUM) {size=a.size=SMALL;}
 		else {
 			x=Math.random()*MapView.ARENASIZE;
 			y=Math.random()*MapView.ARENASIZE;
-			size=LARGE;
+			vx=Math.random()*6-3;
+			vy=Math.random()*6-3;
+			size=HUGE;
+			getShape();
 			randSeed=(int)(Math.random()*1000);
 			return null;
 		}
+		getShape();
+		a.getShape();
 		return a;
 	}
 	
+	long lastRotateTime=0;
+	public void updateRotate() {
+		double d=(System.currentTimeMillis()-lastRotateTime)/1000.0;
+		ang+=d*spinRate;
+		lastRotateTime=System.currentTimeMillis();
+		rotate(ang);
+	}
+	
 	public void display(Graphics g) {
-		updateAsteroidShape();
+		updateRotate();
 		g.setColor(c);
-		g.drawLine((int)x,(int)y,(int)x,(int)y);
-		g.fillPolygon(xp,yp,n);
+		g.translate((int)x,(int)y);
+		g.fillPolygon(shape);
+		g.translate(-(int)x,-(int)y);
 	}
 
+	public void rotate(double d) {
+		int xpoints[]=new int[originalShape.npoints];
+		int ypoints[]=new int[originalShape.npoints];
+		for (int a=0;a<originalShape.npoints;a++) {
+			xpoints[a]=(int)(originalShape.xpoints[a]*Math.cos(d)-originalShape.ypoints[a]*Math.sin(d));
+			ypoints[a]=(int)(originalShape.xpoints[a]*Math.sin(d)+originalShape.ypoints[a]*Math.cos(d));
+		}
+		shape=new Polygon(xpoints,ypoints,originalShape.npoints);
+	}
+	
 	Color colorList[]={Color.blue,new Color(255,0,255),Color.PINK,Color.green,Color.YELLOW,new Color(125,0,180)};
 	
-	private void updateAsteroidShape() {
-		
+	private void getShape() {
 		Random r=new Random(randSeed);
 		c=colorList[(int)(Math.abs(r.nextInt()%colorList.length))];
-		n=size;
-		xp=new int[n];
-		yp=new int[n];
+		int n=size;
+		int xp[]=new int[n];
+		int yp[]=new int[n];
 		for (int a=0;a<n-1;a++) {
 			double ang=Math.PI*2/size;
-			xp[a]=(int)(x+Math.cos(ang*a)*(r.nextDouble()*(size)+size/2));
-			yp[a]=(int)(y+Math.sin(ang*a)*(r.nextDouble()*(size)+size/2));
+			xp[a]=(int)(Math.cos(ang*a)*(r.nextDouble()*(size/2)+size/2));
+			yp[a]=(int)(Math.sin(ang*a)*(r.nextDouble()*(size/2)+size/2));
 		}
 //		double tx=Math.cos(a)
 		xp[n-1]=xp[0];
 		yp[n-1]=yp[0];
+		originalShape=shape=new Polygon(xp,yp,n);
+		
 	}
 	
 	public String toString() {
@@ -106,9 +140,8 @@ public class Asteroid extends Thing implements CombatItem {
 		Stuff.trunc(dir,3) + " " + 
 		Stuff.trunc(vx,4) + " " + 
 		Stuff.trunc(vy,4) +" "+ 
-
 		size+" "+
-		randSeed;
+		randSeed+" ";
 	}
 
 	public static Asteroid parse(String[] t) {
@@ -132,7 +165,7 @@ public class Asteroid extends Thing implements CombatItem {
 				Math.random()*360,
 				Math.random()*2-1,
 				Math.random()*2-1,
-				Asteroid.LARGE,
+				Asteroid.HUGE,
 				((int)Math.random()*1000));
 		a.setBreader(true);
 		return a;
