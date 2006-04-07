@@ -19,6 +19,9 @@ public class Ship extends Thing implements CombatItem {
 	public boolean isAlive() {return alive;}
 	ShipShape shipShape;
 	String playerName;
+	int colorIndex=0;
+	
+	Color shipColors[]={Color.white,Color.yellow,Color.pink,Color.lightGray,Color.BLUE,Color.green,Color.cyan,Color.MAGENTA};
 	
 	/**
 	 *  Constructor for the Ship object 
@@ -30,7 +33,7 @@ public class Ship extends Thing implements CombatItem {
 	 *@param  vx  Description of Parameter 
 	 *@param  vy  Description of Parameter 
 	 */
-	public Ship(String id, double x, double y, double d, double vx, double vy,int shapeId,String playername) {
+	public Ship(String id, double x, double y, double d, double vx, double vy,int shapeId,String playername,int colorInd) {
 		this.id = id;
 		this.x = x;
 		this.y = y;
@@ -41,6 +44,7 @@ public class Ship extends Thing implements CombatItem {
 		this.time = System.currentTimeMillis();
 		this.shipShape=new ShipShape(shapeId);
 		this.playerName=playername;
+		this.colorIndex=colorInd;
 	}
 
 
@@ -63,6 +67,7 @@ public class Ship extends Thing implements CombatItem {
 	}
 	
 	static int explosionCount=0;
+	private static int defaultcolorindex=0;
 	public Explosion explode() {
 		Explosion e=new Explosion(id + "E"+(explosionCount++),x,y,0,vx,vy);
 		return e;
@@ -111,11 +116,6 @@ public class Ship extends Thing implements CombatItem {
 	 */
 	public void display(Graphics g) {
 		fix();
-		double my = Math.sin(dir) * size / 2;
-		double mx = Math.cos(dir) * size / 2;
-		double dy= Math.sin(dir+Math.PI/2) * size / 3;
-		double dx= Math.cos(dir+Math.PI/2) * size / 3;
-		
 		g.setColor(Color.gray);
 //		g.drawOval((int) (x - size / 2), (int) (y - size / 2), size, size);
 		if (!alive) {
@@ -147,7 +147,7 @@ public class Ship extends Thing implements CombatItem {
 		int shapeid=ShipShape.shipTypeSpace[(int)(ShipShape.shipTypeSpace.length*Math.random())];
 		return new Ship(id, Math.random() * MapView.ARENASIZE, 
 				Math.random() * MapView.ARENASIZE, 
-				ndir, 0, 0,shapeid,"");
+				ndir, 0, 0,shapeid,"",defaultcolorindex);
 	}
 
 	public static CombatItem parse(String[] t) {
@@ -158,7 +158,8 @@ public class Ship extends Thing implements CombatItem {
 		double vy=Double.parseDouble(t[6]);
 		int shape=(int)(Double.parseDouble(t[7]));
 		String name=t[8];
-		return new Ship(t[1], x,y,dir,vx,vy,shape,name); 
+		int colorIndex=(int)(Double.parseDouble(t[9]));
+		return new Ship(t[1], x,y,dir,vx,vy,shape,name,colorIndex); 
 	}
 	
 	public String toString() {
@@ -170,7 +171,17 @@ public class Ship extends Thing implements CombatItem {
 		Stuff.trunc(vx,3) + " " + 
 		Stuff.trunc(vy,3) + " " +
 		shipShape.index+" "+
-		playerName+" ";
+		playerName+" "+
+		colorIndex+" ";
+	}
+
+
+	public void copyShipVals(Ship ship) {
+		shipShape=ship.shipShape;
+		if (ship.playerName!=null && ship.playerName.length()!=0) playerName=ship.playerName;
+		colorIndex=ship.colorIndex;
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

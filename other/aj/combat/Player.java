@@ -15,6 +15,9 @@ import java.net.Socket;
 import java.util.Vector;
 
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 import aj.misc.Stuff;
 
@@ -50,7 +53,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	static int MINTURNDELAY = 10;
 	static int MINMOVEDELAY = 30;
 	static int NEXTCOMMANDCHECKDELAY=30;
-	private static String playerDisplayName="TestName";
+	private static String playerDisplayName="Player";
 
 	OutputStream out=null;
 	int id=(int)(Math.random()*1000);
@@ -81,13 +84,26 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		f.addMouseMotionListener(p);
 
 		f.getContentPane().setLayout(new BorderLayout());
+		JMenuBar jmb=new JMenuBar();
+		
+		JMenu settings=new JMenu("Settings");
+		jmb.add(settings);
+		JMenuItem nameMenu=new JMenuItem("Player");
+		settings.add(nameMenu);
+		JMenuItem serverSetup=new JMenuItem("Server");
+		settings.add(serverSetup);
+		JMenuItem gameSetup=new JMenuItem("Game");
+		settings.add(gameSetup);
+		
+		f.setJMenuBar(jmb);
 		f.getContentPane().add("Center", p.mapView);
 		f.pack();
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		p.startThreads(args[0],args[1]);
 	}
-
+	
+	
 	Player p;
 
 	public Player() {
@@ -250,6 +266,9 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 			Thing tt=(Thing)allItems.elementAt(a);
 			if (tt.id.equals(t.id)) {
 				tt.copyVals(t);
+				if (tt instanceof Ship) {
+					((Ship)t).copyShipVals((Ship)tt);
+				}
 				found=true;
 				break;
 			}
