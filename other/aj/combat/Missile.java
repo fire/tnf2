@@ -17,8 +17,6 @@ public class Missile extends Thing implements CombatItem {
 
 	public static final String missileType = "M";
 
-	double mx, my;
-
 
 	//double friction=1;
 	/**
@@ -43,8 +41,6 @@ public class Missile extends Thing implements CombatItem {
 		this.vx = vx;
 		this.vy = vy;
 		this.time = System.currentTimeMillis();
-		mx = Math.cos(dir) * size / 2;
-		my = Math.sin(dir) * size / 2;
 	}
 
 
@@ -70,9 +66,8 @@ public class Missile extends Thing implements CombatItem {
 		Stuff.trunc(x,1) + " " + 
 		Stuff.trunc(y,1) + " " + 
 		Stuff.trunc(dir,2) + " " + 
-vx+" "+vy+" ";
-//Stuff.trunc(vx,3) + " " + 
-//		Stuff.trunc(vy,3) +" ";
+		Stuff.trunc(vx,3)+" "+
+		Stuff.trunc(vy,3)+" ";
 	}
 
 
