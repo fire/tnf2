@@ -36,7 +36,9 @@ public class PlayerApplet extends Applet {
 		catch (NumberFormatException NFE) {
 		}
 			p = new Player();
-			p.startThreads(host,port);
+			Player.serverHostIP=host;
+			Player.serverPortVal=port;
+			p.startThreads();
 			requestFocus();
 			add("Center", p.mapView);
 	}
