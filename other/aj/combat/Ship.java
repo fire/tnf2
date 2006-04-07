@@ -14,15 +14,17 @@ import aj.misc.Stuff;
 public class Ship extends Thing implements CombatItem {
 	
 	private boolean alive = true;
-	static int shotCount = 0;
-	static String shipType="S";
-	public boolean isAlive() {return alive;}
-	ShipShape shipShape;
-	String playerName;
-	int colorIndex=0;
+	private static int shotCount = 0;
+	public static String shipType="S";
+	private ShipShape shipShape;
+	private String playerName;
+	private int colorIndex=0;
 	
-	Color shipColors[]={Color.white,Color.yellow,Color.pink,Color.lightGray,Color.BLUE,Color.green,Color.cyan,Color.MAGENTA};
-	
+	public static Color shipColors[]={Color.white,Color.yellow,Color.pink,Color.lightGray,Color.BLUE,Color.green,Color.cyan,Color.MAGENTA};
+	public static String shipColorNames[]={"White","Yello","Pink","LightGray","Blue","Green","Cyan","Magenta"};
+	private static int explosionCount=0;
+	private static int defaultcolorindex=0;
+
 	/**
 	 *  Constructor for the Ship object 
 	 *
@@ -47,6 +49,7 @@ public class Ship extends Thing implements CombatItem {
 		this.colorIndex=colorInd;
 	}
 
+	public boolean isAlive() {return alive;}
 
 	/**
 	 *  Sets the Alive attribute of the Ship object 
@@ -64,10 +67,9 @@ public class Ship extends Thing implements CombatItem {
 
 	public void setRandomShipShape() {
 		shipShape=new ShipShape(ShipShape.shipTypeSpace[(int)(ShipShape.shipTypeSpace.length*Math.random())]);
+		colorIndex=(int)(Math.random()*4);
 	}
 	
-	static int explosionCount=0;
-	private static int defaultcolorindex=0;
 	public Explosion explode() {
 		Explosion e=new Explosion(id + "E"+(explosionCount++),x,y,0,vx,vy);
 		return e;
@@ -181,6 +183,22 @@ public class Ship extends Thing implements CombatItem {
 		shipShape=ship.shipShape;
 		if (ship.playerName!=null && ship.playerName.length()!=0) playerName=ship.playerName;
 		colorIndex=ship.colorIndex;
+	}
+
+	public void setPlayerName(String playerDisplayName) {
+		playerName=playerDisplayName;		
+	}
+
+	public void setColorIndex(int selectedItem) {
+		colorIndex=selectedItem;
+	}
+
+	public int getColorIndex() {
+		return colorIndex;
+	}
+
+	public String getPlayerName() {
+		return playerName;
 	}
 	
 	
