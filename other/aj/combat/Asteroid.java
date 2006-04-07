@@ -53,7 +53,7 @@ public class Asteroid extends Thing implements CombatItem {
 			vy=Math.sin(d)*r.nextDouble()*2;
 		}
 		ang=0;
-		spinRate=r.nextDouble();
+		spinRate=r.nextDouble()-.5;
 		this.vx = vx;
 		this.vy = vy;
 		getShape();
@@ -135,11 +135,11 @@ public class Asteroid extends Thing implements CombatItem {
 		return 
 		asteroidType +" " +
 		id + " " 
-		+ Stuff.trunc(x,2) + " " + 
-		Stuff.trunc(y,2) + " " + 
-		Stuff.trunc(dir,3) + " " + 
-		Stuff.trunc(vx,4) + " " + 
-		Stuff.trunc(vy,4) +" "+ 
+		+ Stuff.trunc(x,1) + " " + 
+		Stuff.trunc(y,1) + " " + 
+		Stuff.trunc(dir,2) + " " + 
+		Stuff.trunc(vx,3) + " " + 
+		Stuff.trunc(vy,3) +" "+ 
 		size+" "+
 		randSeed+" ";
 	}
