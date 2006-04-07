@@ -50,6 +50,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	static int MINTURNDELAY = 10;
 	static int MINMOVEDELAY = 30;
 	static int NEXTCOMMANDCHECKDELAY=30;
+	private static String playerDisplayName="TestName";
 
 	OutputStream out=null;
 	int id=(int)(Math.random()*1000);
@@ -67,10 +68,13 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Player p=new Player();
-		if (args.length == 3) {
+		if (args.length >= 3) {
 			Player.gname = args[2];
 		}
+		if (args.length >= 4) {
+			Player.playerDisplayName=args[3];
+		}
+		Player p=new Player();
 		final JFrame f = new JFrame();
 		f.addKeyListener(p);
 		f.addMouseListener(p);
@@ -88,6 +92,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 
 	public Player() {
 		myShip=Ship.rand(""+(int)(Math.random()*1000));
+		myShip.playerName=playerDisplayName;
 		addMyItem(myShip);
 		p=this;
 		mapView=new MapView();
@@ -522,6 +527,9 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		}
 		if (currKeys.indexOf("M")>=0) {
 			fireMissile();
+		}
+		if (currKeys.indexOf("N")>=0) {
+			myShip.setRandomShipShape();
 		}
 		if (currKeys.indexOf("T")>=0) {
 			addAsteroid();

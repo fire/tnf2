@@ -585,7 +585,7 @@ public class ShipShape {
 		}.start();
 	}
 
-	private void rotate(double d) {
+	public void rotate(double d) {
 		shape=parsedShape[index];
 		int xpoints[]=new int[shape.npoints];
 		int ypoints[]=new int[shape.npoints];

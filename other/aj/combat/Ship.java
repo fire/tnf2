@@ -17,6 +17,8 @@ public class Ship extends Thing implements CombatItem {
 	static int shotCount = 0;
 	static String shipType="S";
 	public boolean isAlive() {return alive;}
+	ShipShape shipShape;
+	String playerName;
 	
 	/**
 	 *  Constructor for the Ship object 
@@ -28,7 +30,7 @@ public class Ship extends Thing implements CombatItem {
 	 *@param  vx  Description of Parameter 
 	 *@param  vy  Description of Parameter 
 	 */
-	public Ship(String id, double x, double y, double d, double vx, double vy) {
+	public Ship(String id, double x, double y, double d, double vx, double vy,int shapeId,String playername) {
 		this.id = id;
 		this.x = x;
 		this.y = y;
@@ -37,6 +39,8 @@ public class Ship extends Thing implements CombatItem {
 		this.vx = vx;
 		this.vy = vy;
 		this.time = System.currentTimeMillis();
+		this.shipShape=new ShipShape(shapeId);
+		this.playerName=playername;
 	}
 
 
@@ -48,13 +52,15 @@ public class Ship extends Thing implements CombatItem {
 	public void setAlive(boolean b) {
 		alive = b;
 		if (alive) {
-			
 			x=Math.random() * MapView.ARENASIZE;
 			y=Math.random() * MapView.ARENASIZE;
 			vx=0;vy=0;dir=Math.random()*360;
 		}
 	}
 
+	public void setRandomShipShape() {
+		shipShape=new ShipShape(ShipShape.shipTypeSpace[(int)(ShipShape.shipTypeSpace.length*Math.random())]);
+	}
 	
 	static int explosionCount=0;
 	public Explosion explode() {
@@ -118,11 +124,11 @@ public class Ship extends Thing implements CombatItem {
 		else {
 			g.setColor(Color.white);
 		}
-//		g.drawLine((int) (x - mx), (int) (y - my), (int) (x + mx), (int) (y + my));
-
-		g.drawLine((int) (x - mx-dx), (int) (y - my-dy), (int) (x + mx), (int) (y + my));
-		g.drawLine((int) (x - mx+dx), (int) (y - my+dy), (int) (x + mx), (int) (y + my));
-		g.drawLine((int) (x - mx-dx), (int) (y - my-dy), (int) (x - mx+dx), (int) (y - my+dy));
+		shipShape.rotate(dir);
+		g.translate((int)x,(int)y);
+		g.drawPolygon(shipShape.shape);
+		g.drawString(playerName,10,-10);
+		g.translate(-(int)x,-(int)y);
 
 		//		Arrow a = new Arrow(new Point((int) (x - mx), (int) (y - my)), 
 //				new Point((int) (x + mx), (int) (y + my)), size / 4, size, true);
@@ -138,11 +144,11 @@ public class Ship extends Thing implements CombatItem {
 	 */
 	public static Ship rand(String id) {
 		double ndir = ((int) (Math.random() * 360));
+		int shapeid=ShipShape.shipTypeSpace[(int)(ShipShape.shipTypeSpace.length*Math.random())];
 		return new Ship(id, Math.random() * MapView.ARENASIZE, 
 				Math.random() * MapView.ARENASIZE, 
-				ndir, 0, 0);
+				ndir, 0, 0,shapeid,"");
 	}
-
 
 	public static CombatItem parse(String[] t) {
 		double x=Double.parseDouble(t[2]);
@@ -150,8 +156,11 @@ public class Ship extends Thing implements CombatItem {
 		double dir=Double.parseDouble(t[4]);
 		double vx=Double.parseDouble(t[5]);
 		double vy=Double.parseDouble(t[6]);
-		return new Ship(t[1], x,y,dir,vx,vy); 
+		int shape=(int)(Double.parseDouble(t[7]));
+		String name=t[8];
+		return new Ship(t[1], x,y,dir,vx,vy,shape,name); 
 	}
+	
 	public String toString() {
 		return shipType+" "+
 		id + " " + 
@@ -159,7 +168,9 @@ public class Ship extends Thing implements CombatItem {
 		Stuff.trunc(y,1) + " " + 
 		Stuff.trunc(dir,2) + " " + 
 		Stuff.trunc(vx,3) + " " + 
-		Stuff.trunc(vy,3);
+		Stuff.trunc(vy,3) + " " +
+		shipShape.index+" "+
+		playerName+" ";
 	}
 	
 	
