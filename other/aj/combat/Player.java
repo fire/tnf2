@@ -94,16 +94,20 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	static String serverHostIP="127.0.0.1";
 	static String serverPortVal="8080";
 	
-	//TODO guided missile
-	//TODO shields
-	//TODO hyperspace
+	//uberstioid
+	//TODO scoring - kill /vs kill  (tom kill mike  vs mike)
+	//TODO game settings () limited asteroids
 	//TODO map obsticals/walls
+	//TODO cloak
+	//TODO shields
+
+	//TODO guided missile
+	//TODO power-ups
+	//TODO hyperspace
 	//TODO use gun points in ship
 	//TODO lights on ship
 	//TODO thurster from ship (show dust)
 	//TODO asteroids bounce
-	//TODO scoring - kill /vs kill  (tom kill mike  vs mike)
-	//TODO game settings ()
 
 	/**
 	 * @param args
@@ -116,7 +120,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 			Player.playerDisplayName=args[3];
 		}
 		final Player p=new Player();
-		final JFrame f = new JFrame();
+		final JFrame f = new JFrame("Übêrstioid");
 		f.addKeyListener(p);
 		f.addMouseListener(p);
 		f.addMouseMotionListener(p);
