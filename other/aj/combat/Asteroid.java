@@ -13,22 +13,19 @@ import aj.misc.Stuff;
 
 public class Asteroid extends Thing implements CombatItem {
 
-//	int xp[],yp[],n;
-		
-	
-	static int SMALL=6,MEDIUM=10,LARGE=16,HUGE=24;
-	static String asteroidType="A";
-	double ang;
-	double spinRate;
+	public static String asteroidType="A";
+	private static int SMALL=8,MEDIUM=12,LARGE=18,HUGE=24;
+	static int asteroidCount=(int)(Math.random()*1000);
 
-	int randSeed=0;
-	
-	boolean rebirthType=false;
-
+	private double ang;
+	private double spinRate;
+	private int randSeed=0;
 	private boolean breader=false;
-	Polygon shape,originalShape;
-	
-	Color c;
+	private Polygon shape,originalShape;
+	private long lastRotateTime=0;
+	private Color colorList[]={Color.blue,new Color(255,0,255),Color.PINK,Color.green,Color.YELLOW,new Color(125,0,180)};
+
+	private Color c;
 	
 	public Asteroid(String id, double x, double y, double d, double vx, double vy, int sizeString,int randSeed) {
 		this.id = id;
@@ -76,8 +73,8 @@ public class Asteroid extends Thing implements CombatItem {
 			vx=Math.random()*6-3;
 			vy=Math.random()*6-3;
 			size=HUGE;
-			getShape();
 			randSeed=(int)(Math.random()*1000);
+			getShape();
 			return null;
 		}
 		getShape();
@@ -85,8 +82,7 @@ public class Asteroid extends Thing implements CombatItem {
 		return a;
 	}
 	
-	long lastRotateTime=0;
-	public void updateRotate() {
+	private void updateRotate() {
 		double d=(System.currentTimeMillis()-lastRotateTime)/1000.0;
 		ang+=d*spinRate;
 		lastRotateTime=System.currentTimeMillis();
@@ -101,7 +97,7 @@ public class Asteroid extends Thing implements CombatItem {
 		g.translate(-(int)x,-(int)y);
 	}
 
-	public void rotate(double d) {
+	private void rotate(double d) {
 		int xpoints[]=new int[originalShape.npoints];
 		int ypoints[]=new int[originalShape.npoints];
 		for (int a=0;a<originalShape.npoints;a++) {
@@ -110,8 +106,6 @@ public class Asteroid extends Thing implements CombatItem {
 		}
 		shape=new Polygon(xpoints,ypoints,originalShape.npoints);
 	}
-	
-	Color colorList[]={Color.blue,new Color(255,0,255),Color.PINK,Color.green,Color.YELLOW,new Color(125,0,180)};
 	
 	private void getShape() {
 		Random r=new Random(randSeed);
@@ -156,7 +150,6 @@ public class Asteroid extends Thing implements CombatItem {
 		return a;
 	}
 	
-	static int asteroidCount=(int)(Math.random()*1000);
 	public static Asteroid createRandom() {
 		Asteroid a=new Asteroid(
 				"A"+asteroidCount++, 

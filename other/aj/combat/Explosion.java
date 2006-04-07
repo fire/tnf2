@@ -11,7 +11,10 @@ import aj.misc.Stuff;
 
 public class Explosion extends Thing implements CombatItem {
 
-	static String explosionType="E";
+	public static String explosionType="E";
+	private long lifeOver;
+	private long minExplostionLife=1000;
+
 	
 	/**
 	 *  Description of the Method 
@@ -27,10 +30,6 @@ public class Explosion extends Thing implements CombatItem {
 			g.drawLine((int)(x+Math.cos(ang*a)*srang),(int)(y+Math.sin(ang*a)*srang),(int)(x+Math.cos(ang*a)*rang),(int)(y+Math.sin(ang*a)*rang));
 		}
 	}
-
-	long lifeOver;
-	double mx, my;
-	private long minExplostionLife=1000;
 
 	/**
 	 *  Constructor for the Shot object 
@@ -88,7 +87,7 @@ public class Explosion extends Thing implements CombatItem {
 		id + " " + 
 		Stuff.trunc(x,1) + " " + 
 		Stuff.trunc(y,1) + " " + 
-		Stuff.trunc(dir,3) + " " + 
+		Stuff.trunc(dir,2) + " " + 
 		Stuff.trunc(vx,3) + " " + 
 		Stuff.trunc(vy,3);
 	}
