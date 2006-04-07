@@ -12,7 +12,7 @@ import aj.misc.Stuff;
  *@created    April 12, 2000
  */
 public class Ship extends Thing implements CombatItem {
-	//2% reduce speed
+	
 	private boolean alive = true;
 	static int shotCount = 0;
 	static String shipType="S";
@@ -22,6 +22,17 @@ public class Ship extends Thing implements CombatItem {
 	int colorIndex=0;
 	
 	Color shipColors[]={Color.white,Color.yellow,Color.pink,Color.lightGray,Color.BLUE,Color.green,Color.cyan,Color.MAGENTA};
+	
+
+	//TODO guided missile
+	//TODO shields
+	//TODO hyperspace
+	//TODO map obsticals/walls
+	//TODO use gun points in ship
+	//TODO lights on ship
+	//TODO thurster from ship (show dust)
+	//TODO asteroids bounce
+	//TODO scoring - kill /vs kill  (tom kill mike  vs mike)
 	
 	/**
 	 *  Constructor for the Ship object 
