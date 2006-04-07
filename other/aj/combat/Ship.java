@@ -123,6 +123,7 @@ public class Ship extends Thing implements CombatItem {
 		}
 		else {
 			g.setColor(Color.white);
+			g.setColor(shipColors[colorIndex]);
 		}
 		shipShape.rotate(dir);
 		g.translate((int)x,(int)y);
@@ -156,10 +157,10 @@ public class Ship extends Thing implements CombatItem {
 		double dir=Double.parseDouble(t[4]);
 		double vx=Double.parseDouble(t[5]);
 		double vy=Double.parseDouble(t[6]);
-		int shape=(int)(Double.parseDouble(t[7]));
+		int shapeId=(int)(Double.parseDouble(t[7]));
 		String name=t[8];
 		int colorIndex=(int)(Double.parseDouble(t[9]));
-		return new Ship(t[1], x,y,dir,vx,vy,shape,name,colorIndex); 
+		return new Ship(t[1], x,y,dir,vx,vy,shapeId,name,colorIndex); 
 	}
 	
 	public String toString() {
@@ -180,8 +181,6 @@ public class Ship extends Thing implements CombatItem {
 		shipShape=ship.shipShape;
 		if (ship.playerName!=null && ship.playerName.length()!=0) playerName=ship.playerName;
 		colorIndex=ship.colorIndex;
-		// TODO Auto-generated method stub
-		
 	}
 	
 	
