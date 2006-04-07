@@ -1,7 +1,11 @@
 package aj.combat;
 
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
@@ -12,12 +16,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Vector;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import aj.misc.Stuff;
 
@@ -33,37 +44,55 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	public static final int MISSILESIZE = 4;
-	static String REPOPULATE="rep",CREATE="new ",DESTROY="dest ",UPDATE="mov ";
-	static String gname = "combat1.0";
+	private static String REPOPULATE="rep",CREATE="new ",DESTROY="dest ",UPDATE="mov ";
+	private static String gname = "combat1.0";
 
-	static int SHIPMAXTURN = 12;
+	private static int SHIPMAXTURN = 12;
 	static int MAXSHIPSPEED = 10;
-	static double SHIPMAXACCEL = .3;
+	private static double SHIPMAXACCEL = .3;
 	static int SHIPSIZE = 15;
 
 	static int SHOTSIZE = 4;
-	static int MAXSHOTSPEED=15;
+	private static int MAXSHOTSPEED=15;
 	static int ACTUALMAXSHOTSPEED=MAXSHOTSPEED-MAXSHIPSPEED;
 	static double FRICTION = .998;
 
 //command delays
-	static int REDRAWDELAY = 30;
-	static int AUTOSYNCSENDDELAY = 150;
-	static int MINSHOTDELAY = 150;
-	static int MINTURNDELAY = 10;
-	static int MINMOVEDELAY = 30;
-	static int NEXTCOMMANDCHECKDELAY=30;
+	private static int REDRAWDELAY = 30;
+	private static int AUTOSYNCSENDDELAY = 150;
+	private static int MINSHOTDELAY = 150;
+	private static int MINTURNDELAY = 10;
+	private static int MINMOVEDELAY = 30;
+	private static int NEXTCOMMANDCHECKDELAY=30;
 	private static String playerDisplayName="Player";
 
-	OutputStream out=null;
-	int id=(int)(Math.random()*1000);
-	long lastfire;
-
-	Vector allItems=new Vector();
-	Vector myItems=new Vector();
-	Ship myShip;
+	private OutputStream out=null;
+	private BufferedReader br=null;
+	private Socket socket=null;
 	
+	private int id=(int)(Math.random()*1000);
+	private long lastfire;
+
+	private Vector allItems=new Vector();
+	private Vector myItems=new Vector();
+	private Ship myShip;
+	private long lastmove=0;
+
 	MapView mapView;
+	private long lastturn=0;
+	private Player p;
+	private static int MAXLASERSHOTS=8;
+	private int activeLaserCount=0;
+
+	private static int MAXMISSILEHOTS=2;
+	private int activeMissileCount=0;
+
+	private String currKeys="";
+
+	private double targetDir=0;
+	
+	static String serverHostIP="127.0.0.1";
+	static String serverPortVal="8080";
 	
 	//TODO guided missile
 	//TODO shields
@@ -74,6 +103,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	//TODO thurster from ship (show dust)
 	//TODO asteroids bounce
 	//TODO scoring - kill /vs kill  (tom kill mike  vs mike)
+	//TODO game settings ()
 
 	/**
 	 * @param args
@@ -85,7 +115,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		if (args.length >= 4) {
 			Player.playerDisplayName=args[3];
 		}
-		Player p=new Player();
+		final Player p=new Player();
 		final JFrame f = new JFrame();
 		f.addKeyListener(p);
 		f.addMouseListener(p);
@@ -96,27 +126,96 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		
 		JMenu settings=new JMenu("Settings");
 		jmb.add(settings);
-		JMenuItem nameMenu=new JMenuItem("Player");
-		settings.add(nameMenu);
+		JMenuItem playerSetup=new JMenuItem("Player");
+		settings.add(playerSetup);
+		playerSetup.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				final JDialog jd=new JDialog();
+				JPanel jp=new JPanel(new GridLayout(0,1));
+				jd.getContentPane().add("Center",jp);
+				JPanel row=new JPanel(new FlowLayout());
+				row.add(new JLabel("Player Name"));
+				final JTextField playerNameTextField=new JTextField(15);
+				playerNameTextField.setText(p.myShip.getPlayerName());
+				row.add(playerNameTextField);
+				jp.add(row);
+				row=new JPanel(new FlowLayout());
+				final JComboBox jc=new JComboBox(Ship.shipColorNames);
+				jc.setSelectedIndex(p.myShip.getColorIndex());
+				row.add(new JLabel("Color"));
+				row.add(jc);
+				jp.add(row);
+				row=new JPanel(new FlowLayout());
+				JButton okay=new JButton("Okay");
+				row.add(okay);
+				okay.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						p.myShip.setPlayerName(playerNameTextField.getText());
+						p.myShip.setColorIndex(jc.getSelectedIndex());
+						jd.setVisible(false);
+					}					
+				});
+				jp.add(row);
+				jd.pack();
+				jd.setModal(true);
+				jd.setVisible(true);
+			}
+		});
 		JMenuItem serverSetup=new JMenuItem("Server");
 		settings.add(serverSetup);
-		JMenuItem gameSetup=new JMenuItem("Game");
-		settings.add(gameSetup);
+		//server host,port
+		serverSetup.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				final JDialog jd=new JDialog();
+				JPanel jp=new JPanel(new GridLayout(0,1));
+				jd.getContentPane().add("Center",jp);
+				JPanel row=new JPanel(new FlowLayout());
+				row.add(new JLabel("Server Host"));
+				final JTextField serverHost=new JTextField(15);
+				serverHost.setText(serverHostIP);
+				row.add(serverHost);
+				jp.add(row);
+				row=new JPanel(new FlowLayout());
+				row.add(new JLabel("Server Host"));
+				final JTextField serverPort=new JTextField(15);
+				serverPort.setText(serverPortVal);
+				row.add(serverPort);
+				jp.add(row);
+				row=new JPanel(new FlowLayout());
+				JButton okay=new JButton("Okay");
+				row.add(okay);
+				okay.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						Player.serverHostIP=serverHost.getText();
+						Player.serverPortVal=serverPort.getText();
+						p.startNetworkConnection();
+						jd.setVisible(false);
+					}					
+				});
+				jp.add(row);
+				jd.pack();
+				jd.setModal(true);
+				jd.setVisible(true);
+			}
+		});
+//		JMenuItem gameSetup=new JMenuItem("Game");
+//		settings.add(gameSetup);
+		//game name, game map, players
 		
 		f.setJMenuBar(jmb);
 		f.getContentPane().add("Center", p.mapView);
 		f.pack();
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		p.startThreads(args[0],args[1]);
+		serverHostIP=args[0];
+		serverPortVal=args[1];
+		p.startThreads();
 	}
 	
-	
-	Player p;
 
 	public Player() {
 		myShip=Ship.rand(""+(int)(Math.random()*1000));
-		myShip.playerName=playerDisplayName;
+		myShip.setPlayerName(playerDisplayName);
 		addMyItem(myShip);
 		p=this;
 		mapView=new MapView();
@@ -149,7 +248,6 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		sendNetworkMessage(CREATE + myShip);
 	}
 
-	long lastmove=0;
 	private void moveUp() {
 		if (!myShip.isAlive()) {
 			return;
@@ -180,7 +278,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	/**
 	 *  Description of the Method 
 	 */
-	long lastturn=0;
+	
 	private void moveLeft() {
 		if (!myShip.isAlive()) {
 			return;
@@ -205,8 +303,6 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		}
 	}
 
-	static int MAXLASERSHOTS=8;
-	int activeLaserCount=0;
 	private void fireLaser() {
 		if (!myShip.isAlive()) {
 			return;
@@ -220,8 +316,6 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		}
 	}
 
-	static int MAXMISSILEHOTS=2;
-	int activeMissileCount=0;
 	private void fireMissile() {
 		if (!myShip.isAlive()) {
 			return;
@@ -348,7 +442,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		}
 	}	
 
-	public void startThreads(final String host,final String port) {
+	public void startThreads() {
 		//repaint thread
 		new Thread(){
 			public void run() {
@@ -382,50 +476,84 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 				}
 			}
 		}.start();
-		//sync network send update thread
-		new Thread(){
-			public void run() {
-				try {
-					long last=System.currentTimeMillis();
-					while(true) {
-						Thread.sleep(System.currentTimeMillis()-last+AUTOSYNCSENDDELAY);
-						last=System.currentTimeMillis();
-						p.sendSelfStatus();
-					}
-				} catch (Exception e){
-					System.out.println("MyError network status send error");
-				}
+		startNetworkConnection();
+	}
+
+	public void startNetworkConnection() {
+		if (socket!=null) {
+			try {
+				socket.close();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-		}.start();
-		
+			socket=null;
+			out=null;
+			br=null;
+		}
 		//network commadn listener thread
+		Socket s=null;
+		try {
+			s = new Socket(serverHostIP, Integer.parseInt(serverPortVal));
+		} catch (NumberFormatException e1) {
+			e1.printStackTrace();
+		} catch (UnknownHostException e1) {
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		final Socket socket=s;
+		System.out.println("connect to "+serverHostIP+" "+serverPortVal);
+		try {
+			out=socket.getOutputStream();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		try {
+			br=new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+//		OutputStream o=socket.getOutputStream();
 		new Thread() {
 			public void run() {
 				try {
-					Socket ss=new Socket(host, Integer.parseInt(port));
-					out=ss.getOutputStream();
-					BufferedReader br=new BufferedReader(new InputStreamReader(ss.getInputStream()));
-					OutputStream o=ss.getOutputStream();
-					o.write(("__CREATE name:"+gname+" max:6 refill:1\n").getBytes());
-					o.write(("__JOIN name:" + gname+"\n").getBytes());
+					out.write(("__CREATE name:"+gname+" max:6 refill:1\n").getBytes());
+					out.write(("__JOIN name:" + gname+"\n").getBytes());
 					String r=br.readLine();
 					if (r.indexOf("JOINED")>=0 && id==-1) 
 						id = Integer.parseInt(r.substring(r.lastIndexOf(" ")).trim());
 					p.join();
-					while (true) {
+					while (socket!=null) {
 						Thread.yield();
 						r=br.readLine();
 						if (r==null) break;
 						receiveNetworkMessage(r);
 					}
+					System.out.println("close connection");
 				} catch (Exception e) {
 					System.out.println("MyError network message received error");
 					e.printStackTrace();
 				}
 			}
 		}.start();
+		//sync network send update thread
+		new Thread(){
+			public void run() {
+				try {
+					long last=System.currentTimeMillis();
+					while(socket!=null) {
+						Thread.sleep(System.currentTimeMillis()-last+AUTOSYNCSENDDELAY);
+						last=System.currentTimeMillis();
+						p.sendSelfStatus();
+					}
+					System.out.println("close connection2");
+				} catch (Exception e){
+					System.out.println("MyError network status send error");
+				}
+			}
+		}.start();
+		
 	}
-
 	/**
 	 *  Description of the Method 
 	 *
@@ -463,8 +591,6 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	}
 
 
-	String currKeys="";
-
 	public void keyPressed(KeyEvent evt) {
 		char ch = Character.toUpperCase(evt.getKeyChar());
 		if (currKeys.indexOf(ch)<0) currKeys+=ch;
@@ -477,8 +603,6 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	public void keyTyped(KeyEvent evt) {
 	}
 	
-	String temp="";
-
 	private void receiveUserCommand() {
 		if (myShip==null) return;
 //		System.out.println("currKey="+currKeys);
@@ -517,12 +641,10 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		}
 		if (currKeys.indexOf("N")>=0) {
 			myShip.setRandomShipShape();
-			myShip.colorIndex=(int)(Math.random()*4);
 		}
 		if (currKeys.indexOf("T")>=0) {
 			addAsteroid();
 		}
-
 	}
 
 	private void addAsteroid() {
@@ -602,7 +724,6 @@ System.out.println("bad value "+s);
 	public void mouseExited(MouseEvent e) {
 	}
 
-	double targetDir=0;
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
