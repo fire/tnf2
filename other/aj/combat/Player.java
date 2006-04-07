@@ -267,7 +267,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 			if (tt.id.equals(t.id)) {
 				tt.copyVals(t);
 				if (tt instanceof Ship) {
-					((Ship)t).copyShipVals((Ship)tt);
+					((Ship)tt).copyShipVals((Ship)t);
 				}
 				found=true;
 				break;
@@ -442,12 +442,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 					removeItem(c);
 				}
 			}
-			else if (s.startsWith(CREATE)) {
-				s = s.substring(s.indexOf(" ") + 1);
-				CombatItem c = parse(s);
-				addItem(c);
-			}
-			else if (s.startsWith(UPDATE)) {
+			else if (s.startsWith(CREATE)|| s.startsWith(UPDATE)) {
 				s = s.substring(s.indexOf(" ") + 1);
 				CombatItem c = parse(s);
 				if (c != null) {
@@ -549,6 +544,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		}
 		if (currKeys.indexOf("N")>=0) {
 			myShip.setRandomShipShape();
+			myShip.colorIndex=(int)(Math.random()*4);
 		}
 		if (currKeys.indexOf("T")>=0) {
 			addAsteroid();
