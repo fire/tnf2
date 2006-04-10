@@ -64,9 +64,9 @@ public class HTTP implements Runnable {
 			{"", IMGUNKNOWN, "Content-type:  unknown/unknown", ""}
 	//default
 			};
-	static boolean logFile = false, logAccess = false, logSuccess = false;
-	static int MAXSENDBUFF = 200000;
-	static String root;
+	boolean logFile = false, logAccess = false;
+	int MAXSENDBUFF = 200000;
+	String root;
 
 
 	/**
@@ -126,7 +126,7 @@ public class HTTP implements Runnable {
 	 *@param  s  Description of Parameter 
 	 *@return    The ContentType value 
 	 */
-	public String getContentType(String s) {
+	private String getContentType(String s) {
 		s = s.toLowerCase();
 		for (int a=0; a < info.length; a++) {
 			if (s.indexOf(info[a][0]) >= 0) {
@@ -143,22 +143,17 @@ public class HTTP implements Runnable {
 	 *
 	 *@exception  IOException  Description of Exception 
 	 */
-	public void readHeader() throws IOException {
-		Thread.yield();
+	private void readHeader() throws IOException {
+		mysock.setSoTimeout(5);
 		while (true) {
 			String input=IN.readLine();
-			if (input==null) throw new IOException();
-			if (input.toUpperCase().startsWith("GET ")) {request=input;break;}
+				if (input==null) throw new IOException();
+				if (input.toUpperCase().startsWith("GET ")) {
+					request=input;
+					break;
+				}
 		}
-		//System.out.println("request="+request);
 		request = request.trim();
-		//System.out.println("request="+request);
-		//    Thread.currentThread().yield();
-		//    String s=IN.readLine();
-//		while (IN.ready()) {
-//			Thread.currentThread().yield();
-//			IN.read();
-//		}
 	}
 
 
@@ -180,16 +175,12 @@ public class HTTP implements Runnable {
 			}
 			request = request.substring(0, request.indexOf("%")) + c + request.substring(request.indexOf("%") + 3);
 		}
-		//System.out.println("request="+request);
-		//this allows spaces in names.
 		if (request.toUpperCase().startsWith("GET ")) {
-//System.out.println("get found!");
 			fileName = request.substring(request.indexOf(" ")).trim();
 			if (fileName.toUpperCase().indexOf(" HTTP") >= 0) {
 				fileName = fileName.substring(0, fileName.toUpperCase().lastIndexOf(" HTTP")).trim();
 			}
 		}
-//System.out.println("fileName=<"+fileName+">");
 		while (fileName.indexOf("\\") >= 0) {
 			fileName = fileName.substring(0, fileName.indexOf("\\")) + "/" + fileName.substring(fileName.indexOf("\\") + 1);
 		}
@@ -207,9 +198,7 @@ public class HTTP implements Runnable {
 			}
 			fileName = pre + post;
 		}
-
 		File file = new File(root + fileName);
-
 		if (fileName.indexOf("..") >= 0) {
 			fileName = "/";
 			file = new File(root + fileName);
@@ -230,10 +219,7 @@ public class HTTP implements Runnable {
 			goodfile = false;
 		}
 
-		if (!logSuccess) {
-			log(root + fileName);
-		}
-		else if (goodfile) {
+		if (goodfile) {
 			log(root + fileName + " (success!)");
 		}
 		else {
@@ -241,10 +227,14 @@ public class HTTP implements Runnable {
 		}
 		log();
 		try {
-			IN.close();
-		}
+//			if (IN!=null) IN.close();
+//			if (OUT!=null) OUT.close();
+			if (mysock!=null) mysock.close();
+			}
 		catch (IOException IOE) {
+			IOE.printStackTrace();
 		}
+
 	}
 
 
@@ -288,8 +278,6 @@ public class HTTP implements Runnable {
 			System.out.println(log.trim());
 		}
 	}
-
-
 
 	/**
 	 *  Description of the Method 
@@ -336,21 +324,19 @@ public class HTTP implements Runnable {
 				"Date: " + (new java.util.Date().toString()) + "\n" + 
 				"Last-modified: " + new java.util.Date(file.lastModified()) + "\n" + 
 				getContentType(".html") + "\n" + 
-		//                  "Content-length: "+body.getBytes().length+"\n"+
+		                  "Content-length: "+body.getBytes().length+"\n"+
 				"\n";
 		try {
 			OUT.write((header + body).getBytes());
 			OUT.flush();
 			Thread.yield();
-			//      OUT.close();
-			mysock.close();
 		}
 		catch (IOException IOE) {
+			IOE.printStackTrace();
 			goodfile = false;
 			//      System.out.println("MyError: cannot send requested Directory ("+fileName+")"+ IOE);
 		}
 	}
-
 
 	/**
 	 *  Description of the Method 
@@ -360,7 +346,7 @@ public class HTTP implements Runnable {
 			Class aClass = getClass();
 			InputStream IN = aClass.getResourceAsStream(fileName);
 			if (IN==null) {
-				mysock.close();
+//				mysock.close();
 				goodfile=false;
 				return;
 			}
@@ -387,17 +373,16 @@ public class HTTP implements Runnable {
 					break;
 				}
 			}
-			IN.close();
-			OUT.close();
-			mysock.close();
+//			if (IN!=null) IN.close();
+//			if (OUT!=null) OUT.close();
+//			if (mysock!=null) mysock.close();
 		}
 		catch (IOException IOE) {
+			IOE.printStackTrace();
 			goodfile = false;
 			System.out.println("MyError: no internal file found (" + fileName + ") " + IOE);
 		}
-
 	}
-
 
 	/**
 	 *  Description of the Method 
@@ -429,16 +414,16 @@ public class HTTP implements Runnable {
 				}
 				c -= MAXSENDBUFF;
 			}
-			IN.close();
-			OUT.close();
-			mysock.close();
+//			IN.close();
+//			OUT.close();
+//			mysock.close();
 		}
 		catch (IOException IOE) {
+			IOE.printStackTrace();
 			goodfile = false;
 			System.out.println("MyError: cannot send file (" + fileName + ") " + IOE);
 		}
 	}
-
 
 	/**
 	 *  Description of the Method 
@@ -457,6 +442,7 @@ public class HTTP implements Runnable {
 			OUT.close();
 		}
 		catch (IOException IOE) {
+			IOE.printStackTrace();
 			goodfile = false;
 			System.out.println("MyError: cannot send NOT FOUND page." + IOE);
 		}
@@ -476,16 +462,15 @@ public class HTTP implements Runnable {
 			host = InetAddress.getLocalHost().toString();
 		}
 		catch (UnknownHostException UHE) {
+			UHE.printStackTrace();
 		}
 		String movedBody = "<HTML><HEAD><TITLE>301 Moved Permanently</TITLE></HEAD>" + 
 				"<BODY><H1>Moved Permanently</H1>" + 
 				"The document has moved <A HREF=\"http://" + 
 				host + "/" + next + 
 				"\">here</A>.<P></BODY></HTML>";
-
 		return "HTTP/1.1 301 Moved Permanently\n" + 
 				"Date: " + (new java.util.Date().toString()) + "\n" + 
-		// Loacation http://students.cs.byu.edu/~istook/
 				"Location: http://" + host + "/" + next + "\n" + 
 				"Connection: close\n" + 
 				"Content-Type: text/html\n" + 
@@ -507,10 +492,9 @@ public class HTTP implements Runnable {
 
 	public static void main(String s[]) {
 		if (s.length == 0 || s.length > 3) {
-			System.out.println("FORMAT: java HTTP <port> [root [-fav]]");
+			System.out.println("FORMAT: java HTTP <port> [root [-fa]]");
 			System.out.println("f=log files requested");
 			System.out.println("a=log host accessing");
-			System.out.println("s=verify success send");
 			System.exit(0);
 		}
 		int port = 80;
@@ -521,46 +505,38 @@ public class HTTP implements Runnable {
 			serverSocket = new ServerSocket(port);
 		}
 		catch (NumberFormatException NFE) {
+			NFE.printStackTrace();
 			System.out.println("myError: Bad number in port (" + s[0] + ")" + NFE);
 			System.exit(0);
 		}
 		catch (IOException IOE) {
+			IOE.printStackTrace();
 			System.out.println("myError: Server Socket is busy " + IOE);
 			System.exit(0);
 		}
+		String root="";boolean logFile=false,logAccess=false;
 		if (s.length > 1) {
 			root = s[1];
 		}
-		else {
-			root = "";
-		}
-
 		if (s.length == 3) {
 			logFile = s[2].toUpperCase().indexOf("F") >= 0;
 			logAccess = s[2].toUpperCase().indexOf("A") >= 0;
-			logSuccess = s[2].toUpperCase().indexOf("S") >= 0;
+//			logSuccess = s[2].toUpperCase().indexOf("S") >= 0;
 		}
-
 		while (true) {
 			try {
 				Socket socket = serverSocket.accept();
 				HTTP job = new HTTP(socket);
+				job.root=root;
+				job.logAccess=logAccess;
+				job.logFile=logFile;
 				new Thread(job).start();
 				Thread.yield();
 			}
 			catch (IOException IOE) {
+				IOE.printStackTrace();
 				System.out.println("myError:  Cannot connect incomming socket " + IOE);
 			}
 		}
 	}
-
 }
-
-/*
- * Class aClass = getClass();
- * InputStream in = aClass.getResourceAsStream("image.gif");
- * byte buffer[] = new byte[in.available()];
- * in.read(buffer);
- * Toolkit toolkit = Toolkit.getDefaultToolkit();
- * Image image = toolkit.createImage(buffer);
- */
