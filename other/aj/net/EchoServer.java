@@ -17,7 +17,7 @@ public class EchoServer {
 	boolean debug=false;
 	boolean silent=false;
 	boolean client=false;
-	int localPort=-1;
+	int localPort=8080;
 	
 	public void showHelp() {
 		System.out.println("Format aj.net.EchoServer [options]");
@@ -81,13 +81,9 @@ public class EchoServer {
 				if (a<args.length-1) setDebug(args[a+1]);
 				else setDebug("TRUE");
 			}
-			if (a<args.length-1 && args[a].toUpperCase().startsWith("--")) {
-				showHelp();System.exit(0);
-			}
-			if (a<args.length-1 && args[a].toUpperCase().startsWith("-HELP")) {
-				showHelp();System.exit(0);
-			}
-			if (a<args.length-1 && args[a].toUpperCase().startsWith("-?")) {
+			if (a<args.length && args[a].toUpperCase().startsWith("--") ||
+					a<args.length && args[a].toUpperCase().startsWith("-HELP") ||
+					a<args.length && args[a].toUpperCase().startsWith("-?")) {
 				showHelp();System.exit(0);
 			}
 			if (a<args.length-1 && args[a].toUpperCase().startsWith("-L")) {
@@ -147,7 +143,8 @@ public class EchoServer {
 	}
 
 	public static void main(String args[]) {
-		new EchoServer(args).start();
+		EchoServer e=new EchoServer(args);
+		e.start();
 	}
 	
 	public EchoServer(){};
