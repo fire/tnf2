@@ -174,6 +174,9 @@ public class Proxy {
 					try {
 						while (true) {
 							byte b[]=new byte[10000];
+							if (ci.available()==0) {
+								Thread.yield();continue;
+							}
 							int n=ci.read(b);
 							if (n==-1) break;
 							fromClient.write(b,0,n);
@@ -181,12 +184,14 @@ public class Proxy {
 							so.write(b,0,n);
 							so.flush();
 						}
-						fromClient.close();
-						closeSocket();
+//						ci.close();
+//						so.close();
+//						fromClient.close();
+//						closeSocket();
 					} catch (Exception ioe) {
 						ioe.printStackTrace();					
+//						closeSocket();
 					}
-					closeSocket();
 				}
 			}.start();
 			new Thread() {
@@ -194,6 +199,9 @@ public class Proxy {
 					try {
 						while (true) {
 							byte b[]=new byte[10000];
+							if (si.available()==0) {
+								Thread.yield();continue;
+							}
 							int n= si.read(b);
 							if (n==-1) break;
 							fromServer.write(b,0,n);
@@ -201,12 +209,14 @@ public class Proxy {
 							co.write(b,0,n);
 							co.flush();
 						}
-						closeSocket();
-						co.close();
+//						si.close();
+//						co.close();
+//						closeSocket();
+//						co.close();
 					} catch (Exception e) {
 						e.printStackTrace();
+//						closeSocket();
 					}
-					closeSocket();
 				}
 			}.start();
 			}catch (Exception e) {
