@@ -46,7 +46,9 @@ public class MapView extends JPanel {
 		Graphics g=i.getGraphics();
 		g.setColor(Color.black);
 		g.fillRect(0,0,getWidth(),getHeight());
-		if (infoOn) displayInfo(g);
+		if (infoOn) {
+			displayInfo(g);
+		}
 
 		g.setColor(Color.white);
 		
@@ -82,13 +84,6 @@ public class MapView extends JPanel {
 				drawStars(g);
 				for (int c=0; c < displayItems.size(); c++) {
 					CombatItem t = (CombatItem) displayItems.elementAt(c);
-					Thing tt=(Thing)t;
-//					if (
-//					(myShip.x<getWidth()/2 && tt.x>getWidth()/2 && a==-1) ||
-//					(myShip.x>getWidth()/2 && tt.x<getWidth()/2 && a==1) 
-//					|| (myShip.y>getHeight()/2 && tt.y<getHeight()/2 && b==1) 
-//					|| (myShip.y<getHeight()/2 && tt.y>getHeight()/2 && b==-1) 
-//					)
 					t.display(g);
 				}
 				g.translate(-a*ARENASIZE,-b*ARENASIZE);
@@ -114,9 +109,8 @@ public class MapView extends JPanel {
 	private void displayInfo(Graphics g) {
 		String help="move      (asdw) (hjkl) (2468)\n" +
 				"fire      <space> (5)\n"+
-				"center    'c'\n"+
-				"mouseTurn 'm'\n"+
-				"help      '?' '/'";
+				"mouseOff 'm'\n"+
+				"help      '?' '/'\n"+Player.scores.getScoreString();
 		int count=0;
 		g.setColor(Color.white);
 		while (help.indexOf("\n")>=0) {

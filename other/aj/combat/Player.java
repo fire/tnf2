@@ -94,14 +94,15 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 	static String serverHostIP="127.0.0.1";
 	static String serverPortVal="8080";
 	
-	//uberstioid
+	static Scores scores;
+	
 	//TODO scoring - kill /vs kill  (tom kill mike  vs mike)
 	//TODO game settings () limited asteroids
 	//TODO map obsticals/walls
 	//TODO cloak
 	//TODO shields
-
 	//TODO guided missile
+	
 	//TODO power-ups
 	//TODO hyperspace
 	//TODO use gun points in ship
@@ -128,9 +129,9 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		f.getContentPane().setLayout(new BorderLayout());
 		JMenuBar jmb=new JMenuBar();
 		
-		JMenu settings=new JMenu("Settings");
+		JMenu settings=new JMenu("Einstellungen");
 		jmb.add(settings);
-		JMenuItem playerSetup=new JMenuItem("Player");
+		JMenuItem playerSetup=new JMenuItem("Spieler");
 		settings.add(playerSetup);
 		playerSetup.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -138,7 +139,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 				JPanel jp=new JPanel(new GridLayout(0,1));
 				jd.getContentPane().add("Center",jp);
 				JPanel row=new JPanel(new FlowLayout());
-				row.add(new JLabel("Player Name"));
+				row.add(new JLabel("Wie heisst du"));
 				final JTextField playerNameTextField=new JTextField(15);
 				playerNameTextField.setText(p.myShip.getPlayerName());
 				row.add(playerNameTextField);
@@ -146,16 +147,19 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 				row=new JPanel(new FlowLayout());
 				final JComboBox jc=new JComboBox(Ship.shipColorNames);
 				jc.setSelectedIndex(p.myShip.getColorIndex());
-				row.add(new JLabel("Color"));
+				row.add(new JLabel("Farbe"));
 				row.add(jc);
 				jp.add(row);
 				row=new JPanel(new FlowLayout());
-				JButton okay=new JButton("Okay");
+				JButton okay=new JButton("treffen Sie zu");
 				row.add(okay);
 				okay.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						p.myShip.setPlayerName(playerNameTextField.getText());
 						p.myShip.setColorIndex(jc.getSelectedIndex());
+						if (!scores.getPlayerName().equalsIgnoreCase(playerNameTextField.getText())) {
+							scores=new Scores(playerNameTextField.getText());
+						}
 						jd.setVisible(false);
 					}					
 				});
@@ -165,7 +169,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 				jd.setVisible(true);
 			}
 		});
-		JMenuItem serverSetup=new JMenuItem("Server");
+		JMenuItem serverSetup=new JMenuItem("Bediener");
 		settings.add(serverSetup);
 		//server host,port
 		serverSetup.addActionListener(new ActionListener() {
@@ -174,13 +178,13 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 				JPanel jp=new JPanel(new GridLayout(0,1));
 				jd.getContentPane().add("Center",jp);
 				JPanel row=new JPanel(new FlowLayout());
-				row.add(new JLabel("Server Host"));
+				row.add(new JLabel("Bediener Host"));
 				final JTextField serverHost=new JTextField(15);
 				serverHost.setText(serverHostIP);
 				row.add(serverHost);
 				jp.add(row);
 				row=new JPanel(new FlowLayout());
-				row.add(new JLabel("Server Host"));
+				row.add(new JLabel("Bediener Port"));
 				final JTextField serverPort=new JTextField(15);
 				serverPort.setText(serverPortVal);
 				row.add(serverPort);
@@ -225,6 +229,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		mapView=new MapView();
 		mapView.setDisplayItems(allItems);
 		mapView.setCenterItem(myShip);
+		scores=new Scores(playerDisplayName);
 	}
 
 	private void sendSelfStatus() {
@@ -338,6 +343,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		Thing t=(Thing)c;
 		String id=t.getId();
 		if (id.equals(myShip.getId())) {
+			scores.addDeath("unknown");
 			myShip.setAlive(false);
 			return;
 		}
@@ -386,7 +392,6 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 		for (int a = 0; a < allItems.size(); a++) {
 			Thing t=(Thing)allItems.elementAt(a);
 			t.updatePos();
-
 			if (t instanceof Explosion) {
 				if (((Explosion)t).expired()) {
 					removeItem((CombatItem)t);
@@ -399,7 +404,11 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 				a--;
 				continue;
 			}
-			if (myItems.contains(t) && !(t instanceof Asteroid)) {
+//			don't do asteroid check here, check only if it hits My stuff below
+			if (t instanceof Asteroid) {
+				continue;
+			}
+			if (myItems.contains(t)) {
 				if (t ==myShip && !myShip.isAlive()) {
 					continue;
 				}
@@ -413,14 +422,14 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 							sendNetworkMessage(CREATE+e);
 							removeItem((CombatItem)t);
 							removeItem((CombatItem)hit);
-							sendNetworkMessage(DESTROY+t);
-							sendNetworkMessage(DESTROY+hit);
+							sendNetworkMessage(DESTROY+t+myShip.getPlayerName());
+							sendNetworkMessage(DESTROY+hit+myShip.getPlayerName());
 							a--;
 							break;
 						}
 						else if (hit instanceof Asteroid) {
 							removeItem((CombatItem)t);
-							sendNetworkMessage(DESTROY+t);
+							sendNetworkMessage(DESTROY+t+myShip.getPlayerName());
 							Asteroid A=((Asteroid)hit).breakup();
 							if (A!=null) {
 								addItem(A);
@@ -428,14 +437,14 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 							}
 							else if (!((Asteroid)hit).isBreader()) {
 								removeItem((CombatItem)hit);
-								sendNetworkMessage(DESTROY+hit);
+								sendNetworkMessage(DESTROY+hit+myShip.getPlayerName());
 							}
 						}
 						else if (hit instanceof Missile) {
 							removeItem((CombatItem)t);
 							removeItem((CombatItem)hit);
-							sendNetworkMessage(DESTROY+t);
-							sendNetworkMessage(DESTROY+hit);
+							sendNetworkMessage(DESTROY+t+myShip.getPlayerName());
+							sendNetworkMessage(DESTROY+hit+myShip.getPlayerName());
 							a--;
 							break;
 						}
@@ -481,6 +490,17 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 			}
 		}.start();
 		startNetworkConnection();
+	}
+	
+	private void collision(Thing one,Thing two) {
+		//special cases
+		//if explosion - nothing
+		//if laser - dest laser
+		//if missil - dest missil + add small exp
+		//if asteroid && !asteroid -- breakup asteroid (2x vs missile)
+		//if ship && !my laser --
+		//    check shield - armor - score then dest ship + exp
+		//asteroid on asteroid == bounce
 	}
 
 	public void startNetworkConnection() {
@@ -576,6 +596,7 @@ public class Player implements KeyListener, MouseListener, MouseMotionListener {
 				s = s.substring(s.indexOf(" ") + 1);
 				CombatItem c = parse(s);
 				if (id.equals(myShip.id)) {
+					scores.addDeath(s.substring(s.lastIndexOf(" ")+1));
 					myShip.setAlive(false);
 				}
 				else {
@@ -732,4 +753,6 @@ System.out.println("bad value "+s);
 		// TODO Auto-generated method stub
 		
 	}
+
+
 }

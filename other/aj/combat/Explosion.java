@@ -15,6 +15,13 @@ public class Explosion extends Thing implements CombatItem {
 	private long lifeOver;
 	private long minExplostionLife=1000;
 
+	//TODO collaps ship.  
+	//Take ship shape.  add all lines.  move lines randomly for 1 sec then decay
+	//need array of line start points x,y
+	//need array of line lengths
+	//need array of line rotation
+	//need array of line vx,vy
+	//need array of line drot
 	
 	/**
 	 *  Description of the Method 
