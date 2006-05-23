@@ -8,8 +8,8 @@ public class Grid {
 
 	public static final char EMPTY = Dungeon.EMPTY;
 	public static final char SOLID = Dungeon.SOLID;
-	public static final char DOOR = Dungeon.DOOR;
-
+	public static final char DOOR = Dungeon.DOOR, ROOM=Dungeon.ROOM;
+	public static final char ERROR = 'E';
 	/**
 	 * @param args
 	 */
@@ -122,4 +122,22 @@ public class Grid {
 		}
 		return res;
 	}
+	
+	public char getGridValue(int x,int y) {
+		if (x<0 || y<0 || y>=grid.length || x>=grid[y].length) return ERROR;
+		//		public boolean nextSquareOpen(double x,double y,double dir) {
+//			Grid grid=parent.getGrid();
+//			gridmap=grid.getGrid();
+//			int tx=(int)x,ty=(int)y;
+//			if (ty<0 || tx<0) return false;
+//			if (gridmap.length-1<ty || gridmap[ty].length-1<tx) return false;
+		return grid[y][x];
+//			if (dir==RIGHT && ty>=0 && gridmap[ty].length>tx && gridmap[ty][tx+1]==Grid.EMPTY) return true;
+//			if (dir==DOWN && tx>=0 && gridmap.length>ty+1 && gridmap[ty+1][tx]==Grid.EMPTY) return true;
+//			if (dir==LEFT && ty>=0 && tx>=1 && gridmap[ty][tx-1]==Grid.EMPTY) return true;
+//			if (dir==UP && tx>=0 && ty>=0 && gridmap[ty][tx]==Grid.EMPTY) return true;
+//			return false;
+
+	}
+	
 }

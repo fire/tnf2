@@ -15,14 +15,14 @@ public class Bot {
 	double dir;
 	double speed;
 	private GridGui parent;
-	static private double UP=Math.PI*3/2,DOWN=Math.PI/2,RIGHT=0,LEFT=Math.PI;
+	static double UP=Math.PI*3/2;
+	static double DOWN=Math.PI/2,RIGHT=0,LEFT=Math.PI;
 	static private double dirChoice[]={UP,DOWN,LEFT,RIGHT};
-	private char[][] gridmap;
 
-	public Bot(GridGui parent) {
-		this.parent=parent;
-		this.dir=dirChoice[(int)(Math.random()*4)];
-		this.speed=Math.random()*1+1;
+	public Bot(GridGui p) {
+		parent=p;
+		dir=dirChoice[(int)(Math.random()*4)];
+		speed=Math.random()*4+1;
 		Grid grid=parent.getGrid();
 		char gridmap[][]=grid.getGrid();
 		while (gridmap[(int)y][(int)x]!=Grid.EMPTY) {
@@ -30,13 +30,6 @@ public class Bot {
 			this.y=(int)(Math.random()*parent.getCellSize());			
 		}
 		getNewDir();
-		String res="";
-		if (dir==RIGHT) res+="RIGHT";
-		if (dir==LEFT) res+="LEFT";
-		if (dir==UP) res+="UP";
-		if (dir==DOWN) res+="DOWN";
-
-		System.out.println("test="+x+","+y+" d="+res);
 	}
 	
 	public double getX() {return x;	}
@@ -46,54 +39,74 @@ public class Bot {
 		if (lastMoveTime==-1) lastMoveTime=System.currentTimeMillis();
 		double dt=System.currentTimeMillis()-lastMoveTime;
 		lastMoveTime=System.currentTimeMillis();
-		Grid grid=parent.getGrid();
-		gridmap=grid.getGrid();
-
-		if (nextSquareOpen(x,y,dir)) {
-			x=x+dt*Math.cos(dir)*speed/1000;
-			y=y+dt*Math.sin(dir)*speed/1000;
+		double dx=speed*dt*Math.cos(dir)/1000;
+		double dy=speed*dt*Math.sin(dir)/1000;
+		if (dir==RIGHT) {
+			if (canMoveToGridPos(x+dx+1,y)) {
+				x+=dx;
+			}
+			else {
+				x=(int)(x+1);
+				getNewDir();
+			}
 		}
-		else {
-			getNewDir();
+		else if (dir==LEFT) {
+			if (canMoveToGridPos(x+dx,y)) {
+				x+=dx;
+			}
+			else {
+				x=(int)x;
+				getNewDir();
+			}
 		}
-		if (dir==UP || dir==DOWN) {
-			x=(int)x;
+		else if (dir==DOWN) {
+			if (canMoveToGridPos(x,y+dy+1)) {
+				y+=dy;
+			}
+			else {
+				y=(int)(y+1);
+				getNewDir();
+			}
 		}
-		if (dir==RIGHT || dir==LEFT) {
-			y=(int)y;
+		else if (dir==UP) {
+			if (canMoveToGridPos(x,y+dy)) {
+				y+=dy;
+			}
+			else {
+				y=(int)y;
+				getNewDir();
+			}
 		}
 	}
-
-	private boolean nextSquareOpen(double x,double y,double dir) {
+	
+	private boolean canMoveToGridPos(double xx,double yy) {
 		Grid grid=parent.getGrid();
-		char gridmap[][]=grid.getGrid();
-		int tx=(int)x,ty=(int)y;
-		if (ty<0 || tx<0) return false;
-		if (gridmap.length-1<ty || gridmap[ty].length-1<tx) return false;
-		if (dir==RIGHT && ty>=0 && gridmap[ty].length>tx && gridmap[ty][tx+1]==Grid.EMPTY) return true;
-		if (dir==DOWN && tx>=0 && gridmap.length>ty+1 && gridmap[ty+1][tx]==Grid.EMPTY) return true;
-		if (dir==LEFT && ty>=0 && tx>=1 && gridmap[ty][tx-1]==Grid.EMPTY) return true;
-		if (dir==UP && tx>=0 && ty>=0 && gridmap[ty][tx]==Grid.EMPTY) return true;
-		return false;
+		return canMoveToGridValue(grid.getGridValue((int)xx,(int)yy));
 	}
+	
+	private boolean canMoveToGridValue(char c) {
+//		System.out.println("can move check="+c);
+		if (c==Grid.SOLID || c==Grid.ERROR) return false;
+		return true;
+	}
+	
 
-	private void getNewDir() {
-		Grid grid=parent.getGrid();
-		gridmap=grid.getGrid();
-		
+	private void getNewDir() {		
+		x=(int)x;y=(int)y;
+//		System.out.println("new dir called x="+x+" y="+y);
 		double lastDir=dir;
 		boolean canGoUp=false,canGoDown=false,canGoLeft=false,canGoRight=false;
 		
-		if (nextSquareOpen(x,y,RIGHT)) {//gridmap[yt].length-2>xt && gridmap[yt][xt]==Grid.EMPTY) {
+		if (canMoveToGridPos(x+1,y)) {
 			canGoRight=true;
 		}
-		if (nextSquareOpen(x,y,LEFT)) {//(int)(x)>1 &&gridmap[(int)(y+0)][(int)(x)-1]==Grid.EMPTY) {
+		if (canMoveToGridPos(x-1,y)) {
 			canGoLeft=true;
 		}
-		if (nextSquareOpen(x,y,DOWN)) {//gridmap.length-2>(int)(y)+1 && gridmap[(int)(y+1)][(int)(x+0)]==Grid.EMPTY) {
+		if (canMoveToGridPos(x,y+1)) {
 			canGoDown=true;
 		}
-		if (nextSquareOpen(x,y,UP)) {//(int)(y)>1 && gridmap[(int)(y)-1][(int)(x+0)]==Grid.EMPTY) {
+		if (canMoveToGridPos(x,y-1)) {
 			canGoUp=true;
 		}
 
@@ -126,17 +139,19 @@ public class Bot {
 		if (lastDir==LEFT) res+="from=left ";
 		if (lastDir==UP) res+="from=up ";
 		if (lastDir==DOWN) res+="from=down ";
-		if (dir==RIGHT) res+=" to=RIGHT "+dir;
-		if (dir==LEFT) res+=" to=LEFT "+dir;
-		if (dir==UP) res+=" to=UP "+dir;
-		if (dir==DOWN) res+=" to=DOWN "+dir;
+		if (dir==RIGHT) res+=" to=RIGHT ";
+		if (dir==LEFT) res+=" to=LEFT ";
+		if (dir==UP) res+=" to=UP ";
+		if (dir==DOWN) res+=" to=DOWN ";
+		res+=" (";
 		if (canGoUp) res+="up,";
 		if (canGoDown) res+="down,";
 		if (canGoRight) res+="right,";
 		if (canGoLeft) res+="left";
+		res+=") ";
 //		System.out.println(" u="+canGoUp+" d="+canGoDown+" l="+canGoLeft+" r="+canGoRight+" "+res);
 		if (dir!=lastDir) {
-			System.out.println("dirChange "+res);
+//			System.out.println("dirChange "+res);
 		}
 	}
 
@@ -144,5 +159,10 @@ public class Bot {
 		g.translate((int)(x*scale),(int)(y*scale));
 		g.drawOval(-scale/2,-scale/2,scale,scale);
 		g.translate(-(int)(x*scale),-(int)(y*scale));
+	}
+
+	public void skipMove() {
+		if (lastMoveTime==-1) lastMoveTime=System.currentTimeMillis();
+		lastMoveTime=System.currentTimeMillis();		
 	}
 }

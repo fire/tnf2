@@ -10,28 +10,35 @@ public class GridGui {
 		new GridGui();
 	}
 
-	static final private int CELLSIZE=13;
-	private Grid grid;
-	private Player player;
-	private Vector bots=new Vector();
-	private int numActiveBots=1;
-	GridPanel gridPanel;
-	
-	public GridGui() {
-		grid=new Grid(1,1,1,CELLSIZE);
-		System.out.println("g="+grid);
-		player=new Player(CELLSIZE/2,CELLSIZE/2,Math.random()*Math.PI*2);//Math.random()*CELLSIZE,Math.random()*CELLSIZE,Math.random()*Math.PI*2);
-		initilizeBots();
-		
-		gridPanel=new GridPanel(this);
+	static final private int CELLSIZE = 13;
 
-		JFrame jf=new JFrame("GridGui");
+	private Grid grid;
+
+	private Player player;
+
+	private Vector bots = new Vector();
+
+	private int numActiveBots = 15;
+
+	GridPanel gridPanel;
+
+	public boolean moveActive=true;
+
+	public GridGui() {
+		grid = new Grid(1, 1, 1, CELLSIZE);
+		System.out.println("g=" + grid);
+		player = new Player(5,5, 0);// Math.random()*CELLSIZE,Math.random()*CELLSIZE,Math.random()*Math.PI*2);
+		initilizeBots();
+
+		gridPanel = new GridPanel(this);
+
+		JFrame jf = new JFrame("GridGui");
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		jf.setSize(600,400);
+		jf.setSize(600, 400);
 		jf.getContentPane().setLayout(new BorderLayout());
-		jf.getContentPane().add("Center",gridPanel);
+		jf.getContentPane().add("Center", gridPanel);
 		jf.setVisible(true);
-		
+
 		startThreads();
 	}
 
@@ -42,29 +49,36 @@ public class GridGui {
 					try {
 						Thread.sleep(30);
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					for (int a=0;a<bots.size();a++) {
-						Bot bot=(Bot)bots.elementAt(a);
-						bot.move();
+					if (moveActive) {
+						for (int a = 0; a < bots.size(); a++) {
+							Bot bot = (Bot) bots.elementAt(a);
+							bot.move();
+						}
+					}
+					else {
+						for (int a = 0; a < bots.size(); a++) {
+							Bot bot = (Bot) bots.elementAt(a);
+							bot.skipMove();
+						}
+						
 					}
 					gridPanel.repaint();
 				}
 			}
-					}.start();
-		
+		}.start();
 	}
 
 	private void initilizeBots() {
-		while (bots.size()<numActiveBots) {
-			Bot bot=new Bot(this);
-			if (grid.getGrid()[(int)bot.getY()][(int)bot.getX()]==Grid.EMPTY) {
+		while (bots.size() < numActiveBots) {
+			Bot bot = new Bot(this);
+			if (grid.getGrid()[(int) bot.getY()][(int) bot.getX()] == Grid.EMPTY) {
 				bots.addElement(bot);
 			}
 		}
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public Player getPlayer() {
