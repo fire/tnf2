@@ -77,7 +77,7 @@ public class GridPanel extends JPanel implements MouseListener {
 ////		System.out.println("cell clicked "+c);
 //		c=new Point((int)(c.getX()+parent.getPlayer().getX()),(int)(c.getY()+parent.getPlayer().getY()));
 		System.out.println("actual clicked "+x+" "+y);
-		Bot bot=new Bot(parent);
+//		Bot bot=new Bot(parent);
 //		boolean up=bot.nextSquareOpen(x,y,Bot.UP);
 //		boolean down=bot.nextSquareOpen(x,y,Bot.DOWN);
 //		boolean left=bot.nextSquareOpen(x,y,Bot.LEFT);
