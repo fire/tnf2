@@ -3,16 +3,17 @@ package aj.testing;
 import java.util.Date;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 public class weekday {
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public static void main(String s[]) {
 		long sec = 1000;

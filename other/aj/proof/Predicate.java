@@ -3,23 +3,27 @@ package aj.proof;
 import java.util.Vector;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 public class Predicate {
 	boolean notted = false;
+
 	Vector Termlist = new Vector();
+
 	String val = "ERROR";
 
-
 	/**
-	 *  Constructor for the Predicate object 
-	 *
-	 *@param  notted    Description of Parameter 
-	 *@param  val       Description of Parameter 
-	 *@param  Termlist  Description of Parameter 
+	 * Constructor for the Predicate object
+	 * 
+	 * @param notted
+	 *            Description of Parameter
+	 * @param val
+	 *            Description of Parameter
+	 * @param Termlist
+	 *            Description of Parameter
 	 */
 	public Predicate(boolean notted, String val, Vector Termlist) {
 		this.notted = notted;
@@ -27,11 +31,11 @@ public class Predicate {
 		this.Termlist = Termlist;
 	}
 
-
 	/**
-	 *  Constructor for the Predicate object 
-	 *
-	 *@param  P  Description of Parameter 
+	 * Constructor for the Predicate object
+	 * 
+	 * @param P
+	 *            Description of Parameter
 	 */
 	public Predicate(Predicate P) {
 		notted = P.notted;
@@ -45,11 +49,11 @@ public class Predicate {
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  Sublist  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param Sublist
+	 *            Description of Parameter
 	 */
 	public void sub(Vector Sublist) {
 		for (int a = 0; a < Sublist.size(); a++) {
@@ -62,12 +66,12 @@ public class Predicate {
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  P  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param P
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean equals(Predicate P) {
 		if (notted != P.notted) {
@@ -89,28 +93,26 @@ public class Predicate {
 		return true;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  P  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param P
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean resolveswith(Predicate P) {
-		if (P.val.equals(val) && P.Termlist.size() == Termlist.size() && 
-				P.notted != notted) {
+		if (P.val.equals(val) && P.Termlist.size() == Termlist.size()
+				&& P.notted != notted) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public String toString() {
 		String t;
@@ -129,29 +131,29 @@ public class Predicate {
 		return t;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static Predicate Parse(String S) {
 		return Parse(new Tokens(S));
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  T  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param T
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static Predicate Parse(Tokens T) {
 		boolean notted = false;
 		Vector Termlist = new Vector();
 		if (T.currType() == Token.PREDICATE) {
-			//<pred> ( <termlist> )
+			// <pred> ( <termlist> )
 			String val = T.currVal();
 			T.eat();
 			if (T.currType() != Token.LPAREN) {
@@ -159,7 +161,7 @@ public class Predicate {
 			}
 			T.eat();
 			Term t = Term.Parse(T);
-			//read first term  MUS BE ONE
+			// read first term MUS BE ONE
 			Termlist.addElement(t);
 			if (T.currType() == Token.COMA) {
 				T.eat();
@@ -176,8 +178,7 @@ public class Predicate {
 			}
 			T.eat();
 			return new Predicate(notted, val, Termlist);
-		}
-		else {
+		} else {
 			String val = "?Equals";
 			// <term> '=' <term>
 			Term t = Term.Parse(T);
@@ -188,7 +189,7 @@ public class Predicate {
 				return new Predicate(false, "EQ ERROR", null);
 			}
 			T.eat();
-			//eat equals sign
+			// eat equals sign
 			Termlist.addElement(t);
 			t = Term.Parse(T);
 			if (t.type == Token.ERROR) {
@@ -199,11 +200,11 @@ public class Predicate {
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  argv  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param argv
+	 *            Description of Parameter
 	 */
 	public static void main(String argv[]) {
 		String test = "?Predname(T1,t2,#inerfun(G3,x))";

@@ -10,28 +10,30 @@ import java.awt.Frame;
  */
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 public class FilePrompter {
 
-	//static funcitons
+	// static funcitons
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  f         Description of Parameter 
-	 *@param  fileType  Description of Parameter 
-	 *@param  choice    Description of Parameter 
-	 *@return           Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param f
+	 *            Description of Parameter
+	 * @param fileType
+	 *            Description of Parameter
+	 * @param choice
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static String GetFilename(Frame f, String fileType, String choice) {
 		FileDialog d;
 		if (choice.equalsIgnoreCase("load")) {
 			d = new FileDialog(f, "Read File", FileDialog.LOAD);
-		}
-		else {
+		} else {
 			d = new FileDialog(f, "Save File", FileDialog.SAVE);
 		}
 		d.setFile(fileType);
@@ -43,13 +45,14 @@ public class FilePrompter {
 		return filename;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  fileType  Description of Parameter 
-	 *@param  choice    Description of Parameter 
-	 *@return           Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param fileType
+	 *            Description of Parameter
+	 * @param choice
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static String GetFilename(String fileType, String choice) {
 		Frame bogusFrame = new Frame();
@@ -58,12 +61,12 @@ public class FilePrompter {
 		return filename;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  fileType  Description of Parameter 
-	 *@return           Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param fileType
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static String GetFilename(String fileType) {
 		Frame bogusFrame = new Frame();

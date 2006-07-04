@@ -22,21 +22,21 @@ import java.awt.Panel;
 import java.util.Date;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 public class DebtClock extends Applet {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	static boolean APPLET = false;
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void init() {
 		setLayout(new BorderLayout());
@@ -45,11 +45,11 @@ public class DebtClock extends Applet {
 		new Thread(c).start();
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  argv  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param argv
+	 *            Description of Parameter
 	 */
 	public static void main(String argv[]) {
 		Counter c = new Counter();
@@ -64,29 +64,30 @@ public class DebtClock extends Applet {
 }
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 class Counter extends Canvas implements Runnable {
-
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	Date starttime =new Date (974848592358L);//TUE Nov 21, 2000 1 day off
+
+	Date starttime = new Date(974848592358L);// TUE Nov 21, 2000 1 day off
+
 	long start = (long) ((double) 5699552.93871719 * 1000000);
+
 	long rate = (long) ((double) 686066526);
 
 	Image I = null;
 
-
 	/**
-	 *  Gets the PreferredSize attribute of the Counter object 
-	 *
-	 *@return    The PreferredSize value 
+	 * Gets the PreferredSize attribute of the Counter object
+	 * 
+	 * @return The PreferredSize value
 	 */
 	public Dimension getPreferredSize() {
 		if (getGraphics() == null) {
@@ -96,82 +97,80 @@ class Counter extends Canvas implements Runnable {
 		return new Dimension(F.stringWidth(getCurrDebt()), F.getHeight());
 	}
 
-
 	/**
-	 *  Gets the MinimumSize attribute of the Counter object 
-	 *
-	 *@return    The MinimumSize value 
+	 * Gets the MinimumSize attribute of the Counter object
+	 * 
+	 * @return The MinimumSize value
 	 */
 	public Dimension getMinimumSize() {
 		return getPreferredSize();
 	}
 
-
 	/**
-	 *  Gets the MaximumSize attribute of the Counter object 
-	 *
-	 *@return    The MaximumSize value 
+	 * Gets the MaximumSize attribute of the Counter object
+	 * 
+	 * @return The MaximumSize value
 	 */
 	public Dimension getMaximumSize() {
 		return getPreferredSize();
 	}
 
-
 	/**
-	 *  Gets the CurrDebt attribute of the Counter object 
-	 *
-	 *@return    The CurrDebt value 
+	 * Gets the CurrDebt attribute of the Counter object
+	 * 
+	 * @return The CurrDebt value
 	 */
 	public String getCurrDebt() {
 		Date D = new Date();
-		long newstart = start + rate * (D.getTime() - starttime.getTime()) / 86400000;
+		long newstart = start + rate * (D.getTime() - starttime.getTime())
+				/ 86400000;
 		String curr = "$" + numcoma(newstart + "");
 		return curr;
 	}
 
-	public boolean running=true;
+	public boolean running = true;
 
 	/**
-	 *  Main processing method for the Counter object 
+	 * Main processing method for the Counter object
 	 */
 	public void run() {
-System.out.println("Run called");
+		System.out.println("Run called");
 		while (running) {
 			repaint();
 			try {
 				Thread.sleep(100);
-			}
-			catch (InterruptedException IOE) {
+			} catch (InterruptedException IOE) {
 			}
 		}
-System.out.println("Run stopped");
+		System.out.println("Run stopped");
 	}
 
 	public void start() {
-		running=true;
-System.out.println("Starting");
-//		run();
-	}
-	public void stop() {
-System.out.println("Stopping");
-		running=false;
+		running = true;
+		System.out.println("Starting");
+		// run();
 	}
 
+	public void stop() {
+		System.out.println("Stopping");
+		running = false;
+	}
 
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
 	 */
 	public void update(Graphics g) {
 		paint(g);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
 	 */
 	public void paint(Graphics g) {
 		Dimension D = getPreferredSize();
@@ -184,12 +183,12 @@ System.out.println("Stopping");
 		g.drawImage(I, 0, 0, D.width, D.height, this);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public String numcoma(String S) {
 		String R = "";
@@ -205,4 +204,3 @@ System.out.println("Stopping");
 		return R;
 	}
 }
-

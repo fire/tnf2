@@ -3,68 +3,70 @@ package aj.proof;
 import java.util.Vector;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 public class KnowBase {
 	Vector Known;
-	//vector of vectors or predicates that are OR connected
+
+	// vector of vectors or predicates that are OR connected
 	int Assertsize;
+
 	int ENDSIZE;
 
 	String rules = "";
+
 	String results = "";
+
 	String subs = "";
+
 	static boolean verbose = false, showsub = false;
 
-
 	/**
-	 *  Constructor for the KnowBase object 
+	 * Constructor for the KnowBase object
 	 */
 	public KnowBase() {
 		Known = new Vector();
 	}
 
-
 	/**
-	 *  Gets the Rules attribute of the KnowBase object 
-	 *
-	 *@return    The Rules value 
+	 * Gets the Rules attribute of the KnowBase object
+	 * 
+	 * @return The Rules value
 	 */
 	public String getRules() {
 		makeRules();
 		return rules;
 	}
 
-
 	/**
-	 *  Gets the Results attribute of the KnowBase object 
-	 *
-	 *@return    The Results value 
+	 * Gets the Results attribute of the KnowBase object
+	 * 
+	 * @return The Results value
 	 */
 	public String getResults() {
 		return results;
 	}
 
-
 	/**
-	 *  Gets the Subs attribute of the KnowBase object 
-	 *
-	 *@return    The Subs value 
+	 * Gets the Subs attribute of the KnowBase object
+	 * 
+	 * @return The Subs value
 	 */
 	public String getSubs() {
 		return subs;
 	}
 
-
 	/**
-	 *  Gets the Duplicate attribute of the KnowBase object 
-	 *
-	 *@param  v1  Description of Parameter 
-	 *@param  v2  Description of Parameter 
-	 *@return     The Duplicate value 
+	 * Gets the Duplicate attribute of the KnowBase object
+	 * 
+	 * @param v1
+	 *            Description of Parameter
+	 * @param v2
+	 *            Description of Parameter
+	 * @return The Duplicate value
 	 */
 	public boolean isDuplicate(Vector v1, Vector v2) {
 		if (v1.size() != v2.size()) {
@@ -86,12 +88,12 @@ public class KnowBase {
 		return true;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  I  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param I
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public String add(Input I) {
 		results = "";
@@ -104,30 +106,30 @@ public class KnowBase {
 				Known.removeElementAt(Known.size() - 1);
 			}
 			return r;
-		}
-		else {
-			//      int QUERYSIZE=Known.size();
-			//      String r=Resolve();
-			//      while (Known.size()>QUERYSIZE)
-			//        Known.removeElementAt(Known.size()-1);
-			//      if (r.equalsIgnoreCase("True")) {
-			//        while (Known.size()>ENDSIZE)
-			//          Known.removeElementAt(Known.size()-1);
-			//        return "Fail: Contradiction entered";
-			//      }
-			//      if (!S.equalsIgnoreCase("Okay")) return "Fail";
+		} else {
+			// int QUERYSIZE=Known.size();
+			// String r=Resolve();
+			// while (Known.size()>QUERYSIZE)
+			// Known.removeElementAt(Known.size()-1);
+			// if (r.equalsIgnoreCase("True")) {
+			// while (Known.size()>ENDSIZE)
+			// Known.removeElementAt(Known.size()-1);
+			// return "Fail: Contradiction entered";
+			// }
+			// if (!S.equalsIgnoreCase("Okay")) return "Fail";
 			return S;
 		}
 	}
 
-
-	////////////////RESULUTION//////////////////////////////
+	// //////////////RESULUTION//////////////////////////////
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  T1  Description of Parameter 
-	 *@param  T2  Description of Parameter 
-	 *@return     Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param T1
+	 *            Description of Parameter
+	 * @param T2
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Vector Unify(Vector T1, Vector T2) {
 		T1 = (Vector) T1.clone();
@@ -135,57 +137,49 @@ public class KnowBase {
 		Vector Ans = new Vector();
 		if (T1.size() != T2.size()) {
 			Ans.setElementAt(new Subst(), 0);
-			//FAIL
+			// FAIL
 			return Ans;
 		}
 		Term t1;
 		Term t2;
-		for (int a=0; a < T1.size(); a++) {
+		for (int a = 0; a < T1.size(); a++) {
 			t1 = (Term) T1.elementAt(a);
 			t2 = (Term) T2.elementAt(a);
 			if (t1.equals(t2)) {
 				return new Vector();
 			}
-			//return nill
+			// return nill
 			if (t1.contains(t2) || t2.contains(t1)) {
 				Ans.insertElementAt(new Subst(), 0);
-				//FAIL
+				// FAIL
 				return Ans;
-			}
-			else if (t1.type == Token.VARIABLE && t2.type == Token.VARIABLE) {
+			} else if (t1.type == Token.VARIABLE && t2.type == Token.VARIABLE) {
 				Ans.addElement(new Subst(t1, t2));
-			}
-			else if (t1.type == Token.VARIABLE && t2.type == Token.GROUND) {
+			} else if (t1.type == Token.VARIABLE && t2.type == Token.GROUND) {
 				Ans.addElement(new Subst(t1, t2));
-			}
-			else if (t1.type == Token.VARIABLE && t2.type == Token.FUNCTION) {
+			} else if (t1.type == Token.VARIABLE && t2.type == Token.FUNCTION) {
 				if (t2.contains(t1)) {
 					Ans.insertElementAt(new Subst(), 0);
-					//FAIL
+					// FAIL
 					return Ans;
-				}
-				else {
+				} else {
 					Ans.addElement(new Subst(t1, t2));
 				}
-			}
-			else if (t2.type == Token.VARIABLE && t1.type == Token.GROUND) {
+			} else if (t2.type == Token.VARIABLE && t1.type == Token.GROUND) {
 				Ans.addElement(new Subst(t2, t1));
-			}
-			else if (t2.type == Token.VARIABLE && t1.type == Token.FUNCTION) {
+			} else if (t2.type == Token.VARIABLE && t1.type == Token.FUNCTION) {
 				if (t1.contains(t2)) {
 					Ans.insertElementAt(new Subst(), 0);
-					//FAIL
+					// FAIL
 					return Ans;
-				}
-				else {
+				} else {
 					Ans.addElement(new Subst(t2, t1));
 				}
-			}
-			else if (t2.type == Token.FUNCTION && t1.type == Token.FUNCTION) {
+			} else if (t2.type == Token.FUNCTION && t1.type == Token.FUNCTION) {
 				if (!t2.fun.val.equals(t1.fun.val)) {
-					//only unify function of same name
+					// only unify function of same name
 					Ans.insertElementAt(new Subst(), 0);
-					//FAIL
+					// FAIL
 					return Ans;
 				}
 				Vector Ans2 = Unify(t2.fun.Termlist, t1.fun.Termlist);
@@ -193,17 +187,15 @@ public class KnowBase {
 					Subst SS = (Subst) Ans2.elementAt(cc);
 					if (SS.FAIL) {
 						Ans.insertElementAt(new Subst(), 0);
-						//FAIL
+						// FAIL
 						return Ans;
-					}
-					else {
+					} else {
 						Ans.addElement(SS);
 					}
 				}
-			}
-			else {
+			} else {
 				Ans.insertElementAt(new Subst(), 0);
-				//FAIL
+				// FAIL
 				return Ans;
 			}
 			if (Ans.size() > 0) {
@@ -217,24 +209,25 @@ public class KnowBase {
 					T2.setElementAt(L, b);
 				}
 			}
-			//apply substitiutions on E1 and E2??
+			// apply substitiutions on E1 and E2??
 		}
 		return Ans;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  V  Description of Parameter 
-	 *@param  T  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param V
+	 *            Description of Parameter
+	 * @param T
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean CanResolve(Vector V, Vector T) {
 		Predicate P1;
 		Predicate P2;
 		boolean OK = false;
-		for (int a=0; a < V.size() && !OK; a++) {
+		for (int a = 0; a < V.size() && !OK; a++) {
 			P1 = (Predicate) V.elementAt(a);
 			for (int b = 0; b < T.size() && !OK; b++) {
 				P2 = (Predicate) T.elementAt(b);
@@ -250,54 +243,56 @@ public class KnowBase {
 				}
 			}
 		}
-		//    System.out.println("CAN RESOLVE?"+OK);
-		//    System.out.println("V="+showWWF(V));
-		//    System.out.println("T="+showWWF(T));
+		// System.out.println("CAN RESOLVE?"+OK);
+		// System.out.println("V="+showWWF(V));
+		// System.out.println("T="+showWWF(T));
 		return OK;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  Sublist  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param Sublist
+	 *            Description of Parameter
 	 */
 	public void makeResultSub(Vector Sublist) {
 		results = "";
 		subs = "";
-		for (int a=ENDSIZE; a < Known.size(); a++) {
+		for (int a = ENDSIZE; a < Known.size(); a++) {
 			Vector V = (Vector) Known.elementAt(a);
 			results += "STEP" + (a - ENDSIZE + 1) + ": " + showWWF(V) + "\n";
 		}
 		subs += "sublist=" + Sublist + "\n";
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  V        Description of Parameter 
-	 *@param  Sublist  Description of Parameter 
-	 *@return          Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param V
+	 *            Description of Parameter
+	 * @param Sublist
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Vector Dosubs(Vector V, Vector Sublist) {
-		//System.out.println("DOING SUBS FOR WWF=>"+showWWF(V));
-		for (int a=0; a < V.size(); a++) {
+		// System.out.println("DOING SUBS FOR WWF=>"+showWWF(V));
+		for (int a = 0; a < V.size(); a++) {
 			Predicate P = (Predicate) V.elementAt(a);
 			P.sub(Sublist);
 			V.setElementAt(P, a);
 		}
-		//System.out.println("RESULT=>"+showWWF(V));
+		// System.out.println("RESULT=>"+showWWF(V));
 		return V;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  V  Description of Parameter 
-	 *@param  T  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param V
+	 *            Description of Parameter
+	 * @param T
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Vector UnifyWFF(Vector V, Vector T) {
 		Predicate P1;
@@ -306,7 +301,7 @@ public class KnowBase {
 		Vector Ans = new Vector();
 		int Vpos = -1;
 		int Tpos = -1;
-		for (int a=0; a < V.size() && Vpos == -1; a++) {
+		for (int a = 0; a < V.size() && Vpos == -1; a++) {
 			P1 = (Predicate) V.elementAt(a);
 			for (int b = 0; b < T.size() && Tpos == -1; b++) {
 				P2 = (Predicate) T.elementAt(b);
@@ -315,8 +310,7 @@ public class KnowBase {
 					if (test.size() == 0) {
 						Vpos = a;
 						Tpos = b;
-					}
-					else {
+					} else {
 						Subst SS = (Subst) test.elementAt(0);
 						if (!SS.FAIL) {
 							Vpos = a;
@@ -326,33 +320,34 @@ public class KnowBase {
 				}
 			}
 		}
-		for (int a=0; a < V.size(); a++) {
+		for (int a = 0; a < V.size(); a++) {
 			if (a != Vpos) {
 				Ans.addElement(new Predicate((Predicate) V.elementAt(a)));
 			}
 		}
-		for (int a=0; a < T.size(); a++) {
+		for (int a = 0; a < T.size(); a++) {
 			if (a != Tpos) {
 				Ans.addElement(new Predicate((Predicate) T.elementAt(a)));
 			}
 		}
-		//System.out.println("NEW SENT="+showWWF(Ans));
+		// System.out.println("NEW SENT="+showWWF(Ans));
 		Ans = Dosubs(Ans, subit);
 		return Ans;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  V  Description of Parameter 
-	 *@param  T  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param V
+	 *            Description of Parameter
+	 * @param T
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Vector UnifyWWFSUBS(Vector V, Vector T) {
 		Predicate P1;
 		Predicate P2;
-		for (int a=0; a < V.size(); a++) {
+		for (int a = 0; a < V.size(); a++) {
 			P1 = (Predicate) V.elementAt(a);
 			for (int b = 0; b < T.size(); b++) {
 				P2 = (Predicate) T.elementAt(b);
@@ -370,20 +365,20 @@ public class KnowBase {
 		}
 		Vector Ans = new Vector();
 		Ans.addElement(new Subst());
-		//error should never get here
+		// error should never get here
 		System.err.println("ERROR UnifyWWFSUBS");
 		return Ans;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  V  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param V
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Vector cleanUp(Vector V) {
-		for (int a=0; a < V.size(); a++) {
+		for (int a = 0; a < V.size(); a++) {
 			for (int b = a + 1; b < V.size(); b++) {
 				Predicate P1 = (Predicate) V.elementAt(a);
 				Predicate P2 = (Predicate) V.elementAt(b);
@@ -391,8 +386,7 @@ public class KnowBase {
 					V.removeElement(P2);
 					b--;
 					continue;
-				}
-				else if (P1.resolveswith(P2)) {
+				} else if (P1.resolveswith(P2)) {
 					return new Vector();
 				}
 			}
@@ -400,15 +394,15 @@ public class KnowBase {
 		return V;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  V  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param V
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Vector Resolve(Vector V) {
-		//System.out.println("resolveing "+showWWF(V));
+		// System.out.println("resolveing "+showWWF(V));
 		Vector Sublist = new Vector();
 		Vector Work;
 		for (int a = 0; a < Known.size(); a++) {
@@ -418,11 +412,12 @@ public class KnowBase {
 				continue;
 			}
 			if (Work.size() == 0) {
-				//        System.out.println("answer comming 0");
+				// System.out.println("answer comming 0");
 				return Sublist;
 			}
 			if (CanResolve(V, Work)) {
-				//System.out.println("resolveing "+showWWF(V)+" on "+showWWF(Work));
+				// System.out.println("resolveing "+showWWF(V)+" on
+				// "+showWWF(Work));
 				Vector nextWork = UnifyWFF(V, Work);
 				Sublist = UnifyWWFSUBS(V, Work);
 				nextWork = cleanUp(nextWork);
@@ -430,12 +425,12 @@ public class KnowBase {
 					continue;
 				}
 				if (nextWork.size() == 0) {
-					//          System.out.println("answer comming 1");
+					// System.out.println("answer comming 1");
 					return Sublist;
 				}
 				Vector ans = Resolve(nextWork);
 				if (ans.size() == 0) {
-					//          System.out.println("answer comming 2");
+					// System.out.println("answer comming 2");
 					return Sublist;
 				}
 				Subst SS = (Subst) ans.elementAt(0);
@@ -445,26 +440,25 @@ public class KnowBase {
 							Sublist.addElement(ans.elementAt(b));
 						}
 					}
-					//          System.out.println("answer comming 3");
+					// System.out.println("answer comming 3");
 					return Sublist;
 				}
 
 			}
 		}
 		Sublist.insertElementAt(new Subst(), 0);
-		//FAIL
-		//    System.out.println("answer comming 4");
+		// FAIL
+		// System.out.println("answer comming 4");
 		return Sublist;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public String Resolve() {
-		for (int a=ENDSIZE; a < Known.size(); a++) {
+		for (int a = ENDSIZE; a < Known.size(); a++) {
 			Vector Work = (Vector) Known.elementAt(a);
 			Vector Ans = Resolve(Work);
 			if (Ans.size() == 0) {
@@ -480,24 +474,25 @@ public class KnowBase {
 		return "Unprovable";
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  V  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param V
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean newRule(Vector V) {
 		V = (Vector) V.clone();
-		for (int a=0; a < Known.size(); a++) {
+		for (int a = 0; a < Known.size(); a++) {
 			Vector v2 = (Vector) Known.elementAt(a);
 			if (isDuplicate(V, v2)) {
-				//        System.out.println("DUPLICAT RULE FOUND SKIPING "+showWWF(V));
+				// System.out.println("DUPLICAT RULE FOUND SKIPING
+				// "+showWWF(V));
 				return false;
 			}
 		}
-		//System.out.println("NEW RULE ASSERTED "+showWWF(V));
-		for (int a=0; a < V.size(); a++) {
+		// System.out.println("NEW RULE ASSERTED "+showWWF(V));
+		for (int a = 0; a < V.size(); a++) {
 			for (int b = a + 1; b < V.size(); b++) {
 				Predicate P1 = (Predicate) V.elementAt(a);
 				Predicate P2 = (Predicate) V.elementAt(b);
@@ -505,8 +500,7 @@ public class KnowBase {
 					V.removeElement(P2);
 					b--;
 					continue;
-				}
-				else {
+				} else {
 					Vector v1 = new Vector();
 					Vector v2 = new Vector();
 					v1.addElement(P1);
@@ -526,29 +520,27 @@ public class KnowBase {
 		return true;
 	}
 
-
-	////////////////////////////////////////////////////////
+	// //////////////////////////////////////////////////////
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public String include(Sentence S) {
-		//System.out.println("including "+S);
+		// System.out.println("including "+S);
 		Vector T = new Vector();
 		if (S.type == Token.ATOMICSENT) {
-			//System.out.println("atom");
+			// System.out.println("atom");
 			T.addElement(S.Atom);
 			newRule(T);
 			return "Okay";
-		}
-		else if (S.type == Token.PARENSENT) {
+		} else if (S.type == Token.PARENSENT) {
 			return include(S.Lsent);
-		}
-		else if (S.type == Token.CONNECTSENT) {
+		} else if (S.type == Token.CONNECTSENT) {
 			if (S.connector.equals("OR")) {
-				//System.out.println("connector or");
+				// System.out.println("connector or");
 				while (S.type == Token.CONNECTSENT) {
 					T.addElement(S.Rsent.Atom);
 					S = S.Lsent;
@@ -556,38 +548,35 @@ public class KnowBase {
 				T.addElement(S.Atom);
 				newRule(T);
 				return "Okay";
-			}
-			else {
-				//System.out.println("connector and");
+			} else {
+				// System.out.println("connector and");
 				String s2;
-				//System.out.println("connector and");
+				// System.out.println("connector and");
 				String s1;
 				s2 = include(S.Lsent);
 				s1 = include(S.Rsent);
 				if (s1.equalsIgnoreCase("Okay") && s2.equalsIgnoreCase("Okay")) {
 					return "Okay";
-				}
-				else {
+				} else {
 					return "Fail";
 				}
 			}
-		}
-		else {
+		} else {
 			return "Fail";
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  V  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param V
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public String showSUB(Vector V) {
 		System.out.println("Sub List =>");
 		String S = "";
-		for (int a=0; a < V.size(); a++) {
+		for (int a = 0; a < V.size(); a++) {
 			Subst P = (Subst) V.elementAt(a);
 			S += "" + P;
 			if (a < V.size() - 1) {
@@ -597,16 +586,16 @@ public class KnowBase {
 		return S;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  V  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param V
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public String showWWF(Vector V) {
 		String S = "";
-		for (int a=0; a < V.size(); a++) {
+		for (int a = 0; a < V.size(); a++) {
 			Predicate P = (Predicate) V.elementAt(a);
 			S += "" + P;
 			if (a < V.size() - 1) {
@@ -616,14 +605,14 @@ public class KnowBase {
 		return S;
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void makeRules() {
 		rules = "";
-		for (int a=0; a < Known.size(); a++) {
-			rules += "RULE" + (a + 1) + "> " + showWWF((Vector) Known.elementAt(a)) + "\n";
+		for (int a = 0; a < Known.size(); a++) {
+			rules += "RULE" + (a + 1) + "> "
+					+ showWWF((Vector) Known.elementAt(a)) + "\n";
 		}
 	}
 }

@@ -3,33 +3,36 @@ package aj.proof;
 import java.util.Vector;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 public class Normal {
 	static Vector Varnames = new Vector();
+
 	static Vector Varnextnumber = new Vector();
-	//x:3, y:2
+
+	// x:3, y:2
 	static Vector BoundVars = new Vector();
+
 	static Vector BoundVarsnumber = new Vector();
-	//x:3,y:2,x:1
+
+	// x:3,y:2,x:1
 	static int numSkol = 0;
 
-
 	/**
-	 *  Constructor for the Normal object 
+	 * Constructor for the Normal object
 	 */
 	public Normal() {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  I  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param I
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Input Fix(Input I) {
 		if (I.type == Token.ERROR) {
@@ -38,32 +41,32 @@ public class Normal {
 		if (I.type == Token.QUERY) {
 			I.S.notted = !I.S.notted;
 		}
-		//System.out.println("orig: "+I.S);
+		// System.out.println("orig: "+I.S);
 		I.S = RemoveImp(I.S);
-		//System.out.println("remove imp: "+I.S);
+		// System.out.println("remove imp: "+I.S);
 		I.S = PushDownNeg(I.S);
-		//System.out.println("push negs: "+I.S);
+		// System.out.println("push negs: "+I.S);
 		I.S = StandardVar(I.S);
-		//System.out.println("standard vars: "+I.S);
+		// System.out.println("standard vars: "+I.S);
 		I.S = Skolomize(I.S, new Vector(), new Vector());
-		//add second vector of replacement terms
-		//System.out.println("skolomized: "+I.S);
+		// add second vector of replacement terms
+		// System.out.println("skolomized: "+I.S);
 		I.S = QualifiersLeft(I.S);
-		//System.out.println("quant left: "+I.S);
+		// System.out.println("quant left: "+I.S);
 		I.S = DistOverAnd(I.S);
-		//System.out.println("dist ands: "+I.S);
+		// System.out.println("dist ands: "+I.S);
 		I.S = Flatten(I.S);
-		//System.out.println("flattened: "+I.S);
-		//remove self resolving clauses & (?man(x) | ~?man(x))
+		// System.out.println("flattened: "+I.S);
+		// remove self resolving clauses & (?man(x) | ~?man(x))
 		return I;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Sentence QualifiersLeft(Sentence S) {
 		Vector Varlist;
@@ -77,37 +80,35 @@ public class Normal {
 		return S;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S     Description of Parameter 
-	 *@param  Qual  Description of Parameter 
-	 *@return       Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @param Qual
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Vector RemoveQual(Sentence S, String Qual) {
 		if (S.type == Token.ATOMICSENT) {
 			return new Vector();
-		}
-		else if (S.type == Token.PARENSENT) {
+		} else if (S.type == Token.PARENSENT) {
 			return RemoveQual(S.Lsent, Qual);
-		}
-		else if (S.type == Token.CONNECTSENT) {
+		} else if (S.type == Token.CONNECTSENT) {
 			Vector T = RemoveQual(S.Lsent, Qual);
 			Vector U = RemoveQual(S.Rsent, Qual);
 			for (int a = 0; a < U.size(); a++) {
 				T.addElement(U.elementAt(a));
 			}
 			return T;
-		}
-		else if (S.type == Token.QUALIFIEDSENT) {
+		} else if (S.type == Token.QUALIFIEDSENT) {
 			if (S.Qualifier.equals(Qual)) {
 				Vector T = RemoveQual(S.Lsent, Qual);
 				Vector U = new Vector();
 				for (int a = 0; a < S.VarList.size(); a++) {
 					U.addElement(S.VarList.elementAt(a));
 				}
-				for (int a=0; a < T.size(); a++) {
+				for (int a = 0; a < T.size(); a++) {
 					U.addElement(T.elementAt(a));
 				}
 				S.type = S.Lsent.type;
@@ -119,13 +120,11 @@ public class Normal {
 				S.Rsent = S.Lsent.Rsent;
 				S.Lsent = S.Lsent.Lsent;
 				return U;
-			}
-			else {
+			} else {
 				String NewQual;
 				if (Qual.equals("FORALL")) {
 					NewQual = "EXISTS";
-				}
-				else {
+				} else {
 					NewQual = "FORALL";
 				}
 				Vector T = RemoveQual(S.Lsent, NewQual);
@@ -134,26 +133,28 @@ public class Normal {
 				}
 				return new Vector();
 			}
-		}
-		else {
-			//ERROR case
+		} else {
+			// ERROR case
 			return new Vector();
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ChangeTerms  Description of Parameter 
-	 *@param  OrgTerm      Description of Parameter 
-	 *@param  NewTerms     Description of Parameter 
-	 *@return              Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param ChangeTerms
+	 *            Description of Parameter
+	 * @param OrgTerm
+	 *            Description of Parameter
+	 * @param NewTerms
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
-	public Vector SkolomizeTerms(Vector ChangeTerms, Vector OrgTerm, Vector NewTerms) {
+	public Vector SkolomizeTerms(Vector ChangeTerms, Vector OrgTerm,
+			Vector NewTerms) {
 		int found;
-		for (int a=0; a < ChangeTerms.size(); a++) {
-			//for each old term
+		for (int a = 0; a < ChangeTerms.size(); a++) {
+			// for each old term
 			Term T = (Term) ChangeTerms.elementAt(a);
 			found = -1;
 			for (int b = 0; b < OrgTerm.size(); b++) {
@@ -164,29 +165,33 @@ public class Normal {
 			}
 			if (T.type == Token.VARIABLE) {
 				if (found != -1) {
-					ChangeTerms.setElementAt(new Term((Term) NewTerms.elementAt(found)), a);
+					ChangeTerms.setElementAt(new Term((Term) NewTerms
+							.elementAt(found)), a);
 				}
 				// else System.out.println("VAR NOT FOUND");
-			}
-			else if (T.type == Token.FUNCTION) {
-				T.fun.Termlist = SkolomizeTerms(T.fun.Termlist, OrgTerm, NewTerms);
+			} else if (T.type == Token.FUNCTION) {
+				T.fun.Termlist = SkolomizeTerms(T.fun.Termlist, OrgTerm,
+						NewTerms);
 			}
 		}
 		return ChangeTerms;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S            Description of Parameter 
-	 *@param  Termlist     Description of Parameter 
-	 *@param  NewTermlist  Description of Parameter 
-	 *@return              Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @param Termlist
+	 *            Description of Parameter
+	 * @param NewTermlist
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Sentence Skolomize(Sentence S, Vector Termlist, Vector NewTermlist) {
 		if (S.type == Token.ATOMICSENT) {
-			S.Atom.Termlist = SkolomizeTerms(S.Atom.Termlist, Termlist, NewTermlist);
+			S.Atom.Termlist = SkolomizeTerms(S.Atom.Termlist, Termlist,
+					NewTermlist);
 		}
 		if (S.type == Token.PARENSENT) {
 			S.Lsent = Skolomize(S.Lsent, Termlist, NewTermlist);
@@ -198,22 +203,21 @@ public class Normal {
 		if (S.type == Token.QUALIFIEDSENT) {
 			Vector hold = S.VarList;
 			if (S.Qualifier.equals("FORALL")) {
-				//add
-				for (int a=0; a < hold.size(); a++) {
+				// add
+				for (int a = 0; a < hold.size(); a++) {
 					Termlist.addElement(hold.elementAt(a));
 					NewTermlist.addElement(hold.elementAt(a));
 				}
 				S = Skolomize(S.Lsent, Termlist, NewTermlist);
-				//remove FORALL
-				//remove
-				for (int a=0; a < hold.size(); a++) {
+				// remove FORALL
+				// remove
+				for (int a = 0; a < hold.size(); a++) {
 					Termlist.removeElementAt(Termlist.size() - 1);
 					NewTermlist.removeElementAt(NewTermlist.size() - 1);
 				}
-			}
-			else {
-				//add
-				for (int a=0; a < hold.size(); a++) {
+			} else {
+				// add
+				for (int a = 0; a < hold.size(); a++) {
 					Vector funTermlist = new Vector();
 					for (int b = 0; b < NewTermlist.size(); b++) {
 						Term T = new Term((Term) NewTermlist.elementAt(b));
@@ -228,9 +232,9 @@ public class Normal {
 					NewTermlist.addElement(T);
 				}
 				S = Skolomize(S.Lsent, Termlist, NewTermlist);
-				//remove EXISTS
-				//remove
-				for (int a=0; a < hold.size(); a++) {
+				// remove EXISTS
+				// remove
+				for (int a = 0; a < hold.size(); a++) {
 					Termlist.removeElementAt(Termlist.size() - 1);
 					NewTermlist.removeElementAt(NewTermlist.size() - 1);
 				}
@@ -239,60 +243,60 @@ public class Normal {
 		return S;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@param  T  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @param T
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Sentence CanDist(Sentence S, Sentence T) {
 		// System.out.println("CAN DIST S=**"+S+"** T=**"+T+"**");
 		if (T.type == Token.PARENSENT) {
 			T.Lsent = CanDist(T.Lsent, S);
 			return T;
-		}
-		else if (S.type == Token.PARENSENT) {
+		} else if (S.type == Token.PARENSENT) {
 			S.Lsent = CanDist(S.Lsent, T);
 			return S;
-		}
-		else if (S.type == Token.ATOMICSENT && T.type == Token.ATOMICSENT) {
+		} else if (S.type == Token.ATOMICSENT && T.type == Token.ATOMICSENT) {
 			return new Sentence(S, "OR", T);
-		}
-		else if (S.type == Token.ATOMICSENT && T.type == Token.CONNECTSENT) {
+		} else if (S.type == Token.ATOMICSENT && T.type == Token.CONNECTSENT) {
 			return CanDist(T, S);
-		}
-		else if (S.type == Token.CONNECTSENT && T.type == Token.ATOMICSENT) {
+		} else if (S.type == Token.CONNECTSENT && T.type == Token.ATOMICSENT) {
 			if (S.connector.equals("OR")) {
 				return new Sentence(S, "OR", T);
 			}
-			Sentence V = new Sentence(Token.PARENSENT, new Sentence(CanDist(S.Rsent, T)));
-			Sentence U = new Sentence(Token.PARENSENT, new Sentence(CanDist(S.Lsent, T)));
-			//System.out.println(new Sentence (V,"AND",U));
+			Sentence V = new Sentence(Token.PARENSENT, new Sentence(CanDist(
+					S.Rsent, T)));
+			Sentence U = new Sentence(Token.PARENSENT, new Sentence(CanDist(
+					S.Lsent, T)));
+			// System.out.println(new Sentence (V,"AND",U));
 			U = new Sentence(V, "AND", U);
 			U = new Sentence(Token.PARENSENT, U);
 			return U;
-		}
-		else {
-			//if (S.type==Token.CONNECTSENT && T.type==Token.CONNECTSENT) {
+		} else {
+			// if (S.type==Token.CONNECTSENT && T.type==Token.CONNECTSENT) {
 			if (S.connector.equals("OR")) {
 				return new Sentence(S, "OR", T);
 			}
-			Sentence V = new Sentence(Token.PARENSENT, new Sentence(S.Rsent, "OR", T));
-			Sentence U = new Sentence(Token.PARENSENT, new Sentence(CanDist(S.Lsent, T)));
+			Sentence V = new Sentence(Token.PARENSENT, new Sentence(S.Rsent,
+					"OR", T));
+			Sentence U = new Sentence(Token.PARENSENT, new Sentence(CanDist(
+					S.Lsent, T)));
 			// System.out.println(new Sentence (V,"AND",U));
 			U = new Sentence(Token.PARENSENT, new Sentence(V, "AND", U));
 			return U;
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public String Insidetype(Sentence S) {
 		if (S.type == Token.ATOMICSENT) {
@@ -303,58 +307,53 @@ public class Normal {
 		}
 		if (S.type == Token.CONNECTSENT) {
 			return S.connector;
-		}
-		else {
+		} else {
 			return "ERROR";
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean Dist(Sentence S) {
 		if (S.type == Token.ERROR) {
 			return true;
-		}
-		else if (S.type == Token.ATOMICSENT) {
+		} else if (S.type == Token.ATOMICSENT) {
 			return true;
-		}
-		else if (S.type == Token.PARENSENT) {
+		} else if (S.type == Token.PARENSENT) {
 			if (S.Lsent.type == Token.PARENSENT) {
 				S.Lsent = new Sentence(S.Lsent.Lsent);
 				return false;
-			}
-			else {
+			} else {
 				return Dist(S.Lsent);
 			}
-		}
-		else if (S.type == Token.CONNECTSENT) {
+		} else if (S.type == Token.CONNECTSENT) {
 			if (!Dist(S.Lsent)) {
 				return false;
 			}
 			if (!Dist(S.Rsent)) {
 				return false;
 			}
-			if (Insidetype(S.Lsent).equals("ATOMICSENT") && 
-					Insidetype(S.Rsent).equals("ATOMICSENT")) {
+			if (Insidetype(S.Lsent).equals("ATOMICSENT")
+					&& Insidetype(S.Rsent).equals("ATOMICSENT")) {
 				return true;
 			}
-			if (Insidetype(S.Lsent).equals(S.connector) && 
-					Insidetype(S.Rsent).equals(S.connector)) {
+			if (Insidetype(S.Lsent).equals(S.connector)
+					&& Insidetype(S.Rsent).equals(S.connector)) {
 				return true;
 			}
 			if (Insidetype(S.Rsent).equals("AND") && S.connector.equals("OR")) {
-				//System.out.println("Dist to Right");
+				// System.out.println("Dist to Right");
 				S.Lsent = new Sentence(CanDist(S.Rsent, S.Lsent));
 				S.type = Token.PARENSENT;
 				return false;
-			}
-			else if (Insidetype(S.Lsent).equals("AND") && S.connector.equals("OR")) {
-				//System.out.println("Dist to Left"+S);
+			} else if (Insidetype(S.Lsent).equals("AND")
+					&& S.connector.equals("OR")) {
+				// System.out.println("Dist to Left"+S);
 				S.Lsent = new Sentence(CanDist(S.Lsent, S.Rsent));
 				S.type = Token.PARENSENT;
 				return false;
@@ -364,12 +363,12 @@ public class Normal {
 		return true;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Sentence DistOverAnd(Sentence S) {
 		boolean done = false;
@@ -379,12 +378,12 @@ public class Normal {
 		return S;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean Flatter(Sentence S) {
 		if (S.type == Token.ERROR) {
@@ -404,8 +403,8 @@ public class Normal {
 				return false;
 			}
 			if (S.Lsent.type == Token.PARENSENT) {
-				if (Insidetype(S.Lsent).equals(S.connector) || 
-						Insidetype(S.Lsent).equals("ATOMICSENT")) {
+				if (Insidetype(S.Lsent).equals(S.connector)
+						|| Insidetype(S.Lsent).equals("ATOMICSENT")) {
 					S.Lsent = new Sentence(S.Lsent.Lsent);
 					return false;
 				}
@@ -416,8 +415,8 @@ public class Normal {
 				}
 			}
 			if (S.Rsent.type == Token.PARENSENT) {
-				if (Insidetype(S.Rsent).equals(S.connector) || 
-						Insidetype(S.Rsent).equals("ATOMICSENT")) {
+				if (Insidetype(S.Rsent).equals(S.connector)
+						|| Insidetype(S.Rsent).equals("ATOMICSENT")) {
 					S.Rsent = new Sentence(S.Rsent.Lsent);
 					return false;
 				}
@@ -438,12 +437,12 @@ public class Normal {
 		return true;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Sentence Flatten(Sentence S) {
 		boolean done = false;
@@ -451,7 +450,7 @@ public class Normal {
 			done = Flatter(S);
 		}
 		if (S.type == Token.PARENSENT) {
-			//must be ATOMICSENT or CONNECTSENT
+			// must be ATOMICSENT or CONNECTSENT
 			S.type = S.Lsent.type;
 			S.Rsent = S.Lsent.Rsent;
 			S.connector = S.Lsent.connector;
@@ -461,71 +460,63 @@ public class Normal {
 		return S;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Sentence PushDownNeg(Sentence S) {
 		if (S.notted) {
 			if (S.type == Token.ATOMICSENT) {
 				S.Atom.notted = !S.Atom.notted;
 				S.notted = false;
-			}
-			else if (S.type == Token.CONNECTSENT) {
+			} else if (S.type == Token.CONNECTSENT) {
 				S.notted = false;
 				if (S.connector.equals("OR")) {
 					S.connector = "AND";
-				}
-				else if (S.connector.equals("AND")) {
+				} else if (S.connector.equals("AND")) {
 					S.connector = "OR";
 				}
 				S.Lsent.notted = !S.Lsent.notted;
 				S.Rsent.notted = !S.Rsent.notted;
-			}
-			else if (S.type == Token.QUALIFIEDSENT) {
+			} else if (S.type == Token.QUALIFIEDSENT) {
 				S.notted = false;
 				if (S.Qualifier.equals("FORALL")) {
 					S.Qualifier = "EXIST";
-				}
-				else {
+				} else {
 					S.Qualifier = "FORALL";
 				}
 				S.Lsent.notted = !S.Lsent.notted;
-			}
-			else if (S.type == Token.PARENSENT) {
+			} else if (S.type == Token.PARENSENT) {
 				S.notted = false;
 				S.Lsent.notted = !S.Lsent.notted;
 			}
 		}
-		//PUSH DOWN INTO SUB SENTENCE
+		// PUSH DOWN INTO SUB SENTENCE
 		if (S.type == Token.CONNECTSENT) {
 			S.Lsent = PushDownNeg(S.Lsent);
 			S.Rsent = PushDownNeg(S.Rsent);
-		}
-		else if (S.type == Token.QUALIFIEDSENT || S.type == Token.PARENSENT) {
+		} else if (S.type == Token.QUALIFIEDSENT || S.type == Token.PARENSENT) {
 			S.Lsent = PushDownNeg(S.Lsent);
 		}
 		return S;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Sentence RemoveImp(Sentence S) {
 		if (S.type == Token.ATOMICSENT) {
 			;
-		}
-		else if (S.type == Token.PARENSENT || S.type == Token.QUALIFIEDSENT) {
+		} else if (S.type == Token.PARENSENT || S.type == Token.QUALIFIEDSENT) {
 			S.Lsent = RemoveImp(S.Lsent);
-		}
-		else if (S.type == Token.CONNECTSENT) {
+		} else if (S.type == Token.CONNECTSENT) {
 			if (S.connector.equals("IFF")) {
 				Sentence Temp1;
 				Sentence Temp2;
@@ -536,8 +527,7 @@ public class Normal {
 				S.connector = "AND";
 				S.Rsent = RemoveImp(S.Rsent);
 				S.Lsent = RemoveImp(S.Lsent);
-			}
-			else if (S.connector.equals("IMP")) {
+			} else if (S.connector.equals("IMP")) {
 				S.Lsent.not();
 				S.connector = "OR";
 			}
@@ -545,12 +535,12 @@ public class Normal {
 		return S;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Sentence StandardVar(Sentence S) {
 		if (S.type == Token.QUALIFIEDSENT) {
@@ -558,33 +548,31 @@ public class Normal {
 			UpdateVarList(S.VarList);
 			S.Lsent = StandardVar(S.Lsent);
 			UndelcareVars(S.VarList);
-		}
-		else if (S.type == Token.PARENSENT || S.type == Token.CONNECTSENT) {
+		} else if (S.type == Token.PARENSENT || S.type == Token.CONNECTSENT) {
 			S.Lsent = StandardVar(S.Lsent);
 			if (S.type == Token.CONNECTSENT) {
 				S.Rsent = StandardVar(S.Rsent);
 			}
-		}
-		else if (S.type == Token.ATOMICSENT) {
+		} else if (S.type == Token.ATOMICSENT) {
 			UpdateVarList(S.Atom.Termlist);
 		}
 		return S;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  VarList  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param VarList
+	 *            Description of Parameter
 	 */
 	public void DeclareVars(Vector VarList) {
-		for (int a=0; a < VarList.size(); a++) {
-			//for each Var declared
+		for (int a = 0; a < VarList.size(); a++) {
+			// for each Var declared
 			Term T = (Term) VarList.elementAt(a);
 			String Vname = T.val;
 			int found = -1;
 			for (int b = 0; b < Varnames.size(); b++) {
-				//find match name or found=-1
+				// find match name or found=-1
 				String name = (String) Varnames.elementAt(b);
 				if (name.equals(Vname)) {
 					found = b;
@@ -592,38 +580,37 @@ public class Normal {
 			}
 			int nextnum = 0;
 			if (found == -1) {
-				//not found add new string and set next to 1
+				// not found add new string and set next to 1
 				Varnames.addElement(Vname);
 				Varnextnumber.addElement(new Integer(nextnum + 1));
-			}
-			else {
-				//found increment nextnum
+			} else {
+				// found increment nextnum
 				Integer I = (Integer) Varnextnumber.elementAt(found);
 				nextnum = I.intValue();
 				I = new Integer(nextnum + 1);
 				Varnextnumber.setElementAt(I, found);
 			}
 			BoundVars.addElement(Vname);
-			//put new var on stack
+			// put new var on stack
 			BoundVarsnumber.addElement(new Integer(nextnum));
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  VarList  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param VarList
+	 *            Description of Parameter
 	 */
 	public void UpdateVarList(Vector VarList) {
-		for (int a=0; a < VarList.size(); a++) {
-			//for each Var declared
+		for (int a = 0; a < VarList.size(); a++) {
+			// for each Var declared
 			Term T = (Term) VarList.elementAt(a);
 			if (T.type == Token.VARIABLE) {
 				String Vname = T.val;
 				int found = -1;
 				for (int b = 0; b < BoundVars.size(); b++) {
-					//find match name in BOUNDVAR
+					// find match name in BOUNDVAR
 					String name = (String) BoundVars.elementAt(b);
 					if (name.equals(Vname)) {
 						found = b;
@@ -636,27 +623,25 @@ public class Normal {
 				}
 				T.varcount = nextnum;
 				VarList.setElementAt(T, a);
-			}
-			else if (T.type == Token.FUNCTION) {
+			} else if (T.type == Token.FUNCTION) {
 				UpdateVarList(T.fun.Termlist);
 				VarList.setElementAt(T, a);
 			}
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  VarList  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param VarList
+	 *            Description of Parameter
 	 */
 	public void UndelcareVars(Vector VarList) {
 		int len = VarList.size();
-		for (int a=0; a < len; a++) {
+		for (int a = 0; a < len; a++) {
 			int pos = BoundVars.size() - 1;
 			BoundVars.removeElementAt(pos);
 			BoundVarsnumber.removeElementAt(pos);
 		}
 	}
 }
-

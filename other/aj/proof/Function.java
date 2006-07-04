@@ -3,21 +3,23 @@ package aj.proof;
 import java.util.Vector;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 public class Function {
 	Vector Termlist = new Vector();
+
 	String val = null;
 
-
 	/**
-	 *  Constructor for the Function object 
-	 *
-	 *@param  val       Description of Parameter 
-	 *@param  termlist  Description of Parameter 
+	 * Constructor for the Function object
+	 * 
+	 * @param val
+	 *            Description of Parameter
+	 * @param termlist
+	 *            Description of Parameter
 	 */
 	public Function(String val, Vector termlist) {
 		if (val == null) {
@@ -30,11 +32,11 @@ public class Function {
 		Termlist = termlist;
 	}
 
-
 	/**
-	 *  Constructor for the Function object 
-	 *
-	 *@param  F  Description of Parameter 
+	 * Constructor for the Function object
+	 * 
+	 * @param F
+	 *            Description of Parameter
 	 */
 	public Function(Function F) {
 		Termlist = new Vector();
@@ -44,11 +46,11 @@ public class Function {
 		val = new String(F.val);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
 	 */
 	public void sub(Subst S) {
 		int b;
@@ -59,12 +61,12 @@ public class Function {
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  T  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param T
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean contains(Term T) {
 		for (int a = 0; a < Termlist.size(); a++) {
@@ -79,12 +81,12 @@ public class Function {
 		return false;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  F  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param F
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean equals(Function F) {
 		if (!val.equals(F.val)) {
@@ -105,11 +107,10 @@ public class Function {
 		return true;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public String toString() {
 		String t;
@@ -124,23 +125,23 @@ public class Function {
 		return t;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static Function Parse(String S) {
 		return Parse(new Tokens(S));
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  T  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param T
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static Function Parse(Tokens T) {
 		String val = "ERROR";
@@ -171,11 +172,11 @@ public class Function {
 		return new Function("ERROR", TermList);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  argv  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param argv
+	 *            Description of Parameter
 	 */
 	public static void main(String argv[]) {
 		String test = "#Funname(T1,t2,#iner())";

@@ -20,14 +20,9 @@ public class Map {
 
 }
 /*
-   ____
----/   H 
-   -----
-
-
-platforms 
-ladders
-slopes?
-doors into layers
-
-*/
+ * ____ ---/ H -----
+ * 
+ * 
+ * platforms ladders slopes? doors into layers
+ * 
+ */

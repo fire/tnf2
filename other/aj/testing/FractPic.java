@@ -15,29 +15,32 @@ import java.util.Random;
 import aj.awt.SimpleWindowManager;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 public class FractPic extends Canvas {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	int SIZE = 400;
+
 	int FOCUSLIMIT = 1;
 
 	double r, g, b;
+
 	long rs, gs, bs;
 
 	Image I = null;
 
-
 	/**
-	 *  Constructor for the FractPic object 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Constructor for the FractPic object
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public FractPic(String s[]) {
 		Random x = new Random();
@@ -54,46 +57,42 @@ public class FractPic extends Canvas {
 			rs = (long) Double.parseDouble(s[3]);
 			gs = (long) Double.parseDouble(s[4]);
 			bs = (long) Double.parseDouble(s[5]);
-		}
-		catch (Exception NFE) {
+		} catch (Exception NFE) {
 		}
 	}
 
-
 	/**
-	 *  Gets the MinimumSize attribute of the FractPic object 
-	 *
-	 *@return    The MinimumSize value 
+	 * Gets the MinimumSize attribute of the FractPic object
+	 * 
+	 * @return The MinimumSize value
 	 */
 	public Dimension getMinimumSize() {
 		return getPreferredSize();
 	}
 
-
 	/**
-	 *  Gets the MaximumSize attribute of the FractPic object 
-	 *
-	 *@return    The MaximumSize value 
+	 * Gets the MaximumSize attribute of the FractPic object
+	 * 
+	 * @return The MaximumSize value
 	 */
 	public Dimension getMaximumSize() {
 		return getPreferredSize();
 	}
 
-
 	/**
-	 *  Gets the PreferredSize attribute of the FractPic object 
-	 *
-	 *@return    The PreferredSize value 
+	 * Gets the PreferredSize attribute of the FractPic object
+	 * 
+	 * @return The PreferredSize value
 	 */
 	public Dimension getPreferredSize() {
 		return new Dimension(SIZE, SIZE);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  G  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param G
+	 *            Description of Parameter
 	 */
 	public void paint(Graphics G) {
 		if (I == null) {
@@ -102,13 +101,14 @@ public class FractPic extends Canvas {
 		G.drawImage(I, 0, 0, this);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  x  Description of Parameter 
-	 *@param  y  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Color calcPos(int x, int y) {
 		int maxx = SIZE;
@@ -129,18 +129,15 @@ public class FractPic extends Canvas {
 				minx += dx / 2 + 1;
 				miny += dy / 2 + 1;
 				skip(0, rr, rg, rb);
-			}
-			else if (x <= minx + dx / 2 && y > miny + dy / 2) {
+			} else if (x <= minx + dx / 2 && y > miny + dy / 2) {
 				maxx -= dx / 2;
 				miny += dy / 2 + 1;
 				skip(1, rr, rg, rb);
-			}
-			else if (x > minx + dx / 2 && y <= miny + dy / 2) {
+			} else if (x > minx + dx / 2 && y <= miny + dy / 2) {
 				minx += dx / 2 + 1;
 				maxy -= dy / 2;
 				skip(2, rr, rg, rb);
-			}
-			else if (x <= minx + dx / 2 && y <= miny + dy / 2) {
+			} else if (x <= minx + dx / 2 && y <= miny + dy / 2) {
 				maxx -= dx / 2;
 				maxy -= dy / 2;
 				skip(3, rr, rg, rb);
@@ -157,35 +154,25 @@ public class FractPic extends Canvas {
 		return new Color((float) cr, (float) cg, (float) cb);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
 	 */
 	private void recalc(Graphics g) {
 		I = createImage(SIZE, SIZE);
 		Graphics G = I.getGraphics();
 		/*
-		 * int a,b;
-		 * for (a=0;a<SIZE;a++)
-		 * for (b=0;b<SIZE;b++) {
-		 * G.setColor(calcPos(a,b));
-		 * G.drawLine(a,b,a,b);
-		 * g.setColor(calcPos(a,b));
-		 * g.drawLine(a,b,a,b);
-		 * }
+		 * int a,b; for (a=0;a<SIZE;a++) for (b=0;b<SIZE;b++) {
+		 * G.setColor(calcPos(a,b)); G.drawLine(a,b,a,b);
+		 * g.setColor(calcPos(a,b)); g.drawLine(a,b,a,b); }
 		 */
 		int width = SIZE;
 		/*
-		 * int a,b;
-		 * for (a=0;a<SIZE;a++)
-		 * for (b=0;b<SIZE;b++) {
-		 * G.setColor(calcPos(a,b));
-		 * G.drawLine(a,b,a,b);
-		 * g.setColor(calcPos(a,b));
-		 * g.drawLine(a,b,a,b);
-		 * }
+		 * int a,b; for (a=0;a<SIZE;a++) for (b=0;b<SIZE;b++) {
+		 * G.setColor(calcPos(a,b)); G.drawLine(a,b,a,b);
+		 * g.setColor(calcPos(a,b)); g.drawLine(a,b,a,b); }
 		 */
 		int height = SIZE;
 		int x;
@@ -209,8 +196,7 @@ public class FractPic extends Canvas {
 					if (FOCUS != 1) {
 						G.fillRect(x, y, FOCUS, FOCUS);
 						g.fillRect(x, y, FOCUS, FOCUS);
-					}
-					else {
+					} else {
 						G.drawLine(x, y, x, y);
 						g.drawLine(x, y, x, y);
 					}
@@ -220,12 +206,16 @@ public class FractPic extends Canvas {
 	}
 
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  i   Description of Parameter 
-	 *@param  r   Description of Parameter 
-	 *@param  r2  Description of Parameter 
-	 *@param  r3  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param i
+	 *            Description of Parameter
+	 * @param r
+	 *            Description of Parameter
+	 * @param r2
+	 *            Description of Parameter
+	 * @param r3
+	 *            Description of Parameter
 	 */
 	private void skip(int i, Random r, Random r2, Random r3) {
 		for (int a = 0; a < i; a++) {
@@ -235,11 +225,11 @@ public class FractPic extends Canvas {
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public static void main(String s[]) {
 		Frame f = new Frame();
@@ -250,10 +240,7 @@ public class FractPic extends Canvas {
 		f.setVisible(true);
 	}
 
-
 }
 /*
- * r float long
- * g float long
- * b float long
+ * r float long g float long b float long
  */

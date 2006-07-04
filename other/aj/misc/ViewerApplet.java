@@ -4,10 +4,10 @@ import java.applet.Applet;
 import java.awt.BorderLayout;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 public class ViewerApplet extends Applet {
 	/**
@@ -16,12 +16,12 @@ public class ViewerApplet extends Applet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void init() {
-		//read params
+		// read params
 		String urls = getParameter("files");
-		if (urls==null) {
+		if (urls == null) {
 			System.out.println("MyError: no parameter 'files' in applet");
 			System.exit(0);
 		}
@@ -35,7 +35,7 @@ public class ViewerApplet extends Applet {
 			}
 		}
 
-		//make Viewer with args
+		// make Viewer with args
 		setLayout(new BorderLayout());
 		add("Center", new aj.misc.Viewer(all));
 	}

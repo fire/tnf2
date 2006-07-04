@@ -12,20 +12,20 @@ import java.util.Vector;
 import aj.misc.Stuff;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 public class MyURL {
 
 	static Vector additional = new Vector();
 
-
 	/**
-	 *  Sets the Additional attribute of the MyURL class 
-	 *
-	 *@param  v  The new Additional value 
+	 * Sets the Additional attribute of the MyURL class
+	 * 
+	 * @param v
+	 *            The new Additional value
 	 */
 	public static void setAdditional(Vector v) {
 		if (v == null) {
@@ -34,12 +34,12 @@ public class MyURL {
 		additional = v;
 	}
 
-
 	/**
-	 *  Gets the BufferedReader attribute of the MyURL class 
-	 *
-	 *@param  s  Description of Parameter 
-	 *@return    The BufferedReader value 
+	 * Gets the BufferedReader attribute of the MyURL class
+	 * 
+	 * @param s
+	 *            Description of Parameter
+	 * @return The BufferedReader value
 	 */
 	public static BufferedReader getBufferedReader(String s) {
 		try {
@@ -48,7 +48,8 @@ public class MyURL {
 			}
 			s = s.substring("HTTP://".length());
 			while (s.indexOf("\\") >= 0) {
-				s = s.substring(0, s.indexOf("\\")) + "/" + s.substring(s.indexOf("\\") + 1);
+				s = s.substring(0, s.indexOf("\\")) + "/"
+						+ s.substring(s.indexOf("\\") + 1);
 			}
 			if (s.indexOf("/") < 0) {
 				return null;
@@ -62,13 +63,15 @@ public class MyURL {
 			}
 			Socket ss = new Socket(host, port);
 
-			//request
-			PrintWriter pw = new PrintWriter(new OutputStreamWriter(ss.getOutputStream()));
+			// request
+			PrintWriter pw = new PrintWriter(new OutputStreamWriter(ss
+					.getOutputStream()));
 			pw.println("GET /get" + file + " HTTP/1.0");
 			System.out.println("GET /get" + file + "/ HTTP/1.0");
-			//pw.println("Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, image/png, */*");
-			//pw.println("Accept-Language: en");
-			//pw.println("Accept-Charset: iso-8859-1,*,utf-8");
+			// pw.println("Accept: image/gif, image/x-xbitmap, image/jpeg,
+			// image/pjpeg, image/png, */*");
+			// pw.println("Accept-Language: en");
+			// pw.println("Accept-Charset: iso-8859-1,*,utf-8");
 			if (additional != null && additional.size() > 0) {
 				for (int a = 0; a < additional.size(); a++) {
 					pw.println(additional.elementAt(a));
@@ -80,19 +83,21 @@ public class MyURL {
 			pw = null;
 
 			/*
-			 * GET http://clubs.lycos.com/auth/live/Directory/Photo.asp?ACT=VOTE&CG=llfae5c88va138400188mohh08&AID=61793&PID=412220 HTTP/1.0
-			 * Referer: http://clubs.lycos.com/auth/live/Directory/Photo.asp?CG=llfae5c88va138400188mohh08&PID=412220
-			 * Proxy-Connection: Keep-Alive
-			 * User-Agent: Mozilla/4.73 [en] (WinNT; U)
-			 * Host: clubs.lycos.com
-			 * Accept-Encoding: gzip
-			 * Accept-Language: en
-			 * Accept-Charset: iso-8859-1,*,utf-8
-			 * Cookie: lycos_sso=xyxyx; VIPAC=71m34t1lccqn0obic4oj6dje60o30d33cop3gcrdds034c1g64o3ec9h64sj8c00ae053t8j44180qf77l25l9gj1g; XMLSOURCE=FW
+			 * GET
+			 * http://clubs.lycos.com/auth/live/Directory/Photo.asp?ACT=VOTE&CG=llfae5c88va138400188mohh08&AID=61793&PID=412220
+			 * HTTP/1.0 Referer:
+			 * http://clubs.lycos.com/auth/live/Directory/Photo.asp?CG=llfae5c88va138400188mohh08&PID=412220
+			 * Proxy-Connection: Keep-Alive User-Agent: Mozilla/4.73 [en]
+			 * (WinNT; U) Host: clubs.lycos.com Accept-Encoding: gzip
+			 * Accept-Language: en Accept-Charset: iso-8859-1,*,utf-8 Cookie:
+			 * lycos_sso=xyxyx;
+			 * VIPAC=71m34t1lccqn0obic4oj6dje60o30d33cop3gcrdds034c1g64o3ec9h64sj8c00ae053t8j44180qf77l25l9gj1g;
+			 * XMLSOURCE=FW
 			 */
 
-			//read head
-			BufferedReader i = new BufferedReader(new InputStreamReader(ss.getInputStream()));
+			// read head
+			BufferedReader i = new BufferedReader(new InputStreamReader(ss
+					.getInputStream()));
 			String ls = i.readLine();
 			while (ls != null && !ls.equals("")) {
 				if (ls.indexOf("HTTP/") >= 0) {
@@ -104,28 +109,29 @@ public class MyURL {
 				ls = i.readLine();
 			}
 			return i;
-		}
-		catch (Exception E) {
+		} catch (Exception E) {
 			System.out.println("MyError in MyURL: " + E);
 			return null;
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s                Description of Parameter 
-	 *@exception  IOException  Description of Exception 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
+	 * @exception IOException
+	 *                Description of Exception
 	 */
 	public static void main(String s[]) throws IOException {
-		Vector v=new Vector();
+		Vector v = new Vector();
 		v.addElement("Connection: Keep-Alive");
 		v.addElement("Range: bytes=0-");
 		v.addElement("User-Agent: Gnutella");
 		setAdditional(v);
 		if (s.length < 1) {
-			System.out.println("FORMAT: java aj.net.MyURL <url> [<outputfile>]");
+			System.out
+					.println("FORMAT: java aj.net.MyURL <url> [<outputfile>]");
 			System.exit(0);
 		}
 		BufferedReader br = MyURL.getBufferedReader(s[0]);
@@ -140,8 +146,7 @@ public class MyURL {
 				fo.write((byte) c);
 				c = br.read();
 			}
-		}
-		else {
+		} else {
 			String S = br.readLine();
 			while (S != null) {
 				System.out.println(S);

@@ -22,35 +22,42 @@ import java.util.Vector;
 import aj.awt.SimpleWindowManager;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 public class FadeCanvas2 extends Canvas implements ActionListener {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	Image Show, One, Two;
+
 	int mx, my;
+
 	int pixel_data[];
+
 	Vector FadeList;
+
 	MediaTracker MT;
 
 	FadeFilter2 c2;
 
 	int count = 0;
+
 	static int STEPS = 50, DELAY = 20;
 
 	static Button blend = new Button("Blend it");
 
-
 	/**
-	 *  Constructor for the FadeCanvas2 object 
-	 *
-	 *@param  Fname1  Description of Parameter 
-	 *@param  Fname2  Description of Parameter 
+	 * Constructor for the FadeCanvas2 object
+	 * 
+	 * @param Fname1
+	 *            Description of Parameter
+	 * @param Fname2
+	 *            Description of Parameter
 	 */
 	public FadeCanvas2(String Fname1, String Fname2) {
 		try {
@@ -73,16 +80,14 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 			}
 			MT.addImage(Two, 0);
 			MT.waitForID(0);
-		}
-		catch (InterruptedException IE) {
+		} catch (InterruptedException IE) {
 			System.out.println("Something wrong.  Interrupted?? HELP!");
 			System.exit(0);
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void setup() {
 		int tx = One.getWidth(this);
@@ -106,8 +111,7 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 		p2 = new PixelGrabber(Two, 0, 0, mx, my, pixel_data, 0, mx);
 		try {
 			p2.grabPixels();
-		}
-		catch (Exception E) {
+		} catch (Exception E) {
 			System.out.println("interupted!!me");
 		}
 
@@ -120,12 +124,12 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 		System.out.println("Faded All!");
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Image loadImage(String s) {
 		byte file_data[];
@@ -136,21 +140,22 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 			IN.read(file_data);
 			IN.close();
 			return getToolkit().createImage(file_data);
-		}
-		catch (IOException IOE) {
+		} catch (IOException IOE) {
 			System.out.println("Error in file Input" + s);
 		}
 		return null;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  One  Description of Parameter 
-	 *@param  Two  Description of Parameter 
-	 *@param  f    Description of Parameter 
-	 *@return      Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param One
+	 *            Description of Parameter
+	 * @param Two
+	 *            Description of Parameter
+	 * @param f
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Image Fade(Image One, Image Two, int f) {
 		FadeFilter2 c2 = new FadeFilter2(pixel_data, mx, f);
@@ -158,9 +163,8 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 		return t;
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void doBlend4() {
 		Graphics g = getGraphics();
@@ -168,34 +172,29 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 			for (int a = 0; a < FadeList.size(); a++) {
 				try {
 					Thread.sleep(DELAY);
-				}
-				catch (InterruptedException IE) {
+				} catch (InterruptedException IE) {
 				}
 				Image I = (Image) FadeList.elementAt(a);
 				MT.addImage(I, 101);
 				try {
 					MT.waitForID(101);
-				}
-				catch (InterruptedException IE) {
+				} catch (InterruptedException IE) {
 				}
 				g.drawImage(I, 0, 0, mx, my, this);
 			}
 			Show = Two;
 			g.drawImage(Show, 0, 0, mx, my, this);
-		}
-		else {
+		} else {
 			for (int a = FadeList.size() - 1; a > -1; a--) {
 				try {
 					Thread.sleep(DELAY);
-				}
-				catch (InterruptedException IE) {
+				} catch (InterruptedException IE) {
 				}
 				Image I = (Image) FadeList.elementAt(a);
 				MT.addImage(I, 101);
 				try {
 					MT.waitForID(101);
-				}
-				catch (InterruptedException IE) {
+				} catch (InterruptedException IE) {
 				}
 				g.drawImage(I, 0, 0, mx, my, this);
 			}
@@ -204,9 +203,8 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void doBlend1() {
 		int BLOCK = 3;
@@ -215,8 +213,7 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 		Image I;
 		if (Show == One) {
 			I = Show = Two;
-		}
-		else {
+		} else {
 			I = Show = One;
 		}
 
@@ -229,59 +226,59 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 			int a = (int) (Math.random() * list.size());
 			Point p = (Point) list.elementAt(a);
 			list.removeElementAt(a);
-			g.drawImage(I, p.x, p.y, p.x + BLOCK, p.y + BLOCK, p.x, p.y, p.x + BLOCK, p.y + BLOCK, this);
+			g.drawImage(I, p.x, p.y, p.x + BLOCK, p.y + BLOCK, p.x, p.y, p.x
+					+ BLOCK, p.y + BLOCK, this);
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
 	 */
 	public void paint(Graphics g) {
 		g.drawImage(Show, 0, 0, mx, my, this);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  E  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param E
+	 *            Description of Parameter
 	 */
 	public void actionPerformed(ActionEvent E) {
 		if (E.getSource() == blend) {
-			//          if (count%2==0)  doBlend1();
-			//          if (count%2==1)  doBlend4();
+			// if (count%2==0) doBlend1();
+			// if (count%2==1) doBlend4();
 			doBlend4();
 			count++;
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public static void main(String s[]) {
 		if (s.length < 2 || s.length > 4) {
-			System.out.println("Format: java FadeCanvas2 <img1> <img2> [STEPS] [DELAY]");
+			System.out
+					.println("Format: java FadeCanvas2 <img1> <img2> [STEPS] [DELAY]");
 			System.exit(0);
 		}
 		if (s.length >= 3) {
 			try {
 				STEPS = Integer.parseInt(s[2]);
-			}
-			catch (NumberFormatException NFE) {
+			} catch (NumberFormatException NFE) {
 				System.out.println("bad number in args");
 			}
 		}
 		if (s.length == 4) {
 			try {
 				DELAY = Integer.parseInt(s[3]);
-			}
-			catch (NumberFormatException NFE) {
+			} catch (NumberFormatException NFE) {
 				System.out.println("bad number in args");
 			}
 		}
@@ -301,27 +298,29 @@ public class FadeCanvas2 extends Canvas implements ActionListener {
 	}
 }
 
-
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 class FadeFilter2 extends RGBImageFilter {
 
-
 	int data[];
+
 	int fade;
+
 	int mx;
 
-
 	/**
-	 *  Constructor for the FadeFilter2 object 
-	 *
-	 *@param  d  Description of Parameter 
-	 *@param  x  Description of Parameter 
-	 *@param  f  Description of Parameter 
+	 * Constructor for the FadeFilter2 object
+	 * 
+	 * @param d
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param f
+	 *            Description of Parameter
 	 */
 	public FadeFilter2(int d[], int x, int f) {
 		data = d;
@@ -330,14 +329,16 @@ class FadeFilter2 extends RGBImageFilter {
 		canFilterIndexColorModel = false;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  x    Description of Parameter 
-	 *@param  y    Description of Parameter 
-	 *@param  rgb  Description of Parameter 
-	 *@return      Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param rgb
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public int filterRGB(int x, int y, int rgb) {
 		if (y * mx + x >= data.length) {

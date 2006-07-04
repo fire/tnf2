@@ -1,36 +1,42 @@
 package aj.proof;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 public class Term {
 	int type = Token.ERROR;
+
 	String val = "ERROR";
+
 	Function fun = null;
+
 	int varcount = 0;
+
 	static int UNBOUND = -1;
 
-
 	/**
-	 *  Constructor for the Term object 
-	 *
-	 *@param  type  Description of Parameter 
-	 *@param  val   Description of Parameter 
+	 * Constructor for the Term object
+	 * 
+	 * @param type
+	 *            Description of Parameter
+	 * @param val
+	 *            Description of Parameter
 	 */
 	public Term(int type, String val) {
 		this.type = type;
 		this.val = val;
 	}
 
-
 	/**
-	 *  Constructor for the Term object 
-	 *
-	 *@param  type  Description of Parameter 
-	 *@param  f     Description of Parameter 
+	 * Constructor for the Term object
+	 * 
+	 * @param type
+	 *            Description of Parameter
+	 * @param f
+	 *            Description of Parameter
 	 */
 	public Term(int type, Function f) {
 		this.type = type;
@@ -38,11 +44,11 @@ public class Term {
 		fun = f;
 	}
 
-
 	/**
-	 *  Constructor for the Term object 
-	 *
-	 *@param  T  Description of Parameter 
+	 * Constructor for the Term object
+	 * 
+	 * @param T
+	 *            Description of Parameter
 	 */
 	public Term(Term T) {
 		type = T.type;
@@ -53,28 +59,27 @@ public class Term {
 		varcount = T.varcount;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  T  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param T
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean contains(Term T) {
 		if (type != Token.FUNCTION) {
 			return false;
-		}
-		else {
+		} else {
 			return fun.contains(T);
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  E  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param E
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean equals(Term E) {
 		if (E.type != type) {
@@ -98,52 +103,47 @@ public class Term {
 		return false;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public String toString() {
 		String t;
 		if (type == Token.GROUND) {
 			t = "" + val + "";
-		}
-		else if (type == Token.VARIABLE) {
+		} else if (type == Token.VARIABLE) {
 			t = val;
 			if (varcount != UNBOUND) {
 				t += varcount;
-			}
-			else {
+			} else {
 				t += "UB!";
 			}
-		}
-		else if (type == Token.FUNCTION) {
+		} else if (type == Token.FUNCTION) {
 			t = fun.toString();
-		}
-		else {
+		} else {
 			t = "Term ERROR";
 		}
 		return t;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  S  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param S
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static Term Parse(String S) {
 		return Parse(new Tokens(S));
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  T  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param T
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static Term Parse(Tokens T) {
 		if (T.currType() == Token.GROUND || T.currType() == Token.VARIABLE) {
@@ -151,12 +151,10 @@ public class Term {
 			int type = T.currType();
 			T.eat();
 			return new Term(type, val);
-		}
-		else if (T.currType() == Token.FUNCTION) {
+		} else if (T.currType() == Token.FUNCTION) {
 			int type = T.currType();
 			return new Term(type, Function.Parse(T));
-		}
-		else {
+		} else {
 			return new Term(Token.ERROR, "ERROR");
 		}
 	}

@@ -10,10 +10,10 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 public class Rose extends Frame implements KeyListener {
 
@@ -21,16 +21,16 @@ public class Rose extends Frame implements KeyListener {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	int count = 0;
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  e  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param e
+	 *            Description of Parameter
 	 */
-	public void 
-			keyPressed(KeyEvent e) {
+	public void keyPressed(KeyEvent e) {
 		count++;
 		if (count > 100) {
 			count = 0;
@@ -45,111 +45,120 @@ public class Rose extends Frame implements KeyListener {
 		int size = myrand(maxsize) + maxsize;
 		g.setColor(new Color(myrand(255), myrand(255), myrand(255)));
 		switch (myrand(6)) {
-			case 0:
-				drawSquare(g, x, y, size);
-				break;
-			case 1:
-				drawRect(g, x, y, size);
-				break;
-			case 2:
-				drawCircle(g, x, y, size);
-				break;
-			case 3:
-				drawTriangle(g, x, y, size);
-				break;
-			case 4:
-				drawLetter(g, x, y, size);
-				break;
-			case 5:
-				drawNumber(g, x, y, size);
-				break;
+		case 0:
+			drawSquare(g, x, y, size);
+			break;
+		case 1:
+			drawRect(g, x, y, size);
+			break;
+		case 2:
+			drawCircle(g, x, y, size);
+			break;
+		case 3:
+			drawTriangle(g, x, y, size);
+			break;
+		case 4:
+			drawLetter(g, x, y, size);
+			break;
+		case 5:
+			drawNumber(g, x, y, size);
+			break;
 		}
 
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  e  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param e
+	 *            Description of Parameter
 	 */
-	public void 
-			keyReleased(KeyEvent e) {
+	public void keyReleased(KeyEvent e) {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  e  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param e
+	 *            Description of Parameter
 	 */
-	public void 
-			keyTyped(KeyEvent e) {
+	public void keyTyped(KeyEvent e) {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  d  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param d
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public int myrand(int d) {
 		return (int) (Math.random() * d);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  x     Description of Parameter 
-	 *@param  y     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawSquare(Graphics g, int x, int y, int size) {
 		g.fillRect(x - size / 2, y - size / 2, size, size);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  x     Description of Parameter 
-	 *@param  y     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawRect(Graphics g, int x, int y, int size) {
 		if (myrand(2) == 0) {
 			g.fillRect(x - size / 2, y - size / 2, size, size / 2);
-		}
-		else {
+		} else {
 			g.fillRect(x - size / 2, y - size / 2, size / 2, size);
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  x     Description of Parameter 
-	 *@param  y     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawCircle(Graphics g, int x, int y, int size) {
 		g.fillOval(x - size / 2, y - size / 2, size, size);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  x     Description of Parameter 
-	 *@param  y     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawLetter(Graphics g, int x, int y, int size) {
 		Font F = g.getFont();
@@ -162,14 +171,17 @@ public class Rose extends Frame implements KeyListener {
 		g.drawString(c, x, y);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  x     Description of Parameter 
-	 *@param  y     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawNumber(Graphics g, int x, int y, int size) {
 		Font F = g.getFont();
@@ -182,14 +194,17 @@ public class Rose extends Frame implements KeyListener {
 		g.drawString(c, x, y);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  x     Description of Parameter 
-	 *@param  y     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawTriangle(Graphics g, int x, int y, int size) {
 		Polygon p = new Polygon();
@@ -201,13 +216,14 @@ public class Rose extends Frame implements KeyListener {
 		g.fillPolygon(p);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  p  Description of Parameter 
-	 *@param  s  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param p
+	 *            Description of Parameter
+	 * @param s
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Polygon scale(Polygon p, double s) {
 		for (int a = 0; a < p.npoints; a++) {
@@ -217,14 +233,16 @@ public class Rose extends Frame implements KeyListener {
 		return p;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  p  Description of Parameter 
-	 *@param  x  Description of Parameter 
-	 *@param  y  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param p
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public Polygon trans(Polygon p, int x, int y) {
 		for (int a = 0; a < p.npoints; a++) {
@@ -234,14 +252,17 @@ public class Rose extends Frame implements KeyListener {
 		return p;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  x     Description of Parameter 
-	 *@param  y     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawDiamond(Graphics g, int x, int y, int size) {
 		Polygon p = new Polygon();
@@ -255,14 +276,17 @@ public class Rose extends Frame implements KeyListener {
 		g.fillPolygon(p);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  x     Description of Parameter 
-	 *@param  y     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawStar(Graphics g, int x, int y, int size) {
 		Polygon p = new Polygon();
@@ -276,11 +300,11 @@ public class Rose extends Frame implements KeyListener {
 		g.fillPolygon(p);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public static void main(String s[]) {
 		Rose r = new Rose();

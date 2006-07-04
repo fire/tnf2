@@ -5,10 +5,10 @@ import java.awt.Point;
 import java.awt.Polygon;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 public class Arrow implements DisplayItem {
 
@@ -27,12 +27,16 @@ public class Arrow implements DisplayItem {
 	private boolean fill = false;
 
 	/**
-	 *  Constructor for the Arrow object 
-	 *
-	 *@param  x   Description of Parameter 
-	 *@param  y   Description of Parameter 
-	 *@param  x2  Description of Parameter 
-	 *@param  y2  Description of Parameter 
+	 * Constructor for the Arrow object
+	 * 
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param x2
+	 *            Description of Parameter
+	 * @param y2
+	 *            Description of Parameter
 	 */
 	public Arrow(double x, double y, double x2, double y2) {
 		Point from = fp = new Point((int) x, (int) y);
@@ -50,11 +54,14 @@ public class Arrow implements DisplayItem {
 	}
 
 	/**
-	 *  Constructor for the Arrow object 
-	 *
-	 *@param  from  Description of Parameter 
-	 *@param  to    Description of Parameter 
-	 *@param  wid   Description of Parameter 
+	 * Constructor for the Arrow object
+	 * 
+	 * @param from
+	 *            Description of Parameter
+	 * @param to
+	 *            Description of Parameter
+	 * @param wid
+	 *            Description of Parameter
 	 */
 	public Arrow(Point from, Point to, int wid) {
 		fp = from;
@@ -71,12 +78,16 @@ public class Arrow implements DisplayItem {
 	}
 
 	/**
-	 *  Constructor for the Arrow object 
-	 *
-	 *@param  from  Description of Parameter 
-	 *@param  to    Description of Parameter 
-	 *@param  wid   Description of Parameter 
-	 *@param  hei   Description of Parameter 
+	 * Constructor for the Arrow object
+	 * 
+	 * @param from
+	 *            Description of Parameter
+	 * @param to
+	 *            Description of Parameter
+	 * @param wid
+	 *            Description of Parameter
+	 * @param hei
+	 *            Description of Parameter
 	 */
 	public Arrow(Point from, Point to, int wid, int hei) {
 		tp = to;
@@ -93,13 +104,18 @@ public class Arrow implements DisplayItem {
 	}
 
 	/**
-	 *  Constructor for the Arrow object 
-	 *
-	 *@param  from  Description of Parameter 
-	 *@param  to    Description of Parameter 
-	 *@param  wid   Description of Parameter 
-	 *@param  hei   Description of Parameter 
-	 *@param  f     Description of Parameter 
+	 * Constructor for the Arrow object
+	 * 
+	 * @param from
+	 *            Description of Parameter
+	 * @param to
+	 *            Description of Parameter
+	 * @param wid
+	 *            Description of Parameter
+	 * @param hei
+	 *            Description of Parameter
+	 * @param f
+	 *            Description of Parameter
 	 */
 	public Arrow(Point from, Point to, int wid, int hei, boolean f) {
 		fill = f;
@@ -117,28 +133,31 @@ public class Arrow implements DisplayItem {
 	}
 
 	/**
-	 *  Sets the Fill attribute of the Arrow object 
-	 *
-	 *@param  b  The new Fill value 
+	 * Sets the Fill attribute of the Arrow object
+	 * 
+	 * @param b
+	 *            The new Fill value
 	 */
 	public void setFill(boolean b) {
 		fill = b;
 	}
 
 	/**
-	 *  Sets the Fill attribute of the Arrow object 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Sets the Fill attribute of the Arrow object
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public boolean setFill() {
 		return fill;
 	}
 
 	/**
-	 *  Sets the X attribute of the Arrow object 
-	 *
-	 *@param  d  The new X value 
-	 *@param  s  The new X value 
+	 * Sets the X attribute of the Arrow object
+	 * 
+	 * @param d
+	 *            The new X value
+	 * @param s
+	 *            The new X value
 	 */
 	public void setX(double d, double s) {
 		tp = new Point((int) (d / s), tp.y);
@@ -146,10 +165,12 @@ public class Arrow implements DisplayItem {
 	}
 
 	/**
-	 *  Sets the Y attribute of the Arrow object 
-	 *
-	 *@param  d  The new Y value 
-	 *@param  s  The new Y value 
+	 * Sets the Y attribute of the Arrow object
+	 * 
+	 * @param d
+	 *            The new Y value
+	 * @param s
+	 *            The new Y value
 	 */
 	public void setY(double d, double s) {
 		tp = new Point(tp.x, (int) (d / s));
@@ -157,30 +178,34 @@ public class Arrow implements DisplayItem {
 	}
 
 	/**
-	 *  Gets the X attribute of the Arrow object 
-	 *
-	 *@param  s  Description of Parameter 
-	 *@return    The X value 
+	 * Gets the X attribute of the Arrow object
+	 * 
+	 * @param s
+	 *            Description of Parameter
+	 * @return The X value
 	 */
 	public double getX(double s) {
 		return tp.x * s;
 	}
 
 	/**
-	 *  Gets the Y attribute of the Arrow object 
-	 *
-	 *@param  s  Description of Parameter 
-	 *@return    The Y value 
+	 * Gets the Y attribute of the Arrow object
+	 * 
+	 * @param s
+	 *            Description of Parameter
+	 * @return The Y value
 	 */
 	public double getY(double s) {
 		return tp.y * s;
 	}
 
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g  Description of Parameter 
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public void display(Graphics g, double s) {
 		p = new Polygon();

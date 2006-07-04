@@ -1,89 +1,104 @@
 package aj.awt;
+
 import java.awt.Frame;
 import java.awt.Window;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 public class SimpleWindowManager implements WindowListener {
 	boolean autoDispose = true;
+
 	boolean exitOnClosing = true;
-	
+
 	public SimpleWindowManager() {
-		exitOnClosing = true; 
+		exitOnClosing = true;
 	}
-	
-	public SimpleWindowManager (boolean ad) {
+
+	public SimpleWindowManager(boolean ad) {
 		exitOnClosing = false;
 		autoDispose = ad;
 	}
-	
-	public void windowClosing (WindowEvent WE) {
+
+	public void windowClosing(WindowEvent WE) {
 		Window w = WE.getWindow();
-		if (exitOnClosing)System.exit (1);
+		if (exitOnClosing)
+			System.exit(1);
 		else if (autoDispose) {
 			w.dispose();
+		} else {
+			w.setVisible(false);// ();
 		}
-		else {
-			w.setVisible(false);//();
-		}
 	}
+
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  WE  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param WE
+	 *            Description of Parameter
 	 */
-	public void windowActivated (WindowEvent WE) {
+	public void windowActivated(WindowEvent WE) {
 	}
+
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  WE  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param WE
+	 *            Description of Parameter
 	 */
-	public void windowClosed (WindowEvent WE) {
+	public void windowClosed(WindowEvent WE) {
 	}
+
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  WE  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param WE
+	 *            Description of Parameter
 	 */
-	public void windowDeactivated (WindowEvent WE) {
+	public void windowDeactivated(WindowEvent WE) {
 	}
+
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  WE  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param WE
+	 *            Description of Parameter
 	 */
-	public void windowDeiconified (WindowEvent WE) {
+	public void windowDeiconified(WindowEvent WE) {
 	}
+
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  WE  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param WE
+	 *            Description of Parameter
 	 */
-	public void windowIconified (WindowEvent WE) {
+	public void windowIconified(WindowEvent WE) {
 	}
+
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  WE  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param WE
+	 *            Description of Parameter
 	 */
-	public void windowOpened (WindowEvent WE) {
+	public void windowOpened(WindowEvent WE) {
 	}
+
 	/**
-	 *  A test method for the Simple window manager 
-	 *
-	 *@param  args  
+	 * A test method for the Simple window manager
+	 * 
+	 * @param args
 	 */
-	public static void main (String args[]) {
+	public static void main(String args[]) {
 		Frame F = new Frame();
-		F.addWindowListener (new SimpleWindowManager());
-		F.setSize (100, 100);
-		F.setVisible (true);
+		F.addWindowListener(new SimpleWindowManager());
+		F.setSize(100, 100);
+		F.setVisible(true);
 	}
 }
-
