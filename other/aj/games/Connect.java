@@ -19,34 +19,40 @@ import aj.awt.SimpleWindowManager;
  */
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
-public class Connect extends Canvas implements MouseListener, MouseMotionListener {
+public class Connect extends Canvas implements MouseListener,
+		MouseMotionListener {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	private Vector allLines;
+
 	private Vector allSquares;
+
 	private Vector[] moves;
 
 	private int player = 0;
 
 	private Point start, last;
+
 	/**
-	 *  Description of the Field 
+	 * Description of the Field
 	 */
 	public static int numPlayers = 4;
 
 	private static int SIZE = 30, OVAL = 4, SQRS = 5;
-	private static Color myColors[] = {Color.blue, Color.red, Color.green, Color.yellow};
 
+	private static Color myColors[] = { Color.blue, Color.red, Color.green,
+			Color.yellow };
 
 	/**
-	 *  Constructor for the Connect object 
+	 * Constructor for the Connect object
 	 */
 	public Connect() {
 		allLines = new Vector();
@@ -59,60 +65,59 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		addMouseMotionListener(this);
 	}
 
-
 	/**
-	 *  Gets the MinimumSize attribute of the Connect object 
-	 *
-	 *@return    The MinimumSize value 
+	 * Gets the MinimumSize attribute of the Connect object
+	 * 
+	 * @return The MinimumSize value
 	 */
 	public Dimension getMinimumSize() {
 		return getPreferredSize();
 	}
 
-
 	/**
-	 *  Gets the MaximumSize attribute of the Connect object 
-	 *
-	 *@return    The MaximumSize value 
+	 * Gets the MaximumSize attribute of the Connect object
+	 * 
+	 * @return The MaximumSize value
 	 */
 	public Dimension getMaximumSize() {
 		return getPreferredSize();
 	}
 
-
 	/**
-	 *  Gets the PreferredSize attribute of the Connect object 
-	 *
-	 *@return    The PreferredSize value 
+	 * Gets the PreferredSize attribute of the Connect object
+	 * 
+	 * @return The PreferredSize value
 	 */
 	public Dimension getPreferredSize() {
 		return new Dimension(SIZE * (SQRS - 1), SIZE * (SQRS - 1));
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
 	 */
 	public void update(Graphics g) {
 		paint(g);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
 	 */
 	public void paint(Graphics g) {
-		for (int a=0; a < SQRS; a++) {
+		for (int a = 0; a < SQRS; a++) {
 			for (int b = 0; b < SQRS; b++) {
-				g.drawOval(a * SIZE - OVAL / 2, b * SIZE - OVAL / 2, OVAL, OVAL);
+				g
+						.drawOval(a * SIZE - OVAL / 2, b * SIZE - OVAL / 2,
+								OVAL, OVAL);
 			}
 		}
-		for (int a=0; a < numPlayers; a++) {
-			//System.out.println("moves for "+a+" ="+moves[a].size());
+		for (int a = 0; a < numPlayers; a++) {
+			// System.out.println("moves for "+a+" ="+moves[a].size());
 			g.setColor(myColors[a]);
 			for (int b = 0; b < moves[a].size(); b++) {
 				MyLine o = (MyLine) moves[a].elementAt(b);
@@ -121,47 +126,47 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseClicked(MouseEvent ME) {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseEntered(MouseEvent ME) {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseExited(MouseEvent ME) {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseMoved(MouseEvent ME) {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mousePressed(MouseEvent ME) {
 		int x = ME.getX();
@@ -173,11 +178,11 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		xordraw();
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseReleased(MouseEvent ME) {
 		int x = ME.getX();
@@ -189,11 +194,11 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		addMove(start, last);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseDragged(MouseEvent ME) {
 		int x = ME.getX();
@@ -205,23 +210,25 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		xordraw();
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void xordraw() {
 		Graphics g = getGraphics();
 		g.setColor(myColors[player]);
 		g.setXORMode(Color.white);
-		g.drawLine(start.x * SIZE, start.y * SIZE, last.x * SIZE, last.y * SIZE);
+		g
+				.drawLine(start.x * SIZE, start.y * SIZE, last.x * SIZE, last.y
+						* SIZE);
 	}
 
-
 	/**
-	 *  Adds a feature to the Move attribute of the Connect object 
-	 *
-	 *@param  s  The feature to be added to the Move attribute 
-	 *@param  t  The feature to be added to the Move attribute 
+	 * Adds a feature to the Move attribute of the Connect object
+	 * 
+	 * @param s
+	 *            The feature to be added to the Move attribute
+	 * @param t
+	 *            The feature to be added to the Move attribute
 	 */
 	public void addMove(Point s, Point t) {
 		if (s.x == t.x && s.y == t.y) {
@@ -237,7 +244,7 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		if (find(allLines, l)) {
 			return;
 		}
-		//    System.out.println("new line added");
+		// System.out.println("new line added");
 		allLines.addElement(l);
 		moves[player].addElement(l);
 		if (!checkFill()) {
@@ -246,16 +253,15 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		repaint();
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public boolean checkFill() {
-		//    System.out.println("Square test");
+		// System.out.println("Square test");
 		boolean freeturn = false;
-		for (int a=0; a < SIZE; a++) {
+		for (int a = 0; a < SIZE; a++) {
 			for (int b = 0; b < SIZE; b++) {
 				Point o1 = new Point(a, b);
 				Point o2 = new Point(a, b + 1);
@@ -265,13 +271,13 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 				MyLine l2 = new MyLine(o2, o3);
 				MyLine l3 = new MyLine(o3, o4);
 				MyLine l4 = new MyLine(o4, o1);
-				if (find(allLines, l1) && find(allLines, l2) && 
-						find(allLines, l3) && find(allLines, l4)) {
-					//        System.out.println("Square filled found");
+				if (find(allLines, l1) && find(allLines, l2)
+						&& find(allLines, l3) && find(allLines, l4)) {
+					// System.out.println("Square filled found");
 					MyLine sl = new MyLine(o1, o3);
 					MyLine s2 = new MyLine(o2, o4);
 					if (!find(allSquares, sl) && !find(allSquares, s2)) {
-						//          System.out.println("Square filled first fill");
+						// System.out.println("Square filled first fill");
 						allSquares.addElement(sl);
 						moves[player].addElement(sl);
 						freeturn = true;
@@ -282,9 +288,8 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		return freeturn;
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void nextPlayer() {
 		player++;
@@ -293,16 +298,17 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  v  Description of Parameter 
-	 *@param  l  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param v
+	 *            Description of Parameter
+	 * @param l
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean find(Vector v, MyLine l) {
-		for (int a=0; a < v.size(); a++) {
+		for (int a = 0; a < v.size(); a++) {
 			MyLine ll = (MyLine) v.elementAt(a);
 			if (ll.equals(l) || l.equals(ll)) {
 				return true;
@@ -311,11 +317,11 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 		return false;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public static void main(String s[]) {
 		Frame f = new Frame("Connect");
@@ -329,22 +335,22 @@ public class Connect extends Canvas implements MouseListener, MouseMotionListene
 }
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    August 29, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created August 29, 2000
  */
 class MyLine {
 
-
 	Point s, t;
 
-
 	/**
-	 *  Constructor for the MyLine object 
-	 *
-	 *@param  ss  Description of Parameter 
-	 *@param  tt  Description of Parameter 
+	 * Constructor for the MyLine object
+	 * 
+	 * @param ss
+	 *            Description of Parameter
+	 * @param tt
+	 *            Description of Parameter
 	 */
 	public MyLine(Point ss, Point tt) {
 		s = ss;
@@ -356,12 +362,12 @@ class MyLine {
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  l  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param l
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean equals(MyLine l) {
 		if ((s.x == l.s.x && s.y == l.s.y && t.y == l.t.y && t.x == l.t.x)) {
@@ -370,44 +376,45 @@ class MyLine {
 		return false;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawSelf(Graphics g, int size) {
 		if (Math.abs(s.x - t.x) + Math.abs(s.y - t.y) == 2) {
 			drawSquare(g, size);
-		}
-		else {
+		} else {
 			drawLine(g, size);
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawLine(Graphics g, int size) {
 		if (s.x != t.x) {
 			g.fillRect(t.x * size + 1, t.y * size - 1, size, 3);
-		}
-		else {
+		} else {
 			g.fillRect(t.x * size - 1, t.y * size + 1, 3, size);
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g     Description of Parameter 
-	 *@param  size  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
+	 * @param size
+	 *            Description of Parameter
 	 */
 	public void drawSquare(Graphics g, int size) {
 		int x = Math.min(s.x, t.x);

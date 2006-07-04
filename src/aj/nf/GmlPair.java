@@ -10,27 +10,30 @@ import java.io.StringReader;
 import java.util.Vector;
 
 /**
- *  GmlPairs look like this 
- *borderColor[red 0 green 0 blue 0]
- *shape "Oval" 
- *<gml_pair>=<name> <val>|name[<list of gmlpairs>]
- *<name>=String 
- *<val>=<String>|double
- *<String>=no white space or ']' '[', may be inside.  Use " to allow white spaces
- * no \n in strings.  Exponential doubles require "".
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * GmlPairs look like this borderColor[red 0 green 0 blue 0] shape "Oval"
+ * <gml_pair>=<name> <val>|name[<list of gmlpairs>] <name>=String <val>=<String>|double
+ * <String>=no white space or ']' '[', may be inside. Use " to allow white
+ * spaces no \n in strings. Exponential doubles require "".
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 public class GmlPair {
 
 	private String special = "~`!@#$%^&*()_+-={}[]:;\"\'<,>.?/|\t\n\r\\ ";
+
 	private String TAB = "\t";
+
 	private String name;
+
 	private double nvalue = -1;
+
 	private String svalue;
+
 	private Vector list;
+
 	private boolean terminal;
+
 	private boolean number;
 
 	public boolean equals(GmlPair g) {
@@ -50,9 +53,11 @@ public class GmlPair {
 
 	public GmlPair(String name, String value) {
 		if (name == null)
-			System.out.println("MyError: null name in GmlPair string. " + name+ " " + value);
+			System.out.println("MyError: null name in GmlPair string. " + name
+					+ " " + value);
 		if (value == null)
-			System.out.println("MyError: null value in GmlPair string. " + name+ " " + value);
+			System.out.println("MyError: null value in GmlPair string. " + name
+					+ " " + value);
 		this.name = name;
 		this.svalue = value;
 		this.nvalue = -1;
@@ -73,9 +78,11 @@ public class GmlPair {
 		this.name = name;
 		this.list = list;
 		if (name == null)
-			System.out.println("MyError: null name in GmlPair list. " + name+ " " + list);
+			System.out.println("MyError: null name in GmlPair list. " + name
+					+ " " + list);
 		if (list == null) {
-			System.out.println("MyError: null list in GmlPair list. " + name+ " " + list);
+			System.out.println("MyError: null list in GmlPair list. " + name
+					+ " " + list);
 			this.svalue = "";
 			this.terminal = true;
 			this.number = false;
@@ -146,8 +153,7 @@ public class GmlPair {
 		}
 		if (isDouble()) {
 			return "" + getDouble();
-		}
-		else {
+		} else {
 			return null;
 		}
 	}
@@ -156,8 +162,8 @@ public class GmlPair {
 
 		if (!terminal) {
 			return (Vector) list.clone();
-		}
-		else return new Vector();
+		} else
+			return new Vector();
 	}
 
 	public GmlPair[] getList() {
@@ -165,8 +171,7 @@ public class GmlPair {
 			GmlPair l[] = new GmlPair[list.size()];
 			list.copyInto(l);
 			return l;
-		}
-		else {
+		} else {
 			return new GmlPair[0];
 		}
 	}
@@ -220,7 +225,7 @@ public class GmlPair {
 	}
 
 	public String fixSpecial(String s) {
-		if (s == null || s.length()==0)
+		if (s == null || s.length() == 0)
 			return null;
 		String n = "";
 		while (s.indexOf("\\") >= 0) {
@@ -254,7 +259,7 @@ public class GmlPair {
 	}
 
 	public String prettyPrint(String pp) {
-		StringBuffer s=new StringBuffer();
+		StringBuffer s = new StringBuffer();
 		s.append(pp);
 		String name = this.name;
 		String svalue = this.svalue;
@@ -274,16 +279,14 @@ public class GmlPair {
 					s.append("\"" + svalue + "\"\n");
 				else
 					s.append("" + d + "\n");
-			}
-			catch (NumberFormatException NFE) {
+			} catch (NumberFormatException NFE) {
 				if (svalue.length() > 0 && !isSpecial(svalue)
 						&& !Character.isDigit(svalue.charAt(0)))
 					s.append("" + svalue + "\n");
 				else
 					s.append("\"" + svalue + "\"\n");
 			}
-		}
-		else {
+		} else {
 			s.append("[\n");
 			for (int a = 0; a < list.size(); a++) {
 				s.append(((GmlPair) list.elementAt(a)).prettyPrint(pp + TAB));
@@ -294,17 +297,17 @@ public class GmlPair {
 	}
 
 	public String toString() {
-		StringBuffer s=new StringBuffer();// s = "";
+		StringBuffer s = new StringBuffer();// s = "";
 		String name = this.name;
 		String svalue = this.svalue;
 		name = fixSpecial(name);
 		svalue = fixSpecial(svalue);
 		if (name.length() > 0 && !isSpecial(name)
 				&& !Character.isDigit(name.charAt(0)))
-			s .append("" + name + " ");
+			s.append("" + name + " ");
 		else
-			s .append("\"" + name + "\" ");
-		//s += "" + name + " ";
+			s.append("\"" + name + "\" ");
+		// s += "" + name + " ";
 		if (terminal) {
 			try {
 				double d = Stuff.parseDouble(svalue);
@@ -314,16 +317,14 @@ public class GmlPair {
 					s.append("\"" + svalue + "\" ");
 				else
 					s.append("" + d + " ");
-			}
-			catch (NumberFormatException NFE) {
+			} catch (NumberFormatException NFE) {
 				if (svalue.length() > 0 && !isSpecial(svalue)
 						&& !Character.isDigit(svalue.charAt(0)))
 					s.append("" + svalue + " ");
 				else
-					s.append( "\"" + svalue + "\" ");
+					s.append("\"" + svalue + "\" ");
 			}
-		}
-		else {
+		} else {
 			s.append("[");
 			for (int a = 0; a < list.size(); a++) {
 				s.append(list.elementAt(a));
@@ -367,8 +368,7 @@ public class GmlPair {
 		ST.nextToken();
 		if (ST.ttype == StreamTokenizer.TT_EOF) {
 			throw new IOException("GML parse error: Name only, value missing");
-		}
-		else if (ST.ttype == '[') {
+		} else if (ST.ttype == '[') {
 			Vector v = new Vector();
 			ST.nextToken();
 			if (ST.ttype == StreamTokenizer.TT_EOF) {
@@ -381,33 +381,32 @@ public class GmlPair {
 					v.addElement(g);
 				}
 				if (g == null) {
-					throw new IOException("GML parse error: Unable to parse list element.");
+					throw new IOException(
+							"GML parse error: Unable to parse list element.");
 				}
 			}
 			ST.nextToken();
 			return new GmlPair(n, v);
-		}
-		else if (ST.ttype == StreamTokenizer.TT_NUMBER) {
+		} else if (ST.ttype == StreamTokenizer.TT_NUMBER) {
 			double v = ST.nval;
 			ST.nextToken();
 			return new GmlPair(n, v);
-		}
-		else if (ST.ttype == StreamTokenizer.TT_WORD || ST.ttype == '\"') {
+		} else if (ST.ttype == StreamTokenizer.TT_WORD || ST.ttype == '\"') {
 			String v = ST.sval;
 			if (v == null) {
-				throw new IOException("GML parse error: String value null or missing error.");
+				throw new IOException(
+						"GML parse error: String value null or missing error.");
 			}
 			ST.nextToken();
 			return new GmlPair(n, v);
-		}
-		else {
+		} else {
 			throw new IOException("MyError: Unknown parse token " + ST.ttype
 					+ " " + ST.sval + " " + ST.nval);
 		}
 	}
 
 	public static void main(String s[]) {
-		//    System.out.println("testing GmlPair");
+		// System.out.println("testing GmlPair");
 		if (s.length != 1) {
 			System.out.println("testing GmlPair");
 			System.out.println("USAGE: java GmlPair <Gmlfile>");
@@ -423,23 +422,14 @@ public class GmlPair {
 				pp = pp.substring(pp.indexOf("\n") + 1);
 			}
 			System.out.println(pp);
-		}
-		catch (IOException E) {
+		} catch (IOException E) {
 			System.out.println("myError:  no file or Gml Error");
 		}
 		/*
-		 * String test="graph []";
-		 * myGmlTest(test);
-		 * test="graph [ node [id 1] node [id 2]]";
-		 * myGmlTest(test);
-		 * test="graph";
-		 * myGmlTest(test);
-		 * test="graph [hello there]";
-		 * myGmlTest(test);
-		 * test="graph [ node ]";
-		 * myGmlTest(test);
-		 * test="graph test test2 test3";
-		 * myGmlTest(test);
+		 * String test="graph []"; myGmlTest(test); test="graph [ node [id 1]
+		 * node [id 2]]"; myGmlTest(test); test="graph"; myGmlTest(test);
+		 * test="graph [hello there]"; myGmlTest(test); test="graph [ node ]";
+		 * myGmlTest(test); test="graph test test2 test3"; myGmlTest(test);
 		 * test="graph[node[edge[a b]edge[b c]]node[edge[edge [d e]]]]";
 		 * myGmlTest(test);
 		 */

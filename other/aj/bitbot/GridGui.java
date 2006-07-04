@@ -22,12 +22,12 @@ public class GridGui {
 
 	GridPanel gridPanel;
 
-	public boolean moveActive=true;
+	public boolean moveActive = true;
 
 	public GridGui() {
 		grid = new Grid(1, 1, 1, CELLSIZE);
 		System.out.println("g=" + grid);
-		player = new Player(5,5, 0);// Math.random()*CELLSIZE,Math.random()*CELLSIZE,Math.random()*Math.PI*2);
+		player = new Player(5, 5, 0);// Math.random()*CELLSIZE,Math.random()*CELLSIZE,Math.random()*Math.PI*2);
 		initilizeBots();
 
 		gridPanel = new GridPanel(this);
@@ -56,13 +56,12 @@ public class GridGui {
 							Bot bot = (Bot) bots.elementAt(a);
 							bot.move();
 						}
-					}
-					else {
+					} else {
 						for (int a = 0; a < bots.size(); a++) {
 							Bot bot = (Bot) bots.elementAt(a);
 							bot.skipMove();
 						}
-						
+
 					}
 					gridPanel.repaint();
 				}

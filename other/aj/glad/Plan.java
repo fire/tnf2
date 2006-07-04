@@ -3,57 +3,71 @@ package aj.glad;
 import java.util.Vector;
 
 /**
- *  How a gladator will fight. Ratio of each type of attack,pickup,slay Ratio of 
- *  each type of dodge,block,parry,simo Slay list Pickup/no Pickup list 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * How a gladator will fight. Ratio of each type of attack,pickup,slay Ratio of
+ * each type of dodge,block,parry,simo Slay list Pickup/no Pickup list
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 
 public class Plan {
-	//alternative attacks
+	// alternative attacks
 	String name;
-	//  String description;
-	//kill randomly use attack to kill helpless (passout) gladators
+
+	// String description;
+	// kill randomly use attack to kill helpless (passout) gladators
 	int chanceKill, bloodKill;
 
-	//%damage before surrender
+	// %damage before surrender
 	int surrender;
 
-	//you will only pick up a weapon that is better than yours (more HD)
-	//you will only pick up a weapon that is not nopick type
+	// you will only pick up a weapon that is better than yours (more HD)
+	// you will only pick up a weapon that is not nopick type
 	int pickupchance;
-	//chance of doing a pick up 100 = always try (only if available)
+
+	// chance of doing a pick up 100 = always try (only if available)
 	String nopickup;
-	//types you will not pick up
+
+	// types you will not pick up
 	String preferredPickup;
-	//willing to drop other to pick up these
+
+	// willing to drop other to pick up these
 	int sameTarget;
-	//100=same until dead, 0 = never same if possible
+
+	// 100=same until dead, 0 = never same if possible
 	Vector bloodFude;
-	//list of players/owners you will choose to attack first
+
+	// list of players/owners you will choose to attack first
 	int targetStrength;
-	//roll 0-100
+
+	// roll 0-100
 	boolean targetWeak;
-	//true = weakest false= strongest
+
+	// true = weakest false= strongest
 	int antiblock, antidodge, antiparry, head, arm, leg, body, ddouble;
-	//special hit rate add to 100
+
+	// special hit rate add to 100
 	int parry, block, dodge, simo, none;
-	static int WEAKESTTARGET = 0, NORMALTARGET = 1, STRONGESTTARGET = 2, SAMETARGET = 3;
-	//targetselection
+
+	static int WEAKESTTARGET = 0, NORMALTARGET = 1, STRONGESTTARGET = 2,
+			SAMETARGET = 3;
+
+	// targetselection
 	static int DODGE = 0, PARRY = 1, BLOCK = 2, NONE = 3, SIMO = 4;
-	//defense
-	static int ANTIDODGE = 0, ANTIPARRY = 1, ANTIBLOCK = 2, HEAD = 3, BODY = 4, ARM = 5, LEG = 6, DDOUBLE = 7;
-	//special attack
+
+	// defense
+	static int ANTIDODGE = 0, ANTIPARRY = 1, ANTIBLOCK = 2, HEAD = 3, BODY = 4,
+			ARM = 5, LEG = 6, DDOUBLE = 7;
+
+	// special attack
 	static int PICKUP = 0, KILL = 1, ATTACK = 2;
 
 	static String DEFAULT = "name:default randomkill:0 bloodkill:0 surrender:90 sametarget:85 target:weak0 antiblock:12 antidodge:12 antiparry:12 head:12 arm:12 leg:12 body:12 double:12 doparry:20 doblock:20 dododge:20 donone:20 dosimo:20";
 
-
 	/**
-	 *  Gets the NextDefense attribute of the Plan object 
-	 *
-	 *@return    The NextDefense value 
+	 * Gets the NextDefense attribute of the Plan object
+	 * 
+	 * @return The NextDefense value
 	 */
 	public int getNextDefense() {
 		int tot = (int) (Math.random() * 100);
@@ -68,93 +82,83 @@ public class Plan {
 		}
 		if (tot < parry + dodge + block + simo) {
 			return SIMO;
-		}
-		else {
+		} else {
 			return NONE;
 		}
 	}
 
-
 	/**
-	 *  Gets the NextAttack attribute of the Plan object 
-	 *
-	 *@return    The NextAttack value 
+	 * Gets the NextAttack attribute of the Plan object
+	 * 
+	 * @return The NextAttack value
 	 */
 	public int getNextAttack() {
 		return ATTACK;
 	}
 
-
 	/**
-	 *  Gets the NextTarget attribute of the Plan object 
-	 *
-	 *@return    The NextTarget value 
+	 * Gets the NextTarget attribute of the Plan object
+	 * 
+	 * @return The NextTarget value
 	 */
 	public int getNextTarget() {
 		return SAMETARGET;
 	}
 
-
-	//  int antiblock,antidodge,antiparry,head,arm,leg,body;//special hit rate add to 100
+	// int antiblock,antidodge,antiparry,head,arm,leg,body;//special hit rate
+	// add to 100
 	/**
-	 *  Gets the NextSpecial attribute of the Plan object 
-	 *
-	 *@return    The NextSpecial value 
+	 * Gets the NextSpecial attribute of the Plan object
+	 * 
+	 * @return The NextSpecial value
 	 */
 	public int getNextSpecial() {
 		int tot = (int) (Math.random() * 100);
 		if (tot < antidodge) {
 			return ANTIDODGE;
-		}
-		else if (tot < antidodge + antiblock) {
+		} else if (tot < antidodge + antiblock) {
 			return ANTIBLOCK;
-		}
-		else if (tot < antidodge + antiblock + antiparry) {
+		} else if (tot < antidodge + antiblock + antiparry) {
 			return ANTIPARRY;
-		}
-		else if (tot < antidodge + antiblock + antiparry + head) {
+		} else if (tot < antidodge + antiblock + antiparry + head) {
 			return HEAD;
-		}
-		else if (tot < antidodge + antiblock + antiparry + head + arm) {
+		} else if (tot < antidodge + antiblock + antiparry + head + arm) {
 			return ARM;
-		}
-		else if (tot < antidodge + antiblock + antiparry + head + arm + leg) {
+		} else if (tot < antidodge + antiblock + antiparry + head + arm + leg) {
 			return LEG;
-		}
-		else if (tot < antidodge + antiblock + antiparry + head + arm + leg + body) {
+		} else if (tot < antidodge + antiblock + antiparry + head + arm + leg
+				+ body) {
 			return BODY;
-		}
-		else {
+		} else {
 			return DDOUBLE;
 		}
 	}
 
-
-	//add to 100 chance of each when attacked.
+	// add to 100 chance of each when attacked.
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  i  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param i
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean emptyPickup(Item i) {
 		return false;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  i  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param i
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean dropPickup(Item i) {
 		return false;
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void normalize() {
 		int tot = parry + block + dodge + simo + none;
@@ -175,7 +179,8 @@ public class Plan {
 			none = none * 100 / tot;
 		}
 
-		tot = antiblock + antidodge + antiparry + head + arm + leg + body + ddouble;
+		tot = antiblock + antidodge + antiparry + head + arm + leg + body
+				+ ddouble;
 		if (tot != 100) {
 			if (tot == 0) {
 				tot = 100;
@@ -200,44 +205,45 @@ public class Plan {
 		System.out.println(this);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public boolean bloodFude(String s) {
 		return false;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public String toString() {
 		String s;
-		s = "name:" + name + " randomKill:" + chanceKill + " bloodKill:" + bloodKill + " surrender:" + surrender;
+		s = "name:" + name + " randomKill:" + chanceKill + " bloodKill:"
+				+ bloodKill + " surrender:" + surrender;
 		s += " sametarget:" + sameTarget;
 		if (targetWeak) {
 			s += " target:weak" + targetStrength;
-		}
-		else {
+		} else {
 			s += " target:strong" + targetStrength;
 		}
-		s += " antiblock:" + antiblock + " antidodge:" + antidodge + " antiparry:" + antiparry + " head:" + head + " arm:" + arm;
-		s += " leg:" + leg + " body:" + body + " parry:" + parry + " block:" + block + " dodge:" + dodge + " none:" + none + " simo:" + simo;
+		s += " antiblock:" + antiblock + " antidodge:" + antidodge
+				+ " antiparry:" + antiparry + " head:" + head + " arm:" + arm;
+		s += " leg:" + leg + " body:" + body + " parry:" + parry + " block:"
+				+ block + " dodge:" + dodge + " none:" + none + " simo:" + simo;
 		return s;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static Plan parse(String s) {
 		Plan p = new Plan();
@@ -345,18 +351,18 @@ public class Plan {
 			p.simo = Integer.parseInt(t);
 		}
 
-		//nopickup string
-		//pickup string
-		//bloodfude string
+		// nopickup string
+		// pickup string
+		// bloodfude string
 		p.normalize();
 		return p;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public static void main(String s[]) {
 		String m = DEFAULT;
@@ -366,28 +372,20 @@ public class Plan {
 }
 
 /*
- * default
- * name:default
- * randomkill:0 bloodkill:0 surrender:90
- * sametarget:85 target:weak0
- * antiblock:20 antidodge:50 antiparry:10 head:10 arm:0 leg:0 body:10
- * parry:10 block:10 dodge:30 none:50 simo:0
- * name:special1
- * randomkill:0 bloodkill:50 surrender:90
- * nopickup:ENTANGLE,HANDTOHAND preferredpick:SWORD
- * sametarget:85 bloodfude:Flandar,Sparticus target:weak90
- * antiblock:70 antidodge:20 antiparry:10 head:0 arm:0 leg:0 body:0
- * parry:10 block:20 dodge:40 none:20 simo:10
+ * default name:default randomkill:0 bloodkill:0 surrender:90 sametarget:85
+ * target:weak0 antiblock:20 antidodge:50 antiparry:10 head:10 arm:0 leg:0
+ * body:10 parry:10 block:10 dodge:30 none:50 simo:0 name:special1 randomkill:0
+ * bloodkill:50 surrender:90 nopickup:ENTANGLE,HANDTOHAND preferredpick:SWORD
+ * sametarget:85 bloodfude:Flandar,Sparticus target:weak90 antiblock:70
+ * antidodge:20 antiparry:10 head:0 arm:0 leg:0 body:0 parry:10 block:20
+ * dodge:40 none:20 simo:10
  */
 
 /*
- * rules of combat
- * kill: losers auto killed 0, killing allowed 1, killing forbidden 2
- * teams: 2, 3, 4 ,5 , any 6
- * glads per team: 1, 2, 3, 4, 5, any 6
- * glads number same per team : true, false
- * glad performance same per team: +/-10%
- * animals alowed: true, false
+ * rules of combat kill: losers auto killed 0, killing allowed 1, killing
+ * forbidden 2 teams: 2, 3, 4 ,5 , any 6 glads per team: 1, 2, 3, 4, 5, any 6
+ * glads number same per team : true, false glad performance same per team:
+ * +/-10% animals alowed: true, false
  */
 
 /*

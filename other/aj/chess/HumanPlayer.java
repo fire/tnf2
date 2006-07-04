@@ -18,26 +18,29 @@ import java.util.Vector;
 
 import aj.awt.SimpleWindowManager;
 
-public class HumanPlayer extends Canvas implements ActionListener, MouseMotionListener, MouseListener {
+public class HumanPlayer extends Canvas implements ActionListener,
+		MouseMotionListener, MouseListener {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	Board b;
+
 	boolean live = false;
 
-	//EVENT FUNCITONS
+	// EVENT FUNCITONS
 	int sx, sy, ex, ey;
+
 	boolean down = false;
 
 	String allGame = "";
 
 	Vector list = new Vector();
 
-	Vector moves=new Vector();
+	Vector moves = new Vector();
 
-	static TextField Move = new TextField(10), 
-			Stat = new TextField("Waiting"), 
+	static TextField Move = new TextField(10), Stat = new TextField("Waiting"),
 			Last = new TextField(10);
 
 	static boolean viewonly = false;
@@ -63,16 +66,15 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		f.addWindowListener(new SimpleWindowManager());
 	}
 
-
 	public void setLive(boolean t) {
 		if (t) {
 			live = t;
 			Move.setText("");
 			Move.setEditable(true);
 			Move.setBackground(Color.white);
-			Stat.setText((b.getNextMove() == Board.BLACK ? "BLACK" : "WHITE") + "Ready.");
-		}
-		else {
+			Stat.setText((b.getNextMove() == Board.BLACK ? "BLACK" : "WHITE")
+					+ "Ready.");
+		} else {
 			live = t;
 			Move.setEditable(false);
 			Move.setBackground(Color.lightGray);
@@ -80,13 +82,11 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		}
 	}
 
-
 	public void set(Board b) {
 		this.b = b;
-		moves=b.getAllMoves();
+		moves = b.getAllMoves();
 		repaint();
 	}
-
 
 	public int getSquare(int x, int y) {
 		Dimension d = getSize();
@@ -94,15 +94,13 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		int dh = d.height / 8;
 		x = x / dw;
 		y = y / dh;
-//System.out.println("Square ="+(y*8+x));
+		// System.out.println("Square ="+(y*8+x));
 		return y * 8 + x;
 	}
-
 
 	public Dimension getPreferredSize() {
 		return new Dimension(100, 100);
 	}
-
 
 	public synchronized void actionPerformed(ActionEvent ae) {
 		String s = ae.getActionCommand();
@@ -115,10 +113,9 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		}
 	}
 
-
 	public void paint(Graphics g) {
-//System.out.println("Paint called");
-		g.setFont(new Font("TimesRoman",Font.PLAIN,18));
+		// System.out.println("Paint called");
+		g.setFont(new Font("TimesRoman", Font.PLAIN, 18));
 		Dimension d = getSize();
 		int c;
 		int dw = d.width / 8;
@@ -127,8 +124,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			for (c = 0; c < 8; c++) {
 				if ((c % 2 + a % 2) % 2 == 0) {
 					g.setColor(Color.lightGray);
-				}
-				else {
+				} else {
 					g.setColor(Color.red);
 				}
 				g.fillRect(a * dw, c * dh, dw, dh);
@@ -137,34 +133,40 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			}
 		}
 		for (int a = 0; a < 64 && b != null; a++) {
-			int row = a/8;
-			int col = a%8;
-			String cc=""+b.getMap(a);
-			boolean white=b.isWhite(cc);
+			int row = a / 8;
+			int col = a % 8;
+			String cc = "" + b.getMap(a);
+			boolean white = b.isWhite(cc);
 			g.setColor((white ? Color.white : Color.black));
 			if (cc.equalsIgnoreCase("p"))
-				g.drawString(cc,col*dw+dw/8,row*dh+dh/2);
+				g.drawString(cc, col * dw + dw / 8, row * dh + dh / 2);
 			else if (cc.equalsIgnoreCase("r"))
-				g.drawString(cc,col*dw+dw/8,row*dh+dh/2);
+				g.drawString(cc, col * dw + dw / 8, row * dh + dh / 2);
 			else if (cc.equalsIgnoreCase("h"))
-				g.drawString(cc,col*dw+dw/8,row*dh+dh/2);
+				g.drawString(cc, col * dw + dw / 8, row * dh + dh / 2);
 			else if (cc.equalsIgnoreCase("b"))
-				g.drawString(cc,col*dw+dw/8,row*dh+dh/2);
+				g.drawString(cc, col * dw + dw / 8, row * dh + dh / 2);
 			else if (cc.equalsIgnoreCase("q"))
-				g.drawString(cc,col*dw+dw/8,row*dh+dh/2);
+				g.drawString(cc, col * dw + dw / 8, row * dh + dh / 2);
 			else if (cc.equalsIgnoreCase("k"))
-				g.drawString(cc,col*dw+dw/8,row*dh+dh/2);
+				g.drawString(cc, col * dw + dw / 8, row * dh + dh / 2);
 			else {
 				continue;
 			}
 		}
 	}
 
+	public void mouseClicked(MouseEvent ME) {
+	}
 
-	public void mouseClicked(MouseEvent ME) {}
-	public void mouseEntered(MouseEvent ME) {}
-	public void mouseExited(MouseEvent ME) {}
-	public void mouseMoved(MouseEvent ME) {}
+	public void mouseEntered(MouseEvent ME) {
+	}
+
+	public void mouseExited(MouseEvent ME) {
+	}
+
+	public void mouseMoved(MouseEvent ME) {
+	}
 
 	public void mouseReleased(MouseEvent ME) {
 		if (!live || !down) {
@@ -177,9 +179,9 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			down = false;
 			int pos = getSquare(sx, sy);
 			int pos2 = getSquare(ex, ey);
-			for (int a=0; a < moves.size(); a++) {
+			for (int a = 0; a < moves.size(); a++) {
 				String m = (String) moves.elementAt(a);
-				if (m.startsWith(pos + ":") && m.indexOf(":" + pos2)>=1) {
+				if (m.startsWith(pos + ":") && m.indexOf(":" + pos2) >= 1) {
 					doMove(m);
 					repaint();
 					return;
@@ -188,7 +190,6 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		}
 	}
 
-
 	public void mousePressed(MouseEvent ME) {
 		ex = sx = ME.getX();
 		ey = sy = ME.getY();
@@ -196,16 +197,15 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		if (!live) {
 			return;
 		}
-		for (int a=0; a < moves.size(); a++) {
+		for (int a = 0; a < moves.size(); a++) {
 			String s = (String) moves.elementAt(a);
-			if (s.startsWith(pos+":")) {
+			if (s.startsWith(pos + ":")) {
 				down = true;
 				xodraw();
 				break;
 			}
 		}
 	}
-
 
 	public void mouseDragged(MouseEvent ME) {
 		if (!live || !down) {
@@ -217,7 +217,6 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		xodraw();
 	}
 
-
 	public void xodraw() {
 		Graphics g = getGraphics();
 		Dimension d = getSize();
@@ -227,17 +226,19 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		int dx = ex - sx;
 		int dy = ey - sy;
 		int a = getSquare(sx, sy);
-		int row = a/8;
-		int col = a%8;
+		int row = a / 8;
+		int col = a % 8;
 		g.setColor(Color.black);
 		g.fillOval(col * dw + dx, row * dh + dy, dw, dh);
 	}
 
-
 	public void doMove(String s) {
-		for (int a=0;a<moves.size();a++) {
-			String ss=(String)moves.elementAt(a);
-			if (ss.equals(s) || ss.startsWith(s+":")) {s=ss;break;}
+		for (int a = 0; a < moves.size(); a++) {
+			String ss = (String) moves.elementAt(a);
+			if (ss.equals(s) || ss.startsWith(s + ":")) {
+				s = ss;
+				break;
+			}
 		}
 		allGame += s + ";";
 		b = b.applyMove(s);
@@ -245,22 +246,19 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		performAction(AE);
 	}
 
-
 	public void addActionListener(ActionListener AL) {
 		if (!list.contains(AL) && AL != null) {
 			list.addElement(AL);
 		}
 	}
 
-
 	public void removeActionListener(ActionListener AL) {
 		list.removeElement(AL);
 	}
 
-
 	public void performAction(ActionEvent AE) {
 		Vector l = (Vector) list.clone();
-		for (int a=0; a < l.size(); a++) {
+		for (int a = 0; a < l.size(); a++) {
 			ActionListener AL = (ActionListener) l.elementAt(a);
 			AL.actionPerformed(AE);
 		}

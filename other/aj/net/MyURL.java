@@ -11,20 +11,20 @@ import java.util.Vector;
 import aj.misc.Stuff;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 public class MyURL {
 
 	static Vector additional = new Vector();
 
-
 	/**
-	 *  Sets the Additional attribute of the MyURL class 
-	 *
-	 *@param  v  The new Additional value 
+	 * Sets the Additional attribute of the MyURL class
+	 * 
+	 * @param v
+	 *            The new Additional value
 	 */
 	public static void setAdditional(Vector v) {
 		if (v == null) {
@@ -34,10 +34,11 @@ public class MyURL {
 	}
 
 	/**
-	 *  Gets the InputStream attribute of the MyURL class 
-	 *
-	 *@param  s  the URL to hock up to.  Must be an HTTP connection
-	 *@return    The InputStream value 
+	 * Gets the InputStream attribute of the MyURL class
+	 * 
+	 * @param s
+	 *            the URL to hock up to. Must be an HTTP connection
+	 * @return The InputStream value
 	 */
 	public static InputStream getInputStream(String s) {
 		try {
@@ -46,7 +47,8 @@ public class MyURL {
 			}
 			s = s.substring("HTTP://".length());
 			while (s.indexOf("\\") >= 0) {
-				s = s.substring(0, s.indexOf("\\")) + "/" + s.substring(s.indexOf("\\") + 1);
+				s = s.substring(0, s.indexOf("\\")) + "/"
+						+ s.substring(s.indexOf("\\") + 1);
 			}
 			if (s.indexOf("/") < 0) {
 				return null;
@@ -60,8 +62,9 @@ public class MyURL {
 			}
 			Socket ss = new Socket(host, port);
 
-			//request
-			PrintWriter pw = new PrintWriter(new OutputStreamWriter(ss.getOutputStream()));
+			// request
+			PrintWriter pw = new PrintWriter(new OutputStreamWriter(ss
+					.getOutputStream()));
 			pw.println("GET " + file + " HTTP/1.0");
 			if (additional != null && additional.size() > 0) {
 				for (int a = 0; a < additional.size(); a++) {
@@ -71,7 +74,7 @@ public class MyURL {
 			pw.println("");
 			pw.flush();
 			pw = null;
-			//read head
+			// read head
 			InputStream i = ss.getInputStream();
 			String ls = myReadLine(i);
 			while (ls != null && !ls.trim().equals("")) {
@@ -84,29 +87,32 @@ public class MyURL {
 				ls = myReadLine(i);
 			}
 			return i;
-		}
-		catch (Exception E) {
+		} catch (Exception E) {
 			System.out.println("MyError in MyURL: " + E);
 			return null;
 		}
 	}
-	
-	public static String myReadLine(InputStream ii) throws IOException{
-		String res="";
-		boolean valid=false;
+
+	public static String myReadLine(InputStream ii) throws IOException {
+		String res = "";
+		boolean valid = false;
 		while (true) {
-			int c=ii.read();
-			if (c==-1 && valid) return res;
-			if (c==-1 && !valid) return null;
-			valid=true;
-			if (c=='\n') return res;
-			res+=(char)c;
+			int c = ii.read();
+			if (c == -1 && valid)
+				return res;
+			if (c == -1 && !valid)
+				return null;
+			valid = true;
+			if (c == '\n')
+				return res;
+			res += (char) c;
 		}
 	}
 
 	public static void main(String s[]) throws IOException {
 		if (s.length < 1) {
-			System.out.println("FORMAT: java aj.net.MyURL <url> [<outputfile>]");
+			System.out
+					.println("FORMAT: java aj.net.MyURL <url> [<outputfile>]");
 			System.exit(0);
 		}
 		InputStream br = MyURL.getInputStream(s[0]);
@@ -118,15 +124,14 @@ public class MyURL {
 			int c;
 			c = br.read();
 			while (c != -1) {
-				fo.write((byte)c);
+				fo.write((byte) c);
 				c = br.read();
 			}
-		}
-		else {
+		} else {
 			int c;
 			c = br.read();
 			while (c != -1) {
-				System.out.write((byte)c);
+				System.out.write((byte) c);
 				c = br.read();
 			}
 		}

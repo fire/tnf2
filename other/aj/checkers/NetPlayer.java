@@ -9,36 +9,49 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Vector;
 
-
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 public class NetPlayer implements ActionListener {
 
 	Socket NL;
+
 	int playernumber;
+
 	String gname;
+
 	Board b;
+
 	int moves = 0;
+
 	long time;
+
 	String allGame = "";
+
 	String SMART = "SMART", RAND = "RAND", HUMAN = "HUMAN", WATCH = "WATCH";
+
 	String brainType = SMART;
+
 	HumanPlayer human = null;
+
 	static boolean viewonly = false;
+
 	static boolean verbose = false;
+
 	static int TIMELIMIT = 2000;
 
-
 	/**
-	 *  Constructor for the NetPlayer object 
-	 *
-	 *@param  nl     Description of Parameter 
-	 *@param  gname  Description of Parameter 
-	 *@param  brain  Description of Parameter 
+	 * Constructor for the NetPlayer object
+	 * 
+	 * @param nl
+	 *            Description of Parameter
+	 * @param gname
+	 *            Description of Parameter
+	 * @param brain
+	 *            Description of Parameter
 	 */
 	public NetPlayer(final Socket nl, String gname, String brain) {
 		if (brain.toUpperCase().indexOf(SMART) >= 0) {
@@ -59,38 +72,40 @@ public class NetPlayer implements ActionListener {
 		}
 		this.gname = gname;
 		NL = nl;
-		new Thread(){
+		new Thread() {
 			public void run() {
-					BufferedReader br=null;
-					try {
-						br = new BufferedReader(new InputStreamReader(nl.getInputStream()));
-					} catch (IOException e1) {
-						e1.printStackTrace();
-						return;
-					}
+				BufferedReader br = null;
+				try {
+					br = new BufferedReader(new InputStreamReader(nl
+							.getInputStream()));
+				} catch (IOException e1) {
+					e1.printStackTrace();
+					return;
+				}
 				while (true) {
 					String s;
 					try {
 						s = br.readLine();
-						if (s==null)break;
-						actionPerformed(NL,s);
+						if (s == null)
+							break;
+						actionPerformed(NL, s);
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
 			}
-			
-			}.start();
+
+		}.start();
 		if (brainType == WATCH) {
-			send(NL,"__MODIFY name:" + gname + " pass:BLANK max:3 refill:true");
+			send(NL, "__MODIFY name:" + gname + " pass:BLANK max:3 refill:true");
 		}
-		send(NL,"__JOIN name:" + gname);
+		send(NL, "__JOIN name:" + gname);
 	}
 
-	public void send(Socket S,String line) {
-		line+="\n";
+	public void send(Socket S, String line) {
+		line += "\n";
 		try {
-			OutputStream o=S.getOutputStream();
+			OutputStream o = S.getOutputStream();
 			o.write(line.getBytes());
 			o.flush();
 		} catch (IOException e) {
@@ -99,56 +114,54 @@ public class NetPlayer implements ActionListener {
 	}
 
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ae  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ae
+	 *            Description of Parameter
 	 */
 	public synchronized void actionPerformed(ActionEvent ae) {
 		String s = ae.getActionCommand();
 		if (ae.getSource() == human) {
 			myApply(s);
-			send(NL,s);
+			send(NL, s);
 			return;
 		}
 	}
 
-	public synchronized void actionPerformed(Socket NL,String s){
+	public synchronized void actionPerformed(Socket NL, String s) {
 
 		if (s.startsWith("__")) {
-			//system command
+			// system command
 			if (s.toUpperCase().startsWith("__JOINED ")) {
-				playernumber = Integer.parseInt(s.substring(s.lastIndexOf(" ")).trim());
+				playernumber = Integer.parseInt(s.substring(s.lastIndexOf(" "))
+						.trim());
 				if (s.toUpperCase().indexOf("FULL") > 0) {
-					send(NL,"START");
+					send(NL, "START");
 					begin();
 				}
-			}
-			else if (s.toUpperCase().indexOf("FAILED") >= 0 && s.toUpperCase().indexOf("FULL") < 0) {
-				send(NL,"__CREATE name:" + gname + " pass:BLANK  max:2 refill:true");
-				send(NL,"__JOIN name:" + gname);
-			}
-			else if (s.toUpperCase().indexOf("FAILED") >= 0) {
+			} else if (s.toUpperCase().indexOf("FAILED") >= 0
+					&& s.toUpperCase().indexOf("FULL") < 0) {
+				send(NL, "__CREATE name:" + gname
+						+ " pass:BLANK  max:2 refill:true");
+				send(NL, "__JOIN name:" + gname);
+			} else if (s.toUpperCase().indexOf("FAILED") >= 0) {
 				System.out.println("Game full.  Try later");
 				System.exit(0);
 			}
-		}
-		else if (s.equalsIgnoreCase("START")) {
+		} else if (s.equalsIgnoreCase("START")) {
 			begin();
-		}
-		else if (s.equalsIgnoreCase("DRAW")) {
+		} else if (s.equalsIgnoreCase("DRAW")) {
 			System.out.println("Draw");
 			b = null;
 			begin();
-		}
-		else if (moves > 300) {
+		} else if (moves > 300) {
 			if (!viewonly) {
-				send(NL,"DRAW");
+				send(NL, "DRAW");
 			}
 			System.out.println("Draw");
 			b = null;
 			begin();
-		}
-		else {
+		} else {
 			if (b.getMoves().contains(s)) {
 				myApply(s);
 				if (b.gameOver()) {
@@ -156,18 +169,16 @@ public class NetPlayer implements ActionListener {
 				}
 				moves++;
 				makeMove();
-			}
-			else {
+			} else {
 				System.out.println("invalid move detected. restart connection");
-				send(NL,"START");
+				send(NL, "START");
 				begin();
 			}
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void begin() {
 		if (b != null) {
@@ -184,9 +195,8 @@ public class NetPlayer implements ActionListener {
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void gameOver() {
 		System.out.println("I lose " + moves);
@@ -195,11 +205,11 @@ public class NetPlayer implements ActionListener {
 		begin();
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public void myApply(String s) {
 		if (s == null) {
@@ -215,12 +225,11 @@ public class NetPlayer implements ActionListener {
 		}
 		allGame += s + ";";
 		b = b.applyMove(s);
-		//update human view
+		// update human view
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void makeMove() {
 		if (b.gameOver()) {
@@ -230,37 +239,35 @@ public class NetPlayer implements ActionListener {
 		if (human != null) {
 			human.set(b);
 			human.setLive(true);
-		}
-		else if (brainType == SMART) {
+		} else if (brainType == SMART) {
 			long timeout = SmartPlayer.getTimeOut(TIMELIMIT);
 			String m = SmartPlayer.bestMove(b, 0, 0);
 			for (int a = 0; !SmartPlayer.checkTimeOut(timeout); a++) {
 				m = SmartPlayer.bestMove(b, a, timeout);
 			}
 			myApply(m);
-			send(NL,m);
-		}
-		else if (brainType == RAND) {
+			send(NL, m);
+		} else if (brainType == RAND) {
 			Vector v = b.getMoves();
 			String m = (String) (v.elementAt((int) (Math.random() * v.size())));
 			myApply(m);
-			send(NL,m);
+			send(NL, m);
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public static void main(String s[]) {
 		try {
 			Socket nl = new Socket(s[0], Integer.parseInt(s[1]));
 			new NetPlayer(nl, s[2], s[3]);
-		}
-		catch (Exception E) {
-			System.out.println("FORMAT: java NetPlayer <host> <port> <gamename> <smart,rand,human,watch>");
+		} catch (Exception E) {
+			System.out
+					.println("FORMAT: java NetPlayer <host> <port> <gamename> <smart,rand,human,watch>");
 			System.out.println("MyError: " + E);
 			System.exit(0);
 		}

@@ -1,26 +1,29 @@
 package aj.glad;
 
-
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 public class Skill {
-	//skills
+	// skills
 	String name;
-	//owner
+
+	// owner
 	int type;
-	//real, school, performance, training
+
+	// real, school, performance, training
 	int supprise, speed;
-	//natural skills
+
+	// natural skills
 	int sword, polarm, club, handtohand;
-	//attack skills
+
+	// attack skills
 	int dodge, block, parry, entangle, simo;
 
 	/**
-	 *  Description of the Field 
+	 * Description of the Field
 	 */
 	public static String DEFAULT = "name:null REAL speed:10 sword:10 polarm:10 club:10 handtohand:10 dodge:10 block:10 parry:10 simo:10 supprise:10 entangle:10";
 
@@ -28,67 +31,62 @@ public class Skill {
 
 	private static double LEARNCURVE = 2;
 
-
-	//defense skills
+	// defense skills
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  skill  Description of Parameter 
-	 *@return        Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param skill
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public int improve(int skill) {
 		if (Math.random() * 100 * LEARNCURVE > skill) {
 			return 1;
-		}
-		else {
+		} else {
 			return 0;
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public String toString() {
 		String s = "name:" + name + " ";
 		if (type == REAL) {
 			s += "REAL ";
-		}
-		else if (type == SCHOOL) {
+		} else if (type == SCHOOL) {
 			s += "SCHOOL ";
-		}
-		else if (type == PERFORMANCE) {
+		} else if (type == PERFORMANCE) {
 			s += "PERFORMANCE ";
-		}
-		else if (type == TRAINING) {
+		} else if (type == TRAINING) {
 			s += "TRAINING ";
 		}
-		s += "speed:" + speed + " sword:" + sword + " polarm:" + polarm + " club:" + club + " handtohand:" + handtohand + " dodge:" + dodge + " block:" + block + " parry:" + parry + " simo:" + simo + " supprise:" + supprise + " entangle:" + entangle;
+		s += "speed:" + speed + " sword:" + sword + " polarm:" + polarm
+				+ " club:" + club + " handtohand:" + handtohand + " dodge:"
+				+ dodge + " block:" + block + " parry:" + parry + " simo:"
+				+ simo + " supprise:" + supprise + " entangle:" + entangle;
 		return s;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
+	 * @return Description of the Returned Value
 	 */
 	public static Skill parse(String s) {
 		String t;
 		Skill p = new Skill();
 		if (s.indexOf("REAL") >= 0) {
 			p.type = REAL;
-		}
-		else if (s.indexOf("SCHOOL") >= 0) {
+		} else if (s.indexOf("SCHOOL") >= 0) {
 			p.type = SCHOOL;
-		}
-		else if (s.indexOf("PERFORMANCE") >= 0) {
+		} else if (s.indexOf("PERFORMANCE") >= 0) {
 			p.type = PERFORMANCE;
-		}
-		else if (s.indexOf("TRAINING") >= 0) {
+		} else if (s.indexOf("TRAINING") >= 0) {
 			p.type = TRAINING;
 		}
 		if (s.indexOf("name:") >= 0) {
@@ -154,11 +152,11 @@ public class Skill {
 		return p;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public static void main(String s[]) {
 	}

@@ -18,36 +18,38 @@ import java.util.Vector;
 import aj.awt.SimpleWindowManager;
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
-public class HumanPlayer extends Canvas implements ActionListener, MouseMotionListener, MouseListener {
+public class HumanPlayer extends Canvas implements ActionListener,
+		MouseMotionListener, MouseListener {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	Board b;
+
 	boolean live = false;
 
-	//EVENT FUNCITONS
+	// EVENT FUNCITONS
 	int sx, sy, ex, ey;
+
 	boolean down = false;
 
 	String allGame = "";
 
 	Vector list = new Vector();
 
-	static TextField Move = new TextField(10), 
-			Stat = new TextField("Waiting"), 
+	static TextField Move = new TextField(10), Stat = new TextField("Waiting"),
 			Last = new TextField(10);
 
 	static boolean viewonly = false;
 
-
 	/**
-	 *  Constructor for the HumanPlayer object 
+	 * Constructor for the HumanPlayer object
 	 */
 	public HumanPlayer() {
 		live = false;
@@ -70,11 +72,11 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		f.addWindowListener(new SimpleWindowManager());
 	}
 
-
 	/**
-	 *  Sets the Live attribute of the HumanPlayer object 
-	 *
-	 *@param  t  The new Live value 
+	 * Sets the Live attribute of the HumanPlayer object
+	 * 
+	 * @param t
+	 *            The new Live value
 	 */
 	public void setLive(boolean t) {
 		if (t) {
@@ -82,9 +84,9 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			Move.setText("");
 			Move.setEditable(true);
 			Move.setBackground(Color.white);
-			Stat.setText((b.getNextMove() == Board.RED ? "RED" : "WHITE") + "Ready.");
-		}
-		else {
+			Stat.setText((b.getNextMove() == Board.RED ? "RED" : "WHITE")
+					+ "Ready.");
+		} else {
 			live = t;
 			Move.setEditable(false);
 			Move.setBackground(Color.lightGray);
@@ -92,24 +94,25 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  b  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param b
+	 *            Description of Parameter
 	 */
 	public void set(Board b) {
 		this.b = b;
 		repaint();
 	}
 
-
 	/**
-	 *  Gets the Square attribute of the HumanPlayer object 
-	 *
-	 *@param  x  Description of Parameter 
-	 *@param  y  Description of Parameter 
-	 *@return    The Square value 
+	 * Gets the Square attribute of the HumanPlayer object
+	 * 
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @return The Square value
 	 */
 	public int getSquare(int x, int y) {
 		Dimension d = getSize();
@@ -120,21 +123,20 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		return y * 4 + x / 2 + 1;
 	}
 
-
 	/**
-	 *  Gets the PreferredSize attribute of the HumanPlayer object 
-	 *
-	 *@return    The PreferredSize value 
+	 * Gets the PreferredSize attribute of the HumanPlayer object
+	 * 
+	 * @return The PreferredSize value
 	 */
 	public Dimension getPreferredSize() {
 		return new Dimension(100, 100);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ae  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ae
+	 *            Description of Parameter
 	 */
 	public synchronized void actionPerformed(ActionEvent ae) {
 		String s = ae.getActionCommand();
@@ -147,11 +149,11 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
 	 */
 	public void paint(Graphics g) {
 		Dimension d = getSize();
@@ -161,8 +163,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			for (int c = 0; c < 8; c++) {
 				if ((c % 2 + a % 2) % 2 == 0) {
 					g.setColor(Color.black);
-				}
-				else {
+				} else {
 					g.setColor(Color.red);
 				}
 				g.fillRect(a * dw, c * dh, dw, dh);
@@ -176,76 +177,75 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			if (b.getMap(a) == Board.REDPAWN) {
 				red = true;
 				pawn = true;
-			}
-			else if (b.getMap(a) == Board.WHITEPAWN) {
+			} else if (b.getMap(a) == Board.WHITEPAWN) {
 				red = false;
 				pawn = true;
-			}
-			else if (b.getMap(a) == Board.REDKING) {
+			} else if (b.getMap(a) == Board.REDKING) {
 				red = true;
 				pawn = false;
-			}
-			else if (b.getMap(a) == Board.WHITEKING) {
+			} else if (b.getMap(a) == Board.WHITEKING) {
 				red = false;
 				pawn = false;
-			}
-			else {
+			} else {
 				continue;
 			}
 			int row = (a - 1) / 4;
 			int col = (a - 1) % 4 * 2 + (row % 2 == 0 ? 1 : 0);
 			g.setColor((red ? Color.red : Color.white));
-			g.fillOval(col * dw + dw / 8, row * dh + dh / 8, dw - dw / 4, dh - dh / 4);
+			g.fillOval(col * dw + dw / 8, row * dh + dh / 8, dw - dw / 4, dh
+					- dh / 4);
 			g.setColor(Color.black);
-			g.drawOval(col * dw + dw / 8, row * dh + dh / 8, dw - dw / 4, dh - dh / 4);
+			g.drawOval(col * dw + dw / 8, row * dh + dh / 8, dw - dw / 4, dh
+					- dh / 4);
 			if (!pawn) {
-				g.drawOval(col * dw + dw / 4, row * dh + dh / 4, dw - dw / 2, dh - dh / 2);
+				g.drawOval(col * dw + dw / 4, row * dh + dh / 4, dw - dw / 2,
+						dh - dh / 2);
 			}
 		}
 
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseClicked(MouseEvent ME) {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseEntered(MouseEvent ME) {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseExited(MouseEvent ME) {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseMoved(MouseEvent ME) {
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseReleased(MouseEvent ME) {
 		if (!live || !down) {
@@ -258,7 +258,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			down = false;
 			int pos = getSquare(sx, sy);
 			int pos2 = getSquare(ex, ey);
-			for (int a=0; a < b.getMoves().size(); a++) {
+			for (int a = 0; a < b.getMoves().size(); a++) {
 				String m = (String) b.getMoves().elementAt(a);
 				if (m.startsWith(pos + "-") && m.endsWith("-" + pos2)) {
 					doMove(m);
@@ -268,11 +268,11 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mousePressed(MouseEvent ME) {
 		ex = sx = ME.getX();
@@ -282,7 +282,7 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 			return;
 		}
 		Vector v = b.getMoves();
-		for (int a=0; a < v.size(); a++) {
+		for (int a = 0; a < v.size(); a++) {
 			String s = (String) v.elementAt(a);
 			if (s.startsWith("" + pos)) {
 				down = true;
@@ -292,11 +292,11 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ME  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ME
+	 *            Description of Parameter
 	 */
 	public void mouseDragged(MouseEvent ME) {
 		if (!live || !down) {
@@ -308,9 +308,8 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		xodraw();
 	}
 
-
 	/**
-	 *  Description of the Method 
+	 * Description of the Method
 	 */
 	public void xodraw() {
 		Graphics g = getGraphics();
@@ -327,11 +326,11 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		g.fillOval(col * dw + dx, row * dh + dy, dw, dh);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public void doMove(String s) {
 		allGame += s + ";";
@@ -341,11 +340,11 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		performAction(AE);
 	}
 
-
 	/**
-	 *  Adds a feature to the ActionListener attribute of the HumanPlayer object 
-	 *
-	 *@param  AL  The feature to be added to the ActionListener attribute 
+	 * Adds a feature to the ActionListener attribute of the HumanPlayer object
+	 * 
+	 * @param AL
+	 *            The feature to be added to the ActionListener attribute
 	 */
 	public void addActionListener(ActionListener AL) {
 		if (!list.contains(AL) && AL != null) {
@@ -353,25 +352,25 @@ public class HumanPlayer extends Canvas implements ActionListener, MouseMotionLi
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  AL  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param AL
+	 *            Description of Parameter
 	 */
 	public void removeActionListener(ActionListener AL) {
 		list.removeElement(AL);
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  AE  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param AE
+	 *            Description of Parameter
 	 */
 	public void performAction(ActionEvent AE) {
 		Vector l = (Vector) list.clone();
-		for (int a=0; a < l.size(); a++) {
+		for (int a = 0; a < l.size(); a++) {
 			ActionListener AL = (ActionListener) l.elementAt(a);
 			AL.actionPerformed(AE);
 		}

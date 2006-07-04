@@ -5,16 +5,16 @@ MID_BUND_SIZE 10
 EXT_BUND_SIZE 50
 DISCOUNT_BUND_SIZE 10
 MIN_CASH 4000
-STATUSLOGFILE /home/judda/iem/iem_status.log
-STATUSORDERSLOGFILE /home/judda/iem/iem_statusorders.log
-ORDERSLOGFILE /home/judda/iem/iem_orders.log
-TOOLLOGFILE /home/judda/iem/iem_tool.log
-ACTIVELOGFILE /home/judda/iem/iem_active.log
-ORDERSCOMMANDFILE /home/judda/iem/orders.txt.log
-ORDERSOUTPUTLOG /home/judda/iem/orders.log
+STATUSLOGFILE iem_status.log
+STATUSORDERSLOGFILE iem_orders_results.log
+ORDERSLOGFILE iem_orders.log
+TOOLLOGFILE iem_error.log
+ACTIVELOGFILE iem_commands.log
+ORDERSCOMMANDFILE iem_auto_orders_settings.log
+ORDERSOUTPUTLOG iem_auto_orders_output.log
 USERID user
 PASSWORD password
-PROXY 192.168.1.2:80
+#PROXY 192.168.1.2:80
 
 ALLOWEDMARKET COMP_RET
 ALLOWEDMARKET Congress04
@@ -64,6 +64,8 @@ ALLOWEDFREE MSFT_
 ALLOWEDFREE Senate04
 #ALLOWEDFREE Pres04_
 
+#ABORT true
+
 #not implemeted
 #ALLOWEDDISCOUNT *
-ABORT true
+

@@ -25,29 +25,29 @@ import aj.misc.Stuff;
  */
 
 /**
- *  Description of the Class 
- *
- *@author     judda 
- *@created    April 12, 2000 
+ * Description of the Class
+ * 
+ * @author judda
+ * @created April 12, 2000
  */
 public class FileAccessServer {
 	/**
-	 *  Description of the Field 
+	 * Description of the Field
 	 */
 	public static String root = "";
+
 	static int port;
+
 	static String options = "";
 
-
 	/**
-	 *  Constructor for the FileAccessServer object 
+	 * Constructor for the FileAccessServer object
 	 */
 	public FileAccessServer() {
 		ServerSocket SS = null;
 		try {
 			SS = new ServerSocket(port);
-		}
-		catch (IOException IOE) {
+		} catch (IOException IOE) {
 			System.out.println("Server port busy!");
 			System.exit(0);
 		}
@@ -55,79 +55,79 @@ public class FileAccessServer {
 			try {
 				final Socket s = SS.accept();
 				if (reportSource()) {
-					System.out.println("connect from  host:" + s.getInetAddress() + "  on " + (new java.util.Date()).toString());
+					System.out.println("connect from  host:"
+							+ s.getInetAddress() + "  on "
+							+ (new java.util.Date()).toString());
 				}
 
 				new Thread() {
 					public void run() {
 						BufferedReader br;
 						try {
-							br = new BufferedReader(new InputStreamReader(s.getInputStream()));
-							while(true) {
+							br = new BufferedReader(new InputStreamReader(s
+									.getInputStream()));
+							while (true) {
 								String ss;
 								try {
 									ss = br.readLine();
-									if (s==null) break;
-									actionPerformed(s,ss);
+									if (s == null)
+										break;
+									actionPerformed(s, ss);
 								} catch (IOException e) {
 									e.printStackTrace();
 									return;
 								}
-								}
+							}
 						} catch (IOException e1) {
 							e1.printStackTrace();
 						}
-						}
-					}.start();
-			}
-			catch (IOException IOE8) {
+					}
+				}.start();
+			} catch (IOException IOE8) {
 				System.out.println("bad connect to incomming socket " + IOE8);
 			}
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public boolean reportAccess() {
 		return options.indexOf("A") >= 0;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public boolean reportSource() {
 		return options.indexOf("S") >= 0;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public boolean reportFile() {
 		return options.indexOf("F") >= 0;
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  ae  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param ae
+	 *            Description of Parameter
 	 */
-	public void actionPerformed(Socket S,String c) {
-//		String c = ae.getActionCommand();
+	public void actionPerformed(Socket S, String c) {
+		// String c = ae.getActionCommand();
 		if (c.equalsIgnoreCase("Connection_closed")) {
 			return;
 		}
-		//get file lock?
+		// get file lock?
 		if (reportAccess()) {
 			System.out.println("access line <" + c + ">");
 		}
@@ -141,25 +141,27 @@ public class FileAccessServer {
 			return;
 		}
 		if (reportFile()) {
-			System.out.println("file requested <" + s[1] + "> = " + root + s[1]);
+			System.out
+					.println("file requested <" + s[1] + "> = " + root + s[1]);
 		}
 		File f = new File(root + s[1]);
 		String line = c.substring(c.indexOf(s[1]) + s[1].length()).trim();
-		if (s[0].equalsIgnoreCase("remove") || s[0].equalsIgnoreCase("remove_one")) {
+		if (s[0].equalsIgnoreCase("remove")
+				|| s[0].equalsIgnoreCase("remove_one")) {
 			boolean ONE = s[0].equalsIgnoreCase("remove_one");
 			try {
 				Vector v = new Vector();
 				BufferedReader br = new BufferedReader(new FileReader(f));
 				String g = br.readLine();
 				boolean found = false;
-				//System.out.println("line "+g);
+				// System.out.println("line "+g);
 				while (g != null) {
-					//System.out.println("line "+g);
+					// System.out.println("line "+g);
 					g = g.trim();
 					if (g.equals(line) && !found) {
 						found = true;
-					}
-					else if (!g.equals(line) || (g.equals(line) && found && ONE)) {
+					} else if (!g.equals(line)
+							|| (g.equals(line) && found && ONE)) {
 						v.addElement(g);
 					}
 					g = br.readLine();
@@ -174,33 +176,29 @@ public class FileAccessServer {
 					pw.println((String) v.elementAt(a));
 				}
 				pw.close();
-			}
-			catch (IOException IOE7) {
+			} catch (IOException IOE7) {
 				System.out.println("remove file access error " + c);
 				return;
 			}
-		}
-		else if (s[0].equalsIgnoreCase("append")) {
+		} else if (s[0].equalsIgnoreCase("append")) {
 			try {
 				RandomAccessFile raf = new RandomAccessFile(f, "rw");
 				raf.seek(raf.length());
 				raf.writeBytes(line + "\n");
 				raf.close();
-			}
-			catch (IOException IOE3) {
+			} catch (IOException IOE3) {
 				System.out.println("error in append " + IOE3);
 			}
-		}
-		else {
+		} else {
 			System.out.println("unknown file action " + c);
 		}
 	}
 
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  s  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param s
+	 *            Description of Parameter
 	 */
 	public static void main(String s[]) {
 		try {
@@ -212,8 +210,7 @@ public class FileAccessServer {
 				options = s[2].toUpperCase().trim();
 			}
 			new FileAccessServer();
-		}
-		catch (Exception E) {
+		} catch (Exception E) {
 			System.out.println("Format: FileAccessServer <port> [root [-afs]]");
 			System.out.println("-s souce of connect");
 			System.out.println("-f file accessed");
@@ -221,15 +218,14 @@ public class FileAccessServer {
 		}
 	}
 
-
-
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  c  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param c
+	 *            Description of Parameter
 	 */
 	public static void actionPerformed(String c) {
-		//get file lock?
+		// get file lock?
 		String s[] = Stuff.getTokens(c, " \t");
 		if (s.length < 3) {
 			System.out.println("unknown file action " + c);
@@ -241,22 +237,23 @@ public class FileAccessServer {
 		}
 		File f = new File(root + s[1]);
 		String line = c.substring(c.indexOf(s[1]) + s[1].length()).trim();
-		if (s[0].equalsIgnoreCase("remove") || s[0].equalsIgnoreCase("remove_one")) {
+		if (s[0].equalsIgnoreCase("remove")
+				|| s[0].equalsIgnoreCase("remove_one")) {
 			boolean ONE = s[0].equalsIgnoreCase("remove_one");
 			try {
 				Vector v = new Vector();
 				BufferedReader br = new BufferedReader(new FileReader(f));
-				//System.out.println("root +s[1]="+root+s[1]);
+				// System.out.println("root +s[1]="+root+s[1]);
 				String g = br.readLine();
 				boolean found = false;
-				//System.out.println("line ="+g);
+				// System.out.println("line ="+g);
 				while (g != null) {
-					//System.out.println("line ="+g);
+					// System.out.println("line ="+g);
 					g = g.trim();
 					if (g.equals(line) && !found) {
 						found = true;
-					}
-					else if (!g.equals(line) || (g.equals(line) && found && ONE)) {
+					} else if (!g.equals(line)
+							|| (g.equals(line) && found && ONE)) {
 						v.addElement(g);
 					}
 					g = br.readLine();
@@ -267,28 +264,25 @@ public class FileAccessServer {
 				}
 				br.close();
 				PrintWriter pw = new PrintWriter(new FileWriter(f));
-				for (int a=0; a < v.size(); a++) {
+				for (int a = 0; a < v.size(); a++) {
 					pw.println((String) v.elementAt(a));
 				}
 				pw.close();
-			}
-			catch (IOException IOE7) {
-				System.out.println("remove file access error " + IOE7 + " line " + c);
+			} catch (IOException IOE7) {
+				System.out.println("remove file access error " + IOE7
+						+ " line " + c);
 				return;
 			}
-		}
-		else if (s[0].equalsIgnoreCase("append")) {
+		} else if (s[0].equalsIgnoreCase("append")) {
 			try {
 				RandomAccessFile raf = new RandomAccessFile(f, "rw");
 				raf.seek(raf.length());
 				raf.writeBytes(line + "\n");
 				raf.close();
-			}
-			catch (IOException IOE3) {
+			} catch (IOException IOE3) {
 				System.out.println("error in append " + IOE3);
 			}
-		}
-		else {
+		} else {
 			System.out.println("unknown file action " + c);
 		}
 	}

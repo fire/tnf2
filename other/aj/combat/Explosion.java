@@ -11,45 +11,59 @@ import aj.misc.Stuff;
 
 public class Explosion extends Thing implements CombatItem {
 
-	public static String explosionType="E";
-	private long lifeOver;
-	private long minExplostionLife=1000;
+	public static String explosionType = "E";
 
-	//TODO collaps ship.  
-	//Take ship shape.  add all lines.  move lines randomly for 1 sec then decay
-	//need array of line start points x,y
-	//need array of line lengths
-	//need array of line rotation
-	//need array of line vx,vy
-	//need array of line drot
-	
+	private long lifeOver;
+
+	private long minExplostionLife = 1000;
+
+	// TODO collaps ship.
+	// Take ship shape. add all lines. move lines randomly for 1 sec then decay
+	// need array of line start points x,y
+	// need array of line lengths
+	// need array of line rotation
+	// need array of line vx,vy
+	// need array of line drot
+
 	/**
-	 *  Description of the Method 
-	 *
-	 *@param  g  Description of Parameter 
+	 * Description of the Method
+	 * 
+	 * @param g
+	 *            Description of Parameter
 	 */
 	public void display(Graphics g) {
-		int rang=(int)(1000-this.lifeOver+this.time)/10;
-		int srang=rang-2;
+		int rang = (int) (1000 - this.lifeOver + this.time) / 10;
+		int srang = rang - 2;
 		g.setColor(Color.red);
-		for (int a=0;a<20;a++) {
-			double ang=Math.PI*2/20;			
-			g.drawLine((int)(x+Math.cos(ang*a)*srang),(int)(y+Math.sin(ang*a)*srang),(int)(x+Math.cos(ang*a)*rang),(int)(y+Math.sin(ang*a)*rang));
+		for (int a = 0; a < 20; a++) {
+			double ang = Math.PI * 2 / 20;
+			g.drawLine((int) (x + Math.cos(ang * a) * srang), (int) (y + Math
+					.sin(ang * a)
+					* srang), (int) (x + Math.cos(ang * a) * rang),
+					(int) (y + Math.sin(ang * a) * rang));
 		}
 	}
 
 	/**
-	 *  Constructor for the Shot object 
-	 *
-	 *@param  id    Description of Parameter 
-	 *@param  x     Description of Parameter 
-	 *@param  y     Description of Parameter 
-	 *@param  d     Description of Parameter 
-	 *@param  vx    Description of Parameter 
-	 *@param  vy    Description of Parameter 
-	 *@param  life  Description of Parameter 
+	 * Constructor for the Shot object
+	 * 
+	 * @param id
+	 *            Description of Parameter
+	 * @param x
+	 *            Description of Parameter
+	 * @param y
+	 *            Description of Parameter
+	 * @param d
+	 *            Description of Parameter
+	 * @param vx
+	 *            Description of Parameter
+	 * @param vy
+	 *            Description of Parameter
+	 * @param life
+	 *            Description of Parameter
 	 */
-	public Explosion(String id, double x, double y, double d, double vx, double vy) {
+	public Explosion(String id, double x, double y, double d, double vx,
+			double vy) {
 		this.id = id;
 		this.x = x;
 		this.y = y;
@@ -59,44 +73,39 @@ public class Explosion extends Thing implements CombatItem {
 		this.vy = vy;
 		this.time = System.currentTimeMillis();
 		lifeOver = time + minExplostionLife;
-//		mx = Math.cos(dir) * size / 2;
-//		my = Math.sin(dir) * size / 2;
+		// mx = Math.cos(dir) * size / 2;
+		// my = Math.sin(dir) * size / 2;
 	}
 
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public boolean expired() {
 		return lifeOver < System.currentTimeMillis();
 	}
 
-
 	public static CombatItem parse(String[] t) {
-		double x=Double.parseDouble(t[2]);
-		double y=Double.parseDouble(t[3]);
-		double dir=Double.parseDouble(t[4]);
-		double vx=Double.parseDouble(t[5]);
-		double vy=Double.parseDouble(t[6]);
+		double x = Double.parseDouble(t[2]);
+		double y = Double.parseDouble(t[3]);
+		double dir = Double.parseDouble(t[4]);
+		double vx = Double.parseDouble(t[5]);
+		double vy = Double.parseDouble(t[6]);
 
-		return new Explosion(t[1],x,y,dir,vx,vy);
-		
+		return new Explosion(t[1], x, y, dir, vx, vy);
+
 	}
 
 	/**
-	 *  Description of the Method 
-	 *
-	 *@return    Description of the Returned Value 
+	 * Description of the Method
+	 * 
+	 * @return Description of the Returned Value
 	 */
 	public String toString() {
-		return explosionType+" "+
-		id + " " + 
-		Stuff.trunc(x,1) + " " + 
-		Stuff.trunc(y,1) + " " + 
-		Stuff.trunc(dir,2) + " " + 
-		Stuff.trunc(vx,3) + " " + 
-		Stuff.trunc(vy,3);
+		return explosionType + " " + id + " " + Stuff.trunc(x, 1) + " "
+				+ Stuff.trunc(y, 1) + " " + Stuff.trunc(dir, 2) + " "
+				+ Stuff.trunc(vx, 3) + " " + Stuff.trunc(vy, 3);
 	}
 
 }

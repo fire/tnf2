@@ -1,0 +1,51 @@
+<project name="TGM" default="build" basedir=".">
+    <target name="init">
+        <tstamp/>
+        <property name="bin" value="bin"/>
+        <property name="lib" value="lib"/>
+        <property name="src" value="src"/>
+        <property name="src2" value="other/"/>
+        <property name="doc" value="javadoc"/>
+    </target>    
+    <target name="compile" depends="init">
+        <javac srcdir="${src}" destdir="${bin}" verbose="true">
+            <classpath>
+                <fileset dir="${lib}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            </classpath>
+        </javac>
+    </target>
+    <target name="iemjar" depends="compile">         
+        <jar destfile="IEM.jar"  manifest="${src2}aj/iem/manifest.mf">
+          	 <fileset dir="${bin}">
+          	 	<include name="aj/iem/*.class"/>
+          	 	<include name="aj/iem/*.txt"/>
+          	 	<include name="aj/misc/Stuff.class"/>
+          	 	<include name="aj/io/MLtoText.class"/>
+          	 </fileset>
+           </jar>
+    </target>
+    <target name="build" depends="iemjar">
+    </target>
+    <target name="clean" depends="init"> 
+        <delete includeEmptyDirs="true" verbose="true">
+            <fileset dir=".">
+                <include name="${bin}/**"/>
+                <include name="TGM.jar"/>
+            </fileset>
+        </delete>
+    </target>
+    <target name="run" depends="iemjar">
+        <java jar="IEM.jar" fork="true" maxmemory="512m"/>
+    </target>
+<!--
+    <target name="javadoc" depends="init">
+        <javadoc sourcepath="${src}" destdir="${doc}" verbose="true" author="true" version="true" windowtitle="CFn_Demo v${major}.${minor}.${patch} API">
+            <classpath refid="project.class.path"/>
+            <package name="mil.navy.spawar.*"/>
+            <link href="http://java.sun.com/j2se/1.4/docs/api/"/>
+        </javadoc>
+    </target>
+-->
+</project>
