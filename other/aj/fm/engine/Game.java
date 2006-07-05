@@ -16,4 +16,12 @@ public class Game {
 
 	Vector monsterVector = new Vector();
 
+	public void addNewWizard(Wizard wiz) {
+		wizardVector.addElement(wiz);
+	}
+
+	public Vector getAllWizards() {
+		return (Vector)wizardVector.clone();
+	}
+
 }
