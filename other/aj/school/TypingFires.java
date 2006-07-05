@@ -41,7 +41,6 @@ import aj.misc.Bnf;
 // TODO make levels
 // TODO make rewards
 // TODO save show - from random seed (random delay)
-
 public class TypingFires extends JPanel {
 	/**
 	 * 

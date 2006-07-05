@@ -59,7 +59,7 @@ public class Missile extends Thing implements CombatItem {
 		g.setColor(Color.white);
 		g.fillRoundRect((int) (x - size / 2), (int) (y - size / 2),
 				(int) (size), (int) (size), 2, 2);// (int) (x + mx), (int) (y
-													// + my));
+		// + my));
 	}
 
 	/**

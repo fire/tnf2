@@ -15,6 +15,8 @@ import java.util.Vector;
 import aj.misc.GmlPair;
 
 public class Tool implements ActionListener {
+	private static String spellsFileName;
+
 	TextField RHCurr = new TextField(10);
 
 	TextField LHCurr = new TextField(10);
@@ -26,6 +28,10 @@ public class Tool implements ActionListener {
 	Vector allSpells = new Vector();
 
 	public static void main(String s[]) {
+		if (s.length == 0) {
+			System.out.println("usage: java - aj.fm.Tool <spells.gml>");
+		}
+		spellsFileName = s[0];
 		new Tool();
 	}
 
@@ -94,7 +100,7 @@ public class Tool implements ActionListener {
 
 	public void readSpells() {
 		try {
-			GmlPair all = GmlPair.parse(new File("spells.gml"));
+			GmlPair all = GmlPair.parse(new File(spellsFileName));
 			GmlPair gmlSpells[] = all.getAllByName("node");
 			for (int a = 0; a < gmlSpells.length; a++) {
 				Spell sp = Spell.parse(gmlSpells[a]);

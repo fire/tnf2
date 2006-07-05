@@ -787,7 +787,7 @@ class YahooTracker extends JPanel implements ActionListener {
 			// mm[4] == actual cloas
 			// mm[6] == dividend adjusted close
 			if (mm[a].indexOf("-") != mm[a].lastIndexOf("-")) {// ie
-																// Nov-19-2003
+				// Nov-19-2003
 				if (mm[a + 6].endsWith("*"))
 					mm[a + 6] = mm[a + 6].substring(0, mm[a + 6].length() - 1);
 				while (mm[a + 6].indexOf(",") >= 0)

@@ -10,8 +10,8 @@ public class Wizard {
 
 	}
 
-	private String rightHandGestures="";
-	private String leftHandGestures="";
-	
-	
+	private String rightHandGestures = "";
+
+	private String leftHandGestures = "";
+
 }

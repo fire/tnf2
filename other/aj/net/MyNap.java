@@ -1148,8 +1148,7 @@ class FileData {
  * length. pq.done==true; } if (error) pq[a]=new Partialrequest(fn,tsize*a, . .. )
  * 
  * if (all complete) { rebuildFinal FileOutputStream fo for (int a=0;a<pq.length;a++) {
- * transalldata(partFail[a],fo); delfile(partfile[a]); } } }
- *  }
+ * transalldata(partFail[a],fo); delfile(partfile[a]); } } } }
  * 
  * 
  * class partialrequest

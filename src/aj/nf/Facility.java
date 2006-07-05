@@ -94,7 +94,7 @@ public class Facility implements NFObject {
 						Universe.add(nfo);
 						if (getCapacity() < nfo.getMass()) {
 							nfo.setLocation(getLocation());// facility full put
-															// outside
+							// outside
 						}
 						// marke provides is consumed
 						consume(na, amt);

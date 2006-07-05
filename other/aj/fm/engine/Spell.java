@@ -14,25 +14,29 @@ public class Spell {
 		// TODO Auto-generated method stub
 
 	}
-	
-	private static String allSpellXml=null;
-	private static Vector allSpells=null;
-	
+
+	private static String allSpellXml = null;
+
+	private static Vector allSpells = null;
+
 	/**
 	 * 
 	 * @param spellGesture
 	 * @param spellChoiceName
 	 * @return
 	 */
-	public static Spell getSpellFromGesture(String spellGesture,String spellChoiceName) {
-		if (allSpellXml==null) {
-			BufferedReader br=new BufferedReader(new InputStreamReader(Spell.class.getResourceAsStream("spells.xml")));
-			StringBuffer all=new StringBuffer();
-			while (true ) {
+	public static Spell getSpellFromGesture(String spellGesture,
+			String spellChoiceName) {
+		if (allSpellXml == null) {
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					Spell.class.getResourceAsStream("spells.xml")));
+			StringBuffer all = new StringBuffer();
+			while (true) {
 				String s;
 				try {
 					s = br.readLine();
-					if (s==null) break;
+					if (s == null)
+						break;
 					all.append(s);
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
@@ -40,30 +44,27 @@ public class Spell {
 					break;
 				}
 			}
-			allSpellXml=all.toString();
-			allSpells=null;
+			allSpellXml = all.toString();
+			allSpells = null;
 		}
-		if (allSpells==null) {
-			parseAllSpells();			
+		if (allSpells == null) {
+			parseAllSpells();
 		}
-		
-		
+
 		return null;
 	}
 
 	/**
 	 * 
-	 *
+	 * 
 	 */
 	private static void parseAllSpells() {
-		allSpells=new Vector();
-		while (allSpellXml.indexOf("<spell>")>=0) {
+		allSpells = new Vector();
+		while (allSpellXml.indexOf("<spell>") >= 0) {
 			break;
 		}
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
-	
 }

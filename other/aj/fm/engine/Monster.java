@@ -10,11 +10,13 @@ public class Monster {
 
 	}
 
-	private Wizard master=null;
-	private int maxHp=0;
+	private Wizard master = null;
+
+	private int maxHp = 0;
+
 	private String monsterTypeName;
-	
-	private String[] allMonsterTypeNames={"Gobblin","Oger","Troll","Giant","Fire_Elemental","Ice_Elemental"};
-	
-	
+
+	private String[] allMonsterTypeNames = { "Gobblin", "Oger", "Troll",
+			"Giant", "Fire_Elemental", "Ice_Elemental" };
+
 }

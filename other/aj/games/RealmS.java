@@ -28,7 +28,8 @@ public class RealmS {
 	boolean NOJUMPING = true;// cannot jump over users
 
 	int UPDATETIME = 400;// MILLIS TILL AUTOTURN PASS AND SEND UPDATE 200=
-							// 5/sec
+
+	// 5/sec
 
 	int SHOTRANGE = 3;
 

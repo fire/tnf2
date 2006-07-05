@@ -557,7 +557,7 @@ public class GnuProtocol implements Runnable {
 						+ (b[21] < 0 ? 256 + b[21] : b[21]) * 256 * 256
 						+ (b[22] < 0 ? 256 + b[22] : b[22]) * 256 * 256 * 256;
 				if (l < 0 || l > MAXPAYLOAD) {// avoid hug payload memory
-												// leaks
+					// leaks
 					String type = "UNK";
 					if (b[16] == 0x00)
 						type = "PING";

@@ -1186,12 +1186,12 @@ public class Corp {
 						int sizmult = (mass - basemass) / basestep;
 						cost = cost * Math.pow(SIZERATE, sizmult);
 						int cargotype = (int) (cargocap / mass);// robot rate
-																// (1xmass=1,
-																// 2xmass=2)
+						// (1xmass=1,
+						// 2xmass=2)
 						if (type.equalsIgnoreCase("ship"))
 							cargotype = (int) (cargocap / mass / 2);// ship rate
-																	// 2xmass=1
-																	// 4xmass=2
+						// 2xmass=1
+						// 4xmass=2
 						cost = cost * Math.pow(CARGORATE, cargotype);
 						boolean robot = type.toUpperCase().startsWith("R");
 						int basendur = (robot ? 9 : 5);
@@ -2365,12 +2365,12 @@ public class Corp {
 							System.out.println("DEBUG:new cost=" + cost);
 
 						int cargotype = (int) (cargocap / mass);// robot rate
-																// (1xmass=1,
-																// 2xmass=2)
+						// (1xmass=1,
+						// 2xmass=2)
 						if (type.equalsIgnoreCase("ship"))
 							cargotype = (int) (cargocap / mass / 2);// ship rate
-																	// 2xmass=1
-																	// 4xmass=2
+						// 2xmass=1
+						// 4xmass=2
 						cost = cost * Math.pow(CARGORATE, cargotype);
 						report += "  Cargo rate rate= " + cargotype + "\n";
 						boolean robot = type.toUpperCase().startsWith("R");

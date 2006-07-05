@@ -227,7 +227,7 @@ public class UniVar {
 				return new UniVar(s1.substring(0, d1));
 			} else {
 				return new UniVar(s1.substring(s1.length() + d1));// d1 is
-																	// negtive
+				// negtive
 			}
 		} catch (NumberFormatException NFE) {
 			return new UniVar("Error3");
@@ -246,8 +246,8 @@ public class UniVar {
 				return new UniVar(s1.substring(d1));
 			} else {
 				return new UniVar(s1.substring(0, s1.length() + d1));// note
-																		// d1 is
-																		// negitave
+				// d1 is
+				// negitave
 			}
 		} catch (NumberFormatException NFE) {
 			return new UniVar("Error3");

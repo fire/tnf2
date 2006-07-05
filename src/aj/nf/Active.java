@@ -1416,7 +1416,7 @@ public class Active implements NFObject {
 				loadloc = Location.parse(n[1]);
 				if (loadloc == null) {
 					loadloc = loc.reference(n[1]);// N,S,E,W, U,D, ESC, LAU,
-													// REE,LAN, EXIT , ID
+					// REE,LAN, EXIT , ID
 				}
 				if (loadloc != null) {
 					int moveType = loc.getMoveType(loadloc);
@@ -1923,7 +1923,7 @@ public class Active implements NFObject {
 				if (!nfo.getLocation().equals(loc)) {
 					return ERRORTIME;
 				} else if (!hasTech("T36")) {// heavy work arms ??? add
-												// salvage or repair?
+					// salvage or repair?
 					return ERRORTIME;
 				}
 				Facility f = (Facility) nfo;
@@ -2985,7 +2985,7 @@ public class Active implements NFObject {
 			Location l = Location.parse(eq);
 			if (l == null) {
 				l = loc.reference(eq);// N,S,E,W,U,D,ESCAPE,LAUNCH,REENTRY,LAND,
-										// EXIT
+				// EXIT
 			}
 			if (l == null) {
 				log("In line: " + workingCommand
@@ -3121,7 +3121,7 @@ public class Active implements NFObject {
 							Random r = new Random(fac.getId().hashCode());
 							int sol = (int) (Universe.getMaxSolar()
 									* r.nextDouble() + 1);// random solar
-															// system
+							// system
 							int plan = (int) (Universe.getMaxPlanet(sol)
 									* r.nextDouble() + 1);// random planet
 							Location worm = Location.parse(sol + "." + plan);
@@ -3370,7 +3370,7 @@ public class Active implements NFObject {
 				loadloc = Location.parse(n[0]);
 				if (loadloc == null) {
 					loadloc = loc.reference(n[0]);// N,S,E,W, U,D, ESC, LAU,
-													// REE,LAN, EXIT
+					// REE,LAN, EXIT
 				}
 				if (loadloc != null) {
 					int moveType = loc.getMoveType(loadloc);
@@ -3637,7 +3637,7 @@ public class Active implements NFObject {
 					NFObject nfo = new StockPile(corpTick, mat, num, loc);
 					if (matden <= 5)
 						Universe.consume(mat, num, loc);// don't consume gasses
-														// and liquids
+					// and liquids
 					Facility f = (Facility) Universe.getNFObjectById(nfo
 							.getLocation().getFac());
 					if (f != null && f.getCapacity() < nfo.getMass()) {
@@ -3645,7 +3645,7 @@ public class Active implements NFObject {
 							System.out
 									.println("DEBUG: Facility full moving stockpile outside");
 						nfo.setLocation(f.getLocation());// facility full put
-															// outside
+						// outside
 					}
 					Universe.add(nfo);
 				} catch (NumberFormatException NFE) {

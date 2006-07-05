@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -31,9 +32,15 @@ public class Tool2 implements ActionListener {
 
 	static String turn = "none";
 
+	private static String spellsFileName;
+
 	// JDialog turnInput=new JDialog();
 
 	public static void main(String s[]) {
+		if (s.length == 0) {
+			System.out.println("format: java aj.fm.Tool2 <spell.gml>");
+		}
+		spellsFileName = s[0];
 		new Tool2();
 	}
 
@@ -132,8 +139,7 @@ public class Tool2 implements ActionListener {
 	public void readSpells() {
 		try {
 
-			GmlPair all = GmlPair.parse(this.getClass().getResource(
-					"spells.gml"));
+			GmlPair all = GmlPair.parse(new FileInputStream(spellsFileName));
 			// GmlPair all=GmlPair.parse(new File("spells.gml"));
 			GmlPair gmlSpells[] = all.getAllByName("node");
 			for (int a = 0; a < gmlSpells.length; a++) {

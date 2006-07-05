@@ -325,7 +325,6 @@ public class Maze3d extends Canvas {
  * 
  * room = 6 sides cube path f/b, r/l, u/d open (no walls)
  * 
- * path down = front blocked
- *  *
+ * path down = front blocked *
  */
 

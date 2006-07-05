@@ -112,8 +112,8 @@ public class ViewPlanet {
 		// int ts=(int)(sa/3.11e10*4);// based on earth 256x64 map (sector
 		// size=64) total square = 16384,
 		int ts = (int) (sa / 3.11e10 * 4);// based on earth 512x128 map
-											// (sector size=128) total square =
-											// 16384x4,
+		// (sector size=128) total square =
+		// 16384x4,
 		int ss = (int) Math.pow(ts / 4, .5);
 		if (ss > 0) {
 			System.out.println(name + " Surface area= " + sa);

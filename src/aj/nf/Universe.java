@@ -54,7 +54,8 @@ public class Universe {
 	static long interTime = HOUR;// time each active completes uninterupted.
 
 	static long CHECKTIME = DAY;// time between enviroemnt checks and endurance
-								// charge
+
+	// charge
 
 	static boolean holdsPrerequisitsFor(String tick, Tech t) {
 		Vector v = t.getAllPrerequisits();

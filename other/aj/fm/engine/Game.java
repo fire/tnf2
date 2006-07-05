@@ -12,8 +12,8 @@ public class Game {
 
 	}
 
-	Vector wizardVector=new Vector();
-	Vector monsterVector=new Vector();
-	
-	
+	Vector wizardVector = new Vector();
+
+	Vector monsterVector = new Vector();
+
 }

@@ -112,7 +112,8 @@ public class MyGnutella implements Runnable {
 	static boolean filterPong = false, filterHit = false, filterPush = false;
 
 	static boolean hosttimereset = false;// clears old LOST, FAILED and
-											// Recent connect times
+
+	// Recent connect times
 
 	static int MINHOSTS = 4;
 
