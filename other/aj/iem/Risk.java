@@ -14,21 +14,21 @@ public class Risk {
 	// add proxy config
 
 	// int numheld=0;
-	double totalWin = 0, totalLose = 0, netinv;
+	private double totalWin = 0, totalLose = 0;
 
-	double mwin = 0, mlose = 0, minv = 0;
+	private double mwin = 0, mlose = 0, minv = 0;
 
-	static boolean log = false;
+	private static boolean log = false;
 
-	static boolean logSocket = false;
+	private static boolean logSocket = false;
 
-	static boolean quick = false;
+	private static boolean quick = false;
 
-	String contName = "";
+	private String contName = "";
 
-	boolean winner = false;
+	private boolean winner = false;
 
-	public static void help() {
+	private static void help() {
 		System.out
 				.println("Format: java aj.iem.Risk Sid Mid <options> [contracts...]");
 		System.out.println("  -w<host:port)   proxy");
@@ -411,8 +411,8 @@ public class Risk {
 		totalLose = lose;
 	}
 
-	public static String readAll(String userId, String sessionId,
-			String marketId, String assetId) {
+	private String readAll(String userId, String sessionId, String marketId,
+			String assetId) {
 		if (userId == null) {
 			System.out
 					.println("NO userId found.  Using System.in to file data");
@@ -429,7 +429,7 @@ public class Risk {
 							"iemweb.biz.uiowa.edu", 80);
 	}
 
-	public static String readAll() {
+	private String readAll() {
 		String all = "";
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(

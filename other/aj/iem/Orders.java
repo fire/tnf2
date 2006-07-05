@@ -14,7 +14,7 @@ import aj.misc.Stuff;
 //ADD PROXY config
 
 public class Orders {
-	static int maxLimitBidAskAmount = 5;
+	private static int maxLimitBidAskAmount = 5;
 
 	// public static void main(String s[]) {
 	// IEMTool.userId="AJudd3587";
@@ -48,17 +48,20 @@ public class Orders {
 	// Sys.out.println("<BID|ASK> <assetName|assetName:BundleName>
 	// <price|~price> <quantity|~quant> [expireHours]");
 	// }
-	Vector commands = new Vector();
+	private Vector commands = new Vector();
 
-	Vector assets = new Vector();
+	private Vector assets = new Vector();
 
-	static String report = "Orders report " + new Date();
+	private static String report = "Orders report " + new Date();
 
-	public Orders() {
+	private IEMTool tool;
+
+	public Orders(IEMTool toolRef) {
+		tool = toolRef;
 		report = "Orders report " + new Date();
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(
-					IEMTool.orderscommandfile));
+					tool.orderscommandfile));
 			while (true) {
 				String s = br.readLine();
 				if (s == null)
@@ -66,7 +69,7 @@ public class Orders {
 				s = s.trim();
 				commands.addElement(s);
 			}
-			br = new BufferedReader(new FileReader(IEMTool.iemstatusordersfile));// "iem_statusorders.log"));
+			br = new BufferedReader(new FileReader(tool.iemstatusordersfile));// "iem_statusorders.log"));
 			while (true) {
 				String s = br.readLine();
 				if (s == null)
@@ -102,7 +105,7 @@ public class Orders {
 			String quant = args[3];
 			String marketId = lookUpMarketId(name);
 			String contractId = lookUpContractId(name);
-			IEMTool.sessionId = lookUpSessionId(name);
+			tool.sessionId = lookUpSessionId(name);
 			int hav = 99999;
 			if (lookUp(name) == null) {
 				report += "MyError> Cannot find asset name or bundle " + name
@@ -191,13 +194,13 @@ public class Orders {
 						report += "FAST BARGIN!!  Sell at market " + bid
 								+ " since willing at " + max + "\n";
 						IEMTool.placeMarketOrder(IEMTool.sellAtMarket,
-								"" + bid, quant, contractId, marketId);
+								"" + bid, quant, contractId, marketId, tool);
 					}
 					if (isBid && max > ask) {
 						report += "FAST BARGIN!!  Buy at market " + ask
 								+ " since willing at " + max + "\n";
 						IEMTool.placeMarketOrder(IEMTool.buyAtMarket, "" + ask,
-								quant, contractId, marketId);
+								quant, contractId, marketId, tool);
 					}
 
 					if (isAsk) {
@@ -263,7 +266,7 @@ public class Orders {
 			}
 
 			if (marketId == null || contractId == null
-					|| IEMTool.sessionId == null)
+					|| tool.sessionId == null)
 				continue;
 			int hour = 1000 * 60 * 60;
 			long delay = hour * 24;
@@ -276,7 +279,7 @@ public class Orders {
 					continue;// System.exit(0);
 				}
 			}
-			if (IEMTool.sessionId == null) {
+			if (tool.sessionId == null) {
 				report += "MyError: cannot open connettion to IEM\n";
 				writeOrdersReport();
 				return;
@@ -284,11 +287,11 @@ public class Orders {
 			// TURN REAL ORDERS OFF
 			if (isBid)
 				IEMTool.placeLimitOrder(IEMTool.placeBid, val, quant,
-						contractId, marketId, delay);
+						contractId, marketId, delay, tool);
 			else if (isAsk)
 				IEMTool.placeLimitOrder(IEMTool.placeAsk, val, quant,
-						contractId, marketId, delay);
-			report += "*ORDER =" + IEMTool.sessionId + " "
+						contractId, marketId, delay, tool);
+			report += "*ORDER =" + tool.sessionId + " "
 					+ (isBid ? "bid" : "ask") + " " + name + ":" + marketId
 					+ ":" + contractId + " for " + quant + " at " + val
 					+ " for " + (delay / hour) + " hours\n";
@@ -296,7 +299,7 @@ public class Orders {
 		writeOrdersReport();
 	}
 
-	public String lookUp(String name) {
+	private String lookUp(String name) {
 		String bund = null;
 		if (name.indexOf(":") >= 0) {
 			bund = name.substring(0, name.indexOf(":"));
@@ -316,7 +319,7 @@ public class Orders {
 		return null;
 	}
 
-	public String lookUpDeltaHeld(String name) {
+	private String lookUpDeltaHeld(String name) {
 		String s = lookUp(name);
 		if (s == null)
 			return null;
@@ -327,7 +330,7 @@ public class Orders {
 	}
 
 	// held #=total held *=net held less bundles
-	public String lookUpNetHeld(String name) {
+	private String lookUpNetHeld(String name) {
 		String t = lookUpHeld(name);
 		if (t == null)
 			return null;
@@ -337,7 +340,7 @@ public class Orders {
 		return t;
 	}
 
-	public String lookUpHeld(String name) {
+	private String lookUpHeld(String name) {
 		String s = lookUp(name);
 		if (s == null)
 			return null;
@@ -348,7 +351,7 @@ public class Orders {
 		return args[7];
 	}
 
-	public String lookUpAsk(String name) {
+	private String lookUpAsk(String name) {
 		String s = lookUp(name);
 		if (s == null)
 			return null;
@@ -358,7 +361,7 @@ public class Orders {
 		return args[6];
 	}
 
-	public String lookUpBid(String name) {
+	private String lookUpBid(String name) {
 		String s = lookUp(name);
 		if (s == null)
 			return null;
@@ -368,7 +371,7 @@ public class Orders {
 		return args[5];
 	}
 
-	public String lookUpMarketId(String name) {
+	private String lookUpMarketId(String name) {
 		String s = lookUp(name);
 		if (s == null)
 			return null;
@@ -378,7 +381,7 @@ public class Orders {
 		return args[1];
 	}
 
-	public String lookUpContractId(String name) {
+	private String lookUpContractId(String name) {
 		String s = lookUp(name);
 		if (s == null)
 			return null;
@@ -388,7 +391,7 @@ public class Orders {
 		return args[0];
 	}
 
-	public String lookUpSessionId(String name) {
+	private String lookUpSessionId(String name) {
 		String s = lookUp(name);
 		if (s == null)
 			return null;
@@ -403,10 +406,10 @@ public class Orders {
 		return args[2];
 	}
 
-	static synchronized public void writeOrdersReport() {
+	synchronized private void writeOrdersReport() {
 		try {
 			PrintWriter pw = new PrintWriter(new FileWriter(
-					IEMTool.ordersoutputlogfile));
+					tool.ordersoutputlogfile));
 			pw.println(report);
 			pw.flush();
 			pw.close();

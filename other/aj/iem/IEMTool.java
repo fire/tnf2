@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.io.RandomAccessFile;
-import java.io.Writer;
 import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -39,27 +38,27 @@ import aj.misc.Stuff;
 
 public class IEMTool implements Runnable {
 
-	static String defaultFirstMarketId = "8";
+	private String defaultFirstMarketId = "8";
 
-	static String iemstatusfile = "iem_status.log";
+	private String iemstatusfile = "iem_status.log";
 
-	static String orderscommandfile = "orders.txt.log";
+	String orderscommandfile = "orders.txt.log";
 
-	static String ordersoutputlogfile = "orders.log";
+	String ordersoutputlogfile = "orders.log";
 
-	static String iemstatusordersfile = "iem_statusorders.log";
+	String iemstatusordersfile = "iem_statusorders.log";
 
-	static String iemordersfile = "iem_orders.log";
+	private String iemordersfile = "iem_orders.log";
 
-	static String iemtoolfile = "iem_tool.log";
+	private String iemtoolfile = "iem_tool.log";
 
-	static String iemactivefile = "iem_active.log";
+	private String iemactivefile = "iem_active.log";
 
-	static String buyAtMarket = "P", sellAtMarket = "S", placeBid = "B",
-			placeAsk = "A", buyFixBundle = "D", buyMarkBundle = "N",
-			sellFixBundle = "C", sellMarkBundle = "M";
+	static final String buyAtMarket = "P", sellAtMarket = "S", placeAsk = "A",
+			buyFixBundle = "D", sellFixBundle = "C", sellMarkBundle = "M",
+			placeBid = "B", buyMarkBundle = "N";
 
-	static int IPSEC = 1;// use Ip security 1=yes,0=no
+	private int IPSEC = 1;// use Ip security 1=yes,0=no
 
 	static boolean proxy = false;
 
@@ -67,87 +66,85 @@ public class IEMTool implements Runnable {
 
 	static int proxyPort = 80;
 
-	static int minute = 1000 * 60, hour = minute * 60, day = 24 * hour;
+	static final public int minute = 1000 * 60, hour = minute * 60,
+			day = 24 * hour, FOREVERDELAY = 60 * day, FOURWEEKS = 28 * day;
 
-	static int SOCKETTIMEOUT = 1 * minute;
+	// private int SOCKETTIMEOUT = 1 * minute;
 
-	static int FOREVERDELAY = 60 * day;
+	int EXTREAMBIDASKDELAY = 48 * hour;
 
-	static int EXTREAMBIDASKDELAY = 48 * hour;
+	int MIDDLEBIDASKDELAY = 24 * hour;
 
-	static int MIDDLEBIDASKDELAY = 24 * hour;
+	int NICKLEBIDASKDELAY = 18 * hour;
 
-	static int NICKLEBIDASKDELAY = 18 * hour;
+	final static int LOWESTBIDALLOWED = 10;// under 5 cent don't bid, over 95
 
-	static int VALUEBIDASKDELAY = 1 * hour;
-
-	static int FOURWEEKS = 28 * day;
-
-	static int LOWESTBIDALLOWED = 10;// under 5 cent don't bid, over 95 don't
+	// don't
 
 	// ask
 
 	static double MIDDLEMARGIN = .5;// bid 50 -> mb = 25, bid = 10 ->mb =5
 
-	static String localhostId = "";
+	String localhostId = "";
 
-	static boolean loginEnabled = true;
+	private boolean loginEnabled = true;
 
-	static String sessionId = "";
+	String sessionId = "";
 
-	static String userId = "AJudd3587";
+	String userId = "AJudd3587";
 
-	static String password = "dragonegg2";
+	private String password = "default";
 
-	static int MIN_BUND_SIZE = 5; // default real settings in config file
+	int MIN_BUND_SIZE = 5; // default real settings in config file
 
-	static int MAX_BUND_SIZE = 20; // default real settings in config file
+	int MAX_BUND_SIZE = 20; // default real settings in config file
 
-	static int MID_BUND_SIZE = 10;// default real settings in config file
+	int MID_BUND_SIZE = 10;// default real settings in config file
 
-	static int NICK_BUND_SIZE = 2;// default real settings in config file
+	int NICK_BUND_SIZE = 2;// default real settings in config file
 
-	static int EXTREAM_BUND_SIZE = 50;// default real settings in config file
+	int EXTREAM_BUND_SIZE = 50;// default real settings in config file
 
-	static int DISCOUNT_BUND_SIZE = 10;// default real settings in config file
+	// private int DISCOUNT_BUND_SIZE = 10;// default real settings in config
+	// file
 
-	static int MINCASHRESERVE = 4001;
+	int MINCASHRESERVE = 4001;
 
-	static int cash = 0;
+	int cash = 0;
 
-	static long lastLoginTry = -1;
+	private long lastLoginTry = -1;
 
-	static Vector allowedMarketNames = new Vector();
+	Vector allowedMarketNames = new Vector();
 
-	static Vector allowedBundleNames = new Vector();
+	Vector allowedBundleNames = new Vector();
 
-	static Vector allowedNickleNames = new Vector();
+	Vector allowedNickleNames = new Vector();
 
-	static Vector allowedExtreamNames = new Vector();
+	Vector allowedExtreamNames = new Vector();
 
-	static Vector allowedFreeNames = new Vector();
+	Vector allowedFreeNames = new Vector();
 
-	static Vector allowedMiddleNames = new Vector();
+	Vector allowedMiddleNames = new Vector();
 
-	static Vector allowedDiscountNames = new Vector();
+	private Vector allowedDiscountNames = new Vector();
 
-	static Vector knownNames = new Vector();
+	private Vector knownNames = new Vector();
 
-	int MINLOGINDELAY = 1000 * 60 * 3;
+	private int MINLOGINDELAY = 1000 * 60 * 3;
 
-	int LOGINDELAY = MINLOGINDELAY;
+	private int LOGINDELAY = MINLOGINDELAY;
 
-	int LOGINCHECKDELAY = MINLOGINDELAY;// AKA ORDERS check
+	private int LOGINCHECKDELAY = MINLOGINDELAY;// AKA ORDERS check
 
-	Vector newMarkets = new Vector();
+	private Vector newMarkets = new Vector();
 
-	static Vector allMarkets = new Vector();
+	private Vector allMarkets = new Vector();
 
-	static String lastActive = "";
+	private String lastActive = "";
 
-	static int reportToolCount = 0;
+	private int reportToolCount = 0;
 
-	static public void help() {
+	private void help() {
 		System.err.println("Usage: java aj.iem.IEMTool <options>");
 		System.err.println("-u<userid>");
 		System.err.println("-p<password>");
@@ -158,6 +155,12 @@ public class IEMTool implements Runnable {
 	}
 
 	public IEMTool() {
+		try {
+			localhostId = new String(InetAddress.getLocalHost()
+					.getCanonicalHostName());
+		} catch (IOException ioe) {
+			System.out.println(localhostId);
+		}
 		File f = new File("iem_config.txt");
 		BufferedReader br = null;
 		try {
@@ -236,36 +239,35 @@ public class IEMTool implements Runnable {
 				} else if (s.toUpperCase().startsWith("KNOWN")) {
 					knownNames.addElement(s.substring(5).trim());
 				} else if (s.toUpperCase().startsWith("PROXY")) {
-					IEMTool.proxy = true;
-					IEMTool.proxyHost = s.substring(5).trim();
-					if (IEMTool.proxyHost.indexOf(":") >= 0) {
+					proxy = true;
+					proxyHost = s.substring(5).trim();
+					if (proxyHost.indexOf(":") >= 0) {
 						try {
-							IEMTool.proxyPort = Integer
-									.parseInt(IEMTool.proxyHost
-											.substring(IEMTool.proxyHost
-													.indexOf(":") + 1));
-							IEMTool.proxyHost = IEMTool.proxyHost.substring(0,
-									IEMTool.proxyHost.indexOf(":"));
+							proxyPort = Integer.parseInt(proxyHost
+									.substring(proxyHost.indexOf(":") + 1));
+							proxyHost = proxyHost.substring(0, proxyHost
+									.indexOf(":"));
 						} catch (NumberFormatException nfe) {
 							reportTool("MyError proxy config bad number");
 							System.exit(0);
 						}
 					}
 					reportTool("Proxy found " + proxyHost + " at " + proxyPort);
-				} else if (s.toUpperCase().startsWith("MIN_BUND_SIZE")) {
+				} else if (s.toUpperCase().startsWith("MINBUNDSIZE")) {
 					MIN_BUND_SIZE = Integer.parseInt(s.substring(11).trim());
-				} else if (s.toUpperCase().startsWith("MAX_BUND_SIZE")) {
+				} else if (s.toUpperCase().startsWith("MAXBUNDSIZE")) {
 					MAX_BUND_SIZE = Integer.parseInt(s.substring(11).trim());
 				} else if (s.toUpperCase().startsWith("NICK_BUND_SIZE")) {
 					NICK_BUND_SIZE = Integer.parseInt(s.substring(14).trim());
 				} else if (s.toUpperCase().startsWith("MID_BUND_SIZE")) {
 					MID_BUND_SIZE = Integer.parseInt(s.substring(13).trim());
-				} else if (s.toUpperCase().startsWith("EXTREAM_BUND_SIZE")) {
+				} else if (s.toUpperCase().startsWith("EXT_BUND_SIZE")) {
 					EXTREAM_BUND_SIZE = Integer
-							.parseInt(s.substring(17).trim());
-				} else if (s.toUpperCase().startsWith("DISCOUNT_BUND_SIZE")) {
-					DISCOUNT_BUND_SIZE = Integer.parseInt(s.substring(18)
-							.trim());
+							.parseInt(s.substring(13).trim());
+					// } else if
+					// (s.toUpperCase().startsWith("DISCOUNT_BUND_SIZE")) {
+					// DISCOUNT_BUND_SIZE = Integer.parseInt(s.substring(18)
+					// .trim());
 				} else if (s.toUpperCase().startsWith("ABORT")) {
 					reportTool("ABORT FOUND");
 					System.out.println("ABORT FOUND in CONFIG");
@@ -280,40 +282,40 @@ public class IEMTool implements Runnable {
 	}
 
 	public static void main(String s[]) {
-		try {
-			IEMTool.localhostId = new String(InetAddress.getLocalHost()
-					.getCanonicalHostName());
-		} catch (IOException ioe) {
-			System.out.println(IEMTool.localhostId);
-		}
 		IEMTool iem = new IEMTool();
+		iem.parseCommandArgs(s);
+
+		new Thread(iem).start();
+	}
+
+	private void parseCommandArgs(String[] s) {
 		for (int a = 0; a < s.length; a++) {
 			if (s[a].toUpperCase().indexOf("?") >= 0
 					|| s[a].toUpperCase().indexOf("-HELP") >= 0) {
 				help();
 				System.exit(0);
 			} else if (s[a].toUpperCase().startsWith("-S")) {
-				IEMTool.sessionId = s[a].substring(2);
-				IEMTool.loginEnabled = false;
+				sessionId = s[a].substring(2);
+				loginEnabled = false;
 				continue;
 			} else if (s[a].toUpperCase().startsWith("-U")) {
-				IEMTool.userId = s[a].substring(2);
+				userId = s[a].substring(2);
 				continue;
 			} else if (s[a].toUpperCase().startsWith("-P")) {
-				IEMTool.password = s[a].substring(2);
+				password = s[a].substring(2);
 				continue;
 			} else if (s[a].toUpperCase().startsWith("-I")) {
-				IEMTool.IPSEC = 0;
+				IPSEC = 0;
 			} else if (s[a].toUpperCase().startsWith("-W")) {
-				IEMTool.proxy = true;
-				IEMTool.proxyHost = s[a].substring(2);
+				proxy = true;
+				proxyHost = s[a].substring(2);
 				// System.out.println("Proxy found "+proxyHost);
-				if (IEMTool.proxyHost.indexOf(":") >= 0) {
+				if (proxyHost.indexOf(":") >= 0) {
 					try {
-						IEMTool.proxyPort = Integer.parseInt(IEMTool.proxyHost
-								.substring(IEMTool.proxyHost.indexOf(":") + 1));
-						IEMTool.proxyHost = IEMTool.proxyHost.substring(0,
-								IEMTool.proxyHost.indexOf(":"));
+						proxyPort = Integer.parseInt(proxyHost
+								.substring(proxyHost.indexOf(":") + 1));
+						proxyHost = proxyHost.substring(0, proxyHost
+								.indexOf(":"));
 					} catch (NumberFormatException nfe) {
 						reportTool("MyError proxy config bad number");
 						System.exit(0);
@@ -321,14 +323,13 @@ public class IEMTool implements Runnable {
 				}
 			}
 		}
-		new Thread(iem).start();
 	}
 
-	public static boolean isPract() {
+	boolean isPract() {
 		return userId.equals(password);
 	}
 
-	public void doLogin() {
+	private void doLogin() {
 		long delay = LOGINDELAY + lastLoginTry - System.currentTimeMillis();
 		lastLoginTry = System.currentTimeMillis();
 		if (delay > 0) {
@@ -363,7 +364,7 @@ public class IEMTool implements Runnable {
 			LOGINDELAY = MINLOGINDELAY;
 	}
 
-	static public String doInterruptRequest() {
+	private String doInterruptRequest() {
 		reportTool("Placing interrupt");
 		String request = "USERTYPE=trader&LOGIN=" + userId
 				+ "&LANGUAGE=english&IPSecurity=" + IPSEC + "&PASSWORD="
@@ -378,7 +379,7 @@ public class IEMTool implements Runnable {
 		return readAllSocket(header, request, "iemweb.biz.uiowa.edu", 80);
 	}
 
-	static public String doLoginRequest() {
+	private String doLoginRequest() {
 		String request = "Login=" + userId + "&Password=" + password
 				+ "&UserType=trader&Language=english&IPSecurity=" + IPSEC
 				+ "\r\n";
@@ -395,13 +396,13 @@ public class IEMTool implements Runnable {
 		return readAllSocket(header, request, "iemweb.biz.uiowa.edu", 80);
 	}
 
-	static public boolean isLoggedIn() {
+	boolean isLoggedIn() {
 		return userId != null && sessionId != null
 				&& userId.trim().length() > 0 && sessionId.trim().length() > 0;
 	}
 
-	static synchronized public void reportStatus() {
-		int liquid = IEMTool.cash;
+	synchronized void reportStatus() {
+		int liquid = cash;
 		int asset = 0;
 		String report = "";
 		// correct MarketId required for limits. Each market (CompRet, MSFT, FR)
@@ -455,18 +456,7 @@ public class IEMTool implements Runnable {
 		}
 	}
 
-	static public synchronized void myPrint(Writer w, String s) {
-		PrintWriter pw = new PrintWriter(w);
-		while (s.indexOf("\n") >= 0) {
-			pw.println(s.substring(0, s.indexOf("\n")));
-			s = s.substring(s.indexOf("\n")).trim();
-		}
-		pw.println(s);
-
-	}
-
-	static public synchronized void reportActive(int liquid, int assets,
-			String line) {
+	private synchronized void reportActive(int liquid, int assets, String line) {
 		if (lastActive.equals(liquid + ""))
 			return;
 		else
@@ -528,7 +518,7 @@ public class IEMTool implements Runnable {
 		}
 	}
 
-	static public synchronized void reportTool(String line) {
+	synchronized void reportTool(String line) {
 		try {
 			RandomAccessFile ra = new RandomAccessFile(iemtoolfile, "rw");
 			ra.seek(ra.length());
@@ -550,7 +540,7 @@ public class IEMTool implements Runnable {
 		}
 	}
 
-	static public synchronized void reportOrders(String line) {
+	synchronized void reportOrders(String line) {
 		try {
 			RandomAccessFile ra = new RandomAccessFile(iemordersfile, "rw");
 			ra.seek(ra.length());
@@ -562,7 +552,7 @@ public class IEMTool implements Runnable {
 
 	// public static synchronized String readAllSocket(String host, int port,
 	// String header,String req) {
-	static public synchronized String readAllSocket(String header, String req,
+	public synchronized static String readAllSocket(String header, String req,
 			String host, int port) {
 		if (host.equalsIgnoreCase("iemweb.biz.uiowa.edu"))
 			host = "128.255.244.60";
@@ -606,22 +596,23 @@ public class IEMTool implements Runnable {
 					all += str + "\n";
 				}
 				input.close();
-				reportStatus();
 				return all;
 			} catch (IOException e1) {
-				reportTool("MyError io error 15.  Read web page from socket.  Connect/read failure."
-						+ e1);
+				// reportTool("MyError io error 15. Read web page from socket.
+				// Connect/read failure."
+				// + e1);
 				e1.printStackTrace();
 			}
 		} catch (MalformedURLException e) {
-			reportTool("MyError io error 16.  Read web page from socket.  Connect/read failure."
-					+ e);
+			// reportTool("MyError io error 16. Read web page from socket.
+			// Connect/read failure."
+			// + e);
 			e.printStackTrace();
 		}
 		return null;
 	}
 
-	public void doRelogin() {
+	private void doRelogin() {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(
 					iemstatusordersfile));
@@ -664,12 +655,12 @@ public class IEMTool implements Runnable {
 				startMarkets();
 			} else {
 				reportTool("O");
-				new Orders();
+				new Orders(this);
 			}
 		}
 	}
 
-	public static Vector getAllMarketsClone() {
+	private Vector getAllMarketsClone() {
 		return (Vector) allMarkets.clone();
 	}
 
@@ -696,11 +687,11 @@ public class IEMTool implements Runnable {
 		setAllMarkets(fix);
 	}
 
-	static public void setAllMarkets(Vector v) {
+	private void setAllMarkets(Vector v) {
 		allMarkets = v;
 	}
 
-	public void downloadMarketSeeds() {
+	private void downloadMarketSeeds() {
 		if (!isLoggedIn())
 			return;
 		newMarkets = new Vector();
@@ -711,6 +702,8 @@ public class IEMTool implements Runnable {
 						+ "&LANGUAGE=english&Markets=" + defaultFirstMarketId
 						+ "&Panel_id=menu" + " HTTP/1.0\r\n\r\n", "",
 				"iemweb.biz.uiowa.edu", 80);
+		reportStatus();
+
 		Thread.yield();
 		if (all.indexOf("<SELECT NAME=\"Markets\">") >= 0) {
 			all = all.substring(all.indexOf("<SELECT NAME=\"Markets\">") + 23);
@@ -731,7 +724,7 @@ public class IEMTool implements Runnable {
 				if (mn.indexOf("<") >= 0)
 					mn = mn.substring(0, mn.indexOf("<"));
 				mn = mn.trim();
-				Market mm = new Market(mn, mv);
+				Market mm = new Market(this, mn, mv);
 				if (!mm.isValidMarket()) {
 					reportTool("MyError: market download failed =" + mn + " "
 							+ mv);
@@ -744,24 +737,24 @@ public class IEMTool implements Runnable {
 		} else {
 			doLogout();
 		}
-		IEMTool.reportStatus();
+		reportStatus();
 	}
 
-	static public void doLogout() {
+	void doLogout() {
 		reportTool("Logout detected");
 		if (sessionId != null)
 			lastLoginTry = System.currentTimeMillis();
 		sessionId = null;
 	}
 
-	static public void placeMarketOrder(String transType, String price,
-			String quant, String assetId, String marketId) {
+	static void placeMarketOrder(String transType, String price, String quant,
+			String assetId, String marketId, IEMTool tool) {
 		try {
 			double pricev = Double.parseDouble(price);
 			pricev = Stuff.trunc(Math.max(0, pricev), 3);
 			int quan = Integer.parseInt(quant);
 			if (quan < 1) {
-				reportTool("MyError bad quantinty in market order>" + quant);
+				// reportTool("MyError bad quantinty in market order>" + quant);
 				System.exit(0);
 			}
 			if (transType.equals(buyMarkBundle))
@@ -771,12 +764,13 @@ public class IEMTool implements Runnable {
 			// if (transType.equals(sellFixBundle)) price="1.000";
 			// if (transType.equals(buyFixBundle)) price="1.000";
 		} catch (NumberFormatException nfe) {
-			reportTool("MyError numberformat io error 7 in place market order for>"
-					+ price);
+			// reportTool("MyError numberformat io error 7 in place market order
+			// for>"
+			// + price);
 			return;
 		}
-		String request = "USERTYPE=trader&LOGIN=" + userId + "&SESSIONID="
-				+ sessionId + "&LANGUAGE=english&Markets=" + marketId
+		String request = "USERTYPE=trader&LOGIN=" + tool.userId + "&SESSIONID="
+				+ tool.sessionId + "&LANGUAGE=english&Markets=" + marketId
 				+ "&Panel_id=main&AssetId=" + assetId + "&Quantity=" + quant
 				+ "&Price=" + price + "&OrderType=" + transType + "\r\n";
 		String header = "POST /webex/WebEx.dll?OrderConfirmHandler HTTP/1.0\r\n"
@@ -784,7 +778,7 @@ public class IEMTool implements Runnable {
 				+ "Accept-Language: en-us\r\n"
 				+ "User-Agent: Mozilla/4.0 (flandar@yahoo.com)\r\n"
 				+ "Host: "
-				+ localhostId
+				+ tool.localhostId
 				+ "\r\n"
 				+ "Content-Length: "
 				+ (request.length() - 2) + "\r\n" + "Pragma: no-cache\r\n\r\n";
@@ -801,36 +795,40 @@ public class IEMTool implements Runnable {
 		Thread.yield();
 	}
 
-	static public void placeLimitOrder(String transType, String price,
-			String quant, String assetId, String marketId, long delay) {
+	public static void placeLimitOrder(String transType, String price,
+			String quant, String assetId, String marketId, long delay,
+			IEMTool tool) {
 		try {
 			double pricev = Double.parseDouble(price);
 			int quan = Integer.parseInt(quant);
 			if (quan < 1) {
-				reportTool("MyError bad quantinty in limit order>" + quant);
+				// reportTool("MyError bad quantinty in limit order>" + quant);
 				System.exit(0);
 			}
 			if (pricev < 0 || pricev > 1) {
-				reportTool("MyError bad price in limit order>" + price);
+				// reportTool("MyError bad price in limit order>" + price);
 				System.exit(0);
 			}
 			if (pricev >= .999 && transType.equals(placeBid)) {
-				reportTool("MyError bid of .999 price in limit order>" + price);
+				// reportTool("MyError bid of .999 price in limit order>" +
+				// price);
 				System.exit(0);
 			}
 			if (pricev <= .001 && transType.equals(placeAsk)) {
-				reportTool("MyError ask of .001 price in limit order>" + price);
+				// reportTool("MyError ask of .001 price in limit order>" +
+				// price);
 				System.exit(0);
 			}
 			pricev = Stuff.trunc(Math.max(0, Math.min(pricev, 1)), 3);
 			price = pricev + "";
 		} catch (NumberFormatException nfe) {
-			reportTool("MyError numberformat io error 17 in place limit order for>"
-					+ price);
+			// reportTool("MyError numberformat io error 17 in place limit order
+			// for>"
+			// + price);
 			return;
 		}
-		String request = "USERTYPE=trader&LOGIN=" + userId + "&SESSIONID="
-				+ sessionId + "&LANGUAGE=english&Markets=" + marketId
+		String request = "USERTYPE=trader&LOGIN=" + tool.userId + "&SESSIONID="
+				+ tool.sessionId + "&LANGUAGE=english&Markets=" + marketId
 				+ "&Panel_id=main&RequestCode=" + transType + assetId
 				+ "&LimitOrderPrice=" + price + "&LimitOrderQuantity=" + quant
 				+ "&LimitOrderExpirationDate=" + limitTime(delay)
@@ -840,7 +838,7 @@ public class IEMTool implements Runnable {
 				+ "Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-excel, application/msword, application/vnd.ms-powerpoint, */*\r\n"
 				+ "Accept-Language: en-us\r\n"
 				+ "User-Agent: Mozilla/4.0 (flandar@yahoo.com)\r\n" + "Host: "
-				+ localhostId + "\r\n" + "Content-Length: "
+				+ tool.localhostId + "\r\n" + "Content-Length: "
 				+ (request.length() - 2) + "\r\n" + "Pragma: no-cache\r\n\r\n";
 
 		String host = "iemweb.biz.uiowa.edu";
@@ -849,7 +847,7 @@ public class IEMTool implements Runnable {
 		Thread.yield();
 	}
 
-	static public String limitTime(long delay) {
+	static String limitTime(long delay) {
 		delay += (int) (delay * Math.random());
 		if (delay < 0)
 			delay = 20 * 1000 * 60;

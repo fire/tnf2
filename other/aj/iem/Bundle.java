@@ -5,23 +5,25 @@ import java.util.Vector;
 import aj.misc.Stuff;
 
 public class Bundle {
-	String name, id;
+	private String name, id;
 
 	String marketId;
 
-	Vector bundleContracts = new Vector();
+	private Vector bundleContracts = new Vector();
 
 	Market market;
 
-	int bundleValue = 1000;
+	private int bundleValue = 1000;
 
-	public int getBundleValue() {
+	private IEMTool tool;
+
+	int getBundleValue() {
 		return bundleValue;
 	}
 
-	public boolean isFreeAllowed() {// 0 bid 1 ask
+	private boolean isFreeAllowed() {// 0 bid 1 ask
 		String name = getName().toUpperCase();
-		Vector v = IEMTool.allowedFreeNames;
+		Vector v = tool.allowedFreeNames;
 		for (int a = 0; a < v.size(); a++) {
 			String test = (String) v.elementAt(a);
 			if (name.startsWith(test.toUpperCase()))
@@ -31,9 +33,9 @@ public class Bundle {
 		return false;
 	}
 
-	public boolean isExtreamAllowed() {
+	private boolean isExtreamAllowed() {
 		String name = getName().toUpperCase();
-		Vector v = IEMTool.allowedExtreamNames;
+		Vector v = tool.allowedExtreamNames;
 		for (int a = 0; a < v.size(); a++) {
 			String test = (String) v.elementAt(a);
 			if (name.startsWith(test.toUpperCase()))
@@ -43,9 +45,9 @@ public class Bundle {
 		return false;
 	}
 
-	public boolean isNickleAllowed() {
+	private boolean isNickleAllowed() {
 		String name = getName().toUpperCase();
-		Vector v = IEMTool.allowedNickleNames;
+		Vector v = tool.allowedNickleNames;
 		for (int a = 0; a < v.size(); a++) {
 			String test = (String) v.elementAt(a);
 			if (name.startsWith(test.toUpperCase()))
@@ -55,9 +57,9 @@ public class Bundle {
 		return false;
 	}
 
-	public boolean isMiddleAllowed() {
+	private boolean isMiddleAllowed() {
 		String name = getName().toUpperCase();
-		Vector v = IEMTool.allowedMiddleNames;
+		Vector v = tool.allowedMiddleNames;
 		for (int a = 0; a < v.size(); a++) {
 			String test = (String) v.elementAt(a);
 			if (name.startsWith(test.toUpperCase()))
@@ -67,9 +69,9 @@ public class Bundle {
 		return false;
 	}
 
-	public boolean isAllowed() {
+	private boolean isAllowed() {
 		String name = getName().toUpperCase();
-		Vector v = IEMTool.allowedBundleNames;
+		Vector v = tool.allowedBundleNames;
 		for (int a = 0; a < v.size(); a++) {
 			String test = (String) v.elementAt(a);
 			if (name.startsWith(test.toUpperCase()))
@@ -79,7 +81,8 @@ public class Bundle {
 		return false;
 	}
 
-	public Bundle(String n, String i) {
+	public Bundle(IEMTool toolref, String n, String i) {
+		tool = toolref;
 		name = n;
 		id = i;
 		if (name.endsWith("$2"))
@@ -138,7 +141,7 @@ public class Bundle {
 		return report;
 	}
 
-	public String getSummary() {
+	String getSummary() {
 		String members = "";
 		for (int a = 0; a < bundleContracts.size(); a++) {
 			if (members.length() > 0)
@@ -165,7 +168,7 @@ public class Bundle {
 		return report;
 	}
 
-	public String fullReport() {
+	String fullReport() {
 		String report = "";
 		for (int a = 0; a < bundleContracts.size(); a++) {
 			Contract cc = (Contract) bundleContracts.elementAt(a);
@@ -179,7 +182,7 @@ public class Bundle {
 		return report;
 	}
 
-	public int getMinHeld() {
+	int getMinHeld() {
 		if (bundleContracts.size() >= 1) {
 			Contract cc = (Contract) bundleContracts.elementAt(0);
 			int total = cc.held;
@@ -211,7 +214,7 @@ public class Bundle {
 		return total;
 	}
 
-	public int getLastPrice() {
+	private int getLastPrice() {
 		if (bundleContracts.size() >= 2) {
 			int total = 0;
 			for (int a = 0; a < bundleContracts.size(); a++) {
@@ -223,7 +226,7 @@ public class Bundle {
 		return 0;
 	}
 
-	public String showMarketAskPrice() {
+	private String showMarketAskPrice() {
 		String ret = "";
 		if (bundleContracts.size() >= 2) {
 			ret += "total=" + getMarketAskPrice() + " ";
@@ -237,7 +240,7 @@ public class Bundle {
 		return ret;
 	}
 
-	public int getMarketAskPrice() {
+	private int getMarketAskPrice() {
 		if (bundleContracts.size() >= 2) {
 			int total = 0;
 			for (int a = 0; a < bundleContracts.size(); a++) {
@@ -263,7 +266,7 @@ public class Bundle {
 		return ret;
 	}
 
-	public int getMarketBidPrice() {
+	private int getMarketBidPrice() {
 		if (bundleContracts.size() >= 2) {
 			int total = 0;
 			for (int a = 0; a < bundleContracts.size(); a++) {
@@ -275,7 +278,7 @@ public class Bundle {
 		return 2;
 	}
 
-	public void addContract(Contract cc) {
+	void addContract(Contract cc) {
 		for (int a = 0; a < bundleContracts.size(); a++) {
 			Contract c = (Contract) bundleContracts.elementAt(a);
 			if (c.getId().equals(cc.getId())) {
@@ -287,21 +290,21 @@ public class Bundle {
 		bundleContracts.addElement(cc);
 	}
 
-	public void subToAllContracts(int x) {
+	private void subToAllContracts(int x) {
 		for (int a = 0; a < bundleContracts.size(); a++) {
 			Contract cc = (Contract) bundleContracts.elementAt(a);
 			cc.held -= x;
 		}
 	}
 
-	public void addToAllContracts(int x) {
+	private void addToAllContracts(int x) {
 		for (int a = 0; a < bundleContracts.size(); a++) {
 			Contract cc = (Contract) bundleContracts.elementAt(a);
 			cc.held += x;
 		}
 	}
 
-	public void nickelBid() {
+	private void nickelBid() {
 		if (getMarketBidPrice() > getBundleValue())
 			return;
 		for (int a = 0; a < bundleContracts.size(); a++) {
@@ -314,21 +317,21 @@ public class Bundle {
 			nickelbid -= nickelbid % 50;
 			if (nickelbid < IEMTool.LOWESTBIDALLOWED || nickelbid > cc.bid)
 				continue;
-			IEMTool.reportOrders("nb " + cc.getName() + " " + nickelbid
-					+ " from " + cc.bid);
-			cc.executeBidLimit((nickelbid) / 1000.0, ""
-					+ IEMTool.NICK_BUND_SIZE, IEMTool.NICKLEBIDASKDELAY);
+			tool.reportOrders("nb " + cc.getName() + " " + nickelbid + " from "
+					+ cc.bid);
+			cc.executeBidLimit((nickelbid) / 1000.0, "" + tool.NICK_BUND_SIZE,
+					tool.NICKLEBIDASKDELAY);
 			nickelbid -= 100;
 			if (nickelbid < IEMTool.LOWESTBIDALLOWED || nickelbid > cc.bid)
 				continue;
-			IEMTool.reportOrders("nb2 " + cc.getName() + " " + nickelbid
+			tool.reportOrders("nb2 " + cc.getName() + " " + nickelbid
 					+ " from " + cc.bid);
 			cc.executeBidLimit((nickelbid) / 1000.0, ""
-					+ (IEMTool.NICK_BUND_SIZE * 2), IEMTool.NICKLEBIDASKDELAY);
+					+ (tool.NICK_BUND_SIZE * 2), tool.NICKLEBIDASKDELAY);
 		}
 	}
 
-	public void extreamBid() {
+	private void extreamBid() {
 		if (getMarketBidPrice() > getBundleValue())
 			return;
 		for (int a = 0; a < bundleContracts.size(); a++) {
@@ -340,14 +343,14 @@ public class Bundle {
 			int extreambid = (int) (cc.bid * .1);
 			if (extreambid < 1 || extreambid > cc.bid)
 				continue;
-			IEMTool.reportOrders("eb " + cc.getName() + " " + extreambid
+			tool.reportOrders("eb " + cc.getName() + " " + extreambid
 					+ " from " + cc.bid);
 			cc.executeBidLimit((extreambid) / 1000.0, ""
-					+ IEMTool.EXTREAM_BUND_SIZE, IEMTool.EXTREAMBIDASKDELAY);
+					+ tool.EXTREAM_BUND_SIZE, tool.EXTREAMBIDASKDELAY);
 		}
 	}
 
-	public void extreamAsk() {
+	private void extreamAsk() {
 		if (getMarketAskPrice() < getBundleValue())
 			return;
 		for (int a = 0; a < bundleContracts.size(); a++) {
@@ -361,14 +364,14 @@ public class Bundle {
 			int extreamask = (int) (1000 - (1000 - cc.ask) * .10);
 			if (extreamask > 999 || extreamask < cc.ask)
 				continue;
-			IEMTool.reportOrders("ea " + cc.getName() + " " + extreamask
+			tool.reportOrders("ea " + cc.getName() + " " + extreamask
 					+ " from " + cc.ask);
 			cc.executeAskLimit((extreamask) / 1000.0, ""
-					+ IEMTool.EXTREAM_BUND_SIZE, IEMTool.EXTREAMBIDASKDELAY);
+					+ tool.EXTREAM_BUND_SIZE, tool.EXTREAMBIDASKDELAY);
 		}
 	}
 
-	public void nickelAsk() {
+	private void nickelAsk() {
 		if (getMarketAskPrice() < getBundleValue())
 			return;
 		for (int a = 0; a < bundleContracts.size(); a++) {
@@ -384,22 +387,22 @@ public class Bundle {
 			if (nickelask > getBundleValue() - IEMTool.LOWESTBIDALLOWED
 					|| nickelask < cc.ask)
 				continue;
-			IEMTool.reportOrders("na " + cc.getName() + " " + nickelask
-					+ " from " + cc.ask);
-			cc.executeAskLimit((nickelask) / 1000.0, ""
-					+ IEMTool.NICK_BUND_SIZE, IEMTool.NICKLEBIDASKDELAY);
+			tool.reportOrders("na " + cc.getName() + " " + nickelask + " from "
+					+ cc.ask);
+			cc.executeAskLimit((nickelask) / 1000.0, "" + tool.NICK_BUND_SIZE,
+					tool.NICKLEBIDASKDELAY);
 			nickelask += 100;
 			if (nickelask > getBundleValue() - IEMTool.LOWESTBIDALLOWED
 					|| nickelask < cc.ask)
 				continue;
-			IEMTool.reportOrders("na " + cc.getName() + " " + nickelask
-					+ " from " + cc.ask);
+			tool.reportOrders("na " + cc.getName() + " " + nickelask + " from "
+					+ cc.ask);
 			cc.executeAskLimit((nickelask) / 1000.0, ""
-					+ (IEMTool.NICK_BUND_SIZE * 2), IEMTool.NICKLEBIDASKDELAY);
+					+ (tool.NICK_BUND_SIZE * 2), tool.NICKLEBIDASKDELAY);
 		}
 	}
 
-	public void middleAsk() {
+	private void middleAsk() {
 		if (getMarketAskPrice() < getBundleValue())
 			return;
 		for (int a = 0; a < bundleContracts.size(); a++) {
@@ -416,15 +419,15 @@ public class Bundle {
 					continue;
 				if (cc.held == 0)
 					continue;
-				IEMTool.reportOrders("ma " + cc.getName() + " " + middleAsk
+				tool.reportOrders("ma " + cc.getName() + " " + middleAsk
 						+ " from " + cc.ask);
 				cc.executeAskLimit((middleAsk) / 1000.0, ""
-						+ IEMTool.MID_BUND_SIZE, IEMTool.MIDDLEBIDASKDELAY);
+						+ tool.MID_BUND_SIZE, tool.MIDDLEBIDASKDELAY);
 			}
 		}
 	}
 
-	public void middleBid() {
+	private void middleBid() {
 		if (getMarketBidPrice() > getBundleValue())
 			return;
 		for (int a = 0; a < bundleContracts.size(); a++) {
@@ -438,17 +441,17 @@ public class Bundle {
 				middleBid += middleBid % 2;
 				if (middleBid < IEMTool.LOWESTBIDALLOWED || cc.bid < middleBid)
 					continue;
-				if (IEMTool.cash < middleBid)
+				if (tool.cash < middleBid)
 					continue;
-				IEMTool.reportOrders("mb " + cc.getName() + " " + middleBid
+				tool.reportOrders("mb " + cc.getName() + " " + middleBid
 						+ " from " + cc.bid);
 				cc.executeBidLimit((middleBid) / 1000.0, ""
-						+ IEMTool.MID_BUND_SIZE, IEMTool.MIDDLEBIDASKDELAY);
+						+ tool.MID_BUND_SIZE, tool.MIDDLEBIDASKDELAY);
 			}
 		}
 	}
 
-	public int getAssetsValue() {
+	int getAssetsValue() {
 		int total = 0;
 		for (int a = 0; a < bundleContracts.size(); a++) {
 			Contract cc = (Contract) bundleContracts.elementAt(a);
@@ -457,7 +460,7 @@ public class Bundle {
 		return total;
 	}
 
-	public int contractSellValue(Contract c) {
+	int contractSellValue(Contract c) {
 		int cbid = c.bid;
 		int bask = 0;
 		for (int a = 0; a < bundleContracts.size(); a++) {
@@ -471,7 +474,7 @@ public class Bundle {
 		return bestSellPrice;
 	}
 
-	public int contractBuyCost(Contract c) {
+	int contractBuyCost(Contract c) {
 		int cask = c.ask;
 		int bbid = 0;
 		for (int a = 0; a < bundleContracts.size(); a++) {
@@ -485,74 +488,74 @@ public class Bundle {
 		return cheapestPriceCanBuy;
 	}
 
-	public void checkDiscountSell() {// always okay
+	private void checkDiscountSell() {// always okay
 		if (getMarketBidPrice() > getBundleValue() && getMinHeld() > 1) {
 			int max = getMinHeld() - 1;
-			IEMTool.reportOrders("ds " + name + " " + showMarketBidPrice()
+			tool.reportOrders("ds " + name + " " + showMarketBidPrice()
 					+ " request " + max + " order amount");
 			IEMTool.placeMarketOrder(IEMTool.sellMarkBundle, ""
 					+ Stuff.trunc(getMarketBidPrice() / 1000.0, 3), "" + max,
-					id, marketId);
+					id, marketId, tool);
 			market.lastUpdate = -1;
 		}
 	}
 
-	public void checkDiscountBuy() {// always okay
+	private void checkDiscountBuy() {// always okay
 		if (getMarketAskPrice() < getBundleValue()
-				&& IEMTool.cash + IEMTool.MINCASHRESERVE > getMarketAskPrice()) {
-			int max = (int) (IEMTool.cash / getMarketAskPrice());
-			IEMTool.reportOrders("db " + name + "@" + showMarketAskPrice()
+				&& tool.cash + tool.MINCASHRESERVE > getMarketAskPrice()) {
+			int max = (int) (tool.cash / getMarketAskPrice());
+			tool.reportOrders("db " + name + "@" + showMarketAskPrice()
 					+ " request " + max + " order amount");
 			IEMTool.placeMarketOrder(IEMTool.buyMarkBundle, ""
 					+ Stuff.trunc(getMarketAskPrice() / 1000.0, 3), "" + max,
-					id, marketId);
+					id, marketId, tool);
 			market.lastUpdate = -1;
 		}
 	}
 
-	public void checkSurplusSell() {
-		if (getMinHeld() > IEMTool.MAX_BUND_SIZE
-				|| (IEMTool.cash < IEMTool.MINCASHRESERVE && getMinHeld() > IEMTool.MIN_BUND_SIZE)) {
+	private void checkSurplusSell() {
+		if (getMinHeld() > tool.MAX_BUND_SIZE
+				|| (tool.cash < tool.MINCASHRESERVE && getMinHeld() > tool.MIN_BUND_SIZE)) {
 			int tosell = getMinHeld()
-					- (IEMTool.MAX_BUND_SIZE + IEMTool.MIN_BUND_SIZE) / 2;
-			if (IEMTool.cash < IEMTool.MINCASHRESERVE)
-				tosell = getMinHeld() - IEMTool.MIN_BUND_SIZE;
-			IEMTool.reportOrders("ss " + name + " #" + tosell);
+					- (tool.MAX_BUND_SIZE + tool.MIN_BUND_SIZE) / 2;
+			if (tool.cash < tool.MINCASHRESERVE)
+				tosell = getMinHeld() - tool.MIN_BUND_SIZE;
+			tool.reportOrders("ss " + name + " #" + tosell);
 			IEMTool.placeMarketOrder(IEMTool.sellFixBundle, "1", "" + tosell,
-					id, marketId);
-			IEMTool.cash += getBundleValue() * tosell;
+					id, marketId, tool);
+			tool.cash += getBundleValue() * tosell;
 			subToAllContracts(tosell);
 		}
 	}
 
-	boolean shortageBought = false;
+	private boolean shortageBought = false;
 
-	public void checkShortageBuy() {
-		if (IEMTool.cash > IEMTool.MINCASHRESERVE && getMinHeld() >= 0
-				&& getMinHeld() < IEMTool.MIN_BUND_SIZE) {
+	private void checkShortageBuy() {
+		if (tool.cash > tool.MINCASHRESERVE && getMinHeld() >= 0
+				&& getMinHeld() < tool.MIN_BUND_SIZE) {
 			shortageBought = true;
-			int tobuy = IEMTool.MIN_BUND_SIZE;
+			int tobuy = tool.MIN_BUND_SIZE;
 			if (getMarketBidPrice() > getBundleValue()) {
-				tobuy = IEMTool.MAX_BUND_SIZE - getMinHeld() - 2;
+				tobuy = tool.MAX_BUND_SIZE - getMinHeld() - 2;
 			}
-			if (IEMTool.cash - tobuy < IEMTool.MINCASHRESERVE)
-				tobuy = (int) (IEMTool.cash - IEMTool.MINCASHRESERVE - 1);
+			if (tool.cash - tobuy < tool.MINCASHRESERVE)
+				tobuy = (int) (tool.cash - tool.MINCASHRESERVE - 1);
 			if (tobuy <= 0) {
-				IEMTool.reportOrders("bs " + name + " #" + tobuy
+				tool.reportOrders("bs " + name + " #" + tobuy
 						+ " not enough cash reserves");
 				return;
 			}
-			IEMTool.reportOrders("bs " + name + " #" + tobuy);
+			tool.reportOrders("bs " + name + " #" + tobuy);
 			IEMTool.placeMarketOrder(IEMTool.buyFixBundle, "1", "" + tobuy, id,
-					marketId);
-			IEMTool.cash -= getBundleValue() * tobuy;
+					marketId, tool);
+			tool.cash -= getBundleValue() * tobuy;
 			addToAllContracts(tobuy);
 		} else {
 			shortageBought = false;
 		}
 	}
 
-	public void makeOrders() {
+	void makeOrders() {
 		if (!isAllowed())
 			return;
 		checkShortageBuy();
@@ -568,7 +571,7 @@ public class Bundle {
 		checkDiscountBuy();
 
 		if (getMarketBidPrice() < getBundleValue()) {// don't bid if doing
-														// discount!
+			// discount!
 			if (isMiddleAllowed())
 				middleBid();
 			if (isNickleAllowed())
@@ -577,7 +580,7 @@ public class Bundle {
 				extreamBid();
 		}
 		if (getMarketAskPrice() > getBundleValue()) {// don't ask if doing
-														// discount!
+			// discount!
 			if (isNickleAllowed())
 				nickelAsk();
 			if (isMiddleAllowed())
@@ -587,11 +590,8 @@ public class Bundle {
 		}
 	}
 
-	public String getName() {
+	String getName() {
 		return name;
 	}
 
-	public String getId() {
-		return id;
-	}
 }

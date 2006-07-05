@@ -6,43 +6,62 @@ import aj.io.MLtoText;
 import aj.misc.Stuff;
 
 public class Contract {
-	static int INITIALNUM = 5000;
+	private static int INITIALNUM = 5000;
 
-	static int count;
+	// private static int count;
 
-	int countId;
+	// private int countId;
 
-	String contractName, contractId;
+	private String contractName;
 
-	String marketId;
+	String contractId;
 
-	String bundleId;
+	private String marketId;
 
-	String bundleName;
+	// private String bundleId;
 
-	Bundle bundle;
+	private String bundleName;
 
-	boolean imBidding = false, imAsking = false;
+	private Bundle bundle;
 
-	boolean activeBid = true, activeAsk = true;
+	private boolean imBidding = false, imAsking = false;
 
-	int bid, ask, last, held, netheld = -1, deltaheld = 0, myBid, myAsk;
+	boolean activeBid = true;
 
-	boolean refreshOrders = false;
+	boolean activeAsk = true;
 
-	Vector allOrders = null;
+	int bid;
 
-	public int getHeld() {
+	int ask;
+
+	int last;
+
+	private int myBid, myAsk;
+
+	int deltaheld = 0;
+
+	int netheld = -1;
+
+	int held;
+
+	// private boolean refreshOrders = false;
+
+	private Vector allOrders = null;
+
+	private IEMTool tool;
+
+	int getHeld() {
 		return held;
 	}
 
-	public Contract(String n, String id) {
-		countId = count++;
+	public Contract(IEMTool toolRef, String n, String id) {
+		tool = toolRef;
+		// countId = count++;
 		contractName = n;
 		contractId = id;
 	}
 
-	public boolean hasExtreamBid() {
+	boolean hasExtreamBid() {
 		for (int b = 0; b < allOrders.size(); b++) {
 			IEMOrder iemo = (IEMOrder) allOrders.elementAt(b);
 			int extreamBid = (int) (bid * .1);
@@ -52,7 +71,7 @@ public class Contract {
 		return false;
 	}
 
-	public boolean hasNickelBid() {
+	boolean hasNickelBid() {
 		for (int b = 0; b < allOrders.size(); b++) {
 			IEMOrder iemo = (IEMOrder) allOrders.elementAt(b);
 			int nickleBid = bid - 150;
@@ -64,7 +83,7 @@ public class Contract {
 		return false;
 	}
 
-	public boolean hasExtreamAsk() {
+	boolean hasExtreamAsk() {
 		for (int b = 0; b < allOrders.size(); b++) {
 			IEMOrder iemo = (IEMOrder) allOrders.elementAt(b);
 			int extreamAsk = (int) (1000 - (1000 - ask) * .1);
@@ -74,7 +93,7 @@ public class Contract {
 		return false;
 	}
 
-	public boolean hasNickelAsk() {
+	boolean hasNickelAsk() {
 		for (int b = 0; b < allOrders.size(); b++) {
 			IEMOrder iemo = (IEMOrder) allOrders.elementAt(b);
 			int nickleAsk = ask + 150;
@@ -86,7 +105,7 @@ public class Contract {
 		return false;
 	}
 
-	public boolean hasMiddleAsk() {
+	boolean hasMiddleAsk() {
 		for (int b = 0; b < allOrders.size(); b++) {
 			IEMOrder iemo = (IEMOrder) allOrders.elementAt(b);
 			int middleAsk = ask
@@ -99,7 +118,7 @@ public class Contract {
 		return false;
 	}
 
-	public boolean hasMiddleBid() {
+	boolean hasMiddleBid() {
 		for (int b = 0; b < allOrders.size(); b++) {
 			IEMOrder iemo = (IEMOrder) allOrders.elementAt(b);
 			int middleBid = bid
@@ -112,7 +131,7 @@ public class Contract {
 		return false;
 	}
 
-	public int numZeroBid() {
+	private int numZeroBid() {
 		if (myBid == 0)
 			return 0;
 		int count = 0;
@@ -124,7 +143,7 @@ public class Contract {
 		return count;
 	}
 
-	public int numOneAsk() {
+	private int numOneAsk() {
 		if (myAsk == 0)
 			return 0;
 		int count = 0;
@@ -136,17 +155,17 @@ public class Contract {
 		return count;
 	}
 
-	public void executeBidLimit(double m, String num, int timeOut) {
+	void executeBidLimit(double m, String num, int timeOut) {
 		IEMTool.placeLimitOrder(IEMTool.placeBid, "" + m, num, contractId,
-				marketId, timeOut);
+				marketId, timeOut, tool);
 	}
 
-	public void executeAskLimit(double m, String num, int timeOut) {
+	void executeAskLimit(double m, String num, int timeOut) {
 		IEMTool.placeLimitOrder(IEMTool.placeAsk, "" + m, num, contractId,
-				marketId, timeOut);
+				marketId, timeOut, tool);
 	}
 
-	public void downloadOrders() {
+	void downloadOrders() {
 		if (allOrders == null)
 			allOrders = new Vector();
 		else
@@ -156,9 +175,9 @@ public class Contract {
 					.readAllSocket(
 							"GET "
 									+ "/webex/WebEx.dll?OutstandingOrderHandler?USERTYPE=trader&LOGIN="
-									+ IEMTool.userId
+									+ tool.userId
 									+ "&SESSIONID="
-									+ IEMTool.sessionId
+									+ tool.sessionId
 									+ "&LANGUAGE=english&Markets="
 									+ marketId
 									+ "&Asset="
@@ -167,7 +186,7 @@ public class Contract {
 							"", "iemweb.biz.uiowa.edu", 80);
 			Thread.yield();
 			if (rawdata == null) {
-				IEMTool.doLogout();
+				tool.doLogout();
 				return;
 			}
 			String tabledata = MLtoText.cutMLaddSpaces(rawdata);
@@ -186,8 +205,8 @@ public class Contract {
 						IEMOrder iemo = new IEMOrder(true, this, v, q);
 						newOrders.addElement(iemo);
 					} catch (NumberFormatException nfe) {
-						IEMTool.reportTool("MyError: bad bid found>\n"
-								+ rawdata + "\n>>\n>" + tabledata);
+						tool.reportTool("MyError: bad bid found>\n" + rawdata
+								+ "\n>>\n>" + tabledata);
 					}
 				}
 			}
@@ -209,9 +228,9 @@ public class Contract {
 					.readAllSocket(
 							"GET "
 									+ "/webex/WebEx.dll?OutstandingOrderHandler?USERTYPE=trader&LOGIN="
-									+ IEMTool.userId
+									+ tool.userId
 									+ "&SESSIONID="
-									+ IEMTool.sessionId
+									+ tool.sessionId
 									+ "&LANGUAGE=english&Markets="
 									+ marketId
 									+ "&Asset="
@@ -220,7 +239,7 @@ public class Contract {
 							"", "iemweb.biz.uiowa.edu", 80);
 			Thread.yield();
 			if (rawdata == null) {
-				IEMTool.doLogout();
+				tool.doLogout();
 				return;
 			}
 			String tabledata = MLtoText.cutMLaddSpaces(rawdata);
@@ -239,8 +258,8 @@ public class Contract {
 						IEMOrder iemo = new IEMOrder(false, this, v, q);
 						newOrders.addElement(iemo);
 					} catch (NumberFormatException nfe) {
-						IEMTool.reportTool("MyError: bad ask found>\n"
-								+ rawdata + "\n>>\n>" + tabledata);
+						tool.reportTool("MyError: bad ask found>\n" + rawdata
+								+ "\n>>\n>" + tabledata);
 					}
 				}
 			}
@@ -265,11 +284,11 @@ public class Contract {
 			if (iemo.zeroRiskAsk() && iemo.quant == 1)
 				activeAsk = false;
 		}
-		IEMTool.reportStatus();
+		tool.reportStatus();
 	}
 
-	public void setVals(String n, String b, String a, String l, String h,
-			String mb, String ma, String mi) {
+	void setVals(String n, String b, String a, String l, String h, String mb,
+			String ma, String mi) {
 		contractName = n;
 		if (b.endsWith("*")) {
 			imBidding = true;
@@ -323,7 +342,7 @@ public class Contract {
 		if (bid == ask) {
 			bid = 0;
 			ask = 1001;
-			IEMTool.doLogout();
+			tool.doLogout();
 		}
 		if (newOrders) {
 			allOrders = null;
@@ -332,14 +351,7 @@ public class Contract {
 		deltaheld = 0;
 	}
 
-	public String valReport(Bundle b) {
-		int sv = b.contractSellValue(this);
-		int bc = b.contractBuyCost(this);
-		return " sellVal=" + sv + (sv == bid ? "" : "+") + " buyCost=" + bc
-				+ (bc == ask ? "" : "+");
-	}
-
-	public String ordersReport() {
+	String ordersReport() {
 		String ret = contractName + " bids=";
 		Vector sort = new Vector();
 		while (allOrders != null && allOrders.size() > 0) {
@@ -388,54 +400,56 @@ public class Contract {
 
 	}
 
-	public void checkFirstBid() {
-		if (numZeroBid() < 2 && !IEMTool.isPract()) {
-			IEMTool.reportOrders("ib " + contractName + " ");
+	void checkFirstBid() {
+		if (numZeroBid() < 2 && !tool.isPract()) {
+			tool.reportOrders("ib " + contractName + " ");
 			if (numZeroBid() > 0) {
 				IEMTool.placeLimitOrder(IEMTool.placeBid, "0.0", ""
 						+ INITIALNUM, contractId, marketId,
-						IEMTool.FOREVERDELAY);
+						IEMTool.FOREVERDELAY, tool);
 			} else
 				IEMTool.placeLimitOrder(IEMTool.placeBid, "0.0", ""
-						+ INITIALNUM, contractId, marketId, IEMTool.FOURWEEKS);
+						+ INITIALNUM, contractId, marketId, IEMTool.FOURWEEKS,
+						tool);
 		}
 	}
 
-	public void checkFirstAsk() {
-		if (numOneAsk() < 2 && !IEMTool.isPract()) {
-			IEMTool.reportOrders("ia " + contractName + " ");
+	void checkFirstAsk() {
+		if (numOneAsk() < 2 && !tool.isPract()) {
+			tool.reportOrders("ia " + contractName + " ");
 			int val = bundle.getBundleValue() / 1000;
 			if (numOneAsk() > 0) {
 				IEMTool.placeLimitOrder(IEMTool.placeAsk, val + "", ""
 						+ INITIALNUM, contractId, marketId,
-						IEMTool.FOREVERDELAY);
+						IEMTool.FOREVERDELAY, tool);
 			} else
 				IEMTool.placeLimitOrder(IEMTool.placeAsk, val + "", ""
-						+ INITIALNUM, contractId, marketId, IEMTool.FOURWEEKS);
+						+ INITIALNUM, contractId, marketId, IEMTool.FOURWEEKS,
+						tool);
 		}
 	}
 
-	public void setBundle(Bundle b) {
-		bundleId = b.getId();
+	void setBundle(Bundle b) {
+		// bundleId = b.getId();
 		bundleName = b.getName();
 		bundle = b;
 	}
 
-	public void update(Contract c) {
+	void update(Contract c) {
 		allOrders = c.allOrders;
 		activeBid = c.activeBid;
 		activeAsk = c.activeAsk;
 	}
 
-	public String getId() {
+	String getId() {
 		return contractId;
 	}
 
-	public String getName() {
+	String getName() {
 		return contractName;
 	}
 
-	public String toString(Bundle b) {
+	String toString(Bundle b) {
 		int sv = b.contractSellValue(this);
 		int bc = b.contractBuyCost(this);
 		String ret = contractName + "                     ";
@@ -482,13 +496,13 @@ public class Contract {
 		return ret;
 	}
 
-	public String ordersString() {
+	String ordersString() {
 		return ""
 				+ contractId
 				+ " "
 				+ marketId
 				+ " "
-				+ IEMTool.sessionId
+				+ tool.sessionId
 				+ " "
 				+ getName()
 				+ " "

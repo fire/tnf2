@@ -6,31 +6,31 @@ import aj.io.MLtoText;
 import aj.misc.Stuff;
 
 public class Market implements Runnable {
-	String marketName, marketId;
+	private String marketName, marketId;
 
-	Vector marketBundles = new Vector();
+	private Vector marketBundles = new Vector();
 
-	Vector marketContracts = new Vector();
+	private Vector marketContracts = new Vector();
 
-	boolean working = false;
-
-	boolean running = false;
+	private boolean running = false;
 
 	long lastUpdate = -1;
 
-	boolean ready = false;
+	private boolean ready = false;
 
-	long elaspedTime = -1;
+//	private long elaspedTime = -1;
 
-	long updateComplete = -1;
+	private long updateComplete = -1;
 
-	public boolean isReady() {
+	private IEMTool tool;
+
+	boolean isReady() {
 		return ready;
 	}
 
-	public boolean isAllowedMarket() {
+	private boolean isAllowedMarket() {
 		String name = getName().toUpperCase();
-		Vector v = IEMTool.allowedMarketNames;
+		Vector v = tool.allowedMarketNames;
 		for (int a = 0; a < v.size(); a++) {
 			String test = (String) v.elementAt(a);
 			if (name.startsWith(test.toUpperCase()))
@@ -40,32 +40,32 @@ public class Market implements Runnable {
 		return false;
 	}
 
-	public boolean isValidMarket() {
+	boolean isValidMarket() {
 		return marketName != null && marketId != null
 				&& marketName.length() > 0 && marketId.length() > 0;
 	}
 
-	public boolean isRunning() {
+	boolean isRunning() {
 		return running;
 	}
 
-	public synchronized void setMarketContracts(Vector v) {
+	private synchronized void setMarketContracts(Vector v) {
 		marketContracts = v;
 	}
 
-	public synchronized Vector getMarketContractsClone() {
+	private synchronized Vector getMarketContractsClone() {
 		return (Vector) marketContracts.clone();
 	}
 
-	public synchronized void setMarketBundles(Vector v) {
+	private synchronized void setMarketBundles(Vector v) {
 		marketBundles = v;
 	}
 
-	public synchronized Vector getMarketBundlesClone() {
+	private synchronized Vector getMarketBundlesClone() {
 		return (Vector) marketBundles.clone();
 	}
 
-	public long getUpdateDelay() {
+	private long getUpdateDelay() {
 		if (getName().equals("Comp_Ret"))
 			return 1000 * 60 * 2;
 		else if (getName().equals("MSFT_Price"))
@@ -83,12 +83,13 @@ public class Market implements Runnable {
 		return 1000 * 60 * 3;
 	}
 
-	public boolean equals(Market m) {
-		return m != null && marketId != null && m.marketId != null
-				&& m.marketId.equals(marketId);
-	}
+//	public boolean equals(Market m) {
+//		return m != null && marketId != null && m.marketId != null
+//				&& m.marketId.equals(marketId);
+//	}
 
-	public Market(String n, String i) {
+	public Market(IEMTool toolRef, String n, String i) {
+		tool = toolRef;
 		marketName = n;
 		marketId = i;
 	}
@@ -96,7 +97,7 @@ public class Market implements Runnable {
 	public void run() {
 		running = true;
 		while (running) {
-			if (!IEMTool.isLoggedIn())
+			if (!tool.isLoggedIn())
 				break;
 			long delay = getUpdateDelay() + lastUpdate
 					- System.currentTimeMillis();
@@ -109,7 +110,7 @@ public class Market implements Runnable {
 			ready = false;
 			lastUpdate = System.currentTimeMillis();
 			if (isAllowedMarket()) {
-				IEMTool.reportTool(getName().substring(0, 1).toLowerCase());
+				tool.reportTool(getName().substring(0, 1).toLowerCase());
 				downloadBundles();
 				downloadContracts();
 			}
@@ -121,7 +122,7 @@ public class Market implements Runnable {
 				b.getMaxHeld();
 			}
 			ready = true;
-			IEMTool.reportStatus();
+			tool.reportStatus();
 			v = getMarketBundlesClone();
 			for (int a = 0; a < v.size(); a++) {
 				Bundle b = (Bundle) v.elementAt(a);
@@ -131,17 +132,17 @@ public class Market implements Runnable {
 		running = false;
 	}
 
-	public int getElaspedTime() {
+	int getElaspedTime() {
 		return (int) (System.currentTimeMillis() - lastUpdate);
 	}
 
-	public int getUpdateCompleteTime() {
+	private int getUpdateCompleteTime() {
 		if (updateComplete <= lastUpdate)
 			return -1;
 		return (int) (updateComplete - lastUpdate);
 	}
 
-	public String getQuickSummary() {
+	String getQuickSummary() {
 		String report = "";
 		Vector v = getMarketBundlesClone();
 		for (int a = 0; a < v.size(); a++) {
@@ -151,7 +152,7 @@ public class Market implements Runnable {
 		return report;
 	}
 
-	public String getOrdersReport() {
+	String getOrdersReport() {
 		String report = "";
 		Vector v = getMarketBundlesClone();
 		for (int a = 0; a < v.size(); a++) {
@@ -161,7 +162,7 @@ public class Market implements Runnable {
 		return report;
 	}
 
-	public String getReport() {
+	String getReport() {
 		if (!isReady()) {
 			return "Market " + getName() + " Loading for "
 					+ (getElaspedTime() / 1000.0) + " secs "
@@ -180,7 +181,7 @@ public class Market implements Runnable {
 		return report + "\n";
 	}
 
-	public int getAssetsValue() {
+	int getAssetsValue() {
 		int asset = 0;
 		Vector v = getMarketBundlesClone();
 		for (int a = 0; a < v.size(); a++) {
@@ -190,7 +191,7 @@ public class Market implements Runnable {
 		return asset;
 	}
 
-	public int getLiquidValue() {
+	int getLiquidValue() {
 		int liquid = 0;
 		Vector v = getMarketBundlesClone();
 		for (int a = 0; a < v.size(); a++) {
@@ -200,27 +201,27 @@ public class Market implements Runnable {
 		return liquid;
 	}
 
-	public void downloadBundles() {
+	private void downloadBundles() {
 		Vector newMarketBundles = new Vector();
 		Vector newMarketContracts = new Vector();
-		if (!IEMTool.isLoggedIn())
+		if (!tool.isLoggedIn())
 			return;
 		if (marketId == null || marketId.equals("")) {
-			IEMTool
+			tool
 					.reportTool("MyError: market download requested for null marketid");
-			IEMTool.doLogout();
+			tool.doLogout();
 			return;
 		}
 		String ordersUrl = "/webex/WebEx.dll?TraderInterfaceHandler?USERTYPE=trader&LOGIN="
-				+ IEMTool.userId
+				+ tool.userId
 				+ "&SESSIONID="
-				+ IEMTool.sessionId
+				+ tool.sessionId
 				+ "&LANGUAGE=english&Markets=" + marketId + "&Panel_id=orders";
 		String all = IEMTool.readAllSocket("GET " + ordersUrl
 				+ " HTTP/1.0\r\n\r\n", "", "iemweb.biz.uiowa.edu", 80);
 		Thread.yield();
 		if (all == null) {
-			IEMTool.doLogout();
+			tool.doLogout();
 			return;
 		}
 		all = Stuff.superTrim(all);
@@ -244,12 +245,12 @@ public class Market implements Runnable {
 				nam = nam.substring(0, nam.indexOf(" ")).trim();
 			if (!val.equals("00")) {
 				if (val.startsWith("D")) {
-					Bundle b = new Bundle(nam, val.substring(1));
+					Bundle b = new Bundle(tool, nam, val.substring(1));
 					b.marketId = getId();
 					b.market = this;
 					newMarketBundles.addElement(b);
 				} else if (val.startsWith("S")) {
-					Contract c = new Contract(nam, val.substring(1));
+					Contract c = new Contract(tool, nam, val.substring(1));
 					newMarketContracts.addElement(c);
 				}
 			}
@@ -348,29 +349,29 @@ public class Market implements Runnable {
 				}
 			}
 		}
-		IEMTool.reportStatus();
+		tool.reportStatus();
 	}
 
-	public void downloadContracts() {
-		if (!IEMTool.isLoggedIn())
+	private void downloadContracts() {
+		if (!tool.isLoggedIn())
 			return;
 		if (marketId == null || marketId.equals("")) {
-			IEMTool
+			tool
 					.reportTool("MyError: market download requested for null market");
-			IEMTool.doLogout();
+			tool.doLogout();
 			return;
 		}
 
 		String dataUrl = "/webex/WebEx.dll?TraderInterfaceHandler?USERTYPE=trader&LOGIN="
-				+ IEMTool.userId
+				+ tool.userId
 				+ "&SESSIONID="
-				+ IEMTool.sessionId
+				+ tool.sessionId
 				+ "&LANGUAGE=english&Markets=" + marketId + "&Panel_id=data";
 		String all = IEMTool.readAllSocket("GET " + dataUrl
 				+ " HTTP/1.0\r\n\r\n", "", "iemweb.biz.uiowa.edu", 80);
 		Thread.yield();
 		if (all == null) {
-			IEMTool.doLogout();
+			tool.doLogout();
 			return;
 		}
 		all = MLtoText.cutMLaddSpaces(all);
@@ -385,16 +386,16 @@ public class Market implements Runnable {
 			if (cs.indexOf(".") >= 0)
 				cs = cs.substring(0, cs.indexOf(".") + 4);
 			try {
-				IEMTool.cash = (int) (Double.parseDouble(cs.trim()) * 1000);
+				tool.cash = (int) (Double.parseDouble(cs.trim()) * 1000);
 			} catch (NumberFormatException nfe) {
-				IEMTool
+				tool
 						.reportTool("MyError numberformate error 3 download market "
 								+ marketName + ">" + cs);
 			}
 			all = all.substring(all.indexOf("YourAsks") + 8).trim();
 		} else {
-			IEMTool.reportTool("Bad page requested =" + dataUrl);
-			IEMTool.doLogout();
+			tool.reportTool("Bad page requested =" + dataUrl);
+			tool.doLogout();
 			return;
 		}
 		String mm[] = Stuff.getTokens(all, " ()");
@@ -420,14 +421,14 @@ public class Market implements Runnable {
 				}
 			}
 		}
-		IEMTool.reportStatus();
+		tool.reportStatus();
 	}
 
-	public String getId() {
+	private String getId() {
 		return marketId;
 	}
 
-	public String getName() {
+	private String getName() {
 		return marketName;
 	}
 

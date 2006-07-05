@@ -17,39 +17,39 @@ import aj.misc.Stuff;
 
 public class Plan implements ActionListener {
 
-	int maxFields = 10;
+	private int maxFields = 10;
 
-	JFrame jFrame;
+	private JFrame jFrame;
 
-	JTextField nameT[] = new JTextField[maxFields];
+	private JTextField nameT[] = new JTextField[maxFields];
 
-	JTextField valueT[] = new JTextField[maxFields];
+	private JTextField valueT[] = new JTextField[maxFields];
 
-	JTextField bidT[] = new JTextField[maxFields];
+	private JTextField bidT[] = new JTextField[maxFields];
 
-	JTextField askT[] = new JTextField[maxFields];
+	private JTextField askT[] = new JTextField[maxFields];
 
-	JTextField bidQT[] = new JTextField[maxFields];
+	private JTextField bidQT[] = new JTextField[maxFields];
 
-	JTextField askQT[] = new JTextField[maxFields];
+	private JTextField askQT[] = new JTextField[maxFields];
 
-	JTextField bidMargin = new JTextField("  0.50"),
+	private JTextField bidMargin = new JTextField("  0.50"),
 			askMargin = new JTextField("  0.50"), bidRisk = new JTextField(
 					"  1.50"), askRisk = new JTextField("  1.50");
 
-	JComboBox select;
+	private JComboBox select;
 
-	int activeFields = 2;
+	private int activeFields = 2;
 
-	JPanel bidMarginRow = new JPanel(new FlowLayout());
+	private JPanel bidMarginRow = new JPanel(new FlowLayout());
 
-	JPanel askMarginRow = new JPanel(new FlowLayout());
+	private JPanel askMarginRow = new JPanel(new FlowLayout());
 
-	JPanel marginManager = new JPanel(new BorderLayout());
+	private JPanel marginManager = new JPanel(new BorderLayout());
 
-	JPanel valueDisplay = new JPanel(new GridLayout(0, 6));
+	private JPanel valueDisplay = new JPanel(new GridLayout(0, 6));
 
-	JPanel everything = new JPanel(new BorderLayout());
+	private JPanel everything = new JPanel(new BorderLayout());
 
 	public static void main(String s[]) {
 		new Plan();
@@ -59,7 +59,7 @@ public class Plan implements ActionListener {
 		setupGui();
 	}
 
-	public void updateGui() {
+	private void updateGui() {
 		valueDisplay.removeAll();
 		valueDisplay.add(new JLabel("Name"));
 		valueDisplay.add(new JLabel("QBid"));
@@ -126,7 +126,7 @@ public class Plan implements ActionListener {
 		valueDisplay.revalidate();
 	}
 
-	public void setupGui() {
+	private void setupGui() {
 		bidMarginRow.add(bidRisk);
 		bidMarginRow.add(new JLabel("Bid Risk"));
 		bidMarginRow.add(bidMargin);
