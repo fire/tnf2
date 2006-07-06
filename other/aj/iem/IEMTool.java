@@ -21,21 +21,6 @@ import java.util.Vector;
 
 import aj.misc.Stuff;
 
-/*
- ib = initial bid 5000 @ 0
- ia = initial bid 5000 @ 0
- mb = middle bid
- ma = middle ask
- na = nickle ask
- nb = nickle bid
- vb = value bid
- va = value ask
- ds = discount sell (bids > 1000)
- db = discount buy (asks < 1000)
- ss = sell surplus
- bs = sell shortage
- */
-
 public class IEMTool implements Runnable {
 
 	private String defaultFirstMarketId = "8";
@@ -69,8 +54,6 @@ public class IEMTool implements Runnable {
 	static final public int minute = 1000 * 60, hour = minute * 60,
 			day = 24 * hour, FOREVERDELAY = 60 * day, FOURWEEKS = 28 * day;
 
-	// private int SOCKETTIMEOUT = 1 * minute;
-
 	int EXTREAMBIDASKDELAY = 48 * hour;
 
 	int MIDDLEBIDASKDELAY = 24 * hour;
@@ -78,10 +61,6 @@ public class IEMTool implements Runnable {
 	int NICKLEBIDASKDELAY = 18 * hour;
 
 	final static int LOWESTBIDALLOWED = 10;// under 5 cent don't bid, over 95
-
-	// don't
-
-	// ask
 
 	static double MIDDLEMARGIN = .5;// bid 50 -> mb = 25, bid = 10 ->mb =5
 
@@ -144,6 +123,10 @@ public class IEMTool implements Runnable {
 
 	private int reportToolCount = 0;
 
+	/**
+	 * 
+	 * 
+	 */
 	private void help() {
 		System.err.println("Usage: java aj.iem.IEMTool <options>");
 		System.err.println("-u<userid>");
@@ -154,6 +137,10 @@ public class IEMTool implements Runnable {
 		System.err.println("? (--help) this menu");
 	}
 
+	/**
+	 * 
+	 * 
+	 */
 	public IEMTool() {
 		try {
 			localhostId = new String(InetAddress.getLocalHost()
@@ -281,10 +268,12 @@ public class IEMTool implements Runnable {
 		}
 	}
 
+	/**
+	 * @param args
+	 */
 	public static void main(String s[]) {
 		IEMTool iem = new IEMTool();
 		iem.parseCommandArgs(s);
-
 		new Thread(iem).start();
 	}
 
@@ -550,8 +539,6 @@ public class IEMTool implements Runnable {
 		}
 	}
 
-	// public static synchronized String readAllSocket(String host, int port,
-	// String header,String req) {
 	public synchronized static String readAllSocket(String header, String req,
 			String host, int port) {
 		if (host.equalsIgnoreCase("iemweb.biz.uiowa.edu"))
@@ -664,7 +651,7 @@ public class IEMTool implements Runnable {
 		return (Vector) allMarkets.clone();
 	}
 
-	public void startMarkets() {
+	private void startMarkets() {
 		Vector fix = new Vector();
 		Vector newmark = (Vector) newMarkets.clone();
 		Vector marketMaster = getAllMarketsClone();
@@ -795,9 +782,8 @@ public class IEMTool implements Runnable {
 		Thread.yield();
 	}
 
-	public static void placeLimitOrder(String transType, String price,
-			String quant, String assetId, String marketId, long delay,
-			IEMTool tool) {
+	static void placeLimitOrder(String transType, String price, String quant,
+			String assetId, String marketId, long delay, IEMTool tool) {
 		try {
 			double pricev = Double.parseDouble(price);
 			int quan = Integer.parseInt(quant);
@@ -847,6 +833,11 @@ public class IEMTool implements Runnable {
 		Thread.yield();
 	}
 
+	/**
+	 * 
+	 * @param delay
+	 * @return
+	 */
 	static String limitTime(long delay) {
 		delay += (int) (delay * Math.random());
 		if (delay < 0)
@@ -870,6 +861,4 @@ public class IEMTool implements Runnable {
 				+ h + "%3A" + (min < 10 ? "0" : "") + min
 				+ (ap == 1 ? "AM" : "PM") + "&";
 	}
-
-	// comment
 }

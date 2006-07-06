@@ -18,7 +18,7 @@ public class Market implements Runnable {
 
 	private boolean ready = false;
 
-//	private long elaspedTime = -1;
+	// private long elaspedTime = -1;
 
 	private long updateComplete = -1;
 
@@ -83,10 +83,10 @@ public class Market implements Runnable {
 		return 1000 * 60 * 3;
 	}
 
-//	public boolean equals(Market m) {
-//		return m != null && marketId != null && m.marketId != null
-//				&& m.marketId.equals(marketId);
-//	}
+	// public boolean equals(Market m) {
+	// return m != null && marketId != null && m.marketId != null
+	// && m.marketId.equals(marketId);
+	// }
 
 	public Market(IEMTool toolRef, String n, String i) {
 		tool = toolRef;

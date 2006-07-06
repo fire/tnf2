@@ -56,12 +56,27 @@ public class FrontEnd {
 				updateGui();
 			}
 		});
+		
+		nextTurn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				advanceTurn();
+			}
+		});
+	}
+	
+	private void advanceTurn() {
+		Vector v=game.getAllWizards();
+		for (int a=0;a<v.size();a++) {
+			Wizard w=(Wizard)v.elementAt(a);
+			w.applyNextGestures();
+		}
+		updateGui();
 	}
 	
 	private void updateGui() {
 		center.removeAll();
 		Vector v=game.getAllWizards();
-		System.out.println("size="+v.size());
+//		System.out.println("size="+v.size());
 		JPanel allWizards=new JPanel(new GridLayout(0,1));
 		for (int a=0;a<v.size();a++) {
 			Wizard w=(Wizard)v.elementAt(a);

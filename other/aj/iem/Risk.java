@@ -28,6 +28,10 @@ public class Risk {
 
 	private boolean winner = false;
 
+	/**
+	 * Displays help menu to system.out
+	 *
+	 */
 	private static void help() {
 		System.out
 				.println("Format: java aj.iem.Risk Sid Mid <options> [contracts...]");
@@ -40,6 +44,10 @@ public class Risk {
 
 	}
 
+	/**
+	 * 
+	 * @param s
+	 */
 	public static void main(String s[]) {
 		String userId = "AJudd3587";
 		// calculate investment, average cost
@@ -165,6 +173,13 @@ public class Risk {
 		// new Risk(uid,sid,mid,aid);
 	}
 
+	/**
+	 * 
+	 * @param userId
+	 * @param sessionId
+	 * @param marketId
+	 * @param assetId
+	 */
 	public Risk(String userId, String sessionId, String marketId, String assetId) {
 		// marketId (not bundleId)
 		Vector buys = new Vector();
@@ -411,6 +426,14 @@ public class Risk {
 		totalLose = lose;
 	}
 
+	/**
+	 * 
+	 * @param userId
+	 * @param sessionId
+	 * @param marketId
+	 * @param assetId
+	 * @return
+	 */
 	private String readAll(String userId, String sessionId, String marketId,
 			String assetId) {
 		if (userId == null) {
@@ -429,6 +452,10 @@ public class Risk {
 							"iemweb.biz.uiowa.edu", 80);
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	private String readAll() {
 		String all = "";
 		try {

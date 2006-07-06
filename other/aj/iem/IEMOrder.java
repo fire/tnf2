@@ -24,7 +24,7 @@ public class IEMOrder {
 		val = v;
 	}
 
-	 void setLink(String l) {
+	void setLink(String l) {
 		link = l;
 	}
 
@@ -33,7 +33,7 @@ public class IEMOrder {
 				+ " for " + quant + " at " + val;
 	}
 
- void executeCancel(String s) {
+	void executeCancel(String s) {
 		if (val == 0 || val == 1000)
 			return;
 		IEMTool.readAllSocket("GET /webex/" + link + " HTTP/1.0\r\n\r\n", "",
