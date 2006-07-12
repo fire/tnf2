@@ -10,8 +10,8 @@ public class Wizard {
 
 	}
 
-	public final String handChoice[] = { "W", "F", "S", "D", "P", "w", "c",
-			"V", "p", "-" };
+	public final String handChoice[] = {  "F", "S", "D", "W","P", "c", "w", 
+			 "p", "V","-" };
 
 	public final static String TARGET_SELF="Self";
 	

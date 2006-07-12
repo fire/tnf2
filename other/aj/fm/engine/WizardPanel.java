@@ -126,15 +126,18 @@ public class WizardPanel extends JPanel{
 				String next=sp.getNextStep(wizard.getLeftPattern());
 				leftHandChoice.setSelectedItem(next);
 				if (next.equals("c") || next.equals("w") || next.equals("p")) {
-					leftTargetChoice.setSelectedItem(next);
+					rightHandChoice.setSelectedItem(next);
+				}
+				else if (rightHandChoice.getSelectedItem().toString()!=rightHandChoice.getSelectedItem().toString().toUpperCase()) {
+					rightHandChoice.setSelectedItem("-");
 				}
 				if (sp.getDefaultTarget()==Wizard.TARGET_SELF) {
-					rightTargetChoice.setSelectedItem(Wizard.TARGET_SELF);				
+					leftTargetChoice.setSelectedItem(Wizard.TARGET_SELF);				
 				}
 				else if (sp.getDefaultTarget()==Wizard.TARGET_NO_ONE) {
 					leftTargetChoice.setSelectedItem(Wizard.TARGET_NO_ONE);										
 				}
-				else {
+				else if (leftTargetChoice.getSelectedIndex()==0 || leftTargetChoice.getSelectedIndex()==leftTargetChoice.getItemCount()-1){
 					leftTargetChoice.setSelectedIndex(1);															
 				}
 			}
@@ -151,13 +154,17 @@ public class WizardPanel extends JPanel{
 				if (next.equals("c") || next.equals("w") || next.equals("p")) {
 					leftHandChoice.setSelectedItem(next);
 				}
+				else if (leftHandChoice.getSelectedItem().toString()!=leftHandChoice.getSelectedItem().toString().toUpperCase()) {
+					leftHandChoice.setSelectedItem("-");
+				}
+
 				if (sp.getDefaultTarget()==Wizard.TARGET_SELF) {
 					rightTargetChoice.setSelectedItem(Wizard.TARGET_SELF);				
 				}
 				else if (sp.getDefaultTarget()==Wizard.TARGET_NO_ONE) {
 					rightTargetChoice.setSelectedItem(Wizard.TARGET_NO_ONE);										
 				}
-				else {
+				else if (rightTargetChoice.getSelectedIndex()==0 || rightTargetChoice.getSelectedIndex()==rightTargetChoice.getItemCount()-1){
 					rightTargetChoice.setSelectedIndex(1);															
 				}
 			}
@@ -196,8 +203,6 @@ public class WizardPanel extends JPanel{
 				break;
 			}
 		}
-//		rChoice.setSelectedItem(wizard.getNextRightGesture());
-//		lChoice.setSelectedItem(wizard.getNextLeftGesture());
 
 	}
 	

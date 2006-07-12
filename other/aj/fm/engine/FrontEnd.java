@@ -63,34 +63,13 @@ public class FrontEnd {
 		
 		nextTurn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				advanceTurn();
+				game.advanceTurn();
+				updateGui();
 			}
 		});
 	}
 	
-	private void advanceTurn() {
-		Vector activeSpells=new Vector();
-		Vector v=game.getAllWizards();
-		for (int a=0;a<v.size();a++) {
-			Wizard w=(Wizard)v.elementAt(a);
-			w.applyNextGestures();
-			if (w.getLeftPattern().endsWith(w.getLeftSpell().getGesture())) {
-				System.out.println("cast "+w.getLeftSpell().getName());
-				activeSpells.addElement(w.getName()+" cast "+w.getLeftSpell()+" at "+w.getLeftTarget());
-			}
-			if (w.getRightPattern().endsWith(w.getRightSpell().getGesture())) {
-				System.out.println("cast "+w.getRightSpell().getName());
-				activeSpells.addElement(w.getName()+" cast "+w.getRightSpell()+" at "+w.getRightTarget());
-			}
-		}
-		resolveActiveSpells(activeSpells);
-		updateGui();
-	}
-	
-	private void resolveActiveSpells(Vector activeSpells) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	private void updateGui() {
 		center.removeAll();

@@ -61,7 +61,6 @@ public class Spell {
 		System.out.println(s.getStepsLeft("DP"));
 	}
 
-
 	private static Vector allSpells = null;
 
 	private static Document allSpellsDoc;
