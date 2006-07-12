@@ -11,108 +11,222 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import aj.fm.Spell;
+import aj.fm.Wizard;
+
 public class WizardPanel extends JPanel{
 
 	private Wizard wizard;
 
-	public WizardPanel(Wizard w) {
-		super(new BorderLayout());
-		//name  rightpat  nextr   target
-		//curhp  leftpat   nextl   target
-		wizard=w;
-		
-		JLabel name=new JLabel(wizard.getName());
-		JLabel hp=new JLabel(""+wizard.getCurrentHitPoints()+"/"+Wizard.maxHitPoints);
-		JTextField rpat=new JTextField(8);
-		rpat.setText(wizard.getRightPattern());
-		JTextField lpat=new JTextField(8);
-		lpat.setText(wizard.getLeftPattern());
+	
+	private JLabel warning=new JLabel();
+	private JComboBox rightHandChoice=new JComboBox();
+	private JComboBox leftHandChoice=new JComboBox();
+	private JComboBox rightTargetChoice=new JComboBox();
+	private JComboBox leftTargetChoice=new JComboBox();
+	private JComboBox rightSpellChoice=new JComboBox();
+	private JComboBox leftSpellChoice=new JComboBox();
+	private JLabel name=new JLabel();
+	private JLabel hp=new JLabel();
+	private JTextField rightPatternField=new JTextField(8);
+	private JTextField leftPatternField=new JTextField(8);
+	private Vector rightAvailableSortedSpells=new Vector();
+	private Vector leftAvailableSortedSpells=new Vector();
 
-		String targetChoice[]={"wizA","monA"};
-		JComboBox rChoice=new JComboBox(wizard.handChoice);
-		JComboBox lChoice=new JComboBox(wizard.handChoice);
-		rChoice.setSelectedItem(wizard.getNextRightGesture());
-		lChoice.setSelectedItem(wizard.getNextLeftGesture());
-		JComboBox trChoice=new JComboBox(targetChoice);
-		JComboBox tlChoice=new JComboBox(targetChoice);
+	
+	public WizardPanel(Wizard w,Vector targets) {
+		super(new BorderLayout());
+		wizard=w;
+		rightAvailableSortedSpells=Spell.getAllSpellsByNearestToPattern(wizard.getRightPattern());
+		leftAvailableSortedSpells=Spell.getAllSpellsByNearestToPattern(wizard.getLeftPattern());
+
+		name.setText(wizard.getName());
+		hp.setText(""+wizard.getCurrentHitPoints()+"/"+Wizard.maxHitPoints);
 		
-		Vector rv=Spell.getAllSpellsByNearestToPattern(w.getRightPattern());
-				
-		String rspells[],lspells[];
-		rspells=new String[rv.size()];
-			for (int a=0;a<rv.size();a++) {
-				Spell s=(Spell)rv.elementAt(a);
+		rightPatternField.setText(wizard.getRightPattern());
+		leftPatternField.setText(wizard.getLeftPattern());
+
+//		String targetChoice[]={"wizA","monA"};
+		rightHandChoice.removeAllItems();
+		leftHandChoice.removeAllItems();
+		for (int a=0;a<wizard.handChoice.length;a++) {
+			rightHandChoice.addItem(wizard.handChoice[a]);
+			leftHandChoice.addItem(wizard.handChoice[a]);
+		}
+		rightTargetChoice.removeAllItems();
+		leftTargetChoice.removeAllItems();
+		for (int a=0;a<targets.size();a++) {
+			rightTargetChoice.addItem(targets.elementAt(a).toString());
+			leftTargetChoice.addItem(targets.elementAt(a).toString());
+		}
+		
+		rightSpellChoice.removeAllItems();
+			for (int a=0;a<rightAvailableSortedSpells.size();a++) {
+				Spell s=(Spell)rightAvailableSortedSpells.elementAt(a);
 				int rem=s.getStepsLeft(w.getRightPattern());
-				rspells[a]=rem+":"+s.getGesture().substring(s.getGesture().length()-rem)+":"+s.getName()+" "+s.getGesture();
-		}
-		
-		Vector lv=Spell.getAllSpellsByNearestToPattern(w.getLeftPattern());
-		lspells=new String[lv.size()];
-		
-		lspells=new String[lv.size()];
-			for (int a=0;a<lv.size();a++) {
-				Spell s=(Spell)lv.elementAt(a);
+				rightSpellChoice.addItem(rem+":"+s.getGesture().substring(s.getGesture().length()-rem)+":"+s.getName()+" "+s.getGesture());
+		}		
+			
+		leftSpellChoice.removeAllItems();
+			for (int a=0;a<leftAvailableSortedSpells.size();a++) {
+				Spell s=(Spell)leftAvailableSortedSpells.elementAt(a);
 				int rem=s.getStepsLeft(w.getLeftPattern());
-				lspells[a]=rem+":"+s.getGesture().substring(s.getGesture().length()-rem)+":"+s.getName()+" "+s.getGesture();
+				leftSpellChoice.addItem(rem+":"+s.getGesture().substring(s.getGesture().length()-rem)+":"+s.getName()+" "+s.getGesture());
 		}
 		
-		JComboBox rSpellChoice=new JComboBox(rspells);
-		JComboBox lSpellChoice=new JComboBox(lspells);
+
+		JPanel topRow=new JPanel(new FlowLayout());
+		topRow.add(name);
+		topRow.add(hp);
+		topRow.add(warning);
+		add("North",topRow);
 		
 		JPanel centRow=new JPanel(new FlowLayout());
 		JPanel jp=new JPanel(new FlowLayout());
 		centRow.add(new JLabel("Right",JLabel.LEFT));
-		jp.add(rpat);
+		jp.add(rightPatternField);
 		centRow.add(jp);
-		centRow.add(rChoice);
+		centRow.add(rightHandChoice);
 		centRow.add(new JLabel("Target",JLabel.LEFT));
-		centRow.add(trChoice);
-		centRow.add(rSpellChoice);
+		centRow.add(rightTargetChoice);
+		centRow.add(rightSpellChoice);
 		add("Center",centRow);
 
 		JPanel botRow=new JPanel(new FlowLayout());
 		JPanel jp2=new JPanel(new FlowLayout());
-		jp2.add(lpat);
+		jp2.add(leftPatternField);
 		botRow.add(new JLabel("Left",JLabel.LEFT));
 		botRow.add(jp2);
-		botRow.add(lChoice);		
+		botRow.add(leftHandChoice);		
 		botRow.add(new JLabel("Target",JLabel.LEFT));
-		botRow.add(tlChoice);
-		botRow.add(lSpellChoice);
+		botRow.add(leftTargetChoice);
+		botRow.add(leftSpellChoice);
 		add("South",botRow);
-		
-		JPanel topRow=new JPanel(new FlowLayout());
-		topRow.add(name);
-		topRow.add(hp);
-		add("North",topRow);
-		
-		rChoice.addActionListener(new ActionListener(){
+				
+		rightHandChoice.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				JComboBox c=(JComboBox)e.getSource();
 				wizard.setNextRightHand((String)c.getSelectedItem());
+				validateHand();
 			}
 		});
-		lChoice.addActionListener(new ActionListener(){
+		leftHandChoice.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				JComboBox c=(JComboBox)e.getSource();
 				wizard.setNextLeftHand((String)c.getSelectedItem());
+				validateHand();
 			}
 		});
 		
-		lSpellChoice.addActionListener(new ActionListener(){
+		leftSpellChoice.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				JComboBox c=(JComboBox)e.getSource();
-				wizard.setNextLeftSpell((String)c.getSelectedItem());
+				Spell sp=getSpellFromMultiNameString((String)c.getSelectedItem());
+				wizard.setNextLeftSpell(sp);
+				String next=sp.getNextStep(wizard.getLeftPattern());
+				leftHandChoice.setSelectedItem(next);
+				if (next.equals("c") || next.equals("w") || next.equals("p")) {
+					leftTargetChoice.setSelectedItem(next);
+				}
+				if (sp.getDefaultTarget()==Wizard.TARGET_SELF) {
+					rightTargetChoice.setSelectedItem(Wizard.TARGET_SELF);				
+				}
+				else if (sp.getDefaultTarget()==Wizard.TARGET_NO_ONE) {
+					leftTargetChoice.setSelectedItem(Wizard.TARGET_NO_ONE);										
+				}
+				else {
+					leftTargetChoice.setSelectedIndex(1);															
+				}
 			}
+
 		});
 
-		rSpellChoice.addActionListener(new ActionListener(){
+		rightSpellChoice.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				JComboBox c=(JComboBox)e.getSource();
-				wizard.setNextRightSpell((String)c.getSelectedItem());
+				Spell sp=getSpellFromMultiNameString((String)c.getSelectedItem());
+				wizard.setNextRightSpell(sp);
+				String next=sp.getNextStep(wizard.getRightPattern());
+				rightHandChoice.setSelectedItem(next);
+				if (next.equals("c") || next.equals("w") || next.equals("p")) {
+					leftHandChoice.setSelectedItem(next);
+				}
+				if (sp.getDefaultTarget()==Wizard.TARGET_SELF) {
+					rightTargetChoice.setSelectedItem(Wizard.TARGET_SELF);				
+				}
+				else if (sp.getDefaultTarget()==Wizard.TARGET_NO_ONE) {
+					rightTargetChoice.setSelectedItem(Wizard.TARGET_NO_ONE);										
+				}
+				else {
+					rightTargetChoice.setSelectedIndex(1);															
+				}
 			}
 		});
+		
+		rightTargetChoice.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				wizard.setRightTarget((String)rightTargetChoice.getSelectedItem());
+			}			
+		});
+		leftTargetChoice.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				wizard.setLeftTarget((String)leftTargetChoice.getSelectedItem());
+			}			
+		});
+
+		for (int a=0;a<targets.size();a++) {
+			if (targets.elementAt(a).toString().equals(wizard.getRightTarget())) {
+				rightTargetChoice.setSelectedIndex(a);
+			}
+			if (targets.elementAt(a).toString().equals(wizard.getLeftTarget())) {
+				leftTargetChoice.setSelectedIndex(a);
+			}
+		}
+		for (int rs=0;rs<rightAvailableSortedSpells.size();rs++) {
+			Spell s=(Spell)rightAvailableSortedSpells.elementAt(rs);
+			if (s==wizard.getRightSpell()) {
+				rightSpellChoice.setSelectedIndex(rs);				
+				break;
+			}
+		}
+		for (int ls=0;ls<leftAvailableSortedSpells.size();ls++) {
+			Spell s=(Spell)leftAvailableSortedSpells.elementAt(ls);
+			if (s==wizard.getLeftSpell()) {
+				leftSpellChoice.setSelectedIndex(ls);		
+				break;
+			}
+		}
+//		rChoice.setSelectedItem(wizard.getNextRightGesture());
+//		lChoice.setSelectedItem(wizard.getNextLeftGesture());
 
 	}
-		
+	
+	private void validateHand() {
+		if (leftHandChoice.getSelectedItem().toString().equalsIgnoreCase("P") && rightHandChoice.getSelectedItem().toString().equalsIgnoreCase("P")) {
+			leftHandChoice.setSelectedItem("p");
+			rightHandChoice.setSelectedItem("p");
+			rightSpellChoice.setSelectedIndex(0);
+			leftSpellChoice.setSelectedIndex(0);
+		}
+		else {
+			
+		}
+		if (leftHandChoice.getSelectedItem().toString().equalsIgnoreCase("V") && rightHandChoice.getSelectedItem().toString().equalsIgnoreCase("V")) {
+			leftHandChoice.setSelectedItem("-");			
+		}
+
+	}
+	
+	private Spell getSpellFromMultiNameString(String string) {
+		Vector v=Spell.getAllSpells();
+		for (int a=0;a<v.size();a++) {
+			Spell sp=(Spell)v.elementAt(a);
+			if (string.indexOf(sp.getName())>=0) {
+				return sp;
+			}
+		}
+		return null;
+	}
+	
+	
 }

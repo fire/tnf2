@@ -1,11 +1,6 @@
-package aj.fm.engine;
+package aj.fm;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Vector;
-
-import javax.swing.JTextField;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
@@ -31,12 +26,14 @@ public class Spell {
 	private String notes;
 
 	private String limited_game;
+
+	private String defaultTarget;
 	
 	static {
 		parseAllSpells();
 	}
 
-	public Spell(String gesture, String name, String priority, String description, Vector diffuse, Vector cancel, Vector delay, String notes, String limited_game) {
+	public Spell(String gesture, String name, String priority, String description, Vector diffuse, Vector cancel, Vector delay, String notes, String limited_game, String defaulttarget2) {
 		this.gesture=gesture;
 		this.name=name;
 		this.priority=priority;
@@ -46,6 +43,7 @@ public class Spell {
 		this.delay=delay;
 		this.notes=notes;
 		this.limited_game=limited_game;
+		this.defaultTarget=defaulttarget2;
 	}
 
 
@@ -92,7 +90,10 @@ public class Spell {
 		Vector delay=XMLReader.getAllChildValueByNodeName("delay",n);
 		String notes=XMLReader.getChildValueByNodeName("notes",n);
 		String limited_game=XMLReader.getChildValueByNodeName("limited_game",n);
-		return new Spell(gesture,name,priority,description,diffuse,cancel,delay,notes,limited_game);
+		String defaulttarget=XMLReader.getChildValueByNodeName("target",n);
+		if (defaulttarget.equals(Wizard.TARGET_SELF)) defaulttarget=Wizard.TARGET_SELF;
+		if (defaulttarget.equals(Wizard.TARGET_NO_ONE)) defaulttarget=Wizard.TARGET_NO_ONE;
+		return new Spell(gesture,name,priority,description,diffuse,cancel,delay,notes,limited_game,defaulttarget);
 	}
 	
 	public String toString() {
@@ -113,6 +114,10 @@ public class Spell {
 		}
 		return res;
 	}
+	
+	public static Vector getAllSpells() {
+		return (Vector)allSpells.clone();
+	}
 
 	public String getName() {
 		return name;
@@ -124,10 +129,23 @@ public class Spell {
 	}
 
 	public int getStepsLeft(String rpat) {
-		for (int a=1;a<gesture.length()-1;a++) {
+		for (int a=gesture.length()-1;a>0;a--) {
 			if ((rpat+gesture.substring(a)).endsWith(gesture)) return gesture.length()-a;
 		}
 		return gesture.length();
+	}
+
+
+	public String getNextStep(String leftPattern) {
+		for (int a=gesture.length()-1;a>0;a--) {
+			if ((leftPattern+gesture.substring(a)).endsWith(gesture)) return gesture.substring(a,a+1);
+		}
+		return gesture.substring(0,1);
+	}
+
+
+	public String getDefaultTarget() {
+		return defaultTarget;
 	}
 
 }

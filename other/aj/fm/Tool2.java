@@ -39,6 +39,7 @@ public class Tool2 implements ActionListener {
 	public static void main(String s[]) {
 		if (s.length == 0) {
 			System.out.println("format: java aj.fm.Tool2 <spell.gml>");
+			System.exit(0);
 		}
 		spellsFileName = s[0];
 		new Tool2();

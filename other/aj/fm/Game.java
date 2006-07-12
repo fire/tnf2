@@ -1,4 +1,4 @@
-package aj.fm.engine;
+package aj.fm;
 
 import java.util.Vector;
 
@@ -22,6 +22,10 @@ public class Game {
 
 	public Vector getAllWizards() {
 		return (Vector)wizardVector.clone();
+	}
+
+	public Vector getAllMonsters() {
+		return (Vector)monsterVector.clone();
 	}
 
 }

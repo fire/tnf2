@@ -1,4 +1,4 @@
-package aj.fm.engine;
+package aj.fm;
 
 public class Monster {
 
@@ -10,6 +10,8 @@ public class Monster {
 
 	}
 
+	private String name;
+	
 	private String colors[] = { "green", "pink", "red", "blue", "yellow",
 			"purple", "grey", "white", "orange", "magenta" };
 
@@ -19,9 +21,13 @@ public class Monster {
 
 	private String monsterTypeName;
 
-	private static int monsterCount[] = { 0, 0, 0, 0, 0, 0 };
+	private static int monsterCount[] = { 2, 0, 0, 0, 0, 0 };
 
 	private String[] allMonsterTypeNames = { "Gobblin", "Oger", "Troll",
 			"Giant", "Fire_Elemental", "Ice_Elemental" };
+
+	public Object getName() {
+		return name;
+	}
 
 }

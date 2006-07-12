@@ -65,28 +65,28 @@ public class Tool implements ActionListener {
 		for (int b = 1; b < 10; b++) {
 			// System.out.println("check all "+allSpells.size()+" spells");
 			for (int a = 0; a < allSpells.size(); a++) {
-				Spell sp = (Spell) allSpells.elementAt(a);
+				SpellOld sp = (SpellOld) allSpells.elementAt(a);
 				if (sp.getStepsFrom(hand) == b) {
 					res += sp.summaryString(hand, allSpells) + "\n";
 					Vector l = sp.includes(hand, allSpells);
 					for (int c = 0; c < l.size(); c++) {
 						res += "\tinc="
-								+ ((Spell) l.elementAt(c)).summaryString(hand,
+								+ ((SpellOld) l.elementAt(c)).summaryString(hand,
 										allSpells) + "\n";
 					}
 					l = sp.choice(hand, allSpells);
 					for (int c = 0; c < l.size(); c++) {
 						res += "\tchoice="
-								+ ((Spell) l.elementAt(c)).summaryString(hand,
+								+ ((SpellOld) l.elementAt(c)).summaryString(hand,
 										allSpells) + "\n";
 					}
 					l = sp.headStart(hand, allSpells);
 					for (int d = 0; d < 10; d++) {
 						for (int c = 0; c < l.size(); c++) {
-							Spell hs = (Spell) l.elementAt(c);
+							SpellOld hs = (SpellOld) l.elementAt(c);
 							if (hs.getStepsFrom(hand + sp.gest) == d) {
 								res += "\ths="
-										+ ((Spell) l.elementAt(c))
+										+ ((SpellOld) l.elementAt(c))
 												.summaryString(sp.gest,
 														allSpells) + "\n";
 							}
@@ -103,7 +103,7 @@ public class Tool implements ActionListener {
 			GmlPair all = GmlPair.parse(new File(spellsFileName));
 			GmlPair gmlSpells[] = all.getAllByName("node");
 			for (int a = 0; a < gmlSpells.length; a++) {
-				Spell sp = Spell.parse(gmlSpells[a]);
+				SpellOld sp = SpellOld.parse(gmlSpells[a]);
 				if (sp.name.startsWith("descision"))
 					continue;
 				allSpells.addElement(sp);
@@ -115,93 +115,3 @@ public class Tool implements ActionListener {
 	}
 }
 
-class Spell {
-	String name, gest;
-
-	public Spell(String n, String g) {
-		name = n;
-		gest = g;
-	}
-
-	public static Spell parse(GmlPair g) {
-		String name = g.getOneByName("name").getString();
-		String gest = g.getOneByName("gesture").getString();
-		return new Spell(name, gest);
-	}
-
-	// caps check?
-	public int getStepsFrom(String curr) {
-		for (int a = 0; a < gest.length(); a++) {
-			String t = curr + gest.substring(gest.length() - a);
-			if (t.endsWith(gest))
-				return a;
-		}
-		return gest.length();
-	}
-
-	// caps check?
-	public Vector headStart(String curr, Vector allSpells) {
-		Vector res = new Vector();
-		for (int a = 0; a < allSpells.size(); a++) {
-			Spell sp = (Spell) allSpells.elementAt(a);
-			if (sp == this)
-				continue;
-			if (sp.getStepsFrom(curr + gest) < sp.gest.length()
-					&& sp.getStepsFrom(curr + gest) != 0 && !res.contains(sp)) {
-				res.addElement(sp);
-			}
-		}
-		return res;
-	}
-
-	// caps check?
-	public Vector choice(String curr, Vector allSpells) {
-		Vector res = new Vector();
-		for (int a = 0; a < allSpells.size(); a++) {
-			Spell sp = (Spell) allSpells.elementAt(a);
-			String t = curr + gest;
-			if (t.lastIndexOf(sp.gest) > curr.length() && t.endsWith(sp.gest)
-					&& !res.contains(sp)) {
-				res.addElement(sp);
-			}
-		}
-		return res;
-	}
-
-	public Vector includes(String curr, Vector allSpells) {
-		Vector res = new Vector();
-		String t = curr + gest;
-		for (int a = 0; a < allSpells.size(); a++) {
-			Spell sp = (Spell) allSpells.elementAt(a);
-			if (t.lastIndexOf(sp.gest) > curr.length() && !t.endsWith(sp.gest)
-					&& !res.contains(sp)) {
-				res.addElement(sp);
-			}
-		}
-		return res;
-	}
-
-	public String toString() {
-		return name + " " + gest;
-	}
-
-	public String summaryString(String curr, Vector allSpells) {
-		String res = getStepsFrom(curr) + "," + getStepsFrom("") + ":"
-				+ toString() + " i=" + includes(curr, allSpells).size()
-				+ " hs=";
-		Vector vv = headStart(curr, allSpells);
-		for (int a = 1; a < 10; a++) {
-			int total = 0;
-			for (int b = 0; b < vv.size(); b++) {
-				Spell t = (Spell) vv.elementAt(b);
-				if (t.getStepsFrom(curr + gest) == a) {
-					total++;
-					vv.removeElement(t);
-				}
-			}
-			if (vv.size() > 0 && total != 0)
-				res += (a != 1 ? "," : "") + total;
-		}
-		return res;
-	}
-}

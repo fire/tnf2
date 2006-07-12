@@ -47,6 +47,11 @@
 							</xs:element>
 							<xs:element name="notes" minOccurs="0"/>
 							<xs:element name="limited_game" minOccurs="0"/>
+							<xs:element name="target" >
+								<xs:annotation>
+									<xs:documentation>Default target of spell effects</xs:documentation>
+								</xs:annotation>
+							</xs:element>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
