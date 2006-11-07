@@ -20,8 +20,11 @@
         <jar destfile="IEM.jar"  manifest="${src2}aj/iem/manifest.mf">
           	 <fileset dir="${bin}">
           	 	<include name="aj/iem/*.class"/>
-          	 	<include name="aj/iem/*.txt"/>
+          	 	<include name="aj/iem/gui/*.class"/>
+          	 	<include name="aj/iem/poller/*.class"/>
+          	 	<include name="aj/iem/*.xml"/>
           	 	<include name="aj/misc/Stuff.class"/>
+          	 	<include name="aj/misc/XML*.class"/>
           	 	<include name="aj/io/MLtoText.class"/>
           	 </fileset>
            </jar>
